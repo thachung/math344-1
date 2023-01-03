@@ -1,0 +1,620 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_sets_functions">
+  <title>Sets and functions</title>
+
+
+  <introduction>
+    <!-- <p>
+      We will gradually make our way to definitions of the vector spaces and linear transformations mentioned in this text's title. For now it will suffice to observe that a vector space is a certain kind of <em>set</em>, and a linear transformation is a special type of <em>function</em>. Accordingly we gather here some notions about sets and functions that will come in handy once we meet the two main players of linear algebra.
+    </p> -->
+    <p>
+      We gather here some notions about sets and functions.
+    </p>
+  </introduction>
+  <subsection xml:id="ss_sets">
+    <title>Sets</title>
+
+  <definition xml:id="d_sets">
+    <idx><h>sets</h></idx>
+    <idx><h>sets</h><h>empty sets</h></idx>
+    <idx><h>sets</h><h>membership</h></idx>
+    <notation>
+      <usage> <m>x\in A</m> </usage>
+      <description>set membership</description>
+    </notation>
+      <title>Sets</title>
+      <statement>
+        <p>
+        A <term>set</term> is a collection of objects.
+        An object <m>x</m> is a  <term>member</term> (or <term>element</term>) of a set <m>A</m> if <m>A</m> contains <m>x</m>. In this case, we write <m>x \in A</m>. If <m>x</m> is not a member of <m>A</m>, we write <m>x \notin A</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      We use curly braces to describe the contents of a set. For example, <m>A=\{1,2,3\}</m> is the set containing the first three positive integers, and <m>B=\{1,2,3,\dots\}</m> is the set of all positive integers. The defining property of sets is that they are completely determined by their members, and nothing more. In particular, when describing sets as above, it does not matter in what order the elements are listed, nor if they are repeated: <eg />, <m>\{1,2,3\}</m>, <m>\{2,1,3\}</m>, and <m>\{2,1,1,3,2\}</m> are three descriptions of the same set. This somewhat slippery notion is made perfectly clear by specifying exactly what it means for two sets to be equal, as we do below.
+    </p>
+    <definition xml:id="d_set_equality">
+      <title>Set equality</title>
+      <idx><h>sets</h><h>equality</h></idx>
+      <statement>
+        <p>
+        Sets <m>A</m> and <m>B</m> are <term>equal</term>, denoted <m>A=B</m>, if they have precisely the same elements:  <ie />, if for any object <m>x</m>, we have <m>x\in A</m> if and only if <m>x\in B</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Set membership naturally extends to a notion of one set <q>lying</q> within another.
+    </p>
+    <definition xml:id="d_set_inclusion">
+      <title>Set inclusion (subsets)</title>
+      <idx><h>sets</h><h>subset</h></idx>
+      <idx><h>sets</h><h>inclusion</h></idx>
+      <notation>
+        <usage><m>A\subseteq B</m></usage>
+        <description>set inclusion</description>
+      </notation>
+      <statement>
+        <p>
+        A set <m>A</m> is a <term>subset</term> of a set <m>B</m>, denoted <m>A \subseteq B</m>, if every member of <m>A</m> is a member of <m>B</m>:  <ie />, <m>x\in A</m> implies <m>x\in B</m> for any object <m>x</m>. The relation <m>A\subseteq B</m> is called <term>set inclusion</term>.
+        </p>
+      </statement>
+    </definition>
+        <remark xml:id="rm_equal_subset_logic">
+      <statement>
+        <p>
+          The definitions of set equality and the subset relation make use of two important logical operations: namely, the <q>if and only if</q> (or <q>iff</q> for short) and <q>if-then</q> operations.
+        </p>
+      </statement>
+    </remark>
+    <p>
+      With the fundamental notions of membership, equality, and subset in place, we now introduce means of building new sets from existing ones. The first is a manner of carving out a subset of a given set using a specified property.
+    </p>
+    <definition xml:id="d_set_builder_notation">
+      <title>Set-builder notation</title>
+      <idx><h>sets</h><h>set builder notation</h></idx>
+      <statement>
+        <p>
+        Let <m>A</m> be a set, and let <m>P</m> be a property that elements of <m>A</m> either satisfy or do not satisfy. For an element <m>x\in A</m>, let <m>P(x)</m> denote the statement that <m>x</m> satisfies <m>P</m>.  The set of all elements of <m>A</m> satisfying <m>P</m> is denoted
+        <me>
+          \{x \in A \colon P(x) \}
+        </me>.
+        </p>
+      </statement>
+    </definition>
+    <remark xml:id="rm_set_builder">
+      <statement>
+        <p>
+          Set builder notation <sq><m>\{x \in A\colon P(x)\}</m></sq> is parsed from left to right as follows:
+          <ul>
+            <li>
+              <p>
+                <sq><m>\{</m></sq> is read as <q>the set of</q>
+              </p>
+            </li>
+              <li>
+                <p>
+                  <sq><m>x\in A</m></sq> is read as <q>elements of <m>A</m></q>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <sq><m>\colon</m></sq> is read as <q>such that</q>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <sq><m>P(x)</m></sq> is read as <q><m>P(x)</m> is true </q>.
+                </p>
+              </li>
+          </ul>
+          Taken altogether we get: <q>The set of elements of <m>A</m> such that <m>P(x)</m> is true</q>.
+        </p>
+      </statement>
+    </remark>
+    <example xml:id="ex_set_builder">
+      <statement>
+        <p>
+          Let <m>A=\{0,1,2,\dots \}</m> be the set of nonnegative integers. The subset <m>B=\{0,2,4,\dots\}</m> of <em>even</em> positive integers can be described using set-builder notation as
+          <me>
+            B=\{x\in A\colon x \text{ is even}\}
+          </me>,
+          or alternatively,
+          <me>
+            B=\{x\in A\colon x=2k \text{ for some integer} k\}
+          </me>.
+            </p>
+      </statement>
+    </example>
+    <p>
+      Next we use set builder notation, the set membership relation, and some basic logic to define the union, intersection, and difference of sets.
+    </p>
+    <definition xml:id="d_set_operations">
+      <title>Union, intersection, difference, and complement</title>
+      <idx><h>sets</h><h>union</h></idx>
+      <idx><h>sets</h><h>intersection</h></idx>
+      <notation>
+        <usage><m>A\cup B</m></usage>
+        <description>set union</description>
+      </notation>
+      <notation>
+        <usage><m>A\cap B</m></usage>
+        <description>set intersection</description>
+      </notation>
+      <idx><h>sets</h><h>complement</h></idx>
+      <idx><h>sets</h><h>difference</h></idx>
+      <notation>
+        <usage> <m>A-B</m>  </usage>
+        <description>set difference</description>
+      </notation>
+      <notation>
+        <usage><m>A^c</m></usage>
+        <description>set complement</description>
+      </notation>
+      <statement>
+        <p>
+        Let <m>A</m> and <m>B</m> be subsets of a common set <m>X</m>.
+        </p>
+        <ul>
+
+
+          <li>
+              <title>Set union</title>
+            <p>
+              The <term>union</term> <m>A \cup B</m> of <m>A</m> and <m>B</m> is defined as
+              <me>
+                A\cup B=\{x\in X\colon x\in A\text{ or } x\in B\}
+              </me>.
+              More generally, if <m>I</m> is a set and <m>\{A_i\}_{i\in I}</m> is a collection of sets <m>A_i\subseteq X</m> indexed by <m>I</m>, then the <term>union</term> <m>\bigcup_{i\in I}A_i</m> of this collection is defined as
+              <me>
+                \bigcup_{i\in I}A_i=\{x\in X\colon x\in A_i \text{ for some } i\in I\}
+              </me>.
+            </p>
+          </li>
+          <li>
+              <title>Set intersection</title>
+            <p>
+              The <term>intersection</term> <m>A \cap B</m> of <m>A</m> and <m>B</m> is defined as
+              <me>
+                A\cap B=\{x\in X\colon x\in A\text{ and } x\in B\}
+              </me>.
+              More generally, if <m>I</m> is a set and <m>\{A_i\}_{i\in I}</m> is a collection of sets <m>A_i\subseteq X</m> indexed by <m>I</m>, then the <term>intersection</term> <m>\bigcap_{i\in I}A_i</m> of this collection is defined as
+              <me>
+                \bigcap_{i\in I}A_i=\{x\in X\colon x\in A_i \text{ for all } 1\leq i\leq n\}.
+              </me>
+            </p>
+          </li>
+          <li>
+              <title>Set difference</title>
+            <p>
+              The <term>difference</term> <m>A-B</m> is defined as
+              <me>
+                A-B=\{x\in X\colon x\in A\text{ and } x\notin B\}
+              </me>.
+            </p>
+          </li>
+          <li>
+            <title>Set complement</title>
+            <p>
+              The <term>complement</term> of <m>A</m> in <m>X</m> is defined as <m>X-A</m>. In contexts where there is clear what the larger set <m>X</m> is, we denote the complement of <m>A</m> in <m>X</m> as <m>A^c</m>.
+            </p>
+          </li>
+        </ul>
+
+      </statement>
+    </definition>
+<p>
+  With the help of these set operations, we can now describe some common sets used in mathematics.
+</p>
+<definition xml:id="d_common_sets">
+  <idx><h>sets</h><h>empty set</h></idx>
+  <notation>
+    <usage><m>\{\ \}, \emptyset</m> </usage>
+    <description>the empty set</description>
+  </notation>
+  <idx><h>real numbers</h></idx>
+  <notation>
+    <usage><m>\mathbb{R}</m></usage>
+    <description>real numbers</description>
+  </notation>
+  <idx><h>integers</h></idx>
+  <notation>
+    <usage><m>\mathbb{Z}</m></usage>
+    <description>integers</description>
+  </notation>
+  <notation>
+    <usage><m>\Z_{+}</m></usage>
+    <description>positive integers</description>
+  </notation>
+  <idx><h>rational numbers</h></idx>
+  <notation>
+    <usage><m>\mathbb{Q}</m></usage>
+    <description>rational numbers</description>
+  </notation>
+  <title>Common mathematical sets</title>
+  <statement>
+    <p>
+      We denote by <m>\mathbb{R}</m> the set of all real numbers. The <term>integers</term> <m>\Z</m> and <term>rational numbers</term> <m>\mathbb{Q}</m> are the subsets of <m>\R</m> defined as
+      <md>
+        <mrow>\mathbb{Z} \amp =\{0,1,2,3,\dots\}\cup \{-1,-2,-3,\dots\} </mrow>
+        <mrow> \mathbb{Q} \amp = \{x\in\mathbb{R}\colon x=\tfrac{m}{n} \text{ for some } m,n\in\Z\}  </mrow>
+      </md>.
+      This yields the following chain of subsets:
+      <men xml:id="eq_chain_numbersystems">
+        \mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}
+      </men>.
+      The <term>empty set</term> is the set containing no objects, denoted <m>\{\ \}</m> or <m>\emptyset</m>.
+    </p>
+    <p>
+      The set <m>\{1,2,3,\dots\}</m> of all positive integers is denoted <m>\Z_{+}</m>.
+    </p>
+  </statement>
+</definition>
+<p>
+  The <em>power set</em> of a set <m>A</m> is the set of all subsets of <m>A</m>. We will make use of this notion in our very first definition (<xref ref="d_topology" text='global'/>).
+</p>
+<definition xml:id="d_power_set">
+  <idx><h>power set</h></idx>
+  <notation>
+    <usage><m>\mathcal{P}(A)</m></usage>
+    <description>power set of <m>A</m></description>
+  </notation>
+  <title>Power set</title>
+  <statement>
+    <p>
+      Given a set <m>A</m>, its <term>power set</term> <m>\mathcal{P}(A)</m> is defined as the set of all subsets of <m>A</m>.
+    </p>
+  </statement>
+</definition>
+<example xml:id="eg_power_set">
+  <title>Power set</title>
+  <statement>
+    <p>
+      Let <m>A=\{a,7\}</m>. The power set <m>\mathcal{P}(A)</m> is the set of all subsets of <m>A</m>. We can enumerate <m>\mathcal{P}(A)</m> systematically by listing all the subsets in order of increasing cardinality. There is one subset of <m>A</m> containing zero elements: namely, the empty set <m>\emptyset</m>. The two subsets of <m>A</m> containing exactly one element are <m>\{a\}</m> and <m>\{7\}</m>. Lastly, the unique subset of <m>A</m> containing two elements is <m>A</m> itself. We conclude that
+      <me>
+        \mathcal{P}(A)=\{ \emptyset, \{a\}, \{7\}, \{a,7\}\}
+      </me>.
+      In general if <m>A</m> has cardinality <m>\abs{A}=n</m>, then <m>\mathcal{P}(A)</m> has cardinality <m>\abs{\mathcal{P}(A)}=2^n</m>.
+    </p>
+  </statement>
+</example>
+<p>
+  Lastly, we define the <em>cartesian product</em> of sets, which is a formal description of an ordered collection of objects.
+</p>
+<definition xml:id="d_cartesian_product">
+  <idx><h>Cartesian product</h></idx>
+  <notation>
+    <usage> <m>A\times B</m> </usage>
+    <description>Cartesian product</description>
+  </notation>
+  <title>Cartesian product (finite)</title>
+  <statement>
+    <p>
+      An <term><m>n</m>-tuple</term> (or <term>sequence</term>) of the sets <m>A_1, A_2,\dots, A_n</m> is an ordered list <m>(a_1,a_2,\dots, a_n)</m> such that <m>a_i\in A_i</m> for all <m>1\leq i\leq n</m>. We define two <m>n</m>-tuples <m>(a_1,a_2,\dots, a_n)</m>, and <m> (a_1',a_2',\dots, a_n')</m> to be equal, denoted <m>(a_1,a_2,\dots, a_n)=(a_1',a_2',\dots, a_n')</m>, if <m>a_i=a_i'</m> for all <m>1\leq i\leq n</m>.
+      We call <m>n</m> the <term>length</term> of the sequence <m>(a_1,a_2,\dots, a_n)</m>, and we call <m>a_i</m> its <term><m>i</m>-th entry</term> for all <m>1\leq i\leq n</m>.
+    </p>
+    <p>The
+    <term>(Cartesian) product</term> of the sets <m>A_1, A_2,\dots, A_n</m>, denoted <m>A_1\times A_2\times\cdots \times A_n</m> or <m>\displaystyle\prod_{i=1}^nA_i</m>, is the set of all <m>n</m>-tuples: <ie />,
+    <me>
+      \prod_{i=1}^nA_i=A_1\times A_2\times\cdots \times A_n=\{(a_1,a_2,\dots, a_n)\colon a_i\in A_i \text{ for all } 1\leq i\leq n\}
+    </me>.
+  </p>
+  <p>
+    Given a set <m>A</m>, its <term><m>n</m>-ary Cartesian product</term> <m>A^n</m> is defined as
+    <me>
+      A^n=\prod_{i=1}^n A=\underset{n\text{ times}}{\underbrace{A\times A\times\cdots \times A}}
+    </me>.
+  </p>
+  </statement>
+</definition>
+    <remark xml:id="rm_pairs_triples">
+  <statement>
+    <p>
+     We have more suggestive names for <m>n</m>-tuples when <m>n</m> is small: a 2-tuple <m>(a,b)</m> is called a pair, a 3-tuple <m>(a,b,c)</m> is called a triple, a 4-tuple <m>(a,b,c,d)</m> is called a quadruple, <etc />. We will use the generic term <q>tuple</q> to designate a <m>n</m>-tuple of unspecified length.
+    </p>
+  </statement>
+</remark>
+<remark xml:id="rm_tuple_ordered">
+<statement>
+<p>
+  Observe how tuples capture the notion of an <em>ordered</em> collection of object. For example, whereas the sets <m>\{1, 1, 2, 3\}</m> and <m>\{1,2,2,3\}</m> are all equal to one another, the 4-tuples <m>(1,1,2,3)</m> and <m>(1,2,2,3)</m> are not: they differ in their second entries.
+</p>
+<p>
+  What about the tuples <m>(1,1,1)</m> and <m>(1,1,1,1)</m>? Are these equal? Technically our definition of equality only applies to tuples living in the same fixed Cartesian product. In particular, for the question of equality to make sense, the tuples must have the same length. As such we will officially avoid writing things like <m>(1,1,1)\ne (1,1,1,1)</m>, although unofficially we consider these two objects as completely different. You should think of <m>(1,1,1)</m> and <m>(1,1,1,1)</m> as creatures living on two different planets in the universe of tuples.
+</p>
+</statement>
+</remark>
+<p>
+  The notion of a Cartesian product can be generalized to an infinite list of sets <m>A_1, A_2, \dots</m>, and indeed to any collection <m>\{A_i\}_{i\in I}</m> indexed by a set <m>I</m>.
+</p>
+<definition xml:id="d_Ituple">
+  <idx><h>tuple</h><h>arbitrary</h></idx>
+  <notation>
+    <usage><m>\boldx=(x_i)_{i\in I}</m></usage>
+    <description><m>I</m>-tuple</description>
+  </notation>
+  <title>I-tuple</title>
+  <statement>
+    <p>
+      Let <m>I</m> be a set. Given a set <m>X</m>, an <term><m>I</m>-tuple</term> of elements of <m>X</m> is a function
+      <m>
+        \boldx\colon I\rightarrow X
+      </m>.
+      Given an <m>I</m>-tuple <m>\boldx</m> and element <m>i\in I</m> we will often denote the value <m>\boldx(i)</m> as <m>x_i</m>, and denote
+      <m>\boldx</m> itself as <m>\boldx=(x_i)_{i\in I}</m>. In analogy to finite tuples, we call <m>x_i</m> the <m>i</m>-th <term>entry</term> or <term>coordinate</term> of <m>\boldx</m>.
+    </p>
+  </statement>
+</definition>
+<definition xml:id="d_cartesian_product_arbitrary">
+  <idx><h>Cartesian product</h><h>arbitrary</h></idx>
+  <notation>
+    <usage><m>\prod_{i\in I}A_i</m></usage>
+    <description>Cartesian product of the sets <m>A_i</m></description>
+  </notation>
+  <title>Cartesian product (arbitrary)</title>
+  <statement>
+    <p>
+      Let <m>X</m> be a set, and let <m>\{A_i\}_{i\in I}</m> be a collection of subsets <m>A_i\subseteq X</m> indexed by the set <m>I</m>. The <term>Cartesian product</term> <m>\prod_{i\in I}A_i</m> of this collection is defined as
+      <me>
+        \prod_{i\in I}A_i=\{\boldx\colon I\rightarrow X\colon x_i\in A_i\}
+      </me>.
+      In other words, the Cartesian product is the set of all <m>I</m>-tuples of elements of <m>X</m> whose <m>i</m>-th coordinate is an element of <m>A_i</m> for all <m>i\in I</m>.
+    </p>
+  </statement>
+</definition>
+
+    </subsection>
+    <subsection xml:id="ss_functions">
+      <title>Functions</title>
+      <definition xml:id="d_function">
+          <title>Functions</title>
+          <idx><h>function</h></idx>
+          <notation>
+            <usage><m>f\colon A\rightarrow B</m></usage>
+            <description>a function from <m>A</m> to <m>B</m></description>
+          </notation>
+          <statement>
+            <p>
+            Let <m>X</m> and <m>Y</m> be two sets. A <term>function from <m>X</m> to <m>Y</m></term>, denoted <m>f\colon X\rightarrow Y</m>, is a rule which, given any <term>input</term> <m>x\in X</m>, returns an <term>output</term> <m>y\in Y</m>. In this case we write <m>y=f(x)</m> and call <m>y</m> the <term>image of <m>x</m> under <m>f</m></term>, or the <term>value of <m>f</m> at <m>x</m> </term>. Similarly, we say <m>f</m> <term>maps</term> (or <term>sends</term>) the input <m>x</m> to the output <m>y</m>.
+            </p>
+            <p>
+              The set <m>X</m> is called the <term>domain</term> of <m>f</m>; the set <m>Y</m> is called the <term>codomain</term> of <m>f</m>.
+            </p>
+            <p>
+              When we wish to indicate what rule defines the function, we use the elaborated notation
+              <md>
+                <mrow>f\colon X \amp\rightarrow Y</mrow>
+                <mrow> x \amp\mapsto f(x)</mrow>
+              </md>.
+              This is read as <q>The function <m>f</m> with domain <m>X</m> and codomain <m>Y</m> maps an input <m>x</m> to the output <m>f(x)</m></q>.
+            </p>
+          </statement>
+        </definition>
+        <example>
+            <statement>
+              <p>
+                Consider the function
+                <md>
+                  <mrow>f\colon \mathbb{Z}\amp \rightarrow \mathbb{Z}</mrow>
+                  <mrow> x\amp\mapsto x^2 </mrow>
+                </md>.
+                This function has domain and codomain equal to <m>\mathbb{Z}</m> and maps an integer to its square.
+              </p>
+            </statement>
+          </example>
+          <example ref="eg_addition_mult_as_functions">
+            <title>Arithmetic operations as functions</title>
+            <statement>
+              <p>
+                Our familiar arithmetic operations can be expressed as functions whose inputs are pairs of numbers: addition is the function
+                <md>
+                  <mrow>a\colon \R\times \R \amp\rightarrow \R </mrow>
+                  <mrow> (x,y) \amp\mapsto x+y </mrow>
+                </md>
+                and multiplication is the function
+                <md>
+                  <mrow>m\colon\mathbb{R}\times \mathbb{R} \amp \rightarrow \mathbb{R}</mrow>
+                  <mrow> (x,y)\amp\mapsto  xy </mrow>
+                </md>
+              </p>
+            </statement>
+
+          </example>
+            <remark xml:id="rm_function_as_relation">
+          <statement>
+            <p>
+              Invoking the notion of a rule in the definition of a function is admittedly somewhat vague. A more precise definition can be given using the Cartesian product. Namely, given sets <m>X</m> and <m>Y</m>, we define a function <m>f\colon X\rightarrow Y</m> to be a subset <m>f\subseteq X\times Y</m> satisfying the following property: for all <m>x\in X</m> there is a unique element <m>(x,y)\in f</m>. The uniqueness of the pair <m>(x,y)</m> then allows us to define the value <m>f(x)</m> of <m>f</m> at <m>x</m> as <m>y</m>, denoted <m>f(x)=y</m>.
+            </p>
+          </statement>
+        </remark>
+        <p>
+        As with sets and tuples, we are obliged to specify what we mean for two functions to be equal. The definition below makes clear how the the domain and codomain, as well as the rule that takes inputs to outputs, are all essential ingredients of a function.
+        </p>
+          <definition xml:id="d_function_equality">
+            <title>Function equality</title>
+            <idx><h>function</h><h>equality</h></idx>
+            <statement>
+              <p>
+              Functions <m>f</m> and <m>g</m> are <term>equal</term> if
+              <ol marker="i">
+                <li>
+                  <p>
+                    they have the same domain <m>X</m> and codomain <m>Y</m>, and
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    for all <m>x\in X</m>, we have <m>f(x)=g(x)</m>.
+                  </p>
+                </li>
+              </ol>
+              </p>
+            </statement>
+          </definition>
+          <definition xml:id="d_image">
+      <title>Image of a set</title>
+      <idx><h>function</h><h>image of a set</h></idx>
+      <idx><h>function</h><h>image</h></idx>
+      <notation>
+        <usage><m>f(A)</m></usage>
+        <description>image of the set <m>A</m> under <m>f</m></description>
+      </notation>
+      <notation>
+        <usage><m>\operatorname{im} f</m></usage>
+        <description>image of a function <m>f</m></description>
+      </notation>
+      <statement>
+        <p>
+        Given a function <m>f\colon X\rightarrow Y</m> and a subset <m>A \subseteq X</m>, the <term>image of <m>A</m> under <m>f</m></term>, denoted <m>f(A)</m>, is defined as
+        <me>
+          f(A)=\left\{ y \in Y \colon f(a)=y \text{ for some } a \in A \right\}
+        </me>.
+        In other words, <m>f(A)</m> is the set of all outputs <m>f(a)</m>,  where <m>a\in X</m>.
+       </p>
+        <p>
+        The <term>image of <m>f</m></term>, denoted <m>\operatorname{im} f</m>, is the set of <em>all</em> outputs of <m>f</m>: <ie />,
+        <me>
+          \operatorname{im} f=f(X)=\left\{ y \in Y \colon f(x)=y \text{ for some } x \in X \right\}
+        </me>.
+        </p>
+
+      </statement>
+    </definition>
+    <definition xml:id="d_injective_surjective_bijective">
+      <title>Injective, surjective, bijective</title>
+      <idx><h>invertible</h><h>function</h></idx>
+      <idx><h>bijective</h><h>function</h></idx>
+      <idx><h>injective</h><h>function</h></idx>
+      <idx><h>surjective</h><h>function</h></idx>
+      <idx><h>one-to-one</h><h>function</h></idx>
+      <idx><h>onto</h><h>function</h></idx>
+      <idx><h>one-to-one correspondence</h></idx>
+      <statement>
+        <p>
+          Let <m>f\colon X\rightarrow Y</m> be a function.
+          <ul>
+            <li>
+              <p>
+                The function <m>f</m> is <term>injective</term> (or <term>one-to-one</term>) if for all <m>x,x'\in X</m>, if <m>f(x)=f(x')</m>, then <m>x=x'</m>: equivalently, if <m>x\ne x'</m>, then <m>f(x)\ne f(x')</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The function <m>f</m> is <term>surjective</term> (or <term>onto</term>) if for all <m>y\in Y</m>, there is an <m>x\in X</m> such that <m>f(x)=y</m>: equivalently, <m>\im f=Y</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The function <m>f</m> is <term>bijective</term> (or a <term>one-to-one correspondence</term>) if it is injective and surjective.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <example>
+      <title>Role of domain and codomain in injectivity and surjectivity</title>
+      <statement>
+        <p>
+          Consider the following three functions
+          <md>
+            <mrow>f\colon \R \amp\rightarrow \R \amp g\colon [0,\infty)\amp\rightarrow \R \amp h\colon [0,\infty)\amp \rightarrow [0,\infty) </mrow>
+            <mrow> x \amp\mapsto x^2 \amp x \amp\mapsto x^2 \amp x \amp\mapsto x^2 \amp </mrow>
+          </md>.
+          Although all three functions are defined using the same rule (<m>x\mapsto x^2</m>), they are not equal thanks to their differing domains and/or codomains. The choice of domain and codomain in these examples also plays a crucial role in determining whether the function is injective and/or surjective. The function <m>f</m> is neither injective (<m>f(-2)=f(2)=4</m>) nor surjective (<m>f(X)=[0,\infty)\ne \R</m>); the function <m>g</m> is injective but not surjective; the function <m>h</m> is both injective and surjective, hence bijective.
+        </p>
+      </statement>
+    </example>
+    <definition xml:id="d_function_composition">
+    <title>Function composition</title>
+    <idx><h>function</h><h>composition</h></idx>
+    <notation>
+      <usage><m>f\circ g</m></usage>
+      <description>the composition of <m>f</m> and <m>g</m></description>
+    </notation>
+    <statement>
+      <p>
+        Suppose <m>f\colon Z\rightarrow W</m> and <m>g\colon X\rightarrow Y</m> are functions satisfying <m>Y\subseteq Z</m>.  The <term>composition of <m>f</m> and <m>g</m></term> is the function <m>f\circ g\colon X\rightarrow W</m> defined as
+        <m>
+          f\circ g\, (x)=f(g(x))
+        </m>, for all <m>x\in X</m>.
+      </p>
+    </statement>
+  </definition>
+  <definition xml:id="d_invertible_function">
+    <idx><h>function</h><h>invertible</h></idx>
+    <idx><h>function</h><h>inverse</h></idx>
+    <idx><h>function</h><h>identity</h></idx>
+    <title>Identity and inverse functions</title>
+    <statement>
+      <p>
+        For any set <m>X</m> the <term>identity function</term> on <m>X</m> is the function <m>\id_X\colon X\rightarrow X</m> defined as <m>\id_X(x)=x</m> for all <m>x\in X</m>.
+      </p>
+      <p>
+        A function <m>f\colon X\rightarrow Y</m> is <term>invertible</term> if there is a function <m>g\colon Y\rightarrow X</m> satisfying <m>g\circ f=\id_X</m> and <m>f\circ g=\id_Y</m>: <ie />,
+        <md>
+          <mrow>g(f(x))\amp =x  \text{ for all } x\in X, </mrow>
+          <mrow> f(g(y))\amp=y  \text{ for all } y\in Y </mrow>
+        </md>.
+      </p>
+      The function <m>g</m> in this case is called the <term>inverse</term> of <m>f</m>, denoted <m>g=f^{-1}</m>.
+    </statement>
+  </definition>
+    <theorem xml:id="th_invertible_bijective">
+      <title>Invertible is equivalent to bijective</title>
+
+
+      <statement>
+        <p>
+          A function <m>f\colon X\rightarrow Y</m> is invertible if and only if it is bijective.
+        </p>
+      </statement>
+    </theorem>
+    <!-- <proof>
+      <p>
+        The proof of this theorem is left as an example of proving <q>if and only if</q> statements. See <xref ref="ex_invertible_bijective"/>.
+      </p>
+    </proof> -->
+
+</subsection>
+<subsection xml:id="subsec-">
+  <title>Cardinality and countability</title>
+  <definition xml:id="d_cardinality">
+    <title>Cardinality</title>
+    <idx><h>cardinality</h></idx>
+    <idx><h>finite set</h></idx>
+    <idx><h>infinite set</h></idx>
+    <idx><h>countably infinite set</h></idx>
+    <idx><h>countable set</h></idx>
+    <idx><h>uncountable set</h></idx>
+    <notation>
+      <usage><m>\abs{A}</m></usage>
+      <description>cardinality of set <m>A</m></description>
+    </notation>
+    <statement>
+      <p>
+        Let <m>X</m> be a set.
+      </p>
+      <ol>
+        <li>
+          <title>Finite and infinite sets</title>
+          <p>
+            The set <m>X</m> is <term>finite</term> if either <m>X=\emptyset</m> or there is a bijection <m>f\colon X\rightarrow \{1,2,\dots, n\}</m> for some positive integer <m>n</m>. Roughly speaking, the <term>cardinality</term> of a finite set <m>X</m>, denoted <m>\abs{X}</m>, is the number of distinct elements it contains. In more detail if <m>X=\emptyset</m>, then <m>\abs{X}=0</m> by definition; if there is a bijection <m>f\colon X\rightarrow \{1,2,\dots, n\}</m>, then <m>\abs{X}=n</m>.
+          </p>
+          <p>
+             The set <m>X</m> is <term>infinite</term> if it is not finite. In this case <m>X</m> is said to have <term>infinite cardinality</term>.
+          </p>
+        </li>
+        <li>
+          <title>Countable and uncountable sets</title>
+          <p>
+            The set <m>X</m> is <term>countably infinite</term> if there is a bijection <m>f\colon X\rightarrow \Z_{+}</m>, where <m>\Z_+=\{1,2,\dots, \}</m> is the set of all positive integers; it is <term>countable</term> if it is either finite or countable infinite.
+          </p>
+          <p>
+            The set <m>X</m> is <term>uncountable</term> if it is not countable.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </definition>
+</subsection>
+
+</section>

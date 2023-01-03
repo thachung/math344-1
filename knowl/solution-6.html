@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h5 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">0.3.8.1</span><span class="period">.</span>
+</h5>
+<div class="para">We prove the proposition by induction.</div> <article class="case"><h6 class="heading">Step 0: preparation.</h6> <div class="para logical">
+<div class="para">The proposition is modeled logically as <span class="process-math">\(\forall n\geq 1 \, P(n)\text{,}\)</span> where <span class="process-math">\(P(n)\)</span> is the proposition that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{k=1}^n k=\frac{n(n+1)}{2}\text{.}
+\end{equation*}
+</div>
+</div></article> <article class="case"><h6 class="heading">Base step: <span class="process-math">\(n=1\)</span>.</h6> <div class="para logical">
+<div class="para">The proposition <span class="process-math">\(P(1)\)</span> is the statement that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1=\frac{1(1+1)}{2}\text{,}
+\end{equation*}
+</div>
+<div class="para">which is clearly true.</div>
+</div></article> <article class="case"><h6 class="heading">Induction step.</h6> <div class="para logical">
+<div class="para">We must show the universal implication</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall n\geq 1\, P(n)\implies P(n+1)\text{.}
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(n\geq 1\text{,}\)</span> and assume <span class="process-math">\(P(n)\)</span> is true: i.e.,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{k=1}^n k=\frac{n(n+1)}{2}
+\end{equation*}
+</div>
+<div class="para">The proposition <span class="process-math">\(P(n+1)\)</span> states that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{k=1}^{n+1} k=\frac{(n+1)(n+2)}{2}\text{.}
+\end{equation*}
+</div>
+<div class="para">We prove this, assuming <span class="process-math">\(P(n)\text{,}\)</span> via a chain of equalities:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\sum_{k=1}^{n+1} k\amp= \sum_{k=1}^{n} k+(n+1) \\
+\amp=\frac{n(n+1)}{2}+n+1\amp (\text{induction hyp.}) \\
+\amp =\frac{n(n+1)+2(n+1)}{2}\\
+\amp =\frac{(n+1)(n+2)}{2}\text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div></article> <div class="para">Having completed our base and induction steps, our proof is now finished.</div>
+</div>
+<span class="incontext"><a href="s_proof_technique.html#solution-6" class="internal">in-context</a></span>
+</body>
+</html>

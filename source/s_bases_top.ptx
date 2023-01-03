@@ -1,0 +1,30 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_top_spaces">
+  <title>Bases for topological spaces</title>
+  <introduction>
+    <p>
+    When defining a topology <m>\mathcal{T}</m> for a set <m>X</m> it is often convenient to specify instead a more manageable subset of <m> \mathcal{T}</m> that <em>generates</em> the topology in some precise sense. The notion of a topological basis (<xref ref="d_basis" text="global"/>) does precisely this. Bases will also provide us convenient ways of comparing different topologies and (later on) determining whether relevant topological properties are satisfied by a given space.
+    </p>
+</introduction>
+<definition xml:id="d_basis">
+  <title>Topological basis</title>
+  <statement>
+    Let <m>X</m> be a set. A <term>topological basis</term> for <m>X</m> is a collection <m>\mathcal{B}</m> of subsets of <m>X</m> satisfying the following axioms:
+    <ol>
+      <li>
+        <title>Covers</title>
+        <p>
+          For each <m>x\in X</m> there is a set <m>B\in \mathcal{B}</m> such that <m>x\in B</m>.
+        </p>
+      </li>
+      <li>
+        <title>Contained in intersections</title>
+        <p>
+          If <m>B_1, B_2\in \mathcal{B}</m>, then there is a <m>B\in \mathcal{B}</m> such that <m>B\subseteq B_1\cap B_2</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</definition>
+
+
+</section>

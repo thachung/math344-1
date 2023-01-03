@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This frontmatter division will contain all content before the -->
+<!-- first chapter.  Fill in and comment/uncomment to see how this -->
+<!-- works.                                                        -->
+
+<frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="meta_frontmatter">
+  <titlepage>
+    <author>
+      <personname>Aaron Greicius</personname>
+      <department>Department of Mathematics</department>
+      <institution>Northwestern University</institution>
+    </author>
+    <date><today/></date>
+  </titlepage>
+
+  <colophon>
+      <copyright>
+        <holder>Aaron Greicius</holder>
+        <year>2020<mdash />2024</year>
+        <shortlicense>Permission is granted to copy, distribute and/or modify this document under the terms of the Creative Commons Attribution-ShareAlike (CC BY-SA) 4.0 International License</shortlicense>
+      </copyright>
+    </colophon>
+
+  <!-- <dedication>
+    <p>
+      For ...
+    </p>
+  </dedication> -->
+
+  <!-- <acknowledgement>
+    <p>
+      I would like to thank...
+    </p>
+  </acknowledgement> -->
+
+
+
+</frontmatter>

@@ -1,0 +1,6 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="c_foundations">
+  <title>Foundations</title>
+  <xi:include  href="s_sets_functions.ptx"/>
+  <xi:include  href="s_logic.ptx"/>
+  <xi:include  href="s_proof_technique.ptx"/>
+</chapter>

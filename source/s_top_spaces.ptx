@@ -1,0 +1,259 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_top_spaces">
+  <title>Topological spaces</title>
+  <introduction>
+    <p>
+      The real numbers come equipped with a notion of <em>nearness</em> or <em>closeness</em> furnished by the absolute value function: namely, we define the distance <m>d(a,b)</m> between real numbers <m>a,b\in\R</m> as <m>d(a,b)=\abs{a-b}</m>. From this simple bit of structure springs all the fundamental concepts of real analysis: Cauchy sequences, limits, continuous functions, etc.
+    </p>
+    <p>Topology can be seen as a vast generalization of this notion that abstracts away from the absolute value function, relying instead on the more abstract idea of <em>open sets</em>. Indeed, the notion of openness is introduced already in real analysis: a set <m>U\subseteq\R</m> is <em>open</em> if for all <m>x\in U</m> there is an <m>\epsilon &gt; 0</m> such that if <m>\abs{x-y} &lt; \epsilon</m>, then <m>y\in U</m>. Intuitively, you can think of this property as stating that <m>U</m> has a certain <em>roomy</em> or <em>generous</em> nature: if <m>x\in U</m>, and <m>y</m> is <em>sufficiently close</em> to <m>x</m>, then <m>U</m>
+    has room for <m>y</m> too. Come on in!
+  </p>
+  <p>
+    We view the the three conditions of <xref ref="d_topology"/> as an attempt at axiomatizing this notion of openness (or roominess). This is the starting point of topology. The generality of this approach is part of topology's great power. We can define a notion of open sets on any set <m>X</m> whatsoever: <ie />, we can choose a collection of subsets (called a <em>topology</em>) that satisfies the axioms of <xref ref="d_topology"/>. Furthermore, for a given set <m>X</m> there are typically many distinct ways of making this choice; your topology on <m>X</m> can be tailor-made to suit your particular needs. Beyond this generality and flexibility, the other key to topology's effectiveness is its ability to transport to any topological space the concepts of continuity, limits, connectedness, and compactness familiar to us from real analysis.  Once a set is given the structure of a topological space, these notions can be used as powerful tools for investigating its properties. It is for this reason that topology plays an important role in essentially all mathematical fields: analysis, geometry, algebraic geometry, number theory, etc.
+  </p>
+</introduction>
+<definition xml:id="d_topology">
+  <title>Topological space</title>
+  <statement>
+    <p>
+      A <term>topological space</term> is a pair <m>(X,\mathcal{T})</m>, where <m>X</m> is a set, and <m>\mathcal{T}\subseteq \mathcal{P}(X)</m> is a collection of subsets of <m>X</m> satisfying the following axioms:
+      <ol>
+        <li>
+          <title>Trivial sets</title>
+          <p>
+            <m>\emptyset\in \mathcal{T}</m> and <m>X\in \mathcal{T}</m>
+          </p>
+        </li>
+        <li>
+          <title>Closed under arbitrary unions</title>
+          <p>
+            Given any collection <m>\{U_i\}_{i\in I}</m> of elements <m>U_i\in \mathcal{T}</m>, we have <m>U=\bigcup_{i\in I}U_i\in \mathcal{T}</m>
+          </p>
+        </li>
+        <li>
+          <title>Closed under finite intersections</title>
+          <p>
+            If <m>U_1, U_2,\dots, U_n\in \mathcal{T}</m>, then <m>U=\bigcap_{i=1}^n U_i \in \mathcal{T}</m>.
+          </p>
+        </li>
+      </ol>
+      In this case we call <m>\mathcal{T}</m> a <term>topology</term> on <m>X</m>, and an element <m>U\in \mathcal{T}</m> is called an <term>open set</term> of <m>X</m>. Although technically speaking a topological space is a pair <m>(X,\mathcal{T})</m>, we often omit mention of the topology <m>\mathcal{T}</m> if there is no risk of confusion.
+    </p>
+  </statement>
+</definition>
+    <remark xml:id="rm_def_top">
+      <title>Equivalent alternative to axioms (1)-(3)</title>
+  <statement>
+    <p>
+      Using induction, we can show that if <m>\mathcal{T}</m> satisfies axiom (3) for any <em>two</em> elements of <m>\mathcal{T}</m>, then it satisfies it for any <m>n</m> elements, for <m>n</m> arbitrary. In other words if we replace axiom (3) with
+      <dl>
+        <li>
+          <title>(3')</title>
+          <p>
+            If <m>U_1, U_2\in \mathcal{T}</m>, then <m>U=U_1\cap U_2\in \mathcal{T}</m>
+          </p>
+        </li>
+      </dl>,
+      we get an equivalent definition of a toplogical space. When verifying whether a given <m>(X,\mathcal{T})</m> is a topological space it may be more convenient to use axiom (3') as opposed to axiom (3).
+    </p>
+  </statement>
+</remark>
+
+<example>
+  <title>Euclidean topology on <m>\R</m></title>
+  <statement>
+    <p>
+      Let <m>X=\R</m> and define <m>\mathcal{T}</m> to be the set of open sets as defined above: that is, <m>U\in \mathcal{T}</m> if and only if for all <m>x\in U</m> there is an <m>\epsilon &gt; 0</m> such that the entire open interval <m>(x-\epsilon, x+\epsilon)</m> is contained in <m>U</m>. Show that <m>\mathcal{T}</m> is a topology on <m>\R</m>
+    </p>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+<project xml:id="top_eg_trivial_discrete">
+  <title>Trivial and discrete topology</title>
+  Let <m>X</m> be a set.
+  <ol>
+    <li>
+      <p>
+        The collection <m>\mathcal{T}=\{\emptyset, X\}</m> is a topology on <m>X</m>, called the <term>trivial topology</term>. This is the topology on <m>X</m> whose only open sets are the empty set and <m>X</m> itself.
+      </p>
+    </li>
+    <li>
+      <p>
+        The collection <m>\mathcal{T}=\mathcal{P}(X)</m> is a topology on <m>X</m>, called the <term>discrete topology</term>. This is the topology on <m>X</m> for which every subset of <m>X</m> is an open set.
+      </p>
+    </li>
+  </ol>
+  <proof>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Let <m>\mathcal{T}=\{\emptyset, X\}</m>. By definition the given <m>\mathcal{T}</m> contains <m>\emptyset</m> and <m>X</m>, and thus axiom (1) is satisfied. Since any union or intersection involving <m>\emptyset</m> and <m>X</m> is equal to either <m>\emptyset</m> or <m>X</m>, it is clear that <m>\mathcal{T}</m> is closed under arbitrary unions and finite intersections. Thus axioms (2)-(3) are satisfied.
+          </p>
+        </li>
+        <li>
+          <p>
+            Let <m>\mathcal{T}=\mathcal{P}(X)</m>. By definition, <m>\mathcal{T}</m> is the set of <em>all</em> subsets of <m>X</m>. In particular, it contains <m>\emptyset</m> and <m>X</m>, and thus axioms (1) is satisfied. Furthermore, since any union or intersection of subsets of <m>X</m> is again a subset of <m>X</m>, we see that axioms (2)-(3) are satisfied.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </proof>
+
+</project>
+<example>
+  <title>Some small topological spaces</title>
+  <statement>
+    <p>
+      For each set <m>X</m> describe all subsets <m>\mathcal{T}\subseteq \mathcal{P}(A)</m> that satisfy the axioms of <xref ref="d_topology"/>, and hence make <m>(X,\mathcal{T})</m> a topological space.
+    </p>
+    <ol>
+      <li>
+        <title>Empty set</title>
+        <p>
+          <m>X=\emptyset</m>
+        </p>
+      </li>
+      <li>
+        <title>Singleton</title>
+        <p>
+          <m>X=\{a\}</m>
+        </p>
+      </li>
+      <li>
+        <title>Doubleton</title>
+        <p>
+          <m>X=\{a,7\}</m>
+        </p>
+      </li>
+
+    </ol>
+  </statement>
+  <solution>
+    <ol>
+      <li>
+        <p>
+          When <m>X=\emptyset</m>, we have <m>\mathcal{P}(X)=\{\emptyset\}</m>. Since by axiom (1) a topology <m>\mathcal{T}</m> on <m>X</m> must contain both <m>\emptyset</m> and <m>X=\emptyset</m>, we see the only option is <m>\mathcal{T}=\{\emptyset\}</m>. It is now straightforward to show that <m>\mathcal{T}=\{\emptyset\}</m> is a topology on <m>X=\emptyset</m>. Indeed, it satisfies axiom (1), since
+          it includes both <m>\emptyset</m> and <m>X=\emptyset</m> (which happen to be the same thing in this example) satisfies axioms (1)-(3). Indeed, we have <m>\emptyset\in \mathcal{T}</m> and <m>X\in \mathcal{T}</m>, since <m>X=\emptyset</m> in this case; and since <m>\mathcal{T}</m> only contains one element, it is clearly closed under unions and finite intersections.
+        </p>
+      </li>
+      <li>
+        <p>
+          When <m>X=\{a\}</m>, we have <m>\mathcal{P}(X)=\{\emptyset, \{a\}\}</m>. Since by axiom (1) a topology <m>\mathcal{T}</m> on <m>X</m> must contain both <m>\emptyset</m> and <m>X=\{a\}</m>, we see the only option is <m>\mathcal{T}=\{\emptyset, \{a\}\}</m>. It is now easy to see that <m>\{\emptyset, \{a\}\}</m> satisfies axioms (2) and (3).
+        </p>
+      </li>
+      <li>
+        <p>
+          When <m>X=\{a, 7\}</m>, we have <m>\mathcal{P}(X)=\{\emptyset, \{a\}, \{7\}, \{a,7\}\}</m>. By axiom (1) a topology <m>\mathcal{T}</m> must contain <m>\emptyset</m> and <m>X=\{a,7\}</m>. It follows that there are exactly four possibilities for <m>\mathcal{T}</m> based on whether the sets <m>\{a\}</m> and <m>\{7\}</m> are elements of <m>\mathcal{T}</m>: i.e., the only possibilities are
+          <md>
+          <mrow>\mathcal{T} \amp = \{\emptyset, \{a,7\}\} </mrow>
+          <mrow>\mathcal{T} \amp = \{\emptyset, \{a,7\}, \{a\}\} </mrow>
+          <mrow>\mathcal{T} \amp = \{\emptyset, \{a,7\}, \{7\}\} </mrow>
+          <mrow>\mathcal{T} \amp = \{\emptyset, \{a,7\},\{a\}, \{7\}\} </mrow>
+          </md>.
+          These are the four subsets of <m>\mathcal{P}(A)</m> that satisfy axiom (1). It is now straightforward to show that each of these choices also satisfies axioms (2) and (3). Thus there are exactly 4 distinct topologies we can define on <m>X=\{a, 7\}</m>.
+        </p>
+      </li>
+
+    </ol>
+  </solution>
+</example>
+<project xml:id="top_eg_cofinite">
+  <title>Cofinite topology</title>
+  <p>
+    Let <m>X</m> be a set. A subset <m>U\subseteq X</m> is <term>cofinite</term> in <m>X</m> if <m>U^c=X-U</m> is finite. The collection of subsets
+    <me>
+    \mathcal{T}=\{\emptyset\}\cup \{U\subseteq X\colon U \text{ is cofinite}\}
+    </me>
+    is a topology, called the <term>cofinite topology</term>. In this topology a subset <m>U\subseteq X</m> is open if and only if it is either empty or cofinite.
+  </p>
+  <proof>
+    <p>
+      We treat each axiom separately.
+    </p>
+    <ol>
+      <li>
+        <p>
+          We must show <m>\emptyset, X\in \mathcal{T}</m>. That <m>\emptyset\in \mathcal{T}</m> is specified explicitly in the definition of <m>\mathcal{T}</m>. Next since <m>X^c=\emptyset</m> is finite, the set <m>X</m> is cofinite in <m>X</m>, and hence an element of <m>\mathcal{T}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>\{U_i\}_{i\in I}</m> be any collection of elements of <m>\mathcal{T}</m>: <ie />, for all <m>i\in I</m> we have <m>U_i=\emptyset</m> or <m>U_i</m> is cofinite in <m>X</m>. Let <m>U=\bigcup_{i\in I}U_i</m>. If <m>U_i=\emptyset</m> for all <m>i\in I</m>, then <m>U=\emptyset\in \mathcal{T}</m>. Otherwise there is an <m>i_0\in I</m> such that <m>U_{i_0}</m>
+          is nonempty, hence cofinite. We have
+          <md>
+          <mrow>U^c \amp = \left( \bigcup_{i\in I}U_i\right)^c </mrow>
+          <mrow> \amp = \bigcap_{i\in I} U_i^c  \amp (\text{DeMorgan's law})</mrow>
+          <mrow>  \amp \subseteq U_{i_0}^c</mrow>
+          </md>.
+          Since <m>U_{i_0}^c</m> is finite, it follows that <m>U^c</m> is finite. It follows that <m>U</m> is cofinite, and hence an element of <m>\mathcal{T}</m> as desired.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>U_1, U_2\in \mathcal{T}</m>, and let <m>U=U_1\cap U_2</m>. We have <m>U^c=U_1^c\cap U_2^c</m>. Since <m>U_i^c</m> is either finite or equal to all of <m>X</m> for <m>i=1,2</m>, it is clear that <m>U^c</m> is either finite or equal to <m>X</m>. It follows that <m>U</m> is either cofinite or empty, and hence an element of <m>\mathcal{T}</m>.
+        </p>
+      </li>
+    </ol>
+  </proof>
+
+</project>
+<definition xml:id="d_comparable_topologies">
+  <idx><h>coarser topology</h></idx>
+  <idx><h>finer topology</h></idx>
+  <idx><h>comparable topologies</h></idx>
+  <title>Comparable topologies</title>
+  <statement>
+    <p>
+      Two topologies <m>\mathcal{T}, \mathcal{T}'</m> on the set <m>X</m> are <term>comparable</term> if <m>\mathcal{T}\subseteq \mathcal{T}'</m> or <m>\mathcal{T}'\subseteq\mathcal{T}</m>, and <term>incomparable</term> otherwise. If <m>\mathcal{T}\subseteq \mathcal{T}'</m>, we say that <m>\mathcal{T}</m> is <term>coarser</term> than <m>\mathcal{T}'</m>, and that <m>\mathcal{T}'</m> is <term>finer</term> than <m>\mathcal{T}</m>. When <m>\mathcal{T}\subsetneq\mathcal{T}'</m> we say that <m>\mathcal{T}</m> is <term>strictly coarser</term> than <m>\mathcal{T}'</m> and <m>\mathcal{T}'</m> is <term>strictly finer</term> than <m>\mathcal{T}</m>.
+    </p>
+  </statement>
+</definition>
+<example>
+  <title>Comparing trivial, discrete, cofinite topologies</title>
+  <statement>
+    <p>
+      Let <m>X</m> be a set, and let <m>\mathcal{T}_{\operatorname{trivial}}, \mathcal{T}_{\operatorname{discrete}}, \mathcal{T}_{\operatorname{cofinite}}</m> be the trivial, discrete, and cofinite topologies on <m>X</m>, respectively. Compare these topologies.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      First observe that in general the trivial topology <m>\mathcal{T}_{\operatorname{trivial}}=\{\emptyset, X\}</m> on <m>X</m> is coarser than any other topology, since by definition a topology must contain <m>\emptyset</m> and <m>X</m>. Similarly the discrete topology <m>\mathcal{T}_{\operatorname{discrete}}=\mathcal{P}(X)</m> is finer than any other topology, since by definition any topology is a subset of <m>\mathcal{P}(X)</m>. Thus we always have  <m>\mathcal{T}_{\operatorname{trivial}}\subseteq\mathcal{T}_{\operatorname{cofinite}}\subseteq\mathcal{T}_{\operatorname{discrete}}</m>. The question naturally arises, whether and/or when these inclusions are strict. We consider a number of cases.
+    </p>
+    <case>
+      <title>Case: <m>\abs{X}\leq 1</m></title>
+      <p>
+        In this case <m>\mathcal{X}=\emptyset</m> or <m>\mathcal{X}=\{x\}</m> (a singleton), in which case it is easy to see that
+        <m>
+        \mathcal{T}_{\operatorname{trivial}}=\mathcal{T}_{\operatorname{cofinite}}=\mathcal{T}_{\operatorname{discrete}}=\{\emptyset, X\}
+        </m>. (Note: when <m>X=\emptyset</m>, we have <m>\{\emptyset, X\}=\{\emptyset\}=\{X\}</m>.)
+      </p>
+    </case>
+    <case>
+      <title>Case: <m>X</m> finite, <m>\abs{X}\geq 2</m></title>.
+      <p>
+        Since <m>X</m> is finite, it follows that all subsets of <m>X</m> are cofinite, and hence that <m>\mathcal{T}_{\operatorname{cofinite}}=\mathcal{T}_{\operatorname{discrete}}=\mathcal{P}(X)</m>. Since <m>\abs{X}=n\geq 2</m>, we have <m>\abs{\mathcal{P}(X)}=2^n &gt; 2=\abs{\mathcal{T}_{\operatorname{trivial}}}</m>. It follows that in this case we have
+        <me>
+        \mathcal{T}_{\operatorname{trivial}}\subsetneq \mathcal{T}_{\operatorname{cofinite}}=\mathcal{T}_{\operatorname{discrete}}=\mathcal{P}(X)
+        </me>.
+      </p>
+    </case>
+    <case>
+      <title>Case: <m>X</m> infinite</title>
+      <p>
+        Let <m>U</m> be any finite nonempty subset of <m>X</m>. Since <m>X</m> is infinite and <m>X=U\cup U^c</m>, it follows that <m>U^c</m> must be infinite, and hence that <m>U</m> is not cofinite. We conclude that <m>U\in \mathcal{T}_{\operatorname{discrete}}=\mathcal{P}(X)</m> and <m>U\notin \mathcal{T}_{\operatorname{cofinite}}</m>. Thus <m>\mathcal{T}_{\operatorname{cofinite}}\subsetneq \mathcal{T}_{\operatorname{discrete}}</m> in this case. Next, fix in any element <m>x\in X</m> and let <m>U=X-\{x\}</m>. It is clear (a) that <m>U</m> is cofinite, and (b) that
+        <m>U</m> is not equal to <m>\emptyset</m> or <m>X</m>. Thus <m>U\in\mathcal{T}_{\operatorname{cofinite}}</m> and <m>U\notin\mathcal{T}_{\operatorname{trivial}}</m>, proving that <m>\mathcal{T}_{\operatorname{trivial}}\subsetneq \mathcal{T}_{\operatorname{cofinite}}</m>. We conclude that
+        <me>
+        \mathcal{T}_{\operatorname{trivial}}\subsetneq \mathcal{T}_{\operatorname{cofinite}}\subsetneq \mathcal{T}_{\operatorname{discrete}}
+        </me>
+        in this case.
+
+      </p>
+    </case>
+
+  </solution>
+</example>
+</section>

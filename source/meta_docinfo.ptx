@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- The docinfo block is the analogue to the latex preamble -->
+<!-- This is where you can define macros and other book-wide -->
+<!--  settings.                                              -->
+<docinfo xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <!-- The next three lines are likely for mature projects only: -->
+
+  <brandlogo url="" source="tcu14_ppt_ch16.png"/>
+  <!-- <covers front="images/front.pdf" back="images/back.pdf"/> -->
+  <!-- <document-id>unique-book-id</document-id> -->
+
+  <!-- macros for defining latex math shortcuts. It is good practice  -->
+  <!-- to define these semantically, so that the macro relates to what-->
+  <!-- it defines.                                                    -->
+  <macros>
+    \newcommand{\Z}{{\mathbb Z}}
+      \newcommand{\Q}{{\mathbb Q}}
+      \newcommand{\R}{{\mathbb R}}
+      \newcommand{\C}{{\mathbb C}}
+      \newcommand{\T}{{\mathbb T}}
+      \newcommand{\F}{{\mathbb F}}
+      \newcommand{\HH}{{\mathbb H}}
+      \newcommand{\compose}{\circ}
+      \newcommand{\bolda}{{\mathbf a}}
+      \newcommand{\boldb}{{\mathbf b}}
+      \newcommand{\boldc}{{\mathbf c}}
+      \newcommand{\boldd}{{\mathbf d}}
+      \newcommand{\bolde}{{\mathbf e}}
+      \newcommand{\boldi}{{\mathbf i}}
+      \newcommand{\boldj}{{\mathbf j}}
+      \newcommand{\boldk}{{\mathbf k}}
+      \newcommand{\boldn}{{\mathbf n}}
+      \newcommand{\boldp}{{\mathbf p}}
+      \newcommand{\boldq}{{\mathbf q}}
+      \newcommand{\boldr}{{\mathbf r}}
+      \newcommand{\bolds}{{\mathbf s}}
+      \newcommand{\boldt}{{\mathbf t}}
+      \newcommand{\boldu}{{\mathbf u}}
+      \newcommand{\boldv}{{\mathbf v}}
+      \newcommand{\boldw}{{\mathbf w}}
+      \newcommand{\boldx}{{\mathbf x}}
+      \newcommand{\boldy}{{\mathbf y}}
+      \newcommand{\boldz}{{\mathbf z}}
+      \newcommand{\boldzero}{{\mathbf 0}}
+      \newcommand{\boldmod}{\boldsymbol{ \bmod }}
+      \newcommand{\boldT}{{\mathbf T}}
+      \newcommand{\boldN}{{\mathbf N}}
+      \newcommand{\boldB}{{\mathbf B}}
+      \newcommand{\boldF}{{\mathbf F}}
+      \newcommand{\boldS}{{\mathbf S}}
+      \newcommand{\boldE}{{\mathbf E}}
+      \newcommand{\boldG}{{\mathbf G}}
+      \newcommand{\boldK}{{\mathbf K}}
+      \newcommand{\boldL}{{\mathbf L}}
+      \DeclareMathOperator{\lcm}{lcm}
+      \DeclareMathOperator{\Span}{span}
+      \DeclareMathOperator{\tr}{tr}
+      \DeclareMathOperator{\NS}{null}
+      \DeclareMathOperator{\RS}{row}
+      \DeclareMathOperator{\CS}{col}
+      \DeclareMathOperator{\im}{im}
+      \DeclareMathOperator{\range}{range}
+      \DeclareMathOperator{\rank}{rank}
+      \DeclareMathOperator{\nullity}{nullity}
+      \DeclareMathOperator{\sign}{sign}
+      \DeclareMathOperator{\Fix}{Fix}
+      \DeclareMathOperator{\Aff}{Aff}
+      \DeclareMathOperator{\Frac}{Frac}
+      \DeclareMathOperator{\Ann}{Ann}
+      \DeclareMathOperator{\Tor}{Tor}
+      \DeclareMathOperator{\id}{id}
+      \DeclareMathOperator{\mdeg}{mdeg}
+      \DeclareMathOperator{\Lt}{Lt}
+      \DeclareMathOperator{\Lc}{Lc}
+      \DeclareMathOperator{\disc}{disc}
+      \DeclareMathOperator{\Frob}{Frob}
+      \DeclareMathOperator{\adj}{adj}
+      \DeclareMathOperator{\curl}{curl}
+      \DeclareMathOperator{\grad}{grad}
+      \DeclareMathOperator{\diver}{div}
+      \DeclareMathOperator{\flux}{flux}
+      \newcommand{\surjects}{\twoheadrightarrow}
+      \newcommand{\injects}{\hookrightarrow}
+      \newcommand{\bijects}{\leftrightarrow}
+      \newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+      \newcommand{\floor}[1]{\lfloor#1\rfloor}
+      \newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+      \newcommand{\mclass}[2][m]{[#2]_{#1}}
+      \newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+      \newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
+      \newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+      \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+      \newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+      \newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+      \newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+      \newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+      \newcommand{\normalin}{\trianglelefteq}
+      \newcommand{\angvec}[1]{\langle #1\rangle}
+      \newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+      \newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+      \newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+      \newenvironment{linsys}[2][m]{
+      \begin{array}[#1]{@{}*{#2}{rc}r@{}}
+      }{
+      \end{array}}
+  </macros>
+
+  <!-- If you put any latex-image elements you can include preambles  -->
+  <!-- for those in the next element.                                 -->
+  <latex-image-preamble>
+    \usepackage{tikz}
+    \usepackage{tikz-cd}
+    \usepackage{tkz-graph}
+    \usepackage{tkz-euclide}
+    \usepackage{pgfplots}
+    \usetikzlibrary{matrix,shapes,decorations.pathreplacing,fit,backgrounds}
+    \usetikzlibrary{patterns}
+    \usetikzlibrary{positioning}
+    \usetikzlibrary{arrows}
+    \usetikzlibrary{calc}
+    \usetikzlibrary{through,intersections,decorations,shadows,fadings}
+  </latex-image-preamble>
+
+  <!-- Renamings -->
+  <rename element="convention">Interpretation</rename>
+  <rename element="algorithm">Procedure</rename>
+  <rename element="principle">Mantra</rename>
+  <rename element="assumption">Fiat</rename>
+  <rename element="project">Topological specimen</rename>
+
+
+  <!-- Specify the default type of cross reference:           -->
+  <cross-references text="type-global" />
+
+
+</docinfo>
