@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Proof techniques</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math 334-1">
+<meta property="book:author" content="Aaron Greicius">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="http://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href="" target="_blank"><img src="external/tcu14_ppt_ch16.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="kursobjekt.html"><span class="title">Math 334-1:</span> <span class="subtitle">Kursobjekt</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>No results.</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="name">Index</span></a><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="s_logic.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="c_foundations.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="c_top_spaces.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+  \newcommand{\Q}{{\mathbb Q}}
+  \newcommand{\R}{{\mathbb R}}
+  \newcommand{\C}{{\mathbb C}}
+  \newcommand{\T}{{\mathbb T}}
+  \newcommand{\F}{{\mathbb F}}
+  \newcommand{\HH}{{\mathbb H}}
+  \newcommand{\compose}{\circ}
+  \newcommand{\bolda}{{\mathbf a}}
+  \newcommand{\boldb}{{\mathbf b}}
+  \newcommand{\boldc}{{\mathbf c}}
+  \newcommand{\boldd}{{\mathbf d}}
+  \newcommand{\bolde}{{\mathbf e}}
+  \newcommand{\boldi}{{\mathbf i}}
+  \newcommand{\boldj}{{\mathbf j}}
+  \newcommand{\boldk}{{\mathbf k}}
+  \newcommand{\boldn}{{\mathbf n}}
+  \newcommand{\boldp}{{\mathbf p}}
+  \newcommand{\boldq}{{\mathbf q}}
+  \newcommand{\boldr}{{\mathbf r}}
+  \newcommand{\bolds}{{\mathbf s}}
+  \newcommand{\boldt}{{\mathbf t}}
+  \newcommand{\boldu}{{\mathbf u}}
+  \newcommand{\boldv}{{\mathbf v}}
+  \newcommand{\boldw}{{\mathbf w}}
+  \newcommand{\boldx}{{\mathbf x}}
+  \newcommand{\boldy}{{\mathbf y}}
+  \newcommand{\boldz}{{\mathbf z}}
+  \newcommand{\boldzero}{{\mathbf 0}}
+  \newcommand{\boldmod}{\boldsymbol{ \bmod }}
+  \newcommand{\boldT}{{\mathbf T}}
+  \newcommand{\boldN}{{\mathbf N}}
+  \newcommand{\boldB}{{\mathbf B}}
+  \newcommand{\boldF}{{\mathbf F}}
+  \newcommand{\boldS}{{\mathbf S}}
+  \newcommand{\boldE}{{\mathbf E}}
+  \newcommand{\boldG}{{\mathbf G}}
+  \newcommand{\boldK}{{\mathbf K}}
+  \newcommand{\boldL}{{\mathbf L}}
+  \DeclareMathOperator{\lcm}{lcm}
+  \DeclareMathOperator{\Span}{span}
+  \DeclareMathOperator{\tr}{tr}
+  \DeclareMathOperator{\NS}{null}
+  \DeclareMathOperator{\RS}{row}
+  \DeclareMathOperator{\CS}{col}
+  \DeclareMathOperator{\im}{im}
+  \DeclareMathOperator{\range}{range}
+  \DeclareMathOperator{\rank}{rank}
+  \DeclareMathOperator{\nullity}{nullity}
+  \DeclareMathOperator{\sign}{sign}
+  \DeclareMathOperator{\Fix}{Fix}
+  \DeclareMathOperator{\Aff}{Aff}
+  \DeclareMathOperator{\Frac}{Frac}
+  \DeclareMathOperator{\Ann}{Ann}
+  \DeclareMathOperator{\Tor}{Tor}
+  \DeclareMathOperator{\id}{id}
+  \DeclareMathOperator{\mdeg}{mdeg}
+  \DeclareMathOperator{\Lt}{Lt}
+  \DeclareMathOperator{\Lc}{Lc}
+  \DeclareMathOperator{\disc}{disc}
+  \DeclareMathOperator{\Frob}{Frob}
+  \DeclareMathOperator{\adj}{adj}
+  \DeclareMathOperator{\curl}{curl}
+  \DeclareMathOperator{\grad}{grad}
+  \DeclareMathOperator{\diver}{div}
+  \DeclareMathOperator{\flux}{flux}
+  \newcommand{\surjects}{\twoheadrightarrow}
+  \newcommand{\injects}{\hookrightarrow}
+  \newcommand{\bijects}{\leftrightarrow}
+  \newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+  \newcommand{\floor}[1]{\lfloor#1\rfloor}
+  \newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+  \newcommand{\mclass}[2][m]{[#2]_{#1}}
+  \newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+  \newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+  \newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+  \newcommand{\normalin}{\trianglelefteq}
+  \newcommand{\angvec}[1]{\langle #1\rangle}
+  \newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+  \newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+  \newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+  \newenvironment{linsys}[2][m]{
+  \begin{array}[#1]{@{}*{#2}{rc}r@{}}
+  }{
+  \end{array}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li><div class="toc-item"><a href="meta_frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li>
+<div class="toc-item"><a href="c_foundations.html" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="s_sets_functions.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Sets and functions</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s_sets_functions.html#ss_sets" class="internal"><span class="title">Sets</span></a></div></li>
+<li><div class="toc-item"><a href="s_sets_functions.html#ss_functions" class="internal"><span class="title">Functions</span></a></div></li>
+<li><div class="toc-item"><a href="s_sets_functions.html#subsec-" class="internal"><span class="title">Cardinality and countability</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s_logic.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Logic</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s_logic.html#ss_propositional_calculus" class="internal"><span class="title">Propositional logic</span></a></div></li>
+<li><div class="toc-item"><a href="s_logic.html#ss_predicate_logic" class="internal"><span class="title">Predicate logic</span></a></div></li>
+</ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Proof techniques</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="s_proof_technique.html#ss_logical_structure" class="internal"><span class="title">Logical structure</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_implication" class="internal"><span class="title">Implication</span></a></div></li>
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_disjunction" class="internal"><span class="title">Disjunction</span></a></div></li>
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_equivalence" class="internal"><span class="title">Equivalence</span></a></div></li>
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_logical_chains" class="internal"><span class="title">Chains of implications/equivalences</span></a></div></li>
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_proof_by_contradiction" class="internal"><span class="title">Proof by contradiction</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s_proof_technique.html#ss_Equalities" class="internal"><span class="title">Equalities</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s_proof_technique.html#sss_chain_equalities" class="internal"><span class="title">Chain of equalities</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="s_proof_technique.html#ss_set_properties" class="internal"><span class="title">Basic set properties</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_set_inclusion" class="internal"><span class="title">Set inclusion</span></a></div></li>
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_set_equality" class="internal"><span class="title">Set equality</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s_proof_technique.html#ss_function_properties" class="internal"><span class="title">Basic function properties</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_function_equality" class="internal"><span class="title">Function equality</span></a></div></li>
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_injective_surjective_bijective" class="internal"><span class="title">Injective, surjective, bijective</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s_proof_technique.html#ss_mathematical_induction" class="internal"><span class="title">Mathematical induction</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_weak_induction" class="internal"><span class="title">Proof by induction</span></a></div></li>
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_strong_induction" class="internal"><span class="title">Proof by strong induction</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="c_top_spaces.html" class="internal"><span class="codenumber">1</span> <span class="title">Topological spaces and continuous functions</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s_top_spaces.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Topological spaces</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="backmatter-1.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="appendix-notation.html" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></div></li>
+<li><div class="toc-item"><a href="appendix-defs.html" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></div></li>
+<li><div class="toc-item"><a href="appendix-thms.html" class="internal"><span class="codenumber">C</span> <span class="title">Theory</span></a></div></li>
+<li><div class="toc-item"><a href="appendix-specimens.html" class="internal"><span class="codenumber">D</span> <span class="title">Topological specimens</span></a></div></li>
+<li><div class="toc-item"><a href="appendix-egs.html" class="internal"><span class="codenumber">E</span> <span class="title">Examples</span></a></div></li>
+<li><div class="toc-item"><a href="index-1.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_proof_technique"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">0.3</span> <span class="title">Proof techniques</span>
+</h2>
+<section class="introduction" id="introduction-3">Proof writing is an art, a technical skill you will hone and refine throughout your career; and like any art, proof writing has many tricks of the trade. We gather a few here in the form of a collection of general proof techniques. Part of mastering these techniques involves understanding the circumstances where they can be of use. When selecting a technique, we are guided in part by the logical structure and particular mathematical content of the proposition under consideration. The proof techniques below are organized under this guiding principle.</section><section class="subsection" id="ss_logical_structure"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Logical structure</span>
+</h3>
+<section class="subsubsection" id="sss_implication"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber"></span> <span class="title">Implication</span>
+</h4>
+<div class="para" id="p-97">By <a href="" class="xref" data-knowl="./knowl/d_logical_ops.html" title="Definition 0.2.1: Logical operators">Definition 0.2.1</a> the only time an implication  <span class="process-math">\(\mathcal{P}\implies\mathcal{Q}\)</span> is false is when <span class="process-math">\(\mathcal{P}\)</span> is true and <span class="process-math">\(\mathcal{Q}\)</span> is false. Accordingly, the <em class="emphasis">direct approach</em> to proving an implication <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span> is to assume <span class="process-math">\(\mathcal{P}\)</span> is true, and use this assumption to prove <span class="process-math">\(\mathcal{Q}\)</span> is true.</div>
+<div class="para" id="p-98">A common <em class="emphasis">indirect approach</em> used to prove an implication <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span> is to prove its <em class="emphasis">contrapositive</em>  <span class="process-math">\(\neg\mathcal{Q}\implies \neg \mathcal{P} \text{,}\)</span> which is logically equivalent to the original implication. In this case we assume <span class="process-math">\(\mathcal{Q}\)</span> is not true, and show <span class="process-math">\(\mathcal{P}\)</span> is not true. (Exercise: use a truth table to show the contrapositive is logically equivalent to the original implication.)</div>
+<article class="warning remark-like" id="warning-2"><h5 class="heading">
+<span class="type">Warning</span><span class="space"> </span><span class="codenumber">0.3.1</span><span class="period">.</span>
+</h5>
+<div class="para" id="p-99">The <em class="emphasis">converse</em> of an implication <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span> is the implication <span class="process-math">\(\mathcal{Q}\implies \mathcal{P}\text{;}\)</span> the <em class="emphasis">inverse</em> of <span class="process-math">\(\mathcal{P}\implies\mathcal{Q}\)</span> is the implication <span class="process-math">\(\neg\mathcal{P}\implies\neg\mathcal{Q}\text{.}\)</span> Neither the converse nor the inverse is equivalent to the original implication, and thus neither of these can be used to give an indirect proof of <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\text{.}\)</span> (Exercise: use a truth table to show that neither the converse nor the inverse implication is logically equivalent to the original implication. )</div></article></section><section class="subsubsection" id="sss_disjunction"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber"></span> <span class="title">Disjunction</span>
+</h4>
+<div class="para" id="p-100">Again, using <a href="" class="xref" data-knowl="./knowl/d_logical_ops.html" title="Definition 0.2.1: Logical operators">Definition 0.2.1</a>, to directly show a disjunction <span class="process-math">\(\mathcal{P}\text{ or }\mathcal{Q}\)</span> is true, we need only show one the two component propositions is true.</div>
+<div class="para" id="p-101">Alternatively, we can prove either of the implications <span class="process-math">\(\neg\mathcal{P}\implies\mathcal{Q}\)</span> or <span class="process-math">\(\neg Q\implies \mathcal{P}\text{,}\)</span> both of which are logically equivalent to <span class="process-math">\(\mathcal{P}\text{ or }\mathcal{Q}\text{.}\)</span> (Exercise: use a truth table to show these three propositions are indeed equivalent!)</div></section><section class="subsubsection" id="sss_equivalence"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber"></span> <span class="title">Equivalence</span>
+</h4>
+<span class="process-math">\(\mathcal{P}\iff\mathcal{Q}\)</span><div class="displaymath process-math">
+\begin{equation*}
+(\mathcal{P}\implies\mathcal{Q})\text{ and } (\mathcal{Q}\implies \mathcal{P})\text{.}
+\end{equation*}
+</div>
+<span class="process-math">\(\mathcal{P}\iff \mathcal{Q}\)</span><span class="process-math">\(\mathcal{P}\implies\mathcal{Q}\)</span><span class="process-math">\(\mathcal{Q}\implies\mathcal{P}\)</span></section><section class="subsubsection" id="sss_logical_chains"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber"></span> <span class="title">Chains of implications/equivalences</span>
+</h4>
+<div class="para logical" id="p-102">
+<div class="para">The relation “<span class="process-math">\(\mathcal{P}\)</span> implies <span class="process-math">\(\mathcal{Q}\)</span>” is transitive: i.e., if <span class="process-math">\(\mathcal{P}\implies\mathcal{Q}\)</span> and <span class="process-math">\(\mathcal{Q}\implies\mathcal{R}\text{,}\)</span> then <span class="process-math">\(\mathcal{P}\implies\mathcal{R}\text{.}\)</span> Similarly, the relation “<span class="process-math">\(\mathcal{P}\)</span> is equivalent to <span class="process-math">\(\mathcal{Q}\)</span>” is transitive. This allows us to prove an implication or equivalence via a <em class="emphasis">chain of implications</em> or <em class="emphasis">chain of equivalences</em>. When writing up a proof using this technique, use a vertically aligned format like the example below, treating one implication or equivalence per line, and adding a brief justification to the right:</div>
+<div class="displaymath process-math" id="md-10">
+\begin{align*}
+\mathcal{P} \amp \iff \mathcal{P_1}\amp\text{(justification)}\\
+\amp \iff \mathcal{P_2}\amp\text{(justification)} \\
+\amp \phantom{=}\vdots\\
+\amp \iff \mathcal{P_n}\amp\text{(justification)} \\
+\amp \iff \mathcal{Q}\amp\text{(justification)}\text{.}
+\end{align*}
+</div>
+<div class="para">It is also possible to build an argument as a hybrid chain of equivalences and implications. In this case the chain is only as strong as its weakest link. For example, a chain of the form</div>
+<div class="displaymath process-math" id="md-11">
+\begin{align*}
+\mathcal{P} \amp\iff\mathcal{Q} \amp\text{(justification)} \\
+\amp\implies \mathcal{R} \amp\text{(justification)} \\
+\amp\iff \mathcal{S} \amp\text{(justification)}
+\end{align*}
+</div>
+<div class="para">only shows that <span class="process-math">\(\mathcal{P}\implies\mathcal{S}\text{.}\)</span> Indeed, we will have <span class="process-math">\(\mathcal{P}\iff\mathcal{S}\)</span> if and only if the intervening implication <span class="process-math">\(\mathcal{Q}\implies\mathcal{R}\)</span> is in fact an equivalence (i.e., the arrow goes both ways).</div>
+</div>
+<article class="warning remark-like" id="warning-3"><h5 class="heading">
+<span class="type">Warning</span><span class="space"> </span><span class="codenumber">0.3.2</span><span class="period">.</span>
+</h5>
+<div class="para" id="p-103">It is often tempting, for the sake of space, to try and prove an equivalence <span class="process-math">\(\mathcal{P}\iff\mathcal{Q}\)</span> via a chain of equivalences, as opposed to showing <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span> and <span class="process-math">\(\mathcal{Q}\implies\mathcal{P}\)</span> separately. When proceeding in this manner, make doubly sure that each <span class="process-math">\(\iff\)</span> is indeed an equivalence: i.e., that the implication arrow really goes both ways at each step. Even if each step in your chain truly is an equivalence, you should consider whether this will be obvious to your reader.</div></article><div class="para" id="p-104">The example below provides the proof that a function is invertible if and only if it is bijective (<a href="" class="xref" data-knowl="./knowl/th_invertible_bijective.html" title="Theorem 0.1.27: Invertible is equivalent to bijective">Theorem 0.1.27</a>). The proof nicely illustrates some of the different techniques used for proving implications and equivalences. Additionally, it is a nice example of how to separate out cases of the argument into clearly distinguished steps.</div>
+<article class="example example-like" id="ex_invertible_bijective"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Proof: invertible is equivalent to bijective.</span>
+</h5>
+<div class="para" id="p-105">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> be a function. Prove: <span class="process-math">\(f\)</span> is invertible if and only if <span class="process-math">\(f\)</span> is bijective.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like">
+<div class="para" id="p-106">Let <span class="process-math">\(\mathcal{P}\)</span> be the proposition that <span class="process-math">\(f\)</span> is invertible, and let <span class="process-math">\(\mathcal{Q}\)</span> be the proposition that <span class="process-math">\(f\)</span> is bijective. We prove the equivalence <span class="process-math">\(\mathcal{P}\iff \mathcal{Q}\)</span> by proving the two implications <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span> and <span class="process-math">\(\mathcal{Q}\implies\mathcal{P}\text{.}\)</span>
+</div> <article class="case" id="case-1"><h6 class="heading">Proof of <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span>.</h6> <div class="para" id="p-107">We must show that if <span class="process-math">\(f\)</span> is invertible, then <span class="process-math">\(f\)</span> is bijective. Assume <span class="process-math">\(f\)</span> is invertible. Then <span class="process-math">\(f\)</span> has an inverse <span class="process-math">\(f^{-1}\text{.}\)</span> We show separately that <span class="process-math">\(f\)</span> is injective and surjective, hence bijective.</div> <article class="case" id="case-2"><h6 class="heading">
+<span class="process-math">\(f\)</span> is injective.</h6> <div class="para logical" id="p-108">
+<div class="para">We show <span class="process-math">\(f(x)=f(x')\implies x=x'\)</span> via a chain of implications:</div>
+<div class="displaymath process-math" id="md-12">
+\begin{align*}
+f(x)=f(x') \amp \implies f^{-1}(f(x))=f^{-1}(f(x'))\\
+\amp\implies x=x' \amp (f^{-1}\circ f=\id_X) \text{.}
+\end{align*}
+</div>
+</div></article> <article class="case" id="case-3"><h6 class="heading">
+<span class="process-math">\(f\)</span> is surjective.</h6> <div class="para logical" id="p-109">
+<div class="para">Let <span class="process-math">\(b\)</span> be an element of <span class="process-math">\(Y\text{.}\)</span> We must show that there is an <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(f(x)=y\text{.}\)</span> Letting <span class="process-math">\(x=f^{-1}(y)\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="md-13">
+\begin{align*}
+f(x) \amp = f(f^{-1}(y))\\
+\amp = y \amp (f\circ f^{-1}=\id_Y)\text{.}
+\end{align*}
+</div>
+</div></article></article> <article class="case" id="case-4"><h6 class="heading">Proof of <span class="process-math">\(\mathcal{Q}\implies\mathcal{P}\)</span>.</h6> <div class="para" id="p-110">We must show that if <span class="process-math">\(f\)</span> is bijective, then <span class="process-math">\(f\)</span> is invertible. Assume <span class="process-math">\(f\)</span> is bijective. First we define a function <span class="process-math">\(g\colon Y\rightarrow X\)</span> as follows: for all <span class="process-math">\(y\in Y\text{,}\)</span> let <span class="process-math">\(g(y)\)</span> be the unique element <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(f(x)=y\text{.}\)</span> Note that our definition of <span class="process-math">\(g\)</span> uses both that <span class="process-math">\(f\)</span> is surjective (there is <em class="emphasis">some</em> element <span class="process-math">\(x\)</span> such that <span class="process-math">\(f(x)=y\)</span>)) and injective (there is <em class="emphasis">exactly one</em> element <span class="process-math">\(x\)</span> such that <span class="process-math">\(f(x)=y\)</span>).</div> <div class="para" id="p-111">We now prove that <span class="process-math">\(g\)</span> is the inverse of <span class="process-math">\(f\text{,}\)</span> showing <span class="process-math">\(g\circ f=\id_X\)</span> and <span class="process-math">\(f\circ g=\id_Y\)</span> separately.</div> <article class="case" id="case-5"><h6 class="heading">
+<span class="process-math">\(g\circ f=\id_X\)</span>.</h6> <div class="para" id="p-112">Take any <span class="process-math">\(x\in X\)</span> and let <span class="process-math">\(y=f(x)\text{.}\)</span> By definition of <span class="process-math">\(g\text{,}\)</span> we have <span class="process-math">\(g(y)=x\)</span> and hence <span class="process-math">\(g(f(x))=g(y)=x\text{.}\)</span> This proves <span class="process-math">\(g\circ f=\id_X\text{.}\)</span>
+</div></article> <article class="case" id="case-6"><h6 class="heading">
+<span class="process-math">\(f\circ g=\id_Y\)</span>.</h6> <div class="para" id="p-113">Take any <span class="process-math">\(y\in Y\text{.}\)</span> By definition of <span class="process-math">\(g\text{,}\)</span> <span class="process-math">\(g(y)\)</span> is the unique <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(f(x)=y\text{.}\)</span> Thus <span class="process-math">\(f(g(y))=f(x)=y\text{.}\)</span> This proves <span class="process-math">\(f\circ g=\id_Y\text{.}\)</span>
+</div></article></article>
+</div></div>
+</div></article></section><section class="subsubsection" id="sss_proof_by_contradiction"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber"></span> <span class="title">Proof by contradiction</span>
+</h4>
+<em class="emphasis">proof by contradiction</em><em class="emphasis">reductio ad absurdum</em><span class="process-math">\(\mathcal{P}\)</span><span class="process-math">\(\neg\mathcal{P}\)</span><span class="process-math">\(\mathcal{Q}\)</span><span class="process-math">\(\mathcal{Q}\)</span><span class="process-math">\(\mathcal{Q}\)</span><article class="example example-like" id="ex_proof_by_contradiction"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Proof by contradiction.</span>
+</h5>
+<div class="para" id="p-114">Prove by contradiction that <span class="process-math">\(0\)</span> has no multiplicative inverse in the reals: i.e., there is no <span class="process-math">\(r\in\R\)</span> such that <span class="process-math">\(r\cdot 0=1\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like"><div class="para" id="p-115">We prove the claim by contradiction. Assume there is an <span class="process-math">\(r\in \R\)</span> such that <span class="process-math">\(r\cdot 0=1\text{.}\)</span> Since <span class="process-math">\(r\cdot 0=0\)</span> for any <span class="process-math">\(r\in \R\)</span> (a property of multiplication by 0), we have <span class="process-math">\(1=r\cdot 0=0\text{:}\)</span> a contradiction since <span class="process-math">\(1\ne 0\text{.}\)</span> We conclude that there is no <span class="process-math">\(r\in \R\)</span> such that <span class="process-math">\(r\cdot 0=1\text{.}\)</span>
+</div></div></div>
+</div></article><article class="remark remark-like" id="rm_proof_by_contradiction"><h5 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">0.3.5</span><span class="period">.</span>
+</h5>
+<div class="para" id="p-116">Proof by contradiction resembles, but is not quite the same  thing as proving an implication via its contrapositive. Letting <span class="process-math">\(F\)</span> denote an arbitrary falsehood (the <span class="process-math">\(\mathcal{Q}\)</span> described above) what we do in a proof by contradiction is show that the implication <span class="process-math">\(\neg \mathcal{P}\implies F\)</span> is true. Since <span class="process-math">\(F\)</span> is false, and the implication is true, <span class="process-math">\(\neg \mathcal{P}\)</span> must be false: equivalently, <span class="process-math">\(\mathcal{P}\)</span> must be true.</div></article></section></section><section class="subsection" id="ss_Equalities"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Equalities</span>
+</h3>
+<section class="introduction" id="introduction-4"><div class="para logical" id="p-117">
+<div class="para">Equality is not as simple as it may seem. In general an equality is a mathematical statement of the form</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ss_set_properties.html ./knowl/ss_function_properties.html" id="eq_equality">
+\begin{equation}
+\text{LHS}=\text{RHS}\text{.}\tag{0.3.1}
+\end{equation}
+</div>
+<div class="para">Here “LHS” and “RHS” stand for left- and right-hand side, respectively. What exactly such an equality means depends very much on what kind of mathematical objects the two sides of the equation are: e.g., numbers, sets, functions, etc. Below we discuss equality for objects of a particular type in detail. (See <a href="s_proof_technique.html#ss_set_properties" class="internal" title="Subsection: Basic set properties">Basic set properties</a> and <a href="s_proof_technique.html#ss_function_properties" class="internal" title="Subsection: Basic function properties">Basic function properties</a>.) In all settings, the notion of equality will be <em class="emphasis">transitive</em>: i.e., if <span class="process-math">\(x=y\)</span> and <span class="process-math">\(y=z\text{,}\)</span> then <span class="process-math">\(x=z\text{.}\)</span> We use transitivity implicitly when proving an equality via a <em class="emphasis">chain of equalities</em> as described below.</div>
+</div></section><section class="subsubsection" id="sss_chain_equalities"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber"></span> <span class="title">Chain of equalities</span>
+</h4>
+<a href="" class="xref" data-knowl="./knowl/eq_equality.html" title="Equation 0.3.1">(0.3.1)</a><div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_equality.html" id="md-14">
+\begin{align*}
+\text{LHS} \amp =\text{something}\amp (\text{justifiction})\\
+\amp =\text{something}\amp (\text{justifiction})\\
+\amp \phantom{=}\vdots \\
+\amp=\text{RHS} \amp (\text{justifiction})\text{.}
+\end{align*}
+</div>
+<article class="warning remark-like" id="warning-4"><h5 class="heading">
+<span class="type">Warning</span><span class="space"> </span><span class="codenumber">0.3.6</span><span class="period">.</span>
+</h5>
+<div class="para logical" id="p-118">
+<div class="para">Never attempt to prove an equality by starting off with the equality you wish to prove, and then deduce a series of further equalities ending in some inanity: e.g.,</div>
+<div class="displaymath process-math" id="md-15">
+\begin{align*}
+\text{LHS}\amp =\text{RHS} \\
+\text{something}\amp=\text{something} \\
+\amp\phantom{=}\vdots \\
+0 \amp = 0\text{.}
+\end{align*}
+</div>
+<div class="para">What this suggests is that you are in fact proving an implication: namely, <em class="emphasis">if</em> the desired equality is true, <em class="emphasis">then</em> <span class="process-math">\(0=0\text{.}\)</span> Clearly this is not what we set out to prove! This type of fallacious argument is called “begging the question” (<em class="emphasis">petitio princippii</em> in Latin), as we assume that which was to be proven.</div>
+</div></article></section></section><section class="subsection" id="ss_set_properties"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Basic set properties</span>
+</h3>
+<section class="subsubsection" id="sss_set_inclusion"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber"></span> <span class="title">Set inclusion</span>
+</h4>
+<div class="para logical" id="p-119">
+<div class="para">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be sets. By <a href="" class="xref" data-knowl="./knowl/d_set_inclusion.html" title="Definition 0.1.3: Set inclusion (subsets)">Definition 0.1.3</a>, to prove <span class="process-math">\(A\subseteq B\)</span> we must show that for all elements <span class="process-math">\(x\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_set_inclusion.html ./knowl/sss_implication.html ./knowl/sss_logical_chains.html">
+\begin{equation*}
+x\in A\implies x\in B\text{.}
+\end{equation*}
+</div>
+<div class="para">This requires proving the implication above for a general element <span class="process-math">\(x\text{,}\)</span> and we may use any of  the techniques described in <a href="s_proof_technique.html#sss_implication" class="internal" title="Subsubsection: Implication">Implication</a> and <a href="s_proof_technique.html#sss_logical_chains" class="internal" title="Subsubsection: Chains of implications/equivalences">Chains of implications/equivalences</a> to do so.</div>
+</div></section><section class="subsubsection" id="sss_set_equality"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber"></span> <span class="title">Set equality</span>
+</h4>
+<div class="para logical" id="p-120">
+<div class="para">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be sets. To prove <span class="process-math">\(A=B\)</span> directly using <a href="" class="xref" data-knowl="./knowl/d_set_equality.html" title="Definition 0.1.2: Set equality">Definition 0.1.2</a> we must show that for all elements <span class="process-math">\(x\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_set_equality.html">
+\begin{equation*}
+x\in A \iff x\in B\text{.}
+\end{equation*}
+</div>
+<div class="para">To prove this universal equivalence, we must give an argument for the equivalence that holds for a general element <span class="process-math">\(x\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="p-121">Alternatively, you can prove <span class="process-math">\(A=B\)</span> by proving the two set inclusions <span class="process-math">\(A\subseteq B\)</span> and <span class="process-math">\(B\subseteq A\)</span> separately. This is equivalent to proving the two implications <span class="process-math">\(x\in A\implies x\in B\)</span> and <span class="process-math">\(x\in B\implies x\in A\)</span> separately.</div></section></section><section class="subsection" id="ss_function_properties"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Basic function properties</span>
+</h3>
+<section class="subsubsection" id="sss_function_equality"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber"></span> <span class="title">Function equality</span>
+</h4>
+<div class="para logical" id="p-122">
+<div class="para">By <a href="" class="xref" data-knowl="./knowl/d_function_equality.html" title="Definition 0.1.21: Function equality">Definition 0.1.21</a>, in order to show functions <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are equal we must</div>
+<ol class="lower-roman">
+<li id="li-23"><div class="para" id="p-123">show that <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> have the same domain <span class="process-math">\(X\)</span> and codomain <span class="process-math">\(Y\text{,}\)</span> and</div></li>
+<li id="li-24"><div class="para" id="p-124">show that <span class="process-math">\(f(x)=g(x)\)</span> for all <span class="process-math">\(x\in X \text{.}\)</span>
+</div></li>
+</ol>
+</div>
+<a href="" class="xref" data-knowl="./knowl/d_function_equality.html" title="Definition 0.1.21: Function equality">Definition 0.1.21</a>“for all <span class="process-math">\(x\in X\)</span>”<em class="emphasis">identity</em><span class="process-math">\(f(x)=g(x)\)</span><em class="emphasis">for all</em><span class="process-math">\(x\in X\text{.}\)</span><span class="process-math">\(f(x)\ne g(x)\)</span><span class="process-math">\(x\in X\text{.}\)</span></section><section class="subsubsection" id="sss_injective_surjective_bijective"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber"></span> <span class="title">Injective, surjective, bijective</span>
+</h4>
+<div class="para" id="p-125">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> be a function.</div>
+<article class="case" id="case-7"><h5 class="heading">Injectivity.</h5> <div class="para logical" id="p-126">
+<div class="para">To show <span class="process-math">\(f\)</span> is injective, we must show that the implication</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x)=f(x')\implies x=x'
+\end{equation*}
+</div>
+<div class="para">holds for all <span class="process-math">\(x,x'\in \text{.}\)</span> Frequently it will be convenient to prove the (universal) contrapositive:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x\ne x'\implies f(x)\ne f(x')
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(x,x'\in X\text{.}\)</span>
+</div>
+</div> <div class="para" id="p-127">Similarly, to show <span class="process-math">\(f\)</span> is not injective, we simply have to find <span class="process-math">\(x, x'\in X\)</span> satisfying <span class="process-math">\(x\ne x'\)</span> and <span class="process-math">\(f(x)=f(x')\text{.}\)</span>
+</div></article><article class="case" id="case-8"><h5 class="heading">Surjectivity.</h5> <div class="para logical" id="p-128">
+<div class="para">To prove <span class="process-math">\(f\)</span> is surjective, we must prove the universal quantification:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/rm_negating_quantifiers.html">
+\begin{equation*}
+\text{for all } y\in Y, \text{ there exists an } x\in X\ \text{ such that } f(x)=y\text{.}
+\end{equation*}
+</div>
+<div class="para">To prove <span class="process-math">\(f\)</span> is <em class="emphasis">not</em> surjective, we must prove the negation of this proposition (<a href="" class="xref" data-knowl="./knowl/rm_negating_quantifiers.html" title="Remark 0.2.9: Negating quantifiers">Remark 0.2.9</a>): i.e., there exists a <span class="process-math">\(y\in Y\)</span> for which there is no <span class="process-math">\(x\in X\)</span> with <span class="process-math">\(f(x)=y\text{.}\)</span>
+</div>
+</div></article><article class="case" id="case-9"><h5 class="heading">Bijectivity.</h5> <div class="para" id="p-129">To show <span class="process-math">\(f\)</span> is bijective directly using <a href="" class="xref" data-knowl="./knowl/d_injective_surjective_bijective.html" title="Definition 0.1.23: Injective, surjective, bijective">Definition 0.1.23</a>, we must show that <span class="process-math">\(f\)</span> is injective and surjective. This is equivalent to showing that for <span class="process-math">\(y\in Y\)</span> there exists a <em class="emphasis">unique</em> element <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(f(x)=y\text{.}\)</span>
+</div> <div class="para" id="p-130">Alternatively, using <a href="" class="xref" data-knowl="./knowl/th_invertible_bijective.html" title="Theorem 0.1.27: Invertible is equivalent to bijective">Theorem 0.1.27</a> we can show that <span class="process-math">\(f\)</span> is bijective by providing an inverse function <span class="process-math">\(f^{-1}\colon Y\rightarrow X\text{.}\)</span>
+</div></article></section></section><section class="subsection" id="ss_mathematical_induction"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Mathematical induction</span>
+</h3>
+<section class="introduction" id="introduction-5"><div class="para logical" id="p-131">
+<div class="para">
+<em class="emphasis">Mathematical induction</em> is a technique for proving universal quantifications of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{For all integers } n\geq b, \, P(n)\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(b\)</span> is a fixed starting integer, called the <dfn class="terminology">base</dfn>, and <span class="process-math">\(P\)</span> is a predicate defined on the integers. If the setting makes clear that <span class="process-math">\(n\)</span> ranges over integers, we write such propositions using logical notation as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall n\geq b\, P(n)\text{.}
+\end{equation*}
+</div>
+</div></section><section class="subsubsection" id="sss_weak_induction"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber"></span> <span class="title">Proof by induction</span>
+</h4>
+<div class="para" id="p-132">Suppose <span class="process-math">\(P\)</span> is a predicate of integers. To prove the proposition <span class="process-math">\(\forall n\geq b\, P(n)\)</span> by <dfn class="terminology">induction</dfn> (sometimes called <dfn class="terminology">weak induction</dfn>), we proceed in two steps.</div>
+<article class="case" id="case-10"><h5 class="heading">Base step.</h5> <div class="para" id="p-133">Show that <span class="process-math">\(P(b)\)</span> is true.</div></article><article class="case" id="case-11"><h5 class="heading">Induction step.</h5> <div class="para logical" id="p-134">
+<div class="para">Prove the universal implication</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall n\geq b\, P(n)\implies P(n+1)\text{.}
+\end{equation*}
+</div>
+<div class="para">In practice, if proving the implication <span class="process-math">\(P(n)\implies P(n+1)\)</span> directly, this means we assume <span class="process-math">\(P(n)\)</span> is true (the <dfn class="terminology">induction hypothesis</dfn>), and use this assumption to show <span class="process-math">\(P(n+1)\)</span> is true.</div>
+</div></article><article class="remark remark-like" id="rm_induction"><h5 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">0.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">“Step 0” of induction.</span>
+</h5> <div class="para logical" id="p-135">
+<div class="para">When meeting a proposition in the wild that we wish to prove by induction, you should first take care to model the proposition in the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall n\geq b\, P(n)\text{.}
+\end{equation*}
+</div>
+<div class="para">Make explicit the predicate <span class="process-math">\(P\)</span> in question, as well as the base case <span class="process-math">\(b\text{.}\)</span> We illustrate this preparatory “Step 0” in the examples below.</div>
+</div></article><article class="example example-like" id="eg_weak_induction"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Weak induction.</span>
+</h5>
+<div class="para logical" id="p-136">
+<div class="para">Prove the identity</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{k=1}^n k=\frac{n(n+1)}{2}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(n\geq 1\text{.}\)</span> Recall:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{k=1}^n k=1+2+\cdots +n\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like">
+<div class="para" id="p-137">We prove the proposition by induction.</div> <article class="case" id="case-12"><h6 class="heading">Step 0: preparation.</h6> <div class="para logical" id="p-138">
+<div class="para">The proposition is modeled logically as <span class="process-math">\(\forall n\geq 1 \, P(n)\text{,}\)</span> where <span class="process-math">\(P(n)\)</span> is the proposition that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{k=1}^n k=\frac{n(n+1)}{2}\text{.}
+\end{equation*}
+</div>
+</div></article> <article class="case" id="case-13"><h6 class="heading">Base step: <span class="process-math">\(n=1\)</span>.</h6> <div class="para logical" id="p-139">
+<div class="para">The proposition <span class="process-math">\(P(1)\)</span> is the statement that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1=\frac{1(1+1)}{2}\text{,}
+\end{equation*}
+</div>
+<div class="para">which is clearly true.</div>
+</div></article> <article class="case" id="case-14"><h6 class="heading">Induction step.</h6> <div class="para logical" id="p-140">
+<div class="para">We must show the universal implication</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall n\geq 1\, P(n)\implies P(n+1)\text{.}
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(n\geq 1\text{,}\)</span> and assume <span class="process-math">\(P(n)\)</span> is true: i.e.,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{k=1}^n k=\frac{n(n+1)}{2}
+\end{equation*}
+</div>
+<div class="para">The proposition <span class="process-math">\(P(n+1)\)</span> states that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{k=1}^{n+1} k=\frac{(n+1)(n+2)}{2}\text{.}
+\end{equation*}
+</div>
+<div class="para">We prove this, assuming <span class="process-math">\(P(n)\text{,}\)</span> via a chain of equalities:</div>
+<div class="displaymath process-math" id="md-16">
+\begin{align*}
+\sum_{k=1}^{n+1} k\amp= \sum_{k=1}^{n} k+(n+1) \\
+\amp=\frac{n(n+1)}{2}+n+1\amp (\text{induction hyp.}) \\
+\amp =\frac{n(n+1)+2(n+1)}{2}\\
+\amp =\frac{(n+1)(n+2)}{2}\text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div></article> <div class="para" id="p-141">Having completed our base and induction steps, our proof is now finished.</div>
+</div></div>
+</div></article><div class="para" id="p-142">So why does proof by induction work? In other words, why is it a valid proof technique? Imagine our propositions <span class="process-math">\(P(n)\)</span> as forming an infinite ladder that we wish to ascend. Cautious climbers that we are, we only will step on a rung if we know the corresponding proposition is true. Knowing <span class="process-math">\(P(b)\)</span> is true (the base step) allows us to step onto the first rung. The universal implication <span class="process-math">\(\forall n\geq b\, P(n)\implies P(n+1)\)</span> (induction step) gives us a <em class="emphasis">rule</em> that says if rung <span class="process-math">\(n\)</span> is secure (i.e., true), then so is rung <span class="process-math">\(n+1\text{.}\)</span> Since this rule holds for all rungs (i.e., for all <span class="process-math">\(n\geq b\)</span>), we can safely ascend the entire ladder! <figure class="figure figure-like" id="fig_proof_induction"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/im_proof_induction.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">0.3.9<span class="period">.</span></span><span class="space"> </span>Mathematical induction as ladder of propositions</figcaption></figure> </div></section><section class="subsubsection" id="sss_strong_induction"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber"></span> <span class="title">Proof by strong induction</span>
+</h4>
+<div class="para" id="p-143">Suppose <span class="process-math">\(P\)</span> is a predicate of integers. To prove the proposition <span class="process-math">\(\forall n\geq b P(n)\)</span> by <dfn class="terminology">strong induction</dfn>, we proceed in two steps.</div>
+<article class="case" id="case-15"><h5 class="heading">Base step: <span class="process-math">\(n=b\)</span>.</h5> <div class="para" id="p-144">Show that <span class="process-math">\(P(b)\)</span> is true.</div></article><article class="case" id="case-16"><h5 class="heading">Strong induction step.</h5> <div class="para logical" id="p-145">
+<div class="para">Prove the universal implication</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall n\geq b\, \left(P(b)\land P(b+1)\cdots \land P(n)\right) \implies P(n+1)\text{.}
+\end{equation*}
+</div>
+<div class="para">This technique is called strong induction, as now the induction hypothesis is much stronger: to prove this implication directly we assume <span class="process-math">\(P(k)\)</span> is true for all <span class="process-math">\(1\leq k\leq n\)</span> (not just <span class="process-math">\(k=n\)</span> as in weak induction), and use this assumption to show <span class="process-math">\(P(n+1)\)</span> is true.</div>
+</div></article><div class="para" id="p-146">In fact, strong induction is, logically speaking, no stronger than weak induction. Both techniques apply to propositions of the form <span class="process-math">\(\forall n\geq b\, P(n)\text{,}\)</span> and you are free to choose which form of induction to use each time. We typically use strong induction out of convenience, when the nature of the predicate <span class="process-math">\(P\)</span> is such that we can prove <span class="process-math">\(P(n+1)\)</span> most elegantly by assuming <span class="process-math">\(P(b), P(b+1), \dots, P(n)\text{,}\)</span> as opposed to just <span class="process-math">\(P(n)\text{.}\)</span> The following example is characteristic in this regard.</div>
+<article class="example example-like" id="eg_strong_induction"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Strong induction.</span>
+</h5>
+<div class="para" id="p-147">Prove that every integer <span class="process-math">\(n\geq 2\)</span> can be written as a product of primes.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-7" id="solution-7"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-7"><div class="solution solution-like">
+<div class="para" id="p-148">We prove the statement by induction.</div> <article class="case" id="case-17"><h6 class="heading">Step 0: preparation.</h6> <div class="para" id="p-149">The proposition is modeled logically as <span class="process-math">\(\forall n\geq 2\, P(n)\text{,}\)</span> where <span class="process-math">\(P(n)\)</span> is the proposition that <span class="process-math">\(n\)</span> is a product of primes.</div></article> <article class="case" id="case-18"><h6 class="heading">Base step: <span class="process-math">\(n=2\)</span>.</h6> <div class="para" id="p-150">The proposition <span class="process-math">\(P(2)\)</span> asserts that <span class="process-math">\(2\)</span> is a product of primes. This is true since <span class="process-math">\(2\)</span> is itself prime, hence a product of one prime number.</div></article> <article class="case" id="case-19"><h6 class="heading">Strong induction step.</h6> <div class="para logical" id="p-151">
+<div class="para">We must show the universal implication</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall n\geq 2\, \left( P(1)\land P(2)\land\cdots \land P(n)\right)\implies P(n+1)\text{.}
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(n\geq 2\text{,}\)</span> and assume <span class="process-math">\(P(k)\)</span> is true for all <span class="process-math">\(2\leq k\leq n\text{:}\)</span> i.e., for all such <span class="process-math">\(k\)</span> we assume <span class="process-math">\(k\)</span> can be written as a product of primes. We use this assumption to prove <span class="process-math">\(P(n+1)\text{:}\)</span> i.e., that <span class="process-math">\(n+1\)</span> is a product of primes. We proceed in two cases, depending on whether <span class="process-math">\(n+1\)</span> is itself prime.</div>
+</div> <article class="case" id="case-20"><h6 class="heading">Case 1: <span class="process-math">\(n+1\)</span> is prime.</h6> <div class="para" id="p-152">If <span class="process-math">\(n+1\)</span> is prime, then it is trivially a product of one prime number, just as with the base case.</div></article> <article class="case" id="case-21"><h6 class="heading">Case2 : <span class="process-math">\(n+1\)</span> is not prime.</h6> <div class="para logical" id="p-153">
+<div class="para">If <span class="process-math">\(n+1\)</span> is not prime, then we can factor <span class="process-math">\(n+1\)</span> nontrivially as  <span class="process-math">\(n+1=k_1k_2\text{.}\)</span> Here “nontrivially” means that we have <span class="process-math">\(2\leq k_1,k_2\leq n\text{.}\)</span> Using the strong induction hypothesis, we may assume that <span class="process-math">\(k_1\)</span> and <span class="process-math">\(k_2\)</span> are both products of primes: i.e., we have</div>
+<div class="displaymath process-math" id="md-17">
+\begin{align*}
+k_1 \amp=p_1p_2\cdots p_r \amp k_2=q_1q_2\cdots q_s\text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(p_i\)</span> and <span class="process-math">\(q_j\)</span>  are prime for all <span class="process-math">\(1\leq i\leq r\)</span> and <span class="process-math">\(1\leq j\leq s\text{.}\)</span> It follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+n+1=k_1k_2=p_1p_2\cdots p_rq_1q_2\cdots q_s\text{,}
+\end{equation*}
+</div>
+<div class="para">and hence that <span class="process-math">\(n+1\)</span> is also a product of primes, as desired.</div>
+</div></article></article> <div class="para" id="p-154">Having completed the base and induction steps, our proof by induction is now finished.</div>
+</div></div>
+</div></article></section></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="s_logic.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="c_top_spaces.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Authored in PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div>
+</body>
+</html>

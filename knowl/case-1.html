@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="case"><h6 class="heading">Proof of <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span>.</h6> <div class="para">We must show that if <span class="process-math">\(f\)</span> is invertible, then <span class="process-math">\(f\)</span> is bijective. Assume <span class="process-math">\(f\)</span> is invertible. Then <span class="process-math">\(f\)</span> has an inverse <span class="process-math">\(f^{-1}\text{.}\)</span> We show separately that <span class="process-math">\(f\)</span> is injective and surjective, hence bijective.</div> <article class="case"><h6 class="heading">
+<span class="process-math">\(f\)</span> is injective.</h6> <div class="para logical">
+<div class="para">We show <span class="process-math">\(f(x)=f(x')\implies x=x'\)</span> via a chain of implications:</div>
+<div class="displaymath process-math">
+\begin{align*}
+f(x)=f(x') \amp \implies f^{-1}(f(x))=f^{-1}(f(x'))\\
+\amp\implies x=x' \amp (f^{-1}\circ f=\id_X) \text{.}
+\end{align*}
+</div>
+</div></article> <article class="case"><h6 class="heading">
+<span class="process-math">\(f\)</span> is surjective.</h6> <div class="para logical">
+<div class="para">Let <span class="process-math">\(b\)</span> be an element of <span class="process-math">\(Y\text{.}\)</span> We must show that there is an <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(f(x)=y\text{.}\)</span> Letting <span class="process-math">\(x=f^{-1}(y)\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+f(x) \amp = f(f^{-1}(y))\\
+\amp = y \amp (f\circ f^{-1}=\id_Y)\text{.}
+\end{align*}
+</div>
+</div></article></article><span class="incontext"><a href="s_proof_technique.html#case-1" class="internal">in-context</a></span>
+</body>
+</html>

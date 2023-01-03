@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Logic</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math 334-1">
+<meta property="book:author" content="Aaron Greicius">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="http://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href="" target="_blank"><img src="external/tcu14_ppt_ch16.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="kursobjekt.html"><span class="title">Math 334-1:</span> <span class="subtitle">Kursobjekt</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>No results.</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="name">Index</span></a><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="s_sets_functions.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="c_foundations.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="s_proof_technique.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+  \newcommand{\Q}{{\mathbb Q}}
+  \newcommand{\R}{{\mathbb R}}
+  \newcommand{\C}{{\mathbb C}}
+  \newcommand{\T}{{\mathbb T}}
+  \newcommand{\F}{{\mathbb F}}
+  \newcommand{\HH}{{\mathbb H}}
+  \newcommand{\compose}{\circ}
+  \newcommand{\bolda}{{\mathbf a}}
+  \newcommand{\boldb}{{\mathbf b}}
+  \newcommand{\boldc}{{\mathbf c}}
+  \newcommand{\boldd}{{\mathbf d}}
+  \newcommand{\bolde}{{\mathbf e}}
+  \newcommand{\boldi}{{\mathbf i}}
+  \newcommand{\boldj}{{\mathbf j}}
+  \newcommand{\boldk}{{\mathbf k}}
+  \newcommand{\boldn}{{\mathbf n}}
+  \newcommand{\boldp}{{\mathbf p}}
+  \newcommand{\boldq}{{\mathbf q}}
+  \newcommand{\boldr}{{\mathbf r}}
+  \newcommand{\bolds}{{\mathbf s}}
+  \newcommand{\boldt}{{\mathbf t}}
+  \newcommand{\boldu}{{\mathbf u}}
+  \newcommand{\boldv}{{\mathbf v}}
+  \newcommand{\boldw}{{\mathbf w}}
+  \newcommand{\boldx}{{\mathbf x}}
+  \newcommand{\boldy}{{\mathbf y}}
+  \newcommand{\boldz}{{\mathbf z}}
+  \newcommand{\boldzero}{{\mathbf 0}}
+  \newcommand{\boldmod}{\boldsymbol{ \bmod }}
+  \newcommand{\boldT}{{\mathbf T}}
+  \newcommand{\boldN}{{\mathbf N}}
+  \newcommand{\boldB}{{\mathbf B}}
+  \newcommand{\boldF}{{\mathbf F}}
+  \newcommand{\boldS}{{\mathbf S}}
+  \newcommand{\boldE}{{\mathbf E}}
+  \newcommand{\boldG}{{\mathbf G}}
+  \newcommand{\boldK}{{\mathbf K}}
+  \newcommand{\boldL}{{\mathbf L}}
+  \DeclareMathOperator{\lcm}{lcm}
+  \DeclareMathOperator{\Span}{span}
+  \DeclareMathOperator{\tr}{tr}
+  \DeclareMathOperator{\NS}{null}
+  \DeclareMathOperator{\RS}{row}
+  \DeclareMathOperator{\CS}{col}
+  \DeclareMathOperator{\im}{im}
+  \DeclareMathOperator{\range}{range}
+  \DeclareMathOperator{\rank}{rank}
+  \DeclareMathOperator{\nullity}{nullity}
+  \DeclareMathOperator{\sign}{sign}
+  \DeclareMathOperator{\Fix}{Fix}
+  \DeclareMathOperator{\Aff}{Aff}
+  \DeclareMathOperator{\Frac}{Frac}
+  \DeclareMathOperator{\Ann}{Ann}
+  \DeclareMathOperator{\Tor}{Tor}
+  \DeclareMathOperator{\id}{id}
+  \DeclareMathOperator{\mdeg}{mdeg}
+  \DeclareMathOperator{\Lt}{Lt}
+  \DeclareMathOperator{\Lc}{Lc}
+  \DeclareMathOperator{\disc}{disc}
+  \DeclareMathOperator{\Frob}{Frob}
+  \DeclareMathOperator{\adj}{adj}
+  \DeclareMathOperator{\curl}{curl}
+  \DeclareMathOperator{\grad}{grad}
+  \DeclareMathOperator{\diver}{div}
+  \DeclareMathOperator{\flux}{flux}
+  \newcommand{\surjects}{\twoheadrightarrow}
+  \newcommand{\injects}{\hookrightarrow}
+  \newcommand{\bijects}{\leftrightarrow}
+  \newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+  \newcommand{\floor}[1]{\lfloor#1\rfloor}
+  \newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+  \newcommand{\mclass}[2][m]{[#2]_{#1}}
+  \newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+  \newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+  \newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+  \newcommand{\normalin}{\trianglelefteq}
+  \newcommand{\angvec}[1]{\langle #1\rangle}
+  \newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+  \newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+  \newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+  \newenvironment{linsys}[2][m]{
+  \begin{array}[#1]{@{}*{#2}{rc}r@{}}
+  }{
+  \end{array}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li><div class="toc-item"><a href="meta_frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li>
+<div class="toc-item"><a href="c_foundations.html" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="s_sets_functions.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Sets and functions</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s_sets_functions.html#ss_sets" class="internal"><span class="title">Sets</span></a></div></li>
+<li><div class="toc-item"><a href="s_sets_functions.html#ss_functions" class="internal"><span class="title">Functions</span></a></div></li>
+<li><div class="toc-item"><a href="s_sets_functions.html#subsec-" class="internal"><span class="title">Cardinality and countability</span></a></div></li>
+</ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="s_logic.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Logic</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s_logic.html#ss_propositional_calculus" class="internal"><span class="title">Propositional logic</span></a></div></li>
+<li><div class="toc-item"><a href="s_logic.html#ss_predicate_logic" class="internal"><span class="title">Predicate logic</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Proof techniques</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="s_proof_technique.html#ss_logical_structure" class="internal"><span class="title">Logical structure</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_implication" class="internal"><span class="title">Implication</span></a></div></li>
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_disjunction" class="internal"><span class="title">Disjunction</span></a></div></li>
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_equivalence" class="internal"><span class="title">Equivalence</span></a></div></li>
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_logical_chains" class="internal"><span class="title">Chains of implications/equivalences</span></a></div></li>
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_proof_by_contradiction" class="internal"><span class="title">Proof by contradiction</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s_proof_technique.html#ss_Equalities" class="internal"><span class="title">Equalities</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s_proof_technique.html#sss_chain_equalities" class="internal"><span class="title">Chain of equalities</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="s_proof_technique.html#ss_set_properties" class="internal"><span class="title">Basic set properties</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_set_inclusion" class="internal"><span class="title">Set inclusion</span></a></div></li>
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_set_equality" class="internal"><span class="title">Set equality</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s_proof_technique.html#ss_function_properties" class="internal"><span class="title">Basic function properties</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_function_equality" class="internal"><span class="title">Function equality</span></a></div></li>
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_injective_surjective_bijective" class="internal"><span class="title">Injective, surjective, bijective</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s_proof_technique.html#ss_mathematical_induction" class="internal"><span class="title">Mathematical induction</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_weak_induction" class="internal"><span class="title">Proof by induction</span></a></div></li>
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_strong_induction" class="internal"><span class="title">Proof by strong induction</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="c_top_spaces.html" class="internal"><span class="codenumber">1</span> <span class="title">Topological spaces and continuous functions</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s_top_spaces.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Topological spaces</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="backmatter-1.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="appendix-notation.html" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></div></li>
+<li><div class="toc-item"><a href="appendix-defs.html" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></div></li>
+<li><div class="toc-item"><a href="appendix-thms.html" class="internal"><span class="codenumber">C</span> <span class="title">Theory</span></a></div></li>
+<li><div class="toc-item"><a href="appendix-specimens.html" class="internal"><span class="codenumber">D</span> <span class="title">Topological specimens</span></a></div></li>
+<li><div class="toc-item"><a href="appendix-egs.html" class="internal"><span class="codenumber">E</span> <span class="title">Examples</span></a></div></li>
+<li><div class="toc-item"><a href="index-1.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_logic"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">0.2</span> <span class="title">Logic</span>
+</h2>
+<section class="introduction" id="introduction-2"><div class="para" id="p-64">When dealing with mathematical statements and arguments, we must pay close attention to logical structure. This section introduces both logical connectors and quantifiers, and carefully describes how to determine the truth values of propositions built from these operations.</div></section><section class="subsection" id="ss_propositional_calculus"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Propositional logic</span>
+</h3>
+<div class="para" id="p-65">A <em class="emphasis">proposition</em> is a sentence that is either true or false. We build <em class="emphasis">compound propositions</em> from component propositions using <em class="emphasis">logical operators</em> (or <em class="emphasis">logical connectors</em>); the truth value of the compound proposition is defined as a function of the truth values of the component propositions.</div>
+<article class="definition definition-like" id="d_logical_ops"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Logical operators.</span>
+</h4> <div class="para logical" id="p-66"><ul class="disc">
+<li id="li-16">
+<span class="heading"><span class="title">Negation.</span></span><div class="para" id="p-67">Given a proposition <span class="process-math">\(\mathcal{P}\text{,}\)</span> the <dfn class="terminology">negation of <span class="process-math">\(\mathcal{P}\)</span></dfn> is the proposition “Not <span class="process-math">\(\mathcal{P}\)</span>”, denoted <span class="process-math">\(\neg\mathcal{P}\)</span> in logical notation, the truth value of which is defined as follows: <span class="process-math">\(\neg\mathcal{P}\)</span> is true exactly when <span class="process-math">\(\mathcal{P}\)</span> is false.</div>
+</li>
+<li id="li-17">
+<span class="heading"><span class="title">Conjunction (logical and).</span></span><div class="para" id="p-68">Given propositions <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\text{,}\)</span> their <dfn class="terminology">conjuction</dfn> is the proposition “<span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\)</span>”, denoted <span class="process-math">\(\mathcal{P}\land \mathcal{Q}\)</span> in logical notation, the truth value of which is defined as follows:  <span class="process-math">\(\mathcal{P}\land\mathcal{Q}\)</span> is true when both <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\)</span> are true, and false otherwise.</div>
+</li>
+<li id="li-18">
+<span class="heading"><span class="title">Disjunction (logical or).</span></span><div class="para" id="p-69">Given propositions <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\text{,}\)</span> their <dfn class="terminology">disjunction</dfn> is the proposition “<span class="process-math">\(\mathcal{P}\)</span> or <span class="process-math">\(\mathcal{Q}\)</span>”, denoted <span class="process-math">\(\mathcal{P}\lor \mathcal{Q}\)</span> in logical notation, the truth value of which is defined as follows: <span class="process-math">\(\mathcal{P}\lor \mathcal{Q}\)</span> is true when at least one of <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\)</span> is true, and false otherwise.</div>
+</li>
+<li id="li-19">
+<span class="heading"><span class="title">Logical implication (if-then).</span></span><div class="para" id="p-70">Given propositions <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\text{,}\)</span> the proposition “If <span class="process-math">\(\mathcal{P}\text{,}\)</span> then <span class="process-math">\(\mathcal{Q}\)</span>”, denoted <span class="process-math">\(\mathcal{P}\implies\mathcal{Q}\)</span> in logical notation, is called an <dfn class="terminology">implication</dfn>, and its truth value is defined as follows: <span class="process-math">\(\mathcal{P}\implies\mathcal{Q}\)</span> is false when <span class="process-math">\(\mathcal{P}\)</span> is true and <span class="process-math">\(\mathcal{Q}\)</span> is false, and true otherwise.</div>
+</li>
+<li id="li-20">
+<span class="heading"><span class="title">Logical equivalence (if and only if).</span></span><div class="para" id="p-71">Given propositions <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\text{,}\)</span> the proposition “<span class="process-math">\(\mathcal{P}\)</span> if and only if <span class="process-math">\(\mathcal{Q}\)</span>”, denoted <span class="process-math">\(\mathcal{P}\iff\mathcal{Q}\)</span> in logical notation, is called an <dfn class="terminology">equivalence</dfn>, and its truth value is defined as follows: <span class="process-math">\(\mathcal{P}\iff \mathcal{Q}\)</span> is true when <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\)</span> have the same truth value, and false otherwise. We say <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\)</span> are <dfn class="terminology">logically equivalent</dfn> when <span class="process-math">\(\mathcal{P}\iff \mathcal{Q}\)</span> is true.</div>
+</li>
+</ul></div></article><article class="remark remark-like" id="rm_truth_tables"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">0.2.2</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-72">
+<div class="para">A <em class="emphasis">truth table</em> of a compound proposition <span class="process-math">\(\mathcal{P}\)</span> is a concise way of displaying how the truth value of <span class="process-math">\(\mathcal{P}\)</span> depends on the truth values of its component propositions. It contains one row for each possible truth assignment of the component propositions.  As illustration, we give the truth tables for the logical operators defined above:</div>
+<div class="displaymath process-math" id="md-8">
+\begin{align*}
+\amp\begin{array}{c||c}\mathcal{P}\amp\neg\mathcal{P} \\
+\hline T\amp F\\F\amp T\end{array} \amp \amp \begin{array}{c|c||c}\mathcal{P}\amp\mathcal{Q}\amp\mathcal{P}\land\mathcal{Q} \\
+\hline T\amp T\amp T\\T\amp F\amp F\\ F\amp T\amp F\\ F\amp F\amp F\end{array}
+\amp \amp \begin{array}{c|c||c}\mathcal{P}\amp\mathcal{Q}\amp\mathcal{P}\lor\mathcal{Q} \\
+\hline T\amp T\amp T\\T\amp F\amp T\\ F\amp T\amp T\\ F\amp F\amp F\end{array}\\
+\amp
+\begin{array}{c|c||c}\mathcal{P}\amp\mathcal{Q}\amp\mathcal{P}\implies\mathcal{Q} \\
+\hline T\amp T\amp T\\T\amp F\amp F\\ F\amp T\amp T\\ F\amp F\amp T\end{array}
+\amp \amp \begin{array}{c|c||c}\mathcal{P}\amp\mathcal{Q}\amp\mathcal{P}\iff\mathcal{Q} \\
+\hline T\amp T\amp T\\T\amp F\amp F\\ F\amp T\amp F\\ F\amp F\amp T\end{array}
+\end{align*}
+</div>
+</div></article><article class="example example-like" id="example-6"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.2.3</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-73">
+<div class="para">Use a truth table to find all truth value assignments of <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\)</span> making the compound proposition</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\neg\mathcal{P}\implies (\mathcal{Q}\implies P)
+\end{equation*}
+</div>
+<div class="para">false.</div>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like"><div class="para logical" id="p-74">
+<div class="para">We construct a truth table with columns for <span class="process-math">\(\mathcal{P}\text{,}\)</span> <span class="process-math">\(\mathcal{Q}\text{,}\)</span> <span class="process-math">\(\neg\mathcal{P}\text{,}\)</span> <span class="process-math">\(\mathcal{Q\implies P}\text{,}\)</span> and <span class="process-math">\(\neg\mathcal{P}\implies (\mathcal{Q}\implies P)\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{c|c|c|c||c}\mathcal{P}\amp\mathcal{Q}\amp\neg\mathcal{P}\amp \mathcal{Q}\implies \mathcal{P}\amp \neg\mathcal{P}\implies(\mathcal{Q}\implies \mathcal{P}) \\
+\hline T\amp T\amp F\amp T\amp T\\T\amp F\amp F\amp T\amp T\\ F\amp T\amp T\amp F\amp F\\ F\amp F\amp T\amp T\amp T\end{array}\text{.}
+\end{equation*}
+</div>
+<div class="para">We conclude that <span class="process-math">\(\neg\mathcal{P}\implies (\mathcal{Q}\implies P)\)</span> is false exactly when <span class="process-math">\(\mathcal{P}\)</span> is false and <span class="process-math">\(\mathcal{Q}\)</span> is true. (It follows that <span class="process-math">\(\neg\mathcal{P}\implies (\mathcal{Q}\implies P)\)</span> is equivalent to <span class="process-math">\(Q\implies P\text{.}\)</span> )</div>
+</div></div></div>
+</div></article><article class="remark remark-like" id="rm_logic_vs_vernacular"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">0.2.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-75">Our definitions of the logical operators above are chosen to agree with their usage in a very particular type of discourse: namely, <em class="emphasis">mathematical</em> discourse. They do not always agree with their use in natural language: hence the modifier “logical” in their titles.</div> <div class="para" id="p-76">For example, disjunctions in natural language of the form “<span class="process-math">\(\mathcal{P}\)</span> or <span class="process-math">\(\mathcal{Q}\)</span>” are often understood to be true when <span class="process-math">\(\mathcal{P}\)</span> is true or <span class="process-math">\(\mathcal{Q}\)</span> is true, <em class="emphasis">but not both</em>. This notion of disjunction is called the <em class="emphasis">exclusive or</em> in logic, in contrast to the standard logical or.</div> <div class="para" id="p-77">Similarly, according to our definition, the implication “If the President of the US is a dog, then the Vice President of the US is a cat” is true, since the proposition “The President of the US is a dog” is false. (In logic we say the implication is <em class="emphasis">vacuously true</em> in this case.) However, working outside of our logical definitions of truth value, we may have been inclined to treat this implication as false, since both “The President of the US is a dog” and “The Vice President of the US is a cat” are false.</div></article></section><section class="subsection" id="ss_predicate_logic"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Predicate logic</span>
+</h3>
+<div class="para" id="p-78">Propositions like “All humans are mortal” and “Every positive real number has a square-root” are modeled in logic in the form “For all <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(P(x)\)</span>” and “For all <span class="process-math">\(r\text{,}\)</span> there exists an <span class="process-math">\(s\)</span> such that <span class="process-math">\(Q(r,s)\)</span>”, where <span class="process-math">\(P(x)\)</span> stands for the phrase “<span class="process-math">\(x\)</span> is mortal” and <span class="process-math">\(Q(r,s)\)</span> stands for the phrase “<span class="process-math">\(s\)</span> is a square-root of <span class="process-math">\(r\)</span>”. Observe that <span class="process-math">\(P(x)\)</span> and <span class="process-math">\(Q(r,s)\)</span> on their own are not propositions; there is no truth value to “<span class="process-math">\(x\)</span> is mortal” or “<span class="process-math">\(s\)</span> is a square-root of <span class="process-math">\(r\)</span>”. Instead, we think of <span class="process-math">\(P(x)\)</span> and <span class="process-math">\(Q(r,s)\)</span> as <em class="emphasis">functions</em> which return propositions when evaluated at a specific choice for <span class="process-math">\(x\text{,}\)</span> or for <span class="process-math">\(r\)</span> and <span class="process-math">\(s\text{.}\)</span> For example, evaluating <span class="process-math">\(P(x)\)</span> at <span class="process-math">\(x=\text{Aaron Greicius}\)</span> yields the proposition “Aaron Greicius is mortal”, which happens to be true at the time of writing. Similarly evaluating <span class="process-math">\(Q(r,s)\)</span> at  <span class="process-math">\(r=2, s=11\)</span> yields the proposition “<span class="process-math">\(11\)</span> is a square-root of 2”, which happens to be false. In logic  <span class="process-math">\(P(x)\)</span> and <span class="process-math">\(Q(r,s)\)</span> are called <em class="emphasis">propositional functions</em> (also called  <em class="emphasis">predicates</em>): functions whose outputs are propositions.</div>
+<div class="para" id="p-79">The propositions “For all <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(P(x)\)</span>” and “For all <span class="process-math">\(r\text{,}\)</span> there exists an <span class="process-math">\(s\)</span> such that <span class="process-math">\(Q(r,s)\)</span>” are obtained from <span class="process-math">\(P(x)\)</span> and <span class="process-math">\(Q(r,s)\)</span> by <em class="emphasis">bounding</em> them with a series of <em class="emphasis">quantifiers</em> (e.g., “for all <span class="process-math">\(x\)</span>”, “there exists an <span class="process-math">\(s\)</span>”). The definition below allows us to assign truth values to such propositions.</div>
+<article class="definition definition-like" id="d_quantifiers"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.2.5</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-80">Let <span class="process-math">\(D\)</span> be a set, and let <span class="process-math">\(P\)</span> be a propositional function that assigns to all elements <span class="process-math">\(d\in D\)</span> the proposition <span class="process-math">\(P(d)\text{.}\)</span> The set <span class="process-math">\(D\)</span> is called the <dfn class="terminology">domain of discourse</dfn> of <span class="process-math">\(P\text{.}\)</span>
+</div> <ul class="disc">
+<li id="li-21">
+<span class="heading"><span class="title">Universal quantifier.</span></span><div class="para" id="p-81">The proposition “For all <span class="process-math">\(x\)</span> in <span class="process-math">\(D\text{,}\)</span> <span class="process-math">\(P(x)\)</span>”, denoted <span class="process-math">\(\forall x P(x)\)</span> in logical notation, is called a <dfn class="terminology">universal quantification</dfn>, and its truth value is defined as follows: <span class="process-math">\(\forall x P(x)\)</span> is true if for all elements <span class="process-math">\(d\)</span> of <span class="process-math">\(D\text{,}\)</span> the proposition <span class="process-math">\(P(d)\)</span> is true; it is false if there is some <span class="process-math">\(d\in D\)</span> such that <span class="process-math">\(P(d)\)</span> is false.</div>
+</li>
+<li id="li-22">
+<span class="heading"><span class="title">Existential quantifier.</span></span><div class="para" id="p-82">The proposition “There exists an <span class="process-math">\(x\)</span> in <span class="process-math">\(D\)</span> such that <span class="process-math">\(P(x)\)</span>”, denoted <span class="process-math">\(\exists x P(x)\)</span> in logical notation, is called an <dfn class="terminology">existential quantification</dfn>, and its truth value is defined as follows: <span class="process-math">\(\exists x P(x)\)</span> is true if there is some element <span class="process-math">\(d\)</span> of <span class="process-math">\(D\)</span> for which the proposition <span class="process-math">\(P(d)\)</span> is true; it is false if <span class="process-math">\(P(d)\)</span> is false for all <span class="process-math">\(d\in D\text{.}\)</span>
+</div>
+</li>
+</ul></article><article class="remark remark-like" id="rm_domain_discourse"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">0.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Truth depends on domain of discourse.</span>
+</h4> <div class="para" id="p-83">Just as a function is not properly defined before its domain is specified, we do not have a well-defined propositional function, nor well-defined truth values of propositions built from this propositional function, until its domain of discourse is given.</div> <div class="para" id="p-84">For example, let <span class="process-math">\(P(x)\)</span> be “x&gt;0”. If we declare <span class="process-math">\(D=(0,\infty)\text{,}\)</span> then the proposition <span class="process-math">\(\forall x P(x)\)</span> is true, since by definition every <span class="process-math">\(d\in (0,\infty)\)</span> is positive. On the other hand,  if we declare <span class="process-math">\(D=\R\text{,}\)</span> the proposition <span class="process-math">\(\forall x P(x)\)</span> is false since not all elements of <span class="process-math">\(\R\)</span> are positive: indeed, <span class="process-math">\(-1\)</span> is negative, making <span class="process-math">\(P(-1)\)</span> false.</div> <div class="para" id="p-85">Because of the important role played by the domain of discourse <span class="process-math">\(D\text{,}\)</span> we sometimes include it in our quantifier expressions: e.g., <span class="process-math">\(\forall x\in D P(x)\text{,}\)</span> <span class="process-math">\(\exists x\in D P(x)\text{.}\)</span>  Using this convention allows us to see more immediately that  <span class="process-math">\(\forall\, x\in (0,\infty)\, P(x)\)</span> is true and <span class="process-math">\(\forall\, x\in\mathbb{R}\, P(x)\)</span> is false.</div></article><article class="example example-like" id="ex_model_quant"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Modeling “Every positive number has a square-root”.</span>
+</h4>
+<div class="para" id="p-86">Model the sentence “Every positive real number has a square-root” in the form <span class="process-math">\(\forall x P(x)\text{,}\)</span> where <span class="process-math">\(P\)</span> is a propositional function with domain of discourse <span class="process-math">\(D=\R\text{.}\)</span> Determine the truth value of <span class="process-math">\(\forall x\, P(x)\)</span> using <a href="" class="xref" data-knowl="./knowl/d_quantifiers.html" title="Definition 0.2.5">Definition 0.2.5</a>.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like">
+<div class="para logical" id="p-87">
+<div class="para">Fix our domain of discourse to be <span class="process-math">\(D=\R\text{.}\)</span> For any <span class="process-math">\(r,s\in \R\text{,}\)</span> let <span class="process-math">\(Q(r,s)\)</span> be the proposition that <span class="process-math">\(s\)</span> is a square-root of <span class="process-math">\(r\text{.}\)</span> Define <span class="process-math">\(P(x)\)</span> to be the propositional function</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x&gt;0 \implies \exists y\, Q(x,y)\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus for any <span class="process-math">\(r\in\R\text{,}\)</span> <span class="process-math">\(P(r)\)</span> is the proposition that if <span class="process-math">\(r\)</span> is positive, then <span class="process-math">\(r\)</span> has a square-root. It follows that <span class="process-math">\(\forall x\in\R\, P(x)\)</span> is the proposition that for all real numbers <span class="process-math">\(x\text{,}\)</span> if <span class="process-math">\(x\)</span> is positive, then  <span class="process-math">\(x\)</span> has a square-root. This is clearly equivalent to the proposition that every positive real number has a square-root, as desired.</div>
+</div> <div class="para" id="p-88">Lastly, we use <a href="" class="xref" data-knowl="./knowl/d_quantifiers.html" title="Definition 0.2.5">Definition 0.2.5</a> to show <span class="process-math">\(\forall x\in \R\, P(x)\)</span> is true. Take any <span class="process-math">\(r\in \R\text{.}\)</span> The real number <span class="process-math">\(r\)</span> is either positive or not positive. If <span class="process-math">\(r\)</span> is not positive, then <span class="process-math">\(r&gt;0\)</span> is false and hence <span class="process-math">\(P(r)\text{,}\)</span> which is the implication <span class="process-math">\(r&gt;0\implies \exists y\, Q(r,y)\text{,}\)</span> is true vacuously.  If <span class="process-math">\(r\)</span> is positive, then <span class="process-math">\(r&gt;0\)</span> is true, and <span class="process-math">\(\exists y\, Q(r,y)\)</span> is true, since <span class="process-math">\(r\)</span> has a square-root in this case: namely, <span class="process-math">\(\sqrt{r}\text{.}\)</span> But if <span class="process-math">\(r&gt;0\)</span> is true and <span class="process-math">\(\exists y\, Q(r,y)\)</span> is true, then the implication <span class="process-math">\(r&gt;0\implies \exists y\, Q(r,y)\)</span> is true. We have proved <span class="process-math">\(P(r)\)</span> is true for all <span class="process-math">\(r\in \R\text{.}\)</span> Thus <span class="process-math">\(\forall x\in\R\, P(x)\)</span> is true.</div>
+</div></div>
+</div></article><article class="warning remark-like" id="warning_order_quantifiers"><h4 class="heading">
+<span class="type">Warning</span><span class="space"> </span><span class="codenumber">0.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Order of quantifiers matters.</span>
+</h4> <div class="para" id="p-89">As <a href="" class="xref" data-knowl="./knowl/ex_model_quant.html" title='Example 0.2.7: Modeling "Every positive number has a square-root"'>Example 0.2.7</a> illustrates, we can take a propositional function <span class="process-math">\(Q(x,y)\)</span> in two variables and quantify one of the two variables to obtain a propositional function in one variable: e.g., <span class="process-math">\(P(x)=\exists y\, Q(x,y)\)</span> or <span class="process-math">\(R(y)=\forall x\, Q(x,y)\text{.}\)</span> Proceeding in this manner we engender propositions involving sequences of quantifiers. Mark well that the order of the quantifiers in such sequences is important!</div> <div class="para" id="p-90">For example, letting <span class="process-math">\(Q(x,y)\)</span> be “<span class="process-math">\(y\)</span> is a square-root of <span class="process-math">\(y\)</span>” with domain of discourse <span class="process-math">\(D=(0,\infty)\text{.}\)</span> The proposition <span class="process-math">\(\forall x\in\R\, \exists y\in\R\, Q(x,y)\)</span> says that every positive real number has a positive square-root (true); the proposition <span class="process-math">\(\exists y\in\R\, \forall x\in\R\, Q(x,y)\)</span> says that there is a positive real number that is the square-root of all real numbers (false).</div> <div class="para" id="p-91">In general to “unpack” a sequence of quantifiers we start from the leftmost quantifier and proceed to the right.</div></article><article class="remark remark-like" id="rm_negating_quantifiers"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">0.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Negating quantifiers.</span>
+</h4> <div class="para logical" id="p-92">
+<div class="para">Let <span class="process-math">\(P(x)\)</span> be a propositional function with domain of discourse <span class="process-math">\(D\text{.}\)</span> According to <a href="" class="xref" data-knowl="./knowl/d_quantifiers.html" title="Definition 0.2.5">Definition 0.2.5</a> a universal quantification <span class="process-math">\(\forall x\, P(x)\)</span> is false if it is <em class="emphasis">not the case</em> that <span class="process-math">\(P(d)\)</span> is true for all for all <span class="process-math">\(d\in D\text{;}\)</span> that is, if there is some <span class="process-math">\(d\in D\)</span> such that <span class="process-math">\(P(d)\)</span> is false. Letting <span class="process-math">\(\neg P(x)\)</span> be the propositional function defined as <span class="process-math">\(\neg P(d)\)</span> for all <span class="process-math">\(d\in D\text{,}\)</span> we see that <span class="process-math">\(\forall x\,  P(x) \)</span> is false if and only if <span class="process-math">\(\exists x\, \neg P(x)\)</span> is true. This proves the equivalence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_quantifiers.html">
+\begin{equation*}
+\neg\forall x\, P(x)\iff \exists x\, \neg P(x)\text{.}
+\end{equation*}
+</div>
+<div class="para">Similarly, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_quantifiers.html">
+\begin{equation*}
+\neg\exists x\, P(x)\iff \forall x\, \neg P(x)\text{.}
+\end{equation*}
+</div>
+<div class="para">These equivalences can be understood as rules of negating quantifier statements. They can be summarized as follow: “swap quantifiers and negate the predicate.”</div>
+</div></article><div class="para" id="p-93">The example below taken from calculus nicely illustrates how to negate  a proposition that involves a sequence of quantifiers.</div>
+<article class="example example-like" id="ex_limit_doesnt_exist"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">The limit does not exist.</span>
+</h4>
+<div class="para logical" id="p-94">
+<div class="para">Let <span class="process-math">\(f(x)\)</span> be a function with domain <span class="process-math">\(\R\text{,}\)</span> and let <span class="process-math">\(c\in \R\)</span> be a point of this domain. By definition, the proposition that <span class="process-math">\(\lim\limits_{x\to c}f(x)\)</span> exists is equivalent to the following proposition:</div>
+<div class="displaymath process-math" id="eq_proposition">
+\begin{equation}
+\exists L\in\R\,  \forall \epsilon \gt 0\, \exists \delta \gt0\,  \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon)\text{.}\tag{0.2.1}
+\end{equation}
+</div>
+<div class="para">(We made a number of shortcuts in our logical notation above (e.g. <span class="process-math">\(\forall \epsilon\gt 0\text{,}\)</span> <span class="process-math">\(\exists\delta\gt 0\)</span>) in order to simplify the expression somewhat; the intended meaning should still be clear. )</div>
+</div> <div class="para" id="p-95">Use the negation rules described in <a href="" class="xref" data-knowl="./knowl/rm_negating_quantifiers.html" title="Remark 0.2.9: Negating quantifiers">Negating quantifiers</a> to derive a similar proposition equivalent to the statement that <span class="process-math">\(\lim\limits_{x\to c}f(x)\)</span> do not exist.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like"><div class="para logical" id="p-96">
+<div class="para">Let <span class="process-math">\(\mathcal{P}\)</span> be the proposition in <a href="" class="xref" data-knowl="./knowl/eq_proposition.html" title="Equation 0.2.1">(0.2.1)</a>. Using the negation rules in series, we derive the <em class="emphasis">chain of equivalences</em>  below. We've added parentheses to emphasize what is being negated at each step. Note how a quantifiers are “swapped” each time we pass the negation to the right.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_proposition.html" id="md-9">
+\begin{align*}
+\neg\mathcal{P}\amp\iff \forall L\in\R\,  \neg\left(\forall \epsilon \gt 0\, \exists \delta \gt0\,  \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon) \right)\\
+\amp\iff  \forall L\in\R\,  \exists \epsilon \gt 0\, \neg\left( \exists \delta \gt0\,  \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon) \right)\\
+\amp\iff  \forall L\in\R\,  \exists \epsilon \gt 0\,  \forall \delta \gt0\, \neg\left( \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon) \right)\\
+\amp\iff  \forall L\in\R\,  \exists \epsilon \gt 0\,  \forall \delta \gt0\, \exists x\in\mathbb{R}\ \neg (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon)\\
+\amp\iff  \forall L\in\R\,  \exists \epsilon \gt 0\,  \forall \delta \gt0\, \exists x\in\mathbb{R}\ (\val{x-c}\lt\delta \text{ and } \val{f(x)-L}\not\lt\epsilon)\text{.}
+\end{align*}
+</div>
+<div class="para">(The last link in our chain uses the fact that <span class="process-math">\(\neg(\mathcal{Q}\implies\mathcal{R})\)</span> is equivalent to <span class="process-math">\(\mathcal{Q}\land\neg\mathcal{R}\text{,}\)</span> as a truth table easily shows.) Translating back into English, we conclude that the limit not existing (<span class="process-math">\(\neg\mathcal{P}\)</span>) is equivalent to the following: for every <span class="process-math">\(L\in \mathbb{R}\)</span> there is an <span class="process-math">\(\epsilon\gt 0\)</span> such that for all <span class="process-math">\(\delta\gt 0\)</span> there exists an <span class="process-math">\(x\in\mathbb{R}\)</span> satisfying <span class="process-math">\(\val{x-c}\lt \delta\)</span> and <span class="process-math">\(\val{f(x)-L}\not\gt\epsilon\text{.}\)</span> Quite a mouthful!</div>
+</div></div></div>
+</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="s_sets_functions.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="s_proof_technique.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Authored in PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div>
+</body>
+</html>
