@@ -11,15 +11,15 @@
     Let <m>X</m> be a set. A <term>(topological) basis</term> in <m>X</m> is a collection <m>\mathcal{B}</m> of subsets of <m>X</m> satisfying the following axioms:
     <ol>
       <li>
-        <title>Covers</title>
+        <title>Covers <m>X</m></title>
         <p>
           For each <m>x\in X</m> there is a set <m>B\in \mathcal{B}</m> such that <m>x\in B</m>.
         </p>
       </li>
       <li>
-        <title>Contained in intersections</title>
+        <title>Intersections covered by basis elements</title>
         <p>
-          If <m>B_1, B_2\in \mathcal{B}</m>, then there is a <m>B\in \mathcal{B}</m> such that <m>B\subseteq B_1\cap B_2</m>.
+          If <m>B_1, B_2\in \mathcal{B}</m>, then for all <m>x\in B_1\cap B_2</m> there is a <m>B\in \mathcal{B}</m> such that <m>x\in B\subseteq B_1\cap B_2</m>.
         </p>
       </li>
     </ol>
@@ -56,7 +56,7 @@
   </statement>
   <solution>
     <p>
-
+      It is clear that each collection of intervals covers <m>\R</m>. As for intersections, for (2)-(3) note that intersection of these types of intervals are either empty, or another interval of the same type. For (1) if <m>B_1=(x-\epsilon_1, x+\epsilon_1)</m>
     </p>
   </solution>
 </example>
