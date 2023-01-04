@@ -12,10 +12,19 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para logical"><ol class="decimal">
-<li><div class="para">Let <span class="process-math">\(\mathcal{T}=\{\emptyset, X\}\text{.}\)</span> By definition the given <span class="process-math">\(\mathcal{T}\)</span> contains <span class="process-math">\(\emptyset\)</span> and <span class="process-math">\(X\text{,}\)</span> and thus axiom (1) is satisfied. Since any union or intersection involving <span class="process-math">\(\emptyset\)</span> and <span class="process-math">\(X\)</span> is equal to either <span class="process-math">\(\emptyset\)</span> or <span class="process-math">\(X\text{,}\)</span> it is clear that <span class="process-math">\(\mathcal{T}\)</span> is closed under arbitrary unions and finite intersections. Thus axioms (2)-(3) are satisfied.</div></li>
-<li><div class="para">Let <span class="process-math">\(\mathcal{T}=\mathcal{P}(X)\text{.}\)</span> By definition, <span class="process-math">\(\mathcal{T}\)</span> is the set of <em class="emphasis">all</em> subsets of <span class="process-math">\(X\text{.}\)</span> In particular, it contains <span class="process-math">\(\emptyset\)</span> and <span class="process-math">\(X\text{,}\)</span> and thus axioms (1) is satisfied. Furthermore, since any union or intersection of subsets of <span class="process-math">\(X\)</span> is again a subset of <span class="process-math">\(X\text{,}\)</span> we see that axioms (2)-(3) are satisfied.</div></li>
-</ol></div>
+<div class="para logical">
+<div class="para">Assume <span class="process-math">\(U_1, U_2, \dots, U_n\in \mathcal{T}\text{,}\)</span> and let <span class="process-math">\(U=\bigcap_{i=1}^nU_i\text{.}\)</span> We have</div>
+<div class="displaymath process-math">
+\begin{align*}
+x\in U \amp\implies x\in U_i \text{ for all } 1\leq i\leq n  \\
+\amp\implies \forall i \exists \epsilon_i &gt; 0 \text{ s.t. }(x-\epsilon_i, x+\epsilon)\subseteq U_i \\
+\amp \implies (x-\epsilon, x+\epsilon)\subseteq U_i \text{ for all } i, \text{ where } \epsilon=\min \{\epsilon_i\colon 1\leq i\leq n\}\\\
+\amp \implies (x-\epsilon, x+\epsilon)\subseteq U \text{.}
+\end{align*}
+</div>
+<div class="para">This shows that <span class="process-math">\(U\)</span> satisfies the defining property of <span class="process-math">\(\mathcal{T}\text{,}\)</span> and hence that <span class="process-math">\(U\in \mathcal{T}\text{.}\)</span>
+</div>
+</div>
 <span class="incontext"><a href="s_top_spaces.html#p-168" class="internal">in-context</a></span>
 </body>
 </html>
