@@ -511,7 +511,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.1",
   "title": "Topological spaces",
-  "body": " Topological spaces   The real numbers come equipped with a notion of nearness or closeness furnished by the absolute value function: namely, we define the distance between real numbers as . From this simple bit of structure springs all the fundamental concepts of real analysis: Cauchy sequences, limits, continuous functions, etc.  Topology can be seen as a vast generalization of this notion that abstracts away from the absolute value function, relying instead on the more abstract idea of open sets . Indeed, the notion of openness is introduced already in real analysis: a set is open if for all there is an such that if , then . Intuitively, you can think of this property as stating that has a certain roomy or generous nature: if , and is sufficiently close to , then has room for too. Come on in!  We view the the three conditions of as an attempt at axiomatizing this notion of openness (or roominess). This is the starting point of topology. The generality of this approach is part of topology's great power. We can define a notion of open sets on any set whatsoever: , we can choose a collection of subsets (called a topology ) that satisfies the axioms of . Furthermore, for a given set there are typically many distinct ways of making this choice; your topology on can be tailor-made to suit your particular needs. Beyond this generality and flexibility, the other key to topology's effectiveness is its ability to transport to any topological space the concepts of continuity, limits, connectedness, and compactness familiar to us from real analysis. Once a set is given the structure of a topological space, these notions can be used as powerful tools for investigating its properties. It is for this reason that topology plays an important role in essentially all mathematical fields: analysis, geometry, algebraic geometry, number theory, etc.    Topological space   A topological space is a pair , where is a set, and is a collection of subsets of satisfying the following axioms:   Trivial sets   and     Closed under arbitrary unions  Given any collection of elements , we have     Closed under finite intersections  If , then .   In this case we call a topology on , and an element is called an open set of . Although technically speaking a topological space is a pair , we often omit mention of the topology if there is no risk of confusion.     Equivalent alternative to axioms (1)-(3)   Using induction, we can show that if satisfies axiom (3) for any two elements of , then it satisfies it for any elements, for arbitrary. In other words if we replace axiom (3) with   (3')  If , then    , we get an equivalent definition of a toplogical space. When verifying whether a given is a topological space it may be more convenient to use axiom (3') as opposed to axiom (3).     Euclidean topology on   Let and define to be the set of open sets as defined above: that is, if and only if for all there is an such that the entire open interval is contained in . Show that is a topology on     We treat each axiom of in turn.   The empty set satisfies the defining property of trivially. Thus . For any , we have . Thus .    Assume for all , and let . We have . This shows satisfies the defining proerty of , and hence .    Assume , and let . We have . This shows that satisfies the defining property of , and hence that .        Trivial and discrete topology Let be a set.   The collection is a topology on , called the trivial topology . This is the topology on whose only open sets are the empty set and itself.    The collection is a topology on , called the discrete topology . This is the topology on for which every subset of is an open set.        Let . By definition the given contains and , and thus axiom (1) is satisfied. Since any union or intersection involving and is equal to either or , it is clear that is closed under arbitrary unions and finite intersections. Thus axioms (2)-(3) are satisfied.    Let . By definition, is the set of all subsets of . In particular, it contains and , and thus axioms (1) is satisfied. Furthermore, since any union or intersection of subsets of is again a subset of , we see that axioms (2)-(3) are satisfied.        Some small topological spaces   For each set describe all subsets that satisfy the axioms of , and hence make a topological space.    Empty set       Singleton       Doubleton           When , we have . Since by axiom (1) a topology on must contain both and , we see the only option is . We showed that is always a topology on in . Thus is the unique choice of topology for . (Note: in this case the trivial and discrete topologies are equal.)    When , we have . Since by axiom (1) a topology on must contain both and , we see the only option is , which again is none other than the discrete topology. We conclude that is the unique topology on . (Note: again in this case the trival and discrete topologies are equal.)    When , we have . By axiom (1) a topology must contain and . It follows that there are exactly four possibilities for based on whether the sets and are elements of : i.e., the only possibilities are . These are the four subsets of that satisfy axiom (1). It is now straightforward to show that each of these choices also satisfies axioms (2) and (3). Thus there are exactly 4 distinct topologies we can define on .       Cofinite topology  Let be a set. A subset is cofinite in if is finite. The collection of subsets is a topology, called the cofinite topology . In this topology a subset is open if and only if it is either empty or cofinite.   We treat each axiom separately.    We must show . That is specified explicitly in the definition of . Next since is finite, the set is cofinite in , and hence an element of .    Let be any collection of elements of : , for all we have or is cofinite in . Let . If for all , then . Otherwise there is an such that is nonempty, hence cofinite. We have . Since is finite, it follows that is finite. It follows that is cofinite, and hence an element of as desired.    Let , and let . We have . Since is either finite or equal to all of for , it is clear that is either finite or equal to . It follows that is either cofinite or empty, and hence an element of .       coarser topology  finer topology  comparable topologies  Comparable topologies   Two topologies on the set are comparable if or , and incomparable otherwise. If , we say that is coarser than , and that is finer than . When we say that is strictly coarser than and is strictly finer than .     Comparing trivial, discrete, cofinite topologies   Let be a set, and let be the trivial, discrete, and cofinite topologies on , respectively. Compare these topologies.    First observe that in general the trivial topology on is coarser than any other topology, since by definition a topology must contain and . Similarly the discrete topology is finer than any other topology, since by definition any topology is a subset of . Thus we always have . The question naturally arises, whether and\/or when these inclusions are strict. We consider a number of cases.   Case:  In this case or (a singleton), in which case it is easy to see that . (Note: when , we have .)    Case: finite, . Since is finite, it follows that all subsets of are cofinite, and hence that . Since , we have . It follows that in this case we have .    Case: infinite  Let be any finite nonempty subset of . Since is infinite and , it follows that must be infinite, and hence that is not cofinite. We conclude that and . Thus in this case. Next, fix in any element and let . It is clear (a) that is cofinite, and (b) that is not equal to or . Thus and , proving that . We conclude that in this case.     "
+  "body": " Topological spaces   The real numbers come equipped with a notion of nearness or closeness furnished by the absolute value function: namely, we define the distance between real numbers as . From this simple bit of structure springs all the fundamental concepts of real analysis: Cauchy sequences, limits, continuous functions, etc.  Topology can be seen as a vast generalization of this notion that abstracts away from the absolute value function, relying instead on the more abstract idea of open sets . Indeed, the notion of openness is introduced already in real analysis: a set is open if for all there is an such that if , then . Intuitively, you can think of this property as stating that has a certain roomy or generous nature: if , and is sufficiently close to , then has room for too. Come on in!  We view the the three conditions of as an attempt at axiomatizing this notion of openness (or roominess). This is the starting point of topology. The generality of this approach is part of topology's great power. We can define a notion of open sets on any set whatsoever: , we can choose a collection of subsets (called a topology ) that satisfies the axioms of . Furthermore, for a given set there are typically many distinct ways of making this choice; your topology on can be tailor-made to suit your particular needs. Beyond this generality and flexibility, the other key to topology's effectiveness is its ability to transport to any topological space the concepts of continuity, limits, connectedness, and compactness familiar to us from real analysis. Once a set is given the structure of a topological space, these notions can be used as powerful tools for investigating its properties. It is for this reason that topology plays an important role in essentially all mathematical fields: analysis, geometry, algebraic geometry, number theory, etc.    Topological space   A topological space is a pair , where is a set, and is a collection of subsets of satisfying the following axioms:   Trivial sets   and     Closed under arbitrary unions  Given any collection of elements , we have     Closed under finite intersections  If , then .   In this case we call a topology on , and an element is called an open set of . Although technically speaking a topological space is a pair , we often omit mention of the topology if there is no risk of confusion.     Equivalent alternative to axioms (1)-(3)   Using induction, we can show that if satisfies axiom (3) for any two elements of , then it satisfies it for any elements, for arbitrary. In other words if we replace axiom (3) with   (3')  If , then    , we get an equivalent definition of a toplogical space. When verifying whether a given is a topological space it may be more convenient to use axiom (3') as opposed to axiom (3).     Standard topology on   Let and define to be the set of open sets as defined above: that is, if and only if for all there is an such that the entire open interval is contained in . Show that is a topology on     We treat each axiom of in turn.   The empty set satisfies the defining property of trivially. Thus . For any , we have . Thus .    Assume for all , and let . We have . This shows satisfies the defining proerty of , and hence .    Assume , and let . We have . This shows that satisfies the defining property of , and hence that .        Trivial and discrete topology Let be a set.   The collection is a topology on , called the trivial topology . This is the topology on whose only open sets are the empty set and itself.    The collection is a topology on , called the discrete topology . This is the topology on for which every subset of is an open set.        Let . By definition the given contains and , and thus axiom (1) is satisfied. Since any union or intersection involving and is equal to either or , it is clear that is closed under arbitrary unions and finite intersections. Thus axioms (2)-(3) are satisfied.    Let . By definition, is the set of all subsets of . In particular, it contains and , and thus axioms (1) is satisfied. Furthermore, since any union or intersection of subsets of is again a subset of , we see that axioms (2)-(3) are satisfied.        Some small topological spaces   For each set describe all subsets that satisfy the axioms of , and hence make a topological space.    Empty set       Singleton       Doubleton           When , we have . Since by axiom (1) a topology on must contain both and , we see the only option is . We showed that is always a topology on in . Thus is the unique choice of topology for . (Note: in this case the trivial and discrete topologies are equal.)    When , we have . Since by axiom (1) a topology on must contain both and , we see the only option is , which again is none other than the discrete topology. We conclude that is the unique topology on . (Note: again in this case the trival and discrete topologies are equal.)    When , we have . By axiom (1) a topology must contain and . It follows that there are exactly four possibilities for based on whether the sets and are elements of : i.e., the only possibilities are . These are the four subsets of that satisfy axiom (1). It is now straightforward to show that each of these choices also satisfies axioms (2) and (3). Thus there are exactly 4 distinct topologies we can define on .       Cofinite topology  Let be a set. A subset is cofinite in if is finite. The collection of subsets is a topology, called the cofinite topology . In this topology a subset is open if and only if it is either empty or cofinite.   We treat each axiom separately.    We must show . That is specified explicitly in the definition of . Next since is finite, the set is cofinite in , and hence an element of .    Let be any collection of elements of : , for all we have or is cofinite in . Let . If for all , then . Otherwise there is an such that is nonempty, hence cofinite. We have . Since is finite, it follows that is finite. It follows that is cofinite, and hence an element of as desired.    Let , and let . We have . Since is either finite or equal to all of for , it is clear that is either finite or equal to . It follows that is either cofinite or empty, and hence an element of .       coarser topology  finer topology  comparable topologies  Comparable topologies   Two topologies on the set are comparable if or , and incomparable otherwise. If , we say that is coarser than , and that is finer than . When we say that is strictly coarser than and is strictly finer than .     Comparing trivial, discrete, cofinite topologies   Let be a set, and let be the trivial, discrete, and cofinite topologies on , respectively. Compare these topologies.    First observe that in general the trivial topology on is coarser than any other topology, since by definition a topology must contain and . Similarly the discrete topology is finer than any other topology, since by definition any topology is a subset of . Thus we always have . The question naturally arises, whether and\/or when these inclusions are strict. We consider a number of cases.   Case:  In this case or (a singleton), in which case it is easy to see that . (Note: when , we have .)    Case: finite, . Since is finite, it follows that all subsets of are cofinite, and hence that . Since , we have . It follows that in this case we have .    Case: infinite  Let be any finite nonempty subset of . Since is infinite and , it follows that must be infinite, and hence that is not cofinite. We conclude that and . Thus in this case. Next, fix in any element and let . It is clear (a) that is cofinite, and (b) that is not equal to or . Thus and , proving that . We conclude that in this case.     "
 },
 {
   "id": "d_topology",
@@ -532,29 +532,29 @@ var ptx_lunr_docs = [
   "body": " Equivalent alternative to axioms (1)-(3)   Using induction, we can show that if satisfies axiom (3) for any two elements of , then it satisfies it for any elements, for arbitrary. In other words if we replace axiom (3) with   (3')  If , then    , we get an equivalent definition of a toplogical space. When verifying whether a given is a topological space it may be more convenient to use axiom (3') as opposed to axiom (3).   "
 },
 {
-  "id": "example-13",
+  "id": "top_eq_standard_R",
   "level": "2",
-  "url": "s_top_spaces.html#example-13",
-  "type": "Example",
-  "number": "1.1.3",
-  "title": "Euclidean topology on <span class=\"process-math\">\\(\\R\\)<\/span>.",
-  "body": " Euclidean topology on   Let and define to be the set of open sets as defined above: that is, if and only if for all there is an such that the entire open interval is contained in . Show that is a topology on     We treat each axiom of in turn.   The empty set satisfies the defining property of trivially. Thus . For any , we have . Thus .    Assume for all , and let . We have . This shows satisfies the defining proerty of , and hence .    Assume , and let . We have . This shows that satisfies the defining property of , and hence that .      "
+  "url": "s_top_spaces.html#top_eq_standard_R",
+  "type": "Topological specimen",
+  "number": "1",
+  "title": "Standard topology on <span class=\"process-math\">\\(\\R\\)<\/span>.",
+  "body": " Standard topology on   Let and define to be the set of open sets as defined above: that is, if and only if for all there is an such that the entire open interval is contained in . Show that is a topology on     We treat each axiom of in turn.   The empty set satisfies the defining property of trivially. Thus . For any , we have . Thus .    Assume for all , and let . We have . This shows satisfies the defining proerty of , and hence .    Assume , and let . We have . This shows that satisfies the defining property of , and hence that .      "
 },
 {
   "id": "top_eg_trivial_discrete",
   "level": "2",
   "url": "s_top_spaces.html#top_eg_trivial_discrete",
   "type": "Topological specimen",
-  "number": "1",
+  "number": "2",
   "title": "Trivial and discrete topology.",
   "body": " Trivial and discrete topology Let be a set.   The collection is a topology on , called the trivial topology . This is the topology on whose only open sets are the empty set and itself.    The collection is a topology on , called the discrete topology . This is the topology on for which every subset of is an open set.        Let . By definition the given contains and , and thus axiom (1) is satisfied. Since any union or intersection involving and is equal to either or , it is clear that is closed under arbitrary unions and finite intersections. Thus axioms (2)-(3) are satisfied.    Let . By definition, is the set of all subsets of . In particular, it contains and , and thus axioms (1) is satisfied. Furthermore, since any union or intersection of subsets of is again a subset of , we see that axioms (2)-(3) are satisfied.      "
 },
 {
-  "id": "example-14",
+  "id": "example-13",
   "level": "2",
-  "url": "s_top_spaces.html#example-14",
+  "url": "s_top_spaces.html#example-13",
   "type": "Example",
-  "number": "1.1.4",
+  "number": "1.1.3",
   "title": "Some small topological spaces.",
   "body": " Some small topological spaces   For each set describe all subsets that satisfy the axioms of , and hence make a topological space.    Empty set       Singleton       Doubleton           When , we have . Since by axiom (1) a topology on must contain both and , we see the only option is . We showed that is always a topology on in . Thus is the unique choice of topology for . (Note: in this case the trivial and discrete topologies are equal.)    When , we have . Since by axiom (1) a topology on must contain both and , we see the only option is , which again is none other than the discrete topology. We conclude that is the unique topology on . (Note: again in this case the trival and discrete topologies are equal.)    When , we have . By axiom (1) a topology must contain and . It follows that there are exactly four possibilities for based on whether the sets and are elements of : i.e., the only possibilities are . These are the four subsets of that satisfy axiom (1). It is now straightforward to show that each of these choices also satisfies axioms (2) and (3). Thus there are exactly 4 distinct topologies we can define on .     "
 },
@@ -563,7 +563,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_top_spaces.html#top_eg_cofinite",
   "type": "Topological specimen",
-  "number": "2",
+  "number": "3",
   "title": "Cofinite topology.",
   "body": " Cofinite topology  Let be a set. A subset is cofinite in if is finite. The collection of subsets is a topology, called the cofinite topology . In this topology a subset is open if and only if it is either empty or cofinite.   We treat each axiom separately.    We must show . That is specified explicitly in the definition of . Next since is finite, the set is cofinite in , and hence an element of .    Let be any collection of elements of : , for all we have or is cofinite in . Let . If for all , then . Otherwise there is an such that is nonempty, hence cofinite. We have . Since is finite, it follows that is finite. It follows that is cofinite, and hence an element of as desired.    Let , and let . We have . Since is either finite or equal to all of for , it is clear that is either finite or equal to . It follows that is either cofinite or empty, and hence an element of .     "
 },
@@ -572,18 +572,144 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_top_spaces.html#d_comparable_topologies",
   "type": "Definition",
-  "number": "1.1.5",
+  "number": "1.1.4",
   "title": "Comparable topologies.",
   "body": " coarser topology  finer topology  comparable topologies  Comparable topologies   Two topologies on the set are comparable if or , and incomparable otherwise. If , we say that is coarser than , and that is finer than . When we say that is strictly coarser than and is strictly finer than .   "
 },
 {
-  "id": "example-15",
+  "id": "example-14",
   "level": "2",
-  "url": "s_top_spaces.html#example-15",
+  "url": "s_top_spaces.html#example-14",
   "type": "Example",
-  "number": "1.1.6",
+  "number": "1.1.5",
   "title": "Comparing trivial, discrete, cofinite topologies.",
   "body": " Comparing trivial, discrete, cofinite topologies   Let be a set, and let be the trivial, discrete, and cofinite topologies on , respectively. Compare these topologies.    First observe that in general the trivial topology on is coarser than any other topology, since by definition a topology must contain and . Similarly the discrete topology is finer than any other topology, since by definition any topology is a subset of . Thus we always have . The question naturally arises, whether and\/or when these inclusions are strict. We consider a number of cases.   Case:  In this case or (a singleton), in which case it is easy to see that . (Note: when , we have .)    Case: finite, . Since is finite, it follows that all subsets of are cofinite, and hence that . Since , we have . It follows that in this case we have .    Case: infinite  Let be any finite nonempty subset of . Since is infinite and , it follows that must be infinite, and hence that is not cofinite. We conclude that and . Thus in this case. Next, fix in any element and let . It is clear (a) that is cofinite, and (b) that is not equal to or . Thus and , proving that . We conclude that in this case.    "
+},
+{
+  "id": "s_bases_top",
+  "level": "1",
+  "url": "s_bases_top.html",
+  "type": "Section",
+  "number": "1.2",
+  "title": "Bases for topological spaces",
+  "body": " Bases for topological spaces   When defining a topology for a set it is often convenient to specify instead a more manageable subset of that we can use to generate the entire topology using arbitrary unions and\/or finite intersections (our open set operators). A topological basis is a particularly nice example of this ( ) as the open sets of the topology it generates can be expressed as (arbitrary) unions of the basis elements. Bases will also provide a convenient way of comparing different topologies and (later on) determining whether relevant topological properties are satisfied by a given space.    Topological basis  Let be a set. A (topological) basis in is a collection of subsets of satisfying the following axioms:   Covers  For each there is a set such that .    Contained in intersections  If , then there is a such that .       Some bases for   Show that the given collections are bases in .                                Let be a basis in the set .    The set is a topology on .    We have the following alternate description of : .        Let be a basis in the set . The topology is called the topology generated by . Similarly, we call as basis for .     A basis for the standard topology on   Observe that the topology generated by the basis in is precisely the standard topology on  , as the description of in makes clear.     Comparing with bases   Let be a topology on generated by the basis .    Let be a topology on . We have .    Let be a topology on generated by the basis . We have .       Multiple bases for the standard real topology   Show that the bases from all generate the standard topology on .         The collection is called the lower limit basis , and the topology it generates is called the lower limit topology on . We denote the topological space as .    Lower limit is finer than standard   Show that the lower limit topology on is strictly finer than the standard one.         Let , and define . The collection is a basis in . The topology it generates is called the -topology on . We denote the topological space as .        Comparing standard, lower limit, and -topology   Show that the -topology is strictly finer than the standard topology on .  Show that the lower limit topology and -topology are incomparable.         Basis criterion   Let be a topology on the set . A subset is a basis of if and only if for all and there is an element such that .          Let be a set, and let be the discrete topology on . Show the following:    is a basis for .    If is a basis for , then . In other words, is the minimal basis of the discrete topology.             "
+},
+{
+  "id": "d_basis",
+  "level": "2",
+  "url": "s_bases_top.html#d_basis",
+  "type": "Definition",
+  "number": "1.2.1",
+  "title": "Topological basis.",
+  "body": " Topological basis  Let be a set. A (topological) basis in is a collection of subsets of satisfying the following axioms:   Covers  For each there is a set such that .    Contained in intersections  If , then there is a such that .     "
+},
+{
+  "id": "eg_basis_R",
+  "level": "2",
+  "url": "s_bases_top.html#eg_basis_R",
+  "type": "Example",
+  "number": "1.2.2",
+  "title": "Some bases for <span class=\"process-math\">\\(\\R\\)<\/span>.",
+  "body": " Some bases for   Show that the given collections are bases in .                             "
+},
+{
+  "id": "th_basis_generated",
+  "level": "2",
+  "url": "s_bases_top.html#th_basis_generated",
+  "type": "Theorem",
+  "number": "1.2.3",
+  "title": "",
+  "body": "  Let be a basis in the set .    The set is a topology on .    We have the following alternate description of : .     "
+},
+{
+  "id": "d_basis_generated",
+  "level": "2",
+  "url": "s_bases_top.html#d_basis_generated",
+  "type": "Definition",
+  "number": "1.2.4",
+  "title": "",
+  "body": "  Let be a basis in the set . The topology is called the topology generated by . Similarly, we call as basis for .   "
+},
+{
+  "id": "eg_basis_standard_R",
+  "level": "2",
+  "url": "s_bases_top.html#eg_basis_standard_R",
+  "type": "Example",
+  "number": "1.2.5",
+  "title": "A basis for the standard topology on <span class=\"process-math\">\\(\\R\\)<\/span>.",
+  "body": " A basis for the standard topology on   Observe that the topology generated by the basis in is precisely the standard topology on  , as the description of in makes clear.   "
+},
+{
+  "id": "th_compare_basis",
+  "level": "2",
+  "url": "s_bases_top.html#th_compare_basis",
+  "type": "Theorem",
+  "number": "1.2.6",
+  "title": "Comparing with bases.",
+  "body": " Comparing with bases   Let be a topology on generated by the basis .    Let be a topology on . We have .    Let be a topology on generated by the basis . We have .     "
+},
+{
+  "id": "eg_multiple_bases_standard_R",
+  "level": "2",
+  "url": "s_bases_top.html#eg_multiple_bases_standard_R",
+  "type": "Example",
+  "number": "1.2.7",
+  "title": "Multiple bases for the standard real topology.",
+  "body": " Multiple bases for the standard real topology   Show that the bases from all generate the standard topology on .       "
+},
+{
+  "id": "top_eg_lower_limit",
+  "level": "2",
+  "url": "s_bases_top.html#top_eg_lower_limit",
+  "type": "Topological specimen",
+  "number": "4",
+  "title": "",
+  "body": " The collection is called the lower limit basis , and the topology it generates is called the lower limit topology on . We denote the topological space as .  "
+},
+{
+  "id": "eg_lower_limit_finer",
+  "level": "2",
+  "url": "s_bases_top.html#eg_lower_limit_finer",
+  "type": "Example",
+  "number": "1.2.8",
+  "title": "Lower limit is finer than standard.",
+  "body": " Lower limit is finer than standard   Show that the lower limit topology on is strictly finer than the standard one.       "
+},
+{
+  "id": "project-5",
+  "level": "2",
+  "url": "s_bases_top.html#project-5",
+  "type": "Topological specimen",
+  "number": "5",
+  "title": "",
+  "body": " Let , and define . The collection is a basis in . The topology it generates is called the -topology on . We denote the topological space as .      "
+},
+{
+  "id": "eg_Ktop_lower_stand",
+  "level": "2",
+  "url": "s_bases_top.html#eg_Ktop_lower_stand",
+  "type": "Example",
+  "number": "1.2.9",
+  "title": "Comparing standard, lower limit, and <span class=\"process-math\">\\(K\\)<\/span>-topology.",
+  "body": " Comparing standard, lower limit, and -topology   Show that the -topology is strictly finer than the standard topology on .  Show that the lower limit topology and -topology are incomparable.       "
+},
+{
+  "id": "th_basis_criterion",
+  "level": "2",
+  "url": "s_bases_top.html#th_basis_criterion",
+  "type": "Theorem",
+  "number": "1.2.10",
+  "title": "Basis criterion.",
+  "body": " Basis criterion   Let be a topology on the set . A subset is a basis of if and only if for all and there is an element such that .       "
+},
+{
+  "id": "eg_basis_discrete",
+  "level": "2",
+  "url": "s_bases_top.html#eg_basis_discrete",
+  "type": "Example",
+  "number": "1.2.11",
+  "title": "",
+  "body": "  Let be a set, and let be the discrete topology on . Show the following:    is a basis for .    If is a basis for , then . In other words, is the minimal basis of the discrete topology.          "
 },
 {
   "id": "appendix-notation",

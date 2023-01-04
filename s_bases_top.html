@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Bases for topological spaces</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math 334-1">
+<meta property="book:author" content="Aaron Greicius">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="http://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="kursobjekt.html"><span class="title">Math 334-1:</span> <span class="subtitle">Kursobjekt</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>No results.</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="name">Index</span></a><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="s_top_spaces.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="c_top_spaces.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="backmatter-1.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+  \newcommand{\Q}{{\mathbb Q}}
+  \newcommand{\R}{{\mathbb R}}
+  \newcommand{\C}{{\mathbb C}}
+  \newcommand{\T}{{\mathbb T}}
+  \newcommand{\F}{{\mathbb F}}
+  \newcommand{\HH}{{\mathbb H}}
+  \newcommand{\compose}{\circ}
+  \newcommand{\bolda}{{\mathbf a}}
+  \newcommand{\boldb}{{\mathbf b}}
+  \newcommand{\boldc}{{\mathbf c}}
+  \newcommand{\boldd}{{\mathbf d}}
+  \newcommand{\bolde}{{\mathbf e}}
+  \newcommand{\boldi}{{\mathbf i}}
+  \newcommand{\boldj}{{\mathbf j}}
+  \newcommand{\boldk}{{\mathbf k}}
+  \newcommand{\boldn}{{\mathbf n}}
+  \newcommand{\boldp}{{\mathbf p}}
+  \newcommand{\boldq}{{\mathbf q}}
+  \newcommand{\boldr}{{\mathbf r}}
+  \newcommand{\bolds}{{\mathbf s}}
+  \newcommand{\boldt}{{\mathbf t}}
+  \newcommand{\boldu}{{\mathbf u}}
+  \newcommand{\boldv}{{\mathbf v}}
+  \newcommand{\boldw}{{\mathbf w}}
+  \newcommand{\boldx}{{\mathbf x}}
+  \newcommand{\boldy}{{\mathbf y}}
+  \newcommand{\boldz}{{\mathbf z}}
+  \newcommand{\boldzero}{{\mathbf 0}}
+  \newcommand{\boldmod}{\boldsymbol{ \bmod }}
+  \newcommand{\boldT}{{\mathbf T}}
+  \newcommand{\boldN}{{\mathbf N}}
+  \newcommand{\boldB}{{\mathbf B}}
+  \newcommand{\boldF}{{\mathbf F}}
+  \newcommand{\boldS}{{\mathbf S}}
+  \newcommand{\boldE}{{\mathbf E}}
+  \newcommand{\boldG}{{\mathbf G}}
+  \newcommand{\boldK}{{\mathbf K}}
+  \newcommand{\boldL}{{\mathbf L}}
+  \DeclareMathOperator{\lcm}{lcm}
+  \DeclareMathOperator{\Span}{span}
+  \DeclareMathOperator{\tr}{tr}
+  \DeclareMathOperator{\NS}{null}
+  \DeclareMathOperator{\RS}{row}
+  \DeclareMathOperator{\CS}{col}
+  \DeclareMathOperator{\im}{im}
+  \DeclareMathOperator{\range}{range}
+  \DeclareMathOperator{\rank}{rank}
+  \DeclareMathOperator{\nullity}{nullity}
+  \DeclareMathOperator{\sign}{sign}
+  \DeclareMathOperator{\Fix}{Fix}
+  \DeclareMathOperator{\Aff}{Aff}
+  \DeclareMathOperator{\Frac}{Frac}
+  \DeclareMathOperator{\Ann}{Ann}
+  \DeclareMathOperator{\Tor}{Tor}
+  \DeclareMathOperator{\id}{id}
+  \DeclareMathOperator{\mdeg}{mdeg}
+  \DeclareMathOperator{\Lt}{Lt}
+  \DeclareMathOperator{\Lc}{Lc}
+  \DeclareMathOperator{\disc}{disc}
+  \DeclareMathOperator{\Frob}{Frob}
+  \DeclareMathOperator{\adj}{adj}
+  \DeclareMathOperator{\curl}{curl}
+  \DeclareMathOperator{\grad}{grad}
+  \DeclareMathOperator{\diver}{div}
+  \DeclareMathOperator{\flux}{flux}
+  \newcommand{\surjects}{\twoheadrightarrow}
+  \newcommand{\injects}{\hookrightarrow}
+  \newcommand{\bijects}{\leftrightarrow}
+  \newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+  \newcommand{\floor}[1]{\lfloor#1\rfloor}
+  \newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+  \newcommand{\mclass}[2][m]{[#2]_{#1}}
+  \newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+  \newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+  \newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+  \newcommand{\normalin}{\trianglelefteq}
+  \newcommand{\angvec}[1]{\langle #1\rangle}
+  \newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+  \newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+  \newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+  \newenvironment{linsys}[2][m]{
+  \begin{array}[#1]{@{}*{#2}{rc}r@{}}
+  }{
+  \end{array}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li><div class="toc-item"><a href="meta_frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li>
+<div class="toc-item"><a href="c_foundations.html" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="s_sets_functions.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Sets and functions</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s_sets_functions.html#ss_sets" class="internal"><span class="title">Sets</span></a></div></li>
+<li><div class="toc-item"><a href="s_sets_functions.html#ss_functions" class="internal"><span class="title">Functions</span></a></div></li>
+<li><div class="toc-item"><a href="s_sets_functions.html#subsec-" class="internal"><span class="title">Cardinality and countability</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s_logic.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Logic</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s_logic.html#ss_propositional_calculus" class="internal"><span class="title">Propositional logic</span></a></div></li>
+<li><div class="toc-item"><a href="s_logic.html#ss_predicate_logic" class="internal"><span class="title">Predicate logic</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Proof techniques</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="s_proof_technique.html#ss_logical_structure" class="internal"><span class="title">Logical structure</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_implication" class="internal"><span class="title">Implication</span></a></div></li>
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_disjunction" class="internal"><span class="title">Disjunction</span></a></div></li>
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_equivalence" class="internal"><span class="title">Equivalence</span></a></div></li>
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_logical_chains" class="internal"><span class="title">Chains of implications/equivalences</span></a></div></li>
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_proof_by_contradiction" class="internal"><span class="title">Proof by contradiction</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s_proof_technique.html#ss_Equalities" class="internal"><span class="title">Equalities</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="s_proof_technique.html#sss_chain_equalities" class="internal"><span class="title">Chain of equalities</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="s_proof_technique.html#ss_set_properties" class="internal"><span class="title">Basic set properties</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_set_inclusion" class="internal"><span class="title">Set inclusion</span></a></div></li>
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_set_equality" class="internal"><span class="title">Set equality</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s_proof_technique.html#ss_function_properties" class="internal"><span class="title">Basic function properties</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_function_equality" class="internal"><span class="title">Function equality</span></a></div></li>
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_injective_surjective_bijective" class="internal"><span class="title">Injective, surjective, bijective</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="s_proof_technique.html#ss_mathematical_induction" class="internal"><span class="title">Mathematical induction</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_weak_induction" class="internal"><span class="title">Proof by induction</span></a></div></li>
+<li><div class="toc-item"><a href="s_proof_technique.html#sss_strong_induction" class="internal"><span class="title">Proof by strong induction</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="c_top_spaces.html" class="internal"><span class="codenumber">1</span> <span class="title">Topological spaces and continuous functions</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s_top_spaces.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Topological spaces</span></a></div></li>
+<li class="active"><div class="toc-item"><a href="s_bases_top.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Bases for topological spaces</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="backmatter-1.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="appendix-notation.html" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></div></li>
+<li><div class="toc-item"><a href="appendix-defs.html" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></div></li>
+<li><div class="toc-item"><a href="appendix-thms.html" class="internal"><span class="codenumber">C</span> <span class="title">Theory</span></a></div></li>
+<li><div class="toc-item"><a href="appendix-specimens.html" class="internal"><span class="codenumber">D</span> <span class="title">Topological specimens</span></a></div></li>
+<li><div class="toc-item"><a href="appendix-egs.html" class="internal"><span class="codenumber">E</span> <span class="title">Examples</span></a></div></li>
+<li><div class="toc-item"><a href="index-1.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_bases_top"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.2</span> <span class="title">Bases for topological spaces</span>
+</h2>
+<section class="introduction" id="introduction-7"><div class="para" id="p-192">When defining a topology <span class="process-math">\(\mathcal{T}\)</span> for a set <span class="process-math">\(X\)</span> it is often convenient to specify instead a more manageable subset of <span class="process-math">\(\mathcal{T}\)</span> that we can use to <em class="emphasis">generate</em> the entire topology using arbitrary unions and/or finite intersections (our open set operators). A <em class="emphasis">topological basis</em> is a particularly nice example of this (<a href="" class="xref" data-knowl="./knowl/d_basis.html" title="Definition 1.2.1: Topological basis">1.2.1</a>) as the open sets of the topology it generates can be expressed as (arbitrary) unions of the basis elements. Bases will also provide a convenient way of comparing different topologies and (later on) determining whether relevant topological properties are satisfied by a given space.</div></section><article class="definition definition-like" id="d_basis"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Topological basis.</span>
+</h3> Let <span class="process-math">\(X\)</span> be a set. A <dfn class="terminology">(topological) basis</dfn> in <span class="process-math">\(X\)</span> is a collection <span class="process-math">\(\mathcal{B}\)</span> of subsets of <span class="process-math">\(X\)</span> satisfying the following axioms: <ol class="decimal">
+<li id="li-45">
+<span class="heading"><span class="title">Covers.</span></span><div class="para" id="p-193">For each <span class="process-math">\(x\in X\)</span> there is a set <span class="process-math">\(B\in \mathcal{B}\)</span> such that <span class="process-math">\(x\in B\text{.}\)</span>
+</div>
+</li>
+<li id="li-46">
+<span class="heading"><span class="title">Contained in intersections.</span></span><div class="para" id="p-194">If <span class="process-math">\(B_1, B_2\in \mathcal{B}\text{,}\)</span> then there is a <span class="process-math">\(B\in \mathcal{B}\)</span> such that <span class="process-math">\(B\subseteq B_1\cap B_2\text{.}\)</span>
+</div>
+</li>
+</ol></article><article class="example example-like" id="eg_basis_R"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Some bases for <span class="process-math">\(\R\)</span>.</span>
+</h3>
+<div class="para" id="p-195">Show that the given collections <span class="process-math">\(\mathcal{B}\)</span> are bases in <span class="process-math">\(\R\text{.}\)</span>
+</div> <ol class="decimal">
+<li id="li-47"><div class="para" id="p-196"><span class="process-math">\(\displaystyle \mathcal{B}_1=\{(x-\epsilon, x+\epsilon)\colon x,\epsilon\in \R, \epsilon&gt; 0\}\)</span></div></li>
+<li id="li-48"><div class="para" id="p-197"><span class="process-math">\(\displaystyle \mathcal{B}_2=\{(a,b)\colon a,b\in \R, a&lt; b\}\)</span></div></li>
+<li id="li-49"><div class="para" id="p-198"><span class="process-math">\(\displaystyle \mathcal{B}_3=\{ (p,q)\colon p,q\in \Q, p&lt; q\} \)</span></div></li>
+<li id="li-50"><div class="para" id="p-199"><span class="process-math">\(\displaystyle \mathcal{B}_4=\{[a,b)\colon a,b\in \R, a&lt; b\}\)</span></div></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like"><div class="para" id="p-200"></div></div></div>
+</div></article><article class="theorem theorem-like" id="th_basis_generated"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-201">Let <span class="process-math">\(\mathcal{B}\subseteq \mathcal{P}(X)\)</span> be a basis in the set <span class="process-math">\(X\text{.}\)</span>
+</div> <ol class="decimal">
+<li id="li-51"><div class="para logical" id="p-202">
+<div class="para">The set</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{T}=\{U\subseteq X\colon U=\bigcup_{i\in I}B_i \text{ for some elements } B_i\in \mathcal{B}\}
+\end{equation*}
+</div>
+<div class="para">is a topology on <span class="process-math">\(X\text{.}\)</span>
+</div>
+</div></li>
+<li id="li-52"><div class="para logical" id="p-203">
+<div class="para">We have the following alternate description of <span class="process-math">\(\mathcal{T}\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+U\in \mathcal{T} \iff \text{ for all } x\in U \ \text{ there exists } B\in \mathcal{B} \text{ such that } x\in B\subseteq U\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol></article><article class="definition definition-like" id="d_basis_generated"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-204">
+<div class="para">Let <span class="process-math">\(\mathcal{B}\subseteq \mathcal{P}(X)\)</span> be a basis in the set <span class="process-math">\(X\text{.}\)</span> The topology</div>
+<div class="displaymath process-math" id="mdn-1">
+\begin{align}
+\mathcal{T}\amp =\{U\subseteq X\colon U=\bigcup_{i\in I}B_i \text{ for some elements } B_i\in \mathcal{B}\} \tag{1.2.1}\\
+\amp = \{U\subseteq X\colon \text{ for all } x\in U \text{ there exists } B\in \mathcal{B} \text{ s.t. } x\in B\subseteq U\}\tag{1.2.2}
+\end{align}
+</div>
+<div class="para">is called the <dfn class="terminology">topology generated</dfn> by <span class="process-math">\(\mathcal{B}\text{.}\)</span> Similarly, we call <span class="process-math">\(\mathcal{B}\)</span> as basis for <span class="process-math">\(\mathcal{T}\text{.}\)</span>
+</div>
+</div></article><article class="example example-like" id="eg_basis_standard_R"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">A basis for the standard topology on <span class="process-math">\(\R\)</span>.</span>
+</h3>
+<div class="para" id="p-205">Observe that the topology <span class="process-math">\(\mathcal{T}\)</span> generated by the basis <span class="process-math">\(\mathcal{B}_1\)</span> in <a href="" class="xref" data-knowl="./knowl/eg_basis_R.html" title="Example 1.2.2: Some bases for \R">Example 1.2.2</a> is precisely the <a href="" class="xref" data-knowl="./knowl/top_eq_standard_R.html" title="Topological specimen 1: Standard topology on \R">standard topology on <span class="process-math">\(\R\)</span></a>, as the description of <span class="process-math">\(\mathcal{T}\)</span> in <a href="" class="xref" data-knowl="./knowl/eq_top_generated2.html" title="Equation 1.2.2">(1.2.2)</a> makes clear.</div></article><article class="theorem theorem-like" id="th_compare_basis"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Comparing with bases.</span>
+</h3>
+<div class="para" id="p-206">Let <span class="process-math">\(\mathcal{T}\)</span> be a topology on <span class="process-math">\(X\)</span> generated by the basis <span class="process-math">\(\mathcal{B}\text{.}\)</span>
+</div> <ol class="decimal">
+<li id="li-53"><div class="para logical" id="p-207">
+<div class="para">Let <span class="process-math">\(\mathcal{T}'\)</span> be a topology on <span class="process-math">\(X\text{.}\)</span> We have</div>
+<div class="displaymath process-math" id="eq_compare_basis_top">
+\begin{equation}
+\mathcal{T}\subseteq \mathcal{T}'\iff B\in \mathcal{T}' \text{ for all } B\in \mathcal{B}\text{.}\tag{1.2.3}
+\end{equation}
+</div>
+</div></li>
+<li id="li-54"><div class="para logical" id="p-208">
+<div class="para">Let <span class="process-math">\(\mathcal{T}'\)</span> be a topology on <span class="process-math">\(X\)</span> generated by the basis <span class="process-math">\(\mathcal{B}'\text{.}\)</span> We have</div>
+<div class="displaymath process-math" id="eq_compare_basis_basis">
+\begin{equation}
+\mathcal{T}\subseteq \mathcal{T}'\iff \text{ for all } B\in \mathcal{B} \text{ and } x\in B  \text{ there exists } B'\in \mathcal{B}' \text{ s.t. } x\in B'\subseteq B\text{.}\tag{1.2.4}
+\end{equation}
+</div>
+</div></li>
+</ol></article><article class="example example-like" id="eg_multiple_bases_standard_R"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Multiple bases for the standard real topology.</span>
+</h3>
+<div class="para" id="p-209">Show that the bases <span class="process-math">\(\mathcal{B}_1, \mathcal{B}_2, \mathcal{B}_3\)</span> from <a href="" class="xref" data-knowl="./knowl/eg_basis_R.html" title="Example 1.2.2: Some bases for \R">Example 1.2.2</a> all generate the standard topology on <span class="process-math">\(\R\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like"><div class="para" id="p-210"></div></div></div>
+</div></article><article class="project project-like" id="top_eg_lower_limit"><h3 class="heading">
+<span class="type">Topological specimen</span><span class="space"> </span><span class="codenumber">4</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-211">The collection <span class="process-math">\(\mathcal{B}_l=\{([a,b)\colon a,b\in \R, a&lt; b\}\)</span> is called the <dfn class="terminology">lower limit basis</dfn>, and the topology <span class="process-math">\(\mathcal{T}_l\)</span> it generates is called the <dfn class="terminology">lower limit topology</dfn>  on <span class="process-math">\(\R\text{.}\)</span> We denote the topological space <span class="process-math">\((\R, \mathcal{T}_l)\)</span> as <span class="process-math">\(\R_l\text{.}\)</span>
+</div></article><article class="example example-like" id="eg_lower_limit_finer"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Lower limit is finer than standard.</span>
+</h3>
+<div class="para" id="p-212">Show that the lower limit topology on <span class="process-math">\(\R\)</span> is strictly finer than the standard one.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like"><div class="para" id="p-213"></div></div></div>
+</div></article><article class="project project-like" id="project-5"><h3 class="heading">
+<span class="type">Topological specimen</span><span class="space"> </span><span class="codenumber">5</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-214">
+<div class="para">Let <span class="process-math">\(K=\{1/n\colon c\in \Z_+\}=\{1, 1/2, 1/3,\dots\}\text{,}\)</span> and define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{B}_K=\{(a,b)\colon a,b\in \R, a&lt; b\}\cup \{ (a,b)-K\colon a,b\in \R, a&lt; b\}\text{.}
+\end{equation*}
+</div>
+<div class="para">The collection <span class="process-math">\(\mathcal{B}_K\)</span> is a basis in <span class="process-math">\(\R\text{.}\)</span> The topology <span class="process-math">\(\mathcal{T}_K\)</span> it generates is called the <dfn class="terminology"><span class="process-math">\(K\)</span>-topology</dfn> on <span class="process-math">\(\R\text{.}\)</span> We denote the topological space <span class="process-math">\((\R, \mathcal{T}_K)\)</span> as <span class="process-math">\(\R_K\text{.}\)</span>
+</div>
+</div> <article class="hiddenproof" id="proof-3"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-3"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-3"><article class="hiddenproof"><div class="para" id="p-215"></div></article></div></article><article class="example example-like" id="eg_Ktop_lower_stand"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Comparing standard, lower limit, and <span class="process-math">\(K\)</span>-topology.</span>
+</h3>
+<div class="para" id="p-216">Show that the <span class="process-math">\(K\)</span>-topology is strictly finer than the standard topology on <span class="process-math">\(\R\text{.}\)</span>
+</div> <div class="para" id="p-217">Show that the lower limit topology and <span class="process-math">\(K\)</span>-topology are incomparable.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like"><div class="para" id="p-218"></div></div></div>
+</div></article><article class="theorem theorem-like" id="th_basis_criterion"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">Basis criterion.</span>
+</h3>
+<div class="para" id="p-219">Let <span class="process-math">\(\mathcal{T}\)</span> be a topology on the set <span class="process-math">\(X\text{.}\)</span> A subset <span class="process-math">\(\mathcal{B}\subseteq \mathcal{T}\)</span> is a basis of <span class="process-math">\(\mathcal{T}\)</span> if and only if for all <span class="process-math">\(U\in \mathcal{T}\)</span> and <span class="process-math">\(x\in U\)</span> there is an element <span class="process-math">\(B\in \mathcal{B}\)</span> such that <span class="process-math">\(x\in B\subseteq U\text{.}\)</span>
+</div></article><article class="hiddenproof" id="proof-4"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-4"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-4"><article class="hiddenproof"><div class="para" id="p-220"></div></article></div>
+<article class="example example-like" id="eg_basis_discrete"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.11</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-221">
+<div class="para">Let <span class="process-math">\(X\)</span> be a set, and let <span class="process-math">\(\mathcal{T}\)</span> be the discrete topology on <span class="process-math">\(X\text{.}\)</span> Show the following:</div>
+<ol class="decimal">
+<li id="li-55"><div class="para" id="p-222">
+<span class="process-math">\(\mathcal{B}=\{ \{x\}\colon x\in X\}\)</span> is a basis for <span class="process-math">\(\mathcal{T}\text{.}\)</span>
+</div></li>
+<li id="li-56"><div class="para" id="p-223">If <span class="process-math">\(\mathcal{B}'\)</span> is a basis for <span class="process-math">\(\mathcal{T}\text{,}\)</span> then <span class="process-math">\(\mathcal{B}\subseteq \mathcal{B}'\text{.}\)</span> In other words, <span class="process-math">\(\mathcal{B}\)</span> is the minimal basis of the discrete topology.</div></li>
+</ol>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-15" id="solution-15"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-15"><div class="solution solution-like"><div class="para" id="p-224"></div></div></div>
+</div></article></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="s_top_spaces.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="backmatter-1.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Authored in PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div>
+</body>
+</html>
