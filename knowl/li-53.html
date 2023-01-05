@@ -12,14 +12,17 @@
 </head>
 <body class="ignore-math">
 <article class="li"><h4 class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span>
 </h4>
 <div class="para logical">
-<div class="para">Let <span class="process-math">\(\mathcal{T}'\)</span> be a topology on <span class="process-math">\(X\text{.}\)</span> We have</div>
+<div class="para">In plain English, a union of unions of elements of <span class="process-math">\(\mathcal{B}\)</span> is a union of elements of <span class="process-math">\(\mathcal{B}\text{.}\)</span> More rigorously, assume we have a collection of <span class="process-math">\(U_i\in \mathcal{T}\text{.}\)</span> By definition, for each <span class="process-math">\(i\in I\)</span> we have <span class="process-math">\(U_i=\bigcup_{j\in J_i} B_{i,j}\text{,}\)</span> where <span class="process-math">\(B_{i,j}\in \mathcal{B}\)</span> for each <span class="process-math">\(j\in J\text{.}\)</span> Thus</div>
 <div class="displaymath process-math">
-\begin{equation}
-\mathcal{T}\subseteq \mathcal{T}'\iff B\in \mathcal{T}' \text{ for all } B\in \mathcal{B}\text{.}\tag{1.2.3}
-\end{equation}
+\begin{align*}
+\bigcup_{i\in I} U_i \amp = \bigcup_{i\in I}\bigcup_{j\in J_i} B_{i,j} \\
+\amp \bigcup_{(i,j)\in K} B_{i,j} \text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(K\)</span> is the set of all pairs of the form <span class="process-math">\((i,j)\)</span> for <span class="process-math">\(i\in I\)</span> and <span class="process-math">\(j\in I_j\text{.}\)</span> Thus <span class="process-math">\(U=\bigcup_{i\in I} U_i\)</span> is a union of basis elements, and hence an element of <span class="process-math">\(\mathcal{T}\text{.}\)</span>
 </div>
 </div></article><span class="incontext"><a href="s_bases_top.html#li-53" class="internal">in-context</a></span>
 </body>
