@@ -41,7 +41,7 @@
   </statement>
 </definition>
     <remark xml:id="rm_def_top">
-      <title>Equivalent alternative to axioms (1)-(3)</title>
+      <title>Equivalent alternative to axiom (3)</title>
   <statement>
     <p>
       Using induction, we can show that if <m>\mathcal{T}</m> satisfies axiom (3) for any <em>two</em> elements of <m>\mathcal{T}</m>, then it satisfies it for any <m>n</m> elements, for <m>n</m> arbitrary. In other words if we replace axiom (3) with
@@ -82,7 +82,7 @@
               <mrow> \amp \implies (x-\epsilon, x+\epsilon)\subseteq U_i \text{ for some } i\in I, \epsilon &gt; 0</mrow>
               <mrow>  \amp \implies (x-\epsilon, x+\epsilon)\subseteq U \text{ for some } i\in I, \epsilon &gt; 0 </mrow>
             </md>.
-            This shows <m>U</m> satisfies the defining proerty of <m>\mathcal{T}</m>, and hence <m>U\in \mathcal{T}</m>.
+            This shows <m>U</m> satisfies the defining property of <m>\mathcal{T}</m>, and hence <m>U\in \mathcal{T}</m>.
           </p>
         </li>
         <li>

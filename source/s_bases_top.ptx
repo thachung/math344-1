@@ -25,6 +25,19 @@
     </ol>
   </statement>
 </definition>
+  <remark xml:id="rm_alt_axiom2">
+  <title>Equivalent alternative to axiom (2)</title>
+  <statement>
+    <p>
+      Axiom (2) in <xref ref="d_basis"/> is equivalent to saying that <m>B_1\cap B_2</m> is equal to a union of elements of <m>\mathcal{B}</m>. In other words, we could replace (2) with the equivalent statement
+      <me>
+        (2') \ B_1, B_2\in \mathcal{B}\implies B_1\cap B_2=\bigcup_{\alpha\in I} B_\alpha \text{ for some } B_\alpha\in \mathcal{B}
+      </me>.
+      This is a consequence of the following more general fact: let <m>U</m> be a subset of <m>X</m>, and let <m>\mathcal{A}</m> be a collection of subsets of <m>X</m>; we have <m>U=\bigcup_{i\in I} A_i</m> for some <m>A_i\in \mathcal{A}</m> if and only if for all <m>x\in U</m> there exists an element <m>A_x\in \mathcal{A}</m> such that <m>x\in A_x\subseteq U</m>. I'll leave the proof of this to you.
+    </p>
+  </statement>
+</remark>
+
 <example xml:id="eg_basis_R">
   <title>Some bases for <m>\R</m></title>
   <statement>
@@ -34,29 +47,29 @@
     <ol>
       <li>
         <p>
-          <m>\mathcal{B}_1=\{(x-\epsilon, x+\epsilon)\colon x,\epsilon\in \R, \epsilon&gt; 0\}</m>
+          <m>\mathcal{B}_1=\{(x-\epsilon, x+\epsilon)\colon x,\epsilon\in \R, \epsilon&gt; 0\}=\{(a,b)\colon a,b\in\R, a&lt; b\}</m>
         </p>
       </li>
       <li>
         <p>
-          <m>\mathcal{B}_2=\{(a,b)\colon a,b\in \R, a&lt; b\}</m>
+          <m>\mathcal{B}_2=\{ (p,q)\colon p,q\in \Q, p&lt; q\} </m>
         </p>
       </li>
       <li>
         <p>
-          <m>\mathcal{B}_3=\{ (p,q)\colon p,q\in \Q, p&lt; q\} </m>
-        </p>
-      </li>
-      <li>
-        <p>
-          <m>\mathcal{B}_4=\{[a,b)\colon a,b\in \R, a&lt; b\}</m>
+          <m>\mathcal{B}_3=\{[a,b)\colon a,b\in \R, a&lt; b\}</m>
         </p>
       </li>
     </ol>
   </statement>
   <solution>
     <p>
-      It is clear that each collection of intervals covers <m>\R</m>. As for intersections, for (2)-(3) note that intersection of these types of intervals are either empty, or another interval of the same type. For (1) if <m>B_1=(x-\epsilon_1, x+\epsilon_1)</m>
+      It is clear that each collection of interval types covers <m>\R</m> in the sense of axiom (1). As for axiom (2), for each <m>\mathcal{B}_i</m>, <m>1\leq i\leq 3</m>, note that intersection of these types of intervals are either empty, or another interval of the same type. This is a result of the fact that
+      <md>
+        <mrow> (a,b)\cap (c,d)\amp = \left(\max(a,c),\min(b,d)\right) </mrow>
+        <mrow> [a,b)\cap [c,d) \amp = \left [\max{a,c}, \min(b,d)\right) </mrow>
+      </md>,
+      where the interval described on the right is understood to be the empty set if <m>\max(a,c)\geq \min(b,d)</m>.
     </p>
   </solution>
 </example>
@@ -86,6 +99,44 @@
       </li>
     </ol>
   </statement>
+  <proof>
+    <p>
+      Note: it is somewhat easier to show that <m>\mathcal{T}</m> is a topology using the description in statement (2), and then to show that the description in statement (1) is the same. (See Munkres for an approach like this.) I've decided to go the hard way since this is how I proceeded in class, and since it puts us through some useful set theory calisthenics!
+  </p>
+  <p>
+    First we show that <m>\mathcal{T}</m> as defined in (1) is a topology. We treat each axiom separately.
+  </p>
+    <ol>
+      <li>
+        <p>
+          The empty set is the <q>empty union</q> of elements of <m>\mathcal{B}</m>; thus <m>\emptyset\in \mathcal{T}</m>. The covering axiom for bases implies that for all <m>x\in X</m> there is a <m>B_x\in\mathcal{B}</m> such that <m>x\in B_x</m>. It follows that <m>X=\bigcup_{x\in X}B_x</m> is a union of elements of <m>\mathcal{B}</m>, and thus that <m>X\in \mathcal{T}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          In plain English, a union of unions of elements of <m>\mathcal{B}</m> is a union of elements of <m>\mathcal{B}</m>. More rigorously, assume we have a collection of <m>U_i\in \mathcal{T}</m>. By definition, for each <m>i\in I</m> we have <m>U_i=\bigcup_{j\in J_i} B_{i,j}</m>, where <m>B_{i,j}\in \mathcal{B}</m> for each <m>j\in J</m>. Thus
+          <md>
+            <mrow>\bigcup_{i\in I} U_i \amp = \bigcup_{i\in I}\bigcup_{j\in J_i} B_{i,j} </mrow>
+            <mrow> \amp \bigcup_{(i,j)\in K} B_{i,j} </mrow>
+          </md>,
+          where <m>K</m> is the set of all pairs of the form <m>(i,j)</m> for <m>i\in I</m> and <m>j\in I_j</m>. Thus <m>U=\bigcup_{i\in I} U_i</m> is a union of basis elements, and hence an element of <m>\mathcal{T}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          It is enough to show that <m>U, V\in \mathcal{T}\implies U\cap V\in \mathcal{T}</m>. (See <xref ref="rm_def_top"/>.) Assume <m>U=\bigcup_{i\in I}B_i</m>, <m>V=\bigcup_{j\in J}B_j</m>, where <m>B_i, B_j\in \mathcal{B}</m> for all <m>i\in I, j\in J</m>. We have
+          <md>
+            <mrow>U\cap V \amp= \left(\bigcup_{i\in I}B_i \right) \cap \left( \bigcup_{j\in J}B_j\right) </mrow>
+            <mrow> \amp = \bigcup_{(i,j)\in I\times J} B_i\cap B_j </mrow>
+          </md>.
+          Now by axiom (2') for bases (see <xref ref="rm_alt_axiom2"/>), each <m>B_i\cap B_j</m> is a union of basis elements, and hence is an element <m>U_{i,j}\in \mathcal{T}</m>. We have already shown that <m>\mathcal{T}</m> is closed under arbitrary unions. Thus <m>U\cap V</m> is an element of <m>\mathcal{T}</m>.
+        </p>
+      </li>
+    </ol>
+    <p>
+      This shows that <m>\mathcal{T}</m>, as defined in statement (1) of the theorem, is a topology. Statement (2) now follows from the general claim made in <xref ref="rm_alt_axiom2"/>.
+    </p>
+  </proof>
 </theorem>
 <definition xml:id="d_basis_generated">
   <title>Topology generated by basis</title>
@@ -100,14 +151,7 @@
     </p>
   </statement>
 </definition>
-    <example xml:id="eg_basis_standard_R">
-  <title>A basis for the standard topology on <m>\R</m></title>
-  <statement>
-    <p>
-      Observe that the topology <m>\mathcal{T}</m> generated by the basis <m>\mathcal{B}_1</m> in <xref ref="eg_basis_R"/> is precisely the <xref ref="top_eq_standard_R" text='custom'>standard topology on <m>\R</m> </xref>, as the description of <m>\mathcal{T}</m> in <xref ref="eq_top_generated2"/> makes clear.
-    </p>
-  </statement>
-  </example>
+
 <theorem xml:id="th_compare_basis">
   <title>Comparing with bases</title>
   <statement>
@@ -134,16 +178,32 @@
     </ol>
   </statement>
 </theorem>
+<example xml:id="eg_basis_standard_R">
+<title>A basis for the standard topology on <m>\R</m></title>
+<statement>
+  <p>
+    Show that the <xref ref="top_eq_standard_R" text='custom'>standard topology on <m>\R</m> </xref> is topology generated by the basis <m>\mathcal{B}_1</m> in <xref ref="eg_basis_R"/>.
+  </p>
+</statement>
+<solution>
+  <p>
+    Let <m>\mathcal{T}</m> be the topology generated by <m>\mathcal{B}_1</m> and let <m>\mathcal{T}'</m> be the <xref ref="top_eq_standard_R" text='custom'>standard topology on <m>\R</m> </xref>. Since every open interval is open in <m>\mathcal{T}'</m> each element of <m>\mathcal{B}_1</m> is an element of <m>\mathcal{T}'</m>. By <xref ref="eq_compare_basis_top"/>, we have <m>\mathcal{T}\subseteq \mathcal{T}'</m>.
+    Next, assume <m>U\in\mathcal{T}'</m>; then by definition for all <m>x\in U</m> there exists <m>\epsilon_x&gt; 0</m> such that <m>(x-\epsilon_x, x+\epsilon_x)\subseteq U</m>. It follows that <m>U=\bigcup_{x\in U}(x-\epsilon_x, x+\epsilon_x)</m>, a union of elements of <m>\mathcal{B}_1</m>. Thus <m>U\in \mathcal{T}</m>, by <xref ref="eq_top_generated1"/>. This proves <m>\mathcal{T}'\subseteq \mathcal{T}</m>, and thus that <m>\mathcal{T}=\mathcal{T}'</m>, as desired.
+  </p>
+</solution>
+</example>
 <example xml:id="eg_multiple_bases_standard_R">
   <title>Multiple bases for the standard real topology</title>
   <statement>
     <p>
-      Show that the bases <m>\mathcal{B}_1, \mathcal{B}_2, \mathcal{B}_3</m> from <xref ref="eg_basis_R"/> all generate the standard topology on <m>\R</m>.
+      Show that the bases <m>\mathcal{B}_1, \mathcal{B}_2</m> from <xref ref="eg_basis_R"/> both generate the standard topology on <m>\R</m>.
     </p>
   </statement>
   <solution>
     <p>
-
+      Let <m>\mathcal{T}_i</m> be the topology generated by <m>\mathcal{B}_i</m>, <m>1\leq i\leq 2</m>.
+      We must show that <m>\mathcal{T}_1\subseteq \mathcal{T}_2</m> and <m>\mathcal{T}_2\subseteq \mathcal{T}_1</m>. Clearly any <m>(p,q)\in \mathcal{B}_2</m> is an element of <m>\mathcal{B}_1</m>, and hence an element of <m>\mathcal{T}_1</m>. It follows from <xref ref="eq_compare_basis_top"/> that <m>\mathcal{T}_2\subseteq \mathcal{T}_1</m>.
+       Next, take any <m>(a,b)\in \mathcal{B}_1</m>. Since the rational numbers are dense in <m>\R</m>, for any <m>x\in (a,b)</m> we can find <m>p,q\in\R</m> satisfying <m>x\in (p,q)\subseteq (a,b)</m>. From <xref ref="eq_compare_basis_basis"/> it follows that <m>\mathcal{T}_1\subseteq \mathcal{T}_2</m>.  
     </p>
   </solution>
 </example>
