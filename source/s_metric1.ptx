@@ -1,0 +1,146 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_metric1">
+  <title>Metric spaces</title>
+  <introduction>
+    <p>
+    In this section we introduce a special family of topological spaces: <xref ref="top_eg_metric_spaces" text="custom">metric spaces</xref>. These types of spaces are pervasive throughout mathematics and are conceptually very familiar or intuitive, as their defining structure, a <em>metric</em> <m>d</m>, is a straightforward generalization of the distance function <m>d(x,y)=\abs{x-y}</m> defined in <m>\R</m>.
+    </p>
+</introduction>
+<definition xml:id="d_metric_space">
+  <title>Metric space</title>
+  <statement>
+    A <term>metric space</term> is a pair <m>(X,d)</m>, where <m>X</m> is a set and <m>d\colon X\times X\rightarrow \R</m> is a function satisfying the following axioms:
+    <ol>
+      <li>
+        <title>Positivity</title>
+        <p>
+          <m>d(x,y)\geq 0</m>, and <m>d(x,y)=0</m> if and only if <m>x=y</m>, for all <m>x,y\in X</m>.
+        </p>
+      </li>
+      <li>
+        <title>Symmetry</title>
+        <p>
+          <m>d(x,y)=d(y,x)</m> for all <m>x,y\in X</m>.
+        </p>
+      </li>
+      <li>
+        <title>Triangle inequality</title>
+        <p>
+          <m>d(x,y)\leq d(x,z)+d(z,y)</m> for all <m>x,y,z\in X</m>.
+        </p>
+      </li>
+    </ol>
+    The function <m>d</m> is called a <term>metric</term> or a <term>distance function</term> on <m>X</m>, and for any <m>x,y\in X</m> we call <m>d(x,y)</m> the <term>distance between</term> <m>x</m> and <m>y</m>.
+  </statement>
+</definition>
+<definition xml:id="d_Euclidean_box_metric">
+  <title>Euclidean and box metrics</title>
+  <statement>
+    <p>
+      Let <m>X=\R^n</m>, where <m>n</m> is a positive integer. Let <m>\boldx=(x_1,x_2,\dots, x_n), \boldy=(y_1,y_2,\dots, y_n)</m>.
+      <ol>
+        <li>
+          <p>
+            The function <m>d\colon X\times X\rightarrow \R</m> defined as
+            <me>
+              d(\boldx,\boldy)=\sqrt{(x_1-y_1)^2+(x_2-y_2)^2+\cdots +(x_n-y_n)^2}
+            </me>
+            is a metric, called the <term>Euclidean metric</term>. The metric space <m>(\R^n, d)</m> is called <term>Euclidean <m>n</m>-space</term>. The <term>norm</term> of <m>\boldx</m>, denoted <m>\norm{\boldx}</m>, is defined as
+            <me>
+              \norm{\boldx}=d(\boldx, \boldzero)=\sqrt{x_1^2+x_2^2+\cdots +x_n^2}
+            </me>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The function <m>d\colon X\times X\rightarrow \R</m> defined as
+            <me>
+              d(\boldx,\boldy)=\max\{\abs{x_1-y_1},\abs{x_2-y_2},\dots, \abs{x_n-y_n}\}
+            </me>
+            is a metric, called the <term>box metric</term> (or <term>square metric</term>).
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      <ol>
+        <li>
+          <p>
+            It is easiest to prove that the Euclidean metric is indeed a metric by first expressing it in terms of the dot product as
+            <me>
+              d(\boldx, \boldy)=\sqrt{(\boldx-\boldy)\cdot (\boldx-\boldy)}
+            </me>
+            and then using well-known properties of the dot product, including the Cauchy-Schwarz inequality.
+          </p>
+        </li>
+        <li>
+          <p>
+            Let <m>d</m> be the box metric. It is clear that <m>d(\boldx, \boldy)\geq 0</m> for all <m>\boldx, \boldy\in \R^n</m>. Furthermore, we have
+            <md>
+              <mrow>d(\boldx, \boldy)=0 \amp \iff \abs{x_i-y_i}=0 \text{ for all i}</mrow>
+              <mrow> \amp \iff x_i-y_i=0 \text{ for all i} </mrow>
+              <mrow>  \amp \iff x_i=y_i \text{ for all i}</mrow>
+              <mrow>  \amp \iff \boldx=\boldy</mrow>
+            </md>.
+            This proves positivity. The symmetry follows easily from the fact that <m>\abs{x-y}=\abs{y-x}</m>. As for the triangle inequality, for all <m>1\leq i\leq n</m> we have
+            <me>
+              \abs{x_i-y_i}=\abs{x_i-z_i+z_i-y_i}\leq \abs{x_i-z_i}+\abs{z_i-y_i}\leq d(\boldx, \boldz)+d(\boldz,\boldy)
+            </me>,
+            where the leftmost inequality is the triangle inequality for the absolute value, and the rightmost inequality follows from the definition of <m>d</m>. Since the inequality holds for all <m>1\leq i\leq n</m>, we conclude that
+            <me>
+            d(\boldx,\boldy)=\max\{\abs{x_i-y_i}\colon 1\leq i\leq n\}\leq d(\boldx,\boldz)+d(\boldz,\boldx)
+            </me>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </proof>
+</definition>
+<definition xml:id="d_epsilon_balls">
+  <title>Metric balls</title>
+  <statement>
+    <p>
+        Let <m>(X,d)</m> be a metric space. Given <m>x\in X</m> and <m>\epsilon&gt; 0</m> the <term><m>\epsilon</m>-ball centered at <m>x</m></term> is the subset <m>B_\epsilon(x)\subseteq X</m> defined as
+        <me>
+          B_\epsilon(x)=\{y\in X\colon d(x,y)&lt; \epsilon\}
+        </me>.
+        In other words, <m>B_\epsilon(x)</m> is the set of all elements of <m>X</m> lying within a distance of <m>\epsilon</m> of <m>x</m>. We call a subset <m>U\subseteq X</m> a <term>metric ball</term> if <m>U=B_\epsilon(x)</m> for some <m>x\in X</m> and <m>\epsilon&gt; 0</m>.
+    </p>
+  </statement>
+</definition>
+<project xml:id="top_eg_metric_spaces">
+  <title>Metric spaces</title>
+  <p>
+    Let <m>(X,d)</m> be a metric space. The set
+    <me>
+      \mathcal{B}=\{B_\epsilon(x)\colon x\in X, \epsilon&gt; 0\}
+    </me>
+    of all metric balls is a topological basis, giving <m>X</m> the structure of a topological space. We say the topology <m>\mathcal{T}</m> generated by <m>\mathcal{B}</m> the topology is <term>induced</term> by the metric <m>d</m>.
+  </p>
+  <p>
+    With respect to this topology we have
+    <mdn>
+      <mrow xml:id="eq_metric_open1">U\subseteq X \text{ open }  \amp \iff U=\bigcup_{i\in I} B_{\epsilon_i}(x_i) \text{ for some } B_{\epsilon_i}(x_i)\in \mathcal{B}</mrow>
+      <mrow xml:id="eq_metric_open2">  \amp\iff \text{ for all } x\in U \text{ there exists } \epsilon&gt; 0 \text{ s.t. } B_\epsilon(x)\subseteq U </mrow>
+    </mdn>.
+  </p>
+<!-- <proof>
+  <p>
+    We must prove (1) that <m>\mathcal{B}</m> is a basis, and (2) that the description of openness in (<xref ref="eq_metric_open2"/>) is correct. (The description in (<xref ref="eq_metric_open1"/>) follows directly from (<xref ref="eq_top_generated1"/>).)
+  </p>
+  <ol>
+    <li>
+      <p>
+        For all <m>x\in X</m>, we have <m>x\in B_1(x)\in \mathcal{B}</m>, proving the first axiom.
+      </p>
+    </li>
+  </ol>
+</proof> -->
+
+</project>
+
+
+
+
+</section>

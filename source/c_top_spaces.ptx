@@ -2,4 +2,5 @@
   <title>Topological spaces and continuous functions</title>
   <xi:include  href="s_top_spaces.ptx"/>
   <xi:include  href="s_bases_top.ptx"/>
+  <xi:include  href="s_metric1.ptx"/>
 </chapter>

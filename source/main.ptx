@@ -14,7 +14,7 @@
   <!-- to some short (non-spaced) description of your book         -->
   <book xml:id="kursobjekt">
     <!-- The book needs a title and can have a subtitle  -->
-    <title>Math 334-1</title>
+    <title>Math 344-1</title>
     <subtitle>Kursobjekt</subtitle>
 
     <!-- Now we include files containing each main devision.       -->
