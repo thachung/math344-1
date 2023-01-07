@@ -12,12 +12,13 @@
 </head>
 <body class="ignore-math">
 <article class="definition definition-like"><h3 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Euclidean and box metrics.</span>
-</h3> <div class="para logical">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Euclidean, box, and taxicab metrics.</span>
+</h3>  <div class="para logical">
 <div class="para">Let <span class="process-math">\(X=\R^n\text{,}\)</span> where <span class="process-math">\(n\)</span> is a positive integer. Let <span class="process-math">\(\boldx=(x_1,x_2,\dots, x_n), \boldy=(y_1,y_2,\dots, y_n)\text{.}\)</span>
 </div>
 <ol class="decimal">
-<li><div class="para logical">
+<li>
+<span class="heading"><span class="title">Euclidean metric.</span></span><div class="para logical">
 <div class="para">The function <span class="process-math">\(d\colon X\times X\rightarrow \R\)</span> defined as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -30,8 +31,10 @@ d(\boldx,\boldy)=\sqrt{(x_1-y_1)^2+(x_2-y_2)^2+\cdots +(x_n-y_n)^2}
 \norm{\boldx}=d(\boldx, \boldzero)=\sqrt{x_1^2+x_2^2+\cdots +x_n^2}\text{.}
 \end{equation*}
 </div>
-</div></li>
-<li><div class="para logical">
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">Box metric.</span></span><div class="para logical">
 <div class="para">The function <span class="process-math">\(d\colon X\times X\rightarrow \R\)</span> defined as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -39,7 +42,19 @@ d(\boldx,\boldy)=\max\{\abs{x_1-y_1},\abs{x_2-y_2},\dots, \abs{x_n-y_n}\}
 \end{equation*}
 </div>
 <div class="para">is a metric, called the <dfn class="terminology">box metric</dfn> (or <dfn class="terminology">square metric</dfn>).</div>
-</div></li>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">Taxicab metric.</span></span><div class="para logical">
+<div class="para">The function <span class="process-math">\(d\colon X\times X\rightarrow \R\)</span> defined as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+d(\boldx,\boldy)=\abs{x_1-y_1}+\abs{x_2-y_2}+\dots +\abs{x_n-y_n}
+\end{equation*}
+</div>
+<div class="para">is a metric, called the <dfn class="terminology">taxicab metric</dfn>.</div>
+</div>
+</li>
 </ol>
 </div> <article class="hiddenproof"><a href="" class="proof-knowl original" data-knowl="./knowl/proof-7-hidden.html" title="Proof 1.3.2.1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article></article><span class="incontext"><a href="s_metric1.html#d_Euclidean_box_metric" class="internal">in-context</a></span>
 </body>
