@@ -12,7 +12,28 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">Show that the lower limit topology and <span class="process-math">\(K\)</span>-topology are incomparable.</div>
+<div class="para logical">
+<div class="para">We show that <span class="process-math">\(\mathcal{B}_K\)</span> is a basis, treating each axiom separately.</div>
+<ol class="decimal">
+<li><div class="para">Since by definition <span class="process-math">\(\mathcal{B}_K\)</span> contains all finite open intervals, it clearly covers <span class="process-math">\(\R\text{.}\)</span>
+</div></li>
+<li>
+<div class="para">We claim that in fact given <span class="process-math">\(B_1, B_2\in \mathcal{B}_K\text{,}\)</span> their intersection <span class="process-math">\(B_1\cap B_2\)</span> is either empty or another element of <span class="process-math">\(\mathcal{B}_K\text{.}\)</span> Axiom (2) follows directly from this claim.</div>
+<div class="para logical">
+<div class="para">Why is the claim true? An element of <span class="process-math">\(\mathcal{B}\)</span> is either of the form <span class="process-math">\(I\)</span> or <span class="process-math">\(I-K\text{,}\)</span> where <span class="process-math">\(I=(a,b)\)</span> is an open interval. There are then three different cases describing intersections of two elements, as shown below. Here <span class="process-math">\(I_1, I_2\)</span> denote finite open intervals.</div>
+<div class="displaymath process-math">
+\begin{align*}
+I_1\cap I_2 \amp \\
+(I_1-K)\cap I_2\amp =I_1\cap I_2-K\cap I_2=I_1\cap I_2-K \\
+(I_1-K)\cap (I_2-K) \amp= (I_1-K)\cap I_2 - K\cap (I_2-K)\\
+\amp = I_1\cap I_2-K\text{.}
+\end{align*}
+</div>
+<div class="para">As we have already remarked, <span class="process-math">\(I_1\cap I_2\)</span> is either empty or a finite open interval <span class="process-math">\(I\text{.}\)</span> The claim now follows easily.</div>
+</div>
+</li>
+</ol>
+</div>
 <span class="incontext"><a href="s_bases_top.html#p-227" class="internal">in-context</a></span>
 </body>
 </html>
