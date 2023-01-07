@@ -2,7 +2,7 @@
   <title>Metric spaces</title>
   <introduction>
     <p>
-    In this section we introduce a special family of topological spaces: <xref ref="top_eg_metric_spaces" text="custom">metric spaces</xref>. These types of spaces are pervasive throughout mathematics and are conceptually very familiar or intuitive, as their defining structure, a <em>metric</em> <m>d</m>, is a straightforward generalization of the distance function <m>d(x,y)=\abs{x-y}</m> defined in <m>\R</m>.
+    In this section we introduce a special family of topological spaces: <xref ref="top_eg_metric_spaces" text="custom">metric spaces</xref>. These types of spaces are pervasive throughout mathematics and are conceptually very familiar or intuitive. Indeed, historically metric spaces were the main inspiration to axiomatic topology; and the metric balls defined in <xref ref="d_epsilon_balls"/> were the inspiration for the notion of a topological basis. Lastly, the defining structure of metric space, a <em>metric</em> <m>d</m>, gives us a <em>quantitative</em> grip on the topology, wheareas generally in topology we must rely on the <em>qualitative</em> description of open sets given by the axioms.
     </p>
 </introduction>
 <definition xml:id="d_metric_space">
@@ -33,12 +33,16 @@
   </statement>
 </definition>
 <definition xml:id="d_Euclidean_box_metric">
-  <title>Euclidean and box metrics</title>
+  <idx><h>metric</h><h>Euclidean</h></idx>
+  <idx><h>metric</h><h>box</h></idx>
+  <idx><h>metric</h><h>taxicab</h></idx>
+  <title>Euclidean, box, and taxicab metrics</title>
   <statement>
     <p>
       Let <m>X=\R^n</m>, where <m>n</m> is a positive integer. Let <m>\boldx=(x_1,x_2,\dots, x_n), \boldy=(y_1,y_2,\dots, y_n)</m>.
       <ol>
         <li>
+          <title>Euclidean metric</title>
           <p>
             The function <m>d\colon X\times X\rightarrow \R</m> defined as
             <me>
@@ -51,12 +55,23 @@
           </p>
         </li>
         <li>
+          <title>Box metric</title>
           <p>
             The function <m>d\colon X\times X\rightarrow \R</m> defined as
             <me>
               d(\boldx,\boldy)=\max\{\abs{x_1-y_1},\abs{x_2-y_2},\dots, \abs{x_n-y_n}\}
             </me>
             is a metric, called the <term>box metric</term> (or <term>square metric</term>).
+          </p>
+        </li>
+        <li>
+          <title>Taxicab metric</title>
+          <p>
+            The function <m>d\colon X\times X\rightarrow \R</m> defined as
+            <me>
+              d(\boldx,\boldy)=\abs{x_1-y_1}+\abs{x_2-y_2}+\dots +\abs{x_n-y_n}
+            </me>
+            is a metric, called the <term>taxicab metric</term>.
           </p>
         </li>
       </ol>
@@ -93,6 +108,11 @@
             </me>.
           </p>
         </li>
+        <li>
+          <p>
+            This is a homework exercise.
+          </p>
+        </li>
       </ol>
     </p>
   </proof>
@@ -105,10 +125,43 @@
         <me>
           B_\epsilon(x)=\{y\in X\colon d(x,y)&lt; \epsilon\}
         </me>.
-        In other words, <m>B_\epsilon(x)</m> is the set of all elements of <m>X</m> lying within a distance of <m>\epsilon</m> of <m>x</m>. We call a subset <m>U\subseteq X</m> a <term>metric ball</term> if <m>U=B_\epsilon(x)</m> for some <m>x\in X</m> and <m>\epsilon&gt; 0</m>.
+        In other words, <m>B_\epsilon(x)</m> is the set of all elements of <m>X</m> lying within a distance of <m>\epsilon</m> of <m>x</m>. We call <m>\epsilon</m> the <term>radius</term> of <m>B_\epsilon(x)</m>. More generally, we call a subset <m>U\subseteq X</m> a <term><m>d</m>-metric ball</term> if <m>U=B_\epsilon(x)</m> for some <m>x\in X</m> and <m>\epsilon&gt; 0</m>. When it is clear what the underlying metric is, we will omit <m>d</m> and speak simply of metric balls.
     </p>
   </statement>
 </definition>
+<lemma xml:id="lemma_metric">
+  <title>Metric balls</title>
+<statement>
+  <p>
+    Let <m>B_\epsilon(x)</m> be a metric ball in the metric space <m>(X,d)</m>. If <m>y\in B_\epsilon(x)</m>, there is a <m>\delta&gt; 0</m> such that <m>B_\delta(y)\subseteq B_\epsilon(x)</m>. In other words, for all elements <m>y</m> of a metric ball <m>U</m>, we can find a metric ball <em>centered at <m>y</m></em> contained in <m>U</m>.
+  </p>
+</statement>
+</lemma>
+<proof>
+  <p>
+    Since <m>y\in B_\epsilon(x)</m>, we have <m>d(x,y)&lt; \epsilon</m> and hence <m>\delta=\epsilon-d(x,y)&gt; 0</m>. We claim that <m>B_\delta(y)\subseteq B_\epsilon(x)</m>. Indeed, we have
+    <md>
+      <mrow>z\in B_\delta(y)\implies d(z,x)\amp\leq d(z,y)+d(y,x)  \amp (\text{triangle ineq.})</mrow>
+      <mrow> \amp &lt; \delta+(\epsilon-\delta)  </mrow>
+      <mrow>  \amp = \epsilon</mrow>
+    </md>.
+    It follows that <m>z\in B_\epsilon(x)</m>, proving <m>B_\delta(y)\subseteq B_\epsilon(x)</m>.
+  </p>
+</proof>
+<example>
+  <title>Metric balls for Euclidean and box metrics</title>
+  <statement>
+    <p>
+      Describe the metric balls for the Euclidean and box metrics on <m>\R^n</m> for <m>n=1,2,3</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+
 <project xml:id="top_eg_metric_spaces">
   <title>Metric spaces</title>
   <p>
@@ -125,7 +178,7 @@
       <mrow xml:id="eq_metric_open2">  \amp\iff \text{ for all } x\in U \text{ there exists } \epsilon&gt; 0 \text{ s.t. } B_\epsilon(x)\subseteq U </mrow>
     </mdn>.
   </p>
-<!-- <proof>
+<proof>
   <p>
     We must prove (1) that <m>\mathcal{B}</m> is a basis, and (2) that the description of openness in (<xref ref="eq_metric_open2"/>) is correct. (The description in (<xref ref="eq_metric_open1"/>) follows directly from (<xref ref="eq_top_generated1"/>).)
   </p>
@@ -136,11 +189,122 @@
       </p>
     </li>
   </ol>
-</proof> -->
+</proof>
+<theorem xml:id="th_equivalent_metrics">
+  <title>Comparing metric topologies</title>
+  <statement>
+    <p>
+      Let <m>d, d'</m> be two metrics on the set <m>X</m>, and let <m>\mathcal{T},\mathcal{T}'</m> be the topologies they induce.
+      <ol>
+        <li>
+          <p>
+            We have <m>\mathcal{T}\subseteq \mathcal{T}'</m> if and only if every <m>d</m>-metric ball is a union of <m>d'</m>-metric balls.
+          </p>
+        </li>
+        <li>
+          <p>
+            We have <m>\mathcal{T}=\mathcal{T}'</m> if and only if every <m>d</m>-metric ball is a union of <m>d'</m>-metric balls and every <m>d'</m>-metric ball is a union of <m>d</m>-metric balls.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</theorem>
 
 </project>
+<example xml:id="eg_euc_box_taxi_equivalence">
+  <title>Equivalence of Euclidean, box, and taxicab metrics</title>
+  <statement>
+    <p>
+      Let <m>X=\R^n</m>. Show that the Euclidean, box, and taxicab metrics all induce the same topology on <m>\R^n</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
 
+    </p>
+  </solution>
+</example>
+<definition xml:id="d_trivial_metric">
+  <statement>
+    <p>
+      Given a set <m>X</m> the function <m>d\colon X\times X\rightarrow \R</m> defined as
+      <me>
+        d(x,y)= \begin{cases}
+          1\amp\text{if } x\ne y\\
+          0\amp \text{if } x=y
+      \end{cases}
+      </me>
+      is a metric on <m>X</m>, called the <term>trivial metric</term>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      The proof that <m>d</m> is a metric is left as an exercise.
+    </p>
+  </proof>
 
+</definition>
+<example>
+  <title>Trivial metric</title>
+  <statement>
+    <p>
+      Determine the topology induced on a set <m>X</m> by the trivial metric.
+    </p>
+  </statement>
+  <solution>
+    <p>
 
+    </p>
+  </solution>
+</example>
+<definition xml:id="d_padic_metric">
+  <title><m>p</m>-adic metric</title>
+  <statement>
+    <p>
+      Let <m>\Z</m> be the set of integers. Let <m>\mathcal{P}=\{2, 3, 5, 7, 11,\dots\}</m> be the set of prime integers. The <em>fundamental theorem of arithmetic</em> states that any nonzero integer <m>n\in \Z</m> can be factored in unique was as a product of primes in the form
+      <me>
+        n=\pm \prod_{p\in \mathcal{P}} p^{v_p(n)}
+      </me>,
+      where <m>v_p(n)</m> is a nonnegative integer, and <m>v_p(n)=0</m> for all but finitely many primes <m>p</m>. We call <m>v_p(n)</m> the <term>valuation</term> of <m>n</m> at the prime <m>p</m>; it tells us the highest power of <m>p</m> dividing <m>n</m>.
+    </p>
+    <p>
+      Now fix a prime integer <m>p</m>. For <m>n\in\Z</m> we define its <term><m>p</m>-adic norm</term> <m>\abs[p]{n}</m> as
+      <me>
+        \abs[p]{n}=\begin{cases}
+          0\amp\text{if } n=0\\
+          p^{-v_p(n)}\amp\text{if } n\ne 0
+      \end{cases}
+      </me>.
+      The function <m>d\colon \Z\times\Z\rightarrow \R</m> defined as
+      <me>
+        d(m,n)=\abs[p]{m-n}
+      </me>
+      is a metric on <m>\Z</m>, called the <m>p</m>-adic metric. Integers <m>m,n\in\Z</m> are close to one another with respect to this metric if their difference is highly divisible by <m>p</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We content ourselves with a proof sketch in order to avoid getting into the weeds of elementary number theory. The positivity and symmetry axioms follow readily from simple properties of divisibility.
+      For the triangle inequality it is enough to prove that the <m>p</m>-adic norm <m>\abs[p]{\hspace{5pt}}</m> satisfies the triangle inequality on <m>\Z</m>: <ie />, for all <m>m,n\in\Z</m> we have
+      <men xml:id="eq_padic_triangle_inequality">
+        \abs[p]{m+n}\leq \abs[p]{m}+\abs[p]{n}
+      </men>
+      since then for any <m>r,s,t\in\Z</m> we have
+      <md>
+        <mrow>d(r,s) \amp=\abs[p]{r-s} </mrow>
+        <mrow> \amp=\abs[p]{r-t +t-s} </mrow>
+        <mrow>  \amp\leq \abs[p]{r-t}+\abs[p]{t-s}</mrow>
+        <mrow>  \amp \leq d(r,t)+d(t,s)</mrow>
+      </md>.
+      Lastly, the inequality <xref ref="eq_padic_triangle_inequality"/> follows from the stronger claim
+      <men xml:id="eq_padic_archimed">
+        \abs[p]{m+n}\leq \max\{\abs[p]{m}, \abs[p]{n} \}
+      </men>,
+      which itself follows from divisibility properties.
+    </p>
+  </proof>
+
+</definition>
 
 </section>

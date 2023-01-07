@@ -35,7 +35,7 @@
         </appendix>
         <appendix xml:id="appendix-thms">
           <title>Theory</title>
-          <list-of elements="theorem corollary algorithm convention" divisions="section" />
+          <list-of elements="theorem corollary algorithm convention lemma" divisions="section" />
         </appendix>
         <appendix xml:id="appendix-specimens" >
           <title>Topological specimens</title>
