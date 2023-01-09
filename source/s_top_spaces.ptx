@@ -65,7 +65,7 @@
       Let <m>X=\R</m> and define <m>\mathcal{T}</m> to be the set of open sets as defined above: that is, <m>U\in \mathcal{T}</m> if and only if for all <m>x\in U</m> there is an <m>\epsilon &gt; 0</m> such that the entire open interval <m>(x-\epsilon, x+\epsilon)</m> is contained in <m>U</m>. Show that <m>\mathcal{T}</m> is a topology on <m>\R</m>
     </p>
   </statement>
-  <solution>
+  <proof>
     <p>
       We treat each axiom of <xref ref="d_topology"/> in turn.
       <ol>
@@ -99,7 +99,7 @@
         </li>
       </ol>
     </p>
-  </solution>
+  </proof>
 </project>
 <project xml:id="top_eg_trivial_discrete">
   <title>Trivial and discrete topology</title>

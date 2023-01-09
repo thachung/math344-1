@@ -258,8 +258,40 @@
   </statement>
   <solution>
     <p>
-
+      We adjust our notation to accommodate for different metrics at play simultaneously. Let <m>d_\operatorname{euc}</m>, <m>d_\operatorname{box}</m>, <m>d_\operatorname{taxi}</m> be the three metrics in question, and let <m>\mathcal{T}_{\operatorname{euc}}</m>, <m>\mathcal{T}_{\operatorname{box}}</m>, <m>\mathcal{T}_\operatorname{taxi}</m> be their respective topologies. We will denote <m>\epsilon</m>-balls with respect to each as <m>B_{\operatorname{euc},\epsilon}(x)</m>, <m>B_{\operatorname{box},\epsilon}(x)</m>, <m>B_{\operatorname{taxi},\epsilon}(x)</m>.
     </p>
+    <p>
+       We will show <m>\mathcal{T}_\operatorname{euc}=\mathcal{T}_\operatorname{box}</m> and <m>\mathcal{T}_\operatorname{box}=\mathcal{T}_\operatorname{taxi}</m>, from whence it follows that <m>\mathcal{T}_\operatorname{euc}=\mathcal{T}_\operatorname{box}=\mathcal{T}_\operatorname{taxi}</m>.
+    </p>
+    <case>
+     <title>Case: <m>\mathcal{T}_\operatorname{euc}=\mathcal{T}_\operatorname{box}</m></title>
+    <p>
+    For any nonnegative numbers <m>a_1,a_2,\dots, a_n</m> we have
+    <me>
+      \max\{a_i\}_{i=1}^n\leq \sqrt{a_1^2+a_2^2+\cdots a_n^2}\leq \sqrt{n}\max\{a_i\}_{i=1}^n
+    </me>.
+    From this it follows that for any <m>x\in \R^n</m> and any <m>\epsilon &gt; 0</m> we have
+    <men xml:id="eq_euclidean_box_balls">
+      B_{\operatorname{box},\sqrt{n}\epsilon}\subseteq B_{\operatorname{euc},\epsilon}(x)\subseteq B_{\operatorname{box},\epsilon}(x)
+    </men>,
+    showing that within any Euclidean metric ball centered at <m>\boldx</m> we can find a box metric ball centered at <m>\boldx</m>, and vice versa. Now given any element <m>y</m> in a Euclidean metric ball <m>B</m>, there is a Euclidean metric ball <m>B'</m> centered at <m>y</m> contained in <m>B</m> by <xref ref="lemma_metric"/>. By <xref ref="eq_euclidean_box_balls"/> there is box metric ball <m>B''</m> centered at <m>y</m> satisfying <m>B''\subseteq B'\subseteq B</m>. Using our <xref ref="lemma_covering_principle" text='custom'>covering principle</xref>, we conclude that any Euclidean metric ball is covered by box metric balls, and thus <m>\mathcal{T}_\operatorname{euc}\subseteq \mathcal{T}_\operatorname{box}</m>.
+    A very similar argument, using the other inclusion of <xref ref="eq_euclidean_box_balls"/>, shows that <m>\mathcal{T}_\operatorname{box}\subseteq \mathcal{T}_\operatorname{euc}</m>.
+    </p>
+    </case>
+    <case>
+     <title>Case: <m>\mathcal{T}_\operatorname{box}=\mathcal{T}_\operatorname{taxi}</m></title>
+    <p>
+    For any nonnegative <m>a_1, a_2, \dots, a_n</m> we have
+    <me>
+      \max\{a_i\}_{i=1}^n\leq a_1+a_2+\cdots a_n\leq n\max\{a_i\}_{i=1}^n
+    </me>,
+    from whence it follows that for any <m>x\in \R^n</m> and <m>\epsilon &gt; 0</m> we have
+    <me>
+      B_{\operatorname{box},n\epsilon}\subseteq B_{\operatorname{taxi},\epsilon}(x)\subseteq B_{\operatorname{box},\epsilon}(x)
+    </me>.
+    An argument exactly like the one from the previous case now shows <m>\mathcal{T}_\operatorname{box}=\mathcal{T}_\operatorname{taxi}</m>.
+    </p>
+    </case>
   </solution>
 </example>
 <definition xml:id="d_trivial_metric">
@@ -291,7 +323,7 @@
   </statement>
   <solution>
     <p>
-
+      This example is left as an exercise. 
     </p>
   </solution>
 </example>
