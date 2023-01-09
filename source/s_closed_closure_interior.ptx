@@ -1,0 +1,227 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_closed_closure_interior">
+  <title>Closed sets, closure, and interior</title>
+  <introduction>
+    <p>
+
+    </p>
+</introduction>
+<definition xml:id="d_closed_set">
+  <title>Closed sets</title>
+  <statement>
+    <p>
+      Let <m>(X,\mathcal{T})</m> be a topological space. A subset <m>A\subseteq X</m> is <term>closed</term> if its complement <m>A^c=X-A</m> is open. Equivalently, a subset <m>A</m> is closed if and only if <m>A=U^c</m> for some open set <m>U\in \mathcal{T}</m>.
+    </p>
+  </statement>
+
+</definition>
+<theorem xml:id="th_closed_props">
+  <title>Property of closed sets</title>
+  <statement>
+    <p>
+      Let <m>X</m> be a topological space.
+    </p>
+  <ol>
+    <li>
+      <title>Trivial sets</title>
+      <p>
+       Both <m>\emptyset</m> and <m>X</m> are closed sets.
+      </p>
+    </li>
+    <li>
+      <title>Finite unions</title>
+      <p>
+        If <m>C_1, C_2,\dots , C_n</m> are closed, then <m>\bigcup_{i=1}^n C_i</m> is closed.
+      </p>
+    </li>
+    <li>
+      <title>Arbitrary intersection</title>
+      <p>
+        If <m>\{C_i\}_{i\in I}</m> is a collection of closed sets, then <m>\bigcap_{i\in I}C_i</m> is closed.
+      </p>
+    </li>
+  </ol>
+    </statement>
+</theorem>
+<remark xml:id="rm_equiv_open_closed">
+<title>Closed sets determine topology</title>
+    <p>
+      In general, given a set <m>X</m> the set complement operation <m>Y\mapsto Y^c=X-Y</m> is defines a bijection
+      <md>
+        <mrow> \mathcal{P}(X) \amp \leftrightarrow \mathcal{P}(X) </mrow>
+        <mrow> Y \amp \mapsto Y^c </mrow>
+      </md>,
+      that is self-inverse: <ie />, we have <m>(Y^c)^c=Y</m> for all subsets <m>Y\subseteq X</m>. It follows from the <xref ref="d_closed_set"/> that the closed sets of <m>X</m> are in bijective correspondence with the open sets, and thus that a topology on <m>X</m> is uniquely determined by specifying any collection of sets satisfying (1)-(3) from <xref ref="th_closed_props"/>. In other words, a topology is determined by specifying either its open sets or its closed sets.
+    </p>
+</remark>
+<example>
+  <title>Closed in trivial and discrete topologies</title>
+  <statement>
+    <ol>
+      <li>
+        <p>
+          If <m>X</m> has the trivial topology, then the only open sets of <m>X</m> are <m>\emptyset, X</m>. Hence the only closed sets are <m>\emptyset^c=X</m> and <m>X^c=\emptyset</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>X</m> has the discrete topology, then every subset of <m>X</m> is open. It follows that any subset <m>A\subseteq X</m> is closed, since <m>A^c</m> is open.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</example>
+
+<example>
+  <title>Closed in the cofinite topology</title>
+  <statement>
+    <p>
+      Let <m>X</m> be a set endowed with the cofinite topology. An set <m>U</m> is open in <m>X</m> if and only if (a) <m>U=\emptyset</m> or (b) <m>U^c</m> is finite. It follows that a set <m>A</m> is closed if and only if (a) <m>A=\emptyset^c=X</m> or (b) <m>A=U^c</m> for a cofinite set <m>U</m> if and only if (a) <m>A=X</m> or (b) <m>A</m> is finite.
+    </p>
+  </statement>
+</example>
+<lemma xml:id="lemma_basis_closed">
+<title>Basis description of closed sets</title>
+<statement>
+<p>Let <m>X</m> be a topological space with basis <m> \mathcal{B} </m>. A set <m>C\subseteq X</m> is closed if and only if for all <m>x\in X-C</m>, there is a basis element <m>B\in \mathcal{B} </m> satisfying <m>x\in B\subseteq X-C</m>.
+</p>
+</statement>
+</lemma>
+<example>
+  <title>Closed sets in Euclidean metric topology</title>
+  <statement>
+    <p>
+      Let <m>X=\R^2</m> with the Euclidean metric topology. Decide whether the given subset is open and whether it is closed.
+    </p>
+    <ol>
+      <li>
+        <p>
+          <m>A=\{(x,y)\colon x\geq 0, y\geq 0\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>A=\{(x,y)\colon x\geq 0, y &gt; 0\}</m>
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+<definition xml:id="d_interior_closure">
+  <title>Interior and closure of a set</title>
+  <statement>
+    <p>
+      Let <m>A</m> be a subset of the topological space <m>(X</m>.
+    </p>
+    <ol>
+      <li>
+        <title>Interior</title>
+        <p>
+          The <term>interior</term> <m>A^\circ</m> of <m>A</m> is the union of all open subsets contained in <m>A</m>: <ie />,
+          <me>
+            A^\circ=\bigcup_{U\subseteq A}U, \text{ } U \text{ open}
+          </me>.
+        </p>
+      </li>
+      <li>
+        <title>Closure</title>
+        <p>
+          The <term>closure</term> <m>\overline{A}</m> is intersection of all closes sets containing <m>A</m>: <ie />,
+          <me>
+          \overline{A}=\bigcap_{A\subseteq C}C, \ C \text{ closed}
+          </me>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</definition>
+<theorem xml:id="th_equivalent_interior_closure">
+  <title>Equivalent notions of interior and closure</title>
+  <statement>
+    <p>
+      Let <m>A</m> be a subset of the topological space <m>X</m>. Let <m>\mathcal{B}</m> be a basis for the topology of <m>X</m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          <m>A^\circ</m> is the unique largest open set contained in <m>A</m>. In other words, <m>A^\circ</m> is the unique set satisfying the following property: if <m>U</m> is open and <m>U\subseteq A</m>, then <m>U\subseteq A^\circ</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\overline{A}</m> is the unique smallest closed set containing <m>A</m>. In other words, <m>\overline{A}</m> is the unique set satisfying the following property: if <m>C</m> is closed and <m>A\subseteq C</m>, then <m>\overline{A}\subseteq C</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          We have
+          <md>
+            <mrow>x \in A^\circ  \amp\iff x\in U\subseteq A^\circ \text{ for some open } U </mrow>
+            <mrow> \amp \iff x\in B\subseteq A^\circ \text{ for some basis element } B\in \mathcal{B} </mrow>
+          </md>.
+        </p>
+      </li>
+      <li>
+        <p>
+          We have
+          <md>
+            <mrow>x \in \overline{A}  \amp\iff x\in U \text{ and } U \text{ open }\implies U\cap A\ne \emptyset</mrow>
+            <mrow> \amp \iff x\in B \text{ and } B\in\mathcal{B}\implies B\cap A\ne \emptyset</mrow>
+          </md>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</theorem>
+<remark xml:id="rm_">
+<title>Using smallest/largest characterization of interior/closure</title>
+    <p>
+      Statements (1)-(2) of <xref ref="th_equivalent_interior_closure"/> provide a potentially useful indirect way of computing the interior or closure of a set <m>A</m>.
+      <ol>
+        <li>
+          <title>Interior</title>
+          <p>
+            Find an open set <m>U</m> contained in <m>A</m> and show that for any other open set <m>U'\subseteq A</m> we have <m>U'\subseteq U</m>. It follows that <m>U=A^\circ</m>.
+          </p>
+        </li>
+        <li>
+          <title>Closure</title>
+          <p>
+            Find a closed set <m>C</m> containing <m>A</m> and show that for any other closed set <m>C'</m> containing <m>A</m> we have <m>C'\subseteq C</m>. It follows that <m>C=\overline{A}</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+</remark>
+<example xml:id="eg_closure_interior_K">
+  <title>Interior and closure of <m>K</m></title>
+  <statement>
+    <p>
+      Let <m>X=\R</m> and let <m>K=\{1, 1/2, 1/3,\dots,\}=\{1/N\colon N\in\Z_+\}</m>. Compute the interior and closure of <m>K</m> with respect to (a) the standard topology on <m>\R</m> and (b) the <m>K</m>-topology on <m>\R</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+<example>
+  <title>Interior and closure in cofinite topology</title>
+  <statement>
+    <p>
+      Let <m>X</m> be a set endowed with the cofinite topology. For <m>A\subseteq X</m> describe <m>A^\circ</m> and <m>\overline{A}</m>. Use cases.
+    </p>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+
+</section>
