@@ -10,8 +10,36 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><article class="hiddenproof"><div class="para logical"><ol class="decimal">
-<li><div class="para">Let <span class="process-math">\(\mathcal{T}=\{\emptyset, X\}\text{.}\)</span> By definition the given <span class="process-math">\(\mathcal{T}\)</span> contains <span class="process-math">\(\emptyset\)</span> and <span class="process-math">\(X\text{,}\)</span> and thus axiom (1) is satisfied. Since any union or intersection involving <span class="process-math">\(\emptyset\)</span> and <span class="process-math">\(X\)</span> is equal to either <span class="process-math">\(\emptyset\)</span> or <span class="process-math">\(X\text{,}\)</span> it is clear that <span class="process-math">\(\mathcal{T}\)</span> is closed under arbitrary unions and finite intersections. Thus axioms (2)-(3) are satisfied.</div></li>
-<li><div class="para">Let <span class="process-math">\(\mathcal{T}=\mathcal{P}(X)\text{.}\)</span> By definition, <span class="process-math">\(\mathcal{T}\)</span> is the set of <em class="emphasis">all</em> subsets of <span class="process-math">\(X\text{.}\)</span> In particular, it contains <span class="process-math">\(\emptyset\)</span> and <span class="process-math">\(X\text{,}\)</span> and thus axioms (1) is satisfied. Furthermore, since any union or intersection of subsets of <span class="process-math">\(X\)</span> is again a subset of <span class="process-math">\(X\text{,}\)</span> we see that axioms (2)-(3) are satisfied.</div></li>
-</ol></div></article></body>
+<body class="ignore-math"><article class="hiddenproof"><div class="para logical">
+<div class="para">We treat each axiom of <a href="" class="xref" data-knowl="./knowl/d_topology.html" title="Definition 1.1.1: Topological space">Definition 1.1.1</a> in turn.</div>
+<ol class="decimal">
+<li><div class="para">The empty set satisfies the defining property of <span class="process-math">\(\mathcal{T}\)</span> trivially. Thus <span class="process-math">\(\emptyset\in \mathcal{T}\text{.}\)</span> For any <span class="process-math">\(x\in \R\text{,}\)</span> we have <span class="process-math">\((x-1, x+1)\subseteq\R\text{.}\)</span> Thus <span class="process-math">\(X=\R\in\mathcal{T}\text{.}\)</span>
+</div></li>
+<li><div class="para logical">
+<div class="para">Assume <span class="process-math">\(U_i\in \mathcal{T}\)</span> for all <span class="process-math">\(i\in I\text{,}\)</span> and let <span class="process-math">\(U=\bigcup_{i\in I}U_i\text{.}\)</span> We have</div>
+<div class="displaymath process-math">
+\begin{align*}
+x\in U \amp \implies x\in U_i \text{ for some } i\in I\\
+\amp \implies (x-\epsilon, x+\epsilon)\subseteq U_i \text{ for some } i\in I, \epsilon &gt; 0\\
+\amp \implies (x-\epsilon, x+\epsilon)\subseteq U \text{ for some } i\in I, \epsilon &gt; 0 \text{.}
+\end{align*}
+</div>
+<div class="para">This shows <span class="process-math">\(U\)</span> satisfies the defining property of <span class="process-math">\(\mathcal{T}\text{,}\)</span> and hence <span class="process-math">\(U\in \mathcal{T}\text{.}\)</span>
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Assume <span class="process-math">\(U_1, U_2, \dots, U_n\in \mathcal{T}\text{,}\)</span> and let <span class="process-math">\(U=\bigcap_{i=1}^nU_i\text{.}\)</span> We have</div>
+<div class="displaymath process-math">
+\begin{align*}
+x\in U \amp\implies x\in U_i \text{ for all } 1\leq i\leq n  \\
+\amp\implies \forall i \exists \epsilon_i &gt; 0 \text{ s.t. }(x-\epsilon_i, x+\epsilon)\subseteq U_i \\
+\amp \implies (x-\epsilon, x+\epsilon)\subseteq U_i \text{ for all } i, \text{ where } \epsilon=\min \{\epsilon_i\colon 1\leq i\leq n\}\\\
+\amp \implies (x-\epsilon, x+\epsilon)\subseteq U \text{.}
+\end{align*}
+</div>
+<div class="para">This shows that <span class="process-math">\(U\)</span> satisfies the defining property of <span class="process-math">\(\mathcal{T}\text{,}\)</span> and hence that <span class="process-math">\(U\in \mathcal{T}\text{.}\)</span>
+</div>
+</div></li>
+</ol>
+</div></article></body>
 </html>

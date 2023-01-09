@@ -13,40 +13,25 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h3 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.1.3.1</span><span class="period">.</span>
 </h3>
-<div class="para logical">
-<div class="para">We treat each axiom of <a href="" class="xref" data-knowl="./knowl/d_topology.html" title="Definition 1.1.1: Topological space">Definition 1.1.1</a> in turn.</div>
 <ol class="decimal">
-<li><div class="para">The empty set satisfies the defining property of <span class="process-math">\(\mathcal{T}\)</span> trivially. Thus <span class="process-math">\(\emptyset\in \mathcal{T}\text{.}\)</span> For any <span class="process-math">\(x\in \R\text{,}\)</span> we have <span class="process-math">\((x-1, x+1)\subseteq\R\text{.}\)</span> Thus <span class="process-math">\(X=\R\in\mathcal{T}\text{.}\)</span>
-</div></li>
+<li><div class="para">When <span class="process-math">\(X=\emptyset\text{,}\)</span> we have <span class="process-math">\(\mathcal{P}(X)=\{\emptyset\}\text{.}\)</span> Since by axiom (1) a topology <span class="process-math">\(\mathcal{T}\)</span> on <span class="process-math">\(X\)</span> must contain both <span class="process-math">\(\emptyset\)</span> and <span class="process-math">\(X=\emptyset\text{,}\)</span> we see the only option is <span class="process-math">\(\mathcal{T}=\{\emptyset\}=\mathcal{P}(X)\text{.}\)</span> We showed that <span class="process-math">\(\mathcal{P}(X)\)</span> is always a topology on <span class="process-math">\(X\)</span> in <a href="" class="xref" data-knowl="./knowl/top_eg_trivial_discrete.html" title="Topological specimen 2: Trivial and discrete topology">Topological specimen 2</a>. Thus <span class="process-math">\(\mathcal{T}=\{\emptyset\}\)</span> is the unique choice of topology for <span class="process-math">\(X=\emptyset\text{.}\)</span> (Note: in this case the trivial and discrete topologies are equal.)</div></li>
+<li><div class="para">When <span class="process-math">\(X=\{a\}\text{,}\)</span> we have <span class="process-math">\(\mathcal{P}(X)=\{\emptyset, \{a\}\}\text{.}\)</span> Since by axiom (1) a topology <span class="process-math">\(\mathcal{T}\)</span> on <span class="process-math">\(X\)</span> must contain both <span class="process-math">\(\emptyset\)</span> and <span class="process-math">\(X=\{a\}\text{,}\)</span> we see the only option is <span class="process-math">\(\mathcal{T}=\{\emptyset, \{a\}\}\text{,}\)</span> which again is none other than the discrete topology. We conclude that <span class="process-math">\(\mathcal{T}=\{\emptyset, \{a\}\}\)</span> is the unique topology on <span class="process-math">\(\{a\}\text{.}\)</span> (Note: again in this case the trival and discrete topologies are equal.)</div></li>
 <li><div class="para logical">
-<div class="para">Assume <span class="process-math">\(U_i\in \mathcal{T}\)</span> for all <span class="process-math">\(i\in I\text{,}\)</span> and let <span class="process-math">\(U=\bigcup_{i\in I}U_i\text{.}\)</span> We have</div>
+<div class="para">When <span class="process-math">\(X=\{a, 7\}\text{,}\)</span> we have <span class="process-math">\(\mathcal{P}(X)=\{\emptyset, \{a\}, \{7\}, \{a,7\}\}\text{.}\)</span> By axiom (1) a topology <span class="process-math">\(\mathcal{T}\)</span> must contain <span class="process-math">\(\emptyset\)</span> and <span class="process-math">\(X=\{a,7\}\text{.}\)</span> It follows that there are exactly four possibilities for <span class="process-math">\(\mathcal{T}\)</span> based on whether the sets <span class="process-math">\(\{a\}\)</span> and <span class="process-math">\(\{7\}\)</span> are elements of <span class="process-math">\(\mathcal{T}\text{:}\)</span> i.e., the only possibilities are</div>
 <div class="displaymath process-math">
 \begin{align*}
-x\in U \amp \implies x\in U_i \text{ for some } i\in I\\
-\amp \implies (x-\epsilon, x+\epsilon)\subseteq U_i \text{ for some } i\in I, \epsilon &gt; 0\\
-\amp \implies (x-\epsilon, x+\epsilon)\subseteq U \text{ for some } i\in I, \epsilon &gt; 0 \text{.}
+\mathcal{T} \amp = \{\emptyset, \{a,7\}\} \\
+\mathcal{T} \amp = \{\emptyset, \{a,7\}, \{a\}\} \\
+\mathcal{T} \amp = \{\emptyset, \{a,7\}, \{7\}\} \\
+\mathcal{T} \amp = \{\emptyset, \{a,7\},\{a\}, \{7\}\} \text{.}
 \end{align*}
 </div>
-<div class="para">This shows <span class="process-math">\(U\)</span> satisfies the defining property of <span class="process-math">\(\mathcal{T}\text{,}\)</span> and hence <span class="process-math">\(U\in \mathcal{T}\text{.}\)</span>
-</div>
-</div></li>
-<li><div class="para logical">
-<div class="para">Assume <span class="process-math">\(U_1, U_2, \dots, U_n\in \mathcal{T}\text{,}\)</span> and let <span class="process-math">\(U=\bigcap_{i=1}^nU_i\text{.}\)</span> We have</div>
-<div class="displaymath process-math">
-\begin{align*}
-x\in U \amp\implies x\in U_i \text{ for all } 1\leq i\leq n  \\
-\amp\implies \forall i \exists \epsilon_i &gt; 0 \text{ s.t. }(x-\epsilon_i, x+\epsilon)\subseteq U_i \\
-\amp \implies (x-\epsilon, x+\epsilon)\subseteq U_i \text{ for all } i, \text{ where } \epsilon=\min \{\epsilon_i\colon 1\leq i\leq n\}\\\
-\amp \implies (x-\epsilon, x+\epsilon)\subseteq U \text{.}
-\end{align*}
-</div>
-<div class="para">This shows that <span class="process-math">\(U\)</span> satisfies the defining property of <span class="process-math">\(\mathcal{T}\text{,}\)</span> and hence that <span class="process-math">\(U\in \mathcal{T}\text{.}\)</span>
+<div class="para">These are the four subsets of <span class="process-math">\(\mathcal{P}(A)\)</span> that satisfy axiom (1). It is now straightforward to show that each of these choices also satisfies axioms (2) and (3). Thus there are exactly 4 distinct topologies we can define on <span class="process-math">\(X=\{a, 7\}\text{.}\)</span>
 </div>
 </div></li>
 </ol>
-</div>
 </div>
 <span class="incontext"><a href="s_top_spaces.html#solution-8" class="internal">in-context</a></span>
 </body>

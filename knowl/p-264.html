@@ -12,7 +12,23 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">For all <span class="process-math">\(x\in X\text{,}\)</span> we have <span class="process-math">\(x\in B_1(x)\in \mathcal{B}\text{,}\)</span> proving the first axiom of <a href="" class="xref" data-knowl="./knowl/d_basis.html" title="Definition 1.2.1: Topological basis">Definition 1.2.1</a>. Next, let <span class="process-math">\(B_1=B_{\epsilon_1}(x_1), B_2=B_{\epsilon_2}(x_2)\)</span> be two metric balls. Given <span class="process-math">\(y\in B_1\cap B_2\text{,}\)</span> there are <span class="process-math">\(\delta_1, \delta_2\)</span> such that <span class="process-math">\(B_{\delta_i}(y)\subseteq B_i\)</span> for <span class="process-math">\(i=1,2\text{.}\)</span> Setting <span class="process-math">\(\delta=\min\{\delta_1, \delta_2\}\text{,}\)</span> we have <span class="process-math">\(y\in B_\delta(y)\subseteq B_1\cap B_2\text{.}\)</span> This proves the second axiom.</div>
+<div class="para logical">
+<div class="para">True to its name, an <span class="process-math">\(\epsilon\)</span>-ball around <span class="process-math">\(\boldx\in \R^n\)</span> is the open <span class="process-math">\(n\)</span>-cube</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_cartesian_product.html">
+\begin{equation*}
+\prod_{i=1}^n (x_i-\epsilon, x_i+\epsilon)\text{.}
+\end{equation*}
+</div>
+<div class="para">(Note that the product here is the Cartesian product of these intervals. (See <a href="" class="xref" data-knowl="./knowl/d_cartesian_product.html" title="Definition 0.1.12: Cartesian product (finite)">Definition 0.1.12</a>.)) Indeed, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_cartesian_product.html">
+\begin{align*}
+\boldy\in B_\epsilon(\boldx) \amp \iff \max\{\abs{x_i-y_i}\}_{i=1}^n&lt; \epsilon \\
+\amp \iff \abs{x_i-y_i}&lt; \epsilon \text{ for all } 1\leq i\leq n\\
+\amp \iff y_i\in (x_i-\epsilon, x_i+\epsilon) \text{ for all } 1\leq i\leq n\\
+\amp \iff \boldy\in \prod_{i=1}^n (x_i-\epsilon, x_i+\epsilon)\text{.}
+\end{align*}
+</div>
+</div>
 <span class="incontext"><a href="s_metric1.html#p-264" class="internal">in-context</a></span>
 </body>
 </html>

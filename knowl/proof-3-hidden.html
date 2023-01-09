@@ -10,6 +10,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><article class="hiddenproof"><article class="case"><h4 class="heading">Implication: <span class="process-math">\((1)\implies (2)\)</span>.</h4> <div class="para">Suppose <span class="process-math">\(Y=\bigcup_{i\in I}A_i\)</span> for some sets <span class="process-math">\(A_i\in \mathcal{A}\text{.}\)</span> Given any <span class="process-math">\(y\in Y\)</span> we have <span class="process-math">\(y\in A_i\)</span> for some <span class="process-math">\(i\in I\text{.}\)</span> Since <span class="process-math">\(A_i\subseteq Y\text{,}\)</span> we are done.</div></article> <article class="case"><h4 class="heading">Implication: <span class="process-math">\((2)\implies (1)\)</span>.</h4> <div class="para">By assumption, for all <span class="process-math">\(y\in Y\)</span> we can find a set <span class="process-math">\(A_y\in \mathcal{A}\)</span> such that <span class="process-math">\(y\in A_y\subseteq Y\text{.}\)</span> It follows that <span class="process-math">\(Y=\bigcup_{y\in Y}A_y\text{,}\)</span> showing that <span class="process-math">\(Y\)</span> is a union of elements of <span class="process-math">\(\mathcal{A}\text{.}\)</span>
-</div></article></article></body>
+<body class="ignore-math"><article class="hiddenproof"><div class="para">We treat each axiom separately.</div> <ol class="decimal">
+<li><div class="para">We must show <span class="process-math">\(\emptyset, X\in \mathcal{T}\text{.}\)</span> That <span class="process-math">\(\emptyset\in \mathcal{T}\)</span> is specified explicitly in the definition of <span class="process-math">\(\mathcal{T}\text{.}\)</span> Next since <span class="process-math">\(X^c=\emptyset\)</span> is finite, the set <span class="process-math">\(X\)</span> is cofinite in <span class="process-math">\(X\text{,}\)</span> and hence an element of <span class="process-math">\(\mathcal{T}\text{.}\)</span>
+</div></li>
+<li><div class="para logical">
+<div class="para">Let <span class="process-math">\(\{U_i\}_{i\in I}\)</span> be any collection of elements of <span class="process-math">\(\mathcal{T}\text{:}\)</span> i.e., for all <span class="process-math">\(i\in I\)</span> we have <span class="process-math">\(U_i=\emptyset\)</span> or <span class="process-math">\(U_i\)</span> is cofinite in <span class="process-math">\(X\text{.}\)</span> Let <span class="process-math">\(U=\bigcup_{i\in I}U_i\text{.}\)</span> If <span class="process-math">\(U_i=\emptyset\)</span> for all <span class="process-math">\(i\in I\text{,}\)</span> then <span class="process-math">\(U=\emptyset\in \mathcal{T}\text{.}\)</span> Otherwise there is an <span class="process-math">\(i_0\in I\)</span> such that <span class="process-math">\(U_{i_0}\)</span> is nonempty, hence cofinite. We have</div>
+<div class="displaymath process-math">
+\begin{align*}
+U^c \amp = \left( \bigcup_{i\in I}U_i\right)^c \\
+\amp = \bigcap_{i\in I} U_i^c  \amp (\text{DeMorgan's law})\\
+\amp \subseteq U_{i_0}^c\text{.}
+\end{align*}
+</div>
+<div class="para">Since <span class="process-math">\(U_{i_0}^c\)</span> is finite, it follows that <span class="process-math">\(U^c\)</span> is finite. It follows that <span class="process-math">\(U\)</span> is cofinite, and hence an element of <span class="process-math">\(\mathcal{T}\)</span> as desired.</div>
+</div></li>
+<li><div class="para">Let <span class="process-math">\(U_1, U_2\in \mathcal{T}\text{,}\)</span> and let <span class="process-math">\(U=U_1\cap U_2\text{.}\)</span> We have <span class="process-math">\(U^c=U_1^c\cap U_2^c\text{.}\)</span> Since <span class="process-math">\(U_i^c\)</span> is either finite or equal to all of <span class="process-math">\(X\)</span> for <span class="process-math">\(i=1,2\text{,}\)</span> it is clear that <span class="process-math">\(U^c\)</span> is either finite or equal to <span class="process-math">\(X\text{.}\)</span> It follows that <span class="process-math">\(U\)</span> is either cofinite or empty, and hence an element of <span class="process-math">\(\mathcal{T}\text{.}\)</span>
+</div></li>
+</ol></article></body>
 </html>

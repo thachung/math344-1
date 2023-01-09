@@ -11,9 +11,31 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="li"><h5 class="heading">
+<article class="li"><h4 class="heading">
 <span class="type">Item</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span>
-</h5>
-<div class="para">We have <span class="process-math">\(\mathcal{T}=\mathcal{T}'\)</span> if and only if every <span class="process-math">\(d\)</span>-metric ball is a union of <span class="process-math">\(d'\)</span>-metric balls and every <span class="process-math">\(d'\)</span>-metric ball is a union of <span class="process-math">\(d\)</span>-metric balls.</div></article><span class="incontext"><a href="s_metric1.html#li-76" class="internal">in-context</a></span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(d\)</span> be the box metric. It is clear that <span class="process-math">\(d(\boldx, \boldy)\geq 0\)</span> for all <span class="process-math">\(\boldx, \boldy\in \R^n\text{.}\)</span> Furthermore, we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+d(\boldx, \boldy)=0 \amp \iff \abs{x_i-y_i}=0 \text{ for all i}\\
+\amp \iff x_i-y_i=0 \text{ for all i} \\
+\amp \iff x_i=y_i \text{ for all i}\\
+\amp \iff \boldx=\boldy\text{.}
+\end{align*}
+</div>
+<div class="para">This proves positivity. The symmetry follows easily from the fact that <span class="process-math">\(\abs{x-y}=\abs{y-x}\text{.}\)</span> As for the triangle inequality, for all <span class="process-math">\(1\leq i\leq n\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\abs{x_i-y_i}=\abs{x_i-z_i+z_i-y_i}\leq \abs{x_i-z_i}+\abs{z_i-y_i}\leq d(\boldx, \boldz)+d(\boldz,\boldy)\text{,}
+\end{equation*}
+</div>
+<div class="para">where the leftmost inequality is the triangle inequality for the absolute value, and the rightmost inequality follows from the definition of <span class="process-math">\(d\text{.}\)</span> Since the inequality holds for all <span class="process-math">\(1\leq i\leq n\text{,}\)</span> we conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+d(\boldx,\boldy)=\max\{\abs{x_i-y_i}\colon 1\leq i\leq n\}\leq d(\boldx,\boldz)+d(\boldz,\boldx)\text{.}
+\end{equation*}
+</div>
+</div></article><span class="incontext"><a href="s_metric1.html#li-76" class="internal">in-context</a></span>
 </body>
 </html>
