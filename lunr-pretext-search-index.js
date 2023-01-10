@@ -838,6 +838,123 @@ var ptx_lunr_docs = [
   "body": " -adic metric   Let be the set of integers. Let be the set of prime integers. The fundamental theorem of arithmetic states that any nonzero integer can be factored in unique was as a product of primes in the form , where is a nonnegative integer, and for all but finitely many primes . We call the valuation of at the prime ; it tells us the highest power of dividing .  Now fix a prime integer . For we define its -adic norm  as . The function defined as is a metric on , called the -adic metric. Integers are close to one another with respect to this metric if their difference is highly divisible by .    We content ourselves with a proof sketch in order to avoid getting into the weeds of elementary number theory. The positivity and symmetry axioms follow readily from simple properties of divisibility. For the triangle inequality it is enough to prove that the -adic norm satisfies the triangle inequality on : , for all we have since then for any we have . Lastly, the inequality follows from the stronger claim , which itself follows from divisibility properties.   "
 },
 {
+  "id": "s_closed_closure_interior",
+  "level": "1",
+  "url": "s_closed_closure_interior.html",
+  "type": "Section",
+  "number": "1.4",
+  "title": "Closed sets, closure, and interior",
+  "body": " Closed sets, closure, and interior       Closed sets   Let be a topological space. A subset is closed if its complement is open. Equivalently, a subset is closed if and only if for some open set .     Property of closed sets   Let be a topological space.    Trivial sets  Both and are closed sets.    Finite unions  If are closed, then is closed.    Arbitrary intersection  If is a collection of closed sets, then is closed.       Closed sets determine topology  In general, given a set the set complement operation is defines a bijection , that is self-inverse: , we have for all subsets . It follows from the that the closed sets of are in bijective correspondence with the open sets, and thus that a topology on is uniquely determined by specifying any collection of sets satisfying (1)-(3) from . In other words, a topology is determined by specifying either its open sets or its closed sets.    Closed in trivial and discrete topologies     If has the trivial topology, then the only open sets of are . Hence the only closed sets are and .    If has the discrete topology, then every subset of is open. It follows that any subset is closed, since is open.       Closed in the cofinite topology   Let be a set endowed with the cofinite topology. An set is open in if and only if (a) or (b) is finite. It follows that a set is closed if and only if (a) or (b) for a cofinite set if and only if (a) or (b) is finite.     Basis description of closed sets   Let be a topological space with basis . A set is closed if and only if for all , there is a basis element satisfying .     Closed sets in Euclidean metric topology   Let with the Euclidean metric topology. Decide whether the given subset is open and whether it is closed.                     Interior and closure of a set   Let be a subset of the topological space .    Interior  The interior  of is the union of all open subsets contained in : , .    Closure  The closure  is intersection of all closes sets containing : , .       Equivalent notions of interior and closure   Let be a subset of the topological space . Let be a basis for the topology of .     is the unique largest open set contained in . In other words, is the unique set satisfying the following property: if is open and , then .     is the unique smallest closed set containing . In other words, is the unique set satisfying the following property: if is closed and , then .    We have .    We have .       Using smallest\/largest characterization of interior\/closure  Statements (1)-(2) of provide a potentially useful indirect way of computing the interior or closure of a set .   Interior  Find an open set contained in and show that for any other open set we have . It follows that .    Closure  Find a closed set containing and show that for any other closed set containing we have . It follows that .       Interior and closure of   Let and let . Compute the interior and closure of with respect to (a) the standard topology on and (b) the -topology on .         Interior and closure in cofinite topology   Let be a set endowed with the cofinite topology. For describe and . Use cases.        "
+},
+{
+  "id": "d_closed_set",
+  "level": "2",
+  "url": "s_closed_closure_interior.html#d_closed_set",
+  "type": "Definition",
+  "number": "1.4.1",
+  "title": "Closed sets.",
+  "body": " Closed sets   Let be a topological space. A subset is closed if its complement is open. Equivalently, a subset is closed if and only if for some open set .   "
+},
+{
+  "id": "th_closed_props",
+  "level": "2",
+  "url": "s_closed_closure_interior.html#th_closed_props",
+  "type": "Theorem",
+  "number": "1.4.2",
+  "title": "Property of closed sets.",
+  "body": " Property of closed sets   Let be a topological space.    Trivial sets  Both and are closed sets.    Finite unions  If are closed, then is closed.    Arbitrary intersection  If is a collection of closed sets, then is closed.     "
+},
+{
+  "id": "rm_equiv_open_closed",
+  "level": "2",
+  "url": "s_closed_closure_interior.html#rm_equiv_open_closed",
+  "type": "Remark",
+  "number": "1.4.3",
+  "title": "Closed sets determine topology.",
+  "body": " Closed sets determine topology  In general, given a set the set complement operation is defines a bijection , that is self-inverse: , we have for all subsets . It follows from the that the closed sets of are in bijective correspondence with the open sets, and thus that a topology on is uniquely determined by specifying any collection of sets satisfying (1)-(3) from . In other words, a topology is determined by specifying either its open sets or its closed sets.  "
+},
+{
+  "id": "example-24",
+  "level": "2",
+  "url": "s_closed_closure_interior.html#example-24",
+  "type": "Example",
+  "number": "1.4.4",
+  "title": "Closed in trivial and discrete topologies.",
+  "body": " Closed in trivial and discrete topologies     If has the trivial topology, then the only open sets of are . Hence the only closed sets are and .    If has the discrete topology, then every subset of is open. It follows that any subset is closed, since is open.     "
+},
+{
+  "id": "example-25",
+  "level": "2",
+  "url": "s_closed_closure_interior.html#example-25",
+  "type": "Example",
+  "number": "1.4.5",
+  "title": "Closed in the cofinite topology.",
+  "body": " Closed in the cofinite topology   Let be a set endowed with the cofinite topology. An set is open in if and only if (a) or (b) is finite. It follows that a set is closed if and only if (a) or (b) for a cofinite set if and only if (a) or (b) is finite.   "
+},
+{
+  "id": "lemma_basis_closed",
+  "level": "2",
+  "url": "s_closed_closure_interior.html#lemma_basis_closed",
+  "type": "Lemma",
+  "number": "1.4.6",
+  "title": "Basis description of closed sets.",
+  "body": " Basis description of closed sets   Let be a topological space with basis . A set is closed if and only if for all , there is a basis element satisfying .   "
+},
+{
+  "id": "example-26",
+  "level": "2",
+  "url": "s_closed_closure_interior.html#example-26",
+  "type": "Example",
+  "number": "1.4.7",
+  "title": "Closed sets in Euclidean metric topology.",
+  "body": " Closed sets in Euclidean metric topology   Let with the Euclidean metric topology. Decide whether the given subset is open and whether it is closed.                   "
+},
+{
+  "id": "d_interior_closure",
+  "level": "2",
+  "url": "s_closed_closure_interior.html#d_interior_closure",
+  "type": "Definition",
+  "number": "1.4.8",
+  "title": "Interior and closure of a set.",
+  "body": " Interior and closure of a set   Let be a subset of the topological space .    Interior  The interior  of is the union of all open subsets contained in : , .    Closure  The closure  is intersection of all closes sets containing : , .     "
+},
+{
+  "id": "th_equivalent_interior_closure",
+  "level": "2",
+  "url": "s_closed_closure_interior.html#th_equivalent_interior_closure",
+  "type": "Theorem",
+  "number": "1.4.9",
+  "title": "Equivalent notions of interior and closure.",
+  "body": " Equivalent notions of interior and closure   Let be a subset of the topological space . Let be a basis for the topology of .     is the unique largest open set contained in . In other words, is the unique set satisfying the following property: if is open and , then .     is the unique smallest closed set containing . In other words, is the unique set satisfying the following property: if is closed and , then .    We have .    We have .     "
+},
+{
+  "id": "rm_",
+  "level": "2",
+  "url": "s_closed_closure_interior.html#rm_",
+  "type": "Remark",
+  "number": "1.4.10",
+  "title": "Using smallest\/largest characterization of interior\/closure.",
+  "body": " Using smallest\/largest characterization of interior\/closure  Statements (1)-(2) of provide a potentially useful indirect way of computing the interior or closure of a set .   Interior  Find an open set contained in and show that for any other open set we have . It follows that .    Closure  Find a closed set containing and show that for any other closed set containing we have . It follows that .     "
+},
+{
+  "id": "eg_closure_interior_K",
+  "level": "2",
+  "url": "s_closed_closure_interior.html#eg_closure_interior_K",
+  "type": "Example",
+  "number": "1.4.11",
+  "title": "Interior and closure of <span class=\"process-math\">\\(K\\)<\/span>.",
+  "body": " Interior and closure of   Let and let . Compute the interior and closure of with respect to (a) the standard topology on and (b) the -topology on .       "
+},
+{
+  "id": "example-28",
+  "level": "2",
+  "url": "s_closed_closure_interior.html#example-28",
+  "type": "Example",
+  "number": "1.4.12",
+  "title": "Interior and closure in cofinite topology.",
+  "body": " Interior and closure in cofinite topology   Let be a set endowed with the cofinite topology. For describe and . Use cases.       "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
