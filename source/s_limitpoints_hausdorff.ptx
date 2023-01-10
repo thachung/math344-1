@@ -1,0 +1,36 @@
+        <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_limitpoints_hausdorff">
+          <title>Limit points and the Hausdorff property</title>
+          <introduction>
+            <p>
+
+            </p>
+        </introduction>
+        <definition xml:id="d_neighborhood">
+          <title>Open neighborhood of element or set</title>
+          <statement>
+            <p>
+             Let <m>X</m> be a topological space. An <term>open neighborhood</term> of an element <m>x\in X</m> is an open set <m>U</m> that contains <m>x</m>; an open neighborhood of a subset <m>Y\subseteq X</m> is an open set <m>U</m> such that <m>Y\subseteq U</m>.
+            </p>
+          </statement>
+        </definition>
+        <definition xml:id="d_limit_point">
+          <title>Limit point of a set</title>
+          <statement>
+            <p>
+              Let <m>A</m> be a subset of the topological space <m>X</m>. An element <m>x\in X</m> is a <term>limit point</term> of <m>A</m> if any open neighborhood of <m>x</m> intersects <m>A</m> in a point distinct from <m>x</m>: <ie /> for any open neighborhood <m>U</m> of <m>x</m>, we have <m>U-\{x\}\cap A\ne \emptyset</m>.
+            </p>
+          </statement>
+        </definition>
+        <theorem xml:id="th_limits_points_closure">
+          <title>Limit points and closure</title>
+          <statement>
+            <p>
+              Let <m>A</m> be a subset of the topological space <m>X</m>, and let <m>A'</m> be the set of all limit points of <m>A</m>. We have
+              <me>
+                \overline{A}=A\cup \{A'\}
+              </me>.
+            </p>
+          </statement>
+        </theorem>
+
+        </section>
