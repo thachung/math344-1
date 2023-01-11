@@ -6,10 +6,13 @@
             </p>
         </introduction>
         <definition xml:id="d_neighborhood">
-          <title>Open neighborhood of element or set</title>
+          <title>Neighborhood of element or set</title>
           <statement>
             <p>
              Let <m>X</m> be a topological space. An <term>open neighborhood</term> of an element <m>x\in X</m> is an open set <m>U</m> that contains <m>x</m>; an open neighborhood of a subset <m>Y\subseteq X</m> is an open set <m>U</m> such that <m>Y\subseteq U</m>.
+            </p>
+            <p>
+              More generally, a (not necessarily open) <term>neighborhood</term> of a point <m>x\in X</m> or subset <m>A\subseteq X</m> is a subset <m>K</m> whose interior <m>K^\circ</m> contains <m>x</m> or <m>A</m>: equivalently, <m>K</m> contains an open set <m>U</m> containing <m>x</m> or <m>A</m>.
             </p>
           </statement>
         </definition>
@@ -17,10 +20,45 @@
           <title>Limit point of a set</title>
           <statement>
             <p>
-              Let <m>A</m> be a subset of the topological space <m>X</m>. An element <m>x\in X</m> is a <term>limit point</term> of <m>A</m> if any open neighborhood of <m>x</m> intersects <m>A</m> in a point distinct from <m>x</m>: <ie /> for any open neighborhood <m>U</m> of <m>x</m>, we have <m>U-\{x\}\cap A\ne \emptyset</m>.
+              Let <m>A</m> be a subset of the topological space <m>X</m>. An element <m>x\in X</m> is a <term>limit point</term> of <m>A</m> if any open neighborhood of <m>x</m> intersects <m>A</m> in a point distinct from <m>x</m>: <ie /> for any open neighborhood <m>U</m> of <m>x</m>, we have <m>(U-\{x\})\cap A\ne \emptyset</m>.
             </p>
           </statement>
         </definition>
+        <example xml:id="eg_limit_points">
+          <title>Limit points in <m>\R</m></title>
+          <statement>
+            <p>
+              Let <m>X=\R</m> with the standard topology. Determine the set <m>L</m> of all limit points for the following sets.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>(0,1)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\Z</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>K=\{1/n\colon n\in \Z_+\}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\Q</m>
+                </p>
+              </li>
+            </ol>
+          </statement>
+          <solution>
+            <p>
+
+            </p>
+          </solution>
+        </example>
         <theorem xml:id="th_limits_points_closure">
           <title>Limit points and closure</title>
           <statement>
@@ -32,5 +70,183 @@
             </p>
           </statement>
         </theorem>
+        <corollary xml:id="cor_closed">
+          <title>Closed, closure, limit points</title>
+          <statement>
+            <p>
+              Let <m>A</m> be a subset of the topological space <m>X</m>. The following are equivalent.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>A</m> is closed.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>A</m> contains all of its limit points.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>A=\overline{A}</m>.
+                </p>
+              </li>
+            </ol>
+          </statement>
+        </corollary>
+        <definition xml:id="d_Hausdorff">
+          <title>Hausdorff property</title>
+          <statement>
+            <p>
+              A topological space <m>X</m> is <term>Hausdorff</term> if for any two distinct elements <m>x, y\in X</m> (<ie />, <m>x\ne y</m>) there are open neighborhoods <m>U_x, U_y</m> of <m>x</m> and <m>y</m>, respectively, that are disjoint (<ie />, <m>U_x\cap U_y=\emptyset</m>).
+            </p>
+          </statement>
+        </definition>
+        <theorem xml:id="th_Hausdorff_props">
+          <title>Hausdorff properties</title>
+          <statement>
+            <p>
+              Let <m>X</m> be a Hausdorff space.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  All singletons <m>\{x\}\subseteq X</m> are closed.
+                </p>
+              </li>
+              <li>
+                <p>
+                  All finite subsets of <m>X</m> are closed.
+                </p>
+              </li>
+            </ol>
+          </statement>
+        </theorem>
+        <definition xml:id="d_T1">
+          <title>The <m>T_1</m>-axiom</title>
+          <statement>
+            <p>
+              A topological space is <term><m>T_1</m></term> (or is a <term><m>T_1</m>-space</term>, or satisfies the <term><m>T_1</m>-axiom</term>) if all finite subsets of <m>X</m> are closed.
+            </p>
+          </statement>
+        </definition>
+        <remark xml:id="rm_T1">
+        <title><m>T_1</m> as separation axiom</title>
+            <p>
+              The <m>T_1</m> is called a <em>separation axiom</em>, or <em>Trennungsaxiom</em> in German: hence the <sq>T</sq>. To see more explicitly why this is called a separation axiom, note that (a) <m>T_1</m> is equivalent to the property that any singleton is closed, and (b) this in turn is equivalent to saying for any two elements <m>x\ne y</m> there is an open neighborhood <m>U</m> of <m>y</m> that does not contain <m>x</m>; we think of this <m>U</m> as separating <m>x</m> and <m>y</m>.
+            </p>
+            <p>
+              We will say more about separation axioms later. For now, I'll mention that the Hausdorff property is itself a separation axiom, called the <m>T_2</m>-axiom.
+            </p>
+        </remark>
+        <corollary xml:id="cor_Hausdorff_T1">
+          <title>Hausdorff versus <m>T_1</m></title>
+
+
+          <statement>
+            <p>
+              Let <m>X</m> be a topological space.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  If <m>X</m> is Hausdorff, then <m>X</m> is <m>T_1</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  It is not the case that if <m>X</m> is <m>T_1</m>, then <m>X</m> must be Hausdorff.
+                </p>
+              </li>
+            </ol>
+            <p>
+              Using logical shorthand, we have
+            <mdn>
+              <mrow xml:id="eq_Hausdorff_implies_T1">\text{ Hausdorff} \amp\implies T_1 </mrow>
+              <mrow xml:id="eq_T1_doesnt_imply_Hausdorff"> T_1\hspace{5pt}\amp\not\!\!\!\!\!\implies \text{Hausdorff} </mrow>
+            </mdn>
+          </p>
+          </statement>
+          <proof>
+            <p>
+              Statement (1) follows from <xref ref="th_Hausdorff_props"/>.
+            </p>
+            <p>
+              We provide a counterexample to the claim that <m>T_1</m> implies Hausdorff. Let <m>X</m> be any <em>infinite</em> set endowed with the cofinite topology. The closed sets of <m>X</m> are precisely the finite sets and <m>X</m> itself, as we saw in <xref ref="eg_closed_cofinite"/>. Thus <m>X</m> is <m>T_1</m>. On the other hand, <m>X</m> is not Hausdorff. Indeed take any two distinct elements <m>x, y\in X</m>. Let <m>U_x</m> and <m>U_y</m> be any pair of open neighborhoods of <m>x</m> and <m>y</m>, respectively. We will show that <m>U_x\cap U_y\ne \emptyset</m>. If either of the open neighborhoods is equal to <m>X</m> itself, the claim is obvious. Otherwise <m>C=U_x^c</m> is a finite set that does not contain <m>x</m> and <m>D=U_y^c</m> is a finite set that does not contain <m>y</m>.
+              Since <m>X</m> is infinite, <m>X\ne C\cup D</m>, and hence
+              <me>
+              U_x\cap U_y=C^c\cap D^c=(C\cup D)^c\ne \emptyset
+              </me>,
+              as desired.
+            </p>
+          </proof>
+        </corollary>
+        <example xml:id="eg_metric_implies_Hausdorff">
+          <title>Metric spaces are Hausdorff</title>
+          <statement>
+            <ol>
+              <li>
+                <p>
+                  Show that any metric space is Hausdorff.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Show that any infinite set endowed with the cofinite topology is not a metric space.
+                </p>
+              </li>
+            </ol>
+          </statement>
+          <solution>
+            <p>
+
+            </p>
+          </solution>
+        </example>
+        <definition xml:id="d_convergent_sequence">
+          <title>Convergent sequence</title>
+          <statement>
+            <p>
+              Let <m>X</m> be a topological space. A sequence <m>(x_n)_{n=1}^{\infty}</m> of elements of <m>X</m> <term>converges</term> to the element <m>x\in X</m>, denoted <m>x_n\to x</m>, if for any open neighborhood <m>U</m>of <m>x</m>, there is a positive integer <m>N</m> such that <m>x_n\in U</m> for all <m>n\geq N</m>. We say <m>(x_n)_{n=1}^\infty</m> is a <term>convergent sequence</term> in this case, and call <m>x</m> the <term>limit</term> of the sequence.
+            </p>
+          </statement>
+        </definition>
+        <example xml:id="eg_cofinite_convergent_sequence">
+          <title>Limits in the cofinite topology</title>
+          <statement>
+            <p>
+              Let <m>X=\R</m> endowed with the cofinite topology. Show that the sequence <m>(n)_{n=1}^\infty=(1,2,3,\dots)</m> converges to all elements <m>x\in \R</m>. In particular, the limit of a convergent sequence need not be unique!
+            </p>
+          </statement>
+          <solution>
+            <p>
+
+            </p>
+          </solution>
+        </example>
+        <theorem xml:id="th_Hausdorff_unique_limits">
+          <title>Unique limits in Hausdorff spaces</title>
+          <statement>
+            <p>
+              If <m>X</m> is Hausdorff, then any sequence <m>(x_n)_{n=1}^\infty</m> has at most one limit.
+            </p>
+          </statement>
+          <proof>
+            <p>
+
+            </p>
+          </proof>
+
+        </theorem>
+        <theorem xml:id="th_T1_limitpoints">
+          <title>Limit points in <m>T_1</m>-spaces</title>
+          <statement>
+            <p>
+              Let <m>A</m> be a subset of the <m>T_1</m>-space <m>X</m>. An element <m>x\in X</m> is a limit point of <m>A</m> if and only if every open neighborhood of <m>x</m> intersects <m>A</m> in infinitely many points.
+            </p>
+          </statement>
+        </theorem>
+
 
         </section>

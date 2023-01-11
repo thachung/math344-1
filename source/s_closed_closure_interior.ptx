@@ -74,7 +74,7 @@
       that is self-inverse: <ie />, we have <m>(Y^c)^c=Y</m> for all subsets <m>Y\subseteq X</m>. It follows from the <xref ref="d_closed_set"/> that the closed sets of <m>X</m> are in bijective correspondence with the open sets, and thus that a topology on <m>X</m> is uniquely determined by specifying any collection of sets satisfying (1)-(3) from <xref ref="th_closed_props"/>. In other words, a topology is determined by specifying either its open sets or its closed sets.
     </p>
 </remark>
-<example>
+<example xml:id="eg_closed_trivial_discrete">
   <title>Closed in trivial and discrete topologies</title>
   <statement>
     <ol>
@@ -92,7 +92,7 @@
   </statement>
 </example>
 
-<example>
+<example xml:id="eg_closed_cofinite">
   <title>Closed in the cofinite topology</title>
   <statement>
     <p>
