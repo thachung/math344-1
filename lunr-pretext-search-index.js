@@ -844,7 +844,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.4",
   "title": "Closed sets, closure, and interior",
-  "body": " Closed sets, closure, and interior       Closed sets   Let be a topological space. A subset is closed if its complement is open. Equivalently, a subset is closed if and only if for some open set .     Property of closed sets   Let be a topological space.    Trivial sets  Both and are closed sets.    Finite unions  If are closed, then is closed.    Arbitrary intersection  If is a collection of closed sets, then is closed.       Closed sets determine topology  In general, given a set the set complement operation is defines a bijection , that is self-inverse: , we have for all subsets . It follows from the that the closed sets of are in bijective correspondence with the open sets, and thus that a topology on is uniquely determined by specifying any collection of sets satisfying (1)-(3) from . In other words, a topology is determined by specifying either its open sets or its closed sets.    Closed in trivial and discrete topologies     If has the trivial topology, then the only open sets of are . Hence the only closed sets are and .    If has the discrete topology, then every subset of is open. It follows that any subset is closed, since is open.       Closed in the cofinite topology   Let be a set endowed with the cofinite topology. An set is open in if and only if (a) or (b) is finite. It follows that a set is closed if and only if (a) or (b) for a cofinite set if and only if (a) or (b) is finite.     Basis description of closed sets   Let be a topological space with basis . A set is closed if and only if for all , there is a basis element satisfying .     Closed sets in Euclidean metric topology   Let with the Euclidean metric topology. Decide whether the given subset is open and whether it is closed.                     Interior and closure of a set   Let be a subset of the topological space .    Interior  The interior  of is the union of all open subsets contained in : , .    Closure  The closure  is intersection of all closes sets containing : , .       Equivalent notions of interior and closure   Let be a subset of the topological space . Let be a basis for the topology of .     is the unique largest open set contained in . In other words, is the unique set satisfying the following property: if is open and , then .     is the unique smallest closed set containing . In other words, is the unique set satisfying the following property: if is closed and , then .    We have .    We have .       Using smallest\/largest characterization of interior\/closure  Statements (1)-(2) of provide a potentially useful indirect way of computing the interior or closure of a set .   Interior  Find an open set contained in and show that for any other open set we have . It follows that .    Closure  Find a closed set containing and show that for any other closed set containing we have . It follows that .       Interior and closure of   Let and let . Compute the interior and closure of with respect to (a) the standard topology on and (b) the -topology on .         Interior and closure in cofinite topology   Let be a set endowed with the cofinite topology. For describe and . Use cases.        "
+  "body": " Closed sets, closure, and interior       Closed sets   Let be a topological space. A subset is closed if its complement is open. Equivalently, a subset is closed if and only if for some open set .     Property of closed sets   Let be a topological space.    Trivial sets  Both and are closed sets.    Finite unions  If are closed, then is closed.    Arbitrary intersection  If is a collection of closed sets, then is closed.      Statement (1) follows from the observation that , and .  Assume is closed for ; then by DeMorgan's law , which is open since is open for all and finite intersections of open sets are open. This proves (2).  Lastly, assume is closed for all . By DeMorgan's law we have , which is open since is open and arbitrary unions of open sets are open.     Closed sets determine topology  In general, given a set the set complement operation is defines a bijection , that is self-inverse: , we have for all subsets . It follows from the that the closed sets of are in bijective correspondence with the open sets, and thus that a topology on is uniquely determined by specifying any collection of sets satisfying (1)-(3) from . In other words, a topology is determined by specifying either its open sets or its closed sets.    Closed in trivial and discrete topologies     If has the trivial topology, then the only open sets of are . Hence the only closed sets are and .    If has the discrete topology, then every subset of is open. It follows that any subset of is closed, since its complement is open. We conclude that al subsets of are both open and closed in the discrete topology.       Closed in the cofinite topology   Let be a set endowed with the cofinite topology. An set is open in if and only if (a) or (b) is finite. It follows that a set is closed if and only if (a) or (b) for a cofinite set if and only if (a) or (b) is finite.     Basis description of closed sets   Let be a topological space with basis . A set is closed if and only if for all , there is a basis element satisfying .    By definition a set is closed if and only if its complement is open. Using , we see that is open if and only if for all there is a basis element satisfying .     Closed sets in Euclidean metric topology   Let with the Euclidean metric topology. Decide whether the given subset is open and whether it is closed.                  The set is not open: any open ball containing the point contains points with negative -coordinate. Hence there is no open ball containing that is contained in .  The set is closed. If , then either or . Let . Every element of has either a negative -coordinate or a negative -coordinate. Hence . This proves is closed, using .    Again, the set is not open, as witnessed by .  The set is also not open. Take . Any open ball containing contains points with positive -coordinate. Thus there is no open ball containing and contained in . We conclude that is not closed, using .       Interior and closure of a set   Let be a subset of the topological space .    Interior  The interior  of is the union of all open subsets contained in : , .    Closure  The closure  is the ntersection of all closed sets containing : , .       Equivalent notions of interior and closure   Let be a subset of the topological space . Let be a basis for the topology of .     is the unique largest open set contained in . In other words, is the unique set satisfying the following property: if is open and , then .     is the unique smallest closed set containing . In other words, is the unique set satisfying the following property: if is closed and , then .    We have .    We have .      Statements (1)-(2): properties of open (resp. closed) sets imply that is open and is closed. Furthermore, by definition of (resp. ) along with simple properties of union\/intersection it follows that if is open and , then ; and if is closed containing , then .  The first equivalence in (3) follows from the definition of as a union. The second equivalence follows from the fact that any is covered by basis elements.  We prove (4) as a chain of equivalences. Call the three statements (i), (ii), (iii).  Assume . If is an open set satisfying , then is a closed set containing , and hence contains . It follows that any open set containing intersects nontrivially. This proves (i) (ii).  Clearly (ii) implies (iii), since any basis element is an open set.  Assume (iii). If is a closed set containing , then is an open set satisfying . It follows from (iii) that , and hence that for all closed sets containing . It follows that , the intersection of these sets.     Using smallest\/largest characterization of interior\/closure  Statements (1)-(2) of provide a potentially useful indirect way of computing the interior or closure of a set .   Interior  Find an open set contained in and show that for any other open set we have . It follows that .    Closure  Find a closed set containing and show that for any other closed set containing we have . It follows that .       Interior and closure of   Let and let . Compute the interior and closure of with respect to (a) the standard topology on and (b) the -topology on .      First consider with the standard topology. The interior of is empty in this case: , . To see this, note that given any and any open interval containing , we can choose an such that ; by design all elements of lie outside . Thus , and .  Next. I claim . To see this, note first that is closed: it is easy to see that for any we can find an such that . By (2) of we have . Since furthermore and since itself is not closed, it follows that .    Now consider the -topology on . We still have . Indeed, fix any , and take any basis element containing . We have or for some open interval . In either case, the same argument as above shows that contains a basis element , all of whose elements lie outside of . This shows , and hence .  Next, I claim that is closed in the -topology, from whence it follows that . (Use (2) from .) To prove the claim, we must show, using that for any there is a basis element (in the -topology) containing and contained in . There are two cases: and . If , we can find an open interval such that and . Since open intervals are basis elements in the -topology, we are done in this case. Next, assume . In this case the basis element satisfies . Having exhausted the cases, we conclude is closed, and hence .       Interior and closure in cofinite topology   Let be a set endowed with the cofinite topology. For describe and . Use cases.        "
 },
 {
   "id": "d_closed_set",
@@ -862,7 +862,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.4.2",
   "title": "Property of closed sets.",
-  "body": " Property of closed sets   Let be a topological space.    Trivial sets  Both and are closed sets.    Finite unions  If are closed, then is closed.    Arbitrary intersection  If is a collection of closed sets, then is closed.     "
+  "body": " Property of closed sets   Let be a topological space.    Trivial sets  Both and are closed sets.    Finite unions  If are closed, then is closed.    Arbitrary intersection  If is a collection of closed sets, then is closed.      Statement (1) follows from the observation that , and .  Assume is closed for ; then by DeMorgan's law , which is open since is open for all and finite intersections of open sets are open. This proves (2).  Lastly, assume is closed for all . By DeMorgan's law we have , which is open since is open and arbitrary unions of open sets are open.   "
 },
 {
   "id": "rm_equiv_open_closed",
@@ -880,7 +880,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.4.4",
   "title": "Closed in trivial and discrete topologies.",
-  "body": " Closed in trivial and discrete topologies     If has the trivial topology, then the only open sets of are . Hence the only closed sets are and .    If has the discrete topology, then every subset of is open. It follows that any subset is closed, since is open.     "
+  "body": " Closed in trivial and discrete topologies     If has the trivial topology, then the only open sets of are . Hence the only closed sets are and .    If has the discrete topology, then every subset of is open. It follows that any subset of is closed, since its complement is open. We conclude that al subsets of are both open and closed in the discrete topology.     "
 },
 {
   "id": "example-25",
@@ -898,7 +898,7 @@ var ptx_lunr_docs = [
   "type": "Lemma",
   "number": "1.4.6",
   "title": "Basis description of closed sets.",
-  "body": " Basis description of closed sets   Let be a topological space with basis . A set is closed if and only if for all , there is a basis element satisfying .   "
+  "body": " Basis description of closed sets   Let be a topological space with basis . A set is closed if and only if for all , there is a basis element satisfying .    By definition a set is closed if and only if its complement is open. Using , we see that is open if and only if for all there is a basis element satisfying .   "
 },
 {
   "id": "example-26",
@@ -907,7 +907,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.4.7",
   "title": "Closed sets in Euclidean metric topology.",
-  "body": " Closed sets in Euclidean metric topology   Let with the Euclidean metric topology. Decide whether the given subset is open and whether it is closed.                   "
+  "body": " Closed sets in Euclidean metric topology   Let with the Euclidean metric topology. Decide whether the given subset is open and whether it is closed.                  The set is not open: any open ball containing the point contains points with negative -coordinate. Hence there is no open ball containing that is contained in .  The set is closed. If , then either or . Let . Every element of has either a negative -coordinate or a negative -coordinate. Hence . This proves is closed, using .    Again, the set is not open, as witnessed by .  The set is also not open. Take . Any open ball containing contains points with positive -coordinate. Thus there is no open ball containing and contained in . We conclude that is not closed, using .     "
 },
 {
   "id": "d_interior_closure",
@@ -916,7 +916,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "1.4.8",
   "title": "Interior and closure of a set.",
-  "body": " Interior and closure of a set   Let be a subset of the topological space .    Interior  The interior  of is the union of all open subsets contained in : , .    Closure  The closure  is intersection of all closes sets containing : , .     "
+  "body": " Interior and closure of a set   Let be a subset of the topological space .    Interior  The interior  of is the union of all open subsets contained in : , .    Closure  The closure  is the ntersection of all closed sets containing : , .     "
 },
 {
   "id": "th_equivalent_interior_closure",
@@ -925,7 +925,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.4.9",
   "title": "Equivalent notions of interior and closure.",
-  "body": " Equivalent notions of interior and closure   Let be a subset of the topological space . Let be a basis for the topology of .     is the unique largest open set contained in . In other words, is the unique set satisfying the following property: if is open and , then .     is the unique smallest closed set containing . In other words, is the unique set satisfying the following property: if is closed and , then .    We have .    We have .     "
+  "body": " Equivalent notions of interior and closure   Let be a subset of the topological space . Let be a basis for the topology of .     is the unique largest open set contained in . In other words, is the unique set satisfying the following property: if is open and , then .     is the unique smallest closed set containing . In other words, is the unique set satisfying the following property: if is closed and , then .    We have .    We have .      Statements (1)-(2): properties of open (resp. closed) sets imply that is open and is closed. Furthermore, by definition of (resp. ) along with simple properties of union\/intersection it follows that if is open and , then ; and if is closed containing , then .  The first equivalence in (3) follows from the definition of as a union. The second equivalence follows from the fact that any is covered by basis elements.  We prove (4) as a chain of equivalences. Call the three statements (i), (ii), (iii).  Assume . If is an open set satisfying , then is a closed set containing , and hence contains . It follows that any open set containing intersects nontrivially. This proves (i) (ii).  Clearly (ii) implies (iii), since any basis element is an open set.  Assume (iii). If is a closed set containing , then is an open set satisfying . It follows from (iii) that , and hence that for all closed sets containing . It follows that , the intersection of these sets.   "
 },
 {
   "id": "rm_",
@@ -943,7 +943,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.4.11",
   "title": "Interior and closure of <span class=\"process-math\">\\(K\\)<\/span>.",
-  "body": " Interior and closure of   Let and let . Compute the interior and closure of with respect to (a) the standard topology on and (b) the -topology on .       "
+  "body": " Interior and closure of   Let and let . Compute the interior and closure of with respect to (a) the standard topology on and (b) the -topology on .      First consider with the standard topology. The interior of is empty in this case: , . To see this, note that given any and any open interval containing , we can choose an such that ; by design all elements of lie outside . Thus , and .  Next. I claim . To see this, note first that is closed: it is easy to see that for any we can find an such that . By (2) of we have . Since furthermore and since itself is not closed, it follows that .    Now consider the -topology on . We still have . Indeed, fix any , and take any basis element containing . We have or for some open interval . In either case, the same argument as above shows that contains a basis element , all of whose elements lie outside of . This shows , and hence .  Next, I claim that is closed in the -topology, from whence it follows that . (Use (2) from .) To prove the claim, we must show, using that for any there is a basis element (in the -topology) containing and contained in . There are two cases: and . If , we can find an open interval such that and . Since open intervals are basis elements in the -topology, we are done in this case. Next, assume . In this case the basis element satisfies . Having exhausted the cases, we conclude is closed, and hence .     "
 },
 {
   "id": "example-28",
@@ -953,6 +953,42 @@ var ptx_lunr_docs = [
   "number": "1.4.12",
   "title": "Interior and closure in cofinite topology.",
   "body": " Interior and closure in cofinite topology   Let be a set endowed with the cofinite topology. For describe and . Use cases.       "
+},
+{
+  "id": "s_limitpoints_hausdorff",
+  "level": "1",
+  "url": "s_limitpoints_hausdorff.html",
+  "type": "Section",
+  "number": "1.5",
+  "title": "Limit points and the Hausdorff property",
+  "body": " Limit points and the Hausdorff property       Open neighborhood of element or set   Let be a topological space. An open neighborhood of an element is an open set that contains ; an open neighborhood of a subset is an open set such that .     Limit point of a set   Let be a subset of the topological space . An element is a limit point of if any open neighborhood of intersects in a point distinct from : for any open neighborhood of , we have .     Limit points and closure   Let be a subset of the topological space , and let be the set of all limit points of . We have .    "
+},
+{
+  "id": "d_neighborhood",
+  "level": "2",
+  "url": "s_limitpoints_hausdorff.html#d_neighborhood",
+  "type": "Definition",
+  "number": "1.5.1",
+  "title": "Open neighborhood of element or set.",
+  "body": " Open neighborhood of element or set   Let be a topological space. An open neighborhood of an element is an open set that contains ; an open neighborhood of a subset is an open set such that .   "
+},
+{
+  "id": "d_limit_point",
+  "level": "2",
+  "url": "s_limitpoints_hausdorff.html#d_limit_point",
+  "type": "Definition",
+  "number": "1.5.2",
+  "title": "Limit point of a set.",
+  "body": " Limit point of a set   Let be a subset of the topological space . An element is a limit point of if any open neighborhood of intersects in a point distinct from : for any open neighborhood of , we have .   "
+},
+{
+  "id": "th_limits_points_closure",
+  "level": "2",
+  "url": "s_limitpoints_hausdorff.html#th_limits_points_closure",
+  "type": "Theorem",
+  "number": "1.5.3",
+  "title": "Limit points and closure.",
+  "body": " Limit points and closure   Let be a subset of the topological space , and let be the set of all limit points of . We have .   "
 },
 {
   "id": "appendix-notation",
