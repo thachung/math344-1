@@ -874,18 +874,18 @@ var ptx_lunr_docs = [
   "body": " Closed sets determine topology  In general, given a set the set complement operation is defines a bijection , that is self-inverse: , we have for all subsets . It follows from the that the closed sets of are in bijective correspondence with the open sets, and thus that a topology on is uniquely determined by specifying any collection of sets satisfying (1)-(3) from . In other words, a topology is determined by specifying either its open sets or its closed sets.  "
 },
 {
-  "id": "example-24",
+  "id": "eg_closed_trivial_discrete",
   "level": "2",
-  "url": "s_closed_closure_interior.html#example-24",
+  "url": "s_closed_closure_interior.html#eg_closed_trivial_discrete",
   "type": "Example",
   "number": "1.4.4",
   "title": "Closed in trivial and discrete topologies.",
   "body": " Closed in trivial and discrete topologies     If has the trivial topology, then the only open sets of are . Hence the only closed sets are and .    If has the discrete topology, then every subset of is open. It follows that any subset of is closed, since its complement is open. We conclude that al subsets of are both open and closed in the discrete topology.     "
 },
 {
-  "id": "example-25",
+  "id": "eg_closed_cofinite",
   "level": "2",
-  "url": "s_closed_closure_interior.html#example-25",
+  "url": "s_closed_closure_interior.html#eg_closed_cofinite",
   "type": "Example",
   "number": "1.4.5",
   "title": "Closed in the cofinite topology.",
@@ -961,7 +961,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.5",
   "title": "Limit points and the Hausdorff property",
-  "body": " Limit points and the Hausdorff property       Open neighborhood of element or set   Let be a topological space. An open neighborhood of an element is an open set that contains ; an open neighborhood of a subset is an open set such that .     Limit point of a set   Let be a subset of the topological space . An element is a limit point of if any open neighborhood of intersects in a point distinct from : for any open neighborhood of , we have .     Limit points and closure   Let be a subset of the topological space , and let be the set of all limit points of . We have .    "
+  "body": " Limit points and the Hausdorff property       Neighborhood of element or set   Let be a topological space. An open neighborhood of an element is an open set that contains ; an open neighborhood of a subset is an open set such that .  More generally, a (not necessarily open) neighborhood of a point or subset is a subset whose interior contains or : equivalently, contains an open set containing or .     Limit point of a set   Let be a subset of the topological space . An element is a limit point of if any open neighborhood of intersects in a point distinct from : for any open neighborhood of , we have .     Limit points in   Let with the standard topology. Determine the set of all limit points for the following sets.                               Limit points and closure   Let be a subset of the topological space , and let be the set of all limit points of . We have .     Closed, closure, limit points   Let be a subset of the topological space . The following are equivalent.     is closed.     contains all of its limit points.     .       Hausdorff property   A topological space is Hausdorff if for any two distinct elements ( , ) there are open neighborhoods of and , respectively, that are disjoint ( , ).     Hausdorff properties   Let be a Hausdorff space.    All singletons are closed.    All finite subsets of are closed.       The -axiom   A topological space is (or is a -space , or satisfies the -axiom ) if all finite subsets of are closed.     as separation axiom  The is called a separation axiom , or Trennungsaxiom in German: hence the T . To see more explicitly why this is called a separation axiom, note that (a) is equivalent to the property that any singleton is closed, and (b) this in turn is equivalent to saying for any two elements there is an open neighborhood of that does not contain ; we think of this as separating and .  We will say more about separation axioms later. For now, I'll mention that the Hausdorff property is itself a separation axiom, called the -axiom.    Hausdorff versus   Let be a topological space.    If is Hausdorff, then is     It is not the case that if is , then must be Hausdorff.    Using logical shorthand, we have     Statement (1) follows from .  We provide a counterexample to the claim that implies Hausdorff. Let be any infinite set endowed with the cofinite topology. The closed sets of are precisely the finite sets and itself, as we saw in . Thus is . On the other hand, is not Hausdorff. Indeed take any two distinct elements . Let and be any pair of open neighborhoods of and , respectively. We will show that . If either of the open neighborhoods is equal to itself, the claim is obvious. Otherwise is a finite set that does not contain and is a finite set that does not contain . Since is infinite, , and hence , as desired.     Metric spaces are Hausdorff     Show that any metric space is Hausdorff.    Show that any infinite set endowed with the cofinite topology is not a metric space.           Convergent sequence   Let be a topological space. A sequence of elements of  converges to the element , denoted , if for any open neighborhood of , there is a positive integer such that for all . We say is a convergent sequence in this case, and call the limit of the sequence.     Limits in the cofinite topology   Let endowed with the cofinite topology. Show that the sequence converges to all elements . In particular, the limit of a convergent sequence need not be unique!         Unique limits in Hausdorff spaces   If is Hausdorff, then any sequence has at most one limit.         Limit points in -spaces   Let be a subset of the -space . An element is a limit point of if and only if every open neighborhood of intersects in infinitely many points.    "
 },
 {
   "id": "d_neighborhood",
@@ -969,8 +969,8 @@ var ptx_lunr_docs = [
   "url": "s_limitpoints_hausdorff.html#d_neighborhood",
   "type": "Definition",
   "number": "1.5.1",
-  "title": "Open neighborhood of element or set.",
-  "body": " Open neighborhood of element or set   Let be a topological space. An open neighborhood of an element is an open set that contains ; an open neighborhood of a subset is an open set such that .   "
+  "title": "Neighborhood of element or set.",
+  "body": " Neighborhood of element or set   Let be a topological space. An open neighborhood of an element is an open set that contains ; an open neighborhood of a subset is an open set such that .  More generally, a (not necessarily open) neighborhood of a point or subset is a subset whose interior contains or : equivalently, contains an open set containing or .   "
 },
 {
   "id": "d_limit_point",
@@ -982,13 +982,121 @@ var ptx_lunr_docs = [
   "body": " Limit point of a set   Let be a subset of the topological space . An element is a limit point of if any open neighborhood of intersects in a point distinct from : for any open neighborhood of , we have .   "
 },
 {
+  "id": "eg_limit_points",
+  "level": "2",
+  "url": "s_limitpoints_hausdorff.html#eg_limit_points",
+  "type": "Example",
+  "number": "1.5.3",
+  "title": "Limit points in <span class=\"process-math\">\\(\\R\\)<\/span>.",
+  "body": " Limit points in   Let with the standard topology. Determine the set of all limit points for the following sets.                             "
+},
+{
   "id": "th_limits_points_closure",
   "level": "2",
   "url": "s_limitpoints_hausdorff.html#th_limits_points_closure",
   "type": "Theorem",
-  "number": "1.5.3",
+  "number": "1.5.4",
   "title": "Limit points and closure.",
   "body": " Limit points and closure   Let be a subset of the topological space , and let be the set of all limit points of . We have .   "
+},
+{
+  "id": "cor_closed",
+  "level": "2",
+  "url": "s_limitpoints_hausdorff.html#cor_closed",
+  "type": "Corollary",
+  "number": "1.5.5",
+  "title": "Closed, closure, limit points.",
+  "body": " Closed, closure, limit points   Let be a subset of the topological space . The following are equivalent.     is closed.     contains all of its limit points.     .     "
+},
+{
+  "id": "d_Hausdorff",
+  "level": "2",
+  "url": "s_limitpoints_hausdorff.html#d_Hausdorff",
+  "type": "Definition",
+  "number": "1.5.6",
+  "title": "Hausdorff property.",
+  "body": " Hausdorff property   A topological space is Hausdorff if for any two distinct elements ( , ) there are open neighborhoods of and , respectively, that are disjoint ( , ).   "
+},
+{
+  "id": "th_Hausdorff_props",
+  "level": "2",
+  "url": "s_limitpoints_hausdorff.html#th_Hausdorff_props",
+  "type": "Theorem",
+  "number": "1.5.7",
+  "title": "Hausdorff properties.",
+  "body": " Hausdorff properties   Let be a Hausdorff space.    All singletons are closed.    All finite subsets of are closed.     "
+},
+{
+  "id": "d_T1",
+  "level": "2",
+  "url": "s_limitpoints_hausdorff.html#d_T1",
+  "type": "Definition",
+  "number": "1.5.8",
+  "title": "The <span class=\"process-math\">\\(T_1\\)<\/span>-axiom.",
+  "body": " The -axiom   A topological space is (or is a -space , or satisfies the -axiom ) if all finite subsets of are closed.   "
+},
+{
+  "id": "rm_T1",
+  "level": "2",
+  "url": "s_limitpoints_hausdorff.html#rm_T1",
+  "type": "Remark",
+  "number": "1.5.9",
+  "title": "<span class=\"process-math\">\\(T_1\\)<\/span> as separation axiom.",
+  "body": " as separation axiom  The is called a separation axiom , or Trennungsaxiom in German: hence the T . To see more explicitly why this is called a separation axiom, note that (a) is equivalent to the property that any singleton is closed, and (b) this in turn is equivalent to saying for any two elements there is an open neighborhood of that does not contain ; we think of this as separating and .  We will say more about separation axioms later. For now, I'll mention that the Hausdorff property is itself a separation axiom, called the -axiom.  "
+},
+{
+  "id": "cor_Hausdorff_T1",
+  "level": "2",
+  "url": "s_limitpoints_hausdorff.html#cor_Hausdorff_T1",
+  "type": "Corollary",
+  "number": "1.5.10",
+  "title": "Hausdorff versus <span class=\"process-math\">\\(T_1\\)<\/span>.",
+  "body": " Hausdorff versus   Let be a topological space.    If is Hausdorff, then is     It is not the case that if is , then must be Hausdorff.    Using logical shorthand, we have     Statement (1) follows from .  We provide a counterexample to the claim that implies Hausdorff. Let be any infinite set endowed with the cofinite topology. The closed sets of are precisely the finite sets and itself, as we saw in . Thus is . On the other hand, is not Hausdorff. Indeed take any two distinct elements . Let and be any pair of open neighborhoods of and , respectively. We will show that . If either of the open neighborhoods is equal to itself, the claim is obvious. Otherwise is a finite set that does not contain and is a finite set that does not contain . Since is infinite, , and hence , as desired.   "
+},
+{
+  "id": "eg_metric_implies_Hausdorff",
+  "level": "2",
+  "url": "s_limitpoints_hausdorff.html#eg_metric_implies_Hausdorff",
+  "type": "Example",
+  "number": "1.5.11",
+  "title": "Metric spaces are Hausdorff.",
+  "body": " Metric spaces are Hausdorff     Show that any metric space is Hausdorff.    Show that any infinite set endowed with the cofinite topology is not a metric space.         "
+},
+{
+  "id": "d_convergent_sequence",
+  "level": "2",
+  "url": "s_limitpoints_hausdorff.html#d_convergent_sequence",
+  "type": "Definition",
+  "number": "1.5.12",
+  "title": "Convergent sequence.",
+  "body": " Convergent sequence   Let be a topological space. A sequence of elements of  converges to the element , denoted , if for any open neighborhood of , there is a positive integer such that for all . We say is a convergent sequence in this case, and call the limit of the sequence.   "
+},
+{
+  "id": "eg_cofinite_convergent_sequence",
+  "level": "2",
+  "url": "s_limitpoints_hausdorff.html#eg_cofinite_convergent_sequence",
+  "type": "Example",
+  "number": "1.5.13",
+  "title": "Limits in the cofinite topology.",
+  "body": " Limits in the cofinite topology   Let endowed with the cofinite topology. Show that the sequence converges to all elements . In particular, the limit of a convergent sequence need not be unique!       "
+},
+{
+  "id": "th_Hausdorff_unique_limits",
+  "level": "2",
+  "url": "s_limitpoints_hausdorff.html#th_Hausdorff_unique_limits",
+  "type": "Theorem",
+  "number": "1.5.14",
+  "title": "Unique limits in Hausdorff spaces.",
+  "body": " Unique limits in Hausdorff spaces   If is Hausdorff, then any sequence has at most one limit.       "
+},
+{
+  "id": "th_T1_limitpoints",
+  "level": "2",
+  "url": "s_limitpoints_hausdorff.html#th_T1_limitpoints",
+  "type": "Theorem",
+  "number": "1.5.15",
+  "title": "Limit points in <span class=\"process-math\">\\(T_1\\)<\/span>-spaces.",
+  "body": " Limit points in -spaces   Let be a subset of the -space . An element is a limit point of if and only if every open neighborhood of intersects in infinitely many points.   "
 },
 {
   "id": "appendix-notation",
