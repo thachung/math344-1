@@ -5,7 +5,7 @@
       We now endeavor to give a topological structure to an arbitrary product <m>\prod_{i\in I}X_i</m> of topological spaces. (See <xref ref="d_Ituple" text='global'/> and <xref ref="d_cartesian_product_arbitrary" text='global'/> for the definitions of arbitrary tuples and Cartesian products of sets.) As we will see, we can extend the finite product topology to this more general setting in two very different ways.
     </p>
 </introduction>
-<project xml:id="d_product_space">
+<project xml:id="top_eg_arbitrary_product">
   <title>Product space (arbitrary)</title>
     <p>
       Let <m>\{X_i\}_{i\in I}</m> be a collection of topological spaces. We define two distinct topologies on the the product <m>X=\prod_{i\in I} X_i</m>.
@@ -76,20 +76,34 @@ Following Munkres, given a set <m>A</m> and the special index set <m>I=\Z_+=\{1,
   </statement>
   <solution>
     <p>
-      As observed in <xref ref="rm_box_product"/>, the product topology is always contained in the box topology. Let's show that in this case the containment is strict. Since <m>\{1\}</m> is open in <m>\{0,\1}</m>, the set
-      <me>
-        U=\{1\}\times \{1\}\times \cdots =\{(1,1,\dots )\}
-      </me>
-      is open in the box topology. To see that it is not open in the product topology, take <m>x=(1,1,1,\dots, )</m> and let <m>V\in \mathcal{B}_{\operatorname{prod}}</m> contains <m>x</m>. By definition, we have
-      <me>
-        V=\prod_{i=1}^n V_i=V_1\times V_2\times \cdots \times V_N\times \{0,1\}\times \{0,1\}\times \cdots
-      </me>
-      for some <m>N</m>,
-      where <m>V_{i}</m> is an open subset of <m>\{0,1\}</m>. Since <m>x\in V</m>, we have <m>\{1\}\subseteq V_i\ne\emptyset</m>. Since <m>V_i=\{0,1\}</m> for all <m>i\geq N</m>, the element <m>(1,1,\dots, 1,0,0,\dots)\in V</m>, from which it follows that <m>V\not\subseteq U</m>. We conclude that <m>U</m> is not a union of basis elements of the product topology, and hence is not open in the product topology.
+      As observed in <xref ref="top_eg_arbitrary_product"/>, the product topology is always contained in the box topology. Let's see whether the inclusion is strict in either case.
     </p>
-    <p>
-      It is easy to see that <m>\{0,1\}^\Z</m> is discrete in the box topology. The argument above shows that <m>\{0,1\}^\Z</m> is not discrete in the product topology, since the singleton <m>\{(1,1,\dots, 1)\}</m> is not open.
-    </p>
+    <ol>
+      <li>
+        <p>
+           Assume <m>\{0,1\}</m> has the discrete topology. Since <m>\{1\}</m> is open in <m>\{0,\1}</m>, the set
+          <me>
+            U=\{1\}\times \{1\}\times \cdots =\{(1,1,\dots )\}
+          </me>
+          is open in the box topology. To see that it is not open in the product topology, take <m>x=(1,1,1,\dots, )</m> and let <m>V\in \mathcal{B}_{\operatorname{prod}}</m> contains <m>x</m>. By definition, we have
+          <me>
+            V=\prod_{i=1}^n V_i=V_1\times V_2\times \cdots \times V_N\times \{0,1\}\times \{0,1\}\times \cdots
+          </me>
+          for some <m>N</m>,
+          where <m>V_{i}</m> is an open subset of <m>\{0,1\}</m>. Since <m>x\in V</m>, we have <m>\{1\}\subseteq V_i\ne\emptyset</m>. Since <m>V_i=\{0,1\}</m> for all <m>i\geq N</m>, the element <m>(1,1,\dots, 1,0,0,\dots)\in V</m>, from which it follows that <m>V\not\subseteq U</m>. We conclude that <m>U</m> is not a union of basis elements of the product topology, and hence is not open in the product topology.
+        </p>
+        <p>
+          It is easy to see that <m>\{0,1\}^\Z</m> is discrete in the box topology. The argument above shows that <m>\{0,1\}^\Z</m> is not discrete in the product topology, since the singleton <m>\{(1,1,\dots, 1)\}</m> is not open.
+        </p>
+      </li>
+      <li>
+        <p>
+          Now equip <m>\{0,1\}</m> with the trivial topology. Since the only open subsets of <m>\{0,1\}</m> are <m>\emptyset</m> and <m>\{0,1\}</m> it follows that a basis element <m>B=\prod_{i=1}^\infty U_i</m> in either topology is either empty (if <m>U_i=\emptyset</m> for <em>any</em> <m>i\in I</m>) or equal to <m>X</m> (if <m>U_i=\{0,1\}</m> for all <m>i\in I</m>). Since the bases of the two topologies are equal, the topologies are equal. Furthermore, since the only basis elements are <m>\emptyset</m> and <m>X</m>, the topology on <m>X</m> is just the trivial one: <ie />,
+          we have <m>\mathcal{T}_{\operatorname{prod}}=\mathcal{T}_{\operatorname{box}}=\mathcal{T}_{\operatorname{trivial}}</m>.
+        </p>
+      </li>
+    </ol>
+
   </solution>
 </example>
 <theorem xml:id="th_product_props">
@@ -131,6 +145,38 @@ Following Munkres, given a set <m>A</m> and the special index set <m>I=\Z_+=\{1,
       </li>
     </ol>
   </statement>
+  <proof>
+    <ol>
+      <li>
+        <p>
+          We prove each basis axiom separately (for both the box and product basis).
+        </p>
+        <p>
+          Axiom 1. Given <m>x=(x_i)_{i\in I}\in X</m>, we can find basis elements <m>B_i\in \mathcal{B}_{i}</m> containing <m>x_i</m>. We have
+          <md>
+            <mrow>x \amp\in B=\prod_{i\in I}B_i\in \mathcal{B}_{\operatorname{box}} </mrow>
+            <mrow>x \amp\in B=\prod_{i\in I}X_i \in \mathcal{B}_{\operatorname{prod}} </mrow>
+          </md>.
+          Axiom 2. This axiom follows readily from the set theoretic fact that
+          <me>
+            \prod_{i\in I}U_i \cap \prod_{i\in I} V_i=\prod_{i\in I}U_i\cap V_i
+          </me>.
+          I'll leave the details to you.
+        </p>
+      </li>
+      <li>
+        <p>
+          In both cases (box and product) let <m>\mathcal{B}</m> be the corresponding basis, as defined in <xref ref="top_eg_arbitrary_product"/>. We have
+          <md>
+            <mrow>U \text{ open in } A \amp \iff \text{ for all } x\in U, x\in B\cap A\subseteq U, B=\prod_{i\in I}U_i\in \mathcal{B} </mrow>
+            <mrow> \amp\iff \text{ for all } x\in U, x\in \prod_{i\in I} U_i\cap A \subseteq U, B=\prod_{i\in I}U_i \in \mathcal{B}  </mrow>
+          </md>.
+          I claim that (in both box and product topology) the last line above is equivalent to <m>U</m> being open in the box or product topology on the product of the subspaces <m>A_i</m>. Indeed it says that <m>U</m> is a union of elements of the form <m>\prod_{i\in I}U_i\cap A</m>, where by definition of the standard bases in <xref ref="top_eg_arbitrary_product"/> we have <m>U_i</m> is open in <m>X_i</m>, and in the case where we use the product topology, <m>U_i=X_i</m> for all but finitely many <m>i\in I</m>. This is equivalent to <m>\prod_{i\in I}U_i\cap A</m> being a basis element in either the box topology on the product of the subspaces, or the product topology on the product of the subspaces.  
+        </p>
+      </li>
+    </ol>
+  </proof>
+
 </theorem>
 <definition xml:id="d_pointwise_convergence">
   <title>Pointwise convergence</title>

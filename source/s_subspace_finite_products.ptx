@@ -62,6 +62,40 @@
               </li>
             </ol>
           </statement>
+          <proof>
+            <p>
+              <ol>
+                <li>
+                  <p>
+                    Axiom 1. For any <m>y\in Y</m> we have <m>y\in B</m> for some <m>B\in \mathcal{B}</m>, and thus <m>y\in B\cap Y\in \mathcal{B}_Y</m>.
+                  </p>
+                  <p>
+                    Axiom 2. Given two elements <m>B_1\cap Y, B_2\cap Y\in \mathcal{B}_Y</m>, and <m>y\in (B_1\cap Y)\cap (B_2\cap Y)=(B_1\cap B_2)\cap Y</m>, there is a basis element <m>B_3\in \mathcal{B}</m> satisfying <m>y\in B_3\subseteq B_1\cap B_2</m>. It follows that <m>B_3\cap Y\in \mathcal{B}_Y</m> and <m>y\in B_3\cap Y\subseteq (B_1\cap Y)\cap (B_2\cap Y)</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Let <m>C\subseteq Y</m>. We have
+                    <md>
+                      <mrow>C \text{ closed in } Y \amp \iff Y-C \text{ open in } Y </mrow>
+                      <mrow> \amp\iff Y-C=U\cap Y \text{ for some open } U\subseteq X</mrow>
+                      <mrow>  \amp \iff C=(X-U)\cap Y \text{ for some open } U\subseteq X</mrow>
+                      <mrow>  \amp \iff C=C'\cap Y \text{ for some closed } C'\subseteq X</mrow>
+                    </md>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Assume <m>X</m> is <m>T_1</m>. Given <m>y\in Y</m>, the set <m>C'=\{y\}</m> is closed in <m>X</m>. From the previous result it follows that <m>\{y\}=\{y\}\cap Y</m> is closed in <m>Y</m>. Thus <m>Y</m> is <m>T_1</m>.
+                  </p>
+                  <p>
+                    Assume <m>X</m> is Hausdorff. Given <m>y_1\ne y_2\in Y</m> there are disjoint open (in <m>X</m>) neighborhoods <m>U_1, U_2</m> of <m>y_1,y_2</m>, respectively. The sets <m>V_1=U_1\cap Y, V_2=U_2\cap Y</m> are then open disjoint neighborhoods of <m>y_1, y_2</m> in the subspace topology of <m>Y</m>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </proof>
+
         </theorem>
         <example xml:id="eg_relative_openness">
           <title>Open/closed depends on topology</title>
@@ -135,7 +169,7 @@
           We show that <m>\mathcal{B}</m> is a basis.
         </p>
         <p>
-          Axiom 1. Given <m>x=(x_1,x_2,\dots, x_n)\in X</m> there are open sets <m>U_i\subseteq X_i</m> such that <m>x_i\in U_i</m> for all <m>1\leq i\leq n</m>, and we have <m>x\in U_1\times U_2\times\cdots \times U_n\in \mathcal{B}</m>.
+          Axiom 1. Given <m>x=(x_1,x_2,\dots, x_n)\in X</m>, we have <m>x\in X_1\times X_2\times\cdots\times X_n\in \mathcal{B}</m>.
         </p>
         <p>
           Let <m>B=U_1\times U_2\cdots \times U_n</m> and <m>B'=V_1\times V_2\times \cdots \times V_n</m>. Given <m>x=(x_1,x_2,\dots, x_n)\in B\cap B'</m>, we have <m>x_i\in U_i\cap V_i</m> for all <m>1\leq i\leq n</m>, and hence <m>x\in B''=(U_1\cap V_1)\times (U_2\cap V_2)\times \cdots \times (U_n\cap V_n)\in \mathcal{B}</m>.
@@ -164,11 +198,23 @@
       </statement>
       <solution>
         <p>
-
+          Firstly, as we will show in more generality in <xref ref="th_product_props"/>, the set <m>\mathcal{B}=\{(a,b)\times (c,d)\colon a &lt; b, c &lt; d\}</m> forms a basis for the product topology on <m>X=\R\times \R</m>. Graphically, these basis elements are just open rectangles in the plane.
         </p>
+        <ol>
+          <li>
+            <p>
+              An open set in the product topology on <m>\R^2</m> is anything that can be written as a union of open rectangles, by the remark made above. To see that the product basis is not in general a topology, consider <m>U_1\cup U_2</m>, where <m>U_1=(0,1)\times (0,1)</m> and <m>U_2=(2,3)\times (2,3)</m>. We claim that not only is <m>U_1\cup U_2</m> not a product of open sets, it is in fact not the product of <em>any</em> sets. Indeed, if <m>U_1\cup U_2=A\times B</m> for two sets <m>A,B\subseteq \R</m>, then we would have to have <m>(0,1)\cup (2,3)\subseteq A, B</m>, in which case <m>(0,1)\times (2,3)\subseteq A\times B</m>. This is a contradiction since <m>(0,1)\times (2,3)\not\subseteq U_1\cup U_2</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Using the remark above, it is enough to show that open cirlces (basis elements in the standard topology) can be written as unions of open rectangles (basis elements in the product topology) and vice versa. This is clear.
+            </p>
+          </li>
+        </ol>
       </solution>
     </example>
 
   </subsection>
-  
+
         </section>
