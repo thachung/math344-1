@@ -1,0 +1,174 @@
+        <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_subspace_finite_products">
+          <title>Subspaces and products</title>
+          <introduction>
+            <p>
+              <em>Subspaces</em> and <em>product spaces</em> are constructions that allow us to build new topological spaces from existing ones.
+            </p>
+        </introduction>
+        <subsection xml:id="ss_subspace">
+          <title>Subspaces</title>
+        <project xml:id="top_eg_subspace">
+      <title>Subspace</title>
+        <p>
+          Given a topological space <m>(X,\mathcal{T})</m> and a subset <m>Y\subseteq X</m> the set <m>\mathcal{T}_Y</m> defined as
+          <me>
+            \mathcal{T}_Y=\{U\cap Y\colon U\in \mathcal{T}\}
+          </me>
+          defines a topology on <m>Y</m> called the <term>subspace topology</term>. We call <m>Y</m>, together with the topology <m>\mathcal{T}_Y</m>, a <term>subspace</term> of <m>X</m>.
+        </p>
+
+      <proof>
+        <p>
+          We show that the collection <m>\mathcal{T}_Y</m> is a topology on <m>Y</m>.
+        </p>
+          <p>
+            Axiom (1). Since <m>\emptyset, X\in \mathcal{T}\in X</m>, we have <m>\emptyset=\emptyset\cap Y\in \mathcal{T}_Y</m> and <m>Y=X\cap Y\in \mathcal{T}_Y</m>.
+          </p>
+          <p>
+            Axiom (2). Let <m>\{V_i\}_{i\in I}</m> be a collection of elements of <m>\mathcal{T}_Y</m>. By definition we have <m>V_i=U_i\cap Y</m> for open sets <m>U_i\in \mathcal{T}</m>. It follows that
+            <md>
+              <mrow>\bigcup_{i\in I}V_i \amp = \bigcup_{i\in I} U_i\cap Y </mrow>
+              <mrow> \amp =V\cap \bigcup_{i\in I}U_i </mrow>
+              <mrow>  \amp \in \mathcal{T}_Y</mrow>
+            </md>,
+            since <m>U=\bigcup_{i\in I}U_i</m> is open in <m>X</m>.
+          </p>
+          <p>
+            Axiom (3). Given elements <m>V_1=U_1\cap Y, V_2=U_2\cap Y\in \mathcal{T}_Y</m>, we have <m>V_1\cap V_2=(U_1\cap U_2)\cap Y\in \mathcal{T}_Y</m>.
+          </p>
+      </proof>
+        </project>
+        <theorem xml:id="th_subspace_props">
+          <title>Subspace properties</title>
+          <statement>
+            <p>
+              Let <m>Y</m> be a subspace of <m>(X,\mathcal{T})</m>.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  If <m>\mathcal{B}</m> is a basis of <m>\mathcal{T}</m>, then the set <m>\mathcal{B}_Y=\{B\cap Y\colon B\in\mathcal{B}\}</m> is a basis for <m>Y</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>C\subseteq Y</m> is closed in <m>Y</m> if and only if <m>C=C'\cap Y</m> for some <m>C'\subseteq X</m> that is closed in <m>X</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  If <m>X</m> is <m>T_1</m> (resp. Hausdorff, resp. metrizable), then <m>Y</m> is <m>T_1</m> (resp., Hausdorff, resp. metrizable).
+                </p>
+              </li>
+            </ol>
+          </statement>
+        </theorem>
+        <example xml:id="eg_relative_openness">
+          <title>Open/closed depends on topology</title>
+          <statement>
+            <p>
+              Let <m>Y</m> be a subspace of <m>X</m>. Prove:
+              <md>
+                <mrow>U\text{ open in } Y \amp\not\!\!\!\!\implies U \text{ open in } X </mrow>
+                <mrow>C\text{ closed in } Y \amp\not\!\!\!\!\implies C \text{ closed in } X </mrow>
+              </md>
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Consider <m>K=\{1/N\colon N\in \Z_+\}</m> as a subspace of <m>\R</m> with the standard topology. The set <m>K</m> it self is both open and closed in the subspace <m>K</m>, but is neither open nor closed in <m>\R</m>.
+            </p>
+          </solution>
+        </example>
+        <theorem xml:id="th_transitivity_open_closed">
+          <title>Openness/closedness transitivity</title>
+          <statement>
+            <p>
+              Let <m>Y</m> be a subspace of <m>X</m>.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  If <m>U</m> is open in <m>Y</m> and <m>Y</m> is open in <m>X</m>, then <m>U</m> is open in <m>X</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  If <m>C</m> is closed in <m>Y</m> and <m>Y</m> is closed in <m>X</m>, then <m>C</m> is closed in <m>X</m>
+                </p>
+              </li>
+            </ol>
+          </statement>
+          <proof>
+            <ol>
+              <li>
+                <p>
+                  If <m>U</m> is open in <m>Y</m>, then <m>U=Y\cap V</m> for some open set <m>V</m> of <m>X</m>. Since <m>Y</m> is open in <m>X</m>, we have <m>U=Y\cap V</m> is open in <m>X</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  The proof is obtained from the previous argument by replacing all instances of <q>open</q> with <q>closed</q>, using (2) of <xref ref="th_subspace_props"/>.
+                </p>
+              </li>
+            </ol>
+          </proof>
+        </theorem>
+  </subsection>
+  <subsection xml:id="ss_finite_products">
+    <title>Finite product spaces</title>
+    <project xml:id="top_eg_finite_product">
+      <title>Finite products</title>
+      <p>
+        Let <m>X_1, X_2,\dots, X_n</m> be topological spaces, and let
+        <me>
+        X=\prod_{i=1}X_i=X_1\times X_2\times \cdots \times X_n=\{(x_1,x_2,\dots, x_n)\colon x_i\in X_i\}
+        </me>.
+        The collection
+        <me>
+          \mathcal{B}=\{U_1\times U_2\times \cdots \times U_n\colon U_i \text{ open in } X_i\}
+        </me>
+        is a basis on <m>X</m>. The topology <m>\mathcal{T}</m> generated by <m>\mathcal{B}</m> is the <term>product topology</term> on <m>X</m>, and <m>X</m> is called the <term>product</term> of the spaces <m>X_1, X_2, \dots, X_n</m>.
+      </p>
+      <proof>
+        <p>
+          We show that <m>\mathcal{B}</m> is a basis.
+        </p>
+        <p>
+          Axiom 1. Given <m>x=(x_1,x_2,\dots, x_n)\in X</m> there are open sets <m>U_i\subseteq X_i</m> such that <m>x_i\in U_i</m> for all <m>1\leq i\leq n</m>, and we have <m>x\in U_1\times U_2\times\cdots \times U_n\in \mathcal{B}</m>.
+        </p>
+        <p>
+          Let <m>B=U_1\times U_2\cdots \times U_n</m> and <m>B'=V_1\times V_2\times \cdots \times V_n</m>. Given <m>x=(x_1,x_2,\dots, x_n)\in B\cap B'</m>, we have <m>x_i\in U_i\cap V_i</m> for all <m>1\leq i\leq n</m>, and hence <m>x\in B''=(U_1\cap V_1)\times (U_2\cap V_2)\times \cdots \times (U_n\cap V_n)\in \mathcal{B}</m>.
+        </p>
+      </proof>
+
+    </project>
+    <example xml:id="eg_product_basis_not_topology">
+      <title>Product basis not a topology necessarily</title>
+      <statement>
+        <p>
+          Let <m>X_1=X_2=\R</m> with the standard topology, and let <m>X=X_1\times X_2=\R\times \R</m> with the product topology.
+          <ol>
+            <li>
+              <p>
+                Describe the open sets of <m>X=\R\times \R</m> qualitatively. Give an example demonstrating that the product basis is not a topology in this case.
+              </p>
+            </li>
+            <li>
+              <p>
+                Show that the product topology on <m>X=\R^2</m> is equal to the the Euclidean topology.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+
+        </p>
+      </solution>
+    </example>
+
+  </subsection>
+  
+        </section>
