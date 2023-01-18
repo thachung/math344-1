@@ -346,6 +346,14 @@ window.MathJax = {
 <li><div class="toc-item"><a href="s_metric1.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Metric spaces</span></a></div></li>
 <li><div class="toc-item"><a href="s_closed_closure_interior.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Closed sets, closure, and interior</span></a></div></li>
 <li><div class="toc-item"><a href="s_limitpoints_hausdorff.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Limit points and the Hausdorff property</span></a></div></li>
+<li>
+<div class="toc-item"><a href="s_subspace_finite_products.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Subspaces and products</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="s_subspace_finite_products.html#ss_subspace" class="internal"><span class="title">Subspaces</span></a></div></li>
+<li><div class="toc-item"><a href="s_subspace_finite_products.html#ss_finite_products" class="internal"><span class="title">Finite product spaces</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="s_product2.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Arbitrary products</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -532,29 +540,31 @@ A^n=\prod_{i=1}^n A=\underset{n\text{ times}}{\underbrace{A\times A\times\cdots 
 </div>
 <article class="definition definition-like" id="d_Ituple"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.1.15</span><span class="period">.</span><span class="space"> </span><span class="title">I-tuple.</span>
-</h4>  <div class="para" id="p-36">Let <span class="process-math">\(I\)</span> be a set. Given a set <span class="process-math">\(X\text{,}\)</span> an <dfn class="terminology"><span class="process-math">\(I\)</span>-tuple</dfn> of elements of <span class="process-math">\(X\)</span> is a function <span class="process-math">\(\boldx\colon I\rightarrow X
-\text{.}\)</span> Given an <span class="process-math">\(I\)</span>-tuple <span class="process-math">\(\boldx\)</span> and element <span class="process-math">\(i\in I\)</span> we will often denote the value <span class="process-math">\(\boldx(i)\)</span> as <span class="process-math">\(x_i\text{,}\)</span> and denote <span class="process-math">\(\boldx\)</span> itself as <span class="process-math">\(\boldx=(x_i)_{i\in I}\text{.}\)</span> In analogy to finite tuples, we call <span class="process-math">\(x_i\)</span> the <span class="process-math">\(i\)</span>-th <dfn class="terminology">entry</dfn> or <dfn class="terminology">coordinate</dfn> of <span class="process-math">\(\boldx\text{.}\)</span>
+</h4>  <div class="para" id="p-36">Let <span class="process-math">\(I\)</span> be a set. Given a set <span class="process-math">\(X\text{,}\)</span> an <dfn class="terminology"><span class="process-math">\(I\)</span>-tuple</dfn> of elements of <span class="process-math">\(X\)</span> is a function <span class="process-math">\(f\colon I\rightarrow X
+\text{.}\)</span> Given an <span class="process-math">\(I\)</span>-tuple <span class="process-math">\(f\)</span> and element <span class="process-math">\(i\in I\)</span> we will often denote the value <span class="process-math">\(f(i)\)</span> as <span class="process-math">\(x_i\text{,}\)</span> and denote <span class="process-math">\(f\)</span> itself as <span class="process-math">\(f=(x_i)_{i\in I}\text{.}\)</span> In analogy to finite tuples, we call <span class="process-math">\(x_i\)</span> the <span class="process-math">\(i\)</span>-th <dfn class="terminology">entry</dfn> or <dfn class="terminology">coordinate</dfn> of <span class="process-math">\(f\text{.}\)</span>
 </div></article><article class="definition definition-like" id="d_cartesian_product_arbitrary"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.1.16</span><span class="period">.</span><span class="space"> </span><span class="title">Cartesian product (arbitrary).</span>
 </h4>  <div class="para logical" id="p-37">
 <div class="para">Let <span class="process-math">\(X\)</span> be a set, and let <span class="process-math">\(\{A_i\}_{i\in I}\)</span> be a collection of subsets <span class="process-math">\(A_i\subseteq X\)</span> indexed by the set <span class="process-math">\(I\text{.}\)</span> The <dfn class="terminology">Cartesian product</dfn> <span class="process-math">\(\prod_{i\in I}A_i\)</span> of this collection is defined as</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\prod_{i\in I}A_i=\{\boldx\colon I\rightarrow X\colon x_i\in A_i\}\text{.}
-\end{equation*}
+<div class="displaymath process-math" id="md-2">
+\begin{align*}
+\prod_{i\in I}A_i\amp =\{f\colon I\rightarrow X\colon f(i)\in A_i \text{ for all } i\in I\} \\
+\amp =\{(x_i)_{i\in I}\colon x_i\in A_i \text{ for all } i\in I\}\text{.}
+\end{align*}
 </div>
 <div class="para">In other words, the Cartesian product is the set of all <span class="process-math">\(I\)</span>-tuples of elements of <span class="process-math">\(X\)</span> whose <span class="process-math">\(i\)</span>-th coordinate is an element of <span class="process-math">\(A_i\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span>
 </div>
+</div> <div class="para" id="p-38">In the special case where <span class="process-math">\(A_i=A\)</span> for all <span class="process-math">\(i\in I\text{,}\)</span> we denote <span class="process-math">\(\prod_{i\in I}A\)</span> as <span class="process-math">\(A^I\text{.}\)</span>
 </div></article></section><section class="subsection" id="ss_functions"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Functions</span>
 </h3>
 <article class="definition definition-like" id="d_function"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.1.17</span><span class="period">.</span><span class="space"> </span><span class="title">Functions.</span>
-</h4>  <div class="para" id="p-38">Let <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> be two sets. A <dfn class="terminology">function from <span class="process-math">\(X\)</span> to <span class="process-math">\(Y\)</span></dfn>, denoted <span class="process-math">\(f\colon X\rightarrow Y\text{,}\)</span> is a rule which, given any <dfn class="terminology">input</dfn> <span class="process-math">\(x\in X\text{,}\)</span> returns an <dfn class="terminology">output</dfn> <span class="process-math">\(y\in Y\text{.}\)</span> In this case we write <span class="process-math">\(y=f(x)\)</span> and call <span class="process-math">\(y\)</span> the <dfn class="terminology">image of <span class="process-math">\(x\)</span> under <span class="process-math">\(f\)</span></dfn>, or the <dfn class="terminology">value of <span class="process-math">\(f\)</span> at <span class="process-math">\(x\)</span></dfn>. Similarly, we say <span class="process-math">\(f\)</span> <dfn class="terminology">maps</dfn> (or <dfn class="terminology">sends</dfn>) the input <span class="process-math">\(x\)</span> to the output <span class="process-math">\(y\text{.}\)</span>
-</div> <div class="para" id="p-39">The set <span class="process-math">\(X\)</span> is called the <dfn class="terminology">domain</dfn> of <span class="process-math">\(f\text{;}\)</span> the set <span class="process-math">\(Y\)</span> is called the <dfn class="terminology">codomain</dfn> of <span class="process-math">\(f\text{.}\)</span>
-</div> <div class="para logical" id="p-40">
+</h4>  <div class="para" id="p-39">Let <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> be two sets. A <dfn class="terminology">function from <span class="process-math">\(X\)</span> to <span class="process-math">\(Y\)</span></dfn>, denoted <span class="process-math">\(f\colon X\rightarrow Y\text{,}\)</span> is a rule which, given any <dfn class="terminology">input</dfn> <span class="process-math">\(x\in X\text{,}\)</span> returns an <dfn class="terminology">output</dfn> <span class="process-math">\(y\in Y\text{.}\)</span> In this case we write <span class="process-math">\(y=f(x)\)</span> and call <span class="process-math">\(y\)</span> the <dfn class="terminology">image of <span class="process-math">\(x\)</span> under <span class="process-math">\(f\)</span></dfn>, or the <dfn class="terminology">value of <span class="process-math">\(f\)</span> at <span class="process-math">\(x\)</span></dfn>. Similarly, we say <span class="process-math">\(f\)</span> <dfn class="terminology">maps</dfn> (or <dfn class="terminology">sends</dfn>) the input <span class="process-math">\(x\)</span> to the output <span class="process-math">\(y\text{.}\)</span>
+</div> <div class="para" id="p-40">The set <span class="process-math">\(X\)</span> is called the <dfn class="terminology">domain</dfn> of <span class="process-math">\(f\text{;}\)</span> the set <span class="process-math">\(Y\)</span> is called the <dfn class="terminology">codomain</dfn> of <span class="process-math">\(f\text{.}\)</span>
+</div> <div class="para logical" id="p-41">
 <div class="para">When we wish to indicate what rule defines the function, we use the elaborated notation</div>
-<div class="displaymath process-math" id="md-2">
+<div class="displaymath process-math" id="md-3">
 \begin{align*}
 f\colon X \amp\rightarrow Y\\
 x \amp\mapsto f(x)\text{.}
@@ -564,9 +574,9 @@ x \amp\mapsto f(x)\text{.}
 </div></article><article class="example example-like" id="example-3"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">0.1.18</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-41">
+<div class="para logical" id="p-42">
 <div class="para">Consider the function</div>
-<div class="displaymath process-math" id="md-3">
+<div class="displaymath process-math" id="md-4">
 \begin{align*}
 f\colon \mathbb{Z}\amp \rightarrow \mathbb{Z}\\
 x\amp\mapsto x^2 \text{.}
@@ -576,16 +586,16 @@ x\amp\mapsto x^2 \text{.}
 </div></article><article class="example example-like" id="example-4"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">0.1.19</span><span class="period">.</span><span class="space"> </span><span class="title">Arithmetic operations as functions.</span>
 </h4>
-<div class="para logical" id="p-42">
+<div class="para logical" id="p-43">
 <div class="para">Our familiar arithmetic operations can be expressed as functions whose inputs are pairs of numbers: addition is the function</div>
-<div class="displaymath process-math" id="md-4">
+<div class="displaymath process-math" id="md-5">
 \begin{align*}
 a\colon \R\times \R \amp\rightarrow \R \\
 (x,y) \amp\mapsto x+y 
 \end{align*}
 </div>
 <div class="para">and multiplication is the function</div>
-<div class="displaymath process-math" id="md-5">
+<div class="displaymath process-math" id="md-6">
 \begin{align*}
 m\colon\mathbb{R}\times \mathbb{R} \amp \rightarrow \mathbb{R}\\
 (x,y)\amp\mapsto  xy 
@@ -594,20 +604,20 @@ m\colon\mathbb{R}\times \mathbb{R} \amp \rightarrow \mathbb{R}\\
 </div></article><article class="remark remark-like" id="rm_function_as_relation"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">0.1.20</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-43">Invoking the notion of a rule in the definition of a function is admittedly somewhat vague. A more precise definition can be given using the Cartesian product. Namely, given sets <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{,}\)</span> we define a function <span class="process-math">\(f\colon X\rightarrow Y\)</span> to be a subset <span class="process-math">\(f\subseteq X\times Y\)</span> satisfying the following property: for all <span class="process-math">\(x\in X\)</span> there is a unique element <span class="process-math">\((x,y)\in f\text{.}\)</span> The uniqueness of the pair <span class="process-math">\((x,y)\)</span> then allows us to define the value <span class="process-math">\(f(x)\)</span> of <span class="process-math">\(f\)</span> at <span class="process-math">\(x\)</span> as <span class="process-math">\(y\text{,}\)</span> denoted <span class="process-math">\(f(x)=y\text{.}\)</span>
-</div></article><div class="para" id="p-44">As with sets and tuples, we are obliged to specify what we mean for two functions to be equal. The definition below makes clear how the the domain and codomain, as well as the rule that takes inputs to outputs, are all essential ingredients of a function.</div>
+<div class="para" id="p-44">Invoking the notion of a rule in the definition of a function is admittedly somewhat vague. A more precise definition can be given using the Cartesian product. Namely, given sets <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{,}\)</span> we define a function <span class="process-math">\(f\colon X\rightarrow Y\)</span> to be a subset <span class="process-math">\(f\subseteq X\times Y\)</span> satisfying the following property: for all <span class="process-math">\(x\in X\)</span> there is a unique element <span class="process-math">\((x,y)\in f\text{.}\)</span> The uniqueness of the pair <span class="process-math">\((x,y)\)</span> then allows us to define the value <span class="process-math">\(f(x)\)</span> of <span class="process-math">\(f\)</span> at <span class="process-math">\(x\)</span> as <span class="process-math">\(y\text{,}\)</span> denoted <span class="process-math">\(f(x)=y\text{.}\)</span>
+</div></article><div class="para" id="p-45">As with sets and tuples, we are obliged to specify what we mean for two functions to be equal. The definition below makes clear how the the domain and codomain, as well as the rule that takes inputs to outputs, are all essential ingredients of a function.</div>
 <article class="definition definition-like" id="d_function_equality"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.1.21</span><span class="period">.</span><span class="space"> </span><span class="title">Function equality.</span>
-</h4>  <div class="para logical" id="p-45">
+</h4>  <div class="para logical" id="p-46">
 <div class="para">Functions <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are <dfn class="terminology">equal</dfn> if</div>
 <ol class="lower-roman">
-<li id="li-9"><div class="para" id="p-46">they have the same domain <span class="process-math">\(X\)</span> and codomain <span class="process-math">\(Y\text{,}\)</span> and</div></li>
-<li id="li-10"><div class="para" id="p-47">for all <span class="process-math">\(x\in X\text{,}\)</span> we have <span class="process-math">\(f(x)=g(x)\text{.}\)</span>
+<li id="li-9"><div class="para" id="p-47">they have the same domain <span class="process-math">\(X\)</span> and codomain <span class="process-math">\(Y\text{,}\)</span> and</div></li>
+<li id="li-10"><div class="para" id="p-48">for all <span class="process-math">\(x\in X\text{,}\)</span> we have <span class="process-math">\(f(x)=g(x)\text{.}\)</span>
 </div></li>
 </ol>
 </div></article><article class="definition definition-like" id="d_image"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.1.22</span><span class="period">.</span><span class="space"> </span><span class="title">Image of a set.</span>
-</h4>  <div class="para logical" id="p-48">
+</h4>  <div class="para logical" id="p-49">
 <div class="para">Given a function <span class="process-math">\(f\colon X\rightarrow Y\)</span> and a subset <span class="process-math">\(A \subseteq X\text{,}\)</span> the <dfn class="terminology">image of <span class="process-math">\(A\)</span> under <span class="process-math">\(f\)</span></dfn>, denoted <span class="process-math">\(f(A)\text{,}\)</span> is defined as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -616,7 +626,7 @@ f(A)=\left\{ y \in Y \colon f(a)=y \text{ for some } a \in A \right\}\text{.}
 </div>
 <div class="para">In other words, <span class="process-math">\(f(A)\)</span> is the set of all outputs <span class="process-math">\(f(a)\text{,}\)</span>  where <span class="process-math">\(a\in X\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="p-49">
+</div> <div class="para logical" id="p-50">
 <div class="para">The <dfn class="terminology">image of <span class="process-math">\(f\)</span></dfn>, denoted <span class="process-math">\(\operatorname{im} f\text{,}\)</span> is the set of <em class="emphasis">all</em> outputs of <span class="process-math">\(f\text{:}\)</span> i.e.,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -625,21 +635,21 @@ f(A)=\left\{ y \in Y \colon f(a)=y \text{ for some } a \in A \right\}\text{.}
 </div>
 </div></article><article class="definition definition-like" id="d_injective_surjective_bijective"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.1.23</span><span class="period">.</span><span class="space"> </span><span class="title">Injective, surjective, bijective.</span>
-</h4>  <div class="para logical" id="p-50">
+</h4>  <div class="para logical" id="p-51">
 <div class="para">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> be a function.</div>
 <ul class="disc">
-<li id="li-11"><div class="para" id="p-51">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">injective</dfn> (or <dfn class="terminology">one-to-one</dfn>) if for all <span class="process-math">\(x,x'\in X\text{,}\)</span> if <span class="process-math">\(f(x)=f(x')\text{,}\)</span> then <span class="process-math">\(x=x'\text{:}\)</span> equivalently, if <span class="process-math">\(x\ne x'\text{,}\)</span> then <span class="process-math">\(f(x)\ne f(x')\text{.}\)</span>
+<li id="li-11"><div class="para" id="p-52">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">injective</dfn> (or <dfn class="terminology">one-to-one</dfn>) if for all <span class="process-math">\(x,x'\in X\text{,}\)</span> if <span class="process-math">\(f(x)=f(x')\text{,}\)</span> then <span class="process-math">\(x=x'\text{:}\)</span> equivalently, if <span class="process-math">\(x\ne x'\text{,}\)</span> then <span class="process-math">\(f(x)\ne f(x')\text{.}\)</span>
 </div></li>
-<li id="li-12"><div class="para" id="p-52">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">surjective</dfn> (or <dfn class="terminology">onto</dfn>) if for all <span class="process-math">\(y\in Y\text{,}\)</span> there is an <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(f(x)=y\text{:}\)</span> equivalently, <span class="process-math">\(\im f=Y\text{.}\)</span>
+<li id="li-12"><div class="para" id="p-53">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">surjective</dfn> (or <dfn class="terminology">onto</dfn>) if for all <span class="process-math">\(y\in Y\text{,}\)</span> there is an <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(f(x)=y\text{:}\)</span> equivalently, <span class="process-math">\(\im f=Y\text{.}\)</span>
 </div></li>
-<li id="li-13"><div class="para" id="p-53">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">bijective</dfn> (or a <dfn class="terminology">one-to-one correspondence</dfn>) if it is injective and surjective.</div></li>
+<li id="li-13"><div class="para" id="p-54">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">bijective</dfn> (or a <dfn class="terminology">one-to-one correspondence</dfn>) if it is injective and surjective.</div></li>
 </ul>
 </div></article><article class="example example-like" id="example-5"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">0.1.24</span><span class="period">.</span><span class="space"> </span><span class="title">Role of domain and codomain in injectivity and surjectivity.</span>
 </h4>
-<div class="para logical" id="p-54">
+<div class="para logical" id="p-55">
 <div class="para">Consider the following three functions</div>
-<div class="displaymath process-math" id="md-6">
+<div class="displaymath process-math" id="md-7">
 \begin{align*}
 f\colon \R \amp\rightarrow \R \amp g\colon [0,\infty)\amp\rightarrow \R \amp h\colon [0,\infty)\amp \rightarrow [0,\infty) \\
 x \amp\mapsto x^2 \amp x \amp\mapsto x^2 \amp x \amp\mapsto x^2 \amp \text{.}
@@ -648,14 +658,14 @@ x \amp\mapsto x^2 \amp x \amp\mapsto x^2 \amp x \amp\mapsto x^2 \amp \text{.}
 <div class="para">Although all three functions are defined using the same rule (<span class="process-math">\(x\mapsto x^2\)</span>), they are not equal thanks to their differing domains and/or codomains. The choice of domain and codomain in these examples also plays a crucial role in determining whether the function is injective and/or surjective. The function <span class="process-math">\(f\)</span> is neither injective (<span class="process-math">\(f(-2)=f(2)=4\)</span>) nor surjective (<span class="process-math">\(f(X)=[0,\infty)\ne \R\)</span>); the function <span class="process-math">\(g\)</span> is injective but not surjective; the function <span class="process-math">\(h\)</span> is both injective and surjective, hence bijective.</div>
 </div></article><article class="definition definition-like" id="d_function_composition"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.1.25</span><span class="period">.</span><span class="space"> </span><span class="title">Function composition.</span>
-</h4>  <div class="para" id="p-55">Suppose <span class="process-math">\(f\colon Z\rightarrow W\)</span> and <span class="process-math">\(g\colon X\rightarrow Y\)</span> are functions satisfying <span class="process-math">\(Y\subseteq Z\text{.}\)</span>  The <dfn class="terminology">composition of <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span></dfn> is the function <span class="process-math">\(f\circ g\colon X\rightarrow W\)</span> defined as <span class="process-math">\(f\circ g\, (x)=f(g(x))
+</h4>  <div class="para" id="p-56">Suppose <span class="process-math">\(f\colon Z\rightarrow W\)</span> and <span class="process-math">\(g\colon X\rightarrow Y\)</span> are functions satisfying <span class="process-math">\(Y\subseteq Z\text{.}\)</span>  The <dfn class="terminology">composition of <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span></dfn> is the function <span class="process-math">\(f\circ g\colon X\rightarrow W\)</span> defined as <span class="process-math">\(f\circ g\, (x)=f(g(x))
 \text{,}\)</span> for all <span class="process-math">\(x\in X\text{.}\)</span>
 </div></article><article class="definition definition-like" id="d_invertible_function"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.1.26</span><span class="period">.</span><span class="space"> </span><span class="title">Identity and inverse functions.</span>
-</h4>  <div class="para" id="p-56">For any set <span class="process-math">\(X\)</span> the <dfn class="terminology">identity function</dfn> on <span class="process-math">\(X\)</span> is the function <span class="process-math">\(\id_X\colon X\rightarrow X\)</span> defined as <span class="process-math">\(\id_X(x)=x\)</span> for all <span class="process-math">\(x\in X\text{.}\)</span>
-</div> <div class="para logical" id="p-57">
+</h4>  <div class="para" id="p-57">For any set <span class="process-math">\(X\)</span> the <dfn class="terminology">identity function</dfn> on <span class="process-math">\(X\)</span> is the function <span class="process-math">\(\id_X\colon X\rightarrow X\)</span> defined as <span class="process-math">\(\id_X(x)=x\)</span> for all <span class="process-math">\(x\in X\text{.}\)</span>
+</div> <div class="para logical" id="p-58">
 <div class="para">A function <span class="process-math">\(f\colon X\rightarrow Y\)</span> is <dfn class="terminology">invertible</dfn> if there is a function <span class="process-math">\(g\colon Y\rightarrow X\)</span> satisfying <span class="process-math">\(g\circ f=\id_X\)</span> and <span class="process-math">\(f\circ g=\id_Y\text{:}\)</span> i.e.,</div>
-<div class="displaymath process-math" id="md-7">
+<div class="displaymath process-math" id="md-8">
 \begin{align*}
 g(f(x))\amp =x  \text{ for all } x\in X, \\
 f(g(y))\amp=y  \text{ for all } y\in Y \text{.}
@@ -664,20 +674,20 @@ f(g(y))\amp=y  \text{ for all } y\in Y \text{.}
 </div> The function <span class="process-math">\(g\)</span> in this case is called the <dfn class="terminology">inverse</dfn> of <span class="process-math">\(f\text{,}\)</span> denoted <span class="process-math">\(g=f^{-1}\text{.}\)</span></article><article class="theorem theorem-like" id="th_invertible_bijective"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">0.1.27</span><span class="period">.</span><span class="space"> </span><span class="title">Invertible is equivalent to bijective.</span>
 </h4>
-<div class="para" id="p-58">A function <span class="process-math">\(f\colon X\rightarrow Y\)</span> is invertible if and only if it is bijective.</div></article></section><section class="subsection" id="subsec-"><h3 class="heading hide-type">
+<div class="para" id="p-59">A function <span class="process-math">\(f\colon X\rightarrow Y\)</span> is invertible if and only if it is bijective.</div></article></section><section class="subsection" id="subsec-"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Cardinality and countability</span>
 </h3>
 <article class="definition definition-like" id="d_cardinality"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.1.28</span><span class="period">.</span><span class="space"> </span><span class="title">Cardinality.</span>
-</h4>  <div class="para" id="p-59">Let <span class="process-math">\(X\)</span> be a set.</div> <ol class="decimal">
+</h4>  <div class="para" id="p-60">Let <span class="process-math">\(X\)</span> be a set.</div> <ol class="decimal">
 <li id="li-14">
-<span class="heading"><span class="title">Finite and infinite sets.</span></span><div class="para" id="p-60">The set <span class="process-math">\(X\)</span> is <dfn class="terminology">finite</dfn> if either <span class="process-math">\(X=\emptyset\)</span> or there is a bijection <span class="process-math">\(f\colon X\rightarrow \{1,2,\dots, n\}\)</span> for some positive integer <span class="process-math">\(n\text{.}\)</span> Roughly speaking, the <dfn class="terminology">cardinality</dfn> of a finite set <span class="process-math">\(X\text{,}\)</span> denoted <span class="process-math">\(\abs{X}\text{,}\)</span> is the number of distinct elements it contains. In more detail if <span class="process-math">\(X=\emptyset\text{,}\)</span> then <span class="process-math">\(\abs{X}=0\)</span> by definition; if there is a bijection <span class="process-math">\(f\colon X\rightarrow \{1,2,\dots, n\}\text{,}\)</span> then <span class="process-math">\(\abs{X}=n\text{.}\)</span>
+<span class="heading"><span class="title">Finite and infinite sets.</span></span><div class="para" id="p-61">The set <span class="process-math">\(X\)</span> is <dfn class="terminology">finite</dfn> if either <span class="process-math">\(X=\emptyset\)</span> or there is a bijection <span class="process-math">\(f\colon X\rightarrow \{1,2,\dots, n\}\)</span> for some positive integer <span class="process-math">\(n\text{.}\)</span> Roughly speaking, the <dfn class="terminology">cardinality</dfn> of a finite set <span class="process-math">\(X\text{,}\)</span> denoted <span class="process-math">\(\abs{X}\text{,}\)</span> is the number of distinct elements it contains. In more detail if <span class="process-math">\(X=\emptyset\text{,}\)</span> then <span class="process-math">\(\abs{X}=0\)</span> by definition; if there is a bijection <span class="process-math">\(f\colon X\rightarrow \{1,2,\dots, n\}\text{,}\)</span> then <span class="process-math">\(\abs{X}=n\text{.}\)</span>
 </div>
-<div class="para" id="p-61">The set <span class="process-math">\(X\)</span> is <dfn class="terminology">infinite</dfn> if it is not finite. In this case <span class="process-math">\(X\)</span> is said to have <dfn class="terminology">infinite cardinality</dfn>.</div>
+<div class="para" id="p-62">The set <span class="process-math">\(X\)</span> is <dfn class="terminology">infinite</dfn> if it is not finite. In this case <span class="process-math">\(X\)</span> is said to have <dfn class="terminology">infinite cardinality</dfn>.</div>
 </li>
 <li id="li-15">
-<span class="heading"><span class="title">Countable and uncountable sets.</span></span><div class="para" id="p-62">The set <span class="process-math">\(X\)</span> is <dfn class="terminology">countably infinite</dfn> if there is a bijection <span class="process-math">\(f\colon X\rightarrow \Z_{+}\text{,}\)</span> where <span class="process-math">\(\Z_+=\{1,2,\dots, \}\)</span> is the set of all positive integers; it is <dfn class="terminology">countable</dfn> if it is either finite or countable infinite.</div>
-<div class="para" id="p-63">The set <span class="process-math">\(X\)</span> is <dfn class="terminology">uncountable</dfn> if it is not countable.</div>
+<span class="heading"><span class="title">Countable and uncountable sets.</span></span><div class="para" id="p-63">The set <span class="process-math">\(X\)</span> is <dfn class="terminology">countably infinite</dfn> if there is a bijection <span class="process-math">\(f\colon X\rightarrow \Z_{+}\text{,}\)</span> where <span class="process-math">\(\Z_+=\{1,2,\dots, \}\)</span> is the set of all positive integers; it is <dfn class="terminology">countable</dfn> if it is either finite or countable infinite.</div>
+<div class="para" id="p-64">The set <span class="process-math">\(X\)</span> is <dfn class="terminology">uncountable</dfn> if it is not countable.</div>
 </li>
 </ol></article></section></section></div>
 <div class="ptx-content-footer">

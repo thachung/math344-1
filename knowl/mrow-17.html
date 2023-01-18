@@ -11,13 +11,18 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_proposition.html">
+<div class="displaymath process-math">
 \begin{align*}
-\neg\mathcal{P}\amp\iff \forall L\in\R\,  \neg\left(\forall \epsilon \gt 0\, \exists \delta \gt0\,  \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon) \right)\\
-\amp\iff  \forall L\in\R\,  \exists \epsilon \gt 0\, \neg\left( \exists \delta \gt0\,  \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon) \right)\\
-\amp\iff  \forall L\in\R\,  \exists \epsilon \gt 0\,  \forall \delta \gt0\, \neg\left( \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon) \right)\\
-\amp\iff  \forall L\in\R\,  \exists \epsilon \gt 0\,  \forall \delta \gt0\, \exists x\in\mathbb{R}\ \neg (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon)\\
-\amp\iff  \forall L\in\R\,  \exists \epsilon \gt 0\,  \forall \delta \gt0\, \exists x\in\mathbb{R}\ (\val{x-c}\lt\delta \text{ and } \val{f(x)-L}\not\lt\epsilon)
+\amp\begin{array}{c||c}\mathcal{P}\amp\neg\mathcal{P} \\
+\hline T\amp F\\F\amp T\end{array} \amp \amp \begin{array}{c|c||c}\mathcal{P}\amp\mathcal{Q}\amp\mathcal{P}\land\mathcal{Q} \\
+\hline T\amp T\amp T\\T\amp F\amp F\\ F\amp T\amp F\\ F\amp F\amp F\end{array}
+\amp \amp \begin{array}{c|c||c}\mathcal{P}\amp\mathcal{Q}\amp\mathcal{P}\lor\mathcal{Q} \\
+\hline T\amp T\amp T\\T\amp F\amp T\\ F\amp T\amp T\\ F\amp F\amp F\end{array}\\
+\amp
+\begin{array}{c|c||c}\mathcal{P}\amp\mathcal{Q}\amp\mathcal{P}\implies\mathcal{Q} \\
+\hline T\amp T\amp T\\T\amp F\amp F\\ F\amp T\amp T\\ F\amp F\amp T\end{array}
+\amp \amp \begin{array}{c|c||c}\mathcal{P}\amp\mathcal{Q}\amp\mathcal{P}\iff\mathcal{Q} \\
+\hline T\amp T\amp T\\T\amp F\amp F\\ F\amp T\amp F\\ F\amp F\amp T\end{array}
 \end{align*}
 </div>
 <span class="incontext"><a href="s_logic.html#md-9" class="internal">in-context</a></span>

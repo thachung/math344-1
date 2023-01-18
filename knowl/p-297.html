@@ -13,14 +13,13 @@
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
-<div class="para">In general, given a set <span class="process-math">\(X\)</span> the set complement operation <span class="process-math">\(Y\mapsto Y^c=X-Y\)</span> is defines a bijection</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_closed_set.html ./knowl/th_closed_props.html">
-\begin{align*}
-\mathcal{P}(X) \amp \leftrightarrow \mathcal{P}(X) \\
-Y \amp \mapsto Y^c \text{,}
-\end{align*}
+<div class="para">Lastly, assume <span class="process-math">\(C_i\)</span> is closed for all <span class="process-math">\(i\in I\text{.}\)</span> By DeMorgan's law we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(\bigcap_{i\in I}C_i\right)^c=\bigcup_{i\in I}C_i^c\text{,}
+\end{equation*}
 </div>
-<div class="para">that is self-inverse: i.e., we have <span class="process-math">\((Y^c)^c=Y\)</span> for all subsets <span class="process-math">\(Y\subseteq X\text{.}\)</span> It follows from the <a href="" class="xref" data-knowl="./knowl/d_closed_set.html" title="Definition 1.4.1: Closed sets">Definition 1.4.1</a> that the closed sets of <span class="process-math">\(X\)</span> are in bijective correspondence with the open sets, and thus that a topology on <span class="process-math">\(X\)</span> is uniquely determined by specifying any collection of sets satisfying (1)-(3) from <a href="" class="xref" data-knowl="./knowl/th_closed_props.html" title="Theorem 1.4.2: Property of closed sets">Theorem 1.4.2</a>. In other words, a topology is determined by specifying either its open sets or its closed sets.</div>
+<div class="para">which is open since <span class="process-math">\(C_i^c\)</span> is open and arbitrary unions of open sets are open.</div>
 </div>
 <span class="incontext"><a href="s_closed_closure_interior.html#p-297" class="internal">in-context</a></span>
 </body>

@@ -11,11 +11,12 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_cartesian_product.html">
 \begin{align*}
-z\in B_\delta(y)\implies d(z,x)\amp\leq d(z,y)+d(y,x)  \amp (\text{triangle ineq.})\\
-\amp &lt; \delta+(\epsilon-\delta)  \\
-\amp = \epsilon
+\boldy\in B_\epsilon(\boldx) \amp \iff \max\{\abs{x_i-y_i}\}_{i=1}^n&lt; \epsilon \\
+\amp \iff \abs{x_i-y_i}&lt; \epsilon \text{ for all } 1\leq i\leq n\\
+\amp \iff y_i\in (x_i-\epsilon, x_i+\epsilon) \text{ for all } 1\leq i\leq n\\
+\amp \iff \boldy\in \prod_{i=1}^n (x_i-\epsilon, x_i+\epsilon)
 \end{align*}
 </div>
 <span class="incontext"><a href="s_metric1.html#md-28" class="internal">in-context</a></span>

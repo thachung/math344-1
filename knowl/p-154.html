@@ -12,7 +12,21 @@
 </head>
 <body class="ignore-math">
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<div class="para">Having completed the base and induction steps, our proof by induction is now finished.</div>
+<div class="para logical">
+<div class="para">If <span class="process-math">\(n+1\)</span> is not prime, then we can factor <span class="process-math">\(n+1\)</span> nontrivially as  <span class="process-math">\(n+1=k_1k_2\text{.}\)</span> Here “nontrivially” means that we have <span class="process-math">\(2\leq k_1,k_2\leq n\text{.}\)</span> Using the strong induction hypothesis, we may assume that <span class="process-math">\(k_1\)</span> and <span class="process-math">\(k_2\)</span> are both products of primes: i.e., we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+k_1 \amp=p_1p_2\cdots p_r \amp k_2=q_1q_2\cdots q_s\text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(p_i\)</span> and <span class="process-math">\(q_j\)</span>  are prime for all <span class="process-math">\(1\leq i\leq r\)</span> and <span class="process-math">\(1\leq j\leq s\text{.}\)</span> It follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+n+1=k_1k_2=p_1p_2\cdots p_rq_1q_2\cdots q_s\text{,}
+\end{equation*}
+</div>
+<div class="para">and hence that <span class="process-math">\(n+1\)</span> is also a product of primes, as desired.</div>
+</div>
 <span class="incontext"><a href="s_proof_technique.html#p-154" class="internal">in-context</a></span>
 </body>
 </html>

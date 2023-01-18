@@ -12,8 +12,15 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Suppose <span class="process-math">\(f\colon Z\rightarrow W\)</span> and <span class="process-math">\(g\colon X\rightarrow Y\)</span> are functions satisfying <span class="process-math">\(Y\subseteq Z\text{.}\)</span>  The <dfn class="terminology">composition of <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span></dfn> is the function <span class="process-math">\(f\circ g\colon X\rightarrow W\)</span> defined as <span class="process-math">\(f\circ g\, (x)=f(g(x))
-\text{,}\)</span> for all <span class="process-math">\(x\in X\text{.}\)</span>
+<div class="para logical">
+<div class="para">Consider the following three functions</div>
+<div class="displaymath process-math">
+\begin{align*}
+f\colon \R \amp\rightarrow \R \amp g\colon [0,\infty)\amp\rightarrow \R \amp h\colon [0,\infty)\amp \rightarrow [0,\infty) \\
+x \amp\mapsto x^2 \amp x \amp\mapsto x^2 \amp x \amp\mapsto x^2 \amp \text{.}
+\end{align*}
+</div>
+<div class="para">Although all three functions are defined using the same rule (<span class="process-math">\(x\mapsto x^2\)</span>), they are not equal thanks to their differing domains and/or codomains. The choice of domain and codomain in these examples also plays a crucial role in determining whether the function is injective and/or surjective. The function <span class="process-math">\(f\)</span> is neither injective (<span class="process-math">\(f(-2)=f(2)=4\)</span>) nor surjective (<span class="process-math">\(f(X)=[0,\infty)\ne \R\)</span>); the function <span class="process-math">\(g\)</span> is injective but not surjective; the function <span class="process-math">\(h\)</span> is both injective and surjective, hence bijective.</div>
 </div>
 <span class="incontext"><a href="s_sets_functions.html#p-55" class="internal">in-context</a></span>
 </body>

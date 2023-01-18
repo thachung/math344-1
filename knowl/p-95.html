@@ -12,7 +12,15 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Use the negation rules described in <a href="" class="xref" data-knowl="./knowl/rm_negating_quantifiers.html" title="Remark 0.2.9: Negating quantifiers">Negating quantifiers</a> to derive a similar proposition equivalent to the statement that <span class="process-math">\(\lim\limits_{x\to c}f(x)\)</span> do not exist.</div>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(f(x)\)</span> be a function with domain <span class="process-math">\(\R\text{,}\)</span> and let <span class="process-math">\(c\in \R\)</span> be a point of this domain. By definition, the proposition that <span class="process-math">\(\lim\limits_{x\to c}f(x)\)</span> exists is equivalent to the following proposition:</div>
+<div class="displaymath process-math">
+\begin{equation}
+\exists L\in\R\,  \forall \epsilon \gt 0\, \exists \delta \gt0\,  \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon)\text{.}\tag{0.2.1}
+\end{equation}
+</div>
+<div class="para">(We made a number of shortcuts in our logical notation above (e.g. <span class="process-math">\(\forall \epsilon\gt 0\text{,}\)</span> <span class="process-math">\(\exists\delta\gt 0\)</span>) in order to simplify the expression somewhat; the intended meaning should still be clear. )</div>
+</div>
 <span class="incontext"><a href="s_logic.html#p-95" class="internal">in-context</a></span>
 </body>
 </html>

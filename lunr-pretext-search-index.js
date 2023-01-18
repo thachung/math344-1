@@ -16,7 +16,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "0.1",
   "title": "Sets and functions",
-  "body": " Sets and functions    We gather here some notions about sets and functions.    Sets   sets  sets empty sets  sets membership      set membership   Sets   A set is a collection of objects. An object is a member (or element ) of a set if contains . In this case, we write . If is not a member of , we write .    We use curly braces to describe the contents of a set. For example, is the set containing the first three positive integers, and is the set of all positive integers. The defining property of sets is that they are completely determined by their members, and nothing more. In particular, when describing sets as above, it does not matter in what order the elements are listed, nor if they are repeated: , , , and are three descriptions of the same set. This somewhat slippery notion is made perfectly clear by specifying exactly what it means for two sets to be equal, as we do below.   Set equality  sets equality   Sets and are equal , denoted , if they have precisely the same elements: , if for any object , we have if and only if .    Set membership naturally extends to a notion of one set lying within another.   Set inclusion (subsets)  sets subset  sets inclusion    set inclusion    A set is a subset of a set , denoted , if every member of is a member of : , implies for any object . The relation is called set inclusion .      The definitions of set equality and the subset relation make use of two important logical operations: namely, the if and only if (or iff for short) and if-then operations.    With the fundamental notions of membership, equality, and subset in place, we now introduce means of building new sets from existing ones. The first is a manner of carving out a subset of a given set using a specified property.   Set-builder notation  sets set builder notation   Let be a set, and let be a property that elements of either satisfy or do not satisfy. For an element , let denote the statement that satisfies . The set of all elements of satisfying is denoted .      Set builder notation is parsed from left to right as follows:    is read as the set of      is read as elements of      is read as such that      is read as is true .   Taken altogether we get: The set of elements of such that is true .      Let be the set of nonnegative integers. The subset of even positive integers can be described using set-builder notation as , or alternatively, .    Next we use set builder notation, the set membership relation, and some basic logic to define the union, intersection, and difference of sets.   Union, intersection, difference, and complement  sets union  sets intersection    set union     set intersection   sets complement  sets difference      set difference     set complement    Let and be subsets of a common set .    Set union  The union  of and is defined as . More generally, if is a set and is a collection of sets indexed by , then the union  of this collection is defined as .    Set intersection  The intersection  of and is defined as . More generally, if is a set and is a collection of sets indexed by , then the intersection  of this collection is defined as     Set difference  The difference  is defined as .    Set complement  The complement of in is defined as . In contexts where there is clear what the larger set is, we denote the complement of in as .      With the help of these set operations, we can now describe some common sets used in mathematics.   sets empty set     the empty set   real numbers    real numbers   integers    integers     positive integers   rational numbers    rational numbers   Common mathematical sets   We denote by the set of all real numbers. The integers  and rational numbers  are the subsets of defined as . This yields the following chain of subsets: . The empty set is the set containing no objects, denoted or .  The set of all positive integers is denoted .    The power set of a set is the set of all subsets of . We will make use of this notion in our very first definition ( ).   power set    power set of   Power set   Given a set , its power set  is defined as the set of all subsets of .     Power set   Let . The power set is the set of all subsets of . We can enumerate systematically by listing all the subsets in order of increasing cardinality. There is one subset of containing zero elements: namely, the empty set . The two subsets of containing exactly one element are and . Lastly, the unique subset of containing two elements is itself. We conclude that . In general if has cardinality , then has cardinality .    Lastly, we define the cartesian product of sets, which is a formal description of an ordered collection of objects.   Cartesian product      Cartesian product   Cartesian product (finite)   An -tuple (or sequence ) of the sets is an ordered list such that for all . We define two -tuples , and to be equal, denoted , if for all . We call the length of the sequence , and we call its -th entry for all .  The (Cartesian) product of the sets , denoted or , is the set of all -tuples: , .  Given a set , its -ary Cartesian product  is defined as .      We have more suggestive names for -tuples when is small: a 2-tuple is called a pair, a 3-tuple is called a triple, a 4-tuple is called a quadruple, . We will use the generic term tuple to designate a -tuple of unspecified length.      Observe how tuples capture the notion of an ordered collection of object. For example, whereas the sets and are all equal to one another, the 4-tuples and are not: they differ in their second entries.  What about the tuples and ? Are these equal? Technically our definition of equality only applies to tuples living in the same fixed Cartesian product. In particular, for the question of equality to make sense, the tuples must have the same length. As such we will officially avoid writing things like , although unofficially we consider these two objects as completely different. You should think of and as creatures living on two different planets in the universe of tuples.    The notion of a Cartesian product can be generalized to an infinite list of sets , and indeed to any collection indexed by a set .   tuple arbitrary    -tuple   I-tuple   Let be a set. Given a set , an -tuple of elements of is a function . Given an -tuple and element we will often denote the value as , and denote itself as . In analogy to finite tuples, we call the -th entry or coordinate of .     Cartesian product arbitrary    Cartesian product of the sets   Cartesian product (arbitrary)   Let be a set, and let be a collection of subsets indexed by the set . The Cartesian product  of this collection is defined as . In other words, the Cartesian product is the set of all -tuples of elements of whose -th coordinate is an element of for all .      Functions   Functions  function    a function from to    Let and be two sets. A function from to , denoted , is a rule which, given any input  , returns an output  . In this case we write and call the image of under , or the value of at  . Similarly, we say  maps (or sends ) the input to the output .  The set is called the domain of ; the set is called the codomain of .  When we wish to indicate what rule defines the function, we use the elaborated notation . This is read as The function with domain and codomain maps an input to the output .      Consider the function . This function has domain and codomain equal to and maps an integer to its square.     Arithmetic operations as functions   Our familiar arithmetic operations can be expressed as functions whose inputs are pairs of numbers: addition is the function and multiplication is the function       Invoking the notion of a rule in the definition of a function is admittedly somewhat vague. A more precise definition can be given using the Cartesian product. Namely, given sets and , we define a function to be a subset satisfying the following property: for all there is a unique element . The uniqueness of the pair then allows us to define the value of at as , denoted .    As with sets and tuples, we are obliged to specify what we mean for two functions to be equal. The definition below makes clear how the the domain and codomain, as well as the rule that takes inputs to outputs, are all essential ingredients of a function.   Function equality  function equality   Functions and are equal if   they have the same domain and codomain , and    for all , we have .        Image of a set  function image of a set  function image    image of the set under     image of a function    Given a function and a subset , the image of under , denoted , is defined as . In other words, is the set of all outputs , where .  The image of , denoted , is the set of all outputs of : , .     Injective, surjective, bijective  invertible function  bijective function  injective function  surjective function  one-to-one function  onto function  one-to-one correspondence   Let be a function.   The function is injective (or one-to-one ) if for all , if , then : equivalently, if , then .    The function is surjective (or onto ) if for all , there is an such that : equivalently, .    The function is bijective (or a one-to-one correspondence ) if it is injective and surjective.        Role of domain and codomain in injectivity and surjectivity   Consider the following three functions . Although all three functions are defined using the same rule ( ), they are not equal thanks to their differing domains and\/or codomains. The choice of domain and codomain in these examples also plays a crucial role in determining whether the function is injective and\/or surjective. The function is neither injective ( ) nor surjective ( ); the function is injective but not surjective; the function is both injective and surjective, hence bijective.     Function composition  function composition    the composition of and    Suppose and are functions satisfying . The composition of and is the function defined as , for all .     function invertible  function inverse  function identity  Identity and inverse functions   For any set the identity function on is the function defined as for all .  A function is invertible if there is a function satisfying and : , . The function in this case is called the inverse of , denoted .    Invertible is equivalent to bijective   A function is invertible if and only if it is bijective.       Cardinality and countability   Cardinality  cardinality  finite set  infinite set  countably infinite set  countable set  uncountable set    cardinality of set    Let be a set.    Finite and infinite sets  The set is finite if either or there is a bijection for some positive integer . Roughly speaking, the cardinality of a finite set , denoted , is the number of distinct elements it contains. In more detail if , then by definition; if there is a bijection , then .  The set is infinite if it is not finite. In this case is said to have infinite cardinality .    Countable and uncountable sets  The set is countably infinite if there is a bijection , where is the set of all positive integers; it is countable if it is either finite or countable infinite.  The set is uncountable if it is not countable.       "
+  "body": " Sets and functions    We gather here some notions about sets and functions.    Sets   sets  sets empty sets  sets membership      set membership   Sets   A set is a collection of objects. An object is a member (or element ) of a set if contains . In this case, we write . If is not a member of , we write .    We use curly braces to describe the contents of a set. For example, is the set containing the first three positive integers, and is the set of all positive integers. The defining property of sets is that they are completely determined by their members, and nothing more. In particular, when describing sets as above, it does not matter in what order the elements are listed, nor if they are repeated: , , , and are three descriptions of the same set. This somewhat slippery notion is made perfectly clear by specifying exactly what it means for two sets to be equal, as we do below.   Set equality  sets equality   Sets and are equal , denoted , if they have precisely the same elements: , if for any object , we have if and only if .    Set membership naturally extends to a notion of one set lying within another.   Set inclusion (subsets)  sets subset  sets inclusion    set inclusion    A set is a subset of a set , denoted , if every member of is a member of : , implies for any object . The relation is called set inclusion .      The definitions of set equality and the subset relation make use of two important logical operations: namely, the if and only if (or iff for short) and if-then operations.    With the fundamental notions of membership, equality, and subset in place, we now introduce means of building new sets from existing ones. The first is a manner of carving out a subset of a given set using a specified property.   Set-builder notation  sets set builder notation   Let be a set, and let be a property that elements of either satisfy or do not satisfy. For an element , let denote the statement that satisfies . The set of all elements of satisfying is denoted .      Set builder notation is parsed from left to right as follows:    is read as the set of      is read as elements of      is read as such that      is read as is true .   Taken altogether we get: The set of elements of such that is true .      Let be the set of nonnegative integers. The subset of even positive integers can be described using set-builder notation as , or alternatively, .    Next we use set builder notation, the set membership relation, and some basic logic to define the union, intersection, and difference of sets.   Union, intersection, difference, and complement  sets union  sets intersection    set union     set intersection   sets complement  sets difference      set difference     set complement    Let and be subsets of a common set .    Set union  The union  of and is defined as . More generally, if is a set and is a collection of sets indexed by , then the union  of this collection is defined as .    Set intersection  The intersection  of and is defined as . More generally, if is a set and is a collection of sets indexed by , then the intersection  of this collection is defined as     Set difference  The difference  is defined as .    Set complement  The complement of in is defined as . In contexts where there is clear what the larger set is, we denote the complement of in as .      With the help of these set operations, we can now describe some common sets used in mathematics.   sets empty set     the empty set   real numbers    real numbers   integers    integers     positive integers   rational numbers    rational numbers   Common mathematical sets   We denote by the set of all real numbers. The integers  and rational numbers  are the subsets of defined as . This yields the following chain of subsets: . The empty set is the set containing no objects, denoted or .  The set of all positive integers is denoted .    The power set of a set is the set of all subsets of . We will make use of this notion in our very first definition ( ).   power set    power set of   Power set   Given a set , its power set  is defined as the set of all subsets of .     Power set   Let . The power set is the set of all subsets of . We can enumerate systematically by listing all the subsets in order of increasing cardinality. There is one subset of containing zero elements: namely, the empty set . The two subsets of containing exactly one element are and . Lastly, the unique subset of containing two elements is itself. We conclude that . In general if has cardinality , then has cardinality .    Lastly, we define the cartesian product of sets, which is a formal description of an ordered collection of objects.   Cartesian product finite      Cartesian product   Cartesian product (finite)   An -tuple (or sequence ) of the sets is an ordered list such that for all . We define two -tuples , and to be equal, denoted , if for all . We call the length of the sequence , and we call its -th entry for all .  The (Cartesian) product of the sets , denoted or , is the set of all -tuples: , .  Given a set , its -ary Cartesian product  is defined as .      We have more suggestive names for -tuples when is small: a 2-tuple is called a pair, a 3-tuple is called a triple, a 4-tuple is called a quadruple, . We will use the generic term tuple to designate a -tuple of unspecified length.      Observe how tuples capture the notion of an ordered collection of object. For example, whereas the sets and are all equal to one another, the 4-tuples and are not: they differ in their second entries.  What about the tuples and ? Are these equal? Technically our definition of equality only applies to tuples living in the same fixed Cartesian product. In particular, for the question of equality to make sense, the tuples must have the same length. As such we will officially avoid writing things like , although unofficially we consider these two objects as completely different. You should think of and as creatures living on two different planets in the universe of tuples.    The notion of a Cartesian product can be generalized to an infinite list of sets , and indeed to any collection indexed by a set .   tuple arbitrary    -tuple   I-tuple   Let be a set. Given a set , an -tuple of elements of is a function . Given an -tuple and element we will often denote the value as , and denote itself as . In analogy to finite tuples, we call the -th entry or coordinate of .     Cartesian product arbitrary    Cartesian product of the sets   Cartesian product (arbitrary)   Let be a set, and let be a collection of subsets indexed by the set . The Cartesian product  of this collection is defined as . In other words, the Cartesian product is the set of all -tuples of elements of whose -th coordinate is an element of for all .  In the special case where for all , we denote as .      Functions   Functions  function    a function from to    Let and be two sets. A function from to , denoted , is a rule which, given any input  , returns an output  . In this case we write and call the image of under , or the value of at  . Similarly, we say  maps (or sends ) the input to the output .  The set is called the domain of ; the set is called the codomain of .  When we wish to indicate what rule defines the function, we use the elaborated notation . This is read as The function with domain and codomain maps an input to the output .      Consider the function . This function has domain and codomain equal to and maps an integer to its square.     Arithmetic operations as functions   Our familiar arithmetic operations can be expressed as functions whose inputs are pairs of numbers: addition is the function and multiplication is the function       Invoking the notion of a rule in the definition of a function is admittedly somewhat vague. A more precise definition can be given using the Cartesian product. Namely, given sets and , we define a function to be a subset satisfying the following property: for all there is a unique element . The uniqueness of the pair then allows us to define the value of at as , denoted .    As with sets and tuples, we are obliged to specify what we mean for two functions to be equal. The definition below makes clear how the the domain and codomain, as well as the rule that takes inputs to outputs, are all essential ingredients of a function.   Function equality  function equality   Functions and are equal if   they have the same domain and codomain , and    for all , we have .        Image of a set  function image of a set  function image    image of the set under     image of a function    Given a function and a subset , the image of under , denoted , is defined as . In other words, is the set of all outputs , where .  The image of , denoted , is the set of all outputs of : , .     Injective, surjective, bijective  invertible function  bijective function  injective function  surjective function  one-to-one function  onto function  one-to-one correspondence   Let be a function.   The function is injective (or one-to-one ) if for all , if , then : equivalently, if , then .    The function is surjective (or onto ) if for all , there is an such that : equivalently, .    The function is bijective (or a one-to-one correspondence ) if it is injective and surjective.        Role of domain and codomain in injectivity and surjectivity   Consider the following three functions . Although all three functions are defined using the same rule ( ), they are not equal thanks to their differing domains and\/or codomains. The choice of domain and codomain in these examples also plays a crucial role in determining whether the function is injective and\/or surjective. The function is neither injective ( ) nor surjective ( ); the function is injective but not surjective; the function is both injective and surjective, hence bijective.     Function composition  function composition    the composition of and    Suppose and are functions satisfying . The composition of and is the function defined as , for all .     function invertible  function inverse  function identity  Identity and inverse functions   For any set the identity function on is the function defined as for all .  A function is invertible if there is a function satisfying and : , . The function in this case is called the inverse of , denoted .    Invertible is equivalent to bijective   A function is invertible if and only if it is bijective.       Cardinality and countability   Cardinality  cardinality  finite set  infinite set  countably infinite set  countable set  uncountable set    cardinality of set    Let be a set.    Finite and infinite sets  The set is finite if either or there is a bijection for some positive integer . Roughly speaking, the cardinality of a finite set , denoted , is the number of distinct elements it contains. In more detail if , then by definition; if there is a bijection , then .  The set is infinite if it is not finite. In this case is said to have infinite cardinality .    Countable and uncountable sets  The set is countably infinite if there is a bijection , where is the set of all positive integers; it is countable if it is either finite or countable infinite.  The set is uncountable if it is not countable.       "
 },
 {
   "id": "d_sets",
@@ -124,7 +124,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "0.1.12",
   "title": "Cartesian product (finite).",
-  "body": " Cartesian product      Cartesian product   Cartesian product (finite)   An -tuple (or sequence ) of the sets is an ordered list such that for all . We define two -tuples , and to be equal, denoted , if for all . We call the length of the sequence , and we call its -th entry for all .  The (Cartesian) product of the sets , denoted or , is the set of all -tuples: , .  Given a set , its -ary Cartesian product  is defined as .   "
+  "body": " Cartesian product finite      Cartesian product   Cartesian product (finite)   An -tuple (or sequence ) of the sets is an ordered list such that for all . We define two -tuples , and to be equal, denoted , if for all . We call the length of the sequence , and we call its -th entry for all .  The (Cartesian) product of the sets , denoted or , is the set of all -tuples: , .  Given a set , its -ary Cartesian product  is defined as .   "
 },
 {
   "id": "rm_pairs_triples",
@@ -160,7 +160,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "0.1.16",
   "title": "Cartesian product (arbitrary).",
-  "body": " Cartesian product arbitrary    Cartesian product of the sets   Cartesian product (arbitrary)   Let be a set, and let be a collection of subsets indexed by the set . The Cartesian product  of this collection is defined as . In other words, the Cartesian product is the set of all -tuples of elements of whose -th coordinate is an element of for all .   "
+  "body": " Cartesian product arbitrary    Cartesian product of the sets   Cartesian product (arbitrary)   Let be a set, and let be a collection of subsets indexed by the set . The Cartesian product  of this collection is defined as . In other words, the Cartesian product is the set of all -tuples of elements of whose -th coordinate is an element of for all .  In the special case where for all , we denote as .   "
 },
 {
   "id": "d_function",
@@ -433,27 +433,27 @@ var ptx_lunr_docs = [
   "body": " Never attempt to prove an equality by starting off with the equality you wish to prove, and then deduce a series of further equalities ending in some inanity: , . What this suggests is that you are in fact proving an implication: namely, if the desired equality is true, then  . Clearly this is not what we set out to prove! This type of fallacious argument is called begging the question ( petitio princippii in Latin), as we assume that which was to be proven.  "
 },
 {
-  "id": "p-131",
-  "level": "2",
-  "url": "s_proof_technique.html#p-131",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "base "
-},
-{
   "id": "p-132",
   "level": "2",
   "url": "s_proof_technique.html#p-132",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
+  "body": "base "
+},
+{
+  "id": "p-133",
+  "level": "2",
+  "url": "s_proof_technique.html#p-133",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
   "body": "induction weak induction "
 },
 {
-  "id": "p-134",
+  "id": "p-135",
   "level": "2",
-  "url": "s_proof_technique.html#p-134",
+  "url": "s_proof_technique.html#p-135",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -487,9 +487,9 @@ var ptx_lunr_docs = [
   "body": " Mathematical induction as ladder of propositions  Mathematical induction as ladder of propositions     "
 },
 {
-  "id": "p-143",
+  "id": "p-144",
   "level": "2",
-  "url": "s_proof_technique.html#p-143",
+  "url": "s_proof_technique.html#p-144",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1097,6 +1097,150 @@ var ptx_lunr_docs = [
   "number": "1.5.15",
   "title": "Limit points in <span class=\"process-math\">\\(T_1\\)<\/span>-spaces.",
   "body": " Limit points in -spaces   Let be a subset of the -space . An element is a limit point of if and only if every open neighborhood of intersects in infinitely many points.   "
+},
+{
+  "id": "s_subspace_finite_products",
+  "level": "1",
+  "url": "s_subspace_finite_products.html",
+  "type": "Section",
+  "number": "1.6",
+  "title": "Subspaces and products",
+  "body": " Subspaces and products    Subspaces and product spaces are constructions that allow us to build new topological spaces from existing ones.    Subspaces   Subspace  Given a topological space and a subset the set defined as defines a topology on called the subspace topology . We call , together with the topology , a subspace of .   We show that the collection is a topology on .  Axiom (1). Since , we have and .  Axiom (2). Let be a collection of elements of . By definition we have for open sets . It follows that , since is open in .  Axiom (3). Given elements , we have .     Subspace properties   Let be a subspace of .    If is a basis of , then the set is a basis for .     is closed in if and only if for some that is closed in .    If is (resp. Hausdorff, resp. metrizable), then is (resp., Hausdorff, resp. metrizable).       Open\/closed depends on topology   Let be a subspace of . Prove:     Consider as a subspace of with the standard topology. The set it self is both open and closed in the subspace , but is neither open nor closed in .     Openness\/closedness transitivity   Let be a subspace of .    If is open in and is open in , then is open in .    If is closed in and is closed in , then is closed in         If is open in , then for some open set of . Since is open in , we have is open in .    The proof is obtained from the previous argument by replacing all instances of open with closed , using (2) of .        Finite product spaces   Finite products  Let be topological spaces, and let . The collection is a basis on . The topology generated by is the product topology on , and is called the product of the spaces .   We show that is a basis.  Axiom 1. Given there are open sets such that for all , and we have .  Let and . Given , we have for all , and hence .     Product basis not a topology necessarily   Let with the standard topology, and let with the product topology.   Describe the open sets of qualitatively. Give an example demonstrating that the product basis is not a topology in this case.    Show that the product topology on is equal to the the Euclidean topology.            "
+},
+{
+  "id": "top_eg_subspace",
+  "level": "2",
+  "url": "s_subspace_finite_products.html#top_eg_subspace",
+  "type": "Topological specimen",
+  "number": "7",
+  "title": "Subspace.",
+  "body": " Subspace  Given a topological space and a subset the set defined as defines a topology on called the subspace topology . We call , together with the topology , a subspace of .   We show that the collection is a topology on .  Axiom (1). Since , we have and .  Axiom (2). Let be a collection of elements of . By definition we have for open sets . It follows that , since is open in .  Axiom (3). Given elements , we have .   "
+},
+{
+  "id": "th_subspace_props",
+  "level": "2",
+  "url": "s_subspace_finite_products.html#th_subspace_props",
+  "type": "Theorem",
+  "number": "1.6.1",
+  "title": "Subspace properties.",
+  "body": " Subspace properties   Let be a subspace of .    If is a basis of , then the set is a basis for .     is closed in if and only if for some that is closed in .    If is (resp. Hausdorff, resp. metrizable), then is (resp., Hausdorff, resp. metrizable).     "
+},
+{
+  "id": "eg_relative_openness",
+  "level": "2",
+  "url": "s_subspace_finite_products.html#eg_relative_openness",
+  "type": "Example",
+  "number": "1.6.2",
+  "title": "Open\/closed depends on topology.",
+  "body": " Open\/closed depends on topology   Let be a subspace of . Prove:     Consider as a subspace of with the standard topology. The set it self is both open and closed in the subspace , but is neither open nor closed in .   "
+},
+{
+  "id": "th_transitivity_open_closed",
+  "level": "2",
+  "url": "s_subspace_finite_products.html#th_transitivity_open_closed",
+  "type": "Theorem",
+  "number": "1.6.3",
+  "title": "Openness\/closedness transitivity.",
+  "body": " Openness\/closedness transitivity   Let be a subspace of .    If is open in and is open in , then is open in .    If is closed in and is closed in , then is closed in         If is open in , then for some open set of . Since is open in , we have is open in .    The proof is obtained from the previous argument by replacing all instances of open with closed , using (2) of .     "
+},
+{
+  "id": "top_eg_finite_product",
+  "level": "2",
+  "url": "s_subspace_finite_products.html#top_eg_finite_product",
+  "type": "Topological specimen",
+  "number": "8",
+  "title": "Finite products.",
+  "body": " Finite products  Let be topological spaces, and let . The collection is a basis on . The topology generated by is the product topology on , and is called the product of the spaces .   We show that is a basis.  Axiom 1. Given there are open sets such that for all , and we have .  Let and . Given , we have for all , and hence .   "
+},
+{
+  "id": "eg_product_basis_not_topology",
+  "level": "2",
+  "url": "s_subspace_finite_products.html#eg_product_basis_not_topology",
+  "type": "Example",
+  "number": "1.6.4",
+  "title": "Product basis not a topology necessarily.",
+  "body": " Product basis not a topology necessarily   Let with the standard topology, and let with the product topology.   Describe the open sets of qualitatively. Give an example demonstrating that the product basis is not a topology in this case.    Show that the product topology on is equal to the the Euclidean topology.          "
+},
+{
+  "id": "s_product2",
+  "level": "1",
+  "url": "s_product2.html",
+  "type": "Section",
+  "number": "1.7",
+  "title": "Arbitrary products",
+  "body": " Arbitrary products   We now endeavor to give a topological structure to an arbitrary product of topological spaces. (See and for the definitions of arbitrary tuples and Cartesian products of sets.) As we will see, we can extend the finite product topology to this more general setting in two very different ways.    Product space (arbitrary)  Let be a collection of topological spaces. We define two distinct topologies on the the product .   Box topology  The box topology on is the topology generated by the basis .    Product topology  The product topology on is the topology generated by the basis .   We have ; when the index set is finite, we have .   To see that both collections are indeed bases, observe that for any we have , which is an element of in both cases; and that in both cases if we have , , then , is also an element of .     Product coarser than box   It is clear from the definition that we always have , and hence the product topology is coarser than (contained in) the box topology.    Following Munkres, given a set and the special index set , we write for as a shorthand.   Infinite binary sequences   Let .   Compare the box and product topologies on , where is given the discrete topology.    Compare the box and product topologies on , where is given the trivial topology.       As observed in , the product topology is always contained in the box topology. Let's show that in this case the containment is strict. Since is open in , the set is open in the box topology. To see that it is not open in the product topology, take and let contains . By definition, we have for some , where is an open subset of . Since , we have . Since for all , the element , from which it follows that . We conclude that is not a union of basis elements of the product topology, and hence is not open in the product topology.  It is easy to see that is discrete in the box topology. The argument above shows that is not discrete in the product topology, since the singleton is not open.     Properties of product spaces   Let be a collection of topological spaces, and let be the box and product topologies on .    Let be a basis for for all . The set is a basis for .  Similarly, the collection of all subsets of of the form , where for all indices in a finite set and for all , is a basis for .    Given subspaces for all , let . The box (resp., product) topology on is equal to the box (resp., product) subspace topology on .    If is Hausdorff for all , then is Hausdorff with respect to both the box and product topologies.    Given subsets for all , we have , where the closure on the right can be taken either with respect to box or product topology on .       Pointwise convergence   Let be a collection of topological spaces, let , and let be a sequence of elements of : , using tuple notation, for each we have , where . The sequence  converges pointwise to an element if for all we have : , .     Pointwise convergence   Observe that the definition of pointwise convergence makes no rerence to any topology on . Below we investigate how it relates to convergence in the box and product topologies.     Convergent sequences in   Let , where is an infinite set, let , and let be a sequence of elements of . We will compare convergence and pointwise convergence of this sequence with respect to the box and product topologies on , where is equipped with the standard topology.    Prove: for both the box and product topologies, if for some , then the converge pointwise to .    Prove: converges to in the product topology if and only if converges to pointwise.    Let . For all , define as . Prove: converges to pointwise, but does not converge to any element of with respect to the box topology.          "
+},
+{
+  "id": "d_product_space",
+  "level": "2",
+  "url": "s_product2.html#d_product_space",
+  "type": "Topological specimen",
+  "number": "9",
+  "title": "Product space (arbitrary).",
+  "body": " Product space (arbitrary)  Let be a collection of topological spaces. We define two distinct topologies on the the product .   Box topology  The box topology on is the topology generated by the basis .    Product topology  The product topology on is the topology generated by the basis .   We have ; when the index set is finite, we have .   To see that both collections are indeed bases, observe that for any we have , which is an element of in both cases; and that in both cases if we have , , then , is also an element of .   "
+},
+{
+  "id": "rm_box_product",
+  "level": "2",
+  "url": "s_product2.html#rm_box_product",
+  "type": "Remark",
+  "number": "1.7.1",
+  "title": "Product coarser than box.",
+  "body": " Product coarser than box   It is clear from the definition that we always have , and hence the product topology is coarser than (contained in) the box topology.   "
+},
+{
+  "id": "convention-1",
+  "level": "2",
+  "url": "s_product2.html#convention-1",
+  "type": "Notation",
+  "number": "1.7.2",
+  "title": "",
+  "body": "Following Munkres, given a set and the special index set , we write for as a shorthand. "
+},
+{
+  "id": "eg_product_binary",
+  "level": "2",
+  "url": "s_product2.html#eg_product_binary",
+  "type": "Example",
+  "number": "1.7.3",
+  "title": "Infinite binary sequences.",
+  "body": " Infinite binary sequences   Let .   Compare the box and product topologies on , where is given the discrete topology.    Compare the box and product topologies on , where is given the trivial topology.       As observed in , the product topology is always contained in the box topology. Let's show that in this case the containment is strict. Since is open in , the set is open in the box topology. To see that it is not open in the product topology, take and let contains . By definition, we have for some , where is an open subset of . Since , we have . Since for all , the element , from which it follows that . We conclude that is not a union of basis elements of the product topology, and hence is not open in the product topology.  It is easy to see that is discrete in the box topology. The argument above shows that is not discrete in the product topology, since the singleton is not open.   "
+},
+{
+  "id": "th_product_props",
+  "level": "2",
+  "url": "s_product2.html#th_product_props",
+  "type": "Theorem",
+  "number": "1.7.4",
+  "title": "Properties of product spaces.",
+  "body": " Properties of product spaces   Let be a collection of topological spaces, and let be the box and product topologies on .    Let be a basis for for all . The set is a basis for .  Similarly, the collection of all subsets of of the form , where for all indices in a finite set and for all , is a basis for .    Given subspaces for all , let . The box (resp., product) topology on is equal to the box (resp., product) subspace topology on .    If is Hausdorff for all , then is Hausdorff with respect to both the box and product topologies.    Given subsets for all , we have , where the closure on the right can be taken either with respect to box or product topology on .     "
+},
+{
+  "id": "d_pointwise_convergence",
+  "level": "2",
+  "url": "s_product2.html#d_pointwise_convergence",
+  "type": "Definition",
+  "number": "1.7.5",
+  "title": "Pointwise convergence.",
+  "body": " Pointwise convergence   Let be a collection of topological spaces, let , and let be a sequence of elements of : , using tuple notation, for each we have , where . The sequence  converges pointwise to an element if for all we have : , .   "
+},
+{
+  "id": "rm_pointwise_convergence",
+  "level": "2",
+  "url": "s_product2.html#rm_pointwise_convergence",
+  "type": "Remark",
+  "number": "1.7.6",
+  "title": "Pointwise convergence.",
+  "body": " Pointwise convergence   Observe that the definition of pointwise convergence makes no rerence to any topology on . Below we investigate how it relates to convergence in the box and product topologies.   "
+},
+{
+  "id": "example-35",
+  "level": "2",
+  "url": "s_product2.html#example-35",
+  "type": "Example",
+  "number": "1.7.7",
+  "title": "Convergent sequences in <span class=\"process-math\">\\(\\R^I\\)<\/span>.",
+  "body": " Convergent sequences in   Let , where is an infinite set, let , and let be a sequence of elements of . We will compare convergence and pointwise convergence of this sequence with respect to the box and product topologies on , where is equipped with the standard topology.    Prove: for both the box and product topologies, if for some , then the converge pointwise to .    Prove: converges to in the product topology if and only if converges to pointwise.    Let . For all , define as . Prove: converges to pointwise, but does not converge to any element of with respect to the box topology.         "
 },
 {
   "id": "appendix-notation",

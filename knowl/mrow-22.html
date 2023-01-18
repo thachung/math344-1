@@ -11,15 +11,15 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_proposition.html">
 \begin{align*}
-\mathcal{P} \amp \iff \mathcal{P_1}\amp\text{(justification)}\\
-\amp \iff \mathcal{P_2}\amp\text{(justification)} \\
-\amp \phantom{=}\vdots\\
-\amp \iff \mathcal{P_n}\amp\text{(justification)} \\
-\amp \iff \mathcal{Q}\amp\text{(justification)}
+\neg\mathcal{P}\amp\iff \forall L\in\R\,  \neg\left(\forall \epsilon \gt 0\, \exists \delta \gt0\,  \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon) \right)\\
+\amp\iff  \forall L\in\R\,  \exists \epsilon \gt 0\, \neg\left( \exists \delta \gt0\,  \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon) \right)\\
+\amp\iff  \forall L\in\R\,  \exists \epsilon \gt 0\,  \forall \delta \gt0\, \neg\left( \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon) \right)\\
+\amp\iff  \forall L\in\R\,  \exists \epsilon \gt 0\,  \forall \delta \gt0\, \exists x\in\mathbb{R}\ \neg (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon)\\
+\amp\iff  \forall L\in\R\,  \exists \epsilon \gt 0\,  \forall \delta \gt0\, \exists x\in\mathbb{R}\ (\val{x-c}\lt\delta \text{ and } \val{f(x)-L}\not\lt\epsilon)
 \end{align*}
 </div>
-<span class="incontext"><a href="s_proof_technique.html#md-10" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_logic.html#md-10" class="internal">in-context</a></span>
 </body>
 </html>

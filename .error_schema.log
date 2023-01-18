@@ -1,0 +1,3 @@
+/Users/aarongreicius/MyBooks/math344-1/source/main.ptx:11:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMWRONG: Did not expect element include there
+/Users/aarongreicius/MyBooks/math344-1/source/main.ptx:11:0:ERROR:RELAXNGV:RELAXNG_ERR_EXTRACONTENT: Element pretext has extra content: include
+/Users/aarongreicius/MyBooks/math344-1/source/main.ptx:8:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element docinfo, got pretext
