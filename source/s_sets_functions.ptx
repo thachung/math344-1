@@ -280,7 +280,7 @@
   Lastly, we define the <em>cartesian product</em> of sets, which is a formal description of an ordered collection of objects.
 </p>
 <definition xml:id="d_cartesian_product">
-  <idx><h>Cartesian product</h></idx>
+  <idx><h>Cartesian product</h><h>finite</h></idx>
   <notation>
     <usage> <m>A\times B</m> </usage>
     <description>Cartesian product</description>
@@ -357,6 +357,9 @@
         \prod_{i\in I}A_i=\{\boldx\colon I\rightarrow X\colon x_i\in A_i\}
       </me>.
       In other words, the Cartesian product is the set of all <m>I</m>-tuples of elements of <m>X</m> whose <m>i</m>-th coordinate is an element of <m>A_i</m> for all <m>i\in I</m>.
+    </p>
+    <p>
+      In the special case where <m>A_i=A</m> for all <m>i\in I</m>, we denote <m>\prod_{i\in I}A</m> as <m>A^I</m>.
     </p>
   </statement>
 </definition>
