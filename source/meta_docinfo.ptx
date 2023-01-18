@@ -124,7 +124,7 @@
   </latex-image-preamble>
 
   <!-- Renamings -->
-  <rename element="convention">Interpretation</rename>
+  <rename element="convention">Notation</rename>
   <rename element="algorithm">Procedure</rename>
   <rename element="principle">Mantra</rename>
   <rename element="assumption">Fiat</rename>

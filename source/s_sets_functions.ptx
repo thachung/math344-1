@@ -336,10 +336,10 @@
     <p>
       Let <m>I</m> be a set. Given a set <m>X</m>, an <term><m>I</m>-tuple</term> of elements of <m>X</m> is a function
       <m>
-        \boldx\colon I\rightarrow X
+        f\colon I\rightarrow X
       </m>.
-      Given an <m>I</m>-tuple <m>\boldx</m> and element <m>i\in I</m> we will often denote the value <m>\boldx(i)</m> as <m>x_i</m>, and denote
-      <m>\boldx</m> itself as <m>\boldx=(x_i)_{i\in I}</m>. In analogy to finite tuples, we call <m>x_i</m> the <m>i</m>-th <term>entry</term> or <term>coordinate</term> of <m>\boldx</m>.
+      Given an <m>I</m>-tuple <m>f</m> and element <m>i\in I</m> we will often denote the value <m>f(i)</m> as <m>x_i</m>, and denote
+      <m>f</m> itself as <m>f=(x_i)_{i\in I}</m>. In analogy to finite tuples, we call <m>x_i</m> the <m>i</m>-th <term>entry</term> or <term>coordinate</term> of <m>f</m>.
     </p>
   </statement>
 </definition>
@@ -353,9 +353,10 @@
   <statement>
     <p>
       Let <m>X</m> be a set, and let <m>\{A_i\}_{i\in I}</m> be a collection of subsets <m>A_i\subseteq X</m> indexed by the set <m>I</m>. The <term>Cartesian product</term> <m>\prod_{i\in I}A_i</m> of this collection is defined as
-      <me>
-        \prod_{i\in I}A_i=\{\boldx\colon I\rightarrow X\colon x_i\in A_i\}
-      </me>.
+      <md>
+      <mrow> \prod_{i\in I}A_i\amp =\{f\colon I\rightarrow X\colon f(i)\in A_i \text{ for all } i\in I\} </mrow>
+      <mrow>  \amp =\{(x_i)_{i\in I}\colon x_i\in A_i \text{ for all } i\in I\}</mrow>
+      </md>.
       In other words, the Cartesian product is the set of all <m>I</m>-tuples of elements of <m>X</m> whose <m>i</m>-th coordinate is an element of <m>A_i</m> for all <m>i\in I</m>.
     </p>
     <p>

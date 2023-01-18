@@ -5,9 +5,6 @@
   <xi:include  href="s_metric1.ptx"/>
   <xi:include  href="s_closed_closure_interior.ptx"/>
   <xi:include  href="s_limitpoints_hausdorff.ptx"/>
-<<<<<<< HEAD
-  <xi:include  href="s_product2.ptx"/>
-=======
   <xi:include  href="s_subspace_finite_products.ptx"/>
->>>>>>> fb04ccdca7e00fa872e3404404e658e488c03a81
+  <xi:include  href="s_product2.ptx"/>
 </chapter>
