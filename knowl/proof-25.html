@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h3 class="heading"><span class="type">Proof</span></h3>
+<ol class="decimal">
+<li>
+<div class="para">We prove each basis axiom separately (for both the box and product basis).</div>
+<div class="para logical">
+<div class="para">Axiom 1. Given <span class="process-math">\(x=(x_i)_{i\in I}\in X\text{,}\)</span> we can find basis elements <span class="process-math">\(B_i\in \mathcal{B}_{i}\)</span> containing <span class="process-math">\(x_i\text{.}\)</span> We have</div>
+<div class="displaymath process-math">
+\begin{align*}
+x \amp\in B=\prod_{i\in I}B_i\in \mathcal{B}_{\operatorname{box}} \\
+x \amp\in B=\prod_{i\in I}X_i \in \mathcal{B}_{\operatorname{prod}} \text{.}
+\end{align*}
+</div>
+<div class="para">Axiom 2. This axiom follows readily from the set theoretic fact that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\prod_{i\in I}U_i \cap \prod_{i\in I} V_i=\prod_{i\in I}U_i\cap V_i\text{.}
+\end{equation*}
+</div>
+<div class="para">I'll leave the details to you.</div>
+</div>
+</li>
+<li><div class="para logical">
+<div class="para">In both cases (box and product) let <span class="process-math">\(\mathcal{B}\)</span> be the corresponding basis, as defined in <a href="" class="xref" data-knowl="./knowl/top_eg_arbitrary_product.html" title="Topological specimen 9: Product space (arbitrary)">Topological specimen 9</a>. We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/top_eg_arbitrary_product.html ./knowl/top_eg_arbitrary_product.html">
+\begin{align*}
+U \text{ open in } A \amp \iff \text{ for all } x\in U, x\in B\cap A\subseteq U, B=\prod_{i\in I}U_i\in \mathcal{B} \\
+\amp\iff \text{ for all } x\in U, x\in \prod_{i\in I} U_i\cap A \subseteq U, B=\prod_{i\in I}U_i \in \mathcal{B}  \text{.}
+\end{align*}
+</div>
+<div class="para">I claim that (in both box and product topology) the last line above is equivalent to <span class="process-math">\(U\)</span> being open in the box or product topology on the product of the subspaces <span class="process-math">\(A_i\text{.}\)</span> Indeed it says that <span class="process-math">\(U\)</span> is a union of elements of the form <span class="process-math">\(\prod_{i\in I}U_i\cap A\text{,}\)</span> where by definition of the standard bases in <a href="" class="xref" data-knowl="./knowl/top_eg_arbitrary_product.html" title="Topological specimen 9: Product space (arbitrary)">Topological specimen 9</a> we have <span class="process-math">\(U_i\)</span> is open in <span class="process-math">\(X_i\text{,}\)</span> and in the case where we use the product topology, <span class="process-math">\(U_i=X_i\)</span> for all but finitely many <span class="process-math">\(i\in I\text{.}\)</span> This is equivalent to <span class="process-math">\(\prod_{i\in I}U_i\cap A\)</span> being a basis element in either the box topology on the product of the subspaces, or the product topology on the product of the subspaces.</div>
+</div></li>
+</ol></article><span class="incontext"><a href="s_product2.html#proof-25" class="internal">in-context</a></span>
+</body>
+</html>
