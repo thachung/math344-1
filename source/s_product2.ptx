@@ -131,7 +131,7 @@ Following Munkres, given a set <m>A</m> and the special index set <m>I=\Z_+=\{1,
       </li>
       <li>
         <p>
-          If <m>X_i</m> is Hausdorff for all <m>i\in I</m>, then <m>X=\prod_{i\in I}X_i</m> is Hausdorff with respect to both the box and product topologies.
+          If <m>X_i</m> is Hausdorff (resp., <m>T_1</m>) for all <m>i\in I</m>, then <m>X=\prod_{i\in I}X_i</m> is Hausdorff (resp., <m>T_1</m>) with respect to both the box and product topologies.
         </p>
       </li>
       <li>
@@ -171,7 +171,27 @@ Following Munkres, given a set <m>A</m> and the special index set <m>I=\Z_+=\{1,
             <mrow>U \text{ open in } A \amp \iff \text{ for all } x\in U, x\in B\cap A\subseteq U, B=\prod_{i\in I}U_i\in \mathcal{B} </mrow>
             <mrow> \amp\iff \text{ for all } x\in U, x\in \prod_{i\in I} U_i\cap A \subseteq U, B=\prod_{i\in I}U_i \in \mathcal{B}  </mrow>
           </md>.
-          I claim that (in both box and product topology) the last line above is equivalent to <m>U</m> being open in the box or product topology on the product of the subspaces <m>A_i</m>. Indeed it says that <m>U</m> is a union of elements of the form <m>\prod_{i\in I}U_i\cap A</m>, where by definition of the standard bases in <xref ref="top_eg_arbitrary_product"/> we have <m>U_i</m> is open in <m>X_i</m>, and in the case where we use the product topology, <m>U_i=X_i</m> for all but finitely many <m>i\in I</m>. This is equivalent to <m>\prod_{i\in I}U_i\cap A</m> being a basis element in either the box topology on the product of the subspaces, or the product topology on the product of the subspaces.  
+          I claim that (in both box and product topology) the last line is equivalent to <m>U</m> being open in the box or product topology on the product of the subspaces <m>A_i</m>. Indeed it says that <m>U</m> is a union of elements of the form <m>\prod_{i\in I}U_i\cap A</m>, where by definition of the standard bases in <xref ref="top_eg_arbitrary_product"/> we have <m>U_i</m> open in <m>X_i</m>, and in the case where we use the product topology, <m>U_i=X_i</m> for all but finitely many <m>i\in I</m>. This is equivalent to <m>\prod_{i\in I}U_i\cap A</m> being a basis element in either the box topology on the product of the subspaces or the product topology on the product of the subspaces.
+        </p>
+      </li>
+      <li>
+        <p>
+          Assume <m>X_i</m> is Hausdorff for all <m>i\in I</m>. If <m>x=(x_i)_{i\in I}</m> and <m>y=(y_i)_{i\in I}</m> are distinct, then we have <m>x_{i_0}\ne y_{i_0}</m> for some <m>i_0\in I</m>. Since <m>X_{i_0}</m> is Hausdorff, there are disjoint open neighborhoods <m>U_{i_0}, V_{i_0}</m> of <m>x_{i_0}, y_{i_0}</m> in <m>X_{i_0}</m>. The sets <m>U=U_{i_0}\times \prod_{i\ne i_0}X_i, V=V_{i_0}\times \prod_{i\ne i_0}X_i</m>,
+          are disjoint open basis elements for both topologies containing <m>x, y</m>, respectively. Thus <m>X</m> is Hausdorff. The proof for the <m>T_1</m> statement is similar.
+        </p>
+      </li>
+      <li>
+        <p>
+          We prove the equality by showing
+          <me>
+            x\notin \prod_{i\in I}\overline{A_i} \iff x\notin \overline{\prod_{i\in I}A_i}
+          </me>.
+          <m>(\implies)</m>. If <m>x=(x_i)_{i\in I}\notin \prod_{i\in I}\overline{A_i}</m>, there is an index <m>i_0\in I</m> such that <m>x_{i_0}\notin \overline{A_{i_0}}</m>, and thus an open set <m>U_{i_0}\ni x_{i_0}</m> such that <m>U_{i_0}\cap A_{i_0}=\emptyset</m>. The set <m>U_{i_0}\times \prod_{i\ne i_0}X_i</m>
+          is open in both topologies (box and product), contains <m>x=(x_i)_{i\in I}</m>, and is disjoint with <m>\prod_{i\in I}A_i</m>. We conclude that <m>x\notin \overline{\prod_{i\in I}A_i}</m> in both topologies.
+        </p>
+        <p>
+          <m>(\impliedby)</m>. If <m>x=(x_i)_{i\in I}\notin \overline{\prod_{i\in I}A_i}</m> there is an open basis element <m>B=\prod_{i\in I}U_i</m> in the topology (box or product) containing <m>x</m> that is disjoint with <m>\prod_{i\in I}A_i</m>. It follows that we must have <m>U_{i_0}\cap A_{i_0}=\emptyset</m> for some <m>i_0\in I</m> and open <m>U_{i_0}\subseteq X_{i_0}</m>, and thus that <m>x_{i_0}\notin \overline{A_{i_0}}</m>.
+          We conclude that <m>x\notin \prod_{i\in I}\overline{A_i}</m>. 
         </p>
       </li>
     </ol>
