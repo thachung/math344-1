@@ -474,7 +474,7 @@ V=\prod_{i=1}^n V_i=V_1\times V_2\times \cdots \times V_N\times \{0,1\}\times \{
 </li>
 <li id="li-135"><div class="para" id="p-421">Given subspaces <span class="process-math">\(A_i\subseteq X_i\)</span> for all <span class="process-math">\(i\in I\text{,}\)</span> let <span class="process-math">\(A=\prod_{i\in I}A_i\text{.}\)</span> The box (resp., product) topology on <span class="process-math">\(A\)</span> is equal to the box (resp., product) subspace topology on <span class="process-math">\(A\text{.}\)</span>
 </div></li>
-<li id="li-136"><div class="para" id="p-422">If <span class="process-math">\(X_i\)</span> is Hausdorff for all <span class="process-math">\(i\in I\text{,}\)</span> then <span class="process-math">\(X=\prod_{i\in I}X_i\)</span> is Hausdorff with respect to both the box and product topologies.</div></li>
+<li id="li-136"><div class="para" id="p-422">If <span class="process-math">\(X_i\)</span> is Hausdorff (resp., <span class="process-math">\(T_1\)</span>) for all <span class="process-math">\(i\in I\text{,}\)</span> then <span class="process-math">\(X=\prod_{i\in I}X_i\)</span> is Hausdorff (resp., <span class="process-math">\(T_1\)</span>) with respect to both the box and product topologies.</div></li>
 <li id="li-137"><div class="para logical" id="p-423">
 <div class="para">Given subsets <span class="process-math">\(A_i\subseteq X_i\)</span> for all <span class="process-math">\(i\in I\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
@@ -513,12 +513,28 @@ U \text{ open in } A \amp \iff \text{ for all } x\in U, x\in B\cap A\subseteq U,
 \amp\iff \text{ for all } x\in U, x\in \prod_{i\in I} U_i\cap A \subseteq U, B=\prod_{i\in I}U_i \in \mathcal{B}  \text{.}
 \end{align*}
 </div>
-<div class="para">I claim that (in both box and product topology) the last line above is equivalent to <span class="process-math">\(U\)</span> being open in the box or product topology on the product of the subspaces <span class="process-math">\(A_i\text{.}\)</span> Indeed it says that <span class="process-math">\(U\)</span> is a union of elements of the form <span class="process-math">\(\prod_{i\in I}U_i\cap A\text{,}\)</span> where by definition of the standard bases in <a href="" class="xref" data-knowl="./knowl/top_eg_arbitrary_product.html" title="Topological specimen 9: Product space (arbitrary)">Topological specimen 9</a> we have <span class="process-math">\(U_i\)</span> is open in <span class="process-math">\(X_i\text{,}\)</span> and in the case where we use the product topology, <span class="process-math">\(U_i=X_i\)</span> for all but finitely many <span class="process-math">\(i\in I\text{.}\)</span> This is equivalent to <span class="process-math">\(\prod_{i\in I}U_i\cap A\)</span> being a basis element in either the box topology on the product of the subspaces, or the product topology on the product of the subspaces.</div>
+<div class="para">I claim that (in both box and product topology) the last line is equivalent to <span class="process-math">\(U\)</span> being open in the box or product topology on the product of the subspaces <span class="process-math">\(A_i\text{.}\)</span> Indeed it says that <span class="process-math">\(U\)</span> is a union of elements of the form <span class="process-math">\(\prod_{i\in I}U_i\cap A\text{,}\)</span> where by definition of the standard bases in <a href="" class="xref" data-knowl="./knowl/top_eg_arbitrary_product.html" title="Topological specimen 9: Product space (arbitrary)">Topological specimen 9</a> we have <span class="process-math">\(U_i\)</span> open in <span class="process-math">\(X_i\text{,}\)</span> and in the case where we use the product topology, <span class="process-math">\(U_i=X_i\)</span> for all but finitely many <span class="process-math">\(i\in I\text{.}\)</span> This is equivalent to <span class="process-math">\(\prod_{i\in I}U_i\cap A\)</span> being a basis element in either the box topology on the product of the subspaces or the product topology on the product of the subspaces.</div>
 </div></li>
+<li id="li-140"><div class="para" id="p-427">Assume <span class="process-math">\(X_i\)</span> is Hausdorff for all <span class="process-math">\(i\in I\text{.}\)</span> If <span class="process-math">\(x=(x_i)_{i\in I}\)</span> and <span class="process-math">\(y=(y_i)_{i\in I}\)</span> are distinct, then we have <span class="process-math">\(x_{i_0}\ne y_{i_0}\)</span> for some <span class="process-math">\(i_0\in I\text{.}\)</span> Since <span class="process-math">\(X_{i_0}\)</span> is Hausdorff, there are disjoint open neighborhoods <span class="process-math">\(U_{i_0}, V_{i_0}\)</span> of <span class="process-math">\(x_{i_0}, y_{i_0}\)</span> in <span class="process-math">\(X_{i_0}\text{.}\)</span> The sets <span class="process-math">\(U=U_{i_0}\times \prod_{i\ne i_0}X_i, V=V_{i_0}\times \prod_{i\ne i_0}X_i\text{,}\)</span> are disjoint open basis elements for both topologies containing <span class="process-math">\(x, y\text{,}\)</span> respectively. Thus <span class="process-math">\(X\)</span> is Hausdorff. The proof for the <span class="process-math">\(T_1\)</span> statement is similar.</div></li>
+<li id="li-141">
+<div class="para logical" id="p-428">
+<div class="para">We prove the equality by showing</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x\notin \prod_{i\in I}\overline{A_i} \iff x\notin \overline{\prod_{i\in I}A_i}\text{.}
+\end{equation*}
+</div>
+<div class="para">
+<span class="process-math">\((\implies)\text{.}\)</span> If <span class="process-math">\(x=(x_i)_{i\in I}\notin \prod_{i\in I}\overline{A_i}\text{,}\)</span> there is an index <span class="process-math">\(i_0\in I\)</span> such that <span class="process-math">\(x_{i_0}\notin \overline{A_{i_0}}\text{,}\)</span> and thus an open set <span class="process-math">\(U_{i_0}\ni x_{i_0}\)</span> such that <span class="process-math">\(U_{i_0}\cap A_{i_0}=\emptyset\text{.}\)</span> The set <span class="process-math">\(U_{i_0}\times \prod_{i\ne i_0}X_i\)</span> is open in both topologies (box and product), contains <span class="process-math">\(x=(x_i)_{i\in I}\text{,}\)</span> and is disjoint with <span class="process-math">\(\prod_{i\in I}A_i\text{.}\)</span> We conclude that <span class="process-math">\(x\notin \overline{\prod_{i\in I}A_i}\)</span> in both topologies.</div>
+</div>
+<div class="para" id="p-429">
+<span class="process-math">\((\impliedby)\text{.}\)</span> If <span class="process-math">\(x=(x_i)_{i\in I}\notin \overline{\prod_{i\in I}A_i}\)</span> there is an open basis element <span class="process-math">\(B=\prod_{i\in I}U_i\)</span> in the topology (box or product) containing <span class="process-math">\(x\)</span> that is disjoint with <span class="process-math">\(\prod_{i\in I}A_i\text{.}\)</span> It follows that we must have <span class="process-math">\(U_{i_0}\cap A_{i_0}=\emptyset\)</span> for some <span class="process-math">\(i_0\in I\)</span> and open <span class="process-math">\(U_{i_0}\subseteq X_{i_0}\text{,}\)</span> and thus that <span class="process-math">\(x_{i_0}\notin \overline{A_{i_0}}\text{.}\)</span> We conclude that <span class="process-math">\(x\notin \prod_{i\in I}\overline{A_i}\text{.}\)</span>
+</div>
+</li>
 </ol></article></div>
 <article class="definition definition-like" id="d_pointwise_convergence"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.7.5</span><span class="period">.</span><span class="space"> </span><span class="title">Pointwise convergence.</span>
-</h3> <div class="para logical" id="p-427">
+</h3> <div class="para logical" id="p-430">
 <div class="para">Let <span class="process-math">\(\{X_i\}_{i\in I}\)</span> be a collection of topological spaces, let <span class="process-math">\(X=\prod_{i\in I}X_i\text{,}\)</span> and let <span class="process-math">\((f_n)_{n=1}^\infty\)</span> be a sequence of elements of <span class="process-math">\(X\text{:}\)</span> i.e., using tuple notation, for each <span class="process-math">\(n\in \Z_+\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -529,14 +545,14 @@ f_n=(x_{n,i})_{i\in I}\text{,}
 </div>
 </div></article><article class="remark remark-like" id="rm_pointwise_convergence"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.7.6</span><span class="period">.</span><span class="space"> </span><span class="title">Pointwise convergence.</span>
-</h3> <div class="para" id="p-428">Observe that the definition of pointwise convergence makes no rerence to any topology on <span class="process-math">\(X=\prod_{i\in I}X_i\text{.}\)</span> Below we investigate how it relates to convergence in the box and product topologies.</div></article><article class="example example-like" id="example-35"><h3 class="heading">
+</h3> <div class="para" id="p-431">Observe that the definition of pointwise convergence makes no rerence to any topology on <span class="process-math">\(X=\prod_{i\in I}X_i\text{.}\)</span> Below we investigate how it relates to convergence in the box and product topologies.</div></article><article class="example example-like" id="example-35"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.7</span><span class="period">.</span><span class="space"> </span><span class="title">Convergent sequences in <span class="process-math">\(\R^I\)</span>.</span>
 </h3>
-<div class="para" id="p-429">Let <span class="process-math">\(X=\R^I\text{,}\)</span> where <span class="process-math">\(I\)</span> is an infinite set, let <span class="process-math">\(f=(x_i)\in X\text{,}\)</span> and let <span class="process-math">\((f_n)_{n=1}^\infty\)</span> be a sequence of elements of <span class="process-math">\(X\text{.}\)</span> We will compare convergence and pointwise convergence of this sequence with respect to the box and product topologies on <span class="process-math">\(X\text{,}\)</span> where <span class="process-math">\(\R\)</span> is equipped with the standard topology.</div> <ol class="decimal">
-<li id="li-140"><div class="para" id="p-430">Prove: for both the box and product topologies, if <span class="process-math">\(f_n\rightarrow f\)</span> for some <span class="process-math">\(f\in \R^I\text{,}\)</span> then the <span class="process-math">\(f_n\)</span> converge pointwise to <span class="process-math">\(f\text{.}\)</span>
+<div class="para" id="p-432">Let <span class="process-math">\(X=\R^I\text{,}\)</span> where <span class="process-math">\(I\)</span> is an infinite set, let <span class="process-math">\(f=(x_i)\in X\text{,}\)</span> and let <span class="process-math">\((f_n)_{n=1}^\infty\)</span> be a sequence of elements of <span class="process-math">\(X\text{.}\)</span> We will compare convergence and pointwise convergence of this sequence with respect to the box and product topologies on <span class="process-math">\(X\text{,}\)</span> where <span class="process-math">\(\R\)</span> is equipped with the standard topology.</div> <ol class="decimal">
+<li id="li-142"><div class="para" id="p-433">Prove: for both the box and product topologies, if <span class="process-math">\(f_n\rightarrow f\)</span> for some <span class="process-math">\(f\in \R^I\text{,}\)</span> then the <span class="process-math">\(f_n\)</span> converge pointwise to <span class="process-math">\(f\text{.}\)</span>
 </div></li>
-<li id="li-141"><div class="para" id="p-431">Prove: <span class="process-math">\(f_n\)</span> converges to <span class="process-math">\(f\)</span> in the product topology if and only if <span class="process-math">\(f_n\)</span> converges to <span class="process-math">\(f\)</span> pointwise.</div></li>
-<li id="li-142"><div class="para logical" id="p-432">
+<li id="li-143"><div class="para" id="p-434">Prove: <span class="process-math">\(f_n\)</span> converges to <span class="process-math">\(f\)</span> in the product topology if and only if <span class="process-math">\(f_n\)</span> converges to <span class="process-math">\(f\)</span> pointwise.</div></li>
+<li id="li-144"><div class="para logical" id="p-435">
 <div class="para">Let <span class="process-math">\(X=\R^{\omega}\text{.}\)</span> For all <span class="process-math">\(n\in \Z^+\text{,}\)</span> define <span class="process-math">\(f_n\in X\)</span> as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -547,7 +563,7 @@ f_n=(1/n, 1/n,\dots)\text{.}
 </div></li>
 </ol>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-28" id="solution-28"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-28"><div class="solution solution-like"><div class="para" id="p-433"></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-28" id="solution-28"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-28"><div class="solution solution-like"><div class="para" id="p-436"></div></div></div>
 </div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_subspace_finite_products.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="backmatter-1.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
