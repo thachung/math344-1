@@ -1,0 +1,177 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_prods_convergence_metric">
+  <title>Convergence in product spaces</title>
+  <introduction>
+    <p>
+      The relative virtues of the product and box topologies begin to come to light as we look at issues of convergence and metrics in product spaces. In particular, we see in the context of the spaces <m>\R^\omega</m> and <m>\R^\R</m> that different topologies on these product sets give rise to different and valuable notions of function convergence for real-valued functions.
+    </p>
+</introduction>
+<definition xml:id="d_pointwise_convergence">
+  <title>Pointwise convergence</title>
+  <statement>
+    <p>
+      Let <m>\{X_i\}_{i\in I}</m> be a collection of topological spaces, let <m>X=\prod_{i\in I}X_i</m>, and let <m>(f_n)_{n=1}^\infty</m> be a sequence of elements of <m>X</m>: <ie />, using tuple notation, for each <m>n\in \Z_+</m> we have
+      <me>
+        f_n=(x_{n,i})_{i\in I}
+      </me>,
+      where <m>x_{n,i}=f_n(i)\in X_i</m>.
+      The sequence <m>(f_n)_{n=1}^\infty</m> <term>converges pointwise</term> to an element <m>f=(x_i)\in X</m> if for all <m>i\in I</m> we have <m>x_{n,i}\rightarrow x_i</m>: <ie />, <m>f_n(i)\rightarrow f(i)</m>.
+    </p>
+  </statement>
+</definition>
+    <remark xml:id="rm_pointwise_convergence">
+  <title>Pointwise convergence</title>
+  <statement>
+    <p>
+      Observe that the definition of pointwise convergence makes no reference to any topology on <m>X=\prod_{i\in I}X_i</m>. Below we investigate how it relates to convergence in the box and product topologies.
+    </p>
+  </statement>
+</remark>
+<example>
+  <title>Sequences in <m>\R^\omega</m> and <m>\R^\R</m></title>
+  <statement>
+    <p>
+      Our understanding of tuples in product spaces as functions pays real dividends when investigating convergence of sequences in these spaces.
+    </p>
+    <p>
+      For example, if a tuple <m>(x_i)_{i=1}^\infty</m> in <m>\R^\omega</m> is just a function <m>f=\Z_+\rightarrow \R</m>, the graph of which in the real plane is easily visualized: namely, a discrete collection of plotted points <m>(n, f(n))</m> for <m>n\in \{1,2,3,\dots\}</m>.
+    </p>
+    <p>
+      Similarly, a tuple <m>(x_\alpha)_{\alpha\in \R}</m> in <m>\R^\R</m> is just a function <m>f\colon \R\rightarrow\R</m>, which is easily visualized via a graph.
+    </p>
+    <p>
+      In both cases, sequences of tuples are easily visualized as sequences of functions <m>(f_n)_{n=1}^\infty</m> (via their graphs). Furthermore, for the sequence to converge pointwise pointwise at a given index <m>i</m> (<m>n\in \Z_+</m> for <m>\R^\omega</m>, and <m>r\in \R</m> for <m>\R^\R</m>) is simply for the sequence of values <m>(f_n(i))_{n=1}^\infty</m> to converge.
+    </p>
+  </statement>
+</example>
+<theorem xml:id="th_pointwise_convergence">
+  <title>Pointwise convergence and product topology</title>
+  <statement>
+    <p>
+      Let <m>\{(X_i, \mathcal{T}_i)\}_{i\in I}</m> be a collection of topologies, let <m>X=\prod_{i\in I}X_i</m> be their product, and let <m>(f_n)_{n=1}^\infty</m> be a sequence of elements of <m>X</m>.
+    </p>
+    <ol>
+    <li>
+      <p>
+        If <m>f_n\rightarrow f</m> in the box or product topology, then <m>f_n</m> converges to <m>f</m> pointwise.
+      </p>
+    </li>
+    <li>
+      <p>
+        In the product topology we have
+        <me>
+          f_n\to f \iff f_n \text{ converges to } f \text{ pointwise}
+        </me>.
+      </p>
+    </li>
+    </ol>
+  </statement>
+</theorem>
+
+<example>
+  <title>Convergent sequences in <m>\R^omega</m></title>
+  <statement>
+    <p>
+      Let <m>X=\R^\omega</m>, where <m>\R</m> is equipped with the standard topology, and let <m>(f_n){n\in \Z_+}</m> be the sequence defined as
+      <me>
+        f_n=(1/n, 1/n,1/n,\dots)
+      </me>
+      for all <m>n\geq 1</m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Visualize the sequence <m>(f_n)</m> in the real plane.
+        </p>
+      </li>
+      <li>
+        <p>
+          Decide whether the sequence converges pointwise. If so, what does it converge to?
+        </p>
+      </li>
+      <li>
+        <p>
+          Decide whether the sequence converges in the product topology, and whether it converges in the box topology.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+<definition xml:id="d_standard_bounded_metric">
+  <title>Standard bounded metric</title>
+  <statement>
+    <p>
+      Let <m>(X,d)</m> be a metric space. The function <m>\overline{d}(x,y)=\min\{d(x,y), 1\}</m> defines a metrix on <m>X</m>, called the <term>standard bounded metric</term> corresponding to <m>d</m>. The two metrics <m>d, \overline{d}</m> induce the same topology on <m>X</m>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      See Munkres for a proof that <m>\overline{d}</m> is a metric, and that <m>d</m> and <m>d'</m> induce the same topology.
+    </p>
+  </proof>
+</definition>
+<project xml:id="top_eg_uniform_topology">
+  <title>Uniform topology</title>
+    <p>
+      Let <m>X=\R^I</m> for some set <m>I</m>, where <m>\R</m> is equipped with the standard topology. Let <m>\overline{d}(x,y)=\min\{\abs{x-y},1\}</m> for all <m>x,y\in \R</m>. The function
+      <md>
+        <mrow> \rho\colon X\times X \amp \rightarrow \R</mrow>
+        <mrow> \left((x_i)_{i\in I}, (y_i)_{i\in I}\right) \amp\mapsto  \sup\{\overline{d}(x_i,y_i)\colon i\in I\}</mrow>
+      </md>
+       is a metric called the <term>uniform metric</term> on <m>X</m>. The <term>uniform topology</term> is the topology induced by <m>\rho</m>.
+    </p>
+  <proof>
+    <p>
+      See Munkres for a proof that <m>\rho</m> is a metric.
+    </p>
+  </proof>
+</project>
+<theorem xml:id="th_product_uniform_box">
+  <statement>
+    <p>
+      Let <m>X=\R^I</m> for some set <m>I</m>, where <m>\R</m> is equipped with the standard topology, and let <m>\mathcal{T}_{\operatorname{prod}}, \mathcal{T}_{\operatorname{uni}}, \mathcal{T}_{\operatorname{box}}</m> be the product, uniform, and box topologies on <m>\R</m>. We have
+      <me>
+        \mathcal{T}_{\operatorname{prod}}\subseteq \mathcal{T}_{\operatorname{uni}}\subseteq  \mathcal{T}_{\operatorname{box}}
+      </me>.
+      When <m>I</m> is infinite these inclusions are all strict.
+    </p>
+  </statement>
+</theorem>
+
+<theorem xml:id="th_prod_metric">
+  <title>Product topology on <m>\R^\omega</m></title>
+  <statement>
+    <p>
+      Let <m>X=\R^\omega</m>, where <m>\R</m> is equipped with the standard topology, and let <m>\overline{d}(x,y)=\min\{\abs{x-y},1\}</m> for all <m>x,y\in \R</m>. The function
+      <md>
+        <mrow> D\colon X\times X \amp \rightarrow \R</mrow>
+        <mrow> \left((x_i)_{i=1}^\infty, (y_i)_{i=1}^\infty\right) \amp\mapsto  \sup\{\frac{\overline{d}(x_i,y_i)}{i}\colon i\in \Z_+\}</mrow>
+      </md>
+      is a metric on <m>\R^\omega</m> that induces the product topology.
+    </p>
+  </statement>
+</theorem>
+    <remark xml:id="rm_prod_metrizable">
+  <title>When is the product topology on <m>\R^I</m> metrizable?</title>
+  <statement>
+    <p>
+      <xref ref="th_prod_metric"/> shows that the product topology on <m>\R^\omega</m> is metrizable. It turns out that when <m>I</m> is uncountable, this is no longer true. (As we will see later.) In particular, the product topology on <m>\R^\R</m> is not a metric topology. The product topology on <m>\R^\R</m> is valuable to us, since it is the natural setting to study pointwise convergence of functions (<xref ref="th_pointwise_convergence" text='global'/>). Consider this an argument for studying topologies beyond metric topologies.
+    </p>
+  </statement>
+</remark>
+    <remark xml:id="rm_nonequivalent_norms">
+      <title>Nonequivalent norms</title>
+  <statement>
+    <p>
+      Both the uniform metric <m>\rho</m> from <xref ref="top_eg_uniform_topology"/> and the metrix <m>D</m> from <xref ref="th_prod_metric"/> are induced by norms. Since they induce different topologies on <m>\R^\omega</m>, they furnish us with an example of two nonequivalent norms on an infinite-dimensional real vector space.
+    </p>
+  </statement>
+</remark>
+
+
+
+</section>

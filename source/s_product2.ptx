@@ -191,69 +191,14 @@ Following Munkres, given a set <m>A</m> and the special index set <m>I=\Z_+=\{1,
         </p>
         <p>
           <m>(\impliedby)</m>. If <m>x=(x_i)_{i\in I}\notin \overline{\prod_{i\in I}A_i}</m> there is an open basis element <m>B=\prod_{i\in I}U_i</m> in the topology (box or product) containing <m>x</m> that is disjoint with <m>\prod_{i\in I}A_i</m>. It follows that we must have <m>U_{i_0}\cap A_{i_0}=\emptyset</m> for some <m>i_0\in I</m> and open <m>U_{i_0}\subseteq X_{i_0}</m>, and thus that <m>x_{i_0}\notin \overline{A_{i_0}}</m>.
-          We conclude that <m>x\notin \prod_{i\in I}\overline{A_i}</m>. 
+          We conclude that <m>x\notin \prod_{i\in I}\overline{A_i}</m>.
         </p>
       </li>
     </ol>
   </proof>
 
 </theorem>
-<definition xml:id="d_pointwise_convergence">
-  <title>Pointwise convergence</title>
-  <statement>
-    <p>
-      Let <m>\{X_i\}_{i\in I}</m> be a collection of topological spaces, let <m>X=\prod_{i\in I}X_i</m>, and let <m>(f_n)_{n=1}^\infty</m> be a sequence of elements of <m>X</m>: <ie />, using tuple notation, for each <m>n\in \Z_+</m> we have
-      <me>
-        f_n=(x_{n,i})_{i\in I}
-      </me>,
-      where <m>x_{n,i}=f_n(i)\in X_i</m>.
-      The sequence <m>(f_n)_{n=1}^\infty</m> <term>converges pointwise</term> to an element <m>f=(x_i)\in X</m> if for all <m>i\in I</m> we have <m>x_{n,i}\rightarrow x_i</m>: <ie />, <m>f_n(i)\rightarrow f(i)</m>.
-    </p>
-  </statement>
-</definition>
-    <remark xml:id="rm_pointwise_convergence">
-  <title>Pointwise convergence</title>
-  <statement>
-    <p>
-      Observe that the definition of pointwise convergence makes no rerence to any topology on <m>X=\prod_{i\in I}X_i</m>. Below we investigate how it relates to convergence in the box and product topologies.
-    </p>
-  </statement>
-</remark>
 
-<example>
-  <title>Convergent sequences in <m>\R^I</m></title>
-  <statement>
-    <p>
-      Let <m>X=\R^I</m>, where <m>I</m> is an infinite set, let <m>f=(x_i)\in X</m>, and let <m>(f_n)_{n=1}^\infty</m> be a sequence of elements of <m>X</m>. We will compare convergence and pointwise convergence of this sequence with respect to the box and product topologies on <m>X</m>, where <m>\R</m> is equipped with the standard topology.
-    </p>
-    <ol>
-      <li>
-        <p>
-          Prove: for both the box and product topologies, if <m>f_n\rightarrow f</m> for some <m>f\in \R^I</m>, then the <m>f_n</m> converge pointwise to <m>f</m>.
-        </p>
-      </li>
-      <li>
-        <p>
-          Prove: <m>f_n</m> converges to <m>f</m> in the product topology if and only if <m>f_n</m> converges to <m>f</m> pointwise.
-        </p>
-      </li>
-      <li>
-        <p>
-          Let <m>X=\R^{\omega}</m>. For all <m>n\in \Z^+</m>, define <m>f_n\in X</m> as
-          <me>
-            f_n=(1/n, 1/n,\dots)
-          </me>.
-          Prove: <m>f_n</m> converges to <m>(0,0,\dots)\in X</m> pointwise, but does not converge to any element of <m>X</m> with respect to the box topology.
-        </p>
-      </li>
-    </ol>
-  </statement>
-  <solution>
-    <p>
-
-    </p>
-  </solution>
-</example>
 
 
 </section>
