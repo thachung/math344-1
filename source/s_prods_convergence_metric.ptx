@@ -68,10 +68,10 @@
 </theorem>
 
 <example>
-  <title>Convergent sequences in <m>\R^omega</m></title>
+  <title>Convergent sequences in <m>\R^\omega</m></title>
   <statement>
     <p>
-      Let <m>X=\R^\omega</m>, where <m>\R</m> is equipped with the standard topology, and let <m>(f_n){n\in \Z_+}</m> be the sequence defined as
+      Let <m>X=\R^\omega</m>, where <m>\R</m> is equipped with the standard topology, and let <m>(f_n)_{n\in \Z_+}</m> be the sequence defined as
       <me>
         f_n=(1/n, 1/n,1/n,\dots)
       </me>
@@ -97,7 +97,11 @@
   </statement>
   <solution>
     <p>
-
+      It is relatively easy to see that the sequence <m>f_n</m> converges pointwise to <m>f=(0,0,\dots)</m>. Since <m>\R</m> with the standard topology is Hausdorff, it follows that this pointwise limit is unique. By <xref ref="th_pointwise_convergence"/>, <m>(f_n)</m> also converges in the product topology to <m>f</m>. We claim <m>(f_n)</m> does not converge at all in the box topology. First observe, that the only candidate for the limit of this convergence is <m>f=(0,0,\dots,)</m>, using (1) of <xref ref="th_pointwise_convergence"/>. Now consider the open set
+      <me>
+        U=(-1,1)\times (-1/2, 1/2)\times (-1/3,1/3)\times\cdots=\prod_{n=1}^\infty(-1/n, 1/n)
+      </me>.
+      We have <m>f=(0,0,\dots, )\in U</m>, and yet not only is it not the case that the sequence <m>(f_n)</m> eventually lies in <m>U</m>, in fact we have <m>f_n\notin U</m> for all <m>n\in \Z_+</m>.
     </p>
   </solution>
 </example>
@@ -119,14 +123,14 @@
     <p>
       Let <m>X=\R^I</m> for some set <m>I</m>, where <m>\R</m> is equipped with the standard topology. Let <m>\overline{d}(x,y)=\min\{\abs{x-y},1\}</m> for all <m>x,y\in \R</m>. The function
       <md>
-        <mrow> \rho\colon X\times X \amp \rightarrow \R</mrow>
+        <mrow> d_{\operatorname{uni}}\colon X\times X \amp \rightarrow \R</mrow>
         <mrow> \left((x_i)_{i\in I}, (y_i)_{i\in I}\right) \amp\mapsto  \sup\{\overline{d}(x_i,y_i)\colon i\in I\}</mrow>
       </md>
-       is a metric called the <term>uniform metric</term> on <m>X</m>. The <term>uniform topology</term> is the topology induced by <m>\rho</m>.
+       is a metric called the <term>uniform metric</term> on <m>X</m>. The <term>uniform topology</term> is the topology induced by <m>d_{\operatorname{uni}}</m>.
     </p>
   <proof>
     <p>
-      See Munkres for a proof that <m>\rho</m> is a metric.
+      See Munkres for a proof that <m>d_{\operatorname{uni}}</m> is a metric.
     </p>
   </proof>
 </project>
@@ -140,6 +144,30 @@
       When <m>I</m> is infinite these inclusions are all strict.
     </p>
   </statement>
+  <proof>
+    <p>
+      Take any open set <m>U</m> in the product topology and any <m>x=(x_i)_{i\in I}</m> lying in <m>U</m>. There is an open neighborhood of <m>x</m> lying in <m>U</m> of the form  <m>B=\prod_{j=1}^n (x_{i_j}-\epsilon_{i_j},x_{i_j}+\epsilon_{i_j})\times \prod_{i\ne i_j}\R</m>, where we may further assume <m>\epsilon_{i_j}&lt; 1</m> for all <m>1\leq j\leq n</m>. Letting  <m>\epsilon=\min\{\epsilon_{i_j}\}</m>, I claim
+      we have <m>B_\epsilon(x)\subseteq B</m>. Indeed, for any <m>y\in B_{\epsilon}(x)</m>, we have
+      <md>
+        <mrow>\sup\{\overline{d}(y_i,x_i)\} &lt; \epsilon \amp \implies \min\{\abs{y_{i_j}-x_{i_j}},1\}&lt;  \epsilon \text{ for all } 1\leq j\leq n </mrow>
+        <mrow>  \amp \implies \abs{y_{i_j}-x_{i_j}}&lt;  \epsilon \text{ for all } 1\leq j\leq n \amp (\epsilon &lt; 1)</mrow>
+        <mrow> \amp\implies \abs{y_{i_j}-x_{i_j}}&lt; \epsilon_{i_j} \text{ for all } 1\leq j\leq n </mrow>
+        <mrow>  \amp \implies y\in B</mrow>
+      </md>
+       This proves that <m>\mathcal{T}_{\operatorname{prod}}\subseteq \mathcal{T}_{\operatorname{uni}}</m>
+    </p>
+    <p>
+      For the next inclusion, take any open set <m>U</m> in the uniform topology. For any <m>x\in U</m> we can find <m>\epsilon &gt; 0</m> such that <m>B_{\epsilon}(x)\subseteq U</m>. Let <m>V=\prod_{i\in I}(x_i-\epsilon/2, x_i+\epsilon/2)</m>, which is open in the box topology. Given any <m>y=(y_i)\in V</m>, we have <m>\overline{d}(y_i, x_i)\leq \abs{y_i-x_i}&lt; \epsilon/2</m>. It follows that in the uniform metric we have
+      <me>
+        d_{\operatorname{uni}}(y,x)=\sup\{\overline{d}(y_i, x_i)\}\leq \epsilon/2&lt; \epsilon
+      </me>,
+      showing that <m>V\subseteq B_\epsilon(x)\subseteq U</m>. This proves <m>\mathcal{T}_{\operatorname{uni}}\subseteq  \mathcal{T}_{\operatorname{box}}</m>.
+    </p>
+    <p>
+      The fact that both inclusions are strict when <m>I</m> is infinite is left as a homework exercise.
+    </p>
+  </proof>
+
 </theorem>
 
 <theorem xml:id="th_prod_metric">
@@ -149,11 +177,17 @@
       Let <m>X=\R^\omega</m>, where <m>\R</m> is equipped with the standard topology, and let <m>\overline{d}(x,y)=\min\{\abs{x-y},1\}</m> for all <m>x,y\in \R</m>. The function
       <md>
         <mrow> D\colon X\times X \amp \rightarrow \R</mrow>
-        <mrow> \left((x_i)_{i=1}^\infty, (y_i)_{i=1}^\infty\right) \amp\mapsto  \sup\{\frac{\overline{d}(x_i,y_i)}{i}\colon i\in \Z_+\}</mrow>
+        <mrow> \left((x_i)_{i=1}^\infty, (y_i)_{i=1}^\infty\right) \amp\mapsto  \sup\left\{\frac{\overline{d}(x_i,y_i)}{i}\colon i\in \Z_+\right\}</mrow>
       </md>
       is a metric on <m>\R^\omega</m> that induces the product topology.
     </p>
   </statement>
+  <proof>
+    <p>
+      See Munkres. The proof that the product topology is equal to the topology induced by this metric is quite illustrative, and will be a useful model for some of your homework exercises.
+    </p>
+  </proof>
+
 </theorem>
     <remark xml:id="rm_prod_metrizable">
   <title>When is the product topology on <m>\R^I</m> metrizable?</title>
