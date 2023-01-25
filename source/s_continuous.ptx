@@ -1,0 +1,230 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_continuous">
+  <title>Continuous functions</title>
+  <introduction>
+    <p>
+      In calculus you learn that a function <m>f\colon \R\rightarrow \R</m> is defined to be continuous if for all <m>\epsilon &gt; 0</m> there is a <m>\delta &gt; 0</m> such that for all <m>x,x'\in \R</m> we have the implication
+      <me>
+        \abs{x-x'}&lt; \delta \implies \abs{f(x)-f(x')}&lt; \epsilon
+      </me>.
+      Now that we have some experience generalizing analysis concepts to topological ones, let's see how best this translates to arbitrary topologies.
+    </p>
+</introduction>
+<definition xml:id="d_continuous_function">
+  <title>Continuous function</title>
+  <statement>
+    <p>
+      Let <m>(X,\mathcal{T}), (Y,\mathcal{T}')</m> be topological spaces. A function <m>f\colon X\rightarrow Y</m> is <term>continuous</term> if for all open sets <m>U\subseteq Y</m>, the set <m>f^{-1}(U)</m> is open in <m>X</m>. Using logical shorthand:
+      <men xml:id="eq_continuous">
+      U\in \mathcal{T}'\implies f^{-1}(U)\in \mathcal{T}
+    </men>.
+    </p>
+  </statement>
+</definition>
+    <remark xml:id="rm_preimage">
+      <title>Preimage properties</title>
+  <statement>
+    <p>
+      Continuity is defined in terms of <xref ref="d_preimage_of_set" text="custom">preimages of sets</xref> under a function <m>f</m>. Thankfully, the preimage operation behaves very well with respect to our various set operations. In particular, we have the following identities, which you may make use of without further ado:
+      <mdn>
+        <mrow>f^{-1}\left(\bigcup_{i\in I}A_i\right) \amp = \bigcup_{i\in I}f^{-1}(A_i)</mrow>
+        <mrow>f^{-1}\left(\bigcap_{i\in I}A_i\right) \amp = \bigcap_{i\in I}f^{-1}(A_i)</mrow>
+        <mrow> f^{-1}(A^c) \amp =(f^{-1}(A))^c</mrow>
+      </mdn>
+    </p>
+  </statement>
+</remark>
+<example>
+  <title>Continuous functions: basic examples</title>
+  <statement>
+    <ol>
+      <li>
+        <title>Identity function</title>
+        <p>
+          Given a topological space <m>(X,\mathcal{T})</m>, the identity function
+          <md>
+            <mrow>\id_X\colon X \amp \rightarrow X</mrow>
+            <mrow> x\amp\mapsto x </mrow>
+          </md> is continuous. Here we take <m>\mathcal{T}</m> as the topology of both the domain and codomain.
+        </p>
+      </li>
+      <li>
+        <title>Constant functions</title>
+        <p>
+          Let <m>X, Y</m> be topological spaces. For any fixed <m>y_0\in Y</m> the constant function <m>f</m>, defined as <m>f(x)=y_0</m> for all <m>x\in X</m> is continuous.
+        </p>
+      </li>
+      <li>
+        <title>Subspace inclusions</title>
+        <p>
+          Let <m>Y</m> be a subspace of <m>X</m>. The inclusion map <m>i\colon Y\hookrightarrow X</m> is continuous with respect to the subspace topology on <m>Y</m>.
+        </p>
+      </li>
+      <li>
+        <title>Maps from discrete spaces</title>
+        <p>
+          If <m>X</m> is equipped with the discrete topology, then any function <m>f\colon X\rightarrow Y</m> to a topological space <m>Y</m> is continuous.
+        </p>
+      </li>
+      <li>
+        <title>Maps to trivial spaces</title>
+        <p>
+          If <m>Y</m> is equipped with the trivial topology, then any map <m>f\colon X\rightarrow Y</m> from a topological space to <m>Y</m> is continous.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+<example>
+  <title>Non-continuous inclusion</title>
+  <statement>
+    <p>
+      Show that the inclusion <m>i\colon \R\hookrightarrow \R_l</m> is not continuous. Here the topology of the domain is the standard one, and the topology on the codomain is the lower limit topology.
+    </p>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+<example>
+  <title>Products and projections</title>
+  <statement>
+    <p>
+      Let <m>\{X_i, \mathcal{T}_i\}_{i\in I}</m> be a collection of topological spaces, and let <m>X=\prod_{i\in I}X_i</m>. For each <m>j\in I</m> define the projection function <m>
+      pi_j\colon X\rightarrow X_j</m> as <m>\pi_j((x_i)_{i\in I})=x_i</m>. In other words, the <m>j</m>-th projection map returns the <m>j</m>-th coordinate of an element of <m>X</m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Prove: if <m>X</m> is given the product topology, then <m>\pi_j</m> is continuous for all <m>j\in J</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove: given a topology <m>\mathcal{T}</m> on <m>X</m>, we have <m>\pi_j</m> continuous for all <m>j\in J</m> if and only if <m>\mathcal{T}</m> contains the product topology.
+
+          Thus, in particular, the product topology is the coarsest topology on <m>X</m> making each projection map continuous.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+<theorem xml:id="th_continuity_basis">
+  <statement>
+      <p>
+        Let <m>f\colon X\rightarrow Y</m> be a function between the topological spaces <m>X, Y</m>, and let <m>\mathcal{B}</m> be a basis for <m>Y</m>. The following statements are equivalent.
+      </p>
+  <ol>
+    <li>
+      <p>
+        <m>f</m> is continuous.
+      </p>
+    </li>
+    <li>
+      <p>
+        For all <m>B\in \mathcal{B}</m>, the preimage <m>f^{-1}(B)</m> is open in <m>X</m>.
+      </p>
+    </li>
+  </ol>
+  </statement>
+</theorem>
+
+<theorem xml:id="th_continuous_equivalence">
+  <title>Continuity equivalences</title>
+  <statement>
+    <p>
+      Let <m>f\colon X\rightarrow Y</m> be a function between the topological spaces <m>X, Y</m>. The following statements are equivalent.
+    </p>
+    <ol>
+      <li>
+        <p>
+          <m>f</m> is continuous.
+        </p>
+      </li>
+      <li>
+        <p>
+          For all <m>A\subseteq X</m>, we have <m>f(\overline{A})\subseteq \overline{f(A)}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For all closed sets <m>C\subseteq Y</m>, the preimage <m>f^{-1}(C)</m> is closed in <m>X</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For all <m>x\in X</m> and open neighborhood <m>V\ni x</m>, there is an open neighborhood <m>U\ni x</m> such that <m>f(U)\subseteq V</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</theorem>
+<definition xml:id="d_continuity_at_x">
+  <statement>
+    <p>
+      Let <m>f\colon X\rightarrow Y</m> be a map between topological spaces. We say that <m>f</m> is <term>continuous at x</term>, for <m>x\in X</m>, if for all open neighborhoods <m>V\ni y</m>, there is an open neighborhood <m>U\ni x</m> such that <m>f(U)\subseteq V</m>.
+    </p>
+  </statement>
+</definition>
+
+<theorem xml:id="th_building_continuous_functions">
+  <title>Building continuous functions</title>
+  <statement>
+    <ol>
+      <li>
+        <title>Composition</title>
+        <p>
+          If <m>f\colon X\rightarrow Y</m> and <m>g\colon Y\rightarrow Z</m> are continuous, then the composition <m>g\circ f\colon X\rightarrow Z</m> is continuous.
+        </p>
+      </li>
+      <li>
+        <title>Restriction</title>
+        <p>
+          If <m>f\colon X\rightarrow Y</m> is continuous, and <m>Z\subseteq X</m> is a subspace, then the restriction <m>f\vert_Z\colon Z\rightarrow Y</m> is continuous.
+        </p>
+      </li>
+      <li>
+        <title>Expansion</title>
+        <p>
+          If <m>f\colon X\rightarrow Y</m> is continuous and <m>Y</m> is a subspace of <m>Z</m>, then the function <m>f\colon X\rightarrow Z</m> obtained by composing <m>f</m> with the inclusion <m>Y\hookrightarrow Z</m> is continuous.
+        </p>
+      </li>
+      <li>
+        <title>Local on source</title>
+        <p>
+          If <m>f\colon X \rightarrow Y</m> is a function between topological spaces and there is a collection of open sets <m>\{U_i\}_{i\in I}</m> such that <m>X=\bigcup_{i\in I}U_i</m> and the restrictions <m>f_i\colon U_i\rightarrow Y</m> are continuous, then <m>f</m> is continuous.
+        </p>
+      </li>
+      <li>
+        <title>Pasting</title>
+        <p>
+          Let <m>X, Y</m> be topological spaces, and suppose <m>X=C\cup D</m>, where <m>C, D</m> are closed sets. Given continuous functions <m>f\colon C\rightarrow Y</m> and <m>g\colon D\rightarrow Y</m> that satisfy <m>f(x)=g(x)</m> for all <m>x\in C\cup D</m>, the function
+          <m>h\colon X\rightarrow Y</m> defined as
+          <me>
+            h(x)=\begin{cases}
+              f(x)\amp \text{if } x\in C\\
+              g(x)\amp \text{if } x\in D
+          \end{cases}
+          </me>
+            is continuous.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</theorem>
+
+
+
+
+</section>

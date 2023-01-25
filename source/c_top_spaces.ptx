@@ -8,4 +8,6 @@
   <xi:include  href="s_subspace_finite_products.ptx"/>
   <xi:include  href="s_product2.ptx"/>
   <xi:include  href="s_prods_convergence_metric.ptx"/>
+  <xi:include  href="s_continuous.ptx"/>
+  <xi:include  href="s_homeomorphisms.ptx"/>
 </chapter>

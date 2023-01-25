@@ -482,6 +482,23 @@
 
       </statement>
     </definition>
+    <definition xml:id="d_preimage_of_set">
+      <title>Preimage of set</title>
+      <idx><h>preimage</h><h>of a set</h></idx>
+      <notation>
+        <usage><m>f^{-1}(A)</m></usage>
+        <description>preimage of <m>A</m> under <m>f</m></description>
+      </notation>
+      <statement>
+        <p>
+          Given a function <m>f\colon X\rightarrow Y</m>, the <term>preimage</term> of a subset <m>A\subseteq Y</m> is the subset <m>f^{-1}(A)\subseteq X</m> defined as
+          <me>
+            f^{-1}(A)=\{x\in X\colon f(x)\in A\}
+          </me>.
+          In plain English: the preimage of <m>A</m> under <m>f</m> is the set of all <m>x\in X</m> whose image under <m>f</m> lies in <m>A</m>. 
+        </p>
+      </statement>
+    </definition>
     <definition xml:id="d_injective_surjective_bijective">
       <title>Injective, surjective, bijective</title>
       <idx><h>invertible</h><h>function</h></idx>

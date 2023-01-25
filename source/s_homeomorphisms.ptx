@@ -1,0 +1,273 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_homeomorphisms">
+  <title>Homeomorphisms</title>
+  <introduction>
+    <p>
+      Consider the two spaces <m>X=\{1,2\}</m> and <m>Y=\{3,4\}</m>, both equipped with the discrete topology. As sets they are clearly not equal; and yet considered as topological spaces they are essentially the same. Indeed, we call both spaces the discrete topological space on a set of two elements. The notion of a <em>homeomorphism</em> gives us a rigorous way of determining when two spaces are <q>essentially the same thing, topologically speaking</q>.
+    </p>
+</introduction>
+<definition xml:id="d_homeomorphism">
+  <title>Homeomorphism</title>
+
+  
+  <statement>
+    <p>
+      Let <m>X</m> and <m>Y</m> be topological spaces. A function <m>f\colon X\rightarrow Y</m> is a <term>homeomorphism</term> if the following conditions are satisfied:
+      <ol>
+        <li>
+          <p>
+            <m>f</m> is continuous;
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f</m> is invertible (equivalently, <m>f</m> is bijective);
+          </p>
+        </li>
+        <li>
+          <p>
+            the inverse function <m>f^{-1}\colon Y\rightarrow X</m> is continuous.
+          </p>
+        </li>
+      </ol>
+      Two spaces are <term>homeomorphic</term> if there is a homeomorphism between them.
+    </p>
+  </statement>
+</definition>
+    <remark xml:id="rm_homeomorphism">
+  <title>Homeomorphism: inverse must be continuous</title>
+  <statement>
+    <p>
+      You may have met analogs of the homeomorphism in other areas of mathematics: <eg />, in linear algebra or group theory. In category theory it is what is called an <em>isomorphism</em>. The basic idea is that once you decide what the <q>structure-preserving</q> maps are between objects (continuous functions for topological spaces, linear transformations for vector spaces, homomorphisms for groups), an isomorphism is essentially just an <em>invertible</em> structure-preserving map: a vector space isomorphism is an invertible linear transformation; a group isomorphism is an invertible group homomorphism. The only subtlety is that you want the inverse of this invertible function to also be structure preserving! For linear transformations and group homomorphisms this is automatic. Not so for continuous functions! The inverse of an invertible continuous function need not be continuous, as the example below illustrates.
+    </p>
+  </statement>
+</remark>
+<example xml:id="eg_homeomorphism_not_">
+  <title>Homeomorphism: inverse must be continuous</title>
+  <statement>
+    <p>
+      Let <m>\R_{\operatorname{std}}</m> and <m>\R_{\operatorname{disc}}</m> be the spaces obtained by equipping <m>\R</m> with the standard and discrete topologies, respectively. The identity function
+      <md>
+      <mrow>  \id_\R\colon \R_{\operatorname{disc}}\amp\rightarrow \R_{\operatorname{std}}</mrow>
+      <mrow>  x\amp\mapsto x </mrow>
+      </md>
+      is clearly continuous and invertible. In fact, we have <m>\id_\R^{-1}=\id_\R</m>. However, <m>\id_\R\colon \R_{\operatorname{std}}\rightarrow \R_{\operatorname{disc}}</m> is not continuous. Indeed, <m>U=[0,1)</m> is open in <m>\R_{\operatorname{disc}}</m>, but <m>\id_\R^{-1}(U)=[0,1)</m> is not open in <m>\R_{\operatorname{std}}</m>. Thus <m>\id_{\R_{\operatorname{disc}}}\colon \R_{\operatorname{std}}\rightarrow \R</m>
+      is an invertible continuous function that is not a homeomorphism.
+    </p>
+  </statement>
+</example>
+    <remark xml:id="rm_homeomorphic_equivalence_relation">
+  <title>Homeomorphic equivalence relation </title>
+  <statement>
+    <p>
+      For topological spaces <m>X, Y</m>, define the relation <m>X\sim Y</m> to mean <m>X</m> is homeomorphic to <m>Y</m>. This relation is an equivalence relation. That is, for all topological spaces <m>X, Y, Z</m> we have
+      <md>
+        <mrow> X\amp\sim X \amp \text{(reflexive)}</mrow>
+        <mrow> X\sim Y\amp\iff Y\sim X \amp \text{(symmetric)}</mrow>
+        <mrow> X\sim Y \text{ and } Y\sim Z \amp \implies X\sim Z \amp \text{(transitive)}</mrow>
+      </md>.
+      These three properties follow from the simple facts that (1) the identity map is a homeomorphism, (2) the inverse of a homeomorphism is a homeomomoprhism, (3) the composition of homeomorphisms is a homeomorphism.
+    </p>
+  </statement>
+</remark>
+
+
+
+<example xml:id="eg_R_interval">
+  <title>All open intervals of <m>\R</m> are homeomorphic</title>
+  <statement>
+    <p>
+      In the following, all intervals are treated as metric spaces with the Euclidean metric on <m>\R</m>. Make use of any function whose continuity properties are well known.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Prove that any finite open interval <m>(a,b)</m> is homeomorphic to <m>(0,1)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove that <m>(-\pi/2, \pi/2)</m> and <m>\R</m> are homeomorphic.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove that <m>(a,\infty)</m> and <m>(-\infty, b)</m> are both homeomorphic to <m>\R</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Explain why we may now conclude that all open intervals of <m>\R</m> are homeomorphic.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+<theorem xml:id="th_product_universal_prop">
+  <title>Universal property of product space</title>
+  <statement>
+    <p>
+      Let <m>\{X_i, \mathcal{T}_i\}_{i\in I}</m> be a collection of topological spaces, and let <m>X=\prod_{i\in I}X_i</m> equipped with the product topology. Let <m>\pi_i\colon X\rightarrow X_i</m> be the <m>i</m>-th projection map.
+    </p>
+    <ol>
+      <li>
+        <title>Product mapping property</title>
+        <p>
+          Given any topological space <m>Y</m> and any collection <m>\{f_i\}_{i\in I}</m> of continuous maps <m>f_i\colon Y\rightarrow X_i</m>, there is a <em>unique</em> continuous map <m>f\colon Y\rightarrow X</m> satisfying <m>f_i=\pi_i\circ f</m> for all <m>i\in I</m>.
+        </p>
+        <p>
+          In other words, specifying a continuous map into the product space <m>X</m> is equivalent to specifying continuous maps into <m>X_i</m> for all <m>i\in I</m>
+        </p>
+      </li>
+      <li>
+        <title>Unique up to homeomorphism</title>
+        <p>
+          If <m>X'</m> is any other topological space equipped with continuous maps <m>\pi_i'\colon X'\rightarrow X_i</m>, and if the product mapping property (1) is satisfied with <m>X'</m> replacing <m>X</m> and <m>\pi'</m> replacing <m>\pi_i</m>, then <m>X'</m> is homeomorphic to <m>X</m>.
+        </p>
+        <p>
+          In other words, up to homeomorphism, the mapping property uniquely characterizes the product space.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</theorem>
+
+<definition xml:id="d_open_closed_map">
+  <title>Open and closed maps</title>
+  <statement>
+    <p>
+    Let <m>f\colon X\rightarrow Y</m> be a function between topological spaces.
+    <ol>
+      <li>
+        <p>
+          <m>f</m> is <term>open</term> if for all open <m>U\subseteq X</m> we have <m>f(U)</m> open in <m>Y</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f</m> is <term>closed</term> if for all closed <m>C\subseteq X</m> we have <m>f(C)</m> closed in <m>Y</m>.
+        </p>
+      </li>
+    </ol>
+    </p>
+  </statement>
+</definition>
+
+<theorem xml:id="th_homeo_open_closed">
+  <title>Homeomorphism equivalences</title>
+  <statement>
+    <p>
+      Let <m>f\colon X\rightarrow Y</m> be a function between topological spaces. The following statements are equivalent.
+      <ol>
+        <li>
+          <p>
+            <m>f</m> is a homeomorphism.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f</m> is continuous, invertible, and open.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f</m> is continuous, invertible, and closed.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</theorem>
+    <remark xml:id="rm_open_closed">
+      <title>Open and closed maps</title>
+  <statement>
+    <p>
+      Don't be mislead by <xref ref="th_homeo_open_closed"/> into thinking that being an open continuous map is equivalent to being a closed continuous map; we need the additional assumption of invertibility to guarantee equivalence. As an example, consider any constant function from <m>\R</m> to itself: this is clearly continuous and closed, but not open.
+    </p>
+  </statement>
+</remark>
+
+<definition xml:id="d_topological_properties">
+  <title>Topological properties</title>
+  <statement>
+    <p>
+      Let <m>\mathcal{P}</m> be a property that is either satisfied or not satisfied by any given topological space. We say <m>\mathcal{P}</m> is a <term>topological property</term> if it is invariant under homeomorphisms: <ie />, if <m>X</m> and <m>Y</m> are homeomorphic, then <m>X</m> satisfies <m>\mathcal{P}</m> if and only if <m>Y</m> satisfies <m>\mathcal{P}</m>.
+    </p>
+  </statement>
+</definition>
+<example xml:id="eg_topological_props">
+  <title>Topological properties</title>
+  <statement>
+    <p>
+      It is easy to see that the properties of being discrete, <m>T_1</m>, Hausdorff, or a metric space are topological.
+    </p>
+  </statement>
+
+</example>
+
+<example>
+  <title>Continuous bijection onto circle</title>
+  <statement>
+    <p>
+      Let <m>X=[0,1)\subseteq \R</m> and  <m>S^1=\{(x,y)\in \R^2\colon x^2+y^2=1\}\subseteq \R^2</m>, and equip each set with the subspace topology inherited from <m>\R</m> (resp. <m>\R^2</m>) with its Euclidean topology.
+    </p>
+    <p>
+      Prove: the function <m>f\colon X\rightarrow S^1</m> defined as <m>f(t)=(\cos 2\pi t, \sin 2\pi t)</m> is continuous and invertible, but not a homeomorphism.
+    </p>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+<p>
+  In light of <xref ref="th_product_universal_prop"/>, it is natural to ask whether given topological spaces <m>(X_i, \mathcal{T}_i)</m> there is a space <m>X</m> with continuous maps <m>X_i\rightarrow X</m> that satisfies a dual mapping property to that of the product. Indeed, there is, and we call it the <em>coproduct</em> of the <m>X_i</m>.
+</p>
+<project xml:id="top_eg_coproduct">
+  <title>Coproduct space</title>
+  <p>
+    Let <m>\{X_i, \mathcal{T}_i\}_{i\in I}</m> be a collection of topological spaces, let <m>X=\coprod_{i\in I}X_i</m> be the <em>disjoint union</em> of the <m>X_i</m>, and let <m>\iota_i\colon X_i\hookrightarrow X</m> be the the inclusion maps identifying each <m>X_i</m> with a subset of <m>X</m>. The <term>coproduct topology</term> on <m>X</m> is the topology <m>\mathcal{T}</m> generated by the basis <m>\mathcal{B}</m> defined as follows:
+  <me>
+    \mathcal{B}=\{B\subseteq X\colon B=\iota_i(U_i) \text{ for some } U_i\in \mathcal{T}_i\}
+  </me>.
+  We call <m>X</m> together with the topology <m>\mathcal{T}</m> the <term>coproduct topology</term> of the <m>X_i</m>. With respect to this topology, each injection <m>\iota_i\colon X_i\hookrightarrow X</m> is continuous.
+</p>
+</project>
+
+<theorem xml:id="th_coproduct_universal_prop">
+  <title>Universal property of coproduct space</title>
+  <statement>
+    <p>
+      Let <m>\{X_i, \mathcal{T}_i\}_{i\in I}</m> be a collection of topological spaces, and let <m>X=\coprod_{i\in I}X_i</m> be their coproduct. For each <m>i\in I</m> let <m>\iota_i\colon X_i\hookrightarrow X</m> be the inclusion map identifying <m>X_i</m> with a subset of <m>X</m>.
+    </p>
+    <ol>
+      <li>
+        <title>Coproduct mapping property</title>
+        <p>
+          Given any topological space <m>Y</m> and any collection <m>\{f_i\}_{i\in I}</m> of continuous maps <m>f_i\colon X_i\rightarrow Y</m>, there is a <em>unique</em> continuous map <m>f\colon X\rightarrow Y</m> satisfying <m>f_i=f\circ \iota_i</m> for all <m>i\in I</m>.
+        </p>
+        <p>
+          In other words, specifying a continuous map out from <m>X</m> to <m>Y</m> is equivalent to specifying continuous maps <m>X_i\rightarrow Y</m> for all <m>i\in I</m>.
+        </p>
+      </li>
+      <li>
+        <title>Unique up to homeomorphism</title>
+        <p>
+          If <m>X'</m> is any other topological space equipped with continuous maps <m>\iota_i'\colon X_i\rightarrow X'</m>, and if the coproduct mapping property (1) is satisfied with <m>X'</m> replacing <m>X</m> and <m>\iota_i'</m> replacing <m>\iota_i</m>, then <m>X'</m> is homeomorphic to <m>X</m>.
+        </p>
+        <p>
+          In other words, up to homeomorphism, the coproduct mapping property uniquely characterizes the product space.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</theorem>
+
+
+
+</section>
