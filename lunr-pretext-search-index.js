@@ -16,7 +16,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "0.1",
   "title": "Sets and functions",
-  "body": " Sets and functions    We gather here some notions about sets and functions.    Sets   sets  sets empty sets  sets membership      set membership   Sets   A set is a collection of objects. An object is a member (or element ) of a set if contains . In this case, we write . If is not a member of , we write .    We use curly braces to describe the contents of a set. For example, is the set containing the first three positive integers, and is the set of all positive integers. The defining property of sets is that they are completely determined by their members, and nothing more. In particular, when describing sets as above, it does not matter in what order the elements are listed, nor if they are repeated: , , , and are three descriptions of the same set. This somewhat slippery notion is made perfectly clear by specifying exactly what it means for two sets to be equal, as we do below.   Set equality  sets equality   Sets and are equal , denoted , if they have precisely the same elements: , if for any object , we have if and only if .    Set membership naturally extends to a notion of one set lying within another.   Set inclusion (subsets)  sets subset  sets inclusion    set inclusion    A set is a subset of a set , denoted , if every member of is a member of : , implies for any object . The relation is called set inclusion .      The definitions of set equality and the subset relation make use of two important logical operations: namely, the if and only if (or iff for short) and if-then operations.    With the fundamental notions of membership, equality, and subset in place, we now introduce means of building new sets from existing ones. The first is a manner of carving out a subset of a given set using a specified property.   Set-builder notation  sets set builder notation   Let be a set, and let be a property that elements of either satisfy or do not satisfy. For an element , let denote the statement that satisfies . The set of all elements of satisfying is denoted .      Set builder notation is parsed from left to right as follows:    is read as the set of      is read as elements of      is read as such that      is read as is true .   Taken altogether we get: The set of elements of such that is true .      Let be the set of nonnegative integers. The subset of even positive integers can be described using set-builder notation as , or alternatively, .    Next we use set builder notation, the set membership relation, and some basic logic to define the union, intersection, and difference of sets.   Union, intersection, difference, and complement  sets union  sets intersection    set union     set intersection   sets complement  sets difference      set difference     set complement    Let and be subsets of a common set .    Set union  The union  of and is defined as . More generally, if is a set and is a collection of sets indexed by , then the union  of this collection is defined as .    Set intersection  The intersection  of and is defined as . More generally, if is a set and is a collection of sets indexed by , then the intersection  of this collection is defined as     Set difference  The difference  is defined as .    Set complement  The complement of in is defined as . In contexts where there is clear what the larger set is, we denote the complement of in as .      With the help of these set operations, we can now describe some common sets used in mathematics.   sets empty set     the empty set   real numbers    real numbers   integers    integers     positive integers   rational numbers    rational numbers   Common mathematical sets   We denote by the set of all real numbers. The integers  and rational numbers  are the subsets of defined as . This yields the following chain of subsets: . The empty set is the set containing no objects, denoted or .  The set of all positive integers is denoted .    The power set of a set is the set of all subsets of . We will make use of this notion in our very first definition ( ).   power set    power set of   Power set   Given a set , its power set  is defined as the set of all subsets of .     Power set   Let . The power set is the set of all subsets of . We can enumerate systematically by listing all the subsets in order of increasing cardinality. There is one subset of containing zero elements: namely, the empty set . The two subsets of containing exactly one element are and . Lastly, the unique subset of containing two elements is itself. We conclude that . In general if has cardinality , then has cardinality .    Lastly, we define the cartesian product of sets, which is a formal description of an ordered collection of objects.   Cartesian product finite      Cartesian product   Cartesian product (finite)   An -tuple (or sequence ) of the sets is an ordered list such that for all . We define two -tuples , and to be equal, denoted , if for all . We call the length of the sequence , and we call its -th entry for all .  The (Cartesian) product of the sets , denoted or , is the set of all -tuples: , .  Given a set , its -ary Cartesian product  is defined as .      We have more suggestive names for -tuples when is small: a 2-tuple is called a pair, a 3-tuple is called a triple, a 4-tuple is called a quadruple, . We will use the generic term tuple to designate a -tuple of unspecified length.      Observe how tuples capture the notion of an ordered collection of object. For example, whereas the sets and are all equal to one another, the 4-tuples and are not: they differ in their second entries.  What about the tuples and ? Are these equal? Technically our definition of equality only applies to tuples living in the same fixed Cartesian product. In particular, for the question of equality to make sense, the tuples must have the same length. As such we will officially avoid writing things like , although unofficially we consider these two objects as completely different. You should think of and as creatures living on two different planets in the universe of tuples.    The notion of a Cartesian product can be generalized to an infinite list of sets , and indeed to any collection indexed by a set .   tuple arbitrary    -tuple   I-tuple   Let be a set. Given a set , an -tuple of elements of is a function . Given an -tuple and element we will often denote the value as , and denote itself as . In analogy to finite tuples, we call the -th entry or coordinate of .     Cartesian product arbitrary    Cartesian product of the sets   Cartesian product (arbitrary)   Let be a set, and let be a collection of subsets indexed by the set . The Cartesian product  of this collection is defined as . In other words, the Cartesian product is the set of all -tuples of elements of whose -th coordinate is an element of for all .  In the special case where for all , we denote as .      Functions   Functions  function    a function from to    Let and be two sets. A function from to , denoted , is a rule which, given any input  , returns an output  . In this case we write and call the image of under , or the value of at  . Similarly, we say  maps (or sends ) the input to the output .  The set is called the domain of ; the set is called the codomain of .  When we wish to indicate what rule defines the function, we use the elaborated notation . This is read as The function with domain and codomain maps an input to the output .      Consider the function . This function has domain and codomain equal to and maps an integer to its square.     Arithmetic operations as functions   Our familiar arithmetic operations can be expressed as functions whose inputs are pairs of numbers: addition is the function and multiplication is the function       Invoking the notion of a rule in the definition of a function is admittedly somewhat vague. A more precise definition can be given using the Cartesian product. Namely, given sets and , we define a function to be a subset satisfying the following property: for all there is a unique element . The uniqueness of the pair then allows us to define the value of at as , denoted .    As with sets and tuples, we are obliged to specify what we mean for two functions to be equal. The definition below makes clear how the the domain and codomain, as well as the rule that takes inputs to outputs, are all essential ingredients of a function.   Function equality  function equality   Functions and are equal if   they have the same domain and codomain , and    for all , we have .        Image of a set  function image of a set  function image    image of the set under     image of a function    Given a function and a subset , the image of under , denoted , is defined as . In other words, is the set of all outputs , where .  The image of , denoted , is the set of all outputs of : , .     Injective, surjective, bijective  invertible function  bijective function  injective function  surjective function  one-to-one function  onto function  one-to-one correspondence   Let be a function.   The function is injective (or one-to-one ) if for all , if , then : equivalently, if , then .    The function is surjective (or onto ) if for all , there is an such that : equivalently, .    The function is bijective (or a one-to-one correspondence ) if it is injective and surjective.        Role of domain and codomain in injectivity and surjectivity   Consider the following three functions . Although all three functions are defined using the same rule ( ), they are not equal thanks to their differing domains and\/or codomains. The choice of domain and codomain in these examples also plays a crucial role in determining whether the function is injective and\/or surjective. The function is neither injective ( ) nor surjective ( ); the function is injective but not surjective; the function is both injective and surjective, hence bijective.     Function composition  function composition    the composition of and    Suppose and are functions satisfying . The composition of and is the function defined as , for all .     function invertible  function inverse  function identity  Identity and inverse functions   For any set the identity function on is the function defined as for all .  A function is invertible if there is a function satisfying and : , . The function in this case is called the inverse of , denoted .    Invertible is equivalent to bijective   A function is invertible if and only if it is bijective.       Cardinality and countability   Cardinality  cardinality  finite set  infinite set  countably infinite set  countable set  uncountable set    cardinality of set    Let be a set.    Finite and infinite sets  The set is finite if either or there is a bijection for some positive integer . Roughly speaking, the cardinality of a finite set , denoted , is the number of distinct elements it contains. In more detail if , then by definition; if there is a bijection , then .  The set is infinite if it is not finite. In this case is said to have infinite cardinality .    Countable and uncountable sets  The set is countably infinite if there is a bijection , where is the set of all positive integers; it is countable if it is either finite or countable infinite.  The set is uncountable if it is not countable.       "
+  "body": " Sets and functions    We gather here some notions about sets and functions.    Sets   sets  sets empty sets  sets membership      set membership   Sets   A set is a collection of objects. An object is a member (or element ) of a set if contains . In this case, we write . If is not a member of , we write .    We use curly braces to describe the contents of a set. For example, is the set containing the first three positive integers, and is the set of all positive integers. The defining property of sets is that they are completely determined by their members, and nothing more. In particular, when describing sets as above, it does not matter in what order the elements are listed, nor if they are repeated: , , , and are three descriptions of the same set. This somewhat slippery notion is made perfectly clear by specifying exactly what it means for two sets to be equal, as we do below.   Set equality  sets equality   Sets and are equal , denoted , if they have precisely the same elements: , if for any object , we have if and only if .    Set membership naturally extends to a notion of one set lying within another.   Set inclusion (subsets)  sets subset  sets inclusion    set inclusion    A set is a subset of a set , denoted , if every member of is a member of : , implies for any object . The relation is called set inclusion .      The definitions of set equality and the subset relation make use of two important logical operations: namely, the if and only if (or iff for short) and if-then operations.    With the fundamental notions of membership, equality, and subset in place, we now introduce means of building new sets from existing ones. The first is a manner of carving out a subset of a given set using a specified property.   Set-builder notation  sets set builder notation   Let be a set, and let be a property that elements of either satisfy or do not satisfy. For an element , let denote the statement that satisfies . The set of all elements of satisfying is denoted .      Set builder notation is parsed from left to right as follows:    is read as the set of      is read as elements of      is read as such that      is read as is true .   Taken altogether we get: The set of elements of such that is true .      Let be the set of nonnegative integers. The subset of even positive integers can be described using set-builder notation as , or alternatively, .    Next we use set builder notation, the set membership relation, and some basic logic to define the union, intersection, and difference of sets.   Union, intersection, difference, and complement  sets union  sets intersection    set union     set intersection   sets complement  sets difference      set difference     set complement    Let and be subsets of a common set .    Set union  The union  of and is defined as . More generally, if is a set and is a collection of sets indexed by , then the union  of this collection is defined as .    Set intersection  The intersection  of and is defined as . More generally, if is a set and is a collection of sets indexed by , then the intersection  of this collection is defined as     Set difference  The difference  is defined as .    Set complement  The complement of in is defined as . In contexts where there is clear what the larger set is, we denote the complement of in as .      With the help of these set operations, we can now describe some common sets used in mathematics.   sets empty set     the empty set   real numbers    real numbers   integers    integers     positive integers   rational numbers    rational numbers   Common mathematical sets   We denote by the set of all real numbers. The integers  and rational numbers  are the subsets of defined as . This yields the following chain of subsets: . The empty set is the set containing no objects, denoted or .  The set of all positive integers is denoted .    The power set of a set is the set of all subsets of . We will make use of this notion in our very first definition ( ).   power set    power set of   Power set   Given a set , its power set  is defined as the set of all subsets of .     Power set   Let . The power set is the set of all subsets of . We can enumerate systematically by listing all the subsets in order of increasing cardinality. There is one subset of containing zero elements: namely, the empty set . The two subsets of containing exactly one element are and . Lastly, the unique subset of containing two elements is itself. We conclude that . In general if has cardinality , then has cardinality .    Lastly, we define the cartesian product of sets, which is a formal description of an ordered collection of objects.   Cartesian product finite      Cartesian product   Cartesian product (finite)   An -tuple (or sequence ) of the sets is an ordered list such that for all . We define two -tuples , and to be equal, denoted , if for all . We call the length of the sequence , and we call its -th entry for all .  The (Cartesian) product of the sets , denoted or , is the set of all -tuples: , .  Given a set , its -ary Cartesian product  is defined as .      We have more suggestive names for -tuples when is small: a 2-tuple is called a pair, a 3-tuple is called a triple, a 4-tuple is called a quadruple, . We will use the generic term tuple to designate a -tuple of unspecified length.      Observe how tuples capture the notion of an ordered collection of object. For example, whereas the sets and are all equal to one another, the 4-tuples and are not: they differ in their second entries.  What about the tuples and ? Are these equal? Technically our definition of equality only applies to tuples living in the same fixed Cartesian product. In particular, for the question of equality to make sense, the tuples must have the same length. As such we will officially avoid writing things like , although unofficially we consider these two objects as completely different. You should think of and as creatures living on two different planets in the universe of tuples.    The notion of a Cartesian product can be generalized to an infinite list of sets , and indeed to any collection indexed by a set .   tuple arbitrary    -tuple   I-tuple   Let be a set. Given a set , an -tuple of elements of is a function . Given an -tuple and element we will often denote the value as , and denote itself as . In analogy to finite tuples, we call the -th entry or coordinate of .     Cartesian product arbitrary    Cartesian product of the sets   Cartesian product (arbitrary)   Let be a set, and let be a collection of subsets indexed by the set . The Cartesian product  of this collection is defined as . In other words, the Cartesian product is the set of all -tuples of elements of whose -th coordinate is an element of for all .  In the special case where for all , we denote as .      Functions   Functions  function    a function from to    Let and be two sets. A function from to , denoted , is a rule which, given any input  , returns an output  . In this case we write and call the image of under , or the value of at  . Similarly, we say  maps (or sends ) the input to the output .  The set is called the domain of ; the set is called the codomain of .  When we wish to indicate what rule defines the function, we use the elaborated notation . This is read as The function with domain and codomain maps an input to the output .      Consider the function . This function has domain and codomain equal to and maps an integer to its square.     Arithmetic operations as functions   Our familiar arithmetic operations can be expressed as functions whose inputs are pairs of numbers: addition is the function and multiplication is the function       Invoking the notion of a rule in the definition of a function is admittedly somewhat vague. A more precise definition can be given using the Cartesian product. Namely, given sets and , we define a function to be a subset satisfying the following property: for all there is a unique element . The uniqueness of the pair then allows us to define the value of at as , denoted .    As with sets and tuples, we are obliged to specify what we mean for two functions to be equal. The definition below makes clear how the the domain and codomain, as well as the rule that takes inputs to outputs, are all essential ingredients of a function.   Function equality  function equality   Functions and are equal if   they have the same domain and codomain , and    for all , we have .        Image of a set  function image of a set  function image    image of the set under     image of a function    Given a function and a subset , the image of under , denoted , is defined as . In other words, is the set of all outputs , where .  The image of , denoted , is the set of all outputs of : , .     Preimage of set  preimage of a set    preimage of under    Given a function , the preimage of a subset is the subset defined as . In plain English: the preimage of under is the set of all whose image under lies in .     Injective, surjective, bijective  invertible function  bijective function  injective function  surjective function  one-to-one function  onto function  one-to-one correspondence   Let be a function.   The function is injective (or one-to-one ) if for all , if , then : equivalently, if , then .    The function is surjective (or onto ) if for all , there is an such that : equivalently, .    The function is bijective (or a one-to-one correspondence ) if it is injective and surjective.        Role of domain and codomain in injectivity and surjectivity   Consider the following three functions . Although all three functions are defined using the same rule ( ), they are not equal thanks to their differing domains and\/or codomains. The choice of domain and codomain in these examples also plays a crucial role in determining whether the function is injective and\/or surjective. The function is neither injective ( ) nor surjective ( ); the function is injective but not surjective; the function is both injective and surjective, hence bijective.     Function composition  function composition    the composition of and    Suppose and are functions satisfying . The composition of and is the function defined as , for all .     function invertible  function inverse  function identity  Identity and inverse functions   For any set the identity function on is the function defined as for all .  A function is invertible if there is a function satisfying and : , . The function in this case is called the inverse of , denoted .    Invertible is equivalent to bijective   A function is invertible if and only if it is bijective.       Cardinality and countability   Cardinality  cardinality  finite set  infinite set  countably infinite set  countable set  uncountable set    cardinality of set    Let be a set.    Finite and infinite sets  The set is finite if either or there is a bijection for some positive integer . Roughly speaking, the cardinality of a finite set , denoted , is the number of distinct elements it contains. In more detail if , then by definition; if there is a bijection , then .  The set is infinite if it is not finite. In this case is said to have infinite cardinality .    Countable and uncountable sets  The set is countably infinite if there is a bijection , where is the set of all positive integers; it is countable if it is either finite or countable infinite.  The set is uncountable if it is not countable.       "
 },
 {
   "id": "d_sets",
@@ -217,11 +217,20 @@ var ptx_lunr_docs = [
   "body": " Image of a set  function image of a set  function image    image of the set under     image of a function    Given a function and a subset , the image of under , denoted , is defined as . In other words, is the set of all outputs , where .  The image of , denoted , is the set of all outputs of : , .   "
 },
 {
+  "id": "d_preimage_of_set",
+  "level": "2",
+  "url": "s_sets_functions.html#d_preimage_of_set",
+  "type": "Definition",
+  "number": "0.1.23",
+  "title": "Preimage of set.",
+  "body": " Preimage of set  preimage of a set    preimage of under    Given a function , the preimage of a subset is the subset defined as . In plain English: the preimage of under is the set of all whose image under lies in .   "
+},
+{
   "id": "d_injective_surjective_bijective",
   "level": "2",
   "url": "s_sets_functions.html#d_injective_surjective_bijective",
   "type": "Definition",
-  "number": "0.1.23",
+  "number": "0.1.24",
   "title": "Injective, surjective, bijective.",
   "body": " Injective, surjective, bijective  invertible function  bijective function  injective function  surjective function  one-to-one function  onto function  one-to-one correspondence   Let be a function.   The function is injective (or one-to-one ) if for all , if , then : equivalently, if , then .    The function is surjective (or onto ) if for all , there is an such that : equivalently, .    The function is bijective (or a one-to-one correspondence ) if it is injective and surjective.      "
 },
@@ -230,7 +239,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_sets_functions.html#example-5",
   "type": "Example",
-  "number": "0.1.24",
+  "number": "0.1.25",
   "title": "Role of domain and codomain in injectivity and surjectivity.",
   "body": " Role of domain and codomain in injectivity and surjectivity   Consider the following three functions . Although all three functions are defined using the same rule ( ), they are not equal thanks to their differing domains and\/or codomains. The choice of domain and codomain in these examples also plays a crucial role in determining whether the function is injective and\/or surjective. The function is neither injective ( ) nor surjective ( ); the function is injective but not surjective; the function is both injective and surjective, hence bijective.   "
 },
@@ -239,7 +248,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_sets_functions.html#d_function_composition",
   "type": "Definition",
-  "number": "0.1.25",
+  "number": "0.1.26",
   "title": "Function composition.",
   "body": " Function composition  function composition    the composition of and    Suppose and are functions satisfying . The composition of and is the function defined as , for all .   "
 },
@@ -248,7 +257,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_sets_functions.html#d_invertible_function",
   "type": "Definition",
-  "number": "0.1.26",
+  "number": "0.1.27",
   "title": "Identity and inverse functions.",
   "body": " function invertible  function inverse  function identity  Identity and inverse functions   For any set the identity function on is the function defined as for all .  A function is invertible if there is a function satisfying and : , . The function in this case is called the inverse of , denoted .  "
 },
@@ -257,7 +266,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_sets_functions.html#th_invertible_bijective",
   "type": "Theorem",
-  "number": "0.1.27",
+  "number": "0.1.28",
   "title": "Invertible is equivalent to bijective.",
   "body": " Invertible is equivalent to bijective   A function is invertible if and only if it is bijective.   "
 },
@@ -266,7 +275,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_sets_functions.html#d_cardinality",
   "type": "Definition",
-  "number": "0.1.28",
+  "number": "0.1.29",
   "title": "Cardinality.",
   "body": " Cardinality  cardinality  finite set  infinite set  countably infinite set  countable set  uncountable set    cardinality of set    Let be a set.    Finite and infinite sets  The set is finite if either or there is a bijection for some positive integer . Roughly speaking, the cardinality of a finite set , denoted , is the number of distinct elements it contains. In more detail if , then by definition; if there is a bijection , then .  The set is infinite if it is not finite. In this case is said to have infinite cardinality .    Countable and uncountable sets  The set is countably infinite if there is a bijection , where is the set of all positive integers; it is countable if it is either finite or countable infinite.  The set is uncountable if it is not countable.     "
 },
@@ -433,27 +442,27 @@ var ptx_lunr_docs = [
   "body": " Never attempt to prove an equality by starting off with the equality you wish to prove, and then deduce a series of further equalities ending in some inanity: , . What this suggests is that you are in fact proving an implication: namely, if the desired equality is true, then  . Clearly this is not what we set out to prove! This type of fallacious argument is called begging the question ( petitio princippii in Latin), as we assume that which was to be proven.  "
 },
 {
-  "id": "p-132",
-  "level": "2",
-  "url": "s_proof_technique.html#p-132",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "base "
-},
-{
   "id": "p-133",
   "level": "2",
   "url": "s_proof_technique.html#p-133",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
+  "body": "base "
+},
+{
+  "id": "p-134",
+  "level": "2",
+  "url": "s_proof_technique.html#p-134",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
   "body": "induction weak induction "
 },
 {
-  "id": "p-135",
+  "id": "p-136",
   "level": "2",
-  "url": "s_proof_technique.html#p-135",
+  "url": "s_proof_technique.html#p-136",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -487,9 +496,9 @@ var ptx_lunr_docs = [
   "body": " Mathematical induction as ladder of propositions  Mathematical induction as ladder of propositions     "
 },
 {
-  "id": "p-144",
+  "id": "p-145",
   "level": "2",
-  "url": "s_proof_technique.html#p-144",
+  "url": "s_proof_technique.html#p-145",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1322,6 +1331,231 @@ var ptx_lunr_docs = [
   "number": "1.8.10",
   "title": "Nonequivalent norms.",
   "body": " Nonequivalent norms   Both the uniform metric from and the metrix from are induced by norms. Since they induce different topologies on , they furnish us with an example of two nonequivalent norms on an infinite-dimensional real vector space.   "
+},
+{
+  "id": "s_continuous",
+  "level": "1",
+  "url": "s_continuous.html",
+  "type": "Section",
+  "number": "1.9",
+  "title": "Continuous functions",
+  "body": " Continuous functions   In calculus you learn that a function is defined to be continuous if for all there is a such that for all we have the implication . Now that we have some experience generalizing analysis concepts to topological ones, let's see how best this translates to arbitrary topologies.    Continuous function   Let be topological spaces. A function is continuous if for all open sets , the set is open in . Using logical shorthand: .     Preimage properties   Continuity is defined in terms of preimages of sets under a function . Thankfully, the preimage operation behaves very well with respect to our various set operations. In particular, we have the following identities, which you may make use of without further ado:      Continuous functions: basic examples     Identity function  Given a topological space , the identity function is continuous. Here we take as the topology of both the domain and codomain.    Constant functions  Let be topological spaces. For any fixed the constant function , defined as for all is continuous.    Subspace inclusions  Let be a subspace of . The inclusion map is continuous with respect to the subspace topology on .    Maps from discrete spaces  If is equipped with the discrete topology, then any function to a topological space is continuous.    Maps to trivial spaces  If is equipped with the trivial topology, then any map from a topological space to is continous.           Non-continuous inclusion   Show that the inclusion is not continuous. Here the topology of the domain is the standard one, and the topology on the codomain is the lower limit topology.         Products and projections   Let be a collection of topological spaces, and let . For each define the projection function as . In other words, the -th projection map returns the -th coordinate of an element of .    Prove: if is given the product topology, then is continuous for all .    Prove: given a topology on , we have continuous for all if and only if contains the product topology. Thus, in particular, the product topology is the coarsest topology on making each projection map continuous.            Let be a function between the topological spaces , and let be a basis for . The following statements are equivalent.     is continuous.    For all , the preimage is open in .       Continuity equivalences   Let be a function between the topological spaces . The following statements are equivalent.     is continuous.    For all , we have .    For all closed sets , the preimage is closed in .    For all and open neighborhood , there is an open neighborhood such that .        Let be a map between topological spaces. We say that is continuous at x , for , if for all open neighborhoods , there is an open neighborhood such that .     Building continuous functions     Composition  If and are continuous, then the composition is continuous.    Restriction  If is continuous, and is a subspace, then the restriction is continuous.    Expansion  If is continuous and is a subspace of , then the function obtained by composing with the inclusion is continuous.    Local on source  If is a function between topological spaces and there is a collection of open sets such that and the restrictions are continuous, then is continuous.    Pasting  Let be topological spaces, and suppose , where are closed sets. Given continuous functions and that satisfy for all , the function defined as is continuous.      "
+},
+{
+  "id": "d_continuous_function",
+  "level": "2",
+  "url": "s_continuous.html#d_continuous_function",
+  "type": "Definition",
+  "number": "1.9.1",
+  "title": "Continuous function.",
+  "body": " Continuous function   Let be topological spaces. A function is continuous if for all open sets , the set is open in . Using logical shorthand: .   "
+},
+{
+  "id": "rm_preimage",
+  "level": "2",
+  "url": "s_continuous.html#rm_preimage",
+  "type": "Remark",
+  "number": "1.9.2",
+  "title": "Preimage properties.",
+  "body": " Preimage properties   Continuity is defined in terms of preimages of sets under a function . Thankfully, the preimage operation behaves very well with respect to our various set operations. In particular, we have the following identities, which you may make use of without further ado:    "
+},
+{
+  "id": "example-37",
+  "level": "2",
+  "url": "s_continuous.html#example-37",
+  "type": "Example",
+  "number": "1.9.3",
+  "title": "Continuous functions: basic examples.",
+  "body": " Continuous functions: basic examples     Identity function  Given a topological space , the identity function is continuous. Here we take as the topology of both the domain and codomain.    Constant functions  Let be topological spaces. For any fixed the constant function , defined as for all is continuous.    Subspace inclusions  Let be a subspace of . The inclusion map is continuous with respect to the subspace topology on .    Maps from discrete spaces  If is equipped with the discrete topology, then any function to a topological space is continuous.    Maps to trivial spaces  If is equipped with the trivial topology, then any map from a topological space to is continous.         "
+},
+{
+  "id": "example-38",
+  "level": "2",
+  "url": "s_continuous.html#example-38",
+  "type": "Example",
+  "number": "1.9.4",
+  "title": "Non-continuous inclusion.",
+  "body": " Non-continuous inclusion   Show that the inclusion is not continuous. Here the topology of the domain is the standard one, and the topology on the codomain is the lower limit topology.       "
+},
+{
+  "id": "example-39",
+  "level": "2",
+  "url": "s_continuous.html#example-39",
+  "type": "Example",
+  "number": "1.9.5",
+  "title": "Products and projections.",
+  "body": " Products and projections   Let be a collection of topological spaces, and let . For each define the projection function as . In other words, the -th projection map returns the -th coordinate of an element of .    Prove: if is given the product topology, then is continuous for all .    Prove: given a topology on , we have continuous for all if and only if contains the product topology. Thus, in particular, the product topology is the coarsest topology on making each projection map continuous.         "
+},
+{
+  "id": "th_continuity_basis",
+  "level": "2",
+  "url": "s_continuous.html#th_continuity_basis",
+  "type": "Theorem",
+  "number": "1.9.6",
+  "title": "",
+  "body": "  Let be a function between the topological spaces , and let be a basis for . The following statements are equivalent.     is continuous.    For all , the preimage is open in .     "
+},
+{
+  "id": "th_continuous_equivalence",
+  "level": "2",
+  "url": "s_continuous.html#th_continuous_equivalence",
+  "type": "Theorem",
+  "number": "1.9.7",
+  "title": "Continuity equivalences.",
+  "body": " Continuity equivalences   Let be a function between the topological spaces . The following statements are equivalent.     is continuous.    For all , we have .    For all closed sets , the preimage is closed in .    For all and open neighborhood , there is an open neighborhood such that .     "
+},
+{
+  "id": "d_continuity_at_x",
+  "level": "2",
+  "url": "s_continuous.html#d_continuity_at_x",
+  "type": "Definition",
+  "number": "1.9.8",
+  "title": "",
+  "body": "  Let be a map between topological spaces. We say that is continuous at x , for , if for all open neighborhoods , there is an open neighborhood such that .   "
+},
+{
+  "id": "th_building_continuous_functions",
+  "level": "2",
+  "url": "s_continuous.html#th_building_continuous_functions",
+  "type": "Theorem",
+  "number": "1.9.9",
+  "title": "Building continuous functions.",
+  "body": " Building continuous functions     Composition  If and are continuous, then the composition is continuous.    Restriction  If is continuous, and is a subspace, then the restriction is continuous.    Expansion  If is continuous and is a subspace of , then the function obtained by composing with the inclusion is continuous.    Local on source  If is a function between topological spaces and there is a collection of open sets such that and the restrictions are continuous, then is continuous.    Pasting  Let be topological spaces, and suppose , where are closed sets. Given continuous functions and that satisfy for all , the function defined as is continuous.     "
+},
+{
+  "id": "s_homeomorphisms",
+  "level": "1",
+  "url": "s_homeomorphisms.html",
+  "type": "Section",
+  "number": "1.10",
+  "title": "Homeomorphisms",
+  "body": " Homeomorphisms   Consider the two spaces and , both equipped with the discrete topology. As sets they are clearly not equal; and yet considered as topological spaces they are essentially the same. Indeed, we call both spaces the discrete topological space on a set of two elements. The notion of a homeomorphism gives us a rigorous way of determining when two spaces are essentially the same thing, topologically speaking .    Homeomorphism   Let and be topological spaces. A function is a homeomorphism if the following conditions are satisfied:    is continuous;     is invertible (equivalently, is bijective);    the inverse function is continuous.   Two spaces are homeomorphic if there is a homeomorphism between them.     Homeomorphism: inverse must be continuous   You may have met analogs of the homeomorphism in other areas of mathematics: , in linear algebra or group theory. In category theory it is what is called an isomorphism . The basic idea is that once you decide what the structure-preserving maps are between objects (continuous functions for topological spaces, linear transformations for vector spaces, homomorphisms for groups), an isomorphism is essentially just an invertible structure-preserving map: a vector space isomorphism is an invertible linear transformation; a group isomorphism is an invertible group homomorphism. The only subtlety is that you want the inverse of this invertible function to also be structure preserving! For linear transformations and group homomorphisms this is automatic. Not so for continuous functions! The inverse of an invertible continuous function need not be continuous, as the example below illustrates.     Homeomorphism: inverse must be continuous   Let and be the spaces obtained by equipping with the standard and discrete topologies, respectively. The identity function is clearly continuous and invertible. In fact, we have . However, is not continuous. Indeed, is open in , but is not open in . Thus is an invertible continuous function that is not a homeomorphism.     Homeomorphic equivalence relation   For topological spaces , define the relation to mean is homeomorphic to . This relation is an equivalence relation. That is, for all topological spaces we have . These three properties follow from the simple facts that (1) the identity map is a homeomorphism, (2) the inverse of a homeomorphism is a homeomomoprhism, (3) the composition of homeomorphisms is a homeomorphism.     All open intervals of are homeomorphic   In the following, all intervals are treated as metric spaces with the Euclidean metric on . Make use of any function whose continuity properties are well known.    Prove that any finite open interval is homeomorphic to .    Prove that and are homeomorphic.    Prove that and are both homeomorphic to .    Explain why we may now conclude that all open intervals of are homeomorphic.           Universal property of product space   Let be a collection of topological spaces, and let equipped with the product topology. Let be the -th projection map.    Product mapping property  Given any topological space and any collection of continuous maps , there is a unique continuous map satisfying for all .  In other words, specifying a continuous map into the product space is equivalent to specifying continuous maps into for all     Unique up to homeomorphism  If is any other topological space equipped with continuous maps , and if the product mapping property (1) is satisfied with replacing and replacing , then is homeomorphic to .  In other words, up to homeomorphism, the mapping property uniquely characterizes the product space.       Open and closed maps   Let be a function between topological spaces.    is open if for all open we have open in .     is closed if for all closed we have closed in .        Homeomorphism equivalences   Let be a function between topological spaces. The following statements are equivalent.    is a homeomorphism.     is continuous, invertible, and open.     is continuous, invertible, and closed.        Open and closed maps   Don't be mislead by into thinking that being an open continuous map is equivalent to being a closed continuous map; we need the additional assumption of invertibility to guarantee equivalence. As an example, consider any constant function from to itself: this is clearly continuous and closed, but not open.     Topological properties   Let be a property that is either satisfied or not satisfied by any given topological space. We say is a topological property if it is invariant under homeomorphisms: , if and are homeomorphic, then satisfies if and only if satisfies .     Topological properties   It is easy to see that the properties of being discrete, , Hausdorff, or a metric space are topological.     Continuous bijection onto circle   Let and , and equip each set with the subspace topology inherited from (resp. ) with its Euclidean topology.  Prove: the function defined as is continuous and invertible, but not a homeomorphism.        In light of , it is natural to ask whether given topological spaces there is a space with continuous maps that satisfies a dual mapping property to that of the product. Indeed, there is, and we call it the coproduct of the .   Coproduct space  Let be a collection of topological spaces, let be the disjoint union of the , and let be the the inclusion maps identifying each with a subset of . The coproduct topology on is the topology generated by the basis defined as follows: . We call together with the topology the coproduct topology of the . With respect to this topology, each injection is continuous.    Universal property of coproduct space   Let be a collection of topological spaces, and let be their coproduct. For each let be the inclusion map identifying with a subset of .    Coproduct mapping property  Given any topological space and any collection of continuous maps , there is a unique continuous map satisfying for all .  In other words, specifying a continuous map out from to is equivalent to specifying continuous maps for all .    Unique up to homeomorphism  If is any other topological space equipped with continuous maps , and if the coproduct mapping property (1) is satisfied with replacing and replacing , then is homeomorphic to .  In other words, up to homeomorphism, the coproduct mapping property uniquely characterizes the product space.      "
+},
+{
+  "id": "d_homeomorphism",
+  "level": "2",
+  "url": "s_homeomorphisms.html#d_homeomorphism",
+  "type": "Definition",
+  "number": "1.10.1",
+  "title": "Homeomorphism.",
+  "body": " Homeomorphism   Let and be topological spaces. A function is a homeomorphism if the following conditions are satisfied:    is continuous;     is invertible (equivalently, is bijective);    the inverse function is continuous.   Two spaces are homeomorphic if there is a homeomorphism between them.   "
+},
+{
+  "id": "rm_homeomorphism",
+  "level": "2",
+  "url": "s_homeomorphisms.html#rm_homeomorphism",
+  "type": "Remark",
+  "number": "1.10.2",
+  "title": "Homeomorphism: inverse must be continuous.",
+  "body": " Homeomorphism: inverse must be continuous   You may have met analogs of the homeomorphism in other areas of mathematics: , in linear algebra or group theory. In category theory it is what is called an isomorphism . The basic idea is that once you decide what the structure-preserving maps are between objects (continuous functions for topological spaces, linear transformations for vector spaces, homomorphisms for groups), an isomorphism is essentially just an invertible structure-preserving map: a vector space isomorphism is an invertible linear transformation; a group isomorphism is an invertible group homomorphism. The only subtlety is that you want the inverse of this invertible function to also be structure preserving! For linear transformations and group homomorphisms this is automatic. Not so for continuous functions! The inverse of an invertible continuous function need not be continuous, as the example below illustrates.   "
+},
+{
+  "id": "eg_homeomorphism_not_",
+  "level": "2",
+  "url": "s_homeomorphisms.html#eg_homeomorphism_not_",
+  "type": "Example",
+  "number": "1.10.3",
+  "title": "Homeomorphism: inverse must be continuous.",
+  "body": " Homeomorphism: inverse must be continuous   Let and be the spaces obtained by equipping with the standard and discrete topologies, respectively. The identity function is clearly continuous and invertible. In fact, we have . However, is not continuous. Indeed, is open in , but is not open in . Thus is an invertible continuous function that is not a homeomorphism.   "
+},
+{
+  "id": "rm_homeomorphic_equivalence_relation",
+  "level": "2",
+  "url": "s_homeomorphisms.html#rm_homeomorphic_equivalence_relation",
+  "type": "Remark",
+  "number": "1.10.4",
+  "title": "Homeomorphic equivalence relation.",
+  "body": " Homeomorphic equivalence relation   For topological spaces , define the relation to mean is homeomorphic to . This relation is an equivalence relation. That is, for all topological spaces we have . These three properties follow from the simple facts that (1) the identity map is a homeomorphism, (2) the inverse of a homeomorphism is a homeomomoprhism, (3) the composition of homeomorphisms is a homeomorphism.   "
+},
+{
+  "id": "eg_R_interval",
+  "level": "2",
+  "url": "s_homeomorphisms.html#eg_R_interval",
+  "type": "Example",
+  "number": "1.10.5",
+  "title": "All open intervals of <span class=\"process-math\">\\(\\R\\)<\/span> are homeomorphic.",
+  "body": " All open intervals of are homeomorphic   In the following, all intervals are treated as metric spaces with the Euclidean metric on . Make use of any function whose continuity properties are well known.    Prove that any finite open interval is homeomorphic to .    Prove that and are homeomorphic.    Prove that and are both homeomorphic to .    Explain why we may now conclude that all open intervals of are homeomorphic.         "
+},
+{
+  "id": "th_product_universal_prop",
+  "level": "2",
+  "url": "s_homeomorphisms.html#th_product_universal_prop",
+  "type": "Theorem",
+  "number": "1.10.6",
+  "title": "Universal property of product space.",
+  "body": " Universal property of product space   Let be a collection of topological spaces, and let equipped with the product topology. Let be the -th projection map.    Product mapping property  Given any topological space and any collection of continuous maps , there is a unique continuous map satisfying for all .  In other words, specifying a continuous map into the product space is equivalent to specifying continuous maps into for all     Unique up to homeomorphism  If is any other topological space equipped with continuous maps , and if the product mapping property (1) is satisfied with replacing and replacing , then is homeomorphic to .  In other words, up to homeomorphism, the mapping property uniquely characterizes the product space.     "
+},
+{
+  "id": "d_open_closed_map",
+  "level": "2",
+  "url": "s_homeomorphisms.html#d_open_closed_map",
+  "type": "Definition",
+  "number": "1.10.7",
+  "title": "Open and closed maps.",
+  "body": " Open and closed maps   Let be a function between topological spaces.    is open if for all open we have open in .     is closed if for all closed we have closed in .      "
+},
+{
+  "id": "th_homeo_open_closed",
+  "level": "2",
+  "url": "s_homeomorphisms.html#th_homeo_open_closed",
+  "type": "Theorem",
+  "number": "1.10.8",
+  "title": "Homeomorphism equivalences.",
+  "body": " Homeomorphism equivalences   Let be a function between topological spaces. The following statements are equivalent.    is a homeomorphism.     is continuous, invertible, and open.     is continuous, invertible, and closed.      "
+},
+{
+  "id": "rm_open_closed",
+  "level": "2",
+  "url": "s_homeomorphisms.html#rm_open_closed",
+  "type": "Remark",
+  "number": "1.10.9",
+  "title": "Open and closed maps.",
+  "body": " Open and closed maps   Don't be mislead by into thinking that being an open continuous map is equivalent to being a closed continuous map; we need the additional assumption of invertibility to guarantee equivalence. As an example, consider any constant function from to itself: this is clearly continuous and closed, but not open.   "
+},
+{
+  "id": "d_topological_properties",
+  "level": "2",
+  "url": "s_homeomorphisms.html#d_topological_properties",
+  "type": "Definition",
+  "number": "1.10.10",
+  "title": "Topological properties.",
+  "body": " Topological properties   Let be a property that is either satisfied or not satisfied by any given topological space. We say is a topological property if it is invariant under homeomorphisms: , if and are homeomorphic, then satisfies if and only if satisfies .   "
+},
+{
+  "id": "eg_topological_props",
+  "level": "2",
+  "url": "s_homeomorphisms.html#eg_topological_props",
+  "type": "Example",
+  "number": "1.10.11",
+  "title": "Topological properties.",
+  "body": " Topological properties   It is easy to see that the properties of being discrete, , Hausdorff, or a metric space are topological.   "
+},
+{
+  "id": "example-43",
+  "level": "2",
+  "url": "s_homeomorphisms.html#example-43",
+  "type": "Example",
+  "number": "1.10.12",
+  "title": "Continuous bijection onto circle.",
+  "body": " Continuous bijection onto circle   Let and , and equip each set with the subspace topology inherited from (resp. ) with its Euclidean topology.  Prove: the function defined as is continuous and invertible, but not a homeomorphism.       "
+},
+{
+  "id": "top_eg_coproduct",
+  "level": "2",
+  "url": "s_homeomorphisms.html#top_eg_coproduct",
+  "type": "Topological specimen",
+  "number": "11",
+  "title": "Coproduct space.",
+  "body": " Coproduct space  Let be a collection of topological spaces, let be the disjoint union of the , and let be the the inclusion maps identifying each with a subset of . The coproduct topology on is the topology generated by the basis defined as follows: . We call together with the topology the coproduct topology of the . With respect to this topology, each injection is continuous.  "
+},
+{
+  "id": "th_coproduct_universal_prop",
+  "level": "2",
+  "url": "s_homeomorphisms.html#th_coproduct_universal_prop",
+  "type": "Theorem",
+  "number": "1.10.13",
+  "title": "Universal property of coproduct space.",
+  "body": " Universal property of coproduct space   Let be a collection of topological spaces, and let be their coproduct. For each let be the inclusion map identifying with a subset of .    Coproduct mapping property  Given any topological space and any collection of continuous maps , there is a unique continuous map satisfying for all .  In other words, specifying a continuous map out from to is equivalent to specifying continuous maps for all .    Unique up to homeomorphism  If is any other topological space equipped with continuous maps , and if the coproduct mapping property (1) is satisfied with replacing and replacing , then is homeomorphic to .  In other words, up to homeomorphism, the coproduct mapping property uniquely characterizes the product space.     "
 },
 {
   "id": "appendix-notation",

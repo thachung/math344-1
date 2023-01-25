@@ -13,16 +13,15 @@
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
-<div class="para">Assume <span class="process-math">\(U_1, U_2, \dots, U_n\in \mathcal{T}\text{,}\)</span> and let <span class="process-math">\(U=\bigcap_{i=1}^nU_i\text{.}\)</span> We have</div>
+<div class="para">Assume <span class="process-math">\(U_i\in \mathcal{T}\)</span> for all <span class="process-math">\(i\in I\text{,}\)</span> and let <span class="process-math">\(U=\bigcup_{i\in I}U_i\text{.}\)</span> We have</div>
 <div class="displaymath process-math">
 \begin{align*}
-x\in U \amp\implies x\in U_i \text{ for all } 1\leq i\leq n  \\
-\amp\implies \forall i \exists \epsilon_i &gt; 0 \text{ s.t. }(x-\epsilon_i, x+\epsilon)\subseteq U_i \\
-\amp \implies (x-\epsilon, x+\epsilon)\subseteq U_i \text{ for all } i, \text{ where } \epsilon=\min \{\epsilon_i\colon 1\leq i\leq n\}\\\
-\amp \implies (x-\epsilon, x+\epsilon)\subseteq U \text{.}
+x\in U \amp \implies x\in U_i \text{ for some } i\in I\\
+\amp \implies (x-\epsilon, x+\epsilon)\subseteq U_i \text{ for some } i\in I, \epsilon &gt; 0\\
+\amp \implies (x-\epsilon, x+\epsilon)\subseteq U \text{ for some } i\in I, \epsilon &gt; 0 \text{.}
 \end{align*}
 </div>
-<div class="para">This shows that <span class="process-math">\(U\)</span> satisfies the defining property of <span class="process-math">\(\mathcal{T}\text{,}\)</span> and hence that <span class="process-math">\(U\in \mathcal{T}\text{.}\)</span>
+<div class="para">This shows <span class="process-math">\(U\)</span> satisfies the defining property of <span class="process-math">\(\mathcal{T}\text{,}\)</span> and hence <span class="process-math">\(U\in \mathcal{T}\text{.}\)</span>
 </div>
 </div>
 <span class="incontext"><a href="s_top_spaces.html#p-169" class="internal">in-context</a></span>

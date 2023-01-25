@@ -11,15 +11,15 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h6 class="heading"><span class="type">Paragraph</span></h6>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">When meeting a proposition in the wild that we wish to prove by induction, you should first take care to model the proposition in the form</div>
+<div class="para">Prove the universal implication</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\forall n\geq b\, P(n)\text{.}
+\forall n\geq b\, P(n)\implies P(n+1)\text{.}
 \end{equation*}
 </div>
-<div class="para">Make explicit the predicate <span class="process-math">\(P\)</span> in question, as well as the base case <span class="process-math">\(b\text{.}\)</span> We illustrate this preparatory “Step 0” in the examples below.</div>
+<div class="para">In practice, if proving the implication <span class="process-math">\(P(n)\implies P(n+1)\)</span> directly, this means we assume <span class="process-math">\(P(n)\)</span> is true (the <dfn class="terminology">induction hypothesis</dfn>), and use this assumption to show <span class="process-math">\(P(n+1)\)</span> is true.</div>
 </div>
 <span class="incontext"><a href="s_proof_technique.html#p-136" class="internal">in-context</a></span>
 </body>

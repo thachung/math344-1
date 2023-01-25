@@ -11,15 +11,18 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
 <div class="para logical">
-<div class="para">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be sets. By <a href="" class="xref" data-knowl="./knowl/d_set_inclusion.html" title="Definition 0.1.3: Set inclusion (subsets)">Definition 0.1.3</a>, to prove <span class="process-math">\(A\subseteq B\)</span> we must show that for all elements <span class="process-math">\(x\)</span> we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_set_inclusion.html ./knowl/sss_implication.html ./knowl/sss_logical_chains.html">
-\begin{equation*}
-x\in A\implies x\in B\text{.}
-\end{equation*}
+<div class="para">Never attempt to prove an equality by starting off with the equality you wish to prove, and then deduce a series of further equalities ending in some inanity: e.g.,</div>
+<div class="displaymath process-math">
+\begin{align*}
+\text{LHS}\amp =\text{RHS} \\
+\text{something}\amp=\text{something} \\
+\amp\phantom{=}\vdots \\
+0 \amp = 0\text{.}
+\end{align*}
 </div>
-<div class="para">This requires proving the implication above for a general element <span class="process-math">\(x\text{,}\)</span> and we may use any of  the techniques described in <a href="s_proof_technique.html#sss_implication" class="internal" title="Subsubsection: Implication">Implication</a> and <a href="s_proof_technique.html#sss_logical_chains" class="internal" title="Subsubsection: Chains of implications/equivalences">Chains of implications/equivalences</a> to do so.</div>
+<div class="para">What this suggests is that you are in fact proving an implication: namely, <em class="emphasis">if</em> the desired equality is true, <em class="emphasis">then</em> <span class="process-math">\(0=0\text{.}\)</span> Clearly this is not what we set out to prove! This type of fallacious argument is called “begging the question” (<em class="emphasis">petitio princippii</em> in Latin), as we assume that which was to be proven.</div>
 </div>
 <span class="incontext"><a href="s_proof_technique.html#p-120" class="internal">in-context</a></span>
 </body>

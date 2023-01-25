@@ -355,6 +355,8 @@ window.MathJax = {
 </li>
 <li><div class="toc-item"><a href="s_product2.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Arbitrary products</span></a></div></li>
 <li><div class="toc-item"><a href="s_prods_convergence_metric.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Convergence in product spaces</span></a></div></li>
+<li><div class="toc-item"><a href="s_continuous.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Continuous functions</span></a></div></li>
+<li><div class="toc-item"><a href="s_homeomorphisms.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Homeomorphisms</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -372,32 +374,32 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_metric1"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">Metric spaces</span>
 </h2>
-<section class="introduction" id="introduction-8"><div class="para" id="p-249">In this section we introduce a special family of topological spaces: <a href="" class="xref" data-knowl="./knowl/top_eg_metric_spaces.html" title="Topological specimen 6: Metric spaces">metric spaces</a>. These types of spaces are pervasive throughout mathematics and are conceptually very familiar or intuitive. Indeed, historically metric spaces were the main inspiration to axiomatic topology; and the metric balls defined in <a href="" class="xref" data-knowl="./knowl/d_epsilon_balls.html" title="Definition 1.3.3: Metric balls">Definition 1.3.3</a> were the inspiration for the notion of a topological basis. Lastly, the defining structure of metric space, a <em class="emphasis">metric</em> <span class="process-math">\(d\text{,}\)</span> gives us a <em class="emphasis">quantitative</em> grip on the topology, wheareas generally in topology we must rely on the <em class="emphasis">qualitative</em> description of open sets given by the axioms.</div></section><article class="definition definition-like" id="d_metric_space"><h3 class="heading">
+<section class="introduction" id="introduction-8"><div class="para" id="p-250">In this section we introduce a special family of topological spaces: <a href="" class="xref" data-knowl="./knowl/top_eg_metric_spaces.html" title="Topological specimen 6: Metric spaces">metric spaces</a>. These types of spaces are pervasive throughout mathematics and are conceptually very familiar or intuitive. Indeed, historically metric spaces were the main inspiration to axiomatic topology; and the metric balls defined in <a href="" class="xref" data-knowl="./knowl/d_epsilon_balls.html" title="Definition 1.3.3: Metric balls">Definition 1.3.3</a> were the inspiration for the notion of a topological basis. Lastly, the defining structure of metric space, a <em class="emphasis">metric</em> <span class="process-math">\(d\text{,}\)</span> gives us a <em class="emphasis">quantitative</em> grip on the topology, wheareas generally in topology we must rely on the <em class="emphasis">qualitative</em> description of open sets given by the axioms.</div></section><article class="definition definition-like" id="d_metric_space"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Metric space.</span>
 </h3> A <dfn class="terminology">metric space</dfn> is a pair <span class="process-math">\((X,d)\text{,}\)</span> where <span class="process-math">\(X\)</span> is a set and <span class="process-math">\(d\colon X\times X\rightarrow \R\)</span> is a function satisfying the following axioms: <ol class="decimal">
 <li id="li-69">
-<span class="heading"><span class="title">Positivity.</span></span><div class="para" id="p-250">
+<span class="heading"><span class="title">Positivity.</span></span><div class="para" id="p-251">
 <span class="process-math">\(d(x,y)\geq 0\text{,}\)</span> and <span class="process-math">\(d(x,y)=0\)</span> if and only if <span class="process-math">\(x=y\text{,}\)</span> for all <span class="process-math">\(x,y\in X\text{.}\)</span>
 </div>
 </li>
 <li id="li-70">
-<span class="heading"><span class="title">Symmetry.</span></span><div class="para" id="p-251">
+<span class="heading"><span class="title">Symmetry.</span></span><div class="para" id="p-252">
 <span class="process-math">\(d(x,y)=d(y,x)\)</span> for all <span class="process-math">\(x,y\in X\text{.}\)</span>
 </div>
 </li>
 <li id="li-71">
-<span class="heading"><span class="title">Triangle inequality.</span></span><div class="para" id="p-252">
+<span class="heading"><span class="title">Triangle inequality.</span></span><div class="para" id="p-253">
 <span class="process-math">\(d(x,y)\leq d(x,z)+d(z,y)\)</span> for all <span class="process-math">\(x,y,z\in X\text{.}\)</span>
 </div>
 </li>
 </ol> The function <span class="process-math">\(d\)</span> is called a <dfn class="terminology">metric</dfn> or a <dfn class="terminology">distance function</dfn> on <span class="process-math">\(X\text{,}\)</span> and for any <span class="process-math">\(x,y\in X\)</span> we call <span class="process-math">\(d(x,y)\)</span> the <dfn class="terminology">distance between</dfn> <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span></article><article class="definition definition-like" id="d_Euclidean_box_metric"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Euclidean, box, and taxicab metrics.</span>
-</h3>  <div class="para logical" id="p-253">
+</h3>  <div class="para logical" id="p-254">
 <div class="para">Let <span class="process-math">\(X=\R^n\text{,}\)</span> where <span class="process-math">\(n\)</span> is a positive integer. Let <span class="process-math">\(\boldx=(x_1,x_2,\dots, x_n), \boldy=(y_1,y_2,\dots, y_n)\text{.}\)</span>
 </div>
 <ol class="decimal">
 <li id="li-72">
-<span class="heading"><span class="title">Euclidean metric.</span></span><div class="para logical" id="p-254">
+<span class="heading"><span class="title">Euclidean metric.</span></span><div class="para logical" id="p-255">
 <div class="para">The function <span class="process-math">\(d\colon X\times X\rightarrow \R\)</span> defined as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -413,7 +415,7 @@ d(\boldx,\boldy)=\sqrt{(x_1-y_1)^2+(x_2-y_2)^2+\cdots +(x_n-y_n)^2}
 </div>
 </li>
 <li id="li-73">
-<span class="heading"><span class="title">Box metric.</span></span><div class="para logical" id="p-255">
+<span class="heading"><span class="title">Box metric.</span></span><div class="para logical" id="p-256">
 <div class="para">The function <span class="process-math">\(d\colon X\times X\rightarrow \R\)</span> defined as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -424,7 +426,7 @@ d(\boldx,\boldy)=\max\{\abs{x_1-y_1},\abs{x_2-y_2},\dots, \abs{x_n-y_n}\}
 </div>
 </li>
 <li id="li-74">
-<span class="heading"><span class="title">Taxicab metric.</span></span><div class="para logical" id="p-256">
+<span class="heading"><span class="title">Taxicab metric.</span></span><div class="para logical" id="p-257">
 <div class="para">The function <span class="process-math">\(d\colon X\times X\rightarrow \R\)</span> defined as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -435,8 +437,8 @@ d(\boldx,\boldy)=\abs{x_1-y_1}+\abs{x_2-y_2}+\dots +\abs{x_n-y_n}
 </div>
 </li>
 </ol>
-</div> <article class="hiddenproof" id="proof-9"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-9"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-9"><article class="hiddenproof"><div class="para logical" id="p-257"><ol class="decimal">
-<li id="li-75"><div class="para logical" id="p-258">
+</div> <article class="hiddenproof" id="proof-9"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-9"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-9"><article class="hiddenproof"><div class="para logical" id="p-258"><ol class="decimal">
+<li id="li-75"><div class="para logical" id="p-259">
 <div class="para">It is easiest to prove that the Euclidean metric is indeed a metric by first expressing it in terms of the dot product as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -445,7 +447,7 @@ d(\boldx, \boldy)=\sqrt{(\boldx-\boldy)\cdot (\boldx-\boldy)}
 </div>
 <div class="para">and then using well-known properties of the dot product, including the Cauchy-Schwarz inequality.</div>
 </div></li>
-<li id="li-76"><div class="para logical" id="p-259">
+<li id="li-76"><div class="para logical" id="p-260">
 <div class="para">Let <span class="process-math">\(d\)</span> be the box metric. It is clear that <span class="process-math">\(d(\boldx, \boldy)\geq 0\)</span> for all <span class="process-math">\(\boldx, \boldy\in \R^n\text{.}\)</span> Furthermore, we have</div>
 <div class="displaymath process-math" id="md-27">
 \begin{align*}
@@ -468,10 +470,10 @@ d(\boldx,\boldy)=\max\{\abs{x_i-y_i}\colon 1\leq i\leq n\}\leq d(\boldx,\boldz)+
 \end{equation*}
 </div>
 </div></li>
-<li id="li-77"><div class="para" id="p-260">This is a homework exercise.</div></li>
+<li id="li-77"><div class="para" id="p-261">This is a homework exercise.</div></li>
 </ol></div></article></div></article><article class="definition definition-like" id="d_epsilon_balls"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Metric balls.</span>
-</h3> <div class="para logical" id="p-261">
+</h3> <div class="para logical" id="p-262">
 <div class="para">Let <span class="process-math">\((X,d)\)</span> be a metric space. Given <span class="process-math">\(x\in X\)</span> and <span class="process-math">\(\epsilon&gt; 0\)</span> the <dfn class="terminology"><span class="process-math">\(\epsilon\)</span>-ball centered at <span class="process-math">\(x\)</span></dfn> is the subset <span class="process-math">\(B_\epsilon(x)\subseteq X\)</span> defined as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -482,12 +484,12 @@ B_\epsilon(x)=\{y\in X\colon d(x,y)&lt; \epsilon\}\text{.}
 </div></article><article class="example example-like" id="example-21"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Metric balls for Euclidean and box metrics.</span>
 </h3>
-<div class="para" id="p-262">Describe the metric balls for the Euclidean and box metrics on <span class="process-math">\(\R^n\)</span> for <span class="process-math">\(n=1,2,3\text{.}\)</span>
+<div class="para" id="p-263">Describe the metric balls for the Euclidean and box metrics on <span class="process-math">\(\R^n\)</span> for <span class="process-math">\(n=1,2,3\text{.}\)</span>
 </div>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like">
-<div class="para" id="p-263">For <span class="process-math">\(n=1\)</span> the two metrics are just <span class="process-math">\(d(x,y)=\abs{x-y}\text{,}\)</span> the same one we used to define the standard topology on <span class="process-math">\(\R\text{.}\)</span> Epsilon balls here are just intervals of the form <span class="process-math">\((x-\epsilon, x+\epsilon)\text{.}\)</span>
-</div> <div class="para" id="p-264">For <span class="process-math">\(n=2,3\)</span> the Euclidean distance defined is the standard distance between two points in <span class="process-math">\(\R^2\)</span> or<span class="process-math">\(\R^3\text{.}\)</span> The set of points <span class="process-math">\(\boldy\)</span> satisfying <span class="process-math">\(d(\boldx, \boldy)=\epsilon\)</span> is thus the circle of radius <span class="process-math">\(\epsilon\)</span> centered at <span class="process-math">\(\boldx\)</span> for <span class="process-math">\(n=2\text{,}\)</span> and the sphere of radius <span class="process-math">\(\epsilon\)</span> centered at <span class="process-math">\(\boldx\)</span> for <span class="process-math">\(n=3\text{.}\)</span> It follows that an <span class="process-math">\(\epsilon\)</span>-ball <span class="process-math">\(B_\epsilon(\boldx)\)</span> is the interior of the this circle or sphere, respectively.</div> <div class="para logical" id="p-265">
+<div class="para" id="p-264">For <span class="process-math">\(n=1\)</span> the two metrics are just <span class="process-math">\(d(x,y)=\abs{x-y}\text{,}\)</span> the same one we used to define the standard topology on <span class="process-math">\(\R\text{.}\)</span> Epsilon balls here are just intervals of the form <span class="process-math">\((x-\epsilon, x+\epsilon)\text{.}\)</span>
+</div> <div class="para" id="p-265">For <span class="process-math">\(n=2,3\)</span> the Euclidean distance defined is the standard distance between two points in <span class="process-math">\(\R^2\)</span> or<span class="process-math">\(\R^3\text{.}\)</span> The set of points <span class="process-math">\(\boldy\)</span> satisfying <span class="process-math">\(d(\boldx, \boldy)=\epsilon\)</span> is thus the circle of radius <span class="process-math">\(\epsilon\)</span> centered at <span class="process-math">\(\boldx\)</span> for <span class="process-math">\(n=2\text{,}\)</span> and the sphere of radius <span class="process-math">\(\epsilon\)</span> centered at <span class="process-math">\(\boldx\)</span> for <span class="process-math">\(n=3\text{.}\)</span> It follows that an <span class="process-math">\(\epsilon\)</span>-ball <span class="process-math">\(B_\epsilon(\boldx)\)</span> is the interior of the this circle or sphere, respectively.</div> <div class="para logical" id="p-266">
 <div class="para">True to its name, an <span class="process-math">\(\epsilon\)</span>-ball around <span class="process-math">\(\boldx\in \R^n\)</span> is the open <span class="process-math">\(n\)</span>-cube</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/d_cartesian_product.html">
 \begin{equation*}
@@ -508,8 +510,8 @@ B_\epsilon(x)=\{y\in X\colon d(x,y)&lt; \epsilon\}\text{.}
 </div></article><article class="lemma theorem-like" id="lemma_metric"><h3 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Metric balls.</span>
 </h3>
-<div class="para" id="p-266">Let <span class="process-math">\(B_\epsilon(x)\)</span> be a metric ball in the metric space <span class="process-math">\((X,d)\text{.}\)</span> If <span class="process-math">\(y\in B_\epsilon(x)\text{,}\)</span> there is a <span class="process-math">\(\delta&gt; 0\)</span> such that <span class="process-math">\(B_\delta(y)\subseteq B_\epsilon(x)\text{.}\)</span> In other words, for all elements <span class="process-math">\(y\)</span> of a metric ball <span class="process-math">\(U\text{,}\)</span> we can find a metric ball <em class="emphasis">centered at <span class="process-math">\(y\)</span></em> contained in <span class="process-math">\(U\text{.}\)</span>
-</div></article><article class="hiddenproof" id="proof-10"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-10"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-10"><article class="hiddenproof"><div class="para logical" id="p-267">
+<div class="para" id="p-267">Let <span class="process-math">\(B_\epsilon(x)\)</span> be a metric ball in the metric space <span class="process-math">\((X,d)\text{.}\)</span> If <span class="process-math">\(y\in B_\epsilon(x)\text{,}\)</span> there is a <span class="process-math">\(\delta&gt; 0\)</span> such that <span class="process-math">\(B_\delta(y)\subseteq B_\epsilon(x)\text{.}\)</span> In other words, for all elements <span class="process-math">\(y\)</span> of a metric ball <span class="process-math">\(U\text{,}\)</span> we can find a metric ball <em class="emphasis">centered at <span class="process-math">\(y\)</span></em> contained in <span class="process-math">\(U\text{.}\)</span>
+</div></article><article class="hiddenproof" id="proof-10"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-10"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-10"><article class="hiddenproof"><div class="para logical" id="p-268">
 <div class="para">Since <span class="process-math">\(y\in B_\epsilon(x)\text{,}\)</span> we have <span class="process-math">\(d(x,y)&lt; \epsilon\)</span> and hence <span class="process-math">\(\delta=\epsilon-d(x,y)&gt; 0\text{.}\)</span> We claim that <span class="process-math">\(B_\delta(y)\subseteq B_\epsilon(x)\text{.}\)</span> Indeed, we have</div>
 <div class="displaymath process-math" id="md-29">
 \begin{align*}
@@ -523,7 +525,7 @@ z\in B_\delta(y)\implies d(z,x)\amp\leq d(z,y)+d(y,x)  \amp (\text{triangle ineq
 </div></article></div>
 <article class="project project-like" id="top_eg_metric_spaces"><h3 class="heading">
 <span class="type">Topological specimen</span><span class="space"> </span><span class="codenumber">6</span><span class="period">.</span><span class="space"> </span><span class="title">Metric spaces.</span>
-</h3> <div class="para logical" id="p-268">
+</h3> <div class="para logical" id="p-269">
 <div class="para">Let <span class="process-math">\((X,d)\)</span> be a metric space. The set</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -532,7 +534,7 @@ z\in B_\delta(y)\implies d(z,x)\amp\leq d(z,y)+d(y,x)  \amp (\text{triangle ineq
 </div>
 <div class="para">of all metric balls is a topological basis, giving <span class="process-math">\(X\)</span> the structure of a topological space. We say the topology <span class="process-math">\(\mathcal{T}\)</span> generated by <span class="process-math">\(\mathcal{B}\)</span> the topology is <dfn class="terminology">induced</dfn> by the metric <span class="process-math">\(d\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="p-269">
+</div> <div class="para logical" id="p-270">
 <div class="para">With respect to this topology we have</div>
 <div class="displaymath process-math" id="mdn-2">
 \begin{align}
@@ -540,9 +542,9 @@ U\text{ open }  \amp \iff U=\bigcup_{i\in I} B_{\epsilon_i}(x_i) \text{ for some
 \amp\iff \text{ for all } x\in U \text{ there exists } \epsilon&gt; 0 \text{ s.t. } B_\epsilon(x)\subseteq U \text{.}\tag{1.3.2}
 \end{align}
 </div>
-</div> <article class="hiddenproof" id="proof-11"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-11"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-11"><article class="hiddenproof"><div class="para" id="p-270">We must prove (1) that <span class="process-math">\(\mathcal{B}\)</span> is a basis, and (2) that the description of openness in (<a href="" class="xref" data-knowl="./knowl/eq_metric_open2.html" title="Equation 1.3.2">(1.3.2)</a>) is correct. (The description in (<a href="" class="xref" data-knowl="./knowl/eq_metric_open1.html" title="Equation 1.3.1">(1.3.1)</a>) follows directly from (<a href="" class="xref" data-knowl="./knowl/eq_top_generated1.html" title="Equation 1.2.1">(1.2.1)</a>).)</div> <ol class="decimal">
-<li id="li-78"><div class="para" id="p-271">For all <span class="process-math">\(x\in X\text{,}\)</span> we have <span class="process-math">\(x\in B_1(x)\in \mathcal{B}\text{,}\)</span> proving the first axiom of <a href="" class="xref" data-knowl="./knowl/d_basis.html" title="Definition 1.2.1: Topological basis">Definition 1.2.1</a>. Next, let <span class="process-math">\(B_1=B_{\epsilon_1}(x_1), B_2=B_{\epsilon_2}(x_2)\)</span> be two metric balls. Given <span class="process-math">\(y\in B_1\cap B_2\text{,}\)</span> there are <span class="process-math">\(\delta_1, \delta_2\)</span> such that <span class="process-math">\(B_{\delta_i}(y)\subseteq B_i\)</span> for <span class="process-math">\(i=1,2\text{.}\)</span> Setting <span class="process-math">\(\delta=\min\{\delta_1, \delta_2\}\text{,}\)</span> we have <span class="process-math">\(y\in B_\delta(y)\subseteq B_1\cap B_2\text{.}\)</span> This proves the second axiom.</div></li>
-<li id="li-79"><div class="para logical" id="p-272">
+</div> <article class="hiddenproof" id="proof-11"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-11"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-11"><article class="hiddenproof"><div class="para" id="p-271">We must prove (1) that <span class="process-math">\(\mathcal{B}\)</span> is a basis, and (2) that the description of openness in (<a href="" class="xref" data-knowl="./knowl/eq_metric_open2.html" title="Equation 1.3.2">(1.3.2)</a>) is correct. (The description in (<a href="" class="xref" data-knowl="./knowl/eq_metric_open1.html" title="Equation 1.3.1">(1.3.1)</a>) follows directly from (<a href="" class="xref" data-knowl="./knowl/eq_top_generated1.html" title="Equation 1.2.1">(1.2.1)</a>).)</div> <ol class="decimal">
+<li id="li-78"><div class="para" id="p-272">For all <span class="process-math">\(x\in X\text{,}\)</span> we have <span class="process-math">\(x\in B_1(x)\in \mathcal{B}\text{,}\)</span> proving the first axiom of <a href="" class="xref" data-knowl="./knowl/d_basis.html" title="Definition 1.2.1: Topological basis">Definition 1.2.1</a>. Next, let <span class="process-math">\(B_1=B_{\epsilon_1}(x_1), B_2=B_{\epsilon_2}(x_2)\)</span> be two metric balls. Given <span class="process-math">\(y\in B_1\cap B_2\text{,}\)</span> there are <span class="process-math">\(\delta_1, \delta_2\)</span> such that <span class="process-math">\(B_{\delta_i}(y)\subseteq B_i\)</span> for <span class="process-math">\(i=1,2\text{.}\)</span> Setting <span class="process-math">\(\delta=\min\{\delta_1, \delta_2\}\text{,}\)</span> we have <span class="process-math">\(y\in B_\delta(y)\subseteq B_1\cap B_2\text{.}\)</span> This proves the second axiom.</div></li>
+<li id="li-79"><div class="para logical" id="p-273">
 <div class="para">Using the alternate description (<a href="" class="xref" data-knowl="./knowl/eq_top_generated2.html" title="Equation 1.2.2">(1.2.2)</a> of the topology generated by a basis we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_top_generated2.html ./knowl/lemma_metric.html" id="md-30">
 \begin{align*}
@@ -554,23 +556,23 @@ U \text{ open } \amp \iff \text{ for all } x\in U \text{ there exists } B_\delta
 </ol></article></div></article><article class="theorem theorem-like" id="th_compare_metrics"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Comparing metric topologies.</span>
 </h3>
-<div class="para logical" id="p-273">
+<div class="para logical" id="p-274">
 <div class="para">Let <span class="process-math">\(d, d'\)</span> be two metrics on the set <span class="process-math">\(X\text{,}\)</span> and let <span class="process-math">\(\mathcal{T},\mathcal{T}'\)</span> be the topologies they induce.</div>
 <ol class="decimal">
-<li id="li-80"><div class="para" id="p-274">We have <span class="process-math">\(\mathcal{T}\subseteq \mathcal{T}'\)</span> if and only if every <span class="process-math">\(d\)</span>-metric ball is a union of <span class="process-math">\(d'\)</span>-metric balls.</div></li>
-<li id="li-81"><div class="para" id="p-275">We have <span class="process-math">\(\mathcal{T}=\mathcal{T}'\)</span> if and only if every <span class="process-math">\(d\)</span>-metric ball is a union of <span class="process-math">\(d'\)</span>-metric balls and every <span class="process-math">\(d'\)</span>-metric ball is a union of <span class="process-math">\(d\)</span>-metric balls.</div></li>
+<li id="li-80"><div class="para" id="p-275">We have <span class="process-math">\(\mathcal{T}\subseteq \mathcal{T}'\)</span> if and only if every <span class="process-math">\(d\)</span>-metric ball is a union of <span class="process-math">\(d'\)</span>-metric balls.</div></li>
+<li id="li-81"><div class="para" id="p-276">We have <span class="process-math">\(\mathcal{T}=\mathcal{T}'\)</span> if and only if every <span class="process-math">\(d\)</span>-metric ball is a union of <span class="process-math">\(d'\)</span>-metric balls and every <span class="process-math">\(d'\)</span>-metric ball is a union of <span class="process-math">\(d\)</span>-metric balls.</div></li>
 </ol>
-</div></article><article class="hiddenproof" id="proof-12"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-12"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-12"><article class="hiddenproof"><div class="para" id="p-276">Both statements follow directly from <a href="" class="xref" data-knowl="./knowl/th_compare_basis.html" title="Theorem 1.2.7: Comparing with bases">Theorem 1.2.7</a>.</div></article></div>
+</div></article><article class="hiddenproof" id="proof-12"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-12"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-12"><article class="hiddenproof"><div class="para" id="p-277">Both statements follow directly from <a href="" class="xref" data-knowl="./knowl/th_compare_basis.html" title="Theorem 1.2.7: Comparing with bases">Theorem 1.2.7</a>.</div></article></div>
 <article class="example example-like" id="eg_euc_box_taxi_equivalence"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Equivalence of Euclidean, box, and taxicab metrics.</span>
 </h3>
-<div class="para" id="p-277">Let <span class="process-math">\(X=\R^n\text{.}\)</span> Show that the Euclidean, box, and taxicab metrics all induce the same topology on <span class="process-math">\(\R^n\text{.}\)</span>
+<div class="para" id="p-278">Let <span class="process-math">\(X=\R^n\text{.}\)</span> Show that the Euclidean, box, and taxicab metrics all induce the same topology on <span class="process-math">\(\R^n\text{.}\)</span>
 </div>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like">
-<div class="para" id="p-278">We adjust our notation to accommodate for different metrics at play simultaneously. Let <span class="process-math">\(d_\operatorname{euc}\text{,}\)</span> <span class="process-math">\(d_\operatorname{box}\text{,}\)</span> <span class="process-math">\(d_\operatorname{taxi}\)</span> be the three metrics in question, and let <span class="process-math">\(\mathcal{T}_{\operatorname{euc}}\text{,}\)</span> <span class="process-math">\(\mathcal{T}_{\operatorname{box}}\text{,}\)</span> <span class="process-math">\(\mathcal{T}_\operatorname{taxi}\)</span> be their respective topologies. We will denote <span class="process-math">\(\epsilon\)</span>-balls with respect to each as <span class="process-math">\(B_{\operatorname{euc},\epsilon}(x)\text{,}\)</span> <span class="process-math">\(B_{\operatorname{box},\epsilon}(x)\text{,}\)</span> <span class="process-math">\(B_{\operatorname{taxi},\epsilon}(x)\text{.}\)</span>
-</div> <div class="para" id="p-279">We will show <span class="process-math">\(\mathcal{T}_\operatorname{euc}=\mathcal{T}_\operatorname{box}\)</span> and <span class="process-math">\(\mathcal{T}_\operatorname{box}=\mathcal{T}_\operatorname{taxi}\text{,}\)</span> from whence it follows that <span class="process-math">\(\mathcal{T}_\operatorname{euc}=\mathcal{T}_\operatorname{box}=\mathcal{T}_\operatorname{taxi}\text{.}\)</span>
-</div> <article class="case" id="case-29"><h4 class="heading">Case: <span class="process-math">\(\mathcal{T}_\operatorname{euc}=\mathcal{T}_\operatorname{box}\)</span>.</h4> <div class="para logical" id="p-280">
+<div class="para" id="p-279">We adjust our notation to accommodate for different metrics at play simultaneously. Let <span class="process-math">\(d_\operatorname{euc}\text{,}\)</span> <span class="process-math">\(d_\operatorname{box}\text{,}\)</span> <span class="process-math">\(d_\operatorname{taxi}\)</span> be the three metrics in question, and let <span class="process-math">\(\mathcal{T}_{\operatorname{euc}}\text{,}\)</span> <span class="process-math">\(\mathcal{T}_{\operatorname{box}}\text{,}\)</span> <span class="process-math">\(\mathcal{T}_\operatorname{taxi}\)</span> be their respective topologies. We will denote <span class="process-math">\(\epsilon\)</span>-balls with respect to each as <span class="process-math">\(B_{\operatorname{euc},\epsilon}(x)\text{,}\)</span> <span class="process-math">\(B_{\operatorname{box},\epsilon}(x)\text{,}\)</span> <span class="process-math">\(B_{\operatorname{taxi},\epsilon}(x)\text{.}\)</span>
+</div> <div class="para" id="p-280">We will show <span class="process-math">\(\mathcal{T}_\operatorname{euc}=\mathcal{T}_\operatorname{box}\)</span> and <span class="process-math">\(\mathcal{T}_\operatorname{box}=\mathcal{T}_\operatorname{taxi}\text{,}\)</span> from whence it follows that <span class="process-math">\(\mathcal{T}_\operatorname{euc}=\mathcal{T}_\operatorname{box}=\mathcal{T}_\operatorname{taxi}\text{.}\)</span>
+</div> <article class="case" id="case-29"><h4 class="heading">Case: <span class="process-math">\(\mathcal{T}_\operatorname{euc}=\mathcal{T}_\operatorname{box}\)</span>.</h4> <div class="para logical" id="p-281">
 <div class="para">For any nonnegative numbers <span class="process-math">\(a_1,a_2,\dots, a_n\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/lemma_metric.html ./knowl/eq_euclidean_box_balls.html ./knowl/lemma_covering_principle.html ./knowl/eq_euclidean_box_balls.html">
 \begin{equation*}
@@ -585,7 +587,7 @@ B_{\operatorname{box},\sqrt{n}\epsilon}\subseteq B_{\operatorname{euc},\epsilon}
 </div>
 <div class="para">showing that within any Euclidean metric ball centered at <span class="process-math">\(\boldx\)</span> we can find a box metric ball centered at <span class="process-math">\(\boldx\text{,}\)</span> and vice versa. Now given any element <span class="process-math">\(y\)</span> in a Euclidean metric ball <span class="process-math">\(B\text{,}\)</span> there is a Euclidean metric ball <span class="process-math">\(B'\)</span> centered at <span class="process-math">\(y\)</span> contained in <span class="process-math">\(B\)</span> by <a href="" class="xref" data-knowl="./knowl/lemma_metric.html" title="Lemma 1.3.5: Metric balls">Lemma 1.3.5</a>. By <a href="" class="xref" data-knowl="./knowl/eq_euclidean_box_balls.html" title="Equation 1.3.3">(1.3.3)</a> there is box metric ball <span class="process-math">\(B''\)</span> centered at <span class="process-math">\(y\)</span> satisfying <span class="process-math">\(B''\subseteq B'\subseteq B\text{.}\)</span> Using our <a href="" class="xref" data-knowl="./knowl/lemma_covering_principle.html" title="Lemma 1.2.3: Covering principle">covering principle</a>, we conclude that any Euclidean metric ball is covered by box metric balls, and thus <span class="process-math">\(\mathcal{T}_\operatorname{euc}\subseteq \mathcal{T}_\operatorname{box}\text{.}\)</span> A very similar argument, using the other inclusion of <a href="" class="xref" data-knowl="./knowl/eq_euclidean_box_balls.html" title="Equation 1.3.3">(1.3.3)</a>, shows that <span class="process-math">\(\mathcal{T}_\operatorname{box}\subseteq \mathcal{T}_\operatorname{euc}\text{.}\)</span>
 </div>
-</div></article> <article class="case" id="case-30"><h4 class="heading">Case: <span class="process-math">\(\mathcal{T}_\operatorname{box}=\mathcal{T}_\operatorname{taxi}\)</span>.</h4> <div class="para logical" id="p-281">
+</div></article> <article class="case" id="case-30"><h4 class="heading">Case: <span class="process-math">\(\mathcal{T}_\operatorname{box}=\mathcal{T}_\operatorname{taxi}\)</span>.</h4> <div class="para logical" id="p-282">
 <div class="para">For any nonnegative <span class="process-math">\(a_1, a_2, \dots, a_n\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -605,7 +607,7 @@ B_{\operatorname{box},n\epsilon}\subseteq B_{\operatorname{taxi},\epsilon}(x)\su
 </div></article><article class="definition definition-like" id="d_trivial_metric"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.8</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="p-282">
+<div class="para logical" id="p-283">
 <div class="para">Given a set <span class="process-math">\(X\)</span> the function <span class="process-math">\(d\colon X\times X\rightarrow \R\)</span> defined as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -616,15 +618,15 @@ d(x,y)= \begin{cases}
 \end{equation*}
 </div>
 <div class="para">is a metric on <span class="process-math">\(X\text{,}\)</span> called the <dfn class="terminology">trivial metric</dfn>.</div>
-</div> <article class="hiddenproof" id="proof-13"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-13"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-13"><article class="hiddenproof"><div class="para" id="p-283">The proof that <span class="process-math">\(d\)</span> is a metric is left as an exercise.</div></article></div></article><article class="example example-like" id="example-23"><h3 class="heading">
+</div> <article class="hiddenproof" id="proof-13"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-13"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-13"><article class="hiddenproof"><div class="para" id="p-284">The proof that <span class="process-math">\(d\)</span> is a metric is left as an exercise.</div></article></div></article><article class="example example-like" id="example-23"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Trivial metric.</span>
 </h3>
-<div class="para" id="p-284">Determine the topology induced on a set <span class="process-math">\(X\)</span> by the trivial metric.</div>
+<div class="para" id="p-285">Determine the topology induced on a set <span class="process-math">\(X\)</span> by the trivial metric.</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-18" id="solution-18"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-18"><div class="solution solution-like"><div class="para" id="p-285">This example is left as an exercise.</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-18" id="solution-18"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-18"><div class="solution solution-like"><div class="para" id="p-286">This example is left as an exercise.</div></div></div>
 </div></article><article class="definition definition-like" id="d_padic_metric"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.10</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(p\)</span>-adic metric.</span>
-</h3> <div class="para logical" id="p-286">
+</h3> <div class="para logical" id="p-287">
 <div class="para">Let <span class="process-math">\(\Z\)</span> be the set of integers. Let <span class="process-math">\(\mathcal{P}=\{2, 3, 5, 7, 11,\dots\}\)</span> be the set of prime integers. The <em class="emphasis">fundamental theorem of arithmetic</em> states that any nonzero integer <span class="process-math">\(n\in \Z\)</span> can be factored in unique was as a product of primes in the form</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -633,7 +635,7 @@ n=\pm \prod_{p\in \mathcal{P}} p^{v_p(n)}\text{,}
 </div>
 <div class="para">where <span class="process-math">\(v_p(n)\)</span> is a nonnegative integer, and <span class="process-math">\(v_p(n)=0\)</span> for all but finitely many primes <span class="process-math">\(p\text{.}\)</span> We call <span class="process-math">\(v_p(n)\)</span> the <dfn class="terminology">valuation</dfn> of <span class="process-math">\(n\)</span> at the prime <span class="process-math">\(p\text{;}\)</span> it tells us the highest power of <span class="process-math">\(p\)</span> dividing <span class="process-math">\(n\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="p-287">
+</div> <div class="para logical" id="p-288">
 <div class="para">Now fix a prime integer <span class="process-math">\(p\text{.}\)</span> For <span class="process-math">\(n\in\Z\)</span> we define its <dfn class="terminology"><span class="process-math">\(p\)</span>-adic norm</dfn> <span class="process-math">\(\abs[p]{n}\)</span> as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -651,7 +653,7 @@ d(m,n)=\abs[p]{m-n}
 </div>
 <div class="para">is a metric on <span class="process-math">\(\Z\text{,}\)</span> called the <span class="process-math">\(p\)</span>-adic metric. Integers <span class="process-math">\(m,n\in\Z\)</span> are close to one another with respect to this metric if their difference is highly divisible by <span class="process-math">\(p\text{.}\)</span>
 </div>
-</div> <article class="hiddenproof" id="proof-14"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-14"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-14"><article class="hiddenproof"><div class="para logical" id="p-288">
+</div> <article class="hiddenproof" id="proof-14"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-14"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-14"><article class="hiddenproof"><div class="para logical" id="p-289">
 <div class="para">We content ourselves with a proof sketch in order to avoid getting into the weeds of elementary number theory. The positivity and symmetry axioms follow readily from simple properties of divisibility. For the triangle inequality it is enough to prove that the <span class="process-math">\(p\)</span>-adic norm <span class="process-math">\(\abs[p]{\hspace{5pt}}\)</span> satisfies the triangle inequality on <span class="process-math">\(\Z\text{:}\)</span> i.e., for all <span class="process-math">\(m,n\in\Z\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_padic_triangle_inequality.html" id="eq_padic_triangle_inequality">
 \begin{equation}

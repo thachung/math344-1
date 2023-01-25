@@ -13,28 +13,23 @@
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
-<div class="para">We content ourselves with a proof sketch in order to avoid getting into the weeds of elementary number theory. The positivity and symmetry axioms follow readily from simple properties of divisibility. For the triangle inequality it is enough to prove that the <span class="process-math">\(p\)</span>-adic norm <span class="process-math">\(\abs[p]{\hspace{5pt}}\)</span> satisfies the triangle inequality on <span class="process-math">\(\Z\text{:}\)</span> i.e., for all <span class="process-math">\(m,n\in\Z\)</span> we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_padic_triangle_inequality.html">
-\begin{equation}
-\abs[p]{m+n}\leq \abs[p]{m}+\abs[p]{n}\tag{1.3.4}
-\end{equation}
+<div class="para">Now fix a prime integer <span class="process-math">\(p\text{.}\)</span> For <span class="process-math">\(n\in\Z\)</span> we define its <dfn class="terminology"><span class="process-math">\(p\)</span>-adic norm</dfn> <span class="process-math">\(\abs[p]{n}\)</span> as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\abs[p]{n}=\begin{cases}
+0\amp\text{if } n=0\\
+p^{-v_p(n)}\amp\text{if } n\ne 0
+\end{cases}\text{.}
+\end{equation*}
 </div>
-<div class="para">since then for any <span class="process-math">\(r,s,t\in\Z\)</span> we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_padic_triangle_inequality.html">
-\begin{align*}
-d(r,s) \amp=\abs[p]{r-s} \\
-\amp=\abs[p]{r-t +t-s} \\
-\amp\leq \abs[p]{r-t}+\abs[p]{t-s}\\
-\amp \leq d(r,t)+d(t,s)\text{.}
-\end{align*}
+<div class="para">The function <span class="process-math">\(d\colon \Z\times\Z\rightarrow \R\)</span> defined as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+d(m,n)=\abs[p]{m-n}
+\end{equation*}
 </div>
-<div class="para">Lastly, the inequality <a href="" class="xref" data-knowl="./knowl/eq_padic_triangle_inequality.html" title="Equation 1.3.4">(1.3.4)</a> follows from the stronger claim</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_padic_triangle_inequality.html">
-\begin{equation}
-\abs[p]{m+n}\leq \max\{\abs[p]{m}, \abs[p]{n} \}\text{,}\tag{1.3.5}
-\end{equation}
+<div class="para">is a metric on <span class="process-math">\(\Z\text{,}\)</span> called the <span class="process-math">\(p\)</span>-adic metric. Integers <span class="process-math">\(m,n\in\Z\)</span> are close to one another with respect to this metric if their difference is highly divisible by <span class="process-math">\(p\text{.}\)</span>
 </div>
-<div class="para">which itself follows from divisibility properties.</div>
 </div>
 <span class="incontext"><a href="s_metric1.html#p-288" class="internal">in-context</a></span>
 </body>

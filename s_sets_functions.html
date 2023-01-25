@@ -355,6 +355,8 @@ window.MathJax = {
 </li>
 <li><div class="toc-item"><a href="s_product2.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Arbitrary products</span></a></div></li>
 <li><div class="toc-item"><a href="s_prods_convergence_metric.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Convergence in product spaces</span></a></div></li>
+<li><div class="toc-item"><a href="s_continuous.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Continuous functions</span></a></div></li>
+<li><div class="toc-item"><a href="s_homeomorphisms.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Homeomorphisms</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -634,21 +636,32 @@ f(A)=\left\{ y \in Y \colon f(a)=y \text{ for some } a \in A \right\}\text{.}
 \operatorname{im} f=f(X)=\left\{ y \in Y \colon f(x)=y \text{ for some } x \in X \right\}\text{.}
 \end{equation*}
 </div>
-</div></article><article class="definition definition-like" id="d_injective_surjective_bijective"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.1.23</span><span class="period">.</span><span class="space"> </span><span class="title">Injective, surjective, bijective.</span>
+</div></article><article class="definition definition-like" id="d_preimage_of_set"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.1.23</span><span class="period">.</span><span class="space"> </span><span class="title">Preimage of set.</span>
 </h4>  <div class="para logical" id="p-51">
+<div class="para">Given a function <span class="process-math">\(f\colon X\rightarrow Y\text{,}\)</span> the <dfn class="terminology">preimage</dfn> of a subset <span class="process-math">\(A\subseteq Y\)</span> is the subset <span class="process-math">\(f^{-1}(A)\subseteq X\)</span> defined as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f^{-1}(A)=\{x\in X\colon f(x)\in A\}\text{.}
+\end{equation*}
+</div>
+<div class="para">In plain English: the preimage of <span class="process-math">\(A\)</span> under <span class="process-math">\(f\)</span> is the set of all <span class="process-math">\(x\in X\)</span> whose image under <span class="process-math">\(f\)</span> lies in <span class="process-math">\(A\text{.}\)</span>
+</div>
+</div></article><article class="definition definition-like" id="d_injective_surjective_bijective"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.1.24</span><span class="period">.</span><span class="space"> </span><span class="title">Injective, surjective, bijective.</span>
+</h4>  <div class="para logical" id="p-52">
 <div class="para">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> be a function.</div>
 <ul class="disc">
-<li id="li-11"><div class="para" id="p-52">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">injective</dfn> (or <dfn class="terminology">one-to-one</dfn>) if for all <span class="process-math">\(x,x'\in X\text{,}\)</span> if <span class="process-math">\(f(x)=f(x')\text{,}\)</span> then <span class="process-math">\(x=x'\text{:}\)</span> equivalently, if <span class="process-math">\(x\ne x'\text{,}\)</span> then <span class="process-math">\(f(x)\ne f(x')\text{.}\)</span>
+<li id="li-11"><div class="para" id="p-53">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">injective</dfn> (or <dfn class="terminology">one-to-one</dfn>) if for all <span class="process-math">\(x,x'\in X\text{,}\)</span> if <span class="process-math">\(f(x)=f(x')\text{,}\)</span> then <span class="process-math">\(x=x'\text{:}\)</span> equivalently, if <span class="process-math">\(x\ne x'\text{,}\)</span> then <span class="process-math">\(f(x)\ne f(x')\text{.}\)</span>
 </div></li>
-<li id="li-12"><div class="para" id="p-53">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">surjective</dfn> (or <dfn class="terminology">onto</dfn>) if for all <span class="process-math">\(y\in Y\text{,}\)</span> there is an <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(f(x)=y\text{:}\)</span> equivalently, <span class="process-math">\(\im f=Y\text{.}\)</span>
+<li id="li-12"><div class="para" id="p-54">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">surjective</dfn> (or <dfn class="terminology">onto</dfn>) if for all <span class="process-math">\(y\in Y\text{,}\)</span> there is an <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(f(x)=y\text{:}\)</span> equivalently, <span class="process-math">\(\im f=Y\text{.}\)</span>
 </div></li>
-<li id="li-13"><div class="para" id="p-54">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">bijective</dfn> (or a <dfn class="terminology">one-to-one correspondence</dfn>) if it is injective and surjective.</div></li>
+<li id="li-13"><div class="para" id="p-55">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">bijective</dfn> (or a <dfn class="terminology">one-to-one correspondence</dfn>) if it is injective and surjective.</div></li>
 </ul>
 </div></article><article class="example example-like" id="example-5"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.1.24</span><span class="period">.</span><span class="space"> </span><span class="title">Role of domain and codomain in injectivity and surjectivity.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.1.25</span><span class="period">.</span><span class="space"> </span><span class="title">Role of domain and codomain in injectivity and surjectivity.</span>
 </h4>
-<div class="para logical" id="p-55">
+<div class="para logical" id="p-56">
 <div class="para">Consider the following three functions</div>
 <div class="displaymath process-math" id="md-7">
 \begin{align*}
@@ -658,13 +671,13 @@ x \amp\mapsto x^2 \amp x \amp\mapsto x^2 \amp x \amp\mapsto x^2 \amp \text{.}
 </div>
 <div class="para">Although all three functions are defined using the same rule (<span class="process-math">\(x\mapsto x^2\)</span>), they are not equal thanks to their differing domains and/or codomains. The choice of domain and codomain in these examples also plays a crucial role in determining whether the function is injective and/or surjective. The function <span class="process-math">\(f\)</span> is neither injective (<span class="process-math">\(f(-2)=f(2)=4\)</span>) nor surjective (<span class="process-math">\(f(X)=[0,\infty)\ne \R\)</span>); the function <span class="process-math">\(g\)</span> is injective but not surjective; the function <span class="process-math">\(h\)</span> is both injective and surjective, hence bijective.</div>
 </div></article><article class="definition definition-like" id="d_function_composition"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.1.25</span><span class="period">.</span><span class="space"> </span><span class="title">Function composition.</span>
-</h4>  <div class="para" id="p-56">Suppose <span class="process-math">\(f\colon Z\rightarrow W\)</span> and <span class="process-math">\(g\colon X\rightarrow Y\)</span> are functions satisfying <span class="process-math">\(Y\subseteq Z\text{.}\)</span>  The <dfn class="terminology">composition of <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span></dfn> is the function <span class="process-math">\(f\circ g\colon X\rightarrow W\)</span> defined as <span class="process-math">\(f\circ g\, (x)=f(g(x))
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.1.26</span><span class="period">.</span><span class="space"> </span><span class="title">Function composition.</span>
+</h4>  <div class="para" id="p-57">Suppose <span class="process-math">\(f\colon Z\rightarrow W\)</span> and <span class="process-math">\(g\colon X\rightarrow Y\)</span> are functions satisfying <span class="process-math">\(Y\subseteq Z\text{.}\)</span>  The <dfn class="terminology">composition of <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span></dfn> is the function <span class="process-math">\(f\circ g\colon X\rightarrow W\)</span> defined as <span class="process-math">\(f\circ g\, (x)=f(g(x))
 \text{,}\)</span> for all <span class="process-math">\(x\in X\text{.}\)</span>
 </div></article><article class="definition definition-like" id="d_invertible_function"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.1.26</span><span class="period">.</span><span class="space"> </span><span class="title">Identity and inverse functions.</span>
-</h4>  <div class="para" id="p-57">For any set <span class="process-math">\(X\)</span> the <dfn class="terminology">identity function</dfn> on <span class="process-math">\(X\)</span> is the function <span class="process-math">\(\id_X\colon X\rightarrow X\)</span> defined as <span class="process-math">\(\id_X(x)=x\)</span> for all <span class="process-math">\(x\in X\text{.}\)</span>
-</div> <div class="para logical" id="p-58">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.1.27</span><span class="period">.</span><span class="space"> </span><span class="title">Identity and inverse functions.</span>
+</h4>  <div class="para" id="p-58">For any set <span class="process-math">\(X\)</span> the <dfn class="terminology">identity function</dfn> on <span class="process-math">\(X\)</span> is the function <span class="process-math">\(\id_X\colon X\rightarrow X\)</span> defined as <span class="process-math">\(\id_X(x)=x\)</span> for all <span class="process-math">\(x\in X\text{.}\)</span>
+</div> <div class="para logical" id="p-59">
 <div class="para">A function <span class="process-math">\(f\colon X\rightarrow Y\)</span> is <dfn class="terminology">invertible</dfn> if there is a function <span class="process-math">\(g\colon Y\rightarrow X\)</span> satisfying <span class="process-math">\(g\circ f=\id_X\)</span> and <span class="process-math">\(f\circ g=\id_Y\text{:}\)</span> i.e.,</div>
 <div class="displaymath process-math" id="md-8">
 \begin{align*}
@@ -673,22 +686,22 @@ f(g(y))\amp=y  \text{ for all } y\in Y \text{.}
 \end{align*}
 </div>
 </div> The function <span class="process-math">\(g\)</span> in this case is called the <dfn class="terminology">inverse</dfn> of <span class="process-math">\(f\text{,}\)</span> denoted <span class="process-math">\(g=f^{-1}\text{.}\)</span></article><article class="theorem theorem-like" id="th_invertible_bijective"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">0.1.27</span><span class="period">.</span><span class="space"> </span><span class="title">Invertible is equivalent to bijective.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">0.1.28</span><span class="period">.</span><span class="space"> </span><span class="title">Invertible is equivalent to bijective.</span>
 </h4>
-<div class="para" id="p-59">A function <span class="process-math">\(f\colon X\rightarrow Y\)</span> is invertible if and only if it is bijective.</div></article></section><section class="subsection" id="subsec-"><h3 class="heading hide-type">
+<div class="para" id="p-60">A function <span class="process-math">\(f\colon X\rightarrow Y\)</span> is invertible if and only if it is bijective.</div></article></section><section class="subsection" id="subsec-"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Cardinality and countability</span>
 </h3>
 <article class="definition definition-like" id="d_cardinality"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.1.28</span><span class="period">.</span><span class="space"> </span><span class="title">Cardinality.</span>
-</h4>  <div class="para" id="p-60">Let <span class="process-math">\(X\)</span> be a set.</div> <ol class="decimal">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.1.29</span><span class="period">.</span><span class="space"> </span><span class="title">Cardinality.</span>
+</h4>  <div class="para" id="p-61">Let <span class="process-math">\(X\)</span> be a set.</div> <ol class="decimal">
 <li id="li-14">
-<span class="heading"><span class="title">Finite and infinite sets.</span></span><div class="para" id="p-61">The set <span class="process-math">\(X\)</span> is <dfn class="terminology">finite</dfn> if either <span class="process-math">\(X=\emptyset\)</span> or there is a bijection <span class="process-math">\(f\colon X\rightarrow \{1,2,\dots, n\}\)</span> for some positive integer <span class="process-math">\(n\text{.}\)</span> Roughly speaking, the <dfn class="terminology">cardinality</dfn> of a finite set <span class="process-math">\(X\text{,}\)</span> denoted <span class="process-math">\(\abs{X}\text{,}\)</span> is the number of distinct elements it contains. In more detail if <span class="process-math">\(X=\emptyset\text{,}\)</span> then <span class="process-math">\(\abs{X}=0\)</span> by definition; if there is a bijection <span class="process-math">\(f\colon X\rightarrow \{1,2,\dots, n\}\text{,}\)</span> then <span class="process-math">\(\abs{X}=n\text{.}\)</span>
+<span class="heading"><span class="title">Finite and infinite sets.</span></span><div class="para" id="p-62">The set <span class="process-math">\(X\)</span> is <dfn class="terminology">finite</dfn> if either <span class="process-math">\(X=\emptyset\)</span> or there is a bijection <span class="process-math">\(f\colon X\rightarrow \{1,2,\dots, n\}\)</span> for some positive integer <span class="process-math">\(n\text{.}\)</span> Roughly speaking, the <dfn class="terminology">cardinality</dfn> of a finite set <span class="process-math">\(X\text{,}\)</span> denoted <span class="process-math">\(\abs{X}\text{,}\)</span> is the number of distinct elements it contains. In more detail if <span class="process-math">\(X=\emptyset\text{,}\)</span> then <span class="process-math">\(\abs{X}=0\)</span> by definition; if there is a bijection <span class="process-math">\(f\colon X\rightarrow \{1,2,\dots, n\}\text{,}\)</span> then <span class="process-math">\(\abs{X}=n\text{.}\)</span>
 </div>
-<div class="para" id="p-62">The set <span class="process-math">\(X\)</span> is <dfn class="terminology">infinite</dfn> if it is not finite. In this case <span class="process-math">\(X\)</span> is said to have <dfn class="terminology">infinite cardinality</dfn>.</div>
+<div class="para" id="p-63">The set <span class="process-math">\(X\)</span> is <dfn class="terminology">infinite</dfn> if it is not finite. In this case <span class="process-math">\(X\)</span> is said to have <dfn class="terminology">infinite cardinality</dfn>.</div>
 </li>
 <li id="li-15">
-<span class="heading"><span class="title">Countable and uncountable sets.</span></span><div class="para" id="p-63">The set <span class="process-math">\(X\)</span> is <dfn class="terminology">countably infinite</dfn> if there is a bijection <span class="process-math">\(f\colon X\rightarrow \Z_{+}\text{,}\)</span> where <span class="process-math">\(\Z_+=\{1,2,\dots, \}\)</span> is the set of all positive integers; it is <dfn class="terminology">countable</dfn> if it is either finite or countable infinite.</div>
-<div class="para" id="p-64">The set <span class="process-math">\(X\)</span> is <dfn class="terminology">uncountable</dfn> if it is not countable.</div>
+<span class="heading"><span class="title">Countable and uncountable sets.</span></span><div class="para" id="p-64">The set <span class="process-math">\(X\)</span> is <dfn class="terminology">countably infinite</dfn> if there is a bijection <span class="process-math">\(f\colon X\rightarrow \Z_{+}\text{,}\)</span> where <span class="process-math">\(\Z_+=\{1,2,\dots, \}\)</span> is the set of all positive integers; it is <dfn class="terminology">countable</dfn> if it is either finite or countable infinite.</div>
+<div class="para" id="p-65">The set <span class="process-math">\(X\)</span> is <dfn class="terminology">uncountable</dfn> if it is not countable.</div>
 </li>
 </ol></article></section></section></div>
 <div class="ptx-content-footer">

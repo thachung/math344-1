@@ -11,8 +11,16 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h3 class="heading"><span class="type">Paragraph</span></h3>
-<div class="para">When defining a topology <span class="process-math">\(\mathcal{T}\)</span> for a set <span class="process-math">\(X\)</span> it is often convenient to specify instead a more manageable subset of <span class="process-math">\(\mathcal{T}\)</span> that we can use to <em class="emphasis">generate</em> the entire topology using arbitrary unions and/or finite intersections (our open set operators). A <em class="emphasis">topological basis</em> is a particularly nice example of this (<a href="" class="xref" data-knowl="./knowl/d_basis.html" title="Definition 1.2.1: Topological basis">1.2.1</a>) as the open sets of the topology it generates can be expressed as (arbitrary) unions of the basis elements. Bases will also provide a convenient way of comparing different topologies and (later on) determining whether relevant topological properties are satisfied by a given space.</div>
-<span class="incontext"><a href="s_bases_top.html#p-193" class="internal">in-context</a></span>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(U\)</span> be any finite nonempty subset of <span class="process-math">\(X\text{.}\)</span> Since <span class="process-math">\(X\)</span> is infinite and <span class="process-math">\(X=U\cup U^c\text{,}\)</span> it follows that <span class="process-math">\(U^c\)</span> must be infinite, and hence that <span class="process-math">\(U\)</span> is not cofinite. We conclude that <span class="process-math">\(U\in \mathcal{T}_{\operatorname{discrete}}=\mathcal{P}(X)\)</span> and <span class="process-math">\(U\notin \mathcal{T}_{\operatorname{cofinite}}\text{.}\)</span> Thus <span class="process-math">\(\mathcal{T}_{\operatorname{cofinite}}\subsetneq \mathcal{T}_{\operatorname{discrete}}\)</span> in this case. Next, fix in any element <span class="process-math">\(x\in X\)</span> and let <span class="process-math">\(U=X-\{x\}\text{.}\)</span> It is clear (a) that <span class="process-math">\(U\)</span> is cofinite, and (b) that <span class="process-math">\(U\)</span> is not equal to <span class="process-math">\(\emptyset\)</span> or <span class="process-math">\(X\text{.}\)</span> Thus <span class="process-math">\(U\in\mathcal{T}_{\operatorname{cofinite}}\)</span> and <span class="process-math">\(U\notin\mathcal{T}_{\operatorname{trivial}}\text{,}\)</span> proving that <span class="process-math">\(\mathcal{T}_{\operatorname{trivial}}\subsetneq \mathcal{T}_{\operatorname{cofinite}}\text{.}\)</span> We conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{T}_{\operatorname{trivial}}\subsetneq \mathcal{T}_{\operatorname{cofinite}}\subsetneq \mathcal{T}_{\operatorname{discrete}}
+\end{equation*}
+</div>
+<div class="para">in this case.</div>
+</div>
+<span class="incontext"><a href="s_top_spaces.html#p-193" class="internal">in-context</a></span>
 </body>
 </html>

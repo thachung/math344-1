@@ -12,7 +12,15 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">To show <span class="process-math">\(f\)</span> is bijective directly using <a href="" class="xref" data-knowl="./knowl/d_injective_surjective_bijective.html" title="Definition 0.1.23: Injective, surjective, bijective">Definition 0.1.23</a>, we must show that <span class="process-math">\(f\)</span> is injective and surjective. This is equivalent to showing that for <span class="process-math">\(y\in Y\)</span> there exists a <em class="emphasis">unique</em> element <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(f(x)=y\text{.}\)</span>
+<div class="para logical">
+<div class="para">To prove <span class="process-math">\(f\)</span> is surjective, we must prove the universal quantification:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/rm_negating_quantifiers.html">
+\begin{equation*}
+\text{for all } y\in Y, \text{ there exists an } x\in X\ \text{ such that } f(x)=y\text{.}
+\end{equation*}
+</div>
+<div class="para">To prove <span class="process-math">\(f\)</span> is <em class="emphasis">not</em> surjective, we must prove the negation of this proposition (<a href="" class="xref" data-knowl="./knowl/rm_negating_quantifiers.html" title="Remark 0.2.9: Negating quantifiers">Remark 0.2.9</a>): i.e., there exists a <span class="process-math">\(y\in Y\)</span> for which there is no <span class="process-math">\(x\in X\)</span> with <span class="process-math">\(f(x)=y\text{.}\)</span>
+</div>
 </div>
 <span class="incontext"><a href="s_proof_technique.html#p-130" class="internal">in-context</a></span>
 </body>
