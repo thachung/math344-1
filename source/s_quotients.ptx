@@ -1,0 +1,241 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_quotients">
+  <title>Quotients</title>
+  <introduction>
+    <p>
+
+    </p>
+</introduction>
+<project xml:id="top_eg_quotient_space">
+  <title>Quotient space</title>
+  <p>
+    Let <m>(X,\mathcal{T})</m> be a topological space, <m>\sim</m> an equivalence relation on <m>X</m>, <m>X^*=X/\sim</m> the set of equivalence classes of <m>\sim</m>, and <m>q\colon X\rightarrow X^*</m> the map sending <m>x\in X</m> to its equivalence class <m>[x]_\sim\in X^*</m>. The set
+    <me>
+      \mathcal{T}_{\operatorname{quot}}=\{U\subset X^*\colon q^{-1}(U)\in \mathcal{T}\}
+    </me>
+    is a topology on <m>X^*</m> called the <term>quotient topology</term>. The map <m>q\colon X\rightarrow X^*</m> is a <em>quotient map</em>: that is, it is surjective and satisfies <m>V\subseteq X^*</m> is open if and only if <m>q^{-1}(V)</m> is open.
+  </p>
+  <proof>
+    <p>
+      That <m>\mathcal{T}_{\operatorname{quot}}</m> is a topology follows easily from properties of preimages of sets; and it satisfies the quotient map properties essentially by definition.
+    </p>
+  </proof>
+</project>
+<example xml:id="eg_quotient_no_proof">
+  <statement>
+    <p>
+      For each quotient space description give an explicit description of the equivalence classes and identify (without proof) what familiar space the quotient might be homeomorphic to.
+    </p>
+    <ol>
+      <li>
+        <p>
+          <m>X=[0,1]</m>, <m>X^*</m> obtained by identifying <m>0</m> and <m>1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>X=\R</m>, <m>X^*=X/\sim</m>, where <m>x\sim y</m> if and only if <m>x=y+n</m> for some <m>n\in \Z</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>X=[0,1]\times [0,1]</m>, <m>X^*</m> obtained by identifying <m>P=(0,y)</m> and <m>Q=(1,y)</m> for all <m>y\in [0,1]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>X=[0,1]\times [0,1]</m>, <m>X^*</m> obtained by identifying <m>P=(0,y)</m> and <m>Q=(1,y)</m> for all <m>y\in [0,1]</m> and all <m>R=(x,0)</m> and <m>S=(x,1)</m> for <m>x\in [0,1]</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+<definition xml:id="d_quotient_map">
+  <statement>
+    <p>
+      Let <m>X</m> and <m>Y</m> be topological spaces. A function <m>f\colon X\rightarrow Y</m> is a <term>quotient map</term> if it satisfies the following properties:
+      <ol>
+        <li>
+          <p>
+            <m>f</m> is surjective;
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>V\subseteq Y</m> is open if and only if <m>f^{-1}(V)\subseteq X</m> is open.
+          </p>
+        </li>
+      </ol>
+      It follows immediately from the definition that a quotient map is continuous.
+    </p>
+  </statement>
+</definition>
+<definition xml:id="d_saturated">
+  <title>Saturated sets</title>
+  <statement>
+    <p>
+      Let <m>f\colon X\rightarrow Y</m>.
+            A set <m>A\subseteq X</m> is saturated with respect to <m>f</m> if <m>f^{-1}(f(A))=A</m>. Equivalently, <m>A</m> is saturated if if whenever <m>x\in A</m> we have <m>f^{-1}(\{f(x)\})\subseteq A</m>.
+    </p>
+  </statement>
+</definition>
+<theorem xml:id="th_quotientmap_props">
+  <title>Quotient map properties</title>
+  <statement>
+    <ol>
+      <li>
+        <p>
+          Let <m>f\colon X\rightarrow Y</m> be a continuous surjective function. The following statements are equivalent.
+          <ol>
+            <li>
+              <p>
+                <m>f</m> is a quotient map.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(U)</m> is open for all open saturated sets <m>U\subseteq X</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(C)</m> is closed for all closed saturated subsets <m>C\subseteq X</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          Open and closed maps are quotient maps.
+        </p>
+      </li>
+      <li>
+        <p>
+          The composition of two quotient maps is a quotient map.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</theorem>
+
+<theorem xml:id="th_quotientmap_mappingprop">
+  <title>Mapping property of quotient maps</title>
+  <statement>
+    <p>
+      Let <m>p\colon X\rightarrow Y</m> be a quotient map. Given any continuous function <m>g\colon X\rightarrow Z</m> satisfying
+      <men xml:id="eq_agree_on_fibers">
+        p(x)=p(x') \implies g(x)=g(x')
+      </men>
+      for all <m>x, x'\in X</m> there is a unique continuous function <m>f\colon Y\rightarrow Z</m> satisfying <m>g=f\circ p</m>.
+      <image xml:id="im_quotientmap_pros" width="25%">
+      <latex-image>
+        \begin{tikzcd}
+           X \arrow[rd, "g"] \arrow[d, twoheadrightarrow,"p"']\amp \\
+          Y \arrow[r,dotted,"\exists! f"'] \amp Z
+        \end{tikzcd}
+      </latex-image>
+      Furthermore, the function <m>f</m> is a projection map if and only if <m>g</m> is a projection map.
+      </image>
+    </p>
+  </statement>
+</theorem>
+<definition xml:id="d_fibers_agree">
+  <title>Fibers of maps</title>
+  <statement>
+    <p>
+      For any function <m>f\colon X\rightarrow Y</m> between sets and element <m>y\in Y</m>, we call <m>f^{-1}(\{y\})</m> the <term>fiber of <m>f</m> lying over <m>y</m></term>. We say a function <m>g\colon X\rightarrow Z</m> <term>agrees on fibers</term> of <m>f</m> if
+      <me>
+        f(x)=f(x')\implies g(x)=g(x')
+      </me>.
+    </p>
+  </statement>
+</definition>
+<corollary xml:id="cor_quotientspace_props">
+  <title>Mapping property of quotients</title>
+  <statement>
+    <p>
+      Let <m>X^*</m> be the quotient space of <m>X</m> by the equivalence relation <m>\sim</m>, and let <m>q\colon X\rightarrow X^*</m> be the corresponding quotient map. Let <m>g\colon X\rightarrow Z</m> be a continuous function that agrees on fibers of <m>q</m> (<ie />, <m>x\sim x'\implies g(x)=g(x')</m>).
+      <ol>
+        <li>
+          <p>
+            There is a unique continuous function <m>f</m> satisfying <m>g=f\circ q</m>; and <m>f</m> is a quotient map if and only if <m>g</m> is a quotient map.
+            <image xml:id="im_quotientspace_prop" width="25%">
+            <latex-image>
+              \begin{tikzcd}
+                 X \arrow[rd, twoheadrightarrow,"g"] \arrow[d, twoheadrightarrow,"p"']\amp \\
+                X^* \arrow[r,dotted,"\exists! f"'] \amp Y
+              \end{tikzcd}
+            </latex-image>
+          </image>
+          </p>
+        </li>
+        <li>
+          <p>
+            The function <m>f</m> is a homeomorphism if and only if <m>g</m> is a quotient map and satisfies
+            <me>
+              g(x)=g(x') \iff x\sim x' (\text{equivalently, } g(x)=g(x')\iff q(x)=q(x'))
+            </me>
+            for all <m>x, x'\in X</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</corollary>
+<corollary xml:id="cor_quotient_factor">
+  <title>Factoring maps through a quotient</title>
+  <statement>
+    <p>
+      Let <m>g\colon X\rightarrow Y</m> be a surjective continuous map, and let <m>X^*</m> be the quotient obtained from <m>X</m> by treating each fiber <m>g^{-1}(\{y\})</m>, <m>y\in Y</m>,  as a single point: <ie />, the equivalence relation is <m>x\sim x'\iff g(x)=g(x')</m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          There is a unique bijective continuous function <m>f\colon X^*\rightarrow Y</m> satisfying <m>g=f\circ q</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The function <m>f</m> is a homeomorphism if and only if <m>g</m> is a quotient map.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>Y</m> is Hausdorff, then <m>X^*</m> is Hausdorff.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</corollary>
+<example xml:id="eg_RmodZ">
+  <title>The circle as a quotient space</title>
+  <statement>
+    <p>
+      Let <m>X^*</m> be the quotient of <m>[0,1]</m> obtained by identifying only the elements <m>0</m> and <m>1</m>. Let <m>\R/\Z</m> denote the quotient of <m>\R</m> by the equivalence relation <m>x\sim y</m> if and only if <m>x=y+n</m> for some <m>n\in Z</m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Prove: <m>X^*</m> and <m>\R/\Z</m> are homeomorphic.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove: <m>\R/\Z</m> is homeomorphic to <m>S^1=\{(x,y)\colon x^2+y^2=1\}</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+
+</section>
