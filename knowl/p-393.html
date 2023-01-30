@@ -12,7 +12,16 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">If <span class="process-math">\(C\)</span> is closed in <span class="process-math">\(Y\)</span> and <span class="process-math">\(Y\)</span> is closed in <span class="process-math">\(X\text{,}\)</span> then <span class="process-math">\(C\)</span> is closed in <span class="process-math">\(X\)</span>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(C\subseteq Y\text{.}\)</span> We have</div>
+<div class="displaymath process-math">
+\begin{align*}
+C \text{ closed in } Y \amp \iff Y-C \text{ open in } Y \\
+\amp\iff Y-C=U\cap Y \text{ for some open } U\subseteq X\\
+\amp \iff C=(X-U)\cap Y \text{ for some open } U\subseteq X\\
+\amp \iff C=C'\cap Y \text{ for some closed } C'\subseteq X\text{.}
+\end{align*}
+</div>
 </div>
 <span class="incontext"><a href="s_subspace_finite_products.html#p-393" class="internal">in-context</a></span>
 </body>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof"><div class="para logical">
+<div class="para">Take any open set <span class="process-math">\(U\)</span> in the product topology and any <span class="process-math">\(x=(x_i)_{i\in I}\)</span> lying in <span class="process-math">\(U\text{.}\)</span> There is an open neighborhood of <span class="process-math">\(x\)</span> lying in <span class="process-math">\(U\)</span> of the form  <span class="process-math">\(B=\prod_{j=1}^n (x_{i_j}-\epsilon_{i_j},x_{i_j}+\epsilon_{i_j})\times \prod_{i\ne i_j}\R\text{,}\)</span> where we may further assume <span class="process-math">\(\epsilon_{i_j}&lt; 1\)</span> for all <span class="process-math">\(1\leq j\leq n\text{.}\)</span> Letting  <span class="process-math">\(\epsilon=\min\{\epsilon_{i_j}\}\text{,}\)</span> I claim we have <span class="process-math">\(B_\epsilon(x)\subseteq B\text{.}\)</span> Indeed, for any <span class="process-math">\(y\in B_{\epsilon}(x)\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\sup\{\overline{d}(y_i,x_i)\} &lt; \epsilon \amp \implies \min\{\abs{y_{i_j}-x_{i_j}},1\}&lt;  \epsilon \text{ for all } 1\leq j\leq n \\
+\amp \implies \abs{y_{i_j}-x_{i_j}}&lt;  \epsilon \text{ for all } 1\leq j\leq n \amp (\epsilon &lt; 1)\\
+\amp\implies \abs{y_{i_j}-x_{i_j}}&lt; \epsilon_{i_j} \text{ for all } 1\leq j\leq n \\
+\amp \implies y\in B
+\end{align*}
+</div>
+<div class="para">This proves that <span class="process-math">\(\mathcal{T}_{\operatorname{prod}}\subseteq \mathcal{T}_{\operatorname{uni}}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">For the next inclusion, take any open set <span class="process-math">\(U\)</span> in the uniform topology. For any <span class="process-math">\(x\in U\)</span> we can find <span class="process-math">\(\epsilon &gt; 0\)</span> such that <span class="process-math">\(B_{\epsilon}(x)\subseteq U\text{.}\)</span> Let <span class="process-math">\(V=\prod_{i\in I}(x_i-\epsilon/2, x_i+\epsilon/2)\text{,}\)</span> which is open in the box topology. Given any <span class="process-math">\(y=(y_i)\in V\text{,}\)</span> we have <span class="process-math">\(\overline{d}(y_i, x_i)\leq \abs{y_i-x_i}&lt; \epsilon/2\text{.}\)</span> It follows that in the uniform metric we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+d_{\operatorname{uni}}(y,x)=\sup\{\overline{d}(y_i, x_i)\}\leq \epsilon/2&lt; \epsilon\text{,}
+\end{equation*}
+</div>
+<div class="para">showing that <span class="process-math">\(V\subseteq B_\epsilon(x)\subseteq U\text{.}\)</span> This proves <span class="process-math">\(\mathcal{T}_{\operatorname{uni}}\subseteq  \mathcal{T}_{\operatorname{box}}\text{.}\)</span>
+</div>
+</div> <div class="para">The fact that both inclusions are strict when <span class="process-math">\(I\)</span> is infinite is left as a homework exercise.</div></article></body>
+</html>

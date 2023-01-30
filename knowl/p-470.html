@@ -12,7 +12,15 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">Prove: if <span class="process-math">\(X\)</span> is given the product topology, then <span class="process-math">\(\pi_j\)</span> is continuous for all <span class="process-math">\(j\in J\text{.}\)</span>
+<div class="para logical">
+<div class="para">Continuity is defined in terms of <a href="" class="xref" data-knowl="./knowl/d_preimage_of_set.html" title="Definition 0.1.23: Preimage of set">preimages of sets</a> under a function <span class="process-math">\(f\text{.}\)</span> Thankfully, the preimage operation behaves very well with respect to our various set operations. In particular, we have the following identities, which you may make use of without further ado:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_preimage_of_set.html">
+\begin{align}
+f^{-1}\left(\bigcup_{i\in I}A_i\right) \amp = \bigcup_{i\in I}f^{-1}(A_i)\tag{1.9.2}\\
+f^{-1}\left(\bigcap_{i\in I}A_i\right) \amp = \bigcap_{i\in I}f^{-1}(A_i)\tag{1.9.3}\\
+f^{-1}(A^c) \amp =(f^{-1}(A))^c\tag{1.9.4}
+\end{align}
+</div>
 </div>
 <span class="incontext"><a href="s_continuous.html#p-470" class="internal">in-context</a></span>
 </body>

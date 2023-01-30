@@ -970,7 +970,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.5",
   "title": "Limit points and the Hausdorff property",
-  "body": " Limit points and the Hausdorff property       Neighborhood of element or set   Let be a topological space. An open neighborhood of an element is an open set that contains ; an open neighborhood of a subset is an open set such that .  More generally, a (not necessarily open) neighborhood of a point or subset is a subset whose interior contains or : equivalently, contains an open set containing or .     Limit point of a set   Let be a subset of the topological space . An element is a limit point of if any open neighborhood of intersects in a point distinct from : for any open neighborhood of , we have .     Limit points in   Let with the standard topology. Determine the set of all limit points for the following sets.                               Limit points and closure   Let be a subset of the topological space , and let be the set of all limit points of . We have .     Closed, closure, limit points   Let be a subset of the topological space . The following are equivalent.     is closed.     contains all of its limit points.     .       Hausdorff property   A topological space is Hausdorff if for any two distinct elements ( , ) there are open neighborhoods of and , respectively, that are disjoint ( , ).     Hausdorff properties   Let be a Hausdorff space.    All singletons are closed.    All finite subsets of are closed.       The -axiom   A topological space is (or is a -space , or satisfies the -axiom ) if all finite subsets of are closed.     as separation axiom  The is called a separation axiom , or Trennungsaxiom in German: hence the T . To see more explicitly why this is called a separation axiom, note that (a) is equivalent to the property that any singleton is closed, and (b) this in turn is equivalent to saying for any two elements there is an open neighborhood of that does not contain ; we think of this as separating and .  We will say more about separation axioms later. For now, I'll mention that the Hausdorff property is itself a separation axiom, called the -axiom.    Hausdorff versus   Let be a topological space.    If is Hausdorff, then is     It is not the case that if is , then must be Hausdorff.    Using logical shorthand, we have     Statement (1) follows from .  We provide a counterexample to the claim that implies Hausdorff. Let be any infinite set endowed with the cofinite topology. The closed sets of are precisely the finite sets and itself, as we saw in . Thus is . On the other hand, is not Hausdorff. Indeed take any two distinct elements . Let and be any pair of open neighborhoods of and , respectively. We will show that . If either of the open neighborhoods is equal to itself, the claim is obvious. Otherwise is a finite set that does not contain and is a finite set that does not contain . Since is infinite, , and hence , as desired.     Metric spaces are Hausdorff     Show that any metric space is Hausdorff.    Show that any infinite set endowed with the cofinite topology is not a metric space.           Convergent sequence   Let be a topological space. A sequence of elements of  converges to the element , denoted , if for any open neighborhood of , there is a positive integer such that for all . We say is a convergent sequence in this case, and call the limit of the sequence.     Limits in the cofinite topology   Let endowed with the cofinite topology. Show that the sequence converges to all elements . In particular, the limit of a convergent sequence need not be unique!         Unique limits in Hausdorff spaces   If is Hausdorff, then any sequence has at most one limit.         Limit points in -spaces   Let be a subset of the -space . An element is a limit point of if and only if every open neighborhood of intersects in infinitely many points.    "
+  "body": " Limit points and the Hausdorff property       Neighborhood of element or set   Let be a topological space. An open neighborhood of an element is an open set that contains ; an open neighborhood of a subset is an open set such that .  More generally, a (not necessarily open) neighborhood of a point or subset is a subset whose interior contains or : equivalently, contains an open set containing or .     Limit point of a set   Let be a subset of the topological space . An element is a limit point of if any open neighborhood of intersects in a point distinct from : for any open neighborhood of , we have .     Limit points in   Let with the standard topology. Determine the set of all limit points for the following sets.                               Limit points and closure   Let be a subset of the topological space , and let be the set of all limit points of . We have .     Closed, closure, limit points   Let be a subset of the topological space . The following are equivalent.     is closed.     contains all of its limit points.     .       Hausdorff property   A topological space is Hausdorff if for any two distinct elements ( , ) there are open neighborhoods of and , respectively, that are disjoint ( , ).     Hausdorff properties   Let be a Hausdorff space.    All singletons are closed.    All finite subsets of are closed.       The -axiom   A topological space is (or is a -space , or satisfies the -axiom ) if all finite subsets of are closed.     as separation axiom  The is called a separation axiom , or Trennungsaxiom in German: hence the T . To see more explicitly why this is called a separation axiom, note that (a) is equivalent to the property that any singleton is closed, and (b) this in turn is equivalent to saying for any two elements there is an open neighborhood of that does not contain ; we think of this as separating and .  We will say more about separation axioms later. For now, I'll mention that the Hausdorff property is itself a separation axiom, called the -axiom.    Hausdorff versus   Let be a topological space.    If is Hausdorff, then is     It is not the case that if is , then must be Hausdorff.    Using logical shorthand, we have     Statement (1) follows from .  We provide a counterexample to the claim that implies Hausdorff. Let be any infinite set endowed with the cofinite topology. The closed sets of are precisely the finite sets and itself, as we saw in . Thus is . On the other hand, is not Hausdorff. Indeed take any two distinct elements . Let and be any pair of open neighborhoods of and , respectively. We will show that . If either of the open neighborhoods is equal to itself, the claim is obvious. Otherwise is a finite set that does not contain and is a finite set that does not contain . Since is infinite, , and hence , as desired.     Metric spaces are Hausdorff     Show that any metric space is Hausdorff.    Show that any infinite set endowed with the cofinite topology is not a metric space.         Let be a metric space. Given any , we have . The open balls are disjoint open neighrborhoods of and , respectively.    Let be an infinite set with the cofinite topology. We will show that is not Hausdorff and hence not a metric space. In fact, we will show that any two nonempty open sets in intersect nontrivially. Indeed, given nonempty open sets , we have by definition , for finite sets . Their intersection is the open set Since is infinite and the are finite, we have , and thus .       The Zariski topology on is an example of a non-Hausdorff topology that is the basis for algebraic geometry.   Zariski topology on  Let , and let be the set of polynomials in the unknowns with real coefficients. For any define . In other words, is the set of points in that are simultaneous zeros for all polynomials . The set defines a topology on called the Zariski topology . As you will show in homework (for ), this topology is but not Hausdorff.   Proved in homework for . The general proof is not much different.     Convergent sequence   Let be a topological space. A sequence of elements of  converges to the element , denoted , if for any open neighborhood of , there is a positive integer such that for all . We say is a convergent sequence in this case, and call the limit of the sequence.     Limits in the cofinite topology   Let endowed with the cofinite topology. Show that the sequence converges to all elements . In particular, the limit of a convergent sequence need not be unique!    Let and let be any open set containing . We have for some , . Since this list is finite, we can pick such that if , then for any , and hence that , as desired.  Note: the same argument shows that any sequence containing infinitely many distinct elements is convergent, and in fact converges to all elements of .     Unique limits in Hausdorff spaces   If is Hausdorff, then any sequence has at most one limit.    Assume and let . Let be disjoint open sets containing , respectively. By convergence, there is an such that if , then . It follows that for all and hence that does not converge to .     Limit points in -spaces   Let be a subset of the -space . An element is a limit point of if and only if every open neighborhood of intersects in infinitely many points.    See Munkres.    "
 },
 {
   "id": "d_neighborhood",
@@ -1069,7 +1069,16 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.5.11",
   "title": "Metric spaces are Hausdorff.",
-  "body": " Metric spaces are Hausdorff     Show that any metric space is Hausdorff.    Show that any infinite set endowed with the cofinite topology is not a metric space.         "
+  "body": " Metric spaces are Hausdorff     Show that any metric space is Hausdorff.    Show that any infinite set endowed with the cofinite topology is not a metric space.         Let be a metric space. Given any , we have . The open balls are disjoint open neighrborhoods of and , respectively.    Let be an infinite set with the cofinite topology. We will show that is not Hausdorff and hence not a metric space. In fact, we will show that any two nonempty open sets in intersect nontrivially. Indeed, given nonempty open sets , we have by definition , for finite sets . Their intersection is the open set Since is infinite and the are finite, we have , and thus .      "
+},
+{
+  "id": "project-7",
+  "level": "2",
+  "url": "s_limitpoints_hausdorff.html#project-7",
+  "type": "Topological specimen",
+  "number": "7",
+  "title": "Zariski topology on <span class=\"process-math\">\\(\\R^n\\)<\/span>.",
+  "body": " Zariski topology on  Let , and let be the set of polynomials in the unknowns with real coefficients. For any define . In other words, is the set of points in that are simultaneous zeros for all polynomials . The set defines a topology on called the Zariski topology . As you will show in homework (for ), this topology is but not Hausdorff.   Proved in homework for . The general proof is not much different.   "
 },
 {
   "id": "d_convergent_sequence",
@@ -1087,7 +1096,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.5.13",
   "title": "Limits in the cofinite topology.",
-  "body": " Limits in the cofinite topology   Let endowed with the cofinite topology. Show that the sequence converges to all elements . In particular, the limit of a convergent sequence need not be unique!       "
+  "body": " Limits in the cofinite topology   Let endowed with the cofinite topology. Show that the sequence converges to all elements . In particular, the limit of a convergent sequence need not be unique!    Let and let be any open set containing . We have for some , . Since this list is finite, we can pick such that if , then for any , and hence that , as desired.  Note: the same argument shows that any sequence containing infinitely many distinct elements is convergent, and in fact converges to all elements of .   "
 },
 {
   "id": "th_Hausdorff_unique_limits",
@@ -1096,7 +1105,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.5.14",
   "title": "Unique limits in Hausdorff spaces.",
-  "body": " Unique limits in Hausdorff spaces   If is Hausdorff, then any sequence has at most one limit.       "
+  "body": " Unique limits in Hausdorff spaces   If is Hausdorff, then any sequence has at most one limit.    Assume and let . Let be disjoint open sets containing , respectively. By convergence, there is an such that if , then . It follows that for all and hence that does not converge to .   "
 },
 {
   "id": "th_T1_limitpoints",
@@ -1105,7 +1114,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.5.15",
   "title": "Limit points in <span class=\"process-math\">\\(T_1\\)<\/span>-spaces.",
-  "body": " Limit points in -spaces   Let be a subset of the -space . An element is a limit point of if and only if every open neighborhood of intersects in infinitely many points.   "
+  "body": " Limit points in -spaces   Let be a subset of the -space . An element is a limit point of if and only if every open neighborhood of intersects in infinitely many points.    See Munkres.   "
 },
 {
   "id": "s_subspace_finite_products",
@@ -1121,7 +1130,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_subspace_finite_products.html#top_eg_subspace",
   "type": "Topological specimen",
-  "number": "7",
+  "number": "8",
   "title": "Subspace.",
   "body": " Subspace  Given a topological space and a subset the set defined as defines a topology on called the subspace topology . We call , together with the topology , a subspace of .   We show that the collection is a topology on .  Axiom (1). Since , we have and .  Axiom (2). Let be a collection of elements of . By definition we have for open sets . It follows that , since is open in .  Axiom (3). Given elements , we have .   "
 },
@@ -1157,7 +1166,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_subspace_finite_products.html#top_eg_finite_product",
   "type": "Topological specimen",
-  "number": "8",
+  "number": "9",
   "title": "Finite products.",
   "body": " Finite products  Let be topological spaces, and let . The collection is a basis on . The topology generated by is the product topology on , and is called the product of the spaces .   We show that is a basis.  Axiom 1. Given , we have .  Let and . Given , we have for all , and hence .   "
 },
@@ -1184,7 +1193,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_product2.html#top_eg_arbitrary_product",
   "type": "Topological specimen",
-  "number": "9",
+  "number": "10",
   "title": "Product space (arbitrary).",
   "body": " Product space (arbitrary)  Let be a collection of topological spaces. We define two distinct topologies on the the product .   Box topology  The box topology on is the topology generated by the basis .    Product topology  The product topology on is the topology generated by the basis .   We have ; when the index set is finite, we have .   To see that both collections are indeed bases, observe that for any we have , which is an element of in both cases; and that in both cases if we have , , then , is also an element of .   "
 },
@@ -1231,7 +1240,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.8",
   "title": "Convergence in product spaces",
-  "body": " Convergence in product spaces   The relative virtues of the product and box topologies begin to come to light as we look at issues of convergence and metrics in product spaces. In particular, we see in the context of the spaces and that different topologies on these product sets give rise to different and valuable notions of function convergence for real-valued functions.    Pointwise convergence   Let be a collection of topological spaces, let , and let be a sequence of elements of : , using tuple notation, for each we have , where . The sequence  converges pointwise to an element if for all we have : , .     Pointwise convergence   Observe that the definition of pointwise convergence makes no reference to any topology on . Below we investigate how it relates to convergence in the box and product topologies.     Sequences in and   Our understanding of tuples in product spaces as functions pays real dividends when investigating convergence of sequences in these spaces.  For example, if a tuple in is just a function , the graph of which in the real plane is easily visualized: namely, a discrete collection of plotted points for .  Similarly, a tuple in is just a function , which is easily visualized via a graph.  In both cases, sequences of tuples are easily visualized as sequences of functions (via their graphs). Furthermore, for the sequence to converge pointwise pointwise at a given index ( for , and for ) is simply for the sequence of values to converge.     Pointwise convergence and product topology   Let be a collection of topologies, let be their product, and let be a sequence of elements of .    If in the box or product topology, then converges to pointwise.    In the product topology we have .       Convergent sequences in   Let , where is equipped with the standard topology, and let be the sequence defined as for all .    Visualize the sequence in the real plane.    Decide whether the sequence converges pointwise. If so, what does it converge to?    Decide whether the sequence converges in the product topology, and whether it converges in the box topology.      It is relatively easy to see that the sequence converges pointwise to . Since with the standard topology is Hausdorff, it follows that this pointwise limit is unique. By , also converges in the product topology to . We claim does not converge at all in the box topology. First observe, that the only candidate for the limit of this convergence is , using (1) of . Now consider the open set . We have , and yet not only is it not the case that the sequence eventually lies in , in fact we have for all .     Standard bounded metric   Let be a metric space. The function defines a metrix on , called the standard bounded metric corresponding to . The two metrics induce the same topology on     See Munkres for a proof that is a metric, and that and induce the same topology.     Uniform topology  Let for some set , where is equipped with the standard topology. Let for all . The function is a metric called the uniform metric on . The uniform topology is the topology induced by .   See Munkres for a proof that is a metric.      Let for some set , where is equipped with the standard topology, and let be the product, uniform, and box topologies on . We have . When is infinite these inclusions are all strict.    Take any open set in the product topology and any lying in . There is an open neighborhood of lying in of the form , where we may further assume for all . Letting , I claim we have . Indeed, for any , we have This proves that   For the next inclusion, take any open set in the uniform topology. For any we can find such that . Let , which is open in the box topology. Given any , we have . It follows that in the uniform metric we have , showing that . This proves .  The fact that both inclusions are strict when is infinite is left as a homework exercise.     Product topology on   Let , where is equipped with the standard topology, and let for all . The function is a metric on that induces the product topology.    See Munkres. The proof that the product topology is equal to the topology induced by this metric is quite illustrative, and will be a useful model for some of your homework exercises.     When is the product topology on metrizable?    shows that the product topology on is metrizable. It turns out that when is uncountable, this is no longer true. (As we will see later.) In particular, the product topology on is not a metric topology. The product topology on is valuable to us, since it is the natural setting to study pointwise convergence of functions ( ). Consider this an argument for studying topologies beyond metric topologies.     Nonequivalent norms   Both the uniform metric from and the metrix from are induced by norms. Since they induce different topologies on , they furnish us with an example of two nonequivalent norms on an infinite-dimensional real vector space.    "
+  "body": " Convergence in product spaces   The relative virtues of the product and box topologies begin to come to light as we look at issues of convergence and metrics in product spaces. In particular, we see in the context of the spaces and that different topologies on these product sets give rise to different and valuable notions of function convergence for real-valued functions.    Pointwise convergence   Let be a collection of topological spaces, let , and let be a sequence of elements of : , using tuple notation, for each we have , where . The sequence  converges pointwise to an element if for all we have : , .     Pointwise convergence   Observe that the definition of pointwise convergence makes no reference to any topology on . Below we investigate how it relates to convergence in the box and product topologies.     Sequences in and   Our understanding of tuples in product spaces as functions pays real dividends when investigating convergence of sequences in these spaces.  For example, if a tuple in is just a function , the graph of which in the real plane is easily visualized: namely, a discrete collection of plotted points for .  Similarly, a tuple in is just a function , which is easily visualized via a graph.  In both cases, sequences of tuples are easily visualized as sequences of functions (via their graphs). Furthermore, for the sequence to converge pointwise pointwise at a given index ( for , and for ) is simply for the sequence of values to converge.     Pointwise convergence and product topology   Let be a collection of topologies, let be their product, and let be a sequence of elements of .    If in the box or product topology, then converges to pointwise.    In the product topology we have .         Suppose in either topology. Fix and let be any open set containing . The set is an open neighborhood of in both topologies. By convergence there is an such that for all . It follows that for all . This proves that for all .    Suppose the sequence converges to pointwise. To show in the product topology it is enough to show that for any base open set of the form there is an such that if , then . Since converges to pointwise, for each , there is an such that if , then . Setting , it follows that if then for . Since for all we conclude that for all , as desired.        Convergent sequences in   Let , where is equipped with the standard topology, and let be the sequence defined as for all .    Visualize the sequence in the real plane.    Decide whether the sequence converges pointwise. If so, what does it converge to?    Decide whether the sequence converges in the product topology, and whether it converges in the box topology.      It is relatively easy to see that the sequence converges pointwise to . Since with the standard topology is Hausdorff, it follows that this pointwise limit is unique. By , also converges in the product topology to . We claim does not converge at all in the box topology. First observe, that the only candidate for the limit of this convergence is , using (1) of . Now consider the open set . We have , and yet not only is it not the case that the sequence eventually lies in , in fact we have for all .     Standard bounded metric   Let be a metric space. The function defines a metrix on , called the standard bounded metric corresponding to . The two metrics induce the same topology on     See Munkres for a proof that is a metric, and that and induce the same topology.     Uniform topology  Let for some set , where is equipped with the standard topology. Let for all . The function is a metric called the uniform metric on . The uniform topology is the topology induced by .   See Munkres for a proof that is a metric.      Let for some set , where is equipped with the standard topology, and let be the product, uniform, and box topologies on . We have . When is infinite these inclusions are all strict.    Take any open set in the product topology and any lying in . There is an open neighborhood of lying in of the form , where we may further assume for all . Letting , I claim we have . Indeed, for any , we have This proves that   For the next inclusion, take any open set in the uniform topology. For any we can find such that . Let , which is open in the box topology. Given any , we have . It follows that in the uniform metric we have , showing that . This proves .  The fact that both inclusions are strict when is infinite is left as a homework exercise.     Product topology on   Let , where is equipped with the standard topology, and let for all . The function is a metric on that induces the product topology.    See Munkres. The proof that the product topology is equal to the topology induced by this metric is quite illustrative, and will be a useful model for some of your homework exercises.     When is the product topology on metrizable?    shows that the product topology on is metrizable. It turns out that when is uncountable, this is no longer true. (As we will see later.) In particular, the product topology on is not a metric topology. The product topology on is valuable to us, since it is the natural setting to study pointwise convergence of functions ( ). Consider this an argument for studying topologies beyond metric topologies.     Nonequivalent norms   Both the uniform metric from and the metrix from are induced by norms. Since they induce different topologies on , they furnish us with an example of two nonequivalent norms on an infinite-dimensional real vector space.    "
 },
 {
   "id": "d_pointwise_convergence",
@@ -1267,7 +1276,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.8.4",
   "title": "Pointwise convergence and product topology.",
-  "body": " Pointwise convergence and product topology   Let be a collection of topologies, let be their product, and let be a sequence of elements of .    If in the box or product topology, then converges to pointwise.    In the product topology we have .     "
+  "body": " Pointwise convergence and product topology   Let be a collection of topologies, let be their product, and let be a sequence of elements of .    If in the box or product topology, then converges to pointwise.    In the product topology we have .         Suppose in either topology. Fix and let be any open set containing . The set is an open neighborhood of in both topologies. By convergence there is an such that for all . It follows that for all . This proves that for all .    Suppose the sequence converges to pointwise. To show in the product topology it is enough to show that for any base open set of the form there is an such that if , then . Since converges to pointwise, for each , there is an such that if , then . Setting , it follows that if then for . Since for all we conclude that for all , as desired.      "
 },
 {
   "id": "example-36",
@@ -1292,7 +1301,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_prods_convergence_metric.html#top_eg_uniform_topology",
   "type": "Topological specimen",
-  "number": "10",
+  "number": "11",
   "title": "Uniform topology.",
   "body": " Uniform topology  Let for some set , where is equipped with the standard topology. Let for all . The function is a metric called the uniform metric on . The uniform topology is the topology induced by .   See Munkres for a proof that is a metric.   "
 },
@@ -1339,7 +1348,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.9",
   "title": "Continuous functions",
-  "body": " Continuous functions   In calculus you learn that a function is defined to be continuous if for all there is a such that for all we have the implication . Now that we have some experience generalizing analysis concepts to topological ones, let's see how best this translates to arbitrary topologies.    Continuous function   Let be topological spaces. A function is continuous if for all open sets , the set is open in . Using logical shorthand: .     Preimage properties   Continuity is defined in terms of preimages of sets under a function . Thankfully, the preimage operation behaves very well with respect to our various set operations. In particular, we have the following identities, which you may make use of without further ado:      Continuous functions: basic examples     Identity function  Given a topological space , the identity function is continuous. Here we take as the topology of both the domain and codomain.    Constant functions  Let be topological spaces. For any fixed the constant function , defined as for all is continuous.    Subspace inclusions  Let be a subspace of . The inclusion map is continuous with respect to the subspace topology on .    Maps from discrete spaces  If is equipped with the discrete topology, then any function to a topological space is continuous.    Maps to trivial spaces  If is equipped with the trivial topology, then any map from a topological space to is continous.           Non-continuous inclusion   Show that the inclusion is not continuous. Here the topology of the domain is the standard one, and the topology on the codomain is the lower limit topology.         Products and projections   Let be a collection of topological spaces, and let . For each define the projection function as . In other words, the -th projection map returns the -th coordinate of an element of .    Prove: if is given the product topology, then is continuous for all .    Prove: given a topology on , we have continuous for all if and only if contains the product topology. Thus, in particular, the product topology is the coarsest topology on making each projection map continuous.            Let be a function between the topological spaces , and let be a basis for . The following statements are equivalent.     is continuous.    For all , the preimage is open in .       Continuity equivalences   Let be a function between the topological spaces . The following statements are equivalent.     is continuous.    For all , we have .    For all closed sets , the preimage is closed in .    For all and open neighborhood , there is an open neighborhood such that .        Let be a map between topological spaces. We say that is continuous at x , for , if for all open neighborhoods , there is an open neighborhood such that .     Building continuous functions     Composition  If and are continuous, then the composition is continuous.    Restriction  If is continuous, and is a subspace, then the restriction is continuous.    Expansion  If is continuous and is a subspace of , then the function obtained by composing with the inclusion is continuous.    Local on source  If is a function between topological spaces and there is a collection of open sets such that and the restrictions are continuous, then is continuous.    Pasting  Let be topological spaces, and suppose , where are closed sets. Given continuous functions and that satisfy for all , the function defined as is continuous.      "
+  "body": " Continuous functions   In calculus you learn that a function is defined to be continuous if for all there is a such that for all we have the implication . Now that we have some experience generalizing analysis concepts to topological ones, let's see how best this translates to arbitrary topologies.    Continuous function   Let be topological spaces. A function is continuous if for all open sets , the set is open in . Using logical shorthand: .     Preimage properties   Continuity is defined in terms of preimages of sets under a function . Thankfully, the preimage operation behaves very well with respect to our various set operations. In particular, we have the following identities, which you may make use of without further ado:      Continuous functions: basic examples     Identity function  Given a topological space , the identity function is continuous. Here we take as the topology of both the domain and codomain.    Constant functions  Let be topological spaces. For any fixed the constant function , defined as for all is continuous.    Subspace inclusions  Let be a subspace of . The inclusion map is continuous with respect to the subspace topology on .    Maps from discrete spaces  If is equipped with the discrete topology, then any function to a topological space is continuous.    Maps to trivial spaces  If is equipped with the trivial topology, then any map from a topological space to is continous.      These are all pretty elementary. I'll prove (3). Let be a subspace and let continuous. Given any open set , we have which by definition is open in the subspace topology. Thus is continuous.     Non-continuous inclusion   Show that the identity map is not continuous. Here the topology of the domain is the standard one, and the topology on the codomain is the lower limit topology.    For any we have . If we choose to be any open set of that is not open in the standard topology, it follows that is not open in and hence that is not continuous. We may take for example.  Note: let be two topologies on the set , and for let denote the space with underlying set and topology . The same argument above can be used to show that is continuous if and only if .     Products and projections   Let be a collection of topological spaces, and let . For each define the projection function as . In other words, the -th projection map returns the -th coordinate of an element of .    Prove: if is given the product topology, then is continuous for all .    Prove: given a topology on , we have continuous for all if and only if contains the product topology. Thus, in particular, the product topology is the coarsest topology on making each projection map continuous.            Let be a function between the topological spaces , and let be a basis for . The following statements are equivalent.     is continuous.    For all , the preimage is open in .       Continuity equivalences   Let be a function between the topological spaces . The following statements are equivalent.     is continuous.    For all , we have .    For all closed sets , the preimage is closed in .    For all and open neighborhood , there is an open neighborhood such that .        Let be a map between topological spaces. We say that is continuous at x , for , if for all open neighborhoods , there is an open neighborhood such that .     Building continuous functions     Composition  If and are continuous, then the composition is continuous.    Restriction  If is continuous, and is a subspace, then the restriction is continuous.    Expansion  If is continuous and is a subspace of , then the function obtained by composing with the inclusion is continuous.    Local on source  If is a function between topological spaces and there is a collection of open sets such that and the restrictions are continuous, then is continuous.    Pasting  Let be topological spaces, and suppose , where are closed sets. Given continuous functions and that satisfy for all , the function defined as is continuous.      "
 },
 {
   "id": "d_continuous_function",
@@ -1366,7 +1375,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.9.3",
   "title": "Continuous functions: basic examples.",
-  "body": " Continuous functions: basic examples     Identity function  Given a topological space , the identity function is continuous. Here we take as the topology of both the domain and codomain.    Constant functions  Let be topological spaces. For any fixed the constant function , defined as for all is continuous.    Subspace inclusions  Let be a subspace of . The inclusion map is continuous with respect to the subspace topology on .    Maps from discrete spaces  If is equipped with the discrete topology, then any function to a topological space is continuous.    Maps to trivial spaces  If is equipped with the trivial topology, then any map from a topological space to is continous.         "
+  "body": " Continuous functions: basic examples     Identity function  Given a topological space , the identity function is continuous. Here we take as the topology of both the domain and codomain.    Constant functions  Let be topological spaces. For any fixed the constant function , defined as for all is continuous.    Subspace inclusions  Let be a subspace of . The inclusion map is continuous with respect to the subspace topology on .    Maps from discrete spaces  If is equipped with the discrete topology, then any function to a topological space is continuous.    Maps to trivial spaces  If is equipped with the trivial topology, then any map from a topological space to is continous.      These are all pretty elementary. I'll prove (3). Let be a subspace and let continuous. Given any open set , we have which by definition is open in the subspace topology. Thus is continuous.   "
 },
 {
   "id": "example-38",
@@ -1375,7 +1384,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.9.4",
   "title": "Non-continuous inclusion.",
-  "body": " Non-continuous inclusion   Show that the inclusion is not continuous. Here the topology of the domain is the standard one, and the topology on the codomain is the lower limit topology.       "
+  "body": " Non-continuous inclusion   Show that the identity map is not continuous. Here the topology of the domain is the standard one, and the topology on the codomain is the lower limit topology.    For any we have . If we choose to be any open set of that is not open in the standard topology, it follows that is not open in and hence that is not continuous. We may take for example.  Note: let be two topologies on the set , and for let denote the space with underlying set and topology . The same argument above can be used to show that is continuous if and only if .   "
 },
 {
   "id": "example-39",
@@ -1544,7 +1553,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_homeomorphisms.html#top_eg_coproduct",
   "type": "Topological specimen",
-  "number": "11",
+  "number": "12",
   "title": "Coproduct space.",
   "body": " Coproduct space  Let be a collection of topological spaces, let be the disjoint union of the , and let be the the inclusion maps identifying each with a subset of . The coproduct topology on is the topology generated by the basis defined as follows: . We call together with the topology the coproduct topology of the . With respect to this topology, each injection is continuous.  "
 },
@@ -1556,6 +1565,105 @@ var ptx_lunr_docs = [
   "number": "1.10.13",
   "title": "Universal property of coproduct space.",
   "body": " Universal property of coproduct space   Let be a collection of topological spaces, and let be their coproduct. For each let be the inclusion map identifying with a subset of .    Coproduct mapping property  Given any topological space and any collection of continuous maps , there is a unique continuous map satisfying for all .  In other words, specifying a continuous map out from to is equivalent to specifying continuous maps for all .    Unique up to homeomorphism  If is any other topological space equipped with continuous maps , and if the coproduct mapping property (1) is satisfied with replacing and replacing , then is homeomorphic to .  In other words, up to homeomorphism, the coproduct mapping property uniquely characterizes the product space.     "
+},
+{
+  "id": "s_quotients",
+  "level": "1",
+  "url": "s_quotients.html",
+  "type": "Section",
+  "number": "1.11",
+  "title": "Quotients",
+  "body": " Quotients       Quotient space  Let be a topological space, an equivalence relation on , the set of equivalence classes of , and the map sending to its equivalence class . The set is a topology on called the quotient topology . The map is a quotient map : that is, it is surjective and satisfies is open if and only if is open.   That is a topology follows easily from properties of preimages of sets; and it satisfies the quotient map properties essentially by definition.      For each quotient space description give an explicit description of the equivalence classes and identify (without proof) what familiar space the quotient might be homeomorphic to.     , obtained by identifying and      , , where if and only if for some      , obtained by identifying and for all      , obtained by identifying and for all and all and for .            Let and be topological spaces. A function is a quotient map if it satisfies the following properties:    is surjective;     is open if and only if is open.   It follows immediately from the definition that a quotient map is continuous.     Saturated sets   Let . A set is saturated with respect to if . Equivalently, is saturated if if whenever we have .     Quotient map properties     Let be a continuous surjective function. The following statements are equivalent.    is a quotient map.     is open for all open saturated sets .     is closed for all closed saturated subsets .       Open and closed maps are quotient maps.    The composition of two quotient maps is a quotient map.       Mapping property of quotient maps   Let be a quotient map. Given any continuous function satisfying for all there is a unique continuous function satisfying .  Furthermore, the function is a projection map if and only if is a projection map.      Fibers of maps   For any function between sets and element , we call the fiber of lying over . We say a function  agrees on fibers of if .     Mapping property of quotients   Let be the quotient space of by the equivalence relation , and let be the corresponding quotient map. Let be a continuous function that agrees on fibers of ( , ).   There is a unique continuous function satisfying ; and is a quotient map if and only if is a quotient map.       The function is a homeomorphism if and only if is a quotient map and satisfies for all .        Factoring maps through a quotient   Let be a surjective continuous map, and let be the quotient obtained from by treating each fiber , , as a single point: , the equivalence relation is .    There is a unique bijective continuous function satisfying .    The function is a homeomorphism if and only if is a quotient map.    If is Hausdorff, then is Hausdorff.       The circle as a quotient space   Let be the quotient of obtained by identifying only the elements and . Let denote the quotient of by the equivalence relation if and only if for some .    Prove: and are homeomorphic.    Prove: is homeomorphic to .          "
+},
+{
+  "id": "top_eg_quotient_space",
+  "level": "2",
+  "url": "s_quotients.html#top_eg_quotient_space",
+  "type": "Topological specimen",
+  "number": "13",
+  "title": "Quotient space.",
+  "body": " Quotient space  Let be a topological space, an equivalence relation on , the set of equivalence classes of , and the map sending to its equivalence class . The set is a topology on called the quotient topology . The map is a quotient map : that is, it is surjective and satisfies is open if and only if is open.   That is a topology follows easily from properties of preimages of sets; and it satisfies the quotient map properties essentially by definition.   "
+},
+{
+  "id": "eg_quotient_no_proof",
+  "level": "2",
+  "url": "s_quotients.html#eg_quotient_no_proof",
+  "type": "Example",
+  "number": "1.11.1",
+  "title": "",
+  "body": "  For each quotient space description give an explicit description of the equivalence classes and identify (without proof) what familiar space the quotient might be homeomorphic to.     , obtained by identifying and      , , where if and only if for some      , obtained by identifying and for all      , obtained by identifying and for all and all and for .         "
+},
+{
+  "id": "d_quotient_map",
+  "level": "2",
+  "url": "s_quotients.html#d_quotient_map",
+  "type": "Definition",
+  "number": "1.11.2",
+  "title": "",
+  "body": "  Let and be topological spaces. A function is a quotient map if it satisfies the following properties:    is surjective;     is open if and only if is open.   It follows immediately from the definition that a quotient map is continuous.   "
+},
+{
+  "id": "d_saturated",
+  "level": "2",
+  "url": "s_quotients.html#d_saturated",
+  "type": "Definition",
+  "number": "1.11.3",
+  "title": "Saturated sets.",
+  "body": " Saturated sets   Let . A set is saturated with respect to if . Equivalently, is saturated if if whenever we have .   "
+},
+{
+  "id": "th_quotientmap_props",
+  "level": "2",
+  "url": "s_quotients.html#th_quotientmap_props",
+  "type": "Theorem",
+  "number": "1.11.4",
+  "title": "Quotient map properties.",
+  "body": " Quotient map properties     Let be a continuous surjective function. The following statements are equivalent.    is a quotient map.     is open for all open saturated sets .     is closed for all closed saturated subsets .       Open and closed maps are quotient maps.    The composition of two quotient maps is a quotient map.     "
+},
+{
+  "id": "th_quotientmap_mappingprop",
+  "level": "2",
+  "url": "s_quotients.html#th_quotientmap_mappingprop",
+  "type": "Theorem",
+  "number": "1.11.5",
+  "title": "Mapping property of quotient maps.",
+  "body": " Mapping property of quotient maps   Let be a quotient map. Given any continuous function satisfying for all there is a unique continuous function satisfying .  Furthermore, the function is a projection map if and only if is a projection map.    "
+},
+{
+  "id": "d_fibers_agree",
+  "level": "2",
+  "url": "s_quotients.html#d_fibers_agree",
+  "type": "Definition",
+  "number": "1.11.6",
+  "title": "Fibers of maps.",
+  "body": " Fibers of maps   For any function between sets and element , we call the fiber of lying over . We say a function  agrees on fibers of if .   "
+},
+{
+  "id": "cor_quotientspace_props",
+  "level": "2",
+  "url": "s_quotients.html#cor_quotientspace_props",
+  "type": "Corollary",
+  "number": "1.11.7",
+  "title": "Mapping property of quotients.",
+  "body": " Mapping property of quotients   Let be the quotient space of by the equivalence relation , and let be the corresponding quotient map. Let be a continuous function that agrees on fibers of ( , ).   There is a unique continuous function satisfying ; and is a quotient map if and only if is a quotient map.       The function is a homeomorphism if and only if is a quotient map and satisfies for all .      "
+},
+{
+  "id": "cor_quotient_factor",
+  "level": "2",
+  "url": "s_quotients.html#cor_quotient_factor",
+  "type": "Corollary",
+  "number": "1.11.8",
+  "title": "Factoring maps through a quotient.",
+  "body": " Factoring maps through a quotient   Let be a surjective continuous map, and let be the quotient obtained from by treating each fiber , , as a single point: , the equivalence relation is .    There is a unique bijective continuous function satisfying .    The function is a homeomorphism if and only if is a quotient map.    If is Hausdorff, then is Hausdorff.     "
+},
+{
+  "id": "eg_RmodZ",
+  "level": "2",
+  "url": "s_quotients.html#eg_RmodZ",
+  "type": "Example",
+  "number": "1.11.9",
+  "title": "The circle as a quotient space.",
+  "body": " The circle as a quotient space   Let be the quotient of obtained by identifying only the elements and . Let denote the quotient of by the equivalence relation if and only if for some .    Prove: and are homeomorphic.    Prove: is homeomorphic to .         "
 },
 {
   "id": "appendix-notation",

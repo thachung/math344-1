@@ -357,6 +357,7 @@ window.MathJax = {
 <li><div class="toc-item"><a href="s_prods_convergence_metric.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Convergence in product spaces</span></a></div></li>
 <li class="active"><div class="toc-item"><a href="s_continuous.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Continuous functions</span></a></div></li>
 <li><div class="toc-item"><a href="s_homeomorphisms.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Homeomorphisms</span></a></div></li>
+<li><div class="toc-item"><a href="s_quotients.html" class="internal"><span class="codenumber">1.11</span> <span class="title">Quotients</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -374,7 +375,7 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_continuous"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.9</span> <span class="title">Continuous functions</span>
 </h2>
-<section class="introduction" id="introduction-14"><div class="para logical" id="p-458">
+<section class="introduction" id="introduction-14"><div class="para logical" id="p-468">
 <div class="para">In calculus you learn that a function <span class="process-math">\(f\colon \R\rightarrow \R\)</span> is defined to be continuous if for all <span class="process-math">\(\epsilon &gt; 0\)</span> there is a <span class="process-math">\(\delta &gt; 0\)</span> such that for all <span class="process-math">\(x,x'\in \R\)</span> we have the implication</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -384,7 +385,7 @@ window.MathJax = {
 <div class="para">Now that we have some experience generalizing analysis concepts to topological ones, let's see how best this translates to arbitrary topologies.</div>
 </div></section><article class="definition definition-like" id="d_continuous_function"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.1</span><span class="period">.</span><span class="space"> </span><span class="title">Continuous function.</span>
-</h3> <div class="para logical" id="p-459">
+</h3> <div class="para logical" id="p-469">
 <div class="para">Let <span class="process-math">\((X,\mathcal{T}), (Y,\mathcal{T}')\)</span> be topological spaces. A function <span class="process-math">\(f\colon X\rightarrow Y\)</span> is <dfn class="terminology">continuous</dfn> if for all open sets <span class="process-math">\(U\subseteq Y\text{,}\)</span> the set <span class="process-math">\(f^{-1}(U)\)</span> is open in <span class="process-math">\(X\text{.}\)</span> Using logical shorthand:</div>
 <div class="displaymath process-math" id="eq_continuous">
 \begin{equation}
@@ -393,7 +394,7 @@ U\in \mathcal{T}'\implies f^{-1}(U)\in \mathcal{T}\text{.}\tag{1.9.1}
 </div>
 </div></article><article class="remark remark-like" id="rm_preimage"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.9.2</span><span class="period">.</span><span class="space"> </span><span class="title">Preimage properties.</span>
-</h3> <div class="para logical" id="p-460">
+</h3> <div class="para logical" id="p-470">
 <div class="para">Continuity is defined in terms of <a href="" class="xref" data-knowl="./knowl/d_preimage_of_set.html" title="Definition 0.1.23: Preimage of set">preimages of sets</a> under a function <span class="process-math">\(f\text{.}\)</span> Thankfully, the preimage operation behaves very well with respect to our various set operations. In particular, we have the following identities, which you may make use of without further ado:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/d_preimage_of_set.html" id="mdn-4">
 \begin{align}
@@ -406,8 +407,8 @@ f^{-1}(A^c) \amp =(f^{-1}(A))^c\tag{1.9.4}
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.3</span><span class="period">.</span><span class="space"> </span><span class="title">Continuous functions: basic examples.</span>
 </h3>
 <ol class="decimal">
-<li id="li-147">
-<span class="heading"><span class="title">Identity function.</span></span><div class="para logical" id="p-461">
+<li id="li-151">
+<span class="heading"><span class="title">Identity function.</span></span><div class="para logical" id="p-471">
 <div class="para">Given a topological space <span class="process-math">\((X,\mathcal{T})\text{,}\)</span> the identity function</div>
 <div class="displaymath process-math" id="md-44">
 \begin{align*}
@@ -418,81 +419,84 @@ x\amp\mapsto x
 <div class="para">is continuous. Here we take <span class="process-math">\(\mathcal{T}\)</span> as the topology of both the domain and codomain.</div>
 </div>
 </li>
-<li id="li-148">
-<span class="heading"><span class="title">Constant functions.</span></span><div class="para" id="p-462">Let <span class="process-math">\(X, Y\)</span> be topological spaces. For any fixed <span class="process-math">\(y_0\in Y\)</span> the constant function <span class="process-math">\(f\text{,}\)</span> defined as <span class="process-math">\(f(x)=y_0\)</span> for all <span class="process-math">\(x\in X\)</span> is continuous.</div>
+<li id="li-152">
+<span class="heading"><span class="title">Constant functions.</span></span><div class="para" id="p-472">Let <span class="process-math">\(X, Y\)</span> be topological spaces. For any fixed <span class="process-math">\(y_0\in Y\)</span> the constant function <span class="process-math">\(f\text{,}\)</span> defined as <span class="process-math">\(f(x)=y_0\)</span> for all <span class="process-math">\(x\in X\)</span> is continuous.</div>
 </li>
-<li id="li-149">
-<span class="heading"><span class="title">Subspace inclusions.</span></span><div class="para" id="p-463">Let <span class="process-math">\(Y\)</span> be a subspace of <span class="process-math">\(X\text{.}\)</span> The inclusion map <span class="process-math">\(i\colon Y\hookrightarrow X\)</span> is continuous with respect to the subspace topology on <span class="process-math">\(Y\text{.}\)</span>
+<li id="li-153">
+<span class="heading"><span class="title">Subspace inclusions.</span></span><div class="para" id="p-473">Let <span class="process-math">\(Y\)</span> be a subspace of <span class="process-math">\(X\text{.}\)</span> The inclusion map <span class="process-math">\(i\colon Y\hookrightarrow X\)</span> is continuous with respect to the subspace topology on <span class="process-math">\(Y\text{.}\)</span>
 </div>
 </li>
-<li id="li-150">
-<span class="heading"><span class="title">Maps from discrete spaces.</span></span><div class="para" id="p-464">If <span class="process-math">\(X\)</span> is equipped with the discrete topology, then any function <span class="process-math">\(f\colon X\rightarrow Y\)</span> to a topological space <span class="process-math">\(Y\)</span> is continuous.</div>
+<li id="li-154">
+<span class="heading"><span class="title">Maps from discrete spaces.</span></span><div class="para" id="p-474">If <span class="process-math">\(X\)</span> is equipped with the discrete topology, then any function <span class="process-math">\(f\colon X\rightarrow Y\)</span> to a topological space <span class="process-math">\(Y\)</span> is continuous.</div>
 </li>
-<li id="li-151">
-<span class="heading"><span class="title">Maps to trivial spaces.</span></span><div class="para" id="p-465">If <span class="process-math">\(Y\)</span> is equipped with the trivial topology, then any map <span class="process-math">\(f\colon X\rightarrow Y\)</span> from a topological space to <span class="process-math">\(Y\)</span> is continous.</div>
+<li id="li-155">
+<span class="heading"><span class="title">Maps to trivial spaces.</span></span><div class="para" id="p-475">If <span class="process-math">\(Y\)</span> is equipped with the trivial topology, then any map <span class="process-math">\(f\colon X\rightarrow Y\)</span> from a topological space to <span class="process-math">\(Y\)</span> is continous.</div>
 </li>
 </ol>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-29" id="solution-29"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-29"><div class="solution solution-like"><div class="para" id="p-466"></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-29" id="solution-29"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-29"><div class="solution solution-like"><div class="para" id="p-476">These are all pretty elementary. I'll prove (3). Let <span class="process-math">\(Y\subseteq X\)</span> be a subspace and let <span class="process-math">\(i\colon Y\hookrightarrow X\)</span>  continuous. Given any open set <span class="process-math">\(U\subseteq X\text{,}\)</span> we have <span class="process-math">\(i^{-1}(U)=U\cap Y\)</span> which by definition is open in the subspace topology. Thus <span class="process-math">\(i\)</span> is continuous.</div></div></div>
 </div></article><article class="example example-like" id="example-38"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.4</span><span class="period">.</span><span class="space"> </span><span class="title">Non-continuous inclusion.</span>
 </h3>
-<div class="para" id="p-467">Show that the inclusion <span class="process-math">\(i\colon \R\hookrightarrow \R_l\)</span> is not continuous. Here the topology of the domain is the standard one, and the topology on the codomain is the lower limit topology.</div>
+<div class="para" id="p-477">Show that the identity map <span class="process-math">\(\id_\R\colon \R\hookrightarrow \R_l\)</span> is not continuous. Here the topology of the domain is the standard one, and the topology on the codomain is the lower limit topology.</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-30" id="solution-30"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-30"><div class="solution solution-like"><div class="para" id="p-468"></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-30" id="solution-30"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-30"><div class="solution solution-like">
+<div class="para" id="p-478">For any <span class="process-math">\(U\subseteq \R\)</span> we have <span class="process-math">\(\id_\R^{-1}(U)=U\text{.}\)</span> If we choose <span class="process-math">\(U\)</span> to be any open set of <span class="process-math">\(\R_l\)</span> that is not open in the standard topology, it follows that <span class="process-math">\(\id_{\R}^{-1}(U)\)</span> is not open in <span class="process-math">\(\R\)</span> and hence that <span class="process-math">\(\id_\R\)</span> is not continuous. We may take <span class="process-math">\(U=[0,1)\)</span> for example.</div> <div class="para" id="p-479">Note: let <span class="process-math">\(\mathcal{T}_1, \mathcal{T}_2\)</span> be two topologies on the set <span class="process-math">\(X\text{,}\)</span> and for <span class="process-math">\(1\leq i\leq 2\)</span> let <span class="process-math">\(X_i\)</span> denote the space with underlying set <span class="process-math">\(X\)</span> and topology <span class="process-math">\(\mathcal{T}_i\text{.}\)</span> The same argument above can be used to show that <span class="process-math">\(\id_X\colon X_1\rightarrow X_2\)</span> is continuous if and only if <span class="process-math">\(\mathcal{T}_2\subseteq \mathcal{T}_1\text{.}\)</span>
+</div>
+</div></div>
 </div></article><article class="example example-like" id="example-39"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.5</span><span class="period">.</span><span class="space"> </span><span class="title">Products and projections.</span>
 </h3>
-<div class="para" id="p-469">Let <span class="process-math">\(\{X_i, \mathcal{T}_i\}_{i\in I}\)</span> be a collection of topological spaces, and let <span class="process-math">\(X=\prod_{i\in I}X_i\text{.}\)</span> For each <span class="process-math">\(j\in I\)</span> define the projection function <span class="process-math">\(pi_j\colon X\rightarrow X_j\)</span> as <span class="process-math">\(\pi_j((x_i)_{i\in I})=x_i\text{.}\)</span> In other words, the <span class="process-math">\(j\)</span>-th projection map returns the <span class="process-math">\(j\)</span>-th coordinate of an element of <span class="process-math">\(X\text{.}\)</span>
+<div class="para" id="p-480">Let <span class="process-math">\(\{X_i, \mathcal{T}_i\}_{i\in I}\)</span> be a collection of topological spaces, and let <span class="process-math">\(X=\prod_{i\in I}X_i\text{.}\)</span> For each <span class="process-math">\(j\in I\)</span> define the projection function <span class="process-math">\(\pi_j\colon X\rightarrow X_j\)</span> as <span class="process-math">\(\pi_j((x_i)_{i\in I})=x_i\text{.}\)</span> In other words, the <span class="process-math">\(j\)</span>-th projection map returns the <span class="process-math">\(j\)</span>-th coordinate of an element of <span class="process-math">\(X\text{.}\)</span>
 </div> <ol class="decimal">
-<li id="li-152"><div class="para" id="p-470">Prove: if <span class="process-math">\(X\)</span> is given the product topology, then <span class="process-math">\(\pi_j\)</span> is continuous for all <span class="process-math">\(j\in J\text{.}\)</span>
+<li id="li-156"><div class="para" id="p-481">Prove: if <span class="process-math">\(X\)</span> is given the product topology, then <span class="process-math">\(\pi_j\)</span> is continuous for all <span class="process-math">\(j\in J\text{.}\)</span>
 </div></li>
-<li id="li-153"><div class="para" id="p-471">Prove: given a topology <span class="process-math">\(\mathcal{T}\)</span> on <span class="process-math">\(X\text{,}\)</span> we have <span class="process-math">\(\pi_j\)</span> continuous for all <span class="process-math">\(j\in J\)</span> if and only if <span class="process-math">\(\mathcal{T}\)</span> contains the product topology. Thus, in particular, the product topology is the coarsest topology on <span class="process-math">\(X\)</span> making each projection map continuous.</div></li>
+<li id="li-157"><div class="para" id="p-482">Prove: given a topology <span class="process-math">\(\mathcal{T}\)</span> on <span class="process-math">\(X\text{,}\)</span> we have <span class="process-math">\(\pi_j\)</span> continuous for all <span class="process-math">\(j\in J\)</span> if and only if <span class="process-math">\(\mathcal{T}\)</span> contains the product topology. Thus, in particular, the product topology is the coarsest topology on <span class="process-math">\(X\)</span> making each projection map continuous.</div></li>
 </ol>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-31" id="solution-31"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-31"><div class="solution solution-like"><div class="para" id="p-472"></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-31" id="solution-31"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-31"><div class="solution solution-like"><div class="para" id="p-483"></div></div></div>
 </div></article><article class="theorem theorem-like" id="th_continuity_basis"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.9.6</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-473">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> be a function between the topological spaces <span class="process-math">\(X, Y\text{,}\)</span> and let <span class="process-math">\(\mathcal{B}\)</span> be a basis for <span class="process-math">\(Y\text{.}\)</span> The following statements are equivalent.</div> <ol class="decimal">
-<li id="li-154"><div class="para" id="p-474">
+<div class="para" id="p-484">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> be a function between the topological spaces <span class="process-math">\(X, Y\text{,}\)</span> and let <span class="process-math">\(\mathcal{B}\)</span> be a basis for <span class="process-math">\(Y\text{.}\)</span> The following statements are equivalent.</div> <ol class="decimal">
+<li id="li-158"><div class="para" id="p-485">
 <span class="process-math">\(f\)</span> is continuous.</div></li>
-<li id="li-155"><div class="para" id="p-475">For all <span class="process-math">\(B\in \mathcal{B}\text{,}\)</span> the preimage <span class="process-math">\(f^{-1}(B)\)</span> is open in <span class="process-math">\(X\text{.}\)</span>
+<li id="li-159"><div class="para" id="p-486">For all <span class="process-math">\(B\in \mathcal{B}\text{,}\)</span> the preimage <span class="process-math">\(f^{-1}(B)\)</span> is open in <span class="process-math">\(X\text{.}\)</span>
 </div></li>
 </ol></article><article class="theorem theorem-like" id="th_continuous_equivalence"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.9.7</span><span class="period">.</span><span class="space"> </span><span class="title">Continuity equivalences.</span>
 </h3>
-<div class="para" id="p-476">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> be a function between the topological spaces <span class="process-math">\(X, Y\text{.}\)</span> The following statements are equivalent.</div> <ol class="decimal">
-<li id="li-156"><div class="para" id="p-477">
+<div class="para" id="p-487">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> be a function between the topological spaces <span class="process-math">\(X, Y\text{.}\)</span> The following statements are equivalent.</div> <ol class="decimal">
+<li id="li-160"><div class="para" id="p-488">
 <span class="process-math">\(f\)</span> is continuous.</div></li>
-<li id="li-157"><div class="para" id="p-478">For all <span class="process-math">\(A\subseteq X\text{,}\)</span> we have <span class="process-math">\(f(\overline{A})\subseteq \overline{f(A)}\text{.}\)</span>
+<li id="li-161"><div class="para" id="p-489">For all <span class="process-math">\(A\subseteq X\text{,}\)</span> we have <span class="process-math">\(f(\overline{A})\subseteq \overline{f(A)}\text{.}\)</span>
 </div></li>
-<li id="li-158"><div class="para" id="p-479">For all closed sets <span class="process-math">\(C\subseteq Y\text{,}\)</span> the preimage <span class="process-math">\(f^{-1}(C)\)</span> is closed in <span class="process-math">\(X\text{.}\)</span>
+<li id="li-162"><div class="para" id="p-490">For all closed sets <span class="process-math">\(C\subseteq Y\text{,}\)</span> the preimage <span class="process-math">\(f^{-1}(C)\)</span> is closed in <span class="process-math">\(X\text{.}\)</span>
 </div></li>
-<li id="li-159"><div class="para" id="p-480">For all <span class="process-math">\(x\in X\)</span> and open neighborhood <span class="process-math">\(V\ni x\text{,}\)</span> there is an open neighborhood <span class="process-math">\(U\ni x\)</span> such that <span class="process-math">\(f(U)\subseteq V\text{.}\)</span>
+<li id="li-163"><div class="para" id="p-491">For all <span class="process-math">\(x\in X\)</span> and open neighborhood <span class="process-math">\(V\ni x\text{,}\)</span> there is an open neighborhood <span class="process-math">\(U\ni x\)</span> such that <span class="process-math">\(f(U)\subseteq V\text{.}\)</span>
 </div></li>
 </ol></article><article class="definition definition-like" id="d_continuity_at_x"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.8</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-481">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> be a map between topological spaces. We say that <span class="process-math">\(f\)</span> is <dfn class="terminology">continuous at x</dfn>, for <span class="process-math">\(x\in X\text{,}\)</span> if for all open neighborhoods <span class="process-math">\(V\ni y\text{,}\)</span> there is an open neighborhood <span class="process-math">\(U\ni x\)</span> such that <span class="process-math">\(f(U)\subseteq V\text{.}\)</span>
+<div class="para" id="p-492">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> be a map between topological spaces. We say that <span class="process-math">\(f\)</span> is <dfn class="terminology">continuous at x</dfn>, for <span class="process-math">\(x\in X\text{,}\)</span> if for all open neighborhoods <span class="process-math">\(V\ni y\text{,}\)</span> there is an open neighborhood <span class="process-math">\(U\ni x\)</span> such that <span class="process-math">\(f(U)\subseteq V\text{.}\)</span>
 </div></article><article class="theorem theorem-like" id="th_building_continuous_functions"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.9.9</span><span class="period">.</span><span class="space"> </span><span class="title">Building continuous functions.</span>
 </h3>
 <ol class="decimal">
-<li id="li-160">
-<span class="heading"><span class="title">Composition.</span></span><div class="para" id="p-482">If <span class="process-math">\(f\colon X\rightarrow Y\)</span> and <span class="process-math">\(g\colon Y\rightarrow Z\)</span> are continuous, then the composition <span class="process-math">\(g\circ f\colon X\rightarrow Z\)</span> is continuous.</div>
-</li>
-<li id="li-161">
-<span class="heading"><span class="title">Restriction.</span></span><div class="para" id="p-483">If <span class="process-math">\(f\colon X\rightarrow Y\)</span> is continuous, and <span class="process-math">\(Z\subseteq X\)</span> is a subspace, then the restriction <span class="process-math">\(f\vert_Z\colon Z\rightarrow Y\)</span> is continuous.</div>
-</li>
-<li id="li-162">
-<span class="heading"><span class="title">Expansion.</span></span><div class="para" id="p-484">If <span class="process-math">\(f\colon X\rightarrow Y\)</span> is continuous and <span class="process-math">\(Y\)</span> is a subspace of <span class="process-math">\(Z\text{,}\)</span> then the function <span class="process-math">\(f\colon X\rightarrow Z\)</span> obtained by composing <span class="process-math">\(f\)</span> with the inclusion <span class="process-math">\(Y\hookrightarrow Z\)</span> is continuous.</div>
-</li>
-<li id="li-163">
-<span class="heading"><span class="title">Local on source.</span></span><div class="para" id="p-485">If <span class="process-math">\(f\colon X \rightarrow Y\)</span> is a function between topological spaces and there is a collection of open sets <span class="process-math">\(\{U_i\}_{i\in I}\)</span> such that <span class="process-math">\(X=\bigcup_{i\in I}U_i\)</span> and the restrictions <span class="process-math">\(f_i\colon U_i\rightarrow Y\)</span> are continuous, then <span class="process-math">\(f\)</span> is continuous.</div>
-</li>
 <li id="li-164">
-<span class="heading"><span class="title">Pasting.</span></span><div class="para logical" id="p-486">
+<span class="heading"><span class="title">Composition.</span></span><div class="para" id="p-493">If <span class="process-math">\(f\colon X\rightarrow Y\)</span> and <span class="process-math">\(g\colon Y\rightarrow Z\)</span> are continuous, then the composition <span class="process-math">\(g\circ f\colon X\rightarrow Z\)</span> is continuous.</div>
+</li>
+<li id="li-165">
+<span class="heading"><span class="title">Restriction.</span></span><div class="para" id="p-494">If <span class="process-math">\(f\colon X\rightarrow Y\)</span> is continuous, and <span class="process-math">\(Z\subseteq X\)</span> is a subspace, then the restriction <span class="process-math">\(f\vert_Z\colon Z\rightarrow Y\)</span> is continuous.</div>
+</li>
+<li id="li-166">
+<span class="heading"><span class="title">Expansion.</span></span><div class="para" id="p-495">If <span class="process-math">\(f\colon X\rightarrow Y\)</span> is continuous and <span class="process-math">\(Y\)</span> is a subspace of <span class="process-math">\(Z\text{,}\)</span> then the function <span class="process-math">\(f\colon X\rightarrow Z\)</span> obtained by composing <span class="process-math">\(f\)</span> with the inclusion <span class="process-math">\(Y\hookrightarrow Z\)</span> is continuous.</div>
+</li>
+<li id="li-167">
+<span class="heading"><span class="title">Local on source.</span></span><div class="para" id="p-496">If <span class="process-math">\(f\colon X \rightarrow Y\)</span> is a function between topological spaces and there is a collection of open sets <span class="process-math">\(\{U_i\}_{i\in I}\)</span> such that <span class="process-math">\(X=\bigcup_{i\in I}U_i\)</span> and the restrictions <span class="process-math">\(f_i\colon U_i\rightarrow Y\)</span> are continuous, then <span class="process-math">\(f\)</span> is continuous.</div>
+</li>
+<li id="li-168">
+<span class="heading"><span class="title">Pasting.</span></span><div class="para logical" id="p-497">
 <div class="para">Let <span class="process-math">\(X, Y\)</span> be topological spaces, and suppose <span class="process-math">\(X=C\cup D\text{,}\)</span> where <span class="process-math">\(C, D\)</span> are closed sets. Given continuous functions <span class="process-math">\(f\colon C\rightarrow Y\)</span> and <span class="process-math">\(g\colon D\rightarrow Y\)</span> that satisfy <span class="process-math">\(f(x)=g(x)\)</span> for all <span class="process-math">\(x\in C\cup D\text{,}\)</span> the function <span class="process-math">\(h\colon X\rightarrow Y\)</span> defined as</div>
 <div class="displaymath process-math">
 \begin{equation*}

@@ -12,7 +12,16 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">Our understanding of tuples in product spaces as functions pays real dividends when investigating convergence of sequences in these spaces.</div>
-<span class="incontext"><a href="s_prods_convergence_metric.html#p-434" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">In both cases (box and product) let <span class="process-math">\(\mathcal{B}\)</span> be the corresponding basis, as defined in <a href="" class="xref" data-knowl="./knowl/top_eg_arbitrary_product.html" title="Topological specimen 10: Product space (arbitrary)">Topological specimen 10</a>. We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/top_eg_arbitrary_product.html ./knowl/top_eg_arbitrary_product.html">
+\begin{align*}
+U \text{ open in } A \amp \iff \text{ for all } x\in U, x\in B\cap A\subseteq U, B=\prod_{i\in I}U_i\in \mathcal{B} \\
+\amp\iff \text{ for all } x\in U, x\in \prod_{i\in I} U_i\cap A \subseteq U, B=\prod_{i\in I}U_i \in \mathcal{B}  \text{.}
+\end{align*}
+</div>
+<div class="para">I claim that (in both box and product topology) the last line is equivalent to <span class="process-math">\(U\)</span> being open in the box or product topology on the product of the subspaces <span class="process-math">\(A_i\text{.}\)</span> Indeed it says that <span class="process-math">\(U\)</span> is a union of elements of the form <span class="process-math">\(\prod_{i\in I}U_i\cap A\text{,}\)</span> where by definition of the standard bases in <a href="" class="xref" data-knowl="./knowl/top_eg_arbitrary_product.html" title="Topological specimen 10: Product space (arbitrary)">Topological specimen 10</a> we have <span class="process-math">\(U_i\)</span> open in <span class="process-math">\(X_i\text{,}\)</span> and in the case where we use the product topology, <span class="process-math">\(U_i=X_i\)</span> for all but finitely many <span class="process-math">\(i\in I\text{.}\)</span> This is equivalent to <span class="process-math">\(\prod_{i\in I}U_i\cap A\)</span> being a basis element in either the box topology on the product of the subspaces or the product topology on the product of the subspaces.</div>
+</div>
+<span class="incontext"><a href="s_product2.html#p-434" class="internal">in-context</a></span>
 </body>
 </html>

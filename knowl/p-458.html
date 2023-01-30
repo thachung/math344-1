@@ -11,16 +11,18 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h3 class="heading"><span class="type">Paragraph</span></h3>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
-<div class="para">In calculus you learn that a function <span class="process-math">\(f\colon \R\rightarrow \R\)</span> is defined to be continuous if for all <span class="process-math">\(\epsilon &gt; 0\)</span> there is a <span class="process-math">\(\delta &gt; 0\)</span> such that for all <span class="process-math">\(x,x'\in \R\)</span> we have the implication</div>
+<div class="para">Let <span class="process-math">\(X=\R^I\)</span> for some set <span class="process-math">\(I\text{,}\)</span> where <span class="process-math">\(\R\)</span> is equipped with the standard topology. Let <span class="process-math">\(\overline{d}(x,y)=\min\{\abs{x-y},1\}\)</span> for all <span class="process-math">\(x,y\in \R\text{.}\)</span> The function</div>
 <div class="displaymath process-math">
-\begin{equation*}
-\abs{x-x'}&lt; \delta \implies \abs{f(x)-f(x')}&lt; \epsilon\text{.}
-\end{equation*}
+\begin{align*}
+d_{\operatorname{uni}}\colon X\times X \amp \rightarrow \R\\
+\left((x_i)_{i\in I}, (y_i)_{i\in I}\right) \amp\mapsto  \sup\{\overline{d}(x_i,y_i)\colon i\in I\}
+\end{align*}
 </div>
-<div class="para">Now that we have some experience generalizing analysis concepts to topological ones, let's see how best this translates to arbitrary topologies.</div>
+<div class="para">is a metric called the <dfn class="terminology">uniform metric</dfn> on <span class="process-math">\(X\text{.}\)</span> The <dfn class="terminology">uniform topology</dfn> is the topology induced by <span class="process-math">\(d_{\operatorname{uni}}\text{.}\)</span>
 </div>
-<span class="incontext"><a href="s_continuous.html#p-458" class="internal">in-context</a></span>
+</div>
+<span class="incontext"><a href="s_prods_convergence_metric.html#p-458" class="internal">in-context</a></span>
 </body>
 </html>

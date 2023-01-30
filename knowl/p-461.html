@@ -11,17 +11,20 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
-<div class="para">Given a topological space <span class="process-math">\((X,\mathcal{T})\text{,}\)</span> the identity function</div>
+<div class="para">Take any open set <span class="process-math">\(U\)</span> in the product topology and any <span class="process-math">\(x=(x_i)_{i\in I}\)</span> lying in <span class="process-math">\(U\text{.}\)</span> There is an open neighborhood of <span class="process-math">\(x\)</span> lying in <span class="process-math">\(U\)</span> of the form  <span class="process-math">\(B=\prod_{j=1}^n (x_{i_j}-\epsilon_{i_j},x_{i_j}+\epsilon_{i_j})\times \prod_{i\ne i_j}\R\text{,}\)</span> where we may further assume <span class="process-math">\(\epsilon_{i_j}&lt; 1\)</span> for all <span class="process-math">\(1\leq j\leq n\text{.}\)</span> Letting  <span class="process-math">\(\epsilon=\min\{\epsilon_{i_j}\}\text{,}\)</span> I claim we have <span class="process-math">\(B_\epsilon(x)\subseteq B\text{.}\)</span> Indeed, for any <span class="process-math">\(y\in B_{\epsilon}(x)\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{align*}
-\id_X\colon X \amp \rightarrow X\\
-x\amp\mapsto x 
+\sup\{\overline{d}(y_i,x_i)\} &lt; \epsilon \amp \implies \min\{\abs{y_{i_j}-x_{i_j}},1\}&lt;  \epsilon \text{ for all } 1\leq j\leq n \\
+\amp \implies \abs{y_{i_j}-x_{i_j}}&lt;  \epsilon \text{ for all } 1\leq j\leq n \amp (\epsilon &lt; 1)\\
+\amp\implies \abs{y_{i_j}-x_{i_j}}&lt; \epsilon_{i_j} \text{ for all } 1\leq j\leq n \\
+\amp \implies y\in B
 \end{align*}
 </div>
-<div class="para">is continuous. Here we take <span class="process-math">\(\mathcal{T}\)</span> as the topology of both the domain and codomain.</div>
+<div class="para">This proves that <span class="process-math">\(\mathcal{T}_{\operatorname{prod}}\subseteq \mathcal{T}_{\operatorname{uni}}\)</span>
 </div>
-<span class="incontext"><a href="s_continuous.html#p-461" class="internal">in-context</a></span>
+</div>
+<span class="incontext"><a href="s_prods_convergence_metric.html#p-461" class="internal">in-context</a></span>
 </body>
 </html>

@@ -12,7 +12,16 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">Similarly, a tuple <span class="process-math">\((x_\alpha)_{\alpha\in \R}\)</span> in <span class="process-math">\(\R^\R\)</span> is just a function <span class="process-math">\(f\colon \R\rightarrow\R\text{,}\)</span> which is easily visualized via a graph.</div>
-<span class="incontext"><a href="s_prods_convergence_metric.html#p-436" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">We prove the equality by showing</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x\notin \prod_{i\in I}\overline{A_i} \iff x\notin \overline{\prod_{i\in I}A_i}\text{.}
+\end{equation*}
+</div>
+<div class="para">
+<span class="process-math">\((\implies)\text{.}\)</span> If <span class="process-math">\(x=(x_i)_{i\in I}\notin \prod_{i\in I}\overline{A_i}\text{,}\)</span> there is an index <span class="process-math">\(i_0\in I\)</span> such that <span class="process-math">\(x_{i_0}\notin \overline{A_{i_0}}\text{,}\)</span> and thus an open set <span class="process-math">\(U_{i_0}\ni x_{i_0}\)</span> such that <span class="process-math">\(U_{i_0}\cap A_{i_0}=\emptyset\text{.}\)</span> The set <span class="process-math">\(U_{i_0}\times \prod_{i\ne i_0}X_i\)</span> is open in both topologies (box and product), contains <span class="process-math">\(x=(x_i)_{i\in I}\text{,}\)</span> and is disjoint with <span class="process-math">\(\prod_{i\in I}A_i\text{.}\)</span> We conclude that <span class="process-math">\(x\notin \overline{\prod_{i\in I}A_i}\)</span> in both topologies.</div>
+</div>
+<span class="incontext"><a href="s_product2.html#p-436" class="internal">in-context</a></span>
 </body>
 </html>

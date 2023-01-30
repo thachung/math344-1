@@ -12,8 +12,24 @@
 </head>
 <body class="ignore-math">
 <article class="li"><h4 class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h4>
-<div class="para">Assume <span class="process-math">\(X_i\)</span> is Hausdorff for all <span class="process-math">\(i\in I\text{.}\)</span> If <span class="process-math">\(x=(x_i)_{i\in I}\)</span> and <span class="process-math">\(y=(y_i)_{i\in I}\)</span> are distinct, then we have <span class="process-math">\(x_{i_0}\ne y_{i_0}\)</span> for some <span class="process-math">\(i_0\in I\text{.}\)</span> Since <span class="process-math">\(X_{i_0}\)</span> is Hausdorff, there are disjoint open neighborhoods <span class="process-math">\(U_{i_0}, V_{i_0}\)</span> of <span class="process-math">\(x_{i_0}, y_{i_0}\)</span> in <span class="process-math">\(X_{i_0}\text{.}\)</span> The sets <span class="process-math">\(U=U_{i_0}\times \prod_{i\ne i_0}X_i, V=V_{i_0}\times \prod_{i\ne i_0}X_i\text{,}\)</span> are disjoint open basis elements for both topologies containing <span class="process-math">\(x, y\text{,}\)</span> respectively. Thus <span class="process-math">\(X\)</span> is Hausdorff. The proof for the <span class="process-math">\(T_1\)</span> statement is similar.</div></article><span class="incontext"><a href="s_product2.html#li-140" class="internal">in-context</a></span>
+<div class="para">We prove each basis axiom separately (for both the box and product basis).</div>
+<div class="para logical">
+<div class="para">Axiom 1. Given <span class="process-math">\(x=(x_i)_{i\in I}\in X\text{,}\)</span> we can find basis elements <span class="process-math">\(B_i\in \mathcal{B}_{i}\)</span> containing <span class="process-math">\(x_i\text{.}\)</span> We have</div>
+<div class="displaymath process-math">
+\begin{align*}
+x \amp\in B=\prod_{i\in I}B_i\in \mathcal{B}_{\operatorname{box}} \\
+x \amp\in B=\prod_{i\in I}X_i \in \mathcal{B}_{\operatorname{prod}} \text{.}
+\end{align*}
+</div>
+<div class="para">Axiom 2. This axiom follows readily from the set theoretic fact that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\prod_{i\in I}U_i \cap \prod_{i\in I} V_i=\prod_{i\in I}U_i\cap V_i\text{.}
+\end{equation*}
+</div>
+<div class="para">I'll leave the details to you.</div>
+</div></article><span class="incontext"><a href="s_product2.html#li-140" class="internal">in-context</a></span>
 </body>
 </html>
