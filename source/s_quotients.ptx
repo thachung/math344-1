@@ -111,7 +111,7 @@
       </li>
       <li>
         <p>
-          Open and closed maps are quotient maps.
+          Let <m>f</m> be continuous and surjective. If <m>f</m> is open or closed, then it is a quotient map.
         </p>
       </li>
       <li>
@@ -121,6 +121,31 @@
       </li>
     </ol>
   </statement>
+  <p>
+    Statement (3) is straightforward. Statement (2) follows easily from (1) using equivalent statements (b) and (c), respectively.
+  </p>
+  <proof>
+
+    <title>Proof of (1)</title>
+    <p>
+      We prove <m>(a)\iff (b)</m> and <m>(b)\iff (c)</m>.
+    </p>
+    <p>
+      <m>(a)\implies (b)</m>. Assume <m>f</m> is a quotient map. Let <m>U\subseteq X</m> be open and saturated. Since <m>f</m> is a quotient map, to show <m>V=f(U)</m> is open, it is enough to show <m>f^{-1}(V)=f^{-1}(f(U))</m> is open. I claim <m>f^{-1}(f(U))=U</m>, whence the claim follows. In general for any function of sets we have <m>f^{-1}(f(U))\supseteq U</m>. (Check for yourself.) Since <m>U</m> is saturated, the reverse inclusion also holds. Indeed, if <m>x\in f^{-1}(f(U))</m>, then <m>f(x)\in f(U)</m> and thus <m>f(x)=f(u)</m> for some <m>u\in U</m>; since <m>U</m> is saturated, we have <m>x\in U</m>.
+    </p>
+    <p>
+      <m>(b)\implies (a)</m>. Assume <m>U=f^{-1}(V)</m> be open for <m>V\subseteq Y</m>. We wish to show that <m>V</m> is open in <m>Y</m>. First observe that <m>f^{-1}(V)</m> is saturated: if <m>x\in f^{-1}(V)</m>, then <m>f^{-1}(\{f(x)\})\subseteq f^{-1}(V)</m>. Since <m>f</m> satisfies <m>(b)</m> and <m>U</m> is an open saturated set, we have <m>f(U)</m> open. I claim <m>f(U)=f(f^{-1}(V))=V</m>, showing <m>V</m> is open. In general we always have
+      <m>f(f^{-1}(V))\subseteq V</m> for any function of sets. For the other inclusion, given <m>y\in V</m>, there is an <m>x\in X</m> such that <m>f(x)=y</m>; then <m>x\in f^{-1}(V)</m> and <m>f(x)=y</m>, showing <m>y\in f(f^{-1}(V))</m>.
+    </p>
+    <p>
+      <m>(b)\implies (c)</m>. Let <m>C</m> be a saturated closed map. First I claim that the open set <m>U=X-C</m> is saturated. To see why, suppose <m>y=f(x)</m> for some <m>x\in U</m>. Since <m>x\notin C</m> and <m>C</m> is saturated, we must have <m>f^{-1}(\{y\})\cap C=\emptyset</m>. Thus <m>f^{-1}(\{y\})\subseteq U</m>, as desired. Next, I claim <m>f(U)=Y-f(C)</m>. We have already seen that if <m>y\in f(U)</m>, then <m>f^{-1}(\{y\})\cap C=\emptyset</m>,
+      and hence <m>y\notin f(C)</m>. This proves <m>f(U)\subseteq Y-f(C)</m>. For the other inclusion, given any <m>y\in Y-f(C)</m>, by surjectivity there is some <m>x\in X</m> such that <m>f(x)=y</m>; since <m>y\notin f(C)</m> we must have <m>x\in U</m>; thus <m>y\in f(U)</m>. This proves <m>f(U)=X-f(C)</m>. Since <m>f</m> satisfies (b), <m>f(U)</m> is open. We conclude that <m>f(C)</m> is closed, as desired.
+    </p>
+    <p>
+      <m>(c)\implies (b)</m>. This argument is essentially identical to the one above.
+    </p>
+  </proof>
+
 </theorem>
 
 <theorem xml:id="th_quotientmap_mappingprop">
@@ -143,6 +168,33 @@
       </image>
     </p>
   </statement>
+  <proof>
+    <p>
+      Assume we have <m>g\colon X\rightarrow Z</m> as described. Define <m>f\colon Y\righarrow Z</m> via the following recipe: given <m>y\in Y</m>, pick any <m>x\in X</m> such that <m>p(x)=y</m> (possible since <m>p</m> is surjective); now define <m>f(y)=g(x)</m>. Two comments:
+      <ol>
+        <li>
+          <p>
+            To make sure <m>f</m> as described is well-defined, we must make sure that the definition of <m>f(y)</m> does not depend on the choice of <m>x</m> involve: <ie />, if you happen to pick another <m>x'</m> such that <m>p(x')=y</m>, we must make sure that <m>g(x)=g(x')</m>. This is precisely what is guaranteed by the condition that <m>p(x)=p(x')\implies g(x)=g(x')</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Since we want <m>g=f\circ p</m>, this definition of <m>f</m> is forced upon us: given <m>y=p(x)</m>, we must have <m>f(y)=f(p(x))=g(x)</m>. Thus <m>f</m> is unique.
+          </p>
+        </li>
+      </ol>
+      Now we must show <m>f</m> is continuous. We must show, given any open <m>V\subseteq Z</m> the set <m>U=f^{-1}(V)</m> is open. To do so we use the fact that <m>p</m> is a quotient map: that is, we need only show that <m>p^{-1}(U)</m> is open in <m>X</m>. But we have
+      <me>
+        p^{-1}(U)=p^{-1}(f^{-1}(V))=(f\circ p)^{-1}(V)=g^{-1}(V),
+      </me>
+      since <m>g=f\circ p</m>. Since <m>g</m> is continuous, we conclude that <m>p^{-1}(U)=g^{-1}(V)</m> is open, as desired.
+    </p>
+    <p>
+      Lastly, we look at when <m>f</m> is a quotient map. If <m>f</m> is a quotient map, then so is the composition <m>g=f\circ p</m> by statement (3) of <xref ref="th_quotientmap_props"/>. Assume <m>g</m> is a quotient map. Since <m>g</m> is surjective and <m>g=f\circ p</m>, it follows that <m>f</m> must be surjective. Now suppose <m>U=f^{-1}(V)</m> is open in <m>Y</m>. Since <m>p</m> is continuous, <m>p^{-1}(U)</m> is open in <m>X</m>. As we saw above, <m>p^{-1}(U)=g^{-1}(V)</m>, which is a saturated open set of <m>X</m>. Since <m>g</m> is a quotient map, the set <m>g(g^{-1}(V))</m>
+       is open. But again, because <m>g</m> is surejective, we have <m>g(g^{-1}(V))=V</m>.
+    </p>
+  </proof>
+
 </theorem>
 <definition xml:id="d_fibers_agree">
   <title>Fibers of maps</title>
@@ -186,6 +238,22 @@
       </ol>
     </p>
   </statement>
+  <proof>
+    <ol>
+      <li>
+        <p>
+          The statement is a direct consequence of <xref ref="th_quotientmap_mappingprop"/> by setting <m>Y=X^*</m> and <m>p=q</m>, and understanding that the implication <m>x\sim x'\implies g(x)=g(x')</m> is equivalent to <m>p(x)=p(x')\implies g(x)=g(x')</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The condition <m>x\sim x' \iff g(x)=g(x')</m> guarantees that the function <m>f\colon X^*\rightarrow Y</m> is injective. The condition of <m>g</m> being a quotient map is equivalent to <m>f</m> being a quotient map according to <xref ref="th_quotientmap_mappingprop"/>. Thus the two conditions taken together are equivalent to <m>f</m> being a bijective quotient map. This in turn is equivalent to being a homeomorphism by equivalent statement 1.b of <xref ref="th_continuous_equivalence"/>, since <em>all</em> subsets of <m>X</m> are saturated with respect to an invertible function <m>f</m>.
+        </p>
+      </li>
+    </ol>
+
+  </proof>
+
 </corollary>
 <corollary xml:id="cor_quotient_factor">
   <title>Factoring maps through a quotient</title>
@@ -211,7 +279,37 @@
       </li>
     </ol>
   </statement>
+  <proof>
+    <p>
+      With the exception of (3), this corollary follows essentially directly from <xref ref="cor_quotientspace_props"/>. Statement (3) follows directly from (1). In fact, more generally, if <m>f\colon X\rightarrow Y</m> is a bijective continuous map, and <m>Y</m> is Hausdorff, then <m>X</m> is Hausdorff.
+    </p>
+  </proof>
+
 </corollary>
+<p>
+  Lastly, the following result is also helpful when dealing with quotient spaces. I omit the proof, which you can find in Munkres.
+</p>
+<theorem xml:id="th_quotient_subspace">
+  <title>Quotients and subspaces</title>
+  <statement>
+    <p>
+      Let <m>p\colon X\rightarrow Y</m> be a quotient map, and let <m>A\subseteq X</m> be a subspace that is saturated with respect to <m>p</m>. Let <m>q=p\vert_A\colon A\rightarrow p(A)</m> be the restriction of <m>p</m> to <m>A</m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          If <m>A</m> is either open or closed, then <m>q</m> is a quotient map.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>p</m> is either an open or a closed map, then <m>q</m> is a quotient map.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</theorem>
+
 <example xml:id="eg_RmodZ">
   <title>The circle as a quotient space</title>
   <statement>
@@ -233,8 +331,34 @@
   </statement>
   <solution>
     <p>
-
+      First a remark about why we proceed in this manner. If we wanted to prove <m>X^*</m> is homeomorphic to <m>S^1</m>, it might seem more natural to consider the diagram
+      <image xml:id="im_quotientspace_attempt" width="25%">
+      <latex-image>
+        \begin{tikzcd}
+           X \arrow[rd, twoheadrightarrow,"g"] \arrow[d, twoheadrightarrow,"p"']\amp \\
+          X^* \arrow[r,dotted,"\exists! f"'] \amp S^1
+        \end{tikzcd}
+      </latex-image>
+    </image>
+      obtained from the function <m>g(t)=(\cos 2\pi t, \sin 2\pi t)</m>. It is easy to see that <m>g</m> is surjective and satisfies <m>t\sim t' \iff g(t')=g(t')</m>. Using <xref ref="cor_quotientspace_props"/>, we get a bijective continuous function <m>f\colon X^*\rightarrow S^1</m>. The difficulty lies in showing this is a homeomorphism; or equivalently, showing that <m>g</m> is a quotient map. Once we learn about compactness, it will be easy to show that <m>g</m> is in fact a closed map, and thus a quotient map by <xref ref="th_quotientmap_props"/>. With our current tools, however, this is not so straightforward. So we follow the steps proposed.
     </p>
+    <ol>
+      <li>
+        <p>
+          We will use <xref ref="cor_quotientspace_props"/> to prove <m>X^*=[0,1]/\sim</m> is homeomorphic to <m>\R/\Z</m>. Consider the diagram
+          <image xml:id="im_quotientspace_example1" width="25%">
+          <latex-image>
+            \begin{tikzcd}
+               [0,1] \arrow[rd, twoheadrightarrow,"g"] \arrow[d, twoheadrightarrow,"q"']\amp \\
+              X^*=[0,1]/\sim \arrow[r,dotted,"\exists! f"'] \amp \R/\Z
+            \end{tikzcd}
+          </latex-image>
+        </image>
+        where <m>g</m> is defined as <m>g(t)=[t]\in \R/\Z</m>. I claim <m>g</m> is a quotient map and satisfies <m>g(t)=g(t')\iff t\sim t'</m>. It will follow from <xref ref="cor_quotientspace_props"/> that the <m>f</m> in our diagram is a homeomorphism. First note that <m>g</m> is just the restriction of the quotient map <m>\R\rightarrow \R/\Z</m> to <m>[0,1]\subseteq \R</m>. Thus it is continuous. It is surjective since for any <m>t'\in \R</m> there is a <m>t\in [0,1]</m> such that <m>t'=t+n</m> for some integer
+        <m>n\in \Z</m>. Furthermore, for <m>t,t'\in [0,1]</m>, we have <m>t\sim t'</m> if and only if <m>t,t'\in \{0,1\}</m>, if and only if <m>g(t)=g(t')</m>. Lastly, to see that <m>g</m> is a quotient map we use <xref ref="th_quotient_subspace"/> and the fact that <m>[0,1]</m> is a closed saturated subset of .
+        </p>
+      </li>
+    </ol>
   </solution>
 </example>
 
