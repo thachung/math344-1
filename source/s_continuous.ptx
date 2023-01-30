@@ -75,7 +75,7 @@
   </statement>
   <solution>
     <p>
-
+      These are all pretty elementary. I'll prove (3). Let <m>Y\subseteq X</m> be a subspace and let <m>i\colon Y\hookrightarrow X</m>  continuous. Given any open set <m>U\subseteq X</m>, we have <m>i^{-1}(U)=U\cap Y</m> which by definition is open in the subspace topology. Thus <m>i</m> is continuous.
     </p>
   </solution>
 </example>
@@ -83,12 +83,15 @@
   <title>Non-continuous inclusion</title>
   <statement>
     <p>
-      Show that the inclusion <m>i\colon \R\hookrightarrow \R_l</m> is not continuous. Here the topology of the domain is the standard one, and the topology on the codomain is the lower limit topology.
+      Show that the identity map <m>\id_\R\colon \R\hookrightarrow \R_l</m> is not continuous. Here the topology of the domain is the standard one, and the topology on the codomain is the lower limit topology.
     </p>
   </statement>
   <solution>
     <p>
-
+      For any <m>U\subseteq \R</m> we have <m>\id_\R^{-1}(U)=U</m>. If we choose <m>U</m> to be any open set of <m>\R_l</m> that is not open in the standard topology, it follows that <m>\id_{\R}^{-1}(U)</m> is not open in <m>\R</m> and hence that <m>\id_\R</m> is not continuous. We may take <m>U=[0,1)</m> for example.
+    </p>
+    <p>
+      Note: let <m>\mathcal{T}_1, \mathcal{T}_2</m> be two topologies on the set <m>X</m>, and for <m>1\leq i\leq 2</m> let <m>X_i</m> denote the space with underlying set <m>X</m> and topology <m>\mathcal{T}_i</m>. The same argument above can be used to show that <m>\id_X\colon X_1\rightarrow X_2</m> is continuous if and only if <m>\mathcal{T}_2\subseteq \mathcal{T}_1</m>.
     </p>
   </solution>
 </example>
@@ -97,7 +100,7 @@
   <statement>
     <p>
       Let <m>\{X_i, \mathcal{T}_i\}_{i\in I}</m> be a collection of topological spaces, and let <m>X=\prod_{i\in I}X_i</m>. For each <m>j\in I</m> define the projection function <m>
-      pi_j\colon X\rightarrow X_j</m> as <m>\pi_j((x_i)_{i\in I})=x_i</m>. In other words, the <m>j</m>-th projection map returns the <m>j</m>-th coordinate of an element of <m>X</m>.
+      \pi_j\colon X\rightarrow X_j</m> as <m>\pi_j((x_i)_{i\in I})=x_i</m>. In other words, the <m>j</m>-th projection map returns the <m>j</m>-th coordinate of an element of <m>X</m>.
     </p>
     <ol>
       <li>

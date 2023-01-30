@@ -48,7 +48,7 @@
     <p>
       Assume <m>C_i</m> is closed for <m>1\leq i\leq n</m>; then by DeMorgan's law
       <me>
-        \left(\bigcup_{i=1}^nC_i\right)^c=\bicap_{i=1}^n C_i^c
+        \left(\bigcup_{i=1}^nC_i\right)^c=\bigcap_{i=1}^n C_i^c
       </me>,
       which is open since <m>C_i^c</m> is open for all <m>1\leq i\leq n</m> and finite intersections of open sets are open. This proves (2).
     </p>

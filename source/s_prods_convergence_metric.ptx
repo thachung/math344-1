@@ -65,6 +65,25 @@
     </li>
     </ol>
   </statement>
+  <proof>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Suppose <m>f_n\rightarrow f</m> in either topology. Fix <m>i\in I</m> and let <m>U_i\ni f(i)</m> be any open set containing <m>f(i)\in X_i</m>. The set <m>U=U_i\times \prod_{j\ne i}U_j</m> is an open neighborhood of <m>f</m> in both topologies. By convergence there is an <m>N</m> such that <m>f_n\in U</m> for all <m>n\geq N</m>. It follows that <m>f_n(i)\in U_i</m> for all <m>n\geq N</m>. This proves that <m>f_n(i)\rightarrow f(i)</m> for all <m>i\in I</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Suppose the sequence <m>(f_n)</m> converges to <m>f</m> pointwise. To show <m>f_n\rightarrow f</m> in the product topology it is enough to show that for any base open set of the form
+            <m>U_{i_1}\times U_{i_2}\times\cdots \times U_{i_m}\times \prod_{k\ne i_k }X_k</m> there is an <m>N</m> such that if <m>n\geq N</m>, then <m>f_n\in U</m>. Since <m>(f_n)</m> converges to <m>f</m> pointwise, for each <m>i_j</m>, <m>1\leq j\leq m</m> there is an <m>N_{i_j}</m> such that if <m>n\geq N_{i_j}</m>,
+            then <m>f_n(i_j)\in U_{i_j}</m>. Setting <m>N=\max\{ N_{i_j}\}_{j=1}^m</m>, it follows that if <m>n\geq N</m> then <m>f_n(i_j)\in U_{i_j}</m> for <m>1\leq j\leq m</m>. Since <m>f_n(j)\in X_j</m> for all <m>j\ne i_j</m> we conclude that <m>f_n\in U</m> for all <m>n\geq N</m>, as desired. 
+          </p>
+        </li>
+      </ol>
+    </p>
+  </proof>
+
 </theorem>
 
 <example>

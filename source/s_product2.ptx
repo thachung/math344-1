@@ -81,7 +81,7 @@ Following Munkres, given a set <m>A</m> and the special index set <m>I=\Z_+=\{1,
     <ol>
       <li>
         <p>
-           Assume <m>\{0,1\}</m> has the discrete topology. Since <m>\{1\}</m> is open in <m>\{0,\1}</m>, the set
+           Assume <m>\{0,1\}</m> has the discrete topology. Since <m>\{1\}</m> is open in <m>\{0,1\}</m>, the set
           <me>
             U=\{1\}\times \{1\}\times \cdots =\{(1,1,\dots )\}
           </me>

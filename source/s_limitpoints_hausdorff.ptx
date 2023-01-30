@@ -200,10 +200,48 @@
           </statement>
           <solution>
             <p>
+              <ol>
+                <li>
+                  <p>
+                    Let <m>(X,d)</m> be a metric space. Given any <m>x\ne y\in X</m>, we have <m>d(x,y)=r\ne 0</m>. The open balls <m>B_{r/2}(x), B_{r/2}(y)</m> are disjoint open neighrborhoods of <m>x</m> and <m>y</m>, respectively.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Let <m>X</m> be an infinite set with the cofinite topology. We will show that <m>X</m> is not Hausdorff and hence not a metric space. In fact, we will show that any two nonempty open sets in <m>X</m> intersect nontrivially. Indeed, given nonempty open sets <m>U_1, U_2</m>, we have by definition <m>U_1=X-S_1</m>, <m>U_2=X-S_2</m> for finite sets <m>S_1, S_2</m>. Their intersection is the open set
+                    <me>
+                      U_1\cap U_2=(X-S_1)\cap (X-S_2)=X-(S_1\cup S_2).
+                    </me>
+                    Since <m>X</m> is infinite and the <m>S_i</m> are finite, we have <m>X-(S_1\cup S_2)\ne\emptyset</m>, and thus <m>U_1\cap U_2\ne \emptyset</m>.
 
+                  </p>
+                </li>
+              </ol>
             </p>
           </solution>
         </example>
+        <p>
+          The <em>Zariski topology</em> on <m>\R^n</m> is an example of a non-Hausdorff topology that is the basis for algebraic geometry.
+        </p>
+        <project>
+          <title>Zariski topology on <m>\R^n</m></title>
+          <p>
+            Let <m>X=\R^n</m>, and let <m>\R[x_1,x_2,\dots, x_n]</m> be the set of polynomials in the unknowns <m>x_i</m> with real coefficients. For any <m>S\subseteq \R[x_1,x_2,\dots, x_n]</m> define
+            <me>
+              Z(S)=\{(a_1,a_2,\dots, a_n)\in \R^n\colon f(a_1,a_2,\dots, a_n)=0 \text{ for all } f\in S\}
+            </me>.
+            In other words, <m>Z(S)</m> is the set of points <m>P=(a_1,a_2,\dots, a_n)</m> in <m>\R^n</m> that are simultaneous zeros for all polynomials <m>f\in S</m>. The set
+            <me>
+              \mathcal{T}=\{U\colon U=\R^n-Z(S) \text{ for some } S\subseteq \R^n\}
+            </me>
+            defines a topology on <m>X</m> called the <term>Zariski topology</term>. As you will show in homework (for <m>n=2</m>), this topology is <m>T_1</m> but not Hausdorff.
+          </p>
+          <proof>
+            <p>
+              Proved in homework for <m>n=2</m>. The general proof is not much different.
+            </p>
+          </proof>
+        </project>
         <definition xml:id="d_convergent_sequence">
           <title>Convergent sequence</title>
           <statement>
@@ -221,7 +259,10 @@
           </statement>
           <solution>
             <p>
-
+              Let <m>x\in \R</m> and let <m>U</m> be any open set containing <m>x</m>. We have <m>U=\R-\{r_1,r_2,\dots, r_n\}</m> for some <m>r_i\in \R</m>, <m>1\leq i\leq n</m>. Since this list is finite, we can pick <m>N</m> such that if <m>n\geq N</m>, then <m>n\ne r_i</m> for any <m>1\leq i\leq n</m>, and hence that <m>n\in U</m>, as desired.
+            </p>
+            <p>
+              Note: the same argument shows that any sequence containing infinitely many distinct elements is convergent, and in fact converges to all elements of <m>X</m>.
             </p>
           </solution>
         </example>
@@ -234,7 +275,7 @@
           </statement>
           <proof>
             <p>
-
+              Assume  <m>x_n\rightarrow x</m> and let <m>y\ne x</m>. Let <m>U, V</m> be disjoint open sets containing <m>x, y</m>, respectively. By convergence, there is an <m>N\geq 1</m> such that if <m>n\geq N</m>, then <m>x_n\in U</m>. It follows that <m>x_n\notin V</m> for all <m>n\geq N</m> and hence that <m>(x_n)</m> does not converge to <m>y</m>.
             </p>
           </proof>
 
@@ -246,6 +287,12 @@
               Let <m>A</m> be a subset of the <m>T_1</m>-space <m>X</m>. An element <m>x\in X</m> is a limit point of <m>A</m> if and only if every open neighborhood of <m>x</m> intersects <m>A</m> in infinitely many points.
             </p>
           </statement>
+          <proof>
+            <p>
+              See Munkres. 
+            </p>
+          </proof>
+
         </theorem>
 
 
