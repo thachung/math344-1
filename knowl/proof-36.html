@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h3 class="heading"><span class="type">Proof</span></h3>
+<ol class="decimal">
+<li><div class="para logical">
+<div class="para">First observe that equality for elements <span class="process-math">\(x=(x_i)_{i\in I}, y=(y_i)_{i\in I}\)</span> in <span class="process-math">\(X\)</span> can be express in terms of the projection maps as follows:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x=y \iff x_i=y_i \text{ for all } i\in I \iff \pi_i(x)=\pi_i(y) \text{ for all } i\in I\text{.}
+\end{equation*}
+</div>
+<div class="para">Using this fact, we see that given a function <span class="process-math">\(f\colon Y\rightarrow X\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+f_i=\pi_i\circ f \text{ for all } i\in I \amp \iff f_i(y)=\pi_i(f(y)) \text{ for all } y\in Y, i\in I \\
+\amp \iff f(y)=(f_i(y))_{i\in I} \text{.}
+\end{align*}
+</div>
+<div class="para">Thus the function <span class="process-math">\(f(y)=(f_i(y))_{i\in I}\)</span> is the unique function from <span class="process-math">\(Y\)</span> to <span class="process-math">\(X\)</span> satisfying <span class="process-math">\(f_i=\pi_i\circ f\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span> To see that this <span class="process-math">\(f\)</span> is continuous, we show that <span class="process-math">\(f^{-1}(B)\)</span> is open for any base open set <span class="process-math">\(B\subseteq X\text{.}\)</span> For such a <span class="process-math">\(B\)</span> we have <span class="process-math">\(B=\prod_{j=1}^n U_j\times \prod_{i\ne j}X_i\)</span> for some open sets <span class="process-math">\(U_j\subseteq X_j\text{,}\)</span> <span class="process-math">\(1\leq j\leq n\text{.}\)</span> By definition of <span class="process-math">\(f\)</span> we have <span class="process-math">\(f(y)\in B\)</span> if and only if <span class="process-math">\((f_i(y))_{i\in I}\in B\)</span> if and only if <span class="process-math">\(f_j(y)\in U_j\)</span> for all <span class="process-math">\(1\leq j\leq n\text{.}\)</span> Thus <span class="process-math">\(f^{-1}(U)=\cap_{j=1}^nf_i^{-1}(U_i)\text{.}\)</span> Since each <span class="process-math">\(f_j\)</span> is continuous, we conclude that <span class="process-math">\(f_j^{-1}(U_j)\)</span> is open for all <span class="process-math">\(1\leq j\leq n\text{,}\)</span> and hence <span class="process-math">\(f^{-1}(U)\)</span> is open.</div>
+</div></li>
+<li>
+<div class="para">Let <span class="process-math">\(X'\)</span> together with continuous maps <span class="process-math">\(\pi_i'\colon X\rightarrow X_i\)</span> be any other space that satisfies the product mapping property (1). By (1) (taking <span class="process-math">\(Y=X'\)</span>) there is a continuous function <span class="process-math">\(f\colon X'\rightarrow X\)</span> satisfying <span class="process-math">\(\pi_i'=\pi_i\circ f\text{.}\)</span> Similarly, since <span class="process-math">\(X'\)</span> also satisfies the product mapping property, we have (now taking <span class="process-math">\(X=Y\)</span> in (1)) a continuous map <span class="process-math">\(g\colon X\rightarrow X'\)</span> satisfying <span class="process-math">\(\pi_i=\pi_i'\circ g\text{.}\)</span> I claim <span class="process-math">\(f\circ g=\id_X\)</span> and <span class="process-math">\(g\circ f=\id_{X'}\text{:}\)</span> i.e., <span class="process-math">\(g=f^{-1}\)</span> is a continuous inverse of <span class="process-math">\(f\text{,}\)</span> and thus <span class="process-math">\(f\)</span> is a homeomorphism between <span class="process-math">\(X'\)</span> and <span class="process-math">\(X\text{.}\)</span>
+</div>
+<div class="para logical">
+<div class="para">To see why we use the <em class="emphasis">uniqueness</em> claim in the product mapping property (twice). Indeed, the function <span class="process-math">\(f\circ g\colon X\rightarrow X\)</span> is continuous and satisfies</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\pi_i\circ (g\circ f)=(\pi_i\circ g)\circ f=\pi_i'\circ f=\pi_i
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(i\in I\text{.}\)</span> But the function <span class="process-math">\(\id_X\colon X\rightarrow X\)</span> also satisfies <span class="process-math">\(\pi_i=\pi_i\circ\id_X\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span> By the uniqueness claim of the product mapping property, we conclude <span class="process-math">\(\id_X=f\circ g\text{,}\)</span> as desired. The proof that <span class="process-math">\(g\circ f=\id_{X'}\)</span> is nearly identical, now applying the product mapping propery to maps into <span class="process-math">\(X'\text{.}\)</span>
+</div>
+</div>
+</li>
+</ol></article><span class="incontext"><a href="s_homeomorphisms.html#proof-36" class="internal">in-context</a></span>
+</body>
+</html>
