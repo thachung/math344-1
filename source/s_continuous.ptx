@@ -119,7 +119,10 @@
   </statement>
   <solution>
     <p>
-      Clearly (2) implies (1), so we 
+      It is enough to prove (2), since it clearly implies (1). The maps <m>\pi_j</m> are continuous in a topology <m>\mathcal{T}</m> if and only if for all <m>j\in I</m> and open <m>U_j\subseteq X_j</m> the preimage <m>\pi_j^{-1}(U_j)=U_j\times \prod_{i\ne j}X_i</m> is open in <m>\mathcal{T}</m>. Next it clear that <m>U_j\times \prod_{i\ne j}X_i</m> is open in <m>\mathcal{T}</m> for all <m>j\in J</m> if and only if
+      <me>
+      \cap_{k=1}^nU_{j_k}\times \prod_{i\ne j_k}X_i=\prod_{k=1}^n U_{j_k}\times \prod_{i\ne j_k}X_i
+      </me> is open for any finite set <m>\{j_1, j_2,\dots, j_n\}\subseteq I</m>. Since these sets form a basis for the product topology, we conclude that the projections are all continuous if and only if <m>\mathcal{T}</m> is finer than the product topology.
     </p>
   </solution>
 </example>
@@ -141,6 +144,16 @@
     </li>
   </ol>
   </statement>
+  <proof>
+    <p>
+      It is clear that (1) implies (2). Assume (2) is true. Given open <m>U\subseteq Y</m>, we can write <m>U=\bigcup_{i\in I}B_i</m> with <m>B_i\in \mathcal{B}</m>. It follows that
+      <me>
+        f^{-1}(U)=\bigcup_{i\in I}f^{-1}(B_i)
+      </me>
+      is open, since by assumption each <m>f^{-1}(B_i)</m> is open.
+    </p>
+  </proof>
+
 </theorem>
 
 <theorem xml:id="th_continuous_equivalence">
@@ -167,11 +180,26 @@
       </li>
       <li>
         <p>
-          For all <m>x\in X</m> and open neighborhood <m>V\ni x</m>, there is an open neighborhood <m>U\ni x</m> such that <m>f(U)\subseteq V</m>.
+          For all <m>x\in X</m> and open neighborhood <m>V\ni y=f(x)</m>, there is an open neighborhood <m>U\ni x</m> such that <m>f(U)\subseteq V</m>.
         </p>
       </li>
     </ol>
   </statement>
+  <proof>
+  <p>
+    <m>(1)\implies (2)</m>. Take <m>y\in f(\overline{A})</m>. We have <m>y=f(x)</m> for some <m>x\in \overline{A}</m>. If <m>V</m> is any open neighborhood of <m>y</m>, then since <m>f</m> is continuous <m>U=f^{-1}(V)</m> is an open neighborhood of <m>x</m>. Since <m>x\in\overline{A}</m>, there exists <m>x'\in A\cap U</m>. It follows that <m>y'=f(x')\in V\cap f(A)</m>, showing this intersection is nonempt. We concdlue that <m>y\in \overline{f(A)}</m>, as desited.
+  </p>
+  <p>
+    <m>(2)\implies (3)</m>. Assume (2) holds of <m>f</m>. Given closed <m>C\subseteq Y</m> let <m>A=f^{-1}(C)</m>. To show <m>A</m> is closed, we will show that <m>\overline{A}\subseteq A</m>. Since <m>A=f^{-1}(C)</m>, this is equivalent to showing <m>f(\overline{A})\subseteq C</m>; but this follows from (2) since <m>f(\overline{A})\subseteq \overline{f(A)}\subseteq C</m>, where the last inclusion in this chain follows from the fact that <m>C</m> is closed and contains <m>f(A)</m>.
+  </p>
+  <p>
+    <m>(3)\implies (4)</m>. Let <m>x\in X</m>, and let <m>V</m> be an open neighborhood of <m>y=f(x)</m>. The set <m>C=Y-V</m> is closed, whence <m>f^{-1}(C)=X-f^{-1}(V)</m> is closed. It follows that <m>U=f^{-1}(V)</m> is an open set containing <m>x</m>, and we have <m>f(U)=f(f^{-1}(V))\subseteq V</m>.
+  </p>
+  <p>
+    <m>(4)\implies (1)</m>. We assume (4). Let <m>V\subseteq Y</m> be an open set. For any <m>x\in f^{-1}(V)</m>, there is by (4) (taking open set <m>V\ni y=f(x)</m>) an open set <m>U_x\ni x</m> such that <m>f(U_x)\subseteq V</m>. It follows that <m>U_x\subseteq f^{-1}(V)</m>. Thus for any <m>x\in f^{-1}(V)</m> there is an open <m>U_x\ni x</m> such that <m>U_x\subseteq V</m>. It follows that <m>f^{-1}(V)</m> is open, as desired.
+  </p>
+  </proof>
+
 </theorem>
 <definition xml:id="d_continuity_at_x">
   <statement>
@@ -204,13 +232,13 @@
         </p>
       </li>
       <li>
-        <title>Local on source</title>
+        <title>Local on source (open pasting)</title>
         <p>
           If <m>f\colon X \rightarrow Y</m> is a function between topological spaces and there is a collection of open sets <m>\{U_i\}_{i\in I}</m> such that <m>X=\bigcup_{i\in I}U_i</m> and the restrictions <m>f_i\colon U_i\rightarrow Y</m> are continuous, then <m>f</m> is continuous.
         </p>
       </li>
       <li>
-        <title>Pasting</title>
+        <title>Closed pasting</title>
         <p>
           Let <m>X, Y</m> be topological spaces, and suppose <m>X=C\cup D</m>, where <m>C, D</m> are closed sets. Given continuous functions <m>f\colon C\rightarrow Y</m> and <m>g\colon D\rightarrow Y</m> that satisfy <m>f(x)=g(x)</m> for all <m>x\in C\cup D</m>, the function
           <m>h\colon X\rightarrow Y</m> defined as
@@ -225,6 +253,20 @@
       </li>
     </ol>
   </statement>
+  <proof>
+    <p>
+      Statements (1)-(3) are elementary, and can be found in Munkres.
+    </p>
+    <p>
+      Statement (4) follows from equivalent condition (4) from <xref ref="th_continuous_equivalence"/>. Indeed, take any <m>x\in X</m> and open set <m>V\ni y=f(x)</m>. Since <m>x\in U_i</m> for some <m>i\in I</m>, and since <m>f_i\colon U_i\rightarrow Y</m> is continuous, there is an open <m>U\ni x</m> with <m>U\subseteq U_i</m>, such that <m>f(U)\subseteq V</m>. Since <m>U</m> is open in <m>U_i</m> and <m>U_i</m> is open in <m>X</m>, we conclude <m>U</m> is open in <m>X</m>, as desired.
+    </p>
+    <p>
+      To prove statement (5) we show that <m>h^{-1}(A)</m> is closed for any closed set <m>A\subseteq Y</m>. Since <m>h(x)\in A</m> if and only if <m>x\in C</m> and <m>f(x)\in A</m> or <m>x\in D</m> and <m>g(x)\in A</m>, we have <m>h^{-1}(A)=f^{-1}(A)\cup g^{-1}(A)</m>. Since <m>f</m> and <m>g</m> are closed we have <m>f^{-1}(A)</m> closed in <m>C</m> and <m>g^{-1}(A)</m>
+      closed in <m>D</m>. Since <m>C</m> and <m>D</m> are closed, transitivity of closedness implies <m>f^{-1}(A)</m> and <m>g^{-1}(A)</m> are closed in <m>X</m>. We conclude <m>h^{-1}(A)=f^{-1}(A)\cup g^{-1}(A)</m> is closed, as desired. 
+
+    </p>
+  </proof>
+
 </theorem>
 
 
