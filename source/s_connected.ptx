@@ -1,0 +1,161 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_connected1">
+  <title>Connected spaces</title>
+  <introduction>
+    <p>
+
+    </p>
+</introduction>
+<definition xml:id="d_connected_space">
+  <statement>
+    <p>
+      A <term>separation</term> of a topological space <m>X</m> is a pair of disjoint <em>nonempty</em> open sets <m>U_1, U_2</m> satisfying <m>X=U_1\cup U_2</m>. The space <m>X</m> is <term>connected</term> it it admits no separation, and <term>disconnected</term> otherwise.
+    </p>
+    <p>
+      A subset <m>Y\subseteq X</m> is <term>connected</term> (resp., <term>disconnected</term>) if it is connected (resp., disconnected) with respect to the subspace topology.
+    </p>
+  </statement>
+</definition>
+<example>
+  <title>Examples</title>
+  <statement>
+    <ol>
+      <li>
+        <p>
+          If <m>\abs{X}\geq 2</m>, then <m>X</m> is not connected with respect to the discrete topology.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>X</m> is infinite, then <m>X</m> is connected with respect to the cofinite topology.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>L</m> be the graph of the equation <m>y=0</m> and let <m>C</m> be the graph of the equation <m>y=1/(1+x^2)</m>. The subset <m>X=L\cup C\subseteq \R^2</m> is disconnected.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>Q\subseteq \R</m> is not connected. In fact if <m>A\subseteq \R</m> is any set that is <em>not</em> an interval, then <m>A</m> is not connected. (Define an interval of <m>\R</m> to be a set <m>I</m> satisfying the following property: if <m>a,b\in I</m> and <m>a &lt; b</m>, then <m>[a,b]\subseteq I</m>. This definition includes singletons and the empty set as sort of <em>degenerate</em> intervals.)
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+<theorem xml:id="th_connected_intervals">
+  <title>Connected subsets of <m>\R</m></title>
+  <statement>
+    <p>
+      Consider <m>\R</m> with the standard topology. For all subsets <m>X\subseteq \R</m> we have
+      <me>
+        X \text{ connected } \iff X \text{ an interval}
+      </me>.
+    </p>
+  </statement>
+</theorem>
+
+<theorem xml:id="th_connected_equiv">
+  <title>Connectedness equivalences</title>
+  <statement>
+    <p>
+      The following statements are equivalent for a topological space <m>X</m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          <m>X</m> is connected.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>U\subseteq X</m> is open and closed, then <m>U\in \{\emptyset, X\}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          There is no pair of nonempty disjoint sets <m>A,B</m>, neither of which contains limit points of the other, satisfying <m>X=A\cup B</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          There is no pair of disjoint nonempty closed sets <m>C_1, C_2</m> satisfying <m>X=C_1\cup C_2</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</theorem>
+<theorem xml:id="th_connected_subspace">
+  <title>Connectedness and subspaces</title>
+  <statement>
+    <p>
+      Let <m>X</m> be a topological space.
+      <ol>
+        <li>
+          <p>
+            If <m>Y\subseteq X</m> is connected and <m>X=U_1\cup U_2</m> is a separation of <m>X</m>, then <m>Y\subseteq U_1</m> or <m>Y\subseteq U_2</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\{Y_i\}_{i\in I}</m> is a collection of connected subspaces of <m>X</m> and <m>\bigcap Y_{i\in I}Y_i\ne\emptyset</m>, then <m>Y=\bigcup_{i\in I}Y_i</m> is connected.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>Y\subseteq X</m> is connected, then any <m>Y'</m> satisfying <m>Y\subseteq Y'\subseteq \overline{Y}</m> is connected.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      Let <m>Y\subseteq X</m> be a connected subspace of <m>X</m>. It <m>X=U_1\cup U_2</m> is a separation of <m>X</m>, then <m>Y\subseteq U_1</m> or <m>Y\subseteq U_2</m>.
+    </p>
+  </statement>
+</theorem>
+<theorem xml:id="th_connected_continuous">
+  <title>Connectedness and continuity</title>
+  <statement>
+    <p>
+      If <m>f\colon X\rightarrow Y</m> is continuous and <m>X</m> is connected, then <m>f(X)</m> is connected.
+    </p>
+  </statement>
+  <proof>
+    <p>
+    We identify <m>f</m> with the map <m>f\colon X\rightarrow f(X)</m> obtained by restricting the codomain, which is continuous <em>and</em> surjective. If <m>U_1, U_2</m> are disjoint open sets satisfying <m>f(X)=U_1\cup U_2</m>, then we have <m>X=f^{-1}(f(X))=f^{-1}(U_1)\cup f^{-1}(U_2)</m>. Since the sets <m>f^{-1}(U_i)</m> are open and disjoint, we have <m>X=f^{-1}(U_1)</m> or <m>X=f^{-1}(U_2)</m>. Since <m>f</m> is surjective, we have <m>f(f^{-1}(U_i))=U_i</m> for <m>1\leq i\leq 2</m>. It follows that <m>U_1=f(X)</m> or <m>U_2=f(X)</m>. We conclude <m>f(X)</m> is connected.
+    </p>
+  </proof>
+
+</theorem>
+
+<corollary xml:id="cor_graph_connected">
+  <title>Graphs of continuous functions</title>
+  <statement>
+    <p>
+      Let <m>f\colon X\rightarrow Y</m> and let <m>\Gamma_f=\{(x,f(x))\in X\times Y\colon x\in X\}</m>, the graph of <m>f</m>. If <m>f</m> is continuous, then <m>\Gamma_f</m> is connected.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Define <m>F\colon X\rightarrow \rightarrow X\times Y</m> as <m>F(x)=(\id_X(x),f(x))=(x,f(x))</m>. Since the two component functions <m>\id_X\colon X\rightarrow X</m> and <m>f\colon X\rightarrow Y</m> are continuous, so is <m>F</m>. From <xref ref="th_connected_continuous"/>, we conclude that <m>F(X)=\Gamma_f</m> is continuous.
+    </p>
+  </proof>
+
+</corollary>
+
+<theorem xml:id="th_connected_products">
+  <statement>
+    <p>
+      A product space <m>X=\prod_{i\in I}X_i</m> (with product topology) is connected if and only if <m>X_i</m> is connected for all <m>i\in I</m>.
+    </p>
+  </statement>
+</theorem>
+
+
+
+
+</section>

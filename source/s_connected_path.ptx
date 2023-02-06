@@ -1,0 +1,136 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_connected_path">
+  <title>Path-connected spaces</title>
+  <introduction>
+    <p>
+
+    </p>
+</introduction>
+<definition xml:id="d_path">
+  <title>Path</title>
+  <statement>
+    <p>
+      A <term>path</term> in (or to) a topological space <m>X</m> is a continuous function <m>f\colon [a,b]\rightarrow X</m>, where <m>[a,b]\subseteq \R</m> is a closed interval. We call <m>f(a)=x</m> the <term>start point</term> (or <term>initial point</term>) and <m>f(b)=x'</m> the <term>end point</term> (or <term>terminal point</term>) of the path <m>f</m>.
+    </p>
+  </statement>
+</definition>
+<definition xml:id="d_path_connected">
+  <title>Path-connected space</title>
+  <statement>
+    <p>
+      Let <m>X</m> be a topological space. Two elements <m>x, x'\in X</m> are <term>connected by a path in <m>X</m></term> if there is a path <m>f\colon [a,b]\rightarrow X</m> such that <m>f(a)=x</m> and <m>f(b)=x'</m>. The space <m>X</m> is <term>path connected</term> if any two elements of <m>X</m> are connected by a path.
+    </p>
+  </statement>
+</definition>
+<theorem xml:id="th_path_connected">
+  <title>Path-connected implies connected</title>
+  <statement>
+    <p>
+      If <m>X</m> is path connected, then <m>X</m> is connected. Using logical shorthand:
+      <me>
+        X \text{ path connected}\implies X \text{ connected}.
+      </me>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Assume by contradiction that <m>X=U_1\cup U_2</m> is a separation of <m>X</m>. We can find points <m>x_1\in U_1, x_2\in U_2</m>. Let <m>f\colon [a,b]\rightarrow X</m> be a path connecting <m>x, x'</m>. By <xref ref="th_connected_continuous"/>, the image <m>f([a.b])</m> is connected. By <xref ref="th_connected_subspace"/> we must have <m>f([a,b])\subseteq U_1</m> or <m>f([a,b])\subseteq U_2</m>. This contradicts the fact that <m>f(a)=x_1\in U_1, f(b)=x_2\in U_2</m>
+      and <m>U_1\cap U_2=\emptyset</m>. Thus there can be no separation of <m>X</m>, and we conclude that it is connected.
+    </p>
+  </proof>
+</theorem>
+<theorem xml:id="th_path_connected_continuous">
+  <title>Path-connectedness and continuity</title>
+  <statement>
+    <p>
+      If <m>f\colon X\rightarrow Y</m> is continuous and <m>X</m> is path connected, then <m>f(X)</m> is path connected.
+    </p>
+  </statement>
+</theorem>
+
+
+<example>
+  <title>Balls in <m>\R^n</m></title>
+  <statement>
+    <p>
+      Let <m>X=\R^n</m> be Euclidean <m>n</m>-space. For all <m>\epsilon &gt;0</m> and any <m>\boldx\in \R^n</m>, the open ball <m>B_\epsilon(\boldx)</m> is connected, as is the closed ball <m>\overline{B}_\epsilon(\boldx)</m> defined as
+      <me>
+        \overline{B}_{\epsilon}(\boldx)=\{\boldy\colon d(\boldy,\boldx)\leq \epsilon\}.
+      </me>
+    </p>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+<example>
+  <title>Punctured Euclidean space <m>\R^n-\{\boldzero\}</m>: <m>n\geq 2</m></title>
+  <statement>
+    <p>
+        Let <m>X=\R^n</m> be Euclidean <m>n</m>-space, where <m>n\geq 2</m>. The subspace <m>\R^n-\{\boldzero\}</m> is connected.
+    </p>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+<example>
+  <title><m>\R\not\cong \R^n</m> for <m>n\geq 2</m></title>
+  <statement>
+    <p>
+      Prove: if <m>n\geq 2</m>, then there is no homeomorphism from <m>\R</m> to <m>\R^n</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+<example>
+  <title>The <m>n</m>-sphere</title>
+  <statement>
+    <p>
+      Fix <m>n\geq 1</m>. The <m>n</m>-sphere <m>S^n</m> is defined as
+      <me>
+        S^n=\{\boldx\in \R^{n+1}\colon \norm{\boldx}=1\}=\{(x_1,x_2,\dots, x_{n+1})\colon \sqrt{x_1^2+x_2^2+\cdots +x_{n+1}^2}=1\}
+      </me>.
+      Prove: <m>S^n</m> is connected for all <m>n\geq 1</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+<project xml:id="top_eg_topologist_sine_curve">
+  <title>Topologist's sine curve</title>
+  <p>
+    Define <m>f\colon (0,1]\rightarrow \R</m> as <m>f(t)=\sin(1/t)</m> for all <m>t\in (0,1)</m>. Let <m>\Gamma_f=\{(t,f(t)\in \R^2\colon t\in (0,1)\}</m>, the graph of <m>f</m>.
+  </p>
+  <ol>
+    <li>
+      <p>
+        Prove: <m>X=\overline{\Gamma_f}=\Gamma_f\cup \{0\}\times [0,1]</m> is connected.
+      </p>
+    </li>
+    <li>
+      <p>
+        Prove: <m>X</m> is not path connected. Specifically, show that <m>(0,0)</m> and <m>(1,\sin(1))</m> are not connected by a path in <m>X</m>.
+      </p>
+    </li>
+  </ol>
+
+
+</project>
+
+
+
+
+
+
+</section>

@@ -170,7 +170,7 @@
   </statement>
   <proof>
     <p>
-      Assume we have <m>g\colon X\rightarrow Z</m> as described. Define <m>f\colon Y\righarrow Z</m> via the following recipe: given <m>y\in Y</m>, pick any <m>x\in X</m> such that <m>p(x)=y</m> (possible since <m>p</m> is surjective); now define <m>f(y)=g(x)</m>. Two comments:
+      Assume we have <m>g\colon X\rightarrow Z</m> as described. Define <m>f\colon Y\rightarrow Z</m> via the following recipe: given <m>y\in Y</m>, pick any <m>x\in X</m> such that <m>p(x)=y</m> (possible since <m>p</m> is surjective); now define <m>f(y)=g(x)</m>. Two comments:
       <ol>
         <li>
           <p>
@@ -286,7 +286,7 @@
   </proof>
 
 </corollary>
-<p>
+<!-- <p>
   Lastly, the following result is also helpful when dealing with quotient spaces. I omit the proof, which you can find in Munkres.
 </p>
 <theorem xml:id="th_quotient_subspace">
@@ -308,57 +308,71 @@
       </li>
     </ol>
   </statement>
-</theorem>
+</theorem> -->
 
 <example xml:id="eg_RmodZ">
   <title>The circle as a quotient space</title>
   <statement>
     <p>
-      Let <m>X^*</m> be the quotient of <m>[0,1]</m> obtained by identifying only the elements <m>0</m> and <m>1</m>. Let <m>\R/\Z</m> denote the quotient of <m>\R</m> by the equivalence relation <m>x\sim y</m> if and only if <m>x=y+n</m> for some <m>n\in Z</m>.
+      Let <m>X^*</m> denote the quotient obtained from <m>X=[0,1]</m> after identifying <m>0</m> and <m>1</m>, and let <m>\R/\Z</m> denote the quotient of <m>\R</m> by the equivalence relation <m>x\sim y</m> if and only if <m>x=y+n</m> for some <m>n\in Z</m>. Prove that <m>\R/\Z</m> is homeomorphic to <m>S^1=\{(x,y)\colon x^2+y^2=1\}</m>.
     </p>
     <ol>
       <li>
         <p>
-          Prove: <m>X^*</m> and <m>\R/\Z</m> are homeomorphic.
+          Prove: <m>X^*\cong \R/\Z</m>
         </p>
       </li>
       <li>
         <p>
-          Prove: <m>\R/\Z</m> is homeomorphic to <m>S^1=\{(x,y)\colon x^2+y^2=1\}</m>.
+          Prove: <m>X^*\cong \R/\Z\cong S^1</m>.
         </p>
       </li>
     </ol>
+    <p>
+      Note: once we have some notions about compactness under our belt it will be easy to show directly that <m>X^*\cong S^1</m>. Part (2) is a workaround for the time being.
+    </p>
   </statement>
   <solution>
-    <p>
-      First a remark about why we proceed in this manner. If we wanted to prove <m>X^*</m> is homeomorphic to <m>S^1</m>, it might seem more natural to consider the diagram
-      <image xml:id="im_quotientspace_attempt" width="25%">
-      <latex-image>
-        \begin{tikzcd}
-           X \arrow[rd, twoheadrightarrow,"g"] \arrow[d, twoheadrightarrow,"p"']\amp \\
-          X^* \arrow[r,dotted,"\exists! f"'] \amp S^1
-        \end{tikzcd}
-      </latex-image>
-    </image>
-      obtained from the function <m>g(t)=(\cos 2\pi t, \sin 2\pi t)</m>. It is easy to see that <m>g</m> is surjective and satisfies <m>t\sim t' \iff g(t')=g(t')</m>. Using <xref ref="cor_quotientspace_props"/>, we get a bijective continuous function <m>f\colon X^*\rightarrow S^1</m>. The difficulty lies in showing this is a homeomorphism; or equivalently, showing that <m>g</m> is a quotient map. Once we learn about compactness, it will be easy to show that <m>g</m> is in fact a closed map, and thus a quotient map by <xref ref="th_quotientmap_props"/>. With our current tools, however, this is not so straightforward. So we follow the steps proposed.
-    </p>
     <ol>
       <li>
         <p>
-          We will use <xref ref="cor_quotientspace_props"/> to prove <m>X^*=[0,1]/\sim</m> is homeomorphic to <m>\R/\Z</m>. Consider the diagram
-          <image xml:id="im_quotientspace_example1" width="25%">
-          <latex-image>
-            \begin{tikzcd}
-               [0,1] \arrow[rd, twoheadrightarrow,"g"] \arrow[d, twoheadrightarrow,"q"']\amp \\
-              X^*=[0,1]/\sim \arrow[r,dotted,"\exists! f"'] \amp \R/\Z
-            \end{tikzcd}
-          </latex-image>
-        </image>
-        where <m>g</m> is defined as <m>g(t)=[t]\in \R/\Z</m>. I claim <m>g</m> is a quotient map and satisfies <m>g(t)=g(t')\iff t\sim t'</m>. It will follow from <xref ref="cor_quotientspace_props"/> that the <m>f</m> in our diagram is a homeomorphism. First note that <m>g</m> is just the restriction of the quotient map <m>\R\rightarrow \R/\Z</m> to <m>[0,1]\subseteq \R</m>. Thus it is continuous. It is surjective since for any <m>t'\in \R</m> there is a <m>t\in [0,1]</m> such that <m>t'=t+n</m> for some integer
-        <m>n\in \Z</m>. Furthermore, for <m>t,t'\in [0,1]</m>, we have <m>t\sim t'</m> if and only if <m>t,t'\in \{0,1\}</m>, if and only if <m>g(t)=g(t')</m>. Lastly, to see that <m>g</m> is a quotient map we use <xref ref="th_quotient_subspace"/> and the fact that <m>[0,1]</m> is a closed saturated subset of .
+          Consider the map <m>g</m> defined by composition
+          <image xml:id="eg_quot_g" width="50%">
+            <latex-image>
+              \begin{tikzcd}
+                 {[0,1]} \arrow[r,hookrightarrow,"i"] \arrow[rr, bend right=30, "g"'] \amp \R \arrow[r, twoheadrightarrow,"q"] \amp \R/\Z \\
+              \end{tikzcd}
+            </latex-image>
+          </image>
+          where <m>q</m> is the quotient map from <m>\R</m> to <m>\R/\Z</m>.
+          It is easy to see that <m>g</m> is surjective and satisfies <m>g(t)=g(t')</m> if and only if <m>t=t'</m> or <m>t,t'\in \{0,1\}</m>. From <xref ref="cor_quotientspace_props"/> we conclude that <m>g</m> gives rise to a bijective continuous function <m>f\colon X^*\rightarrow \R/\Z</m>. Concretely, <m>f</m> takes an equivalence class <m>[t]\in X^*</m> and maps it to the equivalence class <m>\{t+n\colon n\in \Z\}</m> in <m>\R/\Z</m>. Furthermore, to show <m>f</m> is a homeomorphism it is enough to prove that <m>g\colon [0,1]\rightarrow \R/\Z</m>
+          is a quotient map. In fact, we can show that <m>g</m> is a closed map. Take a closed set <m>C\subseteq [0,1]</m>. To show its image <m>g(C)</m> is closed in <m>\R/Z</m>, we need only show, using the fact that <m>q</m> is a quotient map, that <m>q^{-1}(g(C))</m> is closed in <m>\R/\Z</m>. We have <m>q^{-1}(g(C))=C+\Z=\{c+n\colon c\in C, n\in \Z\}</m>. This set is the result of starting with our original closed set <m>C\subseteq [0,1]</m> and taking the union of translated copies of the form <m>C+n\subseteq [n,n+1]</m>, where <m>n\in \Z</m>.
+          It is easy to see that each translate <m>C+n</m> is closed; since furthermore <m>C+n\subseteq [n,n+1]</m>, it follows that the union is also closed. I'll leave the details to you.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>q\colon\R\rightarrow \R/\Z</m> be the quotient map. Consider the diagram
+          <image xml:id="eg_quotient_homeo" width="25%">
+            <latex-image>
+              \begin{tikzcd}
+                 \R \arrow[rd, twoheadrightarrow,"g"] \arrow[d, twoheadrightarrow,"q"']\amp \\
+                \R/\Z \arrow[r,dotted,"\exists! f"'] \amp S^1
+              \end{tikzcd}
+            </latex-image>
+          </image>
+          where <m>g(t)=(\cos 2\pi t, \sin 2\pi t)</m>. It is easy to see that <m>g</m> is continuous, surjective, and satisfies <m>g(t_1)=g(t_2)\iff t_1=t_2+n</m> for some <m>n\in \Z</m>. It follows from <xref ref="cor_quotientspace_props"/> that the map <m>f</m> is bijective and continuous. Furthermore, by the same result, we can show <m>f</m> is a homeomorphism as long as we can show <m>g</m> is a quotient map. I'll show that in fact <m>g\colon \R\rightarrow S^1</m> is open, and hence a projection map.
+        </p>
+        <p>
+        To this end let <m>U\subseteq \R</m> be any open set, and let <m>P\in f(U)</m>, so that <m>P=g(t)</m> for some <m>t\in U</m>. We will find an open interval <m>I</m> satisfying <m>t\in I\subseteq U</m> such that <m>f(I)</m> is open. Since <m>P\in f(I)\subseteq f(U)</m> and <m>P\in f(U)</m> was arbitrary, this will show that <m>f(U)</m> is open.
+        </p>
+        <p>
+          Let <m>g(t)=P=(x,y)</m>. Since we cannot have <m>x=y=0</m>, we have four cases: <m>y&gt;0</m> or <m>y&lt; 0</m> or <m>x&gt; 0</m> or <m>x&lt; 0</m>. I will treat the first case; my argument is easily adapted to the other cases. Assume <m>y&gt; 0</m>. Since the set <m>V=S^1\cap \left(\R\times (0,\infty)\right)</m> is open in <m>S^1</m>, we can find an open interval <m>I=(a,b)\ni t</m> contained in <m>U</m> such <m>g(I)\subseteq V </m>: <ie />, all points in <m>g(I)</m> lie in the the upper half plane. Elementary trigonometric properties tell us that the function <m>h(t)=\cos 2\pi t</m> is strictly decreasing on <m>I</m>, and hence that <m>h(I)</m> is the open interval <m>(\cos 2\pi b, \cos 2\pi a)=(c,d)</m>.
+          It is now easy to see that <m>g(I)=\{(x,y)\colon x\in (c,d), y=+\sqrt{1-x^2}\}=S^1\cap \left((c,d)\times \R\right)</m>, which is open.
         </p>
       </li>
     </ol>
+
   </solution>
 </example>
 

@@ -1,5 +1,5 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="c_top_spaces">
-  <title>Topological spaces and continuous functions</title>
+  <title>Point-set topology</title>
   <xi:include  href="s_top_spaces.ptx"/>
   <xi:include  href="s_bases_top.ptx"/>
   <xi:include  href="s_metric1.ptx"/>
@@ -11,5 +11,7 @@
   <xi:include  href="s_continuous.ptx"/>
   <xi:include  href="s_homeomorphisms.ptx"/>
   <xi:include  href="s_quotients.ptx"/>
+  <xi:include  href="s_connected.ptx"/>
+  <xi:include  href="s_connected_path.ptx"/>
 
 </chapter>
