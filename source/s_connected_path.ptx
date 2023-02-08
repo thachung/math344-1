@@ -1,10 +1,6 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_connected_path">
   <title>Path-connected spaces</title>
-  <introduction>
-    <p>
-
-    </p>
-</introduction>
+  
 <definition xml:id="d_path">
   <title>Path</title>
   <statement>
@@ -45,6 +41,11 @@
       If <m>f\colon X\rightarrow Y</m> is continuous and <m>X</m> is path connected, then <m>f(X)</m> is path connected.
     </p>
   </statement>
+  <proof>
+    <p>
+      Given <m>y=f(x)</m> and <m>y'=f(x')</m>, let <m>\phi\colon [a,b]\rightarrow X</m> be a path connecting <m>x</m> and <m>x'</m>. The composition <m>f\circ \phi</m> is then a path connecting <m>y</m> and <m>y'</m>. 
+    </p>
+  </proof>
 </theorem>
 
 
@@ -60,8 +61,16 @@
   </statement>
   <solution>
     <p>
-
+      It is easy to see that the straight line path <m>\phi\colon[0,1]\rightarrow \R^n</m> defined as <m>\phi(t)=(1-t)\boldx+t\boldy</m> is a continuous function connecting any two points in <m>\R^n</m>. For our current purposes, we wish to show that if <m>\boldy\in B_{\epsilon}(\boldx)</m>, then so is <m>(1-t)\boldx+t\boldy</m>, for any <m>t\in [0,1]</m>. To this end, note that 
+      <md>
+        <mrow>d(\phi(t),\boldx)\amp =\norm{(1-t)\boldx+t\boldy-\boldx}  </mrow>
+        <mrow> \amp =\norm{t(\boldy-\boldx)}</mrow>
+        <mrow> \amp =\abs{t}d(\boldy,\boldx)</mrow>
+        <mrow> \amp \leq \epsilon \amp (0\leq t\leq 1)</mrow>     
+      </md>.
+      This proves that the open ball is path connected, and hence connected. Next, it is easy to see that the closed ball is in fact the closure of the open ball. Since connectedness is preserved under closure, we conclude that the closed ball is connected.
     </p>
+  
   </solution>
 </example>
 <example>
@@ -73,7 +82,7 @@
   </statement>
   <solution>
     <p>
-
+      Take any <m>\boldx,\boldy\in \R^n-\{\boldzero\}</m>. If the two vectors are not scalar multiples of one another, then the straight line path connecting them is guaranteed to lie in <m>\R^n-\{\boldzero\}</m>, using a linear independence argument. If <m>\boldy=c\span x</m>, then since <m>\dim \R^n\geq 2</m>, we can find a vector <m>\boldz\in \R^n-\{\boldzero\}</m> that is not a scalar multiple of either vector. We can then construct a polygonal path lieing in <m>\R^n-\{\boldzero\}</m> that first connects <m>\boldx</m> to <m>\boldz</m> via a straight line path, and then connects <m>\boldz</m> to <m>\boldy</m> via a straight line path. 
     </p>
   </solution>
 </example>
@@ -112,7 +121,7 @@
   <p>
     Define <m>f\colon (0,1]\rightarrow \R</m> as <m>f(t)=\sin(1/t)</m> for all <m>t\in (0,1)</m>. Let <m>\Gamma_f=\{(t,f(t)\in \R^2\colon t\in (0,1)\}</m>, the graph of <m>f</m>.
   </p>
-  <ol>
+  <p><ol>
     <li>
       <p>
         Prove: <m>X=\overline{\Gamma_f}=\Gamma_f\cup \{0\}\times [0,1]</m> is connected.
@@ -123,7 +132,7 @@
         Prove: <m>X</m> is not path connected. Specifically, show that <m>(0,0)</m> and <m>(1,\sin(1))</m> are not connected by a path in <m>X</m>.
       </p>
     </li>
-  </ol>
+  </ol></p>
 
 
 </project>

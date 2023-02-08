@@ -1,10 +1,5 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_connected1">
   <title>Connected spaces</title>
-  <introduction>
-    <p>
-
-    </p>
-</introduction>
 <definition xml:id="d_connected_space">
   <statement>
     <p>
@@ -18,7 +13,7 @@
 <example>
   <title>Examples</title>
   <statement>
-    <ol>
+    <p><ol>
       <li>
         <p>
           If <m>\abs{X}\geq 2</m>, then <m>X</m> is not connected with respect to the discrete topology.
@@ -39,7 +34,7 @@
           <m>Q\subseteq \R</m> is not connected. In fact if <m>A\subseteq \R</m> is any set that is <em>not</em> an interval, then <m>A</m> is not connected. (Define an interval of <m>\R</m> to be a set <m>I</m> satisfying the following property: if <m>a,b\in I</m> and <m>a &lt; b</m>, then <m>[a,b]\subseteq I</m>. This definition includes singletons and the empty set as sort of <em>degenerate</em> intervals.)
         </p>
       </li>
-    </ol>
+    </ol></p>
   </statement>
   <solution>
     <p>
@@ -65,7 +60,7 @@
     <p>
       The following statements are equivalent for a topological space <m>X</m>.
     </p>
-    <ol>
+    <p><ol>
       <li>
         <p>
           <m>X</m> is connected.
@@ -86,7 +81,7 @@
           There is no pair of disjoint nonempty closed sets <m>C_1, C_2</m> satisfying <m>X=C_1\cup C_2</m>.
         </p>
       </li>
-    </ol>
+    </ol></p>
   </statement>
 </theorem>
 <theorem xml:id="th_connected_subspace">

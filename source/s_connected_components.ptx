@@ -1,0 +1,64 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_connected_components">
+  <title>Connected components and locally connected spaces</title>
+  
+<definition xml:id="d_connected_components">
+  <title>Connected components</title>
+  <statement>
+    <p>
+      Let <m>X</m> be a topological space. A subset <m>A\subseteq X</m> is <term>maximally connected</term> (resp., <term>maximally path connected</term>) if <m>A</m> is connected (resp. path connected), and if for all connected (resp. path connected) sets <m>B</m>, if <m>A\subseteq B</m>, then <m>A=B</m>. A <term>connected component</term> (resp., <term>path-connected component</term>) of <m>X</m> is a maximally connected (resp. path connected) subset of <m>X</m>. 
+    </p>
+  </statement>
+</definition>
+
+<theorem xml:id="thm-">
+    <statement>
+        <p>
+        Let <m>X</m> be a topological space. 
+        <ol>
+            <li>
+                <p>
+                    All connected components of <m>X</m> are closed. (This is not necessarily the case for path-connected components.)
+                </p>
+            </li>
+            <li>
+                <p>
+                    If <m>A</m> is connected (resp. path connected) and <m>C</m> is a connected component (resp. path connected component) of <m>X</m>, then either <m>A\cap C=\emptyset</m> or <m>A\subseteq C</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    The set of all connected components (resp. path-connected components) of <m>X</m> forms a partition of <m>X</m>. In other words, every element of <m>X</m> lies in a component (connected or path connected), and any two distinct components are disjoint. 
+                </p>
+            </li>
+           <li>
+            <p>
+                Each connected component of <m>X</m> is a disjoint union of path-connected components. 
+            </p>
+           </li>
+        </ol>
+        </p>
+    </statement>
+</theorem>
+
+<definition xml:id="d_locally_connected">
+  <title>Locally connected space</title>
+  <statement>
+    <p>
+      A topological space <m>X</m> is <term>locally connected</term> (resp. <term>locally path connected</term>) at a point <m>x\in X</m> if for all open sets <m>U</m> containing <m>x</m>, there is an open connected (resp. open path connected set) <m>V</m> such that <m>x\in V</m> and <m>V\subseteq U</m>.  The space <m>X</m> is <term>locally connected</term> (resp., <term>locally path connected</term>) if it is locally connected (resp., locally path connected) at all <m>x\in X</m>. 
+    </p>
+  </statement>
+</definition>
+<remark xml:id="rm_locally_connected">
+  <title>Connected does not imply locally connected</title>
+  <p>
+    Somewhat curiously, a space being connected does not necessarily imply that the space is locally connected. For example, the <xref ref="top_eg_topologist_sine_curve" text="custom">topologist's sine curve </xref> <m>\overline{S}</m> is connected, but not locally connected. For example, take the point <m>P=(0,0)\in \overline{S}</m> and the open set <m>U=[0,1]\times (-1/2,1/2)\cap \overline{S}</m>.  Graphically, it is easy to see that <m>U</m> has a connected component partition consisting of <m>\{0\}\times (-1/2,1/2)</m> and infinitely many connected segments of the graph of <m>f(x)=\sin (1/x)</m> (one segment for each interval of the form <m>(1/(\pi/6+\pi n), 1/(-\pi/6+\pi n)</m> that lies in <m>[0,1]</m>). Any open connected set containing <m>(0,0)</m> would have to lie in the connected component <m>\{0\}\times (-1/2,1/2)</m>; but this is impossible since <m>\{0\}\times (-1/2, 1/2)</m> does not contain any open sets! 
+  </p>
+  
+</remark>
+
+
+
+
+
+
+</section>
