@@ -13,14 +13,14 @@
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
-<div class="para">We prove the equality by showing</div>
-<div class="displaymath process-math">
-\begin{equation*}
-x\notin \prod_{i\in I}\overline{A_i} \iff x\notin \overline{\prod_{i\in I}A_i}\text{.}
-\end{equation*}
+<div class="para">In both cases (box and product) let <span class="process-math">\(\mathcal{B}\)</span> be the corresponding basis, as defined in <a href="" class="xref" data-knowl="./knowl/top_eg_arbitrary_product.html" title="Topological specimen 10: Product space (arbitrary)">Topological specimen 10</a>. We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/top_eg_arbitrary_product.html ./knowl/top_eg_arbitrary_product.html">
+\begin{align*}
+U \text{ open in } A \amp \iff \text{ for all } x\in U, x\in B\cap A\subseteq U, B=\prod_{i\in I}U_i\in \mathcal{B} \\
+\amp\iff \text{ for all } x\in U, x\in \prod_{i\in I} U_i\cap A \subseteq U, B=\prod_{i\in I}U_i \in \mathcal{B}  \text{.}
+\end{align*}
 </div>
-<div class="para">
-<span class="process-math">\((\implies)\text{.}\)</span> If <span class="process-math">\(x=(x_i)_{i\in I}\notin \prod_{i\in I}\overline{A_i}\text{,}\)</span> there is an index <span class="process-math">\(i_0\in I\)</span> such that <span class="process-math">\(x_{i_0}\notin \overline{A_{i_0}}\text{,}\)</span> and thus an open set <span class="process-math">\(U_{i_0}\ni x_{i_0}\)</span> such that <span class="process-math">\(U_{i_0}\cap A_{i_0}=\emptyset\text{.}\)</span> The set <span class="process-math">\(U_{i_0}\times \prod_{i\ne i_0}X_i\)</span> is open in both topologies (box and product), contains <span class="process-math">\(x=(x_i)_{i\in I}\text{,}\)</span> and is disjoint with <span class="process-math">\(\prod_{i\in I}A_i\text{.}\)</span> We conclude that <span class="process-math">\(x\notin \overline{\prod_{i\in I}A_i}\)</span> in both topologies.</div>
+<div class="para">I claim that (in both box and product topology) the last line is equivalent to <span class="process-math">\(U\)</span> being open in the box or product topology on the product of the subspaces <span class="process-math">\(A_i\text{.}\)</span> Indeed it says that <span class="process-math">\(U\)</span> is a union of elements of the form <span class="process-math">\(\prod_{i\in I}U_i\cap A\text{,}\)</span> where by definition of the standard bases in <a href="" class="xref" data-knowl="./knowl/top_eg_arbitrary_product.html" title="Topological specimen 10: Product space (arbitrary)">Topological specimen 10</a> we have <span class="process-math">\(U_i\)</span> open in <span class="process-math">\(X_i\text{,}\)</span> and in the case where we use the product topology, <span class="process-math">\(U_i=X_i\)</span> for all but finitely many <span class="process-math">\(i\in I\text{.}\)</span> This is equivalent to <span class="process-math">\(\prod_{i\in I}U_i\cap A\)</span> being a basis element in either the box topology on the product of the subspaces or the product topology on the product of the subspaces.</div>
 </div>
 <span class="incontext"><a href="s_product2.html#p-436" class="internal">in-context</a></span>
 </body>

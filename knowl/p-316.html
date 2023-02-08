@@ -12,8 +12,35 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(A\)</span> be a subset of the topological space <span class="process-math">\(X\text{.}\)</span> Let <span class="process-math">\(\mathcal{B}\)</span> be a basis for the topology of <span class="process-math">\(X\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li><div class="para">
 <span class="process-math">\(A^\circ\)</span> is the unique largest open set contained in <span class="process-math">\(A\text{.}\)</span> In other words, <span class="process-math">\(A^\circ\)</span> is the unique set satisfying the following property: if <span class="process-math">\(U\)</span> is open and <span class="process-math">\(U\subseteq A\text{,}\)</span> then <span class="process-math">\(U\subseteq A^\circ\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(\overline{A}\)</span> is the unique smallest closed set containing <span class="process-math">\(A\text{.}\)</span> In other words, <span class="process-math">\(\overline{A}\)</span> is the unique set satisfying the following property: if <span class="process-math">\(C\)</span> is closed and <span class="process-math">\(A\subseteq C\text{,}\)</span> then <span class="process-math">\(\overline{A}\subseteq C\text{.}\)</span>
+</div></li>
+<li><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{align*}
+x \in A^\circ  \amp\iff x\in U\subseteq A \text{ for some open } U \\
+\amp \iff x\in B\subseteq A \text{ for some basis element } B\in \mathcal{B} \text{.}
+\end{align*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{align*}
+x \in \overline{A}  \amp\iff \text{ for all open sets } U, x\in U \implies U\cap A\ne \emptyset\\
+\amp \iff \text{ for all } B\in \mathcal{B}, x\in B \implies B\cap A\ne \emptyset\text{.}
+\end{align*}
+</div>
+</div></li>
+</ol>
 </div>
 <span class="incontext"><a href="s_closed_closure_interior.html#p-316" class="internal">in-context</a></span>
 </body>

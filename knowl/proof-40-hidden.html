@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof"><div class="para logical">
+<div class="para">Assume we have <span class="process-math">\(g\colon X\rightarrow Z\)</span> as described. Define <span class="process-math">\(f\colon Y\rightarrow Z\)</span> via the following recipe: given <span class="process-math">\(y\in Y\text{,}\)</span> pick any <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(p(x)=y\)</span> (possible since <span class="process-math">\(p\)</span> is surjective); now define <span class="process-math">\(f(y)=g(x)\text{.}\)</span> Two comments:</div>
+<ol class="decimal">
+<li><div class="para">To make sure <span class="process-math">\(f\)</span> as described is well-defined, we must make sure that the definition of <span class="process-math">\(f(y)\)</span> does not depend on the choice of <span class="process-math">\(x\)</span> involve: i.e., if you happen to pick another <span class="process-math">\(x'\)</span> such that <span class="process-math">\(p(x')=y\text{,}\)</span> we must make sure that <span class="process-math">\(g(x)=g(x')\text{.}\)</span> This is precisely what is guaranteed by the condition that <span class="process-math">\(p(x)=p(x')\implies g(x)=g(x')\text{.}\)</span>
+</div></li>
+<li><div class="para">Since we want <span class="process-math">\(g=f\circ p\text{,}\)</span> this definition of <span class="process-math">\(f\)</span> is forced upon us: given <span class="process-math">\(y=p(x)\text{,}\)</span> we must have <span class="process-math">\(f(y)=f(p(x))=g(x)\text{.}\)</span> Thus <span class="process-math">\(f\)</span> is unique.</div></li>
+</ol>
+<div class="para">Now we must show <span class="process-math">\(f\)</span> is continuous. We must show, given any open <span class="process-math">\(V\subseteq Z\)</span> the set <span class="process-math">\(U=f^{-1}(V)\)</span> is open. To do so we use the fact that <span class="process-math">\(p\)</span> is a quotient map: that is, we need only show that <span class="process-math">\(p^{-1}(U)\)</span> is open in <span class="process-math">\(X\text{.}\)</span> But we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+p^{-1}(U)=p^{-1}(f^{-1}(V))=(f\circ p)^{-1}(V)=g^{-1}(V),
+\end{equation*}
+</div>
+<div class="para">since <span class="process-math">\(g=f\circ p\text{.}\)</span> Since <span class="process-math">\(g\)</span> is continuous, we conclude that <span class="process-math">\(p^{-1}(U)=g^{-1}(V)\)</span> is open, as desired.</div>
+</div> <div class="para">Lastly, we look at when <span class="process-math">\(f\)</span> is a quotient map. If <span class="process-math">\(f\)</span> is a quotient map, then so is the composition <span class="process-math">\(g=f\circ p\)</span> by statement (3) of <a href="" class="xref" data-knowl="./knowl/th_quotientmap_props.html" title="Theorem 1.11.4: Quotient map properties">Theorem 1.11.4</a>. Assume <span class="process-math">\(g\)</span> is a quotient map. Since <span class="process-math">\(g\)</span> is surjective and <span class="process-math">\(g=f\circ p\text{,}\)</span> it follows that <span class="process-math">\(f\)</span> must be surjective. Now suppose <span class="process-math">\(U=f^{-1}(V)\)</span> is open in <span class="process-math">\(Y\text{.}\)</span> Since <span class="process-math">\(p\)</span> is continuous, <span class="process-math">\(p^{-1}(U)\)</span> is open in <span class="process-math">\(X\text{.}\)</span> As we saw above, <span class="process-math">\(p^{-1}(U)=g^{-1}(V)\text{,}\)</span> which is a saturated open set of <span class="process-math">\(X\text{.}\)</span> Since <span class="process-math">\(g\)</span> is a quotient map, the set <span class="process-math">\(g(g^{-1}(V))\)</span> is open. But again, because <span class="process-math">\(g\)</span> is surejective, we have <span class="process-math">\(g(g^{-1}(V))=V\text{.}\)</span>
+</div></article></body>
+</html>

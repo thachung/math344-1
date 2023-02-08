@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like"><ol class="lower-alpha">
+<body class="ignore-math"><div class="solution solution-like"><div class="para logical"><ol class="lower-alpha">
 <li>
 <div class="para">First consider <span class="process-math">\(\R\)</span> with the standard topology. The interior of <span class="process-math">\(K\)</span> is empty in this case: i.e., <span class="process-math">\(K^\circ=\emptyset\text{.}\)</span> To see this, note that given any <span class="process-math">\(x=1/N\in K\)</span> and any open interval <span class="process-math">\((a,b)\)</span> containing <span class="process-math">\(x\text{,}\)</span> we can choose an <span class="process-math">\(\epsilon\leq 1/N-1/(N+1)\)</span> such that <span class="process-math">\((x-\epsilon, x+\epsilon)\subseteq (a,b)\text{;}\)</span> by design <em class="emphasis">all</em> elements of <span class="process-math">\((x-\epsilon, x+\epsilon)-\{x\}\)</span> lie outside <span class="process-math">\(K\text{.}\)</span> Thus <span class="process-math">\(x\notin K^\circ\text{,}\)</span> and <span class="process-math">\(K^\circ=\emptyset\text{.}\)</span>
 </div>
@@ -23,5 +23,5 @@
 <div class="para">Next, I claim that <span class="process-math">\(K\)</span> is closed in the <span class="process-math">\(K\)</span>-topology, from whence it follows that <span class="process-math">\(K=\overline{K}\text{.}\)</span> (Use (2) from <a href="" class="xref" data-knowl="./knowl/th_equivalent_interior_closure.html" title="Theorem 1.4.9: Equivalent notions of interior and closure">Theorem 1.4.9</a>.) To prove the claim, we must show, using <a href="" class="xref" data-knowl="./knowl/lemma_basis_closed.html" title="Lemma 1.4.6: Basis description of closed sets">Lemma 1.4.6</a> that for any <span class="process-math">\(x\notin K\)</span> there is a basis element (in the <span class="process-math">\(K\)</span>-topology) containing <span class="process-math">\(x\)</span> and contained in <span class="process-math">\(K^c\text{.}\)</span> There are two cases: <span class="process-math">\(x\ne 0\)</span> and <span class="process-math">\(x=0\text{.}\)</span> If <span class="process-math">\(x\ne 0\text{,}\)</span> we can find an open interval <span class="process-math">\((a,b)\)</span> such that <span class="process-math">\(x\in (a,b)\)</span> and <span class="process-math">\((a,b)\cap K=\emptyset\text{.}\)</span> Since open intervals are basis elements in the <span class="process-math">\(K\)</span>-topology, we are done in this case. Next, assume <span class="process-math">\(x=0\text{.}\)</span> In this case the basis element <span class="process-math">\(B=(-1,1)-K\)</span> satisfies <span class="process-math">\(x\in B\subseteq K^c\text{.}\)</span> Having exhausted the cases, we conclude <span class="process-math">\(K\)</span> is closed, and hence <span class="process-math">\(\overline{K}=K\text{.}\)</span>
 </div>
 </li>
-</ol></div></body>
+</ol></div></div></body>
 </html>

@@ -12,7 +12,15 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">Show that any infinite set endowed with the cofinite topology is not a metric space.</div>
+<div class="para logical">
+<div class="para">We provide a counterexample to the claim that <span class="process-math">\(T_1\)</span> implies Hausdorff. Let <span class="process-math">\(X\)</span> be any <em class="emphasis">infinite</em> set endowed with the cofinite topology. The closed sets of <span class="process-math">\(X\)</span> are precisely the finite sets and <span class="process-math">\(X\)</span> itself, as we saw in <a href="" class="xref" data-knowl="./knowl/eg_closed_cofinite.html" title="Example 1.4.5: Closed in the cofinite topology">Example 1.4.5</a>. Thus <span class="process-math">\(X\)</span> is <span class="process-math">\(T_1\text{.}\)</span> On the other hand, <span class="process-math">\(X\)</span> is not Hausdorff. Indeed take any two distinct elements <span class="process-math">\(x, y\in X\text{.}\)</span> Let <span class="process-math">\(U_x\)</span> and <span class="process-math">\(U_y\)</span> be any pair of open neighborhoods of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> respectively. We will show that <span class="process-math">\(U_x\cap U_y\ne \emptyset\text{.}\)</span> If either of the open neighborhoods is equal to <span class="process-math">\(X\)</span> itself, the claim is obvious. Otherwise <span class="process-math">\(C=U_x^c\)</span> is a finite set that does not contain <span class="process-math">\(x\)</span> and <span class="process-math">\(D=U_y^c\)</span> is a finite set that does not contain <span class="process-math">\(y\text{.}\)</span> Since <span class="process-math">\(X\)</span> is infinite, <span class="process-math">\(X\ne C\cup D\text{,}\)</span> and hence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eg_closed_cofinite.html">
+\begin{equation*}
+U_x\cap U_y=C^c\cap D^c=(C\cup D)^c\ne \emptyset\text{,}
+\end{equation*}
+</div>
+<div class="para">as desired.</div>
+</div>
 <span class="incontext"><a href="s_limitpoints_hausdorff.html#p-365" class="internal">in-context</a></span>
 </body>
 </html>

@@ -853,7 +853,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.4",
   "title": "Closed sets, closure, and interior",
-  "body": " Closed sets, closure, and interior       Closed sets   Let be a topological space. A subset is closed if its complement is open. Equivalently, a subset is closed if and only if for some open set .     Property of closed sets   Let be a topological space.    Trivial sets  Both and are closed sets.    Finite unions  If are closed, then is closed.    Arbitrary intersection  If is a collection of closed sets, then is closed.      Statement (1) follows from the observation that , and .  Assume is closed for ; then by DeMorgan's law , which is open since is open for all and finite intersections of open sets are open. This proves (2).  Lastly, assume is closed for all . By DeMorgan's law we have , which is open since is open and arbitrary unions of open sets are open.     Closed sets determine topology  In general, given a set the set complement operation is defines a bijection , that is self-inverse: , we have for all subsets . It follows from the that the closed sets of are in bijective correspondence with the open sets, and thus that a topology on is uniquely determined by specifying any collection of sets satisfying (1)-(3) from . In other words, a topology is determined by specifying either its open sets or its closed sets.    Closed in trivial and discrete topologies     If has the trivial topology, then the only open sets of are . Hence the only closed sets are and .    If has the discrete topology, then every subset of is open. It follows that any subset of is closed, since its complement is open. We conclude that al subsets of are both open and closed in the discrete topology.       Closed in the cofinite topology   Let be a set endowed with the cofinite topology. An set is open in if and only if (a) or (b) is finite. It follows that a set is closed if and only if (a) or (b) for a cofinite set if and only if (a) or (b) is finite.     Basis description of closed sets   Let be a topological space with basis . A set is closed if and only if for all , there is a basis element satisfying .    By definition a set is closed if and only if its complement is open. Using , we see that is open if and only if for all there is a basis element satisfying .     Closed sets in Euclidean metric topology   Let with the Euclidean metric topology. Decide whether the given subset is open and whether it is closed.                  The set is not open: any open ball containing the point contains points with negative -coordinate. Hence there is no open ball containing that is contained in .  The set is closed. If , then either or . Let . Every element of has either a negative -coordinate or a negative -coordinate. Hence . This proves is closed, using .    Again, the set is not open, as witnessed by .  The set is also not open. Take . Any open ball containing contains points with positive -coordinate. Thus there is no open ball containing and contained in . We conclude that is not closed, using .       Interior and closure of a set   Let be a subset of the topological space .    Interior  The interior  of is the union of all open subsets contained in : , .    Closure  The closure  is the ntersection of all closed sets containing : , .       Equivalent notions of interior and closure   Let be a subset of the topological space . Let be a basis for the topology of .     is the unique largest open set contained in . In other words, is the unique set satisfying the following property: if is open and , then .     is the unique smallest closed set containing . In other words, is the unique set satisfying the following property: if is closed and , then .    We have .    We have .      Statements (1)-(2): properties of open (resp. closed) sets imply that is open and is closed. Furthermore, by definition of (resp. ) along with simple properties of union\/intersection it follows that if is open and , then ; and if is closed containing , then .  The first equivalence in (3) follows from the definition of as a union. The second equivalence follows from the fact that any is covered by basis elements.  We prove (4) as a chain of equivalences. Call the three statements (i), (ii), (iii).  Assume . If is an open set satisfying , then is a closed set containing , and hence contains . It follows that any open set containing intersects nontrivially. This proves (i) (ii).  Clearly (ii) implies (iii), since any basis element is an open set.  Assume (iii). If is a closed set containing , then is an open set satisfying . It follows from (iii) that , and hence that for all closed sets containing . It follows that , the intersection of these sets.     Using smallest\/largest characterization of interior\/closure  Statements (1)-(2) of provide a potentially useful indirect way of computing the interior or closure of a set .   Interior  Find an open set contained in and show that for any other open set we have . It follows that .    Closure  Find a closed set containing and show that for any other closed set containing we have . It follows that .       Interior and closure of   Let and let . Compute the interior and closure of with respect to (a) the standard topology on and (b) the -topology on .      First consider with the standard topology. The interior of is empty in this case: , . To see this, note that given any and any open interval containing , we can choose an such that ; by design all elements of lie outside . Thus , and .  Next. I claim . To see this, note first that is closed: it is easy to see that for any we can find an such that . By (2) of we have . Since furthermore and since itself is not closed, it follows that .    Now consider the -topology on . We still have . Indeed, fix any , and take any basis element containing . We have or for some open interval . In either case, the same argument as above shows that contains a basis element , all of whose elements lie outside of . This shows , and hence .  Next, I claim that is closed in the -topology, from whence it follows that . (Use (2) from .) To prove the claim, we must show, using that for any there is a basis element (in the -topology) containing and contained in . There are two cases: and . If , we can find an open interval such that and . Since open intervals are basis elements in the -topology, we are done in this case. Next, assume . In this case the basis element satisfies . Having exhausted the cases, we conclude is closed, and hence .       Interior and closure in cofinite topology   Let be a set endowed with the cofinite topology. For describe and . Use cases.        "
+  "body": " Closed sets, closure, and interior   Closed sets   Let be a topological space. A subset is closed if its complement is open. Equivalently, a subset is closed if and only if for some open set .     Property of closed sets   Let be a topological space.   Trivial sets  Both and are closed sets.    Finite unions  If are closed, then is closed.    Arbitrary intersection  If is a collection of closed sets, then is closed.       Statement (1) follows from the observation that , and .  Assume is closed for ; then by DeMorgan's law , which is open since is open for all and finite intersections of open sets are open. This proves (2).  Lastly, assume is closed for all . By DeMorgan's law we have , which is open since is open and arbitrary unions of open sets are open.     Closed sets determine topology  In general, given a set the set complement operation is defines a bijection , that is self-inverse: , we have for all subsets . It follows from the that the closed sets of are in bijective correspondence with the open sets, and thus that a topology on is uniquely determined by specifying any collection of sets satisfying (1)-(3) from . In other words, a topology is determined by specifying either its open sets or its closed sets.    Closed in trivial and discrete topologies     If has the trivial topology, then the only open sets of are . Hence the only closed sets are and .    If has the discrete topology, then every subset of is open. It follows that any subset of is closed, since its complement is open. We conclude that al subsets of are both open and closed in the discrete topology.       Closed in the cofinite topology   Let be a set endowed with the cofinite topology. An set is open in if and only if (a) or (b) is finite. It follows that a set is closed if and only if (a) or (b) for a cofinite set if and only if (a) or (b) is finite.     Basis description of closed sets   Let be a topological space with basis . A set is closed if and only if for all , there is a basis element satisfying .    By definition a set is closed if and only if its complement is open. Using , we see that is open if and only if for all there is a basis element satisfying .     Closed sets in Euclidean metric topology   Let with the Euclidean metric topology. Decide whether the given subset is open and whether it is closed.                   The set is not open: any open ball containing the point contains points with negative -coordinate. Hence there is no open ball containing that is contained in .  The set is closed. If , then either or . Let . Every element of has either a negative -coordinate or a negative -coordinate. Hence . This proves is closed, using .    Again, the set is not open, as witnessed by .  The set is also not open. Take . Any open ball containing contains points with positive -coordinate. Thus there is no open ball containing and contained in . We conclude that is not closed, using .        Interior and closure of a set   Let be a subset of the topological space .   Interior  The interior  of is the union of all open subsets contained in : , .    Closure  The closure  is the ntersection of all closed sets containing : , .        Equivalent notions of interior and closure   Let be a subset of the topological space . Let be a basis for the topology of .    is the unique largest open set contained in . In other words, is the unique set satisfying the following property: if is open and , then .     is the unique smallest closed set containing . In other words, is the unique set satisfying the following property: if is closed and , then .    We have .    We have .       Statements (1)-(2): properties of open (resp. closed) sets imply that is open and is closed. Furthermore, by definition of (resp. ) along with simple properties of union\/intersection it follows that if is open and , then ; and if is closed containing , then .  The first equivalence in (3) follows from the definition of as a union. The second equivalence follows from the fact that any is covered by basis elements.  We prove (4) as a chain of equivalences. Call the three statements (i), (ii), (iii).  Assume . If is an open set satisfying , then is a closed set containing , and hence contains . It follows that any open set containing intersects nontrivially. This proves (i) (ii).  Clearly (ii) implies (iii), since any basis element is an open set.  Assume (iii). If is a closed set containing , then is an open set satisfying . It follows from (iii) that , and hence that for all closed sets containing . It follows that , the intersection of these sets.     Using smallest\/largest characterization of interior\/closure  Statements (1)-(2) of provide a potentially useful indirect way of computing the interior or closure of a set .   Interior  Find an open set contained in and show that for any other open set we have . It follows that .    Closure  Find a closed set containing and show that for any other closed set containing we have . It follows that .       Interior and closure of  Let and let . Compute the interior and closure of with respect to (a) the standard topology on and (b) the -topology on .     First consider with the standard topology. The interior of is empty in this case: , . To see this, note that given any and any open interval containing , we can choose an such that ; by design all elements of lie outside . Thus , and .  Next. I claim . To see this, note first that is closed: it is easy to see that for any we can find an such that . By (2) of we have . Since furthermore and since itself is not closed, it follows that .    Now consider the -topology on . We still have . Indeed, fix any , and take any basis element containing . We have or for some open interval . In either case, the same argument as above shows that contains a basis element , all of whose elements lie outside of . This shows , and hence .  Next, I claim that is closed in the -topology, from whence it follows that . (Use (2) from .) To prove the claim, we must show, using that for any there is a basis element (in the -topology) containing and contained in . There are two cases: and . If , we can find an open interval such that and . Since open intervals are basis elements in the -topology, we are done in this case. Next, assume . In this case the basis element satisfies . Having exhausted the cases, we conclude is closed, and hence .       Interior and closure in cofinite topology   Let be a set endowed with the cofinite topology. For describe and . Use cases.        "
 },
 {
   "id": "d_closed_set",
@@ -871,7 +871,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.4.2",
   "title": "Property of closed sets.",
-  "body": " Property of closed sets   Let be a topological space.    Trivial sets  Both and are closed sets.    Finite unions  If are closed, then is closed.    Arbitrary intersection  If is a collection of closed sets, then is closed.      Statement (1) follows from the observation that , and .  Assume is closed for ; then by DeMorgan's law , which is open since is open for all and finite intersections of open sets are open. This proves (2).  Lastly, assume is closed for all . By DeMorgan's law we have , which is open since is open and arbitrary unions of open sets are open.   "
+  "body": " Property of closed sets   Let be a topological space.   Trivial sets  Both and are closed sets.    Finite unions  If are closed, then is closed.    Arbitrary intersection  If is a collection of closed sets, then is closed.       Statement (1) follows from the observation that , and .  Assume is closed for ; then by DeMorgan's law , which is open since is open for all and finite intersections of open sets are open. This proves (2).  Lastly, assume is closed for all . By DeMorgan's law we have , which is open since is open and arbitrary unions of open sets are open.   "
 },
 {
   "id": "rm_equiv_open_closed",
@@ -916,7 +916,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.4.7",
   "title": "Closed sets in Euclidean metric topology.",
-  "body": " Closed sets in Euclidean metric topology   Let with the Euclidean metric topology. Decide whether the given subset is open and whether it is closed.                  The set is not open: any open ball containing the point contains points with negative -coordinate. Hence there is no open ball containing that is contained in .  The set is closed. If , then either or . Let . Every element of has either a negative -coordinate or a negative -coordinate. Hence . This proves is closed, using .    Again, the set is not open, as witnessed by .  The set is also not open. Take . Any open ball containing contains points with positive -coordinate. Thus there is no open ball containing and contained in . We conclude that is not closed, using .     "
+  "body": " Closed sets in Euclidean metric topology   Let with the Euclidean metric topology. Decide whether the given subset is open and whether it is closed.                   The set is not open: any open ball containing the point contains points with negative -coordinate. Hence there is no open ball containing that is contained in .  The set is closed. If , then either or . Let . Every element of has either a negative -coordinate or a negative -coordinate. Hence . This proves is closed, using .    Again, the set is not open, as witnessed by .  The set is also not open. Take . Any open ball containing contains points with positive -coordinate. Thus there is no open ball containing and contained in . We conclude that is not closed, using .      "
 },
 {
   "id": "d_interior_closure",
@@ -925,7 +925,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "1.4.8",
   "title": "Interior and closure of a set.",
-  "body": " Interior and closure of a set   Let be a subset of the topological space .    Interior  The interior  of is the union of all open subsets contained in : , .    Closure  The closure  is the ntersection of all closed sets containing : , .     "
+  "body": " Interior and closure of a set   Let be a subset of the topological space .   Interior  The interior  of is the union of all open subsets contained in : , .    Closure  The closure  is the ntersection of all closed sets containing : , .      "
 },
 {
   "id": "th_equivalent_interior_closure",
@@ -934,7 +934,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.4.9",
   "title": "Equivalent notions of interior and closure.",
-  "body": " Equivalent notions of interior and closure   Let be a subset of the topological space . Let be a basis for the topology of .     is the unique largest open set contained in . In other words, is the unique set satisfying the following property: if is open and , then .     is the unique smallest closed set containing . In other words, is the unique set satisfying the following property: if is closed and , then .    We have .    We have .      Statements (1)-(2): properties of open (resp. closed) sets imply that is open and is closed. Furthermore, by definition of (resp. ) along with simple properties of union\/intersection it follows that if is open and , then ; and if is closed containing , then .  The first equivalence in (3) follows from the definition of as a union. The second equivalence follows from the fact that any is covered by basis elements.  We prove (4) as a chain of equivalences. Call the three statements (i), (ii), (iii).  Assume . If is an open set satisfying , then is a closed set containing , and hence contains . It follows that any open set containing intersects nontrivially. This proves (i) (ii).  Clearly (ii) implies (iii), since any basis element is an open set.  Assume (iii). If is a closed set containing , then is an open set satisfying . It follows from (iii) that , and hence that for all closed sets containing . It follows that , the intersection of these sets.   "
+  "body": " Equivalent notions of interior and closure   Let be a subset of the topological space . Let be a basis for the topology of .    is the unique largest open set contained in . In other words, is the unique set satisfying the following property: if is open and , then .     is the unique smallest closed set containing . In other words, is the unique set satisfying the following property: if is closed and , then .    We have .    We have .       Statements (1)-(2): properties of open (resp. closed) sets imply that is open and is closed. Furthermore, by definition of (resp. ) along with simple properties of union\/intersection it follows that if is open and , then ; and if is closed containing , then .  The first equivalence in (3) follows from the definition of as a union. The second equivalence follows from the fact that any is covered by basis elements.  We prove (4) as a chain of equivalences. Call the three statements (i), (ii), (iii).  Assume . If is an open set satisfying , then is a closed set containing , and hence contains . It follows that any open set containing intersects nontrivially. This proves (i) (ii).  Clearly (ii) implies (iii), since any basis element is an open set.  Assume (iii). If is a closed set containing , then is an open set satisfying . It follows from (iii) that , and hence that for all closed sets containing . It follows that , the intersection of these sets.   "
 },
 {
   "id": "rm_",
@@ -952,7 +952,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.4.11",
   "title": "Interior and closure of <span class=\"process-math\">\\(K\\)<\/span>.",
-  "body": " Interior and closure of   Let and let . Compute the interior and closure of with respect to (a) the standard topology on and (b) the -topology on .      First consider with the standard topology. The interior of is empty in this case: , . To see this, note that given any and any open interval containing , we can choose an such that ; by design all elements of lie outside . Thus , and .  Next. I claim . To see this, note first that is closed: it is easy to see that for any we can find an such that . By (2) of we have . Since furthermore and since itself is not closed, it follows that .    Now consider the -topology on . We still have . Indeed, fix any , and take any basis element containing . We have or for some open interval . In either case, the same argument as above shows that contains a basis element , all of whose elements lie outside of . This shows , and hence .  Next, I claim that is closed in the -topology, from whence it follows that . (Use (2) from .) To prove the claim, we must show, using that for any there is a basis element (in the -topology) containing and contained in . There are two cases: and . If , we can find an open interval such that and . Since open intervals are basis elements in the -topology, we are done in this case. Next, assume . In this case the basis element satisfies . Having exhausted the cases, we conclude is closed, and hence .     "
+  "body": " Interior and closure of  Let and let . Compute the interior and closure of with respect to (a) the standard topology on and (b) the -topology on .     First consider with the standard topology. The interior of is empty in this case: , . To see this, note that given any and any open interval containing , we can choose an such that ; by design all elements of lie outside . Thus , and .  Next. I claim . To see this, note first that is closed: it is easy to see that for any we can find an such that . By (2) of we have . Since furthermore and since itself is not closed, it follows that .    Now consider the -topology on . We still have . Indeed, fix any , and take any basis element containing . We have or for some open interval . In either case, the same argument as above shows that contains a basis element , all of whose elements lie outside of . This shows , and hence .  Next, I claim that is closed in the -topology, from whence it follows that . (Use (2) from .) To prove the claim, we must show, using that for any there is a basis element (in the -topology) containing and contained in . There are two cases: and . If , we can find an open interval such that and . Since open intervals are basis elements in the -topology, we are done in this case. Next, assume . In this case the basis element satisfies . Having exhausted the cases, we conclude is closed, and hence .     "
 },
 {
   "id": "example-28",
@@ -1573,7 +1573,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.11",
   "title": "Quotients",
-  "body": " Quotients       Quotient space  Let be a topological space, an equivalence relation on , the set of equivalence classes of , and the map sending to its equivalence class . The set is a topology on called the quotient topology . The map is a quotient map : that is, it is surjective and satisfies is open if and only if is open.   That is a topology follows easily from properties of preimages of sets; and it satisfies the quotient map properties essentially by definition.      For each quotient space description give an explicit description of the equivalence classes and identify (without proof) what familiar space the quotient might be homeomorphic to.     , obtained by identifying and      , , where if and only if for some      , obtained by identifying and for all      , obtained by identifying and for all and all and for .            Let and be topological spaces. A function is a quotient map if it satisfies the following properties:    is surjective;     is open if and only if is open.   It follows immediately from the definition that a quotient map is continuous.     Saturated sets   Let . A set is saturated with respect to if . Equivalently, is saturated if if whenever we have .     Quotient map properties     Let be a continuous surjective function. The following statements are equivalent.    is a quotient map.     is open for all open saturated sets .     is closed for all closed saturated subsets .       Open and closed maps are quotient maps.    The composition of two quotient maps is a quotient map.       Mapping property of quotient maps   Let be a quotient map. Given any continuous function satisfying for all there is a unique continuous function satisfying .  Furthermore, the function is a projection map if and only if is a projection map.      Fibers of maps   For any function between sets and element , we call the fiber of lying over . We say a function  agrees on fibers of if .     Mapping property of quotients   Let be the quotient space of by the equivalence relation , and let be the corresponding quotient map. Let be a continuous function that agrees on fibers of ( , ).   There is a unique continuous function satisfying ; and is a quotient map if and only if is a quotient map.       The function is a homeomorphism if and only if is a quotient map and satisfies for all .        Factoring maps through a quotient   Let be a surjective continuous map, and let be the quotient obtained from by treating each fiber , , as a single point: , the equivalence relation is .    There is a unique bijective continuous function satisfying .    The function is a homeomorphism if and only if is a quotient map.    If is Hausdorff, then is Hausdorff.       The circle as a quotient space   Let be the quotient of obtained by identifying only the elements and . Let denote the quotient of by the equivalence relation if and only if for some .    Prove: and are homeomorphic.    Prove: is homeomorphic to .          "
+  "body": " Quotients       Quotient space  Let be a topological space, an equivalence relation on , the set of equivalence classes of , and the map sending to its equivalence class . The set is a topology on called the quotient topology . The map is a quotient map : that is, it is surjective and satisfies is open if and only if is open.   That is a topology follows easily from properties of preimages of sets; and it satisfies the quotient map properties essentially by definition.      For each quotient space description give an explicit description of the equivalence classes and identify (without proof) what familiar space the quotient might be homeomorphic to.     , obtained by identifying and      , , where if and only if for some      , obtained by identifying and for all      , obtained by identifying and for all and all and for .            Let and be topological spaces. A function is a quotient map if it satisfies the following properties:    is surjective;     is open if and only if is open.   It follows immediately from the definition that a quotient map is continuous.     Saturated sets   Let . A set is saturated with respect to if . Equivalently, is saturated if if whenever we have .     Quotient map properties     Let be a continuous surjective function. The following statements are equivalent.    is a quotient map.     is open for all open saturated sets .     is closed for all closed saturated subsets .       Let be continuous and surjective. If is open or closed, then it is a quotient map.    The composition of two quotient maps is a quotient map.     Statement (3) is straightforward. Statement (2) follows easily from (1) using equivalent statements (b) and (c), respectively.   Proof of (1)  We prove and .   . Assume is a quotient map. Let be open and saturated. Since is a quotient map, to show is open, it is enough to show is open. I claim , whence the claim follows. In general for any function of sets we have . (Check for yourself.) Since is saturated, the reverse inclusion also holds. Indeed, if , then and thus for some ; since is saturated, we have .   . Assume be open for . We wish to show that is open in . First observe that is saturated: if , then . Since satisfies and is an open saturated set, we have open. I claim , showing is open. In general we always have for any function of sets. For the other inclusion, given , there is an such that ; then and , showing .   . Let be a saturated closed map. First I claim that the open set is saturated. To see why, suppose for some . Since and is saturated, we must have . Thus , as desired. Next, I claim . We have already seen that if , then , and hence . This proves . For the other inclusion, given any , by surjectivity there is some such that ; since we must have ; thus . This proves . Since satisfies (b), is open. We conclude that is closed, as desired.   . This argument is essentially identical to the one above.     Mapping property of quotient maps   Let be a quotient map. Given any continuous function satisfying for all there is a unique continuous function satisfying .  Furthermore, the function is a projection map if and only if is a projection map.     Assume we have as described. Define via the following recipe: given , pick any such that (possible since is surjective); now define . Two comments:   To make sure as described is well-defined, we must make sure that the definition of does not depend on the choice of involve: , if you happen to pick another such that , we must make sure that . This is precisely what is guaranteed by the condition that .    Since we want , this definition of is forced upon us: given , we must have . Thus is unique.   Now we must show is continuous. We must show, given any open the set is open. To do so we use the fact that is a quotient map: that is, we need only show that is open in . But we have since . Since is continuous, we conclude that is open, as desired.  Lastly, we look at when is a quotient map. If is a quotient map, then so is the composition by statement (3) of . Assume is a quotient map. Since is surjective and , it follows that must be surjective. Now suppose is open in . Since is continuous, is open in . As we saw above, , which is a saturated open set of . Since is a quotient map, the set is open. But again, because is surejective, we have .     Fibers of maps   For any function between sets and element , we call the fiber of lying over . We say a function  agrees on fibers of if .     Mapping property of quotients   Let be the quotient space of by the equivalence relation , and let be the corresponding quotient map. Let be a continuous function that agrees on fibers of ( , ).   There is a unique continuous function satisfying ; and is a quotient map if and only if is a quotient map.       The function is a homeomorphism if and only if is a quotient map and satisfies for all .         The statement is a direct consequence of by setting and , and understanding that the implication is equivalent to .    The condition guarantees that the function is injective. The condition of being a quotient map is equivalent to being a quotient map according to . Thus the two conditions taken together are equivalent to being a bijective quotient map. This in turn is equivalent to being a homeomorphism by equivalent statement 1.b of , since all subsets of are saturated with respect to an invertible function .       Factoring maps through a quotient   Let be a surjective continuous map, and let be the quotient obtained from by treating each fiber , , as a single point: , the equivalence relation is .    There is a unique bijective continuous function satisfying .    The function is a homeomorphism if and only if is a quotient map.    If is Hausdorff, then is Hausdorff.      With the exception of (3), this corollary follows essentially directly from . Statement (3) follows directly from (1). In fact, more generally, if is a bijective continuous map, and is Hausdorff, then is Hausdorff.      The circle as a quotient space   Let denote the quotient obtained from after identifying and , and let denote the quotient of by the equivalence relation if and only if for some . Prove that is homeomorphic to .    Prove:     Prove: .    Note: once we have some notions about compactness under our belt it will be easy to show directly that . Part (2) is a workaround for the time being.      Consider the map defined by composition   where is the quotient map from to . It is easy to see that is surjective and satisfies if and only if or . From we conclude that gives rise to a bijective continuous function . Concretely, takes an equivalence class and maps it to the equivalence class in . Furthermore, to show is a homeomorphism it is enough to prove that is a quotient map. In fact, we can show that is a closed map. Take a closed set . To show its image is closed in , we need only show, using the fact that is a quotient map, that is closed in . We have . This set is the result of starting with our original closed set and taking the union of translated copies of the form , where . It is easy to see that each translate is closed; since furthermore , it follows that the union is also closed. I'll leave the details to you.    Let be the quotient map. Consider the diagram   where . It is easy to see that is continuous, surjective, and satisfies for some . It follows from that the map is bijective and continuous. Furthermore, by the same result, we can show is a homeomorphism as long as we can show is a quotient map. I'll show that in fact is open, and hence a projection map.  To this end let be any open set, and let , so that for some . We will find an open interval satisfying such that is open. Since and was arbitrary, this will show that is open.  Let . Since we cannot have , we have four cases: or or or . I will treat the first case; my argument is easily adapted to the other cases. Assume . Since the set is open in , we can find an open interval contained in such : , all points in lie in the the upper half plane. Elementary trigonometric properties tell us that the function is strictly decreasing on , and hence that is the open interval . It is now easy to see that , which is open.      "
 },
 {
   "id": "top_eg_quotient_space",
@@ -1618,7 +1618,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.11.4",
   "title": "Quotient map properties.",
-  "body": " Quotient map properties     Let be a continuous surjective function. The following statements are equivalent.    is a quotient map.     is open for all open saturated sets .     is closed for all closed saturated subsets .       Open and closed maps are quotient maps.    The composition of two quotient maps is a quotient map.     "
+  "body": " Quotient map properties     Let be a continuous surjective function. The following statements are equivalent.    is a quotient map.     is open for all open saturated sets .     is closed for all closed saturated subsets .       Let be continuous and surjective. If is open or closed, then it is a quotient map.    The composition of two quotient maps is a quotient map.     Statement (3) is straightforward. Statement (2) follows easily from (1) using equivalent statements (b) and (c), respectively.   Proof of (1)  We prove and .   . Assume is a quotient map. Let be open and saturated. Since is a quotient map, to show is open, it is enough to show is open. I claim , whence the claim follows. In general for any function of sets we have . (Check for yourself.) Since is saturated, the reverse inclusion also holds. Indeed, if , then and thus for some ; since is saturated, we have .   . Assume be open for . We wish to show that is open in . First observe that is saturated: if , then . Since satisfies and is an open saturated set, we have open. I claim , showing is open. In general we always have for any function of sets. For the other inclusion, given , there is an such that ; then and , showing .   . Let be a saturated closed map. First I claim that the open set is saturated. To see why, suppose for some . Since and is saturated, we must have . Thus , as desired. Next, I claim . We have already seen that if , then , and hence . This proves . For the other inclusion, given any , by surjectivity there is some such that ; since we must have ; thus . This proves . Since satisfies (b), is open. We conclude that is closed, as desired.   . This argument is essentially identical to the one above.   "
 },
 {
   "id": "th_quotientmap_mappingprop",
@@ -1627,7 +1627,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.11.5",
   "title": "Mapping property of quotient maps.",
-  "body": " Mapping property of quotient maps   Let be a quotient map. Given any continuous function satisfying for all there is a unique continuous function satisfying .  Furthermore, the function is a projection map if and only if is a projection map.    "
+  "body": " Mapping property of quotient maps   Let be a quotient map. Given any continuous function satisfying for all there is a unique continuous function satisfying .  Furthermore, the function is a projection map if and only if is a projection map.     Assume we have as described. Define via the following recipe: given , pick any such that (possible since is surjective); now define . Two comments:   To make sure as described is well-defined, we must make sure that the definition of does not depend on the choice of involve: , if you happen to pick another such that , we must make sure that . This is precisely what is guaranteed by the condition that .    Since we want , this definition of is forced upon us: given , we must have . Thus is unique.   Now we must show is continuous. We must show, given any open the set is open. To do so we use the fact that is a quotient map: that is, we need only show that is open in . But we have since . Since is continuous, we conclude that is open, as desired.  Lastly, we look at when is a quotient map. If is a quotient map, then so is the composition by statement (3) of . Assume is a quotient map. Since is surjective and , it follows that must be surjective. Now suppose is open in . Since is continuous, is open in . As we saw above, , which is a saturated open set of . Since is a quotient map, the set is open. But again, because is surejective, we have .   "
 },
 {
   "id": "d_fibers_agree",
@@ -1645,7 +1645,7 @@ var ptx_lunr_docs = [
   "type": "Corollary",
   "number": "1.11.7",
   "title": "Mapping property of quotients.",
-  "body": " Mapping property of quotients   Let be the quotient space of by the equivalence relation , and let be the corresponding quotient map. Let be a continuous function that agrees on fibers of ( , ).   There is a unique continuous function satisfying ; and is a quotient map if and only if is a quotient map.       The function is a homeomorphism if and only if is a quotient map and satisfies for all .      "
+  "body": " Mapping property of quotients   Let be the quotient space of by the equivalence relation , and let be the corresponding quotient map. Let be a continuous function that agrees on fibers of ( , ).   There is a unique continuous function satisfying ; and is a quotient map if and only if is a quotient map.       The function is a homeomorphism if and only if is a quotient map and satisfies for all .         The statement is a direct consequence of by setting and , and understanding that the implication is equivalent to .    The condition guarantees that the function is injective. The condition of being a quotient map is equivalent to being a quotient map according to . Thus the two conditions taken together are equivalent to being a bijective quotient map. This in turn is equivalent to being a homeomorphism by equivalent statement 1.b of , since all subsets of are saturated with respect to an invertible function .     "
 },
 {
   "id": "cor_quotient_factor",
@@ -1654,7 +1654,7 @@ var ptx_lunr_docs = [
   "type": "Corollary",
   "number": "1.11.8",
   "title": "Factoring maps through a quotient.",
-  "body": " Factoring maps through a quotient   Let be a surjective continuous map, and let be the quotient obtained from by treating each fiber , , as a single point: , the equivalence relation is .    There is a unique bijective continuous function satisfying .    The function is a homeomorphism if and only if is a quotient map.    If is Hausdorff, then is Hausdorff.     "
+  "body": " Factoring maps through a quotient   Let be a surjective continuous map, and let be the quotient obtained from by treating each fiber , , as a single point: , the equivalence relation is .    There is a unique bijective continuous function satisfying .    The function is a homeomorphism if and only if is a quotient map.    If is Hausdorff, then is Hausdorff.      With the exception of (3), this corollary follows essentially directly from . Statement (3) follows directly from (1). In fact, more generally, if is a bijective continuous map, and is Hausdorff, then is Hausdorff.   "
 },
 {
   "id": "eg_RmodZ",
@@ -1663,7 +1663,268 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.11.9",
   "title": "The circle as a quotient space.",
-  "body": " The circle as a quotient space   Let be the quotient of obtained by identifying only the elements and . Let denote the quotient of by the equivalence relation if and only if for some .    Prove: and are homeomorphic.    Prove: is homeomorphic to .         "
+  "body": " The circle as a quotient space   Let denote the quotient obtained from after identifying and , and let denote the quotient of by the equivalence relation if and only if for some . Prove that is homeomorphic to .    Prove:     Prove: .    Note: once we have some notions about compactness under our belt it will be easy to show directly that . Part (2) is a workaround for the time being.      Consider the map defined by composition   where is the quotient map from to . It is easy to see that is surjective and satisfies if and only if or . From we conclude that gives rise to a bijective continuous function . Concretely, takes an equivalence class and maps it to the equivalence class in . Furthermore, to show is a homeomorphism it is enough to prove that is a quotient map. In fact, we can show that is a closed map. Take a closed set . To show its image is closed in , we need only show, using the fact that is a quotient map, that is closed in . We have . This set is the result of starting with our original closed set and taking the union of translated copies of the form , where . It is easy to see that each translate is closed; since furthermore , it follows that the union is also closed. I'll leave the details to you.    Let be the quotient map. Consider the diagram   where . It is easy to see that is continuous, surjective, and satisfies for some . It follows from that the map is bijective and continuous. Furthermore, by the same result, we can show is a homeomorphism as long as we can show is a quotient map. I'll show that in fact is open, and hence a projection map.  To this end let be any open set, and let , so that for some . We will find an open interval satisfying such that is open. Since and was arbitrary, this will show that is open.  Let . Since we cannot have , we have four cases: or or or . I will treat the first case; my argument is easily adapted to the other cases. Assume . Since the set is open in , we can find an open interval contained in such : , all points in lie in the the upper half plane. Elementary trigonometric properties tell us that the function is strictly decreasing on , and hence that is the open interval . It is now easy to see that , which is open.     "
+},
+{
+  "id": "s_connected1",
+  "level": "1",
+  "url": "s_connected1.html",
+  "type": "Section",
+  "number": "1.12",
+  "title": "Connected spaces",
+  "body": " Connected spaces    A separation of a topological space is a pair of disjoint nonempty open sets satisfying . The space is connected it it admits no separation, and disconnected otherwise.  A subset is connected (resp., disconnected ) if it is connected (resp., disconnected) with respect to the subspace topology.     Examples     If , then is not connected with respect to the discrete topology.    If is infinite, then is connected with respect to the cofinite topology.    Let be the graph of the equation and let be the graph of the equation . The subset is disconnected.     is not connected. In fact if is any set that is not an interval, then is not connected. (Define an interval of to be a set satisfying the following property: if and , then . This definition includes singletons and the empty set as sort of degenerate intervals.)           Connected subsets of   Consider with the standard topology. For all subsets we have .     Connectedness equivalences   The following statements are equivalent for a topological space .     is connected.    If is open and closed, then .    There is no pair of nonempty disjoint sets , neither of which contains limit points of the other, satisfying .    There is no pair of disjoint nonempty closed sets satisfying .       Connectedness and subspaces   Let be a topological space.   If is connected and is a separation of , then or .    If is a collection of connected subspaces of and , then is connected.    If is connected, then any satisfying is connected.     Let be a connected subspace of . It is a separation of , then or .     Connectedness and continuity   If is continuous and is connected, then is connected.    We identify with the map obtained by restricting the codomain, which is continuous and surjective. If are disjoint open sets satisfying , then we have . Since the sets are open and disjoint, we have or . Since is surjective, we have for . It follows that or . We conclude is connected.     Graphs of continuous functions   Let and let , the graph of . If is continuous, then is connected.    Define as . Since the two component functions and are continuous, so is . From , we conclude that is continuous.      A product space (with product topology) is connected if and only if is connected for all .    "
+},
+{
+  "id": "d_connected_space",
+  "level": "2",
+  "url": "s_connected1.html#d_connected_space",
+  "type": "Definition",
+  "number": "1.12.1",
+  "title": "",
+  "body": "  A separation of a topological space is a pair of disjoint nonempty open sets satisfying . The space is connected it it admits no separation, and disconnected otherwise.  A subset is connected (resp., disconnected ) if it is connected (resp., disconnected) with respect to the subspace topology.   "
+},
+{
+  "id": "example-46",
+  "level": "2",
+  "url": "s_connected1.html#example-46",
+  "type": "Example",
+  "number": "1.12.2",
+  "title": "Examples.",
+  "body": " Examples     If , then is not connected with respect to the discrete topology.    If is infinite, then is connected with respect to the cofinite topology.    Let be the graph of the equation and let be the graph of the equation . The subset is disconnected.     is not connected. In fact if is any set that is not an interval, then is not connected. (Define an interval of to be a set satisfying the following property: if and , then . This definition includes singletons and the empty set as sort of degenerate intervals.)         "
+},
+{
+  "id": "th_connected_intervals",
+  "level": "2",
+  "url": "s_connected1.html#th_connected_intervals",
+  "type": "Theorem",
+  "number": "1.12.3",
+  "title": "Connected subsets of <span class=\"process-math\">\\(\\R\\)<\/span>.",
+  "body": " Connected subsets of   Consider with the standard topology. For all subsets we have .   "
+},
+{
+  "id": "th_connected_equiv",
+  "level": "2",
+  "url": "s_connected1.html#th_connected_equiv",
+  "type": "Theorem",
+  "number": "1.12.4",
+  "title": "Connectedness equivalences.",
+  "body": " Connectedness equivalences   The following statements are equivalent for a topological space .     is connected.    If is open and closed, then .    There is no pair of nonempty disjoint sets , neither of which contains limit points of the other, satisfying .    There is no pair of disjoint nonempty closed sets satisfying .     "
+},
+{
+  "id": "th_connected_subspace",
+  "level": "2",
+  "url": "s_connected1.html#th_connected_subspace",
+  "type": "Theorem",
+  "number": "1.12.5",
+  "title": "Connectedness and subspaces.",
+  "body": " Connectedness and subspaces   Let be a topological space.   If is connected and is a separation of , then or .    If is a collection of connected subspaces of and , then is connected.    If is connected, then any satisfying is connected.     Let be a connected subspace of . It is a separation of , then or .   "
+},
+{
+  "id": "th_connected_continuous",
+  "level": "2",
+  "url": "s_connected1.html#th_connected_continuous",
+  "type": "Theorem",
+  "number": "1.12.6",
+  "title": "Connectedness and continuity.",
+  "body": " Connectedness and continuity   If is continuous and is connected, then is connected.    We identify with the map obtained by restricting the codomain, which is continuous and surjective. If are disjoint open sets satisfying , then we have . Since the sets are open and disjoint, we have or . Since is surjective, we have for . It follows that or . We conclude is connected.   "
+},
+{
+  "id": "cor_graph_connected",
+  "level": "2",
+  "url": "s_connected1.html#cor_graph_connected",
+  "type": "Corollary",
+  "number": "1.12.7",
+  "title": "Graphs of continuous functions.",
+  "body": " Graphs of continuous functions   Let and let , the graph of . If is continuous, then is connected.    Define as . Since the two component functions and are continuous, so is . From , we conclude that is continuous.   "
+},
+{
+  "id": "th_connected_products",
+  "level": "2",
+  "url": "s_connected1.html#th_connected_products",
+  "type": "Theorem",
+  "number": "1.12.8",
+  "title": "",
+  "body": "  A product space (with product topology) is connected if and only if is connected for all .   "
+},
+{
+  "id": "s_connected_path",
+  "level": "1",
+  "url": "s_connected_path.html",
+  "type": "Section",
+  "number": "1.13",
+  "title": "Path-connected spaces",
+  "body": " Path-connected spaces   Path   A path in (or to) a topological space is a continuous function , where is a closed interval. We call the start point (or initial point ) and the end point (or terminal point ) of the path .     Path-connected space   Let be a topological space. Two elements are connected by a path in if there is a path such that and . The space is path connected if any two elements of are connected by a path.     Path-connected implies connected   If is path connected, then is connected. Using logical shorthand:     Assume by contradiction that is a separation of . We can find points . Let be a path connecting . By , the image is connected. By we must have or . This contradicts the fact that and . Thus there can be no separation of , and we conclude that it is connected.     Path-connectedness and continuity   If is continuous and is path connected, then is path connected.    Given and , let be a path connecting and . The composition is then a path connecting and .     Balls in   Let be Euclidean -space. For all and any , the open ball is connected, as is the closed ball defined as     It is easy to see that the straight line path defined as is a continuous function connecting any two points in . For our current purposes, we wish to show that if , then so is , for any . To this end, note that . This proves that the open ball is path connected, and hence connected. Next, it is easy to see that the closed ball is in fact the closure of the open ball. Since connectedness is preserved under closure, we conclude that the closed ball is connected.     Punctured Euclidean space :   Let be Euclidean -space, where . The subspace is connected.    Take any . If the two vectors are not scalar multiples of one another, then the straight line path connecting them is guaranteed to lie in , using a linear independence argument. If , then since , we can find a vector that is not a scalar multiple of either vector. We can then construct a polygonal path lieing in that first connects to via a straight line path, and then connects to via a straight line path.     for   Prove: if , then there is no homeomorphism from to .         The -sphere   Fix . The -sphere is defined as . Prove: is connected for all .         Topologist's sine curve  Define as for all . Let , the graph of .    Prove: is connected.    Prove: is not path connected. Specifically, show that and are not connected by a path in .     "
+},
+{
+  "id": "d_path",
+  "level": "2",
+  "url": "s_connected_path.html#d_path",
+  "type": "Definition",
+  "number": "1.13.1",
+  "title": "Path.",
+  "body": " Path   A path in (or to) a topological space is a continuous function , where is a closed interval. We call the start point (or initial point ) and the end point (or terminal point ) of the path .   "
+},
+{
+  "id": "d_path_connected",
+  "level": "2",
+  "url": "s_connected_path.html#d_path_connected",
+  "type": "Definition",
+  "number": "1.13.2",
+  "title": "Path-connected space.",
+  "body": " Path-connected space   Let be a topological space. Two elements are connected by a path in if there is a path such that and . The space is path connected if any two elements of are connected by a path.   "
+},
+{
+  "id": "th_path_connected",
+  "level": "2",
+  "url": "s_connected_path.html#th_path_connected",
+  "type": "Theorem",
+  "number": "1.13.3",
+  "title": "Path-connected implies connected.",
+  "body": " Path-connected implies connected   If is path connected, then is connected. Using logical shorthand:     Assume by contradiction that is a separation of . We can find points . Let be a path connecting . By , the image is connected. By we must have or . This contradicts the fact that and . Thus there can be no separation of , and we conclude that it is connected.   "
+},
+{
+  "id": "th_path_connected_continuous",
+  "level": "2",
+  "url": "s_connected_path.html#th_path_connected_continuous",
+  "type": "Theorem",
+  "number": "1.13.4",
+  "title": "Path-connectedness and continuity.",
+  "body": " Path-connectedness and continuity   If is continuous and is path connected, then is path connected.    Given and , let be a path connecting and . The composition is then a path connecting and .   "
+},
+{
+  "id": "example-47",
+  "level": "2",
+  "url": "s_connected_path.html#example-47",
+  "type": "Example",
+  "number": "1.13.5",
+  "title": "Balls in <span class=\"process-math\">\\(\\R^n\\)<\/span>.",
+  "body": " Balls in   Let be Euclidean -space. For all and any , the open ball is connected, as is the closed ball defined as     It is easy to see that the straight line path defined as is a continuous function connecting any two points in . For our current purposes, we wish to show that if , then so is , for any . To this end, note that . This proves that the open ball is path connected, and hence connected. Next, it is easy to see that the closed ball is in fact the closure of the open ball. Since connectedness is preserved under closure, we conclude that the closed ball is connected.   "
+},
+{
+  "id": "example-48",
+  "level": "2",
+  "url": "s_connected_path.html#example-48",
+  "type": "Example",
+  "number": "1.13.6",
+  "title": "Punctured Euclidean space <span class=\"process-math\">\\(\\R^n-\\{\\boldzero\\}\\text{:}\\)<\/span> <span class=\"process-math\">\\(n\\geq 2\\)<\/span>.",
+  "body": " Punctured Euclidean space :   Let be Euclidean -space, where . The subspace is connected.    Take any . If the two vectors are not scalar multiples of one another, then the straight line path connecting them is guaranteed to lie in , using a linear independence argument. If , then since , we can find a vector that is not a scalar multiple of either vector. We can then construct a polygonal path lieing in that first connects to via a straight line path, and then connects to via a straight line path.   "
+},
+{
+  "id": "example-49",
+  "level": "2",
+  "url": "s_connected_path.html#example-49",
+  "type": "Example",
+  "number": "1.13.7",
+  "title": "<span class=\"process-math\">\\(\\R\\not\\cong \\R^n\\)<\/span> for <span class=\"process-math\">\\(n\\geq 2\\)<\/span>.",
+  "body": " for   Prove: if , then there is no homeomorphism from to .       "
+},
+{
+  "id": "example-50",
+  "level": "2",
+  "url": "s_connected_path.html#example-50",
+  "type": "Example",
+  "number": "1.13.8",
+  "title": "The <span class=\"process-math\">\\(n\\)<\/span>-sphere.",
+  "body": " The -sphere   Fix . The -sphere is defined as . Prove: is connected for all .       "
+},
+{
+  "id": "top_eg_topologist_sine_curve",
+  "level": "2",
+  "url": "s_connected_path.html#top_eg_topologist_sine_curve",
+  "type": "Topological specimen",
+  "number": "14",
+  "title": "Topologist's sine curve.",
+  "body": " Topologist's sine curve  Define as for all . Let , the graph of .    Prove: is connected.    Prove: is not path connected. Specifically, show that and are not connected by a path in .    "
+},
+{
+  "id": "s_connected_components",
+  "level": "1",
+  "url": "s_connected_components.html",
+  "type": "Section",
+  "number": "1.14",
+  "title": "Connected components and locally connected spaces",
+  "body": " Connected components and locally connected spaces   Connected components   Let be a topological space. A subset is maximally connected (resp., maximally path connected ) if is connected (resp. path connected), and if for all connected (resp. path connected) sets , if , then . A connected component (resp., path-connected component ) of is a maximally connected (resp. path connected) subset of .      Let be a topological space.   All connected components of are closed. (This is not necessarily the case for path-connected components.)    If is connected (resp. path connected) and is a connected component (resp. path connected component) of , then either or .    The set of all connected components (resp. path-connected components) of forms a partition of . In other words, every element of lies in a component (connected or path connected), and any two distinct components are disjoint.    Each connected component of is a disjoint union of path-connected components.        Locally connected space   A topological space is locally connected (resp. locally path connected ) at a point if for all open sets containing , there is an open connected (resp. open path connected set) such that and . The space is locally connected (resp., locally path connected ) if it is locally connected (resp., locally path connected) at all .     Connected does not imply locally connected  Somewhat curiously, a space being connected does not necessarily imply that the space is locally connected. For example, the topologist's sine curve  is connected, but not locally connected. For example, take the point and the open set . Graphically, it is easy to see that has a connected component partition consisting of and infinitely many connected segments of the graph of (one segment for each interval of the form that lies in ). Any open connected set containing would have to lie in the connected component ; but this is impossible since does not contain any open sets!   "
+},
+{
+  "id": "d_connected_components",
+  "level": "2",
+  "url": "s_connected_components.html#d_connected_components",
+  "type": "Definition",
+  "number": "1.14.1",
+  "title": "Connected components.",
+  "body": " Connected components   Let be a topological space. A subset is maximally connected (resp., maximally path connected ) if is connected (resp. path connected), and if for all connected (resp. path connected) sets , if , then . A connected component (resp., path-connected component ) of is a maximally connected (resp. path connected) subset of .   "
+},
+{
+  "id": "thm-",
+  "level": "2",
+  "url": "s_connected_components.html#thm-",
+  "type": "Theorem",
+  "number": "1.14.2",
+  "title": "",
+  "body": "  Let be a topological space.   All connected components of are closed. (This is not necessarily the case for path-connected components.)    If is connected (resp. path connected) and is a connected component (resp. path connected component) of , then either or .    The set of all connected components (resp. path-connected components) of forms a partition of . In other words, every element of lies in a component (connected or path connected), and any two distinct components are disjoint.    Each connected component of is a disjoint union of path-connected components.      "
+},
+{
+  "id": "d_locally_connected",
+  "level": "2",
+  "url": "s_connected_components.html#d_locally_connected",
+  "type": "Definition",
+  "number": "1.14.3",
+  "title": "Locally connected space.",
+  "body": " Locally connected space   A topological space is locally connected (resp. locally path connected ) at a point if for all open sets containing , there is an open connected (resp. open path connected set) such that and . The space is locally connected (resp., locally path connected ) if it is locally connected (resp., locally path connected) at all .   "
+},
+{
+  "id": "rm_locally_connected",
+  "level": "2",
+  "url": "s_connected_components.html#rm_locally_connected",
+  "type": "Remark",
+  "number": "1.14.4",
+  "title": "Connected does not imply locally connected.",
+  "body": " Connected does not imply locally connected  Somewhat curiously, a space being connected does not necessarily imply that the space is locally connected. For example, the topologist's sine curve  is connected, but not locally connected. For example, take the point and the open set . Graphically, it is easy to see that has a connected component partition consisting of and infinitely many connected segments of the graph of (one segment for each interval of the form that lies in ). Any open connected set containing would have to lie in the connected component ; but this is impossible since does not contain any open sets!  "
+},
+{
+  "id": "s_compact_def",
+  "level": "1",
+  "url": "s_compact_def.html",
+  "type": "Section",
+  "number": "1.15",
+  "title": "Compact spaces",
+  "body": " Compact spaces   Open covering   Let be a subset of the topological space . An open covering of is a collection of open sets such that . As a shorthand, we will often simply say in this case that is an open covering.  Note in particular that an open covering of itself is a collection of open sets satisfying .     Compact space   A topologial space is compact if every open covering of has a finite subcovering: , if is an open covering, then there is a finite set such that .  A subset is compact, if it is compact with respect to the subspace topology. Equivalently, is compact if any covering by open sets of has a finite subcovering.     Elementary examples     Any finite set is compact.    Any space with the trivial topology is compact.    A discrete space is compact if and only if it is finite.     is not compact. Consequently, since compactness is a topological property ( , preserved by homeomorphisms), no open interval is compact.       is compact  Show that is a compact subset of .    "
+},
+{
+  "id": "d_open_covering",
+  "level": "2",
+  "url": "s_compact_def.html#d_open_covering",
+  "type": "Definition",
+  "number": "1.15.1",
+  "title": "Open covering.",
+  "body": " Open covering   Let be a subset of the topological space . An open covering of is a collection of open sets such that . As a shorthand, we will often simply say in this case that is an open covering.  Note in particular that an open covering of itself is a collection of open sets satisfying .   "
+},
+{
+  "id": "d_compact",
+  "level": "2",
+  "url": "s_compact_def.html#d_compact",
+  "type": "Definition",
+  "number": "1.15.2",
+  "title": "Compact space.",
+  "body": " Compact space   A topologial space is compact if every open covering of has a finite subcovering: , if is an open covering, then there is a finite set such that .  A subset is compact, if it is compact with respect to the subspace topology. Equivalently, is compact if any covering by open sets of has a finite subcovering.   "
+},
+{
+  "id": "eg_elementary_compact",
+  "level": "2",
+  "url": "s_compact_def.html#eg_elementary_compact",
+  "type": "Example",
+  "number": "1.15.3",
+  "title": "Elementary examples.",
+  "body": " Elementary examples     Any finite set is compact.    Any space with the trivial topology is compact.    A discrete space is compact if and only if it is finite.     is not compact. Consequently, since compactness is a topological property ( , preserved by homeomorphisms), no open interval is compact.     "
+},
+{
+  "id": "eg_K_compact",
+  "level": "2",
+  "url": "s_compact_def.html#eg_K_compact",
+  "type": "Example",
+  "number": "1.15.4",
+  "title": "<span class=\"process-math\">\\(K\\cup\\{0\\}\\)<\/span> is compact.",
+  "body": " is compact  Show that is a compact subset of .   "
 },
 {
   "id": "appendix-notation",

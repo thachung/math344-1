@@ -177,7 +177,7 @@ window.MathJax = {
 <span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
 </ol>
 </li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="s_homeomorphisms.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="c_top_spaces.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="backmatter-1.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="s_homeomorphisms.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="c_top_spaces.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="s_connected1.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
 <input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
 </div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
   \newcommand{\Q}{{\mathbb Q}}
@@ -339,7 +339,7 @@ window.MathJax = {
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="c_top_spaces.html" class="internal"><span class="codenumber">1</span> <span class="title">Topological spaces and continuous functions</span></a></div>
+<div class="toc-item"><a href="c_top_spaces.html" class="internal"><span class="codenumber">1</span> <span class="title">Point-set topology</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="s_top_spaces.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Topological spaces</span></a></div></li>
 <li><div class="toc-item"><a href="s_bases_top.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Bases for topological spaces</span></a></div></li>
@@ -358,6 +358,10 @@ window.MathJax = {
 <li><div class="toc-item"><a href="s_continuous.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Continuous functions</span></a></div></li>
 <li><div class="toc-item"><a href="s_homeomorphisms.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Homeomorphisms</span></a></div></li>
 <li class="active"><div class="toc-item"><a href="s_quotients.html" class="internal"><span class="codenumber">1.11</span> <span class="title">Quotients</span></a></div></li>
+<li><div class="toc-item"><a href="s_connected1.html" class="internal"><span class="codenumber">1.12</span> <span class="title">Connected spaces</span></a></div></li>
+<li><div class="toc-item"><a href="s_connected_path.html" class="internal"><span class="codenumber">1.13</span> <span class="title">Path-connected spaces</span></a></div></li>
+<li><div class="toc-item"><a href="s_connected_components.html" class="internal"><span class="codenumber">1.14</span> <span class="title">Connected components and locally connected spaces</span></a></div></li>
+<li><div class="toc-item"><a href="s_compact_def.html" class="internal"><span class="codenumber">1.15</span> <span class="title">Compact spaces</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -375,9 +379,9 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_quotients"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.11</span> <span class="title">Quotients</span>
 </h2>
-<section class="introduction" id="introduction-16"><div class="para" id="p-554"></div></section><article class="project project-like" id="top_eg_quotient_space"><h3 class="heading">
+<section class="introduction" id="introduction-15"><div class="para" id="p-556"></div></section><article class="project project-like" id="top_eg_quotient_space"><h3 class="heading">
 <span class="type">Topological specimen</span><span class="space"> </span><span class="codenumber">13</span><span class="period">.</span><span class="space"> </span><span class="title">Quotient space.</span>
-</h3> <div class="para logical" id="p-555">
+</h3> <div class="para logical" id="p-557">
 <div class="para">Let <span class="process-math">\((X,\mathcal{T})\)</span> be a topological space, <span class="process-math">\(\sim\)</span> an equivalence relation on <span class="process-math">\(X\text{,}\)</span> <span class="process-math">\(X^*=X/\sim\)</span> the set of equivalence classes of <span class="process-math">\(\sim\text{,}\)</span> and <span class="process-math">\(q\colon X\rightarrow X^*\)</span> the map sending <span class="process-math">\(x\in X\)</span> to its equivalence class <span class="process-math">\([x]_\sim\in X^*\text{.}\)</span> The set</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -385,63 +389,72 @@ window.MathJax = {
 \end{equation*}
 </div>
 <div class="para">is a topology on <span class="process-math">\(X^*\)</span> called the <dfn class="terminology">quotient topology</dfn>. The map <span class="process-math">\(q\colon X\rightarrow X^*\)</span> is a <em class="emphasis">quotient map</em>: that is, it is surjective and satisfies <span class="process-math">\(V\subseteq X^*\)</span> is open if and only if <span class="process-math">\(q^{-1}(V)\)</span> is open.</div>
-</div> <article class="hiddenproof" id="proof-38"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-38"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-38"><article class="hiddenproof"><div class="para" id="p-556">That <span class="process-math">\(\mathcal{T}_{\operatorname{quot}}\)</span> is a topology follows easily from properties of preimages of sets; and it satisfies the quotient map properties essentially by definition.</div></article></div></article><article class="example example-like" id="eg_quotient_no_proof"><h3 class="heading">
+</div> <article class="hiddenproof" id="proof-38"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-38"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-38"><article class="hiddenproof"><div class="para" id="p-558">That <span class="process-math">\(\mathcal{T}_{\operatorname{quot}}\)</span> is a topology follows easily from properties of preimages of sets; and it satisfies the quotient map properties essentially by definition.</div></article></div></article><article class="example example-like" id="eg_quotient_no_proof"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11.1</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-557">For each quotient space description give an explicit description of the equivalence classes and identify (without proof) what familiar space the quotient might be homeomorphic to.</div> <ol class="decimal">
-<li id="li-191"><div class="para" id="p-558">
+<div class="para" id="p-559">For each quotient space description give an explicit description of the equivalence classes and identify (without proof) what familiar space the quotient might be homeomorphic to.</div> <ol class="decimal">
+<li id="li-191"><div class="para" id="p-560">
 <span class="process-math">\(X=[0,1]\text{,}\)</span> <span class="process-math">\(X^*\)</span> obtained by identifying <span class="process-math">\(0\)</span> and <span class="process-math">\(1\)</span>
 </div></li>
-<li id="li-192"><div class="para" id="p-559">
+<li id="li-192"><div class="para" id="p-561">
 <span class="process-math">\(X=\R\text{,}\)</span> <span class="process-math">\(X^*=X/\sim\text{,}\)</span> where <span class="process-math">\(x\sim y\)</span> if and only if <span class="process-math">\(x=y+n\)</span> for some <span class="process-math">\(n\in \Z\)</span>
 </div></li>
-<li id="li-193"><div class="para" id="p-560">
+<li id="li-193"><div class="para" id="p-562">
 <span class="process-math">\(X=[0,1]\times [0,1]\text{,}\)</span> <span class="process-math">\(X^*\)</span> obtained by identifying <span class="process-math">\(P=(0,y)\)</span> and <span class="process-math">\(Q=(1,y)\)</span> for all <span class="process-math">\(y\in [0,1]\)</span>
 </div></li>
-<li id="li-194"><div class="para" id="p-561">
+<li id="li-194"><div class="para" id="p-563">
 <span class="process-math">\(X=[0,1]\times [0,1]\text{,}\)</span> <span class="process-math">\(X^*\)</span> obtained by identifying <span class="process-math">\(P=(0,y)\)</span> and <span class="process-math">\(Q=(1,y)\)</span> for all <span class="process-math">\(y\in [0,1]\)</span> and all <span class="process-math">\(R=(x,0)\)</span> and <span class="process-math">\(S=(x,1)\)</span> for <span class="process-math">\(x\in [0,1]\text{.}\)</span>
 </div></li>
 </ol>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-34" id="solution-34"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-34"><div class="solution solution-like"><div class="para" id="p-562"></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-34" id="solution-34"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-34"><div class="solution solution-like"><div class="para" id="p-564"></div></div></div>
 </div></article><article class="definition definition-like" id="d_quotient_map"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.11.2</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="p-563">
+<div class="para logical" id="p-565">
 <div class="para">Let <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> be topological spaces. A function <span class="process-math">\(f\colon X\rightarrow Y\)</span> is a <dfn class="terminology">quotient map</dfn> if it satisfies the following properties:</div>
 <ol class="decimal">
-<li id="li-195"><div class="para" id="p-564">
+<li id="li-195"><div class="para" id="p-566">
 <span class="process-math">\(f\)</span> is surjective;</div></li>
-<li id="li-196"><div class="para" id="p-565">
+<li id="li-196"><div class="para" id="p-567">
 <span class="process-math">\(V\subseteq Y\)</span> is open if and only if <span class="process-math">\(f^{-1}(V)\subseteq X\)</span> is open.</div></li>
 </ol>
 <div class="para">It follows immediately from the definition that a quotient map is continuous.</div>
 </div></article><article class="definition definition-like" id="d_saturated"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.11.3</span><span class="period">.</span><span class="space"> </span><span class="title">Saturated sets.</span>
-</h3> <div class="para" id="p-566">Let <span class="process-math">\(f\colon X\rightarrow Y\text{.}\)</span> A set <span class="process-math">\(A\subseteq X\)</span> is saturated with respect to <span class="process-math">\(f\)</span> if <span class="process-math">\(f^{-1}(f(A))=A\text{.}\)</span> Equivalently, <span class="process-math">\(A\)</span> is saturated if if whenever <span class="process-math">\(x\in A\)</span> we have <span class="process-math">\(f^{-1}(\{f(x)\})\subseteq A\text{.}\)</span>
+</h3> <div class="para" id="p-568">Let <span class="process-math">\(f\colon X\rightarrow Y\text{.}\)</span> A set <span class="process-math">\(A\subseteq X\)</span> is saturated with respect to <span class="process-math">\(f\)</span> if <span class="process-math">\(f^{-1}(f(A))=A\text{.}\)</span> Equivalently, <span class="process-math">\(A\)</span> is saturated if if whenever <span class="process-math">\(x\in A\)</span> we have <span class="process-math">\(f^{-1}(\{f(x)\})\subseteq A\text{.}\)</span>
 </div></article><article class="theorem theorem-like" id="th_quotientmap_props"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.11.4</span><span class="period">.</span><span class="space"> </span><span class="title">Quotient map properties.</span>
 </h3>
 <ol class="decimal">
-<li id="li-197"><div class="para logical" id="p-567">
+<li id="li-197"><div class="para logical" id="p-569">
 <div class="para">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> be a continuous surjective function. The following statements are equivalent.</div>
 <ol class="lower-alpha">
-<li id="li-198"><div class="para" id="p-568">
+<li id="li-198"><div class="para" id="p-570">
 <span class="process-math">\(f\)</span> is a quotient map.</div></li>
-<li id="li-199"><div class="para" id="p-569">
+<li id="li-199"><div class="para" id="p-571">
 <span class="process-math">\(f(U)\)</span> is open for all open saturated sets <span class="process-math">\(U\subseteq X\text{.}\)</span>
 </div></li>
-<li id="li-200"><div class="para" id="p-570">
+<li id="li-200"><div class="para" id="p-572">
 <span class="process-math">\(f(C)\)</span> is closed for all closed saturated subsets <span class="process-math">\(C\subseteq X\text{.}\)</span>
 </div></li>
 </ol>
 </div></li>
-<li id="li-201"><div class="para" id="p-571">Open and closed maps are quotient maps.</div></li>
-<li id="li-202"><div class="para" id="p-572">The composition of two quotient maps is a quotient map.</div></li>
-</ol></article><article class="theorem theorem-like" id="th_quotientmap_mappingprop"><h3 class="heading">
+<li id="li-201"><div class="para" id="p-573">Let <span class="process-math">\(f\)</span> be continuous and surjective. If <span class="process-math">\(f\)</span> is open or closed, then it is a quotient map.</div></li>
+<li id="li-202"><div class="para" id="p-574">The composition of two quotient maps is a quotient map.</div></li>
+</ol>
+<div class="para" id="p-575">Statement (3) is straightforward. Statement (2) follows easily from (1) using equivalent statements (b) and (c), respectively.</div></article><article class="hiddenproof" id="proof-39"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-39"><h3 class="heading"><span class="title">Proof of (1).</span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-39"><article class="hiddenproof"> <div class="para" id="p-576">We prove <span class="process-math">\((a)\iff (b)\)</span> and <span class="process-math">\((b)\iff (c)\text{.}\)</span>
+</div> <div class="para" id="p-577">
+<span class="process-math">\((a)\implies (b)\text{.}\)</span> Assume <span class="process-math">\(f\)</span> is a quotient map. Let <span class="process-math">\(U\subseteq X\)</span> be open and saturated. Since <span class="process-math">\(f\)</span> is a quotient map, to show <span class="process-math">\(V=f(U)\)</span> is open, it is enough to show <span class="process-math">\(f^{-1}(V)=f^{-1}(f(U))\)</span> is open. I claim <span class="process-math">\(f^{-1}(f(U))=U\text{,}\)</span> whence the claim follows. In general for any function of sets we have <span class="process-math">\(f^{-1}(f(U))\supseteq U\text{.}\)</span> (Check for yourself.) Since <span class="process-math">\(U\)</span> is saturated, the reverse inclusion also holds. Indeed, if <span class="process-math">\(x\in f^{-1}(f(U))\text{,}\)</span> then <span class="process-math">\(f(x)\in f(U)\)</span> and thus <span class="process-math">\(f(x)=f(u)\)</span> for some <span class="process-math">\(u\in U\text{;}\)</span> since <span class="process-math">\(U\)</span> is saturated, we have <span class="process-math">\(x\in U\text{.}\)</span>
+</div> <div class="para" id="p-578">
+<span class="process-math">\((b)\implies (a)\text{.}\)</span> Assume <span class="process-math">\(U=f^{-1}(V)\)</span> be open for <span class="process-math">\(V\subseteq Y\text{.}\)</span> We wish to show that <span class="process-math">\(V\)</span> is open in <span class="process-math">\(Y\text{.}\)</span> First observe that <span class="process-math">\(f^{-1}(V)\)</span> is saturated: if <span class="process-math">\(x\in f^{-1}(V)\text{,}\)</span> then <span class="process-math">\(f^{-1}(\{f(x)\})\subseteq f^{-1}(V)\text{.}\)</span> Since <span class="process-math">\(f\)</span> satisfies <span class="process-math">\((b)\)</span> and <span class="process-math">\(U\)</span> is an open saturated set, we have <span class="process-math">\(f(U)\)</span> open. I claim <span class="process-math">\(f(U)=f(f^{-1}(V))=V\text{,}\)</span> showing <span class="process-math">\(V\)</span> is open. In general we always have <span class="process-math">\(f(f^{-1}(V))\subseteq V\)</span> for any function of sets. For the other inclusion, given <span class="process-math">\(y\in V\text{,}\)</span> there is an <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(f(x)=y\text{;}\)</span> then <span class="process-math">\(x\in f^{-1}(V)\)</span> and <span class="process-math">\(f(x)=y\text{,}\)</span> showing <span class="process-math">\(y\in f(f^{-1}(V))\text{.}\)</span>
+</div> <div class="para" id="p-579">
+<span class="process-math">\((b)\implies (c)\text{.}\)</span> Let <span class="process-math">\(C\)</span> be a saturated closed map. First I claim that the open set <span class="process-math">\(U=X-C\)</span> is saturated. To see why, suppose <span class="process-math">\(y=f(x)\)</span> for some <span class="process-math">\(x\in U\text{.}\)</span> Since <span class="process-math">\(x\notin C\)</span> and <span class="process-math">\(C\)</span> is saturated, we must have <span class="process-math">\(f^{-1}(\{y\})\cap C=\emptyset\text{.}\)</span> Thus <span class="process-math">\(f^{-1}(\{y\})\subseteq U\text{,}\)</span> as desired. Next, I claim <span class="process-math">\(f(U)=Y-f(C)\text{.}\)</span> We have already seen that if <span class="process-math">\(y\in f(U)\text{,}\)</span> then <span class="process-math">\(f^{-1}(\{y\})\cap C=\emptyset\text{,}\)</span> and hence <span class="process-math">\(y\notin f(C)\text{.}\)</span> This proves <span class="process-math">\(f(U)\subseteq Y-f(C)\text{.}\)</span> For the other inclusion, given any <span class="process-math">\(y\in Y-f(C)\text{,}\)</span> by surjectivity there is some <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(f(x)=y\text{;}\)</span> since <span class="process-math">\(y\notin f(C)\)</span> we must have <span class="process-math">\(x\in U\text{;}\)</span> thus <span class="process-math">\(y\in f(U)\text{.}\)</span> This proves <span class="process-math">\(f(U)=X-f(C)\text{.}\)</span> Since <span class="process-math">\(f\)</span> satisfies (b), <span class="process-math">\(f(U)\)</span> is open. We conclude that <span class="process-math">\(f(C)\)</span> is closed, as desired.</div> <div class="para" id="p-580">
+<span class="process-math">\((c)\implies (b)\text{.}\)</span> This argument is essentially identical to the one above.</div></article></div>
+<article class="theorem theorem-like" id="th_quotientmap_mappingprop"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.11.5</span><span class="period">.</span><span class="space"> </span><span class="title">Mapping property of quotient maps.</span>
 </h3>
-<div class="para logical" id="p-573">
+<div class="para logical" id="p-581">
 <div class="para">Let <span class="process-math">\(p\colon X\rightarrow Y\)</span> be a quotient map. Given any continuous function <span class="process-math">\(g\colon X\rightarrow Z\)</span> satisfying</div>
 <div class="displaymath process-math" id="eq_agree_on_fibers">
 \begin{equation}
@@ -450,9 +463,25 @@ p(x)=p(x') \implies g(x)=g(x')\tag{1.11.1}
 </div>
 <div class="para">for all <span class="process-math">\(x, x'\in X\)</span> there is a unique continuous function <span class="process-math">\(f\colon Y\rightarrow Z\)</span> satisfying <span class="process-math">\(g=f\circ p\text{.}\)</span> <div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="generated/latex-image/im_quotientmap_pros.svg" role="img" class="contained"></div>
 </div>
-</div></article><article class="definition definition-like" id="d_fibers_agree"><h3 class="heading">
+</div></article><article class="hiddenproof" id="proof-40"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-40"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-40"><article class="hiddenproof"><div class="para logical" id="p-582">
+<div class="para">Assume we have <span class="process-math">\(g\colon X\rightarrow Z\)</span> as described. Define <span class="process-math">\(f\colon Y\rightarrow Z\)</span> via the following recipe: given <span class="process-math">\(y\in Y\text{,}\)</span> pick any <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(p(x)=y\)</span> (possible since <span class="process-math">\(p\)</span> is surjective); now define <span class="process-math">\(f(y)=g(x)\text{.}\)</span> Two comments:</div>
+<ol class="decimal">
+<li id="li-203"><div class="para" id="p-583">To make sure <span class="process-math">\(f\)</span> as described is well-defined, we must make sure that the definition of <span class="process-math">\(f(y)\)</span> does not depend on the choice of <span class="process-math">\(x\)</span> involve: i.e., if you happen to pick another <span class="process-math">\(x'\)</span> such that <span class="process-math">\(p(x')=y\text{,}\)</span> we must make sure that <span class="process-math">\(g(x)=g(x')\text{.}\)</span> This is precisely what is guaranteed by the condition that <span class="process-math">\(p(x)=p(x')\implies g(x)=g(x')\text{.}\)</span>
+</div></li>
+<li id="li-204"><div class="para" id="p-584">Since we want <span class="process-math">\(g=f\circ p\text{,}\)</span> this definition of <span class="process-math">\(f\)</span> is forced upon us: given <span class="process-math">\(y=p(x)\text{,}\)</span> we must have <span class="process-math">\(f(y)=f(p(x))=g(x)\text{.}\)</span> Thus <span class="process-math">\(f\)</span> is unique.</div></li>
+</ol>
+<div class="para">Now we must show <span class="process-math">\(f\)</span> is continuous. We must show, given any open <span class="process-math">\(V\subseteq Z\)</span> the set <span class="process-math">\(U=f^{-1}(V)\)</span> is open. To do so we use the fact that <span class="process-math">\(p\)</span> is a quotient map: that is, we need only show that <span class="process-math">\(p^{-1}(U)\)</span> is open in <span class="process-math">\(X\text{.}\)</span> But we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+p^{-1}(U)=p^{-1}(f^{-1}(V))=(f\circ p)^{-1}(V)=g^{-1}(V),
+\end{equation*}
+</div>
+<div class="para">since <span class="process-math">\(g=f\circ p\text{.}\)</span> Since <span class="process-math">\(g\)</span> is continuous, we conclude that <span class="process-math">\(p^{-1}(U)=g^{-1}(V)\)</span> is open, as desired.</div>
+</div> <div class="para" id="p-585">Lastly, we look at when <span class="process-math">\(f\)</span> is a quotient map. If <span class="process-math">\(f\)</span> is a quotient map, then so is the composition <span class="process-math">\(g=f\circ p\)</span> by statement (3) of <a href="" class="xref" data-knowl="./knowl/th_quotientmap_props.html" title="Theorem 1.11.4: Quotient map properties">Theorem 1.11.4</a>. Assume <span class="process-math">\(g\)</span> is a quotient map. Since <span class="process-math">\(g\)</span> is surjective and <span class="process-math">\(g=f\circ p\text{,}\)</span> it follows that <span class="process-math">\(f\)</span> must be surjective. Now suppose <span class="process-math">\(U=f^{-1}(V)\)</span> is open in <span class="process-math">\(Y\text{.}\)</span> Since <span class="process-math">\(p\)</span> is continuous, <span class="process-math">\(p^{-1}(U)\)</span> is open in <span class="process-math">\(X\text{.}\)</span> As we saw above, <span class="process-math">\(p^{-1}(U)=g^{-1}(V)\text{,}\)</span> which is a saturated open set of <span class="process-math">\(X\text{.}\)</span> Since <span class="process-math">\(g\)</span> is a quotient map, the set <span class="process-math">\(g(g^{-1}(V))\)</span> is open. But again, because <span class="process-math">\(g\)</span> is surejective, we have <span class="process-math">\(g(g^{-1}(V))=V\text{.}\)</span>
+</div></article></div>
+<article class="definition definition-like" id="d_fibers_agree"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.11.6</span><span class="period">.</span><span class="space"> </span><span class="title">Fibers of maps.</span>
-</h3> <div class="para logical" id="p-574">
+</h3> <div class="para logical" id="p-586">
 <div class="para">For any function <span class="process-math">\(f\colon X\rightarrow Y\)</span> between sets and element <span class="process-math">\(y\in Y\text{,}\)</span> we call <span class="process-math">\(f^{-1}(\{y\})\)</span> the <dfn class="terminology">fiber of <span class="process-math">\(f\)</span> lying over <span class="process-math">\(y\)</span></dfn>. We say a function <span class="process-math">\(g\colon X\rightarrow Z\)</span> <dfn class="terminology">agrees on fibers</dfn> of <span class="process-math">\(f\)</span> if</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -462,12 +491,12 @@ f(x)=f(x')\implies g(x)=g(x')\text{.}
 </div></article><article class="corollary theorem-like" id="cor_quotientspace_props"><h3 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.11.7</span><span class="period">.</span><span class="space"> </span><span class="title">Mapping property of quotients.</span>
 </h3>
-<div class="para logical" id="p-575">
+<div class="para logical" id="p-587">
 <div class="para">Let <span class="process-math">\(X^*\)</span> be the quotient space of <span class="process-math">\(X\)</span> by the equivalence relation <span class="process-math">\(\sim\text{,}\)</span> and let <span class="process-math">\(q\colon X\rightarrow X^*\)</span> be the corresponding quotient map. Let <span class="process-math">\(g\colon X\rightarrow Z\)</span> be a continuous function that agrees on fibers of <span class="process-math">\(q\)</span> (i.e., <span class="process-math">\(x\sim x'\implies g(x)=g(x')\)</span>).</div>
 <ol class="decimal">
-<li id="li-203"><div class="para" id="p-576">There is a unique continuous function <span class="process-math">\(f\)</span> satisfying <span class="process-math">\(g=f\circ q\text{;}\)</span> and <span class="process-math">\(f\)</span> is a quotient map if and only if <span class="process-math">\(g\)</span> is a quotient map. <div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="generated/latex-image/im_quotientspace_prop.svg" role="img" class="contained"></div>
+<li id="li-205"><div class="para" id="p-588">There is a unique continuous function <span class="process-math">\(f\)</span> satisfying <span class="process-math">\(g=f\circ q\text{;}\)</span> and <span class="process-math">\(f\)</span> is a quotient map if and only if <span class="process-math">\(g\)</span> is a quotient map. <div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="generated/latex-image/im_quotientspace_prop.svg" role="img" class="contained"></div>
 </div></li>
-<li id="li-204"><div class="para logical" id="p-577">
+<li id="li-206"><div class="para logical" id="p-589">
 <div class="para">The function <span class="process-math">\(f\)</span> is a homeomorphism if and only if <span class="process-math">\(g\)</span> is a quotient map and satisfies</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -478,29 +507,44 @@ g(x)=g(x') \iff x\sim x' (\text{equivalently, } g(x)=g(x')\iff q(x)=q(x'))
 </div>
 </div></li>
 </ol>
-</div></article><article class="corollary theorem-like" id="cor_quotient_factor"><h3 class="heading">
+</div></article><article class="hiddenproof" id="proof-41"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-41"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-41"><article class="hiddenproof"><ol class="decimal">
+<li id="li-207"><div class="para" id="p-590">The statement is a direct consequence of <a href="" class="xref" data-knowl="./knowl/th_quotientmap_mappingprop.html" title="Theorem 1.11.5: Mapping property of quotient maps">Theorem 1.11.5</a> by setting <span class="process-math">\(Y=X^*\)</span> and <span class="process-math">\(p=q\text{,}\)</span> and understanding that the implication <span class="process-math">\(x\sim x'\implies g(x)=g(x')\)</span> is equivalent to <span class="process-math">\(p(x)=p(x')\implies g(x)=g(x')\text{.}\)</span>
+</div></li>
+<li id="li-208"><div class="para" id="p-591">The condition <span class="process-math">\(x\sim x' \iff g(x)=g(x')\)</span> guarantees that the function <span class="process-math">\(f\colon X^*\rightarrow Y\)</span> is injective. The condition of <span class="process-math">\(g\)</span> being a quotient map is equivalent to <span class="process-math">\(f\)</span> being a quotient map according to <a href="" class="xref" data-knowl="./knowl/th_quotientmap_mappingprop.html" title="Theorem 1.11.5: Mapping property of quotient maps">Theorem 1.11.5</a>. Thus the two conditions taken together are equivalent to <span class="process-math">\(f\)</span> being a bijective quotient map. This in turn is equivalent to being a homeomorphism by equivalent statement 1.b of <a href="" class="xref" data-knowl="./knowl/th_continuous_equivalence.html" title="Theorem 1.9.7: Continuity equivalences">Theorem 1.9.7</a>, since <em class="emphasis">all</em> subsets of <span class="process-math">\(X\)</span> are saturated with respect to an invertible function <span class="process-math">\(f\text{.}\)</span>
+</div></li>
+</ol></article></div>
+<article class="corollary theorem-like" id="cor_quotient_factor"><h3 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.11.8</span><span class="period">.</span><span class="space"> </span><span class="title">Factoring maps through a quotient.</span>
 </h3>
-<div class="para" id="p-578">Let <span class="process-math">\(g\colon X\rightarrow Y\)</span> be a surjective continuous map, and let <span class="process-math">\(X^*\)</span> be the quotient obtained from <span class="process-math">\(X\)</span> by treating each fiber <span class="process-math">\(g^{-1}(\{y\})\text{,}\)</span> <span class="process-math">\(y\in Y\text{,}\)</span>  as a single point: i.e., the equivalence relation is <span class="process-math">\(x\sim x'\iff g(x)=g(x')\text{.}\)</span>
+<div class="para" id="p-592">Let <span class="process-math">\(g\colon X\rightarrow Y\)</span> be a surjective continuous map, and let <span class="process-math">\(X^*\)</span> be the quotient obtained from <span class="process-math">\(X\)</span> by treating each fiber <span class="process-math">\(g^{-1}(\{y\})\text{,}\)</span> <span class="process-math">\(y\in Y\text{,}\)</span>  as a single point: i.e., the equivalence relation is <span class="process-math">\(x\sim x'\iff g(x)=g(x')\text{.}\)</span>
 </div> <ol class="decimal">
-<li id="li-205"><div class="para" id="p-579">There is a unique bijective continuous function <span class="process-math">\(f\colon X^*\rightarrow Y\)</span> satisfying <span class="process-math">\(g=f\circ q\text{.}\)</span>
+<li id="li-209"><div class="para" id="p-593">There is a unique bijective continuous function <span class="process-math">\(f\colon X^*\rightarrow Y\)</span> satisfying <span class="process-math">\(g=f\circ q\text{.}\)</span>
 </div></li>
-<li id="li-206"><div class="para" id="p-580">The function <span class="process-math">\(f\)</span> is a homeomorphism if and only if <span class="process-math">\(g\)</span> is a quotient map.</div></li>
-<li id="li-207"><div class="para" id="p-581">If <span class="process-math">\(Y\)</span> is Hausdorff, then <span class="process-math">\(X^*\)</span> is Hausdorff.</div></li>
-</ol></article><article class="example example-like" id="eg_RmodZ"><h3 class="heading">
+<li id="li-210"><div class="para" id="p-594">The function <span class="process-math">\(f\)</span> is a homeomorphism if and only if <span class="process-math">\(g\)</span> is a quotient map.</div></li>
+<li id="li-211"><div class="para" id="p-595">If <span class="process-math">\(Y\)</span> is Hausdorff, then <span class="process-math">\(X^*\)</span> is Hausdorff.</div></li>
+</ol></article><article class="hiddenproof" id="proof-42"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-42"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-42"><article class="hiddenproof"><div class="para" id="p-596">With the exception of (3), this corollary follows essentially directly from <a href="" class="xref" data-knowl="./knowl/cor_quotientspace_props.html" title="Corollary 1.11.7: Mapping property of quotients">Corollary 1.11.7</a>. Statement (3) follows directly from (1). In fact, more generally, if <span class="process-math">\(f\colon X\rightarrow Y\)</span> is a bijective continuous map, and <span class="process-math">\(Y\)</span> is Hausdorff, then <span class="process-math">\(X\)</span> is Hausdorff.</div></article></div>
+<article class="example example-like" id="eg_RmodZ"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11.9</span><span class="period">.</span><span class="space"> </span><span class="title">The circle as a quotient space.</span>
 </h3>
-<div class="para" id="p-582">Let <span class="process-math">\(X^*\)</span> be the quotient of <span class="process-math">\([0,1]\)</span> obtained by identifying only the elements <span class="process-math">\(0\)</span> and <span class="process-math">\(1\text{.}\)</span> Let <span class="process-math">\(\R/\Z\)</span> denote the quotient of <span class="process-math">\(\R\)</span> by the equivalence relation <span class="process-math">\(x\sim y\)</span> if and only if <span class="process-math">\(x=y+n\)</span> for some <span class="process-math">\(n\in Z\text{.}\)</span>
+<div class="para" id="p-597">Let <span class="process-math">\(X^*\)</span> denote the quotient obtained from <span class="process-math">\(X=[0,1]\)</span> after identifying <span class="process-math">\(0\)</span> and <span class="process-math">\(1\text{,}\)</span> and let <span class="process-math">\(\R/\Z\)</span> denote the quotient of <span class="process-math">\(\R\)</span> by the equivalence relation <span class="process-math">\(x\sim y\)</span> if and only if <span class="process-math">\(x=y+n\)</span> for some <span class="process-math">\(n\in Z\text{.}\)</span> Prove that <span class="process-math">\(\R/\Z\)</span> is homeomorphic to <span class="process-math">\(S^1=\{(x,y)\colon x^2+y^2=1\}\text{.}\)</span>
 </div> <ol class="decimal">
-<li id="li-208"><div class="para" id="p-583">Prove: <span class="process-math">\(X^*\)</span> and <span class="process-math">\(\R/\Z\)</span> are homeomorphic.</div></li>
-<li id="li-209"><div class="para" id="p-584">Prove: <span class="process-math">\(\R/\Z\)</span> is homeomorphic to <span class="process-math">\(S^1=\{(x,y)\colon x^2+y^2=1\}\text{.}\)</span>
+<li id="li-212"><div class="para" id="p-598">Prove: <span class="process-math">\(X^*\cong \R/\Z\)</span>
 </div></li>
-</ol>
+<li id="li-213"><div class="para" id="p-599">Prove: <span class="process-math">\(X^*\cong \R/\Z\cong S^1\text{.}\)</span>
+</div></li>
+</ol> <div class="para" id="p-600">Note: once we have some notions about compactness under our belt it will be easy to show directly that <span class="process-math">\(X^*\cong S^1\text{.}\)</span> Part (2) is a workaround for the time being.</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-35" id="solution-35"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-35"><div class="solution solution-like"><div class="para" id="p-585"></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-35" id="solution-35"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-35"><div class="solution solution-like"><ol class="decimal">
+<li id="li-214"><div class="para" id="p-601">Consider the map <span class="process-math">\(g\)</span> defined by composition <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/eg_quot_g.svg" role="img" class="contained"></div> where <span class="process-math">\(q\)</span> is the quotient map from <span class="process-math">\(\R\)</span> to <span class="process-math">\(\R/\Z\text{.}\)</span> It is easy to see that <span class="process-math">\(g\)</span> is surjective and satisfies <span class="process-math">\(g(t)=g(t')\)</span> if and only if <span class="process-math">\(t=t'\)</span> or <span class="process-math">\(t,t'\in \{0,1\}\text{.}\)</span> From <a href="" class="xref" data-knowl="./knowl/cor_quotientspace_props.html" title="Corollary 1.11.7: Mapping property of quotients">Corollary 1.11.7</a> we conclude that <span class="process-math">\(g\)</span> gives rise to a bijective continuous function <span class="process-math">\(f\colon X^*\rightarrow \R/\Z\text{.}\)</span> Concretely, <span class="process-math">\(f\)</span> takes an equivalence class <span class="process-math">\([t]\in X^*\)</span> and maps it to the equivalence class <span class="process-math">\(\{t+n\colon n\in \Z\}\)</span> in <span class="process-math">\(\R/\Z\text{.}\)</span> Furthermore, to show <span class="process-math">\(f\)</span> is a homeomorphism it is enough to prove that <span class="process-math">\(g\colon [0,1]\rightarrow \R/\Z\)</span> is a quotient map. In fact, we can show that <span class="process-math">\(g\)</span> is a closed map. Take a closed set <span class="process-math">\(C\subseteq [0,1]\text{.}\)</span> To show its image <span class="process-math">\(g(C)\)</span> is closed in <span class="process-math">\(\R/Z\text{,}\)</span> we need only show, using the fact that <span class="process-math">\(q\)</span> is a quotient map, that <span class="process-math">\(q^{-1}(g(C))\)</span> is closed in <span class="process-math">\(\R/\Z\text{.}\)</span> We have <span class="process-math">\(q^{-1}(g(C))=C+\Z=\{c+n\colon c\in C, n\in \Z\}\text{.}\)</span> This set is the result of starting with our original closed set <span class="process-math">\(C\subseteq [0,1]\)</span> and taking the union of translated copies of the form <span class="process-math">\(C+n\subseteq [n,n+1]\text{,}\)</span> where <span class="process-math">\(n\in \Z\text{.}\)</span> It is easy to see that each translate <span class="process-math">\(C+n\)</span> is closed; since furthermore <span class="process-math">\(C+n\subseteq [n,n+1]\text{,}\)</span> it follows that the union is also closed. I'll leave the details to you.</div></li>
+<li id="li-215">
+<div class="para" id="p-602">Let <span class="process-math">\(q\colon\R\rightarrow \R/\Z\)</span> be the quotient map. Consider the diagram <div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="generated/latex-image/eg_quotient_homeo.svg" role="img" class="contained"></div> where <span class="process-math">\(g(t)=(\cos 2\pi t, \sin 2\pi t)\text{.}\)</span> It is easy to see that <span class="process-math">\(g\)</span> is continuous, surjective, and satisfies <span class="process-math">\(g(t_1)=g(t_2)\iff t_1=t_2+n\)</span> for some <span class="process-math">\(n\in \Z\text{.}\)</span> It follows from <a href="" class="xref" data-knowl="./knowl/cor_quotientspace_props.html" title="Corollary 1.11.7: Mapping property of quotients">Corollary 1.11.7</a> that the map <span class="process-math">\(f\)</span> is bijective and continuous. Furthermore, by the same result, we can show <span class="process-math">\(f\)</span> is a homeomorphism as long as we can show <span class="process-math">\(g\)</span> is a quotient map. I'll show that in fact <span class="process-math">\(g\colon \R\rightarrow S^1\)</span> is open, and hence a projection map.</div>
+<div class="para" id="p-603">To this end let <span class="process-math">\(U\subseteq \R\)</span> be any open set, and let <span class="process-math">\(P\in f(U)\text{,}\)</span> so that <span class="process-math">\(P=g(t)\)</span> for some <span class="process-math">\(t\in U\text{.}\)</span> We will find an open interval <span class="process-math">\(I\)</span> satisfying <span class="process-math">\(t\in I\subseteq U\)</span> such that <span class="process-math">\(f(I)\)</span> is open. Since <span class="process-math">\(P\in f(I)\subseteq f(U)\)</span> and <span class="process-math">\(P\in f(U)\)</span> was arbitrary, this will show that <span class="process-math">\(f(U)\)</span> is open.</div>
+<div class="para" id="p-604">Let <span class="process-math">\(g(t)=P=(x,y)\text{.}\)</span> Since we cannot have <span class="process-math">\(x=y=0\text{,}\)</span> we have four cases: <span class="process-math">\(y&gt;0\)</span> or <span class="process-math">\(y&lt; 0\)</span> or <span class="process-math">\(x&gt; 0\)</span> or <span class="process-math">\(x&lt; 0\text{.}\)</span> I will treat the first case; my argument is easily adapted to the other cases. Assume <span class="process-math">\(y&gt; 0\text{.}\)</span> Since the set <span class="process-math">\(V=S^1\cap \left(\R\times (0,\infty)\right)\)</span> is open in <span class="process-math">\(S^1\text{,}\)</span> we can find an open interval <span class="process-math">\(I=(a,b)\ni t\)</span> contained in <span class="process-math">\(U\)</span> such <span class="process-math">\(g(I)\subseteq V \text{:}\)</span> i.e., all points in <span class="process-math">\(g(I)\)</span> lie in the the upper half plane. Elementary trigonometric properties tell us that the function <span class="process-math">\(h(t)=\cos 2\pi t\)</span> is strictly decreasing on <span class="process-math">\(I\text{,}\)</span> and hence that <span class="process-math">\(h(I)\)</span> is the open interval <span class="process-math">\((\cos 2\pi b, \cos 2\pi a)=(c,d)\text{.}\)</span> It is now easy to see that <span class="process-math">\(g(I)=\{(x,y)\colon x\in (c,d), y=+\sqrt{1-x^2}\}=S^1\cap \left((c,d)\times \R\right)\text{,}\)</span> which is open.</div>
+</li>
+</ol></div></div>
 </div></article></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_homeomorphisms.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="backmatter-1.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+<a class="previous-button button" href="s_homeomorphisms.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="s_connected1.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
 </div>
 <div class="ptx-page-footer">

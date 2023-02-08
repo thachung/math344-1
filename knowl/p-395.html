@@ -12,7 +12,16 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Assume <span class="process-math">\(X\)</span> is Hausdorff. Given <span class="process-math">\(y_1\ne y_2\in Y\)</span> there are disjoint open (in <span class="process-math">\(X\)</span>) neighborhoods <span class="process-math">\(U_1, U_2\)</span> of <span class="process-math">\(y_1,y_2\text{,}\)</span> respectively. The sets <span class="process-math">\(V_1=U_1\cap Y, V_2=U_2\cap Y\)</span> are then open disjoint neighborhoods of <span class="process-math">\(y_1, y_2\)</span> in the subspace topology of <span class="process-math">\(Y\text{.}\)</span>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(C\subseteq Y\text{.}\)</span> We have</div>
+<div class="displaymath process-math">
+\begin{align*}
+C \text{ closed in } Y \amp \iff Y-C \text{ open in } Y \\
+\amp\iff Y-C=U\cap Y \text{ for some open } U\subseteq X\\
+\amp \iff C=(X-U)\cap Y \text{ for some open } U\subseteq X\\
+\amp \iff C=C'\cap Y \text{ for some closed } C'\subseteq X\text{.}
+\end{align*}
+</div>
 </div>
 <span class="incontext"><a href="s_subspace_finite_products.html#p-395" class="internal">in-context</a></span>
 </body>
