@@ -1,0 +1,143 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_compact_metric">
+  <title>Compactness in metric spaces</title>
+  <theorem xml:id="th_Tychonoff">
+    <title>Tychonoff theorem</title>
+    <statement>
+        <p>
+        Given any collection <m>\{X_i\}_{i\in I}</m> of compact topological spaces, the product space <m>X=\prod_{i\in I}X_i</m> (with product topology) is compact. 
+        </p>
+    </statement>
+    <proof>
+        <p>
+            For now we only prove the Tychonoff theorem for finite products. It suffices, by induction, to show that the product of two compact spaces is compact. 
+        </p>
+    </proof>
+  </theorem>
+  <lemma xml:id="lem_tube">
+    <title>Tube lemma</title>
+    <statement>
+        <p>
+           Let <m>X, Y</m> be topological spaces, and assume <m>Y</m> is compact. Given any <m>x_0\in X</m> and open set <m>U</m> containing <m>\{x\}\times Y</m>, there is an open set <m>W\subseteq X</m> such that 
+           <m>\{x\}\times Y\subseteq W\times Y\subseteq U</m>.
+        </p>
+    </statement>
+  </lemma>
+  
+  <definition xml:id="d_bounded_diam_distance">
+    <title>Bounded, diameter, and distance to sets</title>
+    <statement>
+        <p>
+          Let <m>(X,d)</m> be a metric space, let <m>A\subseteq X</m> be a nonempty set, and let <m>x\in X</m>. 
+        </p>
+          <p>
+            The <term>diameter</term> of <m>A</m>, denoted <m>\operatorname{diam} A</m>, is defined as <m>\operatorname{diam} A=\sup\{d(x,y)\colon x, y\in A\}</m>. The set <m>A</m> is bounded if <m>\operatorname{diam} A &lt; \infty</m>.
+          </p>    
+          <p>
+          The <term>distance</term> <m>d(x,A)</m> from <m>x</m> to <m>A</m> is defined as <m>d(x,A)=\inf\{d(x,y)\colon y\in A\}</m>. 
+        </p>
+    </statement>
+  </definition>
+  <theorem xml:id="th_Heine_Borel">
+    <title>Heine-Borel theorem</title>
+    <statement>
+        <p>
+            Let <m>X=\R^n</m>. Recall that the Euclidean metric let <m>d</m> and box metric <m>\rho</m> both induce the Euclidean topology on <m>\R^n</m>. For any <m>A\subseteq X</m> the following conditions are equivalent. 
+            <ol>
+                <li>
+                    <p>
+                        <m>A</m> is compact.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>A</m> is closed and bounded with respect to <m>d</m> (equivalently, with respect to <m>\rho</m>). 
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </statement>
+  </theorem>
+  <corollary xml:id="cor_extreme_value_theorem">
+    <title>Extreme value theorem</title>
+    <statement>
+        <p>
+        Let <m>f\colon X\rightarrow \R</m> be continuous. If <m>X</m> is compact, then there exist points <m>x, x'\in X</m> such that <m>f(x)=\inf\{f(X)\}=\min\{f(X)\}</m> and <m>f(x')=\sup\{f(X)\}=\max\{f(X)\}</m>. 
+        </p>
+    </statement>
+  </corollary>
+  <definition xml:id="d_Lebesgue_number">
+    <title>Lebesgue number</title>
+    <statement>
+        <p>
+        Let <m>(X,d)</m> be a metric space. A <term>Lebesgue number</term> for an open covering <m>\mathcal{U}=\{U_i\}_{i\in }</m> is a positive real number <m>\delta</m> satisfying the following condition: if <m>\operatorname{diam} A&lt; \delta</m>, then <m>A\subseteq U_i</m> for some <m>i\in I</m>.             
+        </p>
+    </statement>
+  </definition>
+  <corollary xml:id="cor_Lebesgue_number">
+    <title>Lebesgue number</title>
+    <statement>
+        <p>
+        If <m>X</m> is a compact metric space, then any open covering of <m>X</m> has a Lebesgue number. 
+        </p>
+    </statement>
+  </corollary>
+  <corollary xml:id="cor_continuous_uniformcontinuous">
+    <title>Compact: continuous implies uniformly continuous</title>
+    <statement>
+        <p>
+        Let <m>f\colon X\rightarrow Y</m> be a continuous function between the metric spaces <m>(X,d_X)</m> and <m>(Y,d_Y)</m>. If <m>X</m> is compact, then <m>f</m> is uniformly continuous: <ie/>, for all <m>\epsilon&gt; 0</m> there exists a <m>\delta &gt; 0</m> such that if <m>d_X(x, x')&lt; \delta</m>, then <m>d_Y(f(x),f(x'))&lt; \epsilon</m>. 
+        </p>
+    </statement>
+  </corollary>
+  <definition xml:id="d_limit_point_compact">
+    <title>Limit point compact</title>
+    <statement>
+        <p>
+            A topological space <m>X</m> is <term>limit point compact</term> if all infinite subsets of <m>X</m> have a limit point. 
+        </p>
+    </statement>
+  </definition>
+  <theorem xml:id="th_compact_implies_limitpoint">
+    <title>Compact implies limit point compact</title>
+    <statement>
+        <p>
+        If <m>X</m> is compact, then <m>X</m> is limit point compact. 
+        </p>
+    </statement>
+  </theorem>
+  <definition xml:id="d_sequentially_compact">
+    <title>Sequentially compact</title>
+    <statement>
+        <p>
+            A topological space <m>X</m> is <term>sequentially compact</term> if every sequences of elements of  <m>X</m> has a convergent subsequence. 
+        </p>
+    </statement>
+  </definition>
+  <theorem xml:id="th_compact_metric">
+    <title>Compactness in metric spaces</title>
+    <statement>
+        <p>
+           Let <m>(X,d)</m> be a metric space. The following statements are equivalent. 
+           <ol>
+            <li>
+                <p>
+                <m>X</m> is compact.        
+                </p>
+            </li>
+            <li>
+                <p>
+                <m>X</m> is limit point compact. 
+                </p>
+            </li>
+            <li>
+                <p>
+                <m>X</m> is sequentially compact. 
+                </p>
+            </li>
+           </ol> 
+        </p>
+    </statement>
+  </theorem>
+  
+  
+  </section>

@@ -15,4 +15,5 @@
   <xi:include  href="s_connected_path.ptx"/>
   <xi:include  href="s_connected_components.ptx"/>
   <xi:include  href="s_compact_def.ptx"/>
+  <xi:include  href="s_compact_metric.ptx"/>
 </chapter>

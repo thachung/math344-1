@@ -1,14 +1,15 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_compact_def">
   <title>Compact spaces</title>
   
-  <definition xml:id="d_open_covering">
-    <title>Open covering</title>
+  <definition xml:id="d_covering">
+    <title>Covering</title>
     <statement>
         <p>
-         Let <m>Y</m> be a subset of the topological space <m>X</m>. An <term>open covering </term> of <m>Y</m> is a collection of open sets <m>\mathcal{U}=\{U_i\}_{i\in I}</m> such that <m>Y\subseteq \bigcup_{i\in I} U_i</m>. As a shorthand, we will often simply say in this case that <m>Y=\subseteq_{i\in I}U_i</m> is an open covering.   
+         Let <m>Y</m> be a subset of the topological space <m>X</m>. A collection <m>\mathcal{A}=\{A_i\}_{i\in I}</m> is a <term> covering </term> of <m>Y</m> if <m>Y\subseteq \bigcup_{i\in I} A_i</m>. As a shorthand, we will often say in this case that <m>Y=\bigcup_{i\in I}A_i</m> is a covering. Note in particular that a covering of <m>X</m> itself is a collection of sets <m>\{A_i\}_{i\in I}</m> satisfying <m>X=\bigcup_{i\in I} A_i</m>.   
         </p>
         <p>
-            Note in particular that an open covering of <m>X</m> itself is a collection of open sets <m>\{U_i\}_{i\in I}</m> satisfying <m>X=\bigcup_{i\in I} U_i</m>.  
+          Given a property of subsets (<eg/>, open, closed, <etc/>), a covering <m>\mathcal{A}=\{A_i\}_{i\in I}</m> is said to satisfy this property if <m>A_i\in \mathcal{A}
+          </m> does for all <m>i\in I</m>.  
         </p>
     </statement>
   </definition>
@@ -16,13 +17,23 @@
   <title>Compact space</title>
   <statement>
     <p>
-      A topologial space <m>X</m> is <term>compact</term> if every open covering of <m>X</m> has a finite subcovering: <ie/>, if <m>X=\bigcup_{i\in I}U_i</m> is an open covering, then there is a finite set <m>\{i_1,i_2,\dots,i_n\}\subseteq I</m> such that <m>X=\bigcup_{j=1}^n U_{i_j}</m>. 
+      A topological space <m>X</m> is <term>compact</term> if every open covering of <m>X</m> has a finite subcovering: <ie/>, if <m>X=\bigcup_{i\in I}U_i</m> is an open covering, then there is a finite set <m>\{i_1,i_2,\dots,i_n\}\subseteq I</m> such that <m>X=\bigcup_{j=1}^n U_{i_j}</m>. 
     </p>
     <p>
-        A subset <m>Y\subseteq X</m> is compact, if it is compact with respect to the subspace topology. Equivalently, <m>Y</m> is compact if any covering <m>Y\subseteq \bigcup_{i\in I} U_i</m> by open sets of <m>X</m> has a finite subcovering. 
+        A subset <m>Y\subseteq X</m> is compact if it is compact with respect to the subspace topology. Equivalently, <m>Y</m> is compact if any covering <m>Y\subseteq \bigcup_{i\in I} U_i</m> by open sets of <m>X</m> has a finite subcovering. 
     </p>
   </statement>
 </definition>
+<remark xml:id="rm_compactness_topological">
+    <title>Compactness is a topological property</title>
+    <p>
+        If <m>f\colon X\rightarrow Y</m> is a homeomorphism, then <m>X</m> is compact if and only if <m>Y</m> is compact. Indeed <m>f</m> defines a bijection 
+        <me>
+            \mathcal{U}=\{U_i\}_{i\in I}\mapsto f(\mathcal{U})=\{f(U_i)\}_{i\in I}
+        </me>
+        between open covers <m>\mathcal{U}=\{U_i\}_{i\in I}</m> of <m>X</m> and open covers of <m>Y</m>; and furthermore, this maps finite subcovers of <m>\mathcal{U}</m> to finite subcovers of <m>f(\mathcal{U})</m>.  
+    </p>
+</remark>
 <example xml:id="eg_elementary_compact">
     <title>Elementary examples</title>
     <p>
@@ -61,10 +72,153 @@
         </p>
     </solution> -->
 </example>
+<theorem xml:id="th_compact_R">
+    <title>Finite closed intervals are compact</title>
+    <statement>
+        <p>
+        Finite closed intervals <m>[a,b]</m> are compact in <m>\R</m>. 
+        </p>
+    </statement>
+    <proof>
+        <p>
+            Let <m>\mathcal{U}=\{U_i\}_{i\in I}</m> be an open covering of <m>[a,b]</m>. Define <m>A</m> to be the set of all <m>x\in [a,b]</m> such that <m>[a, x]\subseteq \bigcup_{i\in I}U_i</m> has a finite subcovering. Note that <m>A</m> is nonempty, since clearly <m>a\in A</m>. I will show further that <m>A</m> is open and closed in <m>[a,b]</m>. Since <m>[a,b]</m> is connected, it will follows that <m>A=[a,b]</m>, and hence that <m>[a,b]\subseteq \bigcup_{i\in I}U_i</m> has a finite subcovering, as desired. 
+        </p>
+        <case>
+            <title><m>A</m> is open</title>
+            <p>
+                Suppose <m>c\in A</m>. By definition of <m>A</m> there is a finite subcover <m>[a,c]\subseteq\bigcup_{j=1}^nU_{i_j}</m>. Without loss of generality, we may assume that <m>c\in U_{i_1}</m>. Since <m>U_{i_1}</m> is open, we can find an <m>\epsilon &gt; 0</m> such that <m>U=(c-\epsilon, c+\epsilon)\cap (a,b)\subseteq U_{i_1}</m>. But then clearly 
+                <m>[a,x]\subseteq \bigcup_{j=1}^nU_{i_j}</m> for all <m>x\in U</m>, showing that <m>[a,x]</m> admits a finite subcovering for all such <m>x</m>, and hence that  <m>U\subseteq A</m>. This proves <m>A</m> is open. 
+            </p>
+        </case>
+        <case>
+            <title><m>A</m> is closed</title>
+            <p>
+                Take <m>c\in [a,b]-A</m>. Since <m>\{U_i\}_{i\in I}</m> is a cover of <m>[a,b]</m>, we have <m>c\in U_{i_0}</m> for some <m>i_0\in I</m>.  Since <m>U_{i_0}</m> is open, we can find an <m>\epsilon &gt; 0</m> such that <m>U=(c-\epsilon, c+\epsilon)\cap (a,b)\subseteq U_{i_0}</m>. But then for all <m>x\in U</m> we have <m>x\notin A</m>: indeed, if for such an <m>x</m> we had a finite subcovering <m>[a,x]\subseteq\bigcup_{j=1}^nU_{i_j}</m>, then <m>[a,c]\subseteq U_{i_0}\cup \bigcup_{j=1}^nU_{i_j}</m> would be a finite subcovering of <m>[a,c]</m>, contradicting the fact that <m>c\notin A</m>. 
+            </p>
+        </case>
+    </proof>
+</theorem>
 
-
-
-
-
+<theorem xml:id="th_compact_Haus_closed">
+    <title>Compact implies closed in Hausdorff spaces</title>
+    <statement>
+        <p>
+            Let <m>Y</m> be a compact subset of the topological space <m>X</m>.
+            <ol>
+                <li>
+                    <p>
+                    <m>Y</m> is closed. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Given any <m>x\in X-Y</m> there are disjoint open sets <m>U, V</m> such that <m>x\in U</m> and <m>Y\subseteq V</m>. 
+                    </p>
+                </li>
+                
+            </ol>
+        </p>
+    </statement>
+    <proof>
+        <p>
+            (1) follows directly from (2). To prove the latter, note that for each <m>y\in Y</m> we can find disjoint open neighborhoods <m>U_{x,y}, V_y</m> of <m>x</m> and <m>y</m>, respectively. Since <m>Y\subseteq \bigcup_{y\in Y}V_y</m> is an open covering of <m>Y</m>, there is a finite subcovering <m>Y\subseteq \bigcup_{i=1}^nV_{y_i}</m>. The open sets 
+            <md>
+                <mrow>U \amp = \bigcap_{i=1}^nU_{x,y_i}</mrow>
+                <mrow>V \amp =\bigcup_{i=1}^nV_{y_i}</mrow>
+            </md> 
+            satisfy the desired conditions. 
+        </p>
+    </proof>
+</theorem>
+<theorem xml:id="th_closed_in_compact">
+    <title>Compactness inherited by closed subspaces</title>
+    <statement>
+        <p>
+            Let <m>Y</m> be a closed subset of the topological space <m>X</m>. If <m>X</m> is compact, then <m>Y</m> is compact.  
+        </p>
+    </statement>
+    <proof>
+        <p>
+            Let <m>Y\subseteq \bigcup_{i\in I}U_i</m> be an open covering of <m>Y</m> by open sets of <m>X</m>. Since <m>Y</m> is closed, the collection 
+            <me>
+                \{U_i\}_{i\in I}\cup \{X-Y\}
+            </me>
+            is an open covering of <m>X</m>. 
+        </p>
+    </proof>
+</theorem>
+<theorem xml:id="th_compactness_continuous">
+    <title>Compactness preserved under continuous image</title>
+    <statement>
+        <p>
+           Let <m>f\colon X\rightarrow Y</m> be a continuous function. If <m>X</m> is compact, then <m>f(X)</m> is compact.  
+        </p>
+    </statement>
+    <proof>
+        <p>
+            If <m>f(X)\subseteq \bigcup_{i\in I}U_i</m> is an open covering of <m>f(X)</m>, then <m>X=\bigcup_{i\in I}f^{-1}(U_i)</m> is an open covering of <m>X</m>. Since <m>X</m> is compact, there is a finite subcover <m>X=\bigcup_{j=1}^nf^{-1}(U_{i_j})</m>. It follows that <m>f(X)\subseteq \bigcup_{j=1}^nU_{i_j}</m> is a finite subcover of our original covering <m>f(X)\subseteq \bigcup_{i\in I}U_i</m>. 
+        </p>
+    </proof>
+</theorem>
+<theorem xml:id="th_compactness_closed_map">
+    <title>Compactness and closed maps</title>
+    <statement>
+        <p>
+           Let <m>f\colon X\rightarrow Y</m> be continuous. If <m>X</m> is continuous and <m>Y</m> is Hausdorff, then <m>f</m> is a closed map.  
+        </p>
+    </statement>
+    <proof>
+        Let <m>C\subseteq X</m> be closed. Since <m>X</m> is compact, <m>C</m> is compact. By <xref ref="th_compactness_continuous"/>, <m>f(C)</m> is compact. By <xref ref="th_compact_Haus_closed"/>,  since <m>Y</m> is Hausdorff, <m>f(C)</m> is closed.
+    </proof>
+</theorem>
+<corollary xml:id="cor_compact_homeomorphism">
+    <title>Compactness and homeomorphisms</title>
+    <statement>
+        <p>
+            Let <m>f\colon X\rightarrow Y</m> be continuous and bijective. If <m>X</m> is compact and <m>Y</m> is Hausdorff, then <m>f</m> is a homeomorphism.           
+        </p>
+    </statement>
+    <proof>
+        <p>
+            By <xref ref="th_compactness_closed_map"/>, the map <m>f</m> is closed, hence a homeomorphism. 
+        </p>
+    </proof>
+</corollary>
+<definition xml:id="d_finite_intersection_property">
+    <title>Finite intersection property</title>
+    <statement>
+        <p>
+            A collection <m>\mathcal{C}=\{C_i\}_{i\in I}</m>  of subsets of <m>X</m> satisfies the <term>finite intersection property</term> if every finite subcollection <m>\{C_{i_1}, C_{i_2}, \dots, C_{i_n}\}</m> has non trivial intersection: <ie/>, <m>\bigcap_{j=1}^n C_{i_j}\ne\emptyset</m>. 
+        </p>
+    </statement>
+</definition>
+<theorem xml:id="th_compact_equivalence">
+    <statement>
+        <p>
+            Let <m>X</m> be a topological space. The following statements are equivalent. 
+            <ol>
+                <li>
+                    <p>
+                        <m>X</m> is compact. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If <m>\mathcal{C}=\{C_i\}_{i\in I}</m> is a collection of closed sets that satisfies the finite intersection property, then <m>\bigcap_{i\in I}C_i\ne \emptyset</m>. 
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </statement>
+</theorem>
+<corollary xml:id="cor_finite_intersection">
+    <title>Nested closed sets in compact space</title>
+    
+    <statement>
+        <p>
+        Let <m>X</m> be a compact space. Given a nested sequence of nonempty closed subsets <m>C_1\supseteq C_2\supseteq C_3\supseteq \dots</m>, we have <m>\bigcap_{n=1}^\infty C_n\ne \emptyset</m>. 
+        </p>
+    </statement>
+</corollary>
 
 </section>
