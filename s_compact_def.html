@@ -177,7 +177,7 @@ window.MathJax = {
 <span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
 </ol>
 </li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="s_connected_components.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="c_top_spaces.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="backmatter-1.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="s_connected_components.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="c_top_spaces.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="s_compact_metric.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
 <input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
 </div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
   \newcommand{\Q}{{\mathbb Q}}
@@ -362,6 +362,7 @@ window.MathJax = {
 <li><div class="toc-item"><a href="s_connected_path.html" class="internal"><span class="codenumber">1.13</span> <span class="title">Path-connected spaces</span></a></div></li>
 <li><div class="toc-item"><a href="s_connected_components.html" class="internal"><span class="codenumber">1.14</span> <span class="title">Connected components and locally connected spaces</span></a></div></li>
 <li class="active"><div class="toc-item"><a href="s_compact_def.html" class="internal"><span class="codenumber">1.15</span> <span class="title">Compact spaces</span></a></div></li>
+<li><div class="toc-item"><a href="s_compact_metric.html" class="internal"><span class="codenumber">1.16</span> <span class="title">Compactness in metric spaces</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -379,26 +380,112 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_compact_def"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.15</span> <span class="title">Compact spaces</span>
 </h2>
-<article class="definition definition-like" id="d_open_covering"><h3 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.15.1</span><span class="period">.</span><span class="space"> </span><span class="title">Open covering.</span>
-</h3> <div class="para" id="p-656">Let <span class="process-math">\(Y\)</span> be a subset of the topological space <span class="process-math">\(X\text{.}\)</span> An <dfn class="terminology">open covering</dfn> of <span class="process-math">\(Y\)</span> is a collection of open sets <span class="process-math">\(\mathcal{U}=\{U_i\}_{i\in I}\)</span> such that <span class="process-math">\(Y\subseteq \bigcup_{i\in I} U_i\text{.}\)</span> As a shorthand, we will often simply say in this case that <span class="process-math">\(Y=\subseteq_{i\in I}U_i\)</span> is an open covering.</div> <div class="para" id="p-657">Note in particular that an open covering of <span class="process-math">\(X\)</span> itself is a collection of open sets <span class="process-math">\(\{U_i\}_{i\in I}\)</span> satisfying <span class="process-math">\(X=\bigcup_{i\in I} U_i\text{.}\)</span>
+<article class="definition definition-like" id="d_covering"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.15.1</span><span class="period">.</span><span class="space"> </span><span class="title">Covering.</span>
+</h3> <div class="para" id="p-656">Let <span class="process-math">\(Y\)</span> be a subset of the topological space <span class="process-math">\(X\text{.}\)</span> A collection <span class="process-math">\(\mathcal{A}=\{A_i\}_{i\in I}\)</span> is a <dfn class="terminology">covering</dfn> of <span class="process-math">\(Y\)</span> if <span class="process-math">\(Y\subseteq \bigcup_{i\in I} A_i\text{.}\)</span> As a shorthand, we will often say in this case that <span class="process-math">\(Y=\bigcup_{i\in I}A_i\)</span> is a covering. Note in particular that a covering of <span class="process-math">\(X\)</span> itself is a collection of sets <span class="process-math">\(\{A_i\}_{i\in I}\)</span> satisfying <span class="process-math">\(X=\bigcup_{i\in I} A_i\text{.}\)</span>
+</div> <div class="para" id="p-657">Given a property of subsets (e.g., open, closed, etc.), a covering <span class="process-math">\(\mathcal{A}=\{A_i\}_{i\in I}\)</span> is said to satisfy this property if <span class="process-math">\(A_i\in \mathcal{A}\)</span> does for all <span class="process-math">\(i\in I\text{.}\)</span>
 </div></article><article class="definition definition-like" id="d_compact"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.15.2</span><span class="period">.</span><span class="space"> </span><span class="title">Compact space.</span>
-</h3> <div class="para" id="p-658">A topologial space <span class="process-math">\(X\)</span> is <dfn class="terminology">compact</dfn> if every open covering of <span class="process-math">\(X\)</span> has a finite subcovering: i.e., if <span class="process-math">\(X=\bigcup_{i\in I}U_i\)</span> is an open covering, then there is a finite set <span class="process-math">\(\{i_1,i_2,\dots,i_n\}\subseteq I\)</span> such that <span class="process-math">\(X=\bigcup_{j=1}^n U_{i_j}\text{.}\)</span>
-</div> <div class="para" id="p-659">A subset <span class="process-math">\(Y\subseteq X\)</span> is compact, if it is compact with respect to the subspace topology. Equivalently, <span class="process-math">\(Y\)</span> is compact if any covering <span class="process-math">\(Y\subseteq \bigcup_{i\in I} U_i\)</span> by open sets of <span class="process-math">\(X\)</span> has a finite subcovering.</div></article><article class="example example-like" id="eg_elementary_compact"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.15.3</span><span class="period">.</span><span class="space"> </span><span class="title">Elementary examples.</span>
-</h3> <div class="para logical" id="p-660"><ol class="decimal">
-<li id="li-233"><div class="para" id="p-661">Any finite set is compact.</div></li>
-<li id="li-234"><div class="para" id="p-662">Any space with the trivial topology is compact.</div></li>
-<li id="li-235"><div class="para" id="p-663">A discrete space is compact if and only if it is finite.</div></li>
-<li id="li-236"><div class="para" id="p-664">
+</h3> <div class="para" id="p-658">A topological space <span class="process-math">\(X\)</span> is <dfn class="terminology">compact</dfn> if every open covering of <span class="process-math">\(X\)</span> has a finite subcovering: i.e., if <span class="process-math">\(X=\bigcup_{i\in I}U_i\)</span> is an open covering, then there is a finite set <span class="process-math">\(\{i_1,i_2,\dots,i_n\}\subseteq I\)</span> such that <span class="process-math">\(X=\bigcup_{j=1}^n U_{i_j}\text{.}\)</span>
+</div> <div class="para" id="p-659">A subset <span class="process-math">\(Y\subseteq X\)</span> is compact if it is compact with respect to the subspace topology. Equivalently, <span class="process-math">\(Y\)</span> is compact if any covering <span class="process-math">\(Y\subseteq \bigcup_{i\in I} U_i\)</span> by open sets of <span class="process-math">\(X\)</span> has a finite subcovering.</div></article><article class="remark remark-like" id="rm_compactness_topological"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.15.3</span><span class="period">.</span><span class="space"> </span><span class="title">Compactness is a topological property.</span>
+</h3> <div class="para logical" id="p-660">
+<div class="para">If <span class="process-math">\(f\colon X\rightarrow Y\)</span> is a homeomorphism, then <span class="process-math">\(X\)</span> is compact if and only if <span class="process-math">\(Y\)</span> is compact. Indeed <span class="process-math">\(f\)</span> defines a bijection</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{U}=\{U_i\}_{i\in I}\mapsto f(\mathcal{U})=\{f(U_i)\}_{i\in I}
+\end{equation*}
+</div>
+<div class="para">between open covers <span class="process-math">\(\mathcal{U}=\{U_i\}_{i\in I}\)</span> of <span class="process-math">\(X\)</span> and open covers of <span class="process-math">\(Y\text{;}\)</span> and furthermore, this maps finite subcovers of <span class="process-math">\(\mathcal{U}\)</span> to finite subcovers of <span class="process-math">\(f(\mathcal{U})\text{.}\)</span>
+</div>
+</div></article><article class="example example-like" id="eg_elementary_compact"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.15.4</span><span class="period">.</span><span class="space"> </span><span class="title">Elementary examples.</span>
+</h3> <div class="para logical" id="p-661"><ol class="decimal">
+<li id="li-233"><div class="para" id="p-662">Any finite set is compact.</div></li>
+<li id="li-234"><div class="para" id="p-663">Any space with the trivial topology is compact.</div></li>
+<li id="li-235"><div class="para" id="p-664">A discrete space is compact if and only if it is finite.</div></li>
+<li id="li-236"><div class="para" id="p-665">
 <span class="process-math">\(\R\)</span> is not compact. Consequently, since compactness is a topological property (i.e., preserved by homeomorphisms), no open interval is compact.</div></li>
 </ol></div></article><article class="example example-like" id="eg_K_compact"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.15.4</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(K\cup\{0\}\)</span> is compact.</span>
-</h3> <div class="para" id="p-665">Show that <span class="process-math">\(Y=K\cup\{0\}=\{1/n\colon n\in \Z_+\}\cup\{0\}\)</span> is a compact subset of <span class="process-math">\(\R\text{.}\)</span>
-</div> </article></section></div>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.15.5</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(K\cup\{0\}\)</span> is compact.</span>
+</h3> <div class="para" id="p-666">Show that <span class="process-math">\(Y=K\cup\{0\}=\{1/n\colon n\in \Z_+\}\cup\{0\}\)</span> is a compact subset of <span class="process-math">\(\R\text{.}\)</span>
+</div> </article><article class="theorem theorem-like" id="th_compact_R"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.15.6</span><span class="period">.</span><span class="space"> </span><span class="title">Finite closed intervals are compact.</span>
+</h3>
+<div class="para" id="p-667">Finite closed intervals <span class="process-math">\([a,b]\)</span> are compact in <span class="process-math">\(\R\text{.}\)</span>
+</div></article><article class="hiddenproof" id="proof-47"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-47"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-47"><article class="hiddenproof"><div class="para" id="p-668">Let <span class="process-math">\(\mathcal{U}=\{U_i\}_{i\in I}\)</span> be an open covering of <span class="process-math">\([a,b]\text{.}\)</span> Define <span class="process-math">\(A\)</span> to be the set of all <span class="process-math">\(x\in [a,b]\)</span> such that <span class="process-math">\([a, x]\subseteq \bigcup_{i\in I}U_i\)</span> has a finite subcovering. Note that <span class="process-math">\(A\)</span> is nonempty, since clearly <span class="process-math">\(a\in A\text{.}\)</span> I will show further that <span class="process-math">\(A\)</span> is open and closed in <span class="process-math">\([a,b]\text{.}\)</span> Since <span class="process-math">\([a,b]\)</span> is connected, it will follows that <span class="process-math">\(A=[a,b]\text{,}\)</span> and hence that <span class="process-math">\([a,b]\subseteq \bigcup_{i\in I}U_i\)</span> has a finite subcovering, as desired.</div> <article class="case" id="case-31"><h4 class="heading">
+<span class="process-math">\(A\)</span> is open.</h4> <div class="para" id="p-669">Suppose <span class="process-math">\(c\in A\text{.}\)</span> By definition of <span class="process-math">\(A\)</span> there is a finite subcover <span class="process-math">\([a,c]\subseteq\bigcup_{j=1}^nU_{i_j}\text{.}\)</span> Without loss of generality, we may assume that <span class="process-math">\(c\in U_{i_1}\text{.}\)</span> Since <span class="process-math">\(U_{i_1}\)</span> is open, we can find an <span class="process-math">\(\epsilon &gt; 0\)</span> such that <span class="process-math">\(U=(c-\epsilon, c+\epsilon)\cap (a,b)\subseteq U_{i_1}\text{.}\)</span> But then clearly <span class="process-math">\([a,x]\subseteq \bigcup_{j=1}^nU_{i_j}\)</span> for all <span class="process-math">\(x\in U\text{,}\)</span> showing that <span class="process-math">\([a,x]\)</span> admits a finite subcovering for all such <span class="process-math">\(x\text{,}\)</span> and hence that  <span class="process-math">\(U\subseteq A\text{.}\)</span> This proves <span class="process-math">\(A\)</span> is open.</div></article> <article class="case" id="case-32"><h4 class="heading">
+<span class="process-math">\(A\)</span> is closed.</h4> <div class="para" id="p-670">Take <span class="process-math">\(c\in [a,b]-A\text{.}\)</span> Since <span class="process-math">\(\{U_i\}_{i\in I}\)</span> is a cover of <span class="process-math">\([a,b]\text{,}\)</span> we have <span class="process-math">\(c\in U_{i_0}\)</span> for some <span class="process-math">\(i_0\in I\text{.}\)</span>  Since <span class="process-math">\(U_{i_0}\)</span> is open, we can find an <span class="process-math">\(\epsilon &gt; 0\)</span> such that <span class="process-math">\(U=(c-\epsilon, c+\epsilon)\cap (a,b)\subseteq U_{i_0}\text{.}\)</span> But then for all <span class="process-math">\(x\in U\)</span> we have <span class="process-math">\(x\notin A\text{:}\)</span> indeed, if for such an <span class="process-math">\(x\)</span> we had a finite subcovering <span class="process-math">\([a,x]\subseteq\bigcup_{j=1}^nU_{i_j}\text{,}\)</span> then <span class="process-math">\([a,c]\subseteq U_{i_0}\cup \bigcup_{j=1}^nU_{i_j}\)</span> would be a finite subcovering of <span class="process-math">\([a,c]\text{,}\)</span> contradicting the fact that <span class="process-math">\(c\notin A\text{.}\)</span>
+</div></article></article></div>
+<article class="theorem theorem-like" id="th_compact_Haus_closed"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.15.7</span><span class="period">.</span><span class="space"> </span><span class="title">Compact implies closed in Hausdorff spaces.</span>
+</h3>
+<div class="para logical" id="p-671">
+<div class="para">Let <span class="process-math">\(Y\)</span> be a compact subset of the topological space <span class="process-math">\(X\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li id="li-237"><div class="para" id="p-672">
+<span class="process-math">\(Y\)</span> is closed.</div></li>
+<li id="li-238"><div class="para" id="p-673">Given any <span class="process-math">\(x\in X-Y\)</span> there are disjoint open sets <span class="process-math">\(U, V\)</span> such that <span class="process-math">\(x\in U\)</span> and <span class="process-math">\(Y\subseteq V\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><article class="hiddenproof" id="proof-48"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-48"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-48"><article class="hiddenproof"><div class="para logical" id="p-674">
+<div class="para">(1) follows directly from (2). To prove the latter, note that for each <span class="process-math">\(y\in Y\)</span> we can find disjoint open neighborhoods <span class="process-math">\(U_{x,y}, V_y\)</span> of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> respectively. Since <span class="process-math">\(Y\subseteq \bigcup_{y\in Y}V_y\)</span> is an open covering of <span class="process-math">\(Y\text{,}\)</span> there is a finite subcovering <span class="process-math">\(Y\subseteq \bigcup_{i=1}^nV_{y_i}\text{.}\)</span> The open sets</div>
+<div class="displaymath process-math" id="md-49">
+\begin{align*}
+U \amp = \bigcap_{i=1}^nU_{x,y_i}\\
+V \amp =\bigcup_{i=1}^nV_{y_i}
+\end{align*}
+</div>
+<div class="para">satisfy the desired conditions.</div>
+</div></article></div>
+<article class="theorem theorem-like" id="th_closed_in_compact"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.15.8</span><span class="period">.</span><span class="space"> </span><span class="title">Compactness inherited by closed subspaces.</span>
+</h3>
+<div class="para" id="p-675">Let <span class="process-math">\(Y\)</span> be a closed subset of the topological space <span class="process-math">\(X\text{.}\)</span> If <span class="process-math">\(X\)</span> is compact, then <span class="process-math">\(Y\)</span> is compact.</div></article><article class="hiddenproof" id="proof-49"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-49"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-49"><article class="hiddenproof"><div class="para logical" id="p-676">
+<div class="para">Let <span class="process-math">\(Y\subseteq \bigcup_{i\in I}U_i\)</span> be an open covering of <span class="process-math">\(Y\)</span> by open sets of <span class="process-math">\(X\text{.}\)</span> Since <span class="process-math">\(Y\)</span> is closed, the collection</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\{U_i\}_{i\in I}\cup \{X-Y\}
+\end{equation*}
+</div>
+<div class="para">is an open covering of <span class="process-math">\(X\text{.}\)</span>
+</div>
+</div></article></div>
+<article class="theorem theorem-like" id="th_compactness_continuous"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.15.9</span><span class="period">.</span><span class="space"> </span><span class="title">Compactness preserved under continuous image.</span>
+</h3>
+<div class="para" id="p-677">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> be a continuous function. If <span class="process-math">\(X\)</span> is compact, then <span class="process-math">\(f(X)\)</span> is compact.</div></article><article class="hiddenproof" id="proof-50"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-50"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-50"><article class="hiddenproof"><div class="para" id="p-678">If <span class="process-math">\(f(X)\subseteq \bigcup_{i\in I}U_i\)</span> is an open covering of <span class="process-math">\(f(X)\text{,}\)</span> then <span class="process-math">\(X=\bigcup_{i\in I}f^{-1}(U_i)\)</span> is an open covering of <span class="process-math">\(X\text{.}\)</span> Since <span class="process-math">\(X\)</span> is compact, there is a finite subcover <span class="process-math">\(X=\bigcup_{j=1}^nf^{-1}(U_{i_j})\text{.}\)</span> It follows that <span class="process-math">\(f(X)\subseteq \bigcup_{j=1}^nU_{i_j}\)</span> is a finite subcover of our original covering <span class="process-math">\(f(X)\subseteq \bigcup_{i\in I}U_i\text{.}\)</span>
+</div></article></div>
+<article class="theorem theorem-like" id="th_compactness_closed_map"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.15.10</span><span class="period">.</span><span class="space"> </span><span class="title">Compactness and closed maps.</span>
+</h3>
+<div class="para" id="p-679">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> be continuous. If <span class="process-math">\(X\)</span> is continuous and <span class="process-math">\(Y\)</span> is Hausdorff, then <span class="process-math">\(f\)</span> is a closed map.</div></article><article class="hiddenproof" id="proof-51"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-51"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-51"><article class="hiddenproof">Let <span class="process-math">\(C\subseteq X\)</span> be closed. Since <span class="process-math">\(X\)</span> is compact, <span class="process-math">\(C\)</span> is compact. By <a href="" class="xref" data-knowl="./knowl/th_compactness_continuous.html" title="Theorem 1.15.9: Compactness preserved under continuous image">Theorem 1.15.9</a>, <span class="process-math">\(f(C)\)</span> is compact. By <a href="" class="xref" data-knowl="./knowl/th_compact_Haus_closed.html" title="Theorem 1.15.7: Compact implies closed in Hausdorff spaces">Theorem 1.15.7</a>,  since <span class="process-math">\(Y\)</span> is Hausdorff, <span class="process-math">\(f(C)\)</span> is closed.</article></div>
+<article class="corollary theorem-like" id="cor_compact_homeomorphism"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.15.11</span><span class="period">.</span><span class="space"> </span><span class="title">Compactness and homeomorphisms.</span>
+</h3>
+<div class="para" id="p-680">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> be continuous and bijective. If <span class="process-math">\(X\)</span> is compact and <span class="process-math">\(Y\)</span> is Hausdorff, then <span class="process-math">\(f\)</span> is a homeomorphism.</div></article><article class="hiddenproof" id="proof-52"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-52"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-52"><article class="hiddenproof"><div class="para" id="p-681">By <a href="" class="xref" data-knowl="./knowl/th_compactness_closed_map.html" title="Theorem 1.15.10: Compactness and closed maps">Theorem 1.15.10</a>, the map <span class="process-math">\(f\)</span> is closed, hence a homeomorphism.</div></article></div>
+<article class="definition definition-like" id="d_finite_intersection_property"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.15.12</span><span class="period">.</span><span class="space"> </span><span class="title">Finite intersection property.</span>
+</h3> <div class="para" id="p-682">A collection <span class="process-math">\(\mathcal{C}=\{C_i\}_{i\in I}\)</span>  of subsets of <span class="process-math">\(X\)</span> satisfies the <dfn class="terminology">finite intersection property</dfn> if every finite subcollection <span class="process-math">\(\{C_{i_1}, C_{i_2}, \dots, C_{i_n}\}\)</span> has non trivial intersection: i.e., <span class="process-math">\(\bigcap_{j=1}^n C_{i_j}\ne\emptyset\text{.}\)</span>
+</div></article><article class="theorem theorem-like" id="th_compact_equivalence"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.15.13</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-683">
+<div class="para">Let <span class="process-math">\(X\)</span> be a topological space. The following statements are equivalent.</div>
+<ol class="decimal">
+<li id="li-239"><div class="para" id="p-684">
+<span class="process-math">\(X\)</span> is compact.</div></li>
+<li id="li-240"><div class="para" id="p-685">If <span class="process-math">\(\mathcal{C}=\{C_i\}_{i\in I}\)</span> is a collection of closed sets that satisfies the finite intersection property, then <span class="process-math">\(\bigcap_{i\in I}C_i\ne \emptyset\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><article class="corollary theorem-like" id="cor_finite_intersection"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.15.14</span><span class="period">.</span><span class="space"> </span><span class="title">Nested closed sets in compact space.</span>
+</h3>
+<div class="para" id="p-686">Let <span class="process-math">\(X\)</span> be a compact space. Given a nested sequence of nonempty closed subsets <span class="process-math">\(C_1\supseteq C_2\supseteq C_3\supseteq \dots\text{,}\)</span> we have <span class="process-math">\(\bigcap_{n=1}^\infty C_n\ne \emptyset\text{.}\)</span>
+</div></article></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_connected_components.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="backmatter-1.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+<a class="previous-button button" href="s_connected_components.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="s_compact_metric.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
 </div>
 <div class="ptx-page-footer">

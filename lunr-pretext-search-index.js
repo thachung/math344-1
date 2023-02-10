@@ -1888,16 +1888,16 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.15",
   "title": "Compact spaces",
-  "body": " Compact spaces   Open covering   Let be a subset of the topological space . An open covering of is a collection of open sets such that . As a shorthand, we will often simply say in this case that is an open covering.  Note in particular that an open covering of itself is a collection of open sets satisfying .     Compact space   A topologial space is compact if every open covering of has a finite subcovering: , if is an open covering, then there is a finite set such that .  A subset is compact, if it is compact with respect to the subspace topology. Equivalently, is compact if any covering by open sets of has a finite subcovering.     Elementary examples     Any finite set is compact.    Any space with the trivial topology is compact.    A discrete space is compact if and only if it is finite.     is not compact. Consequently, since compactness is a topological property ( , preserved by homeomorphisms), no open interval is compact.       is compact  Show that is a compact subset of .    "
+  "body": " Compact spaces   Covering   Let be a subset of the topological space . A collection is a covering of if . As a shorthand, we will often say in this case that is a covering. Note in particular that a covering of itself is a collection of sets satisfying .  Given a property of subsets ( , open, closed, ), a covering is said to satisfy this property if does for all .     Compact space   A topological space is compact if every open covering of has a finite subcovering: , if is an open covering, then there is a finite set such that .  A subset is compact if it is compact with respect to the subspace topology. Equivalently, is compact if any covering by open sets of has a finite subcovering.     Compactness is a topological property  If is a homeomorphism, then is compact if and only if is compact. Indeed defines a bijection between open covers of and open covers of ; and furthermore, this maps finite subcovers of to finite subcovers of .    Elementary examples     Any finite set is compact.    Any space with the trivial topology is compact.    A discrete space is compact if and only if it is finite.     is not compact. Consequently, since compactness is a topological property ( , preserved by homeomorphisms), no open interval is compact.       is compact  Show that is a compact subset of .     Finite closed intervals are compact   Finite closed intervals are compact in .    Let be an open covering of . Define to be the set of all such that has a finite subcovering. Note that is nonempty, since clearly . I will show further that is open and closed in . Since is connected, it will follows that , and hence that has a finite subcovering, as desired.   is open  Suppose . By definition of there is a finite subcover . Without loss of generality, we may assume that . Since is open, we can find an such that . But then clearly for all , showing that admits a finite subcovering for all such , and hence that . This proves is open.    is closed  Take . Since is a cover of , we have for some . Since is open, we can find an such that . But then for all we have : indeed, if for such an we had a finite subcovering , then would be a finite subcovering of , contradicting the fact that .      Compact implies closed in Hausdorff spaces   Let be a compact subset of the topological space .    is closed.    Given any there are disjoint open sets such that and .       (1) follows directly from (2). To prove the latter, note that for each we can find disjoint open neighborhoods of and , respectively. Since is an open covering of , there is a finite subcovering . The open sets satisfy the desired conditions.     Compactness inherited by closed subspaces   Let be a closed subset of the topological space . If is compact, then is compact.    Let be an open covering of by open sets of . Since is closed, the collection is an open covering of .     Compactness preserved under continuous image   Let be a continuous function. If is compact, then is compact.    If is an open covering of , then is an open covering of . Since is compact, there is a finite subcover . It follows that is a finite subcover of our original covering .     Compactness and closed maps   Let be continuous. If is continuous and is Hausdorff, then is a closed map.   Let be closed. Since is compact, is compact. By , is compact. By , since is Hausdorff, is closed.    Compactness and homeomorphisms   Let be continuous and bijective. If is compact and is Hausdorff, then is a homeomorphism.    By , the map is closed, hence a homeomorphism.     Finite intersection property   A collection of subsets of satisfies the finite intersection property if every finite subcollection has non trivial intersection: , .      Let be a topological space. The following statements are equivalent.    is compact.    If is a collection of closed sets that satisfies the finite intersection property, then .        Nested closed sets in compact space   Let be a compact space. Given a nested sequence of nonempty closed subsets , we have .    "
 },
 {
-  "id": "d_open_covering",
+  "id": "d_covering",
   "level": "2",
-  "url": "s_compact_def.html#d_open_covering",
+  "url": "s_compact_def.html#d_covering",
   "type": "Definition",
   "number": "1.15.1",
-  "title": "Open covering.",
-  "body": " Open covering   Let be a subset of the topological space . An open covering of is a collection of open sets such that . As a shorthand, we will often simply say in this case that is an open covering.  Note in particular that an open covering of itself is a collection of open sets satisfying .   "
+  "title": "Covering.",
+  "body": " Covering   Let be a subset of the topological space . A collection is a covering of if . As a shorthand, we will often say in this case that is a covering. Note in particular that a covering of itself is a collection of sets satisfying .  Given a property of subsets ( , open, closed, ), a covering is said to satisfy this property if does for all .   "
 },
 {
   "id": "d_compact",
@@ -1906,14 +1906,23 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "1.15.2",
   "title": "Compact space.",
-  "body": " Compact space   A topologial space is compact if every open covering of has a finite subcovering: , if is an open covering, then there is a finite set such that .  A subset is compact, if it is compact with respect to the subspace topology. Equivalently, is compact if any covering by open sets of has a finite subcovering.   "
+  "body": " Compact space   A topological space is compact if every open covering of has a finite subcovering: , if is an open covering, then there is a finite set such that .  A subset is compact if it is compact with respect to the subspace topology. Equivalently, is compact if any covering by open sets of has a finite subcovering.   "
+},
+{
+  "id": "rm_compactness_topological",
+  "level": "2",
+  "url": "s_compact_def.html#rm_compactness_topological",
+  "type": "Remark",
+  "number": "1.15.3",
+  "title": "Compactness is a topological property.",
+  "body": " Compactness is a topological property  If is a homeomorphism, then is compact if and only if is compact. Indeed defines a bijection between open covers of and open covers of ; and furthermore, this maps finite subcovers of to finite subcovers of .  "
 },
 {
   "id": "eg_elementary_compact",
   "level": "2",
   "url": "s_compact_def.html#eg_elementary_compact",
   "type": "Example",
-  "number": "1.15.3",
+  "number": "1.15.4",
   "title": "Elementary examples.",
   "body": " Elementary examples     Any finite set is compact.    Any space with the trivial topology is compact.    A discrete space is compact if and only if it is finite.     is not compact. Consequently, since compactness is a topological property ( , preserved by homeomorphisms), no open interval is compact.     "
 },
@@ -1922,9 +1931,207 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_compact_def.html#eg_K_compact",
   "type": "Example",
-  "number": "1.15.4",
+  "number": "1.15.5",
   "title": "<span class=\"process-math\">\\(K\\cup\\{0\\}\\)<\/span> is compact.",
   "body": " is compact  Show that is a compact subset of .   "
+},
+{
+  "id": "th_compact_R",
+  "level": "2",
+  "url": "s_compact_def.html#th_compact_R",
+  "type": "Theorem",
+  "number": "1.15.6",
+  "title": "Finite closed intervals are compact.",
+  "body": " Finite closed intervals are compact   Finite closed intervals are compact in .    Let be an open covering of . Define to be the set of all such that has a finite subcovering. Note that is nonempty, since clearly . I will show further that is open and closed in . Since is connected, it will follows that , and hence that has a finite subcovering, as desired.   is open  Suppose . By definition of there is a finite subcover . Without loss of generality, we may assume that . Since is open, we can find an such that . But then clearly for all , showing that admits a finite subcovering for all such , and hence that . This proves is open.    is closed  Take . Since is a cover of , we have for some . Since is open, we can find an such that . But then for all we have : indeed, if for such an we had a finite subcovering , then would be a finite subcovering of , contradicting the fact that .    "
+},
+{
+  "id": "th_compact_Haus_closed",
+  "level": "2",
+  "url": "s_compact_def.html#th_compact_Haus_closed",
+  "type": "Theorem",
+  "number": "1.15.7",
+  "title": "Compact implies closed in Hausdorff spaces.",
+  "body": " Compact implies closed in Hausdorff spaces   Let be a compact subset of the topological space .    is closed.    Given any there are disjoint open sets such that and .       (1) follows directly from (2). To prove the latter, note that for each we can find disjoint open neighborhoods of and , respectively. Since is an open covering of , there is a finite subcovering . The open sets satisfy the desired conditions.   "
+},
+{
+  "id": "th_closed_in_compact",
+  "level": "2",
+  "url": "s_compact_def.html#th_closed_in_compact",
+  "type": "Theorem",
+  "number": "1.15.8",
+  "title": "Compactness inherited by closed subspaces.",
+  "body": " Compactness inherited by closed subspaces   Let be a closed subset of the topological space . If is compact, then is compact.    Let be an open covering of by open sets of . Since is closed, the collection is an open covering of .   "
+},
+{
+  "id": "th_compactness_continuous",
+  "level": "2",
+  "url": "s_compact_def.html#th_compactness_continuous",
+  "type": "Theorem",
+  "number": "1.15.9",
+  "title": "Compactness preserved under continuous image.",
+  "body": " Compactness preserved under continuous image   Let be a continuous function. If is compact, then is compact.    If is an open covering of , then is an open covering of . Since is compact, there is a finite subcover . It follows that is a finite subcover of our original covering .   "
+},
+{
+  "id": "th_compactness_closed_map",
+  "level": "2",
+  "url": "s_compact_def.html#th_compactness_closed_map",
+  "type": "Theorem",
+  "number": "1.15.10",
+  "title": "Compactness and closed maps.",
+  "body": " Compactness and closed maps   Let be continuous. If is continuous and is Hausdorff, then is a closed map.   Let be closed. Since is compact, is compact. By , is compact. By , since is Hausdorff, is closed.  "
+},
+{
+  "id": "cor_compact_homeomorphism",
+  "level": "2",
+  "url": "s_compact_def.html#cor_compact_homeomorphism",
+  "type": "Corollary",
+  "number": "1.15.11",
+  "title": "Compactness and homeomorphisms.",
+  "body": " Compactness and homeomorphisms   Let be continuous and bijective. If is compact and is Hausdorff, then is a homeomorphism.    By , the map is closed, hence a homeomorphism.   "
+},
+{
+  "id": "d_finite_intersection_property",
+  "level": "2",
+  "url": "s_compact_def.html#d_finite_intersection_property",
+  "type": "Definition",
+  "number": "1.15.12",
+  "title": "Finite intersection property.",
+  "body": " Finite intersection property   A collection of subsets of satisfies the finite intersection property if every finite subcollection has non trivial intersection: , .   "
+},
+{
+  "id": "th_compact_equivalence",
+  "level": "2",
+  "url": "s_compact_def.html#th_compact_equivalence",
+  "type": "Theorem",
+  "number": "1.15.13",
+  "title": "",
+  "body": "  Let be a topological space. The following statements are equivalent.    is compact.    If is a collection of closed sets that satisfies the finite intersection property, then .      "
+},
+{
+  "id": "cor_finite_intersection",
+  "level": "2",
+  "url": "s_compact_def.html#cor_finite_intersection",
+  "type": "Corollary",
+  "number": "1.15.14",
+  "title": "Nested closed sets in compact space.",
+  "body": " Nested closed sets in compact space   Let be a compact space. Given a nested sequence of nonempty closed subsets , we have .   "
+},
+{
+  "id": "s_compact_metric",
+  "level": "1",
+  "url": "s_compact_metric.html",
+  "type": "Section",
+  "number": "1.16",
+  "title": "Compactness in metric spaces",
+  "body": " Compactness in metric spaces   Tychonoff theorem   Given any collection of compact topological spaces, the product space (with product topology) is compact.    For now we only prove the Tychonoff theorem for finite products. It suffices, by induction, to show that the product of two compact spaces is compact.     Tube lemma   Let be topological spaces, and assume is compact. Given any and open set containing , there is an open set such that .     Bounded, diameter, and distance to sets   Let be a metric space, let be a nonempty set, and let .  The diameter of , denoted , is defined as . The set is bounded if .  The distance  from to is defined as .     Heine-Borel theorem   Let . Recall that the Euclidean metric let and box metric both induce the Euclidean topology on . For any the following conditions are equivalent.    is compact.     is closed and bounded with respect to (equivalently, with respect to ).        Extreme value theorem   Let be continuous. If is compact, then there exist points such that and .     Lebesgue number   Let be a metric space. A Lebesgue number for an open covering is a positive real number satisfying the following condition: if , then for some .     Lebesgue number   If is a compact metric space, then any open covering of has a Lebesgue number.     Compact: continuous implies uniformly continuous   Let be a continuous function between the metric spaces and . If is compact, then is uniformly continuous: , for all there exists a such that if , then .     Limit point compact   A topological space is limit point compact if all infinite subsets of have a limit point.     Compact implies limit point compact   If is compact, then is limit point compact.     Sequentially compact   A topological space is sequentially compact if every sequences of elements of has a convergent subsequence.     Compactness in metric spaces   Let be a metric space. The following statements are equivalent.    is compact.     is limit point compact.     is sequentially compact.       "
+},
+{
+  "id": "th_Tychonoff",
+  "level": "2",
+  "url": "s_compact_metric.html#th_Tychonoff",
+  "type": "Theorem",
+  "number": "1.16.1",
+  "title": "Tychonoff theorem.",
+  "body": " Tychonoff theorem   Given any collection of compact topological spaces, the product space (with product topology) is compact.    For now we only prove the Tychonoff theorem for finite products. It suffices, by induction, to show that the product of two compact spaces is compact.   "
+},
+{
+  "id": "lem_tube",
+  "level": "2",
+  "url": "s_compact_metric.html#lem_tube",
+  "type": "Lemma",
+  "number": "1.16.2",
+  "title": "Tube lemma.",
+  "body": " Tube lemma   Let be topological spaces, and assume is compact. Given any and open set containing , there is an open set such that .   "
+},
+{
+  "id": "d_bounded_diam_distance",
+  "level": "2",
+  "url": "s_compact_metric.html#d_bounded_diam_distance",
+  "type": "Definition",
+  "number": "1.16.3",
+  "title": "Bounded, diameter, and distance to sets.",
+  "body": " Bounded, diameter, and distance to sets   Let be a metric space, let be a nonempty set, and let .  The diameter of , denoted , is defined as . The set is bounded if .  The distance  from to is defined as .   "
+},
+{
+  "id": "th_Heine_Borel",
+  "level": "2",
+  "url": "s_compact_metric.html#th_Heine_Borel",
+  "type": "Theorem",
+  "number": "1.16.4",
+  "title": "Heine-Borel theorem.",
+  "body": " Heine-Borel theorem   Let . Recall that the Euclidean metric let and box metric both induce the Euclidean topology on . For any the following conditions are equivalent.    is compact.     is closed and bounded with respect to (equivalently, with respect to ).      "
+},
+{
+  "id": "cor_extreme_value_theorem",
+  "level": "2",
+  "url": "s_compact_metric.html#cor_extreme_value_theorem",
+  "type": "Corollary",
+  "number": "1.16.5",
+  "title": "Extreme value theorem.",
+  "body": " Extreme value theorem   Let be continuous. If is compact, then there exist points such that and .   "
+},
+{
+  "id": "d_Lebesgue_number",
+  "level": "2",
+  "url": "s_compact_metric.html#d_Lebesgue_number",
+  "type": "Definition",
+  "number": "1.16.6",
+  "title": "Lebesgue number.",
+  "body": " Lebesgue number   Let be a metric space. A Lebesgue number for an open covering is a positive real number satisfying the following condition: if , then for some .   "
+},
+{
+  "id": "cor_Lebesgue_number",
+  "level": "2",
+  "url": "s_compact_metric.html#cor_Lebesgue_number",
+  "type": "Corollary",
+  "number": "1.16.7",
+  "title": "Lebesgue number.",
+  "body": " Lebesgue number   If is a compact metric space, then any open covering of has a Lebesgue number.   "
+},
+{
+  "id": "cor_continuous_uniformcontinuous",
+  "level": "2",
+  "url": "s_compact_metric.html#cor_continuous_uniformcontinuous",
+  "type": "Corollary",
+  "number": "1.16.8",
+  "title": "Compact: continuous implies uniformly continuous.",
+  "body": " Compact: continuous implies uniformly continuous   Let be a continuous function between the metric spaces and . If is compact, then is uniformly continuous: , for all there exists a such that if , then .   "
+},
+{
+  "id": "d_limit_point_compact",
+  "level": "2",
+  "url": "s_compact_metric.html#d_limit_point_compact",
+  "type": "Definition",
+  "number": "1.16.9",
+  "title": "Limit point compact.",
+  "body": " Limit point compact   A topological space is limit point compact if all infinite subsets of have a limit point.   "
+},
+{
+  "id": "th_compact_implies_limitpoint",
+  "level": "2",
+  "url": "s_compact_metric.html#th_compact_implies_limitpoint",
+  "type": "Theorem",
+  "number": "1.16.10",
+  "title": "Compact implies limit point compact.",
+  "body": " Compact implies limit point compact   If is compact, then is limit point compact.   "
+},
+{
+  "id": "d_sequentially_compact",
+  "level": "2",
+  "url": "s_compact_metric.html#d_sequentially_compact",
+  "type": "Definition",
+  "number": "1.16.11",
+  "title": "Sequentially compact.",
+  "body": " Sequentially compact   A topological space is sequentially compact if every sequences of elements of has a convergent subsequence.   "
+},
+{
+  "id": "th_compact_metric",
+  "level": "2",
+  "url": "s_compact_metric.html#th_compact_metric",
+  "type": "Theorem",
+  "number": "1.16.12",
+  "title": "Compactness in metric spaces.",
+  "body": " Compactness in metric spaces   Let be a metric space. The following statements are equivalent.    is compact.     is limit point compact.     is sequentially compact.      "
 },
 {
   "id": "appendix-notation",
