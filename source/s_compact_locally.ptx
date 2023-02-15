@@ -1,0 +1,207 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_locally">
+  <title>Locally compact spaces and compactification</title>
+<definition xml:id="d_locally_compact">
+    <title>Locally compact space</title>
+    
+    <statement>
+        <p>
+        A topological space <m>X</m> is <term>locally compact at <m>x\in X</m></term> if there is a compact neighborhood of <m>x</m>: <ie/>, if there is a compact set <m>K</m> and open set <m>U</m> containing <m>x</m> such that <m>U\subseteq K</m>.  The space <m>X</m> is <term>locally compact</term> if it is locally compact at all points <m>x\in X</m>.   
+        </p>
+    </statement>
+</definition>    
+<theorem xml:id="th_onepoint_compactification">
+    <title>One-point compactification</title>
+    <statement>
+        <p>
+            Let <m>X</m> be a Hausdorff space. The following statements are equivalent. 
+            <ol>
+                <li>
+                    <p>
+                        <m>X</m> is locally compact. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        There exists a compact Hausdorff space <m>Y</m> and continuous injection <m>\iota\colon X\hookrightarrow Y</m> such that 
+                        <ol>
+                            <li>
+                                <p>
+                                    <m>\iota\colon X\hookrightarrow \iota(X)</m> is a homeomorphism, and 
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <m>Y-\iota(X)</m> is a single point. 
+                                </p>
+                            </li>
+                        </ol>
+                    </p>
+                </li>
+            </ol>
+        Furthermore, in this case, the compact space <m>Y</m> is unique up to homeomorphism. 
+        </p>
+    </statement>
+</theorem>
+
+<definition xml:id="d_embedding">
+    <title>Embedding</title>
+    <statement>
+        <p>
+          An <term>embedding</term> between topological spaces <m>X</m> and <m>Y</m> is an injective continuous function <m>f\colon X\rightarrow Y</m> such that <m>f\colon X\rightarrow f(X)</m> is a homeomorphism (with respect to the subspace topology on <m>f(X)</m>).   
+        </p>
+        <p>
+            An embedding <m>f\colon X\rightarrow Y</m> is <term>open</term> (resp., <term>closed</term>) if <m>f(X)</m> is an open (resp. closed) subset of <m>Y</m>: equivalently, if the embedding is an open (resp., a  closed) map. 
+        </p>
+    </statement>
+</definition>
+<definition xml:id="d_compactification">
+    <statement>
+        <p>
+            A <term>compactification</term> of a topological space <m>X</m> is an embedding <m>\iota\colon X\hookrightarrow Y</m>, where <m>Y</m> is compact and <m>\overline{\iota(X)}=Y</m>. 
+        </p>
+        <p>
+            A compactification <m>\iota\colon X\hookrightarrow Y</m> is a <term>one-point compactification</term> if <m>Y-\iota(X)=\{p\}</m> is a single point. 
+        </p>
+    </statement>
+</definition>
+<project>
+    <title>One-point compactification</title>
+    <p>
+        Let <m>X</m> be locally compact and Hausdorff. If <m>X</m> is not compact, the embedding <m>\iota\colon X\rightarrow Y</m>, where <m>Y=X\coprod \{p\}</m> with topology as described in <xref ref="th_onepoint_compactification"/> is a one-point compactification of <m>X</m>. 
+    </p>
+    
+</project>
+<example xml:id="eg_onepoint_compact_in_R">
+    <title>One-point compactification of <m>\R</m></title>
+    <p>
+        We consider <m>\R</m> with the standard topology. 
+    <ol>
+        <li>
+            <p>
+                Produce a one-point compactification of <m>\iota\colon (-\pi/2,\pi/2)\hookrightarrow Y</m> where <m>Y</m> is a familiar space.  
+            </p>
+        </li>
+        <li>
+            <p>
+                Produce a one-point compactification of <m>\iota\colon \R\hookrightarrow Y</m> where <m>Y</m> is a familiar space.  
+            </p>
+        </li>
+        <li>
+            <p>
+                Use (2) to identify the one-point compactification of <m>\Z</m> as a subspace of a familiar space. 
+            </p>
+        </li>
+    </ol>
+</p>
+<solution>
+    <p>
+        <ol>
+            <li>
+                <p>
+                    The map <m>\iota\colon (-\pi/2,\pi/2)\hookrightarrow S^1</m> defined as <m>\iota(t)=(\cos 2t, \sin 2t)</m> is an open embedding of <m>(-\pi/2, \pi/2)</m> onto <m>S^1-\{(-1,0)\}</m>. Thus this is a realization of the one-point compactification of <m>(-\pi/2, \pi/2)</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Since <m>\arctan\colon \R\rightarrow (-\pi/2,\pi/2)</m> is a homeomorphism, the map <m>\lambda</m> defined as the composition 
+                    <me>
+                        \R\xrightarrow{\arctan} (\pi/2,\pi/2)\xrightarrow{\iota} S^1
+                    </me>
+                    is an open embedding of <m>\R</m> onto <m>S^1-\{(-1,0)\}</m>, providing a realization of the one-point compactification of <m>\R</m>.  Note that we have by definition <m>\lambda(t)=(\cos(2\arctan t), \sin(2\arctan t))</m>.  
+                </p>
+            </li>
+            <li>
+                <p>
+                   Since the inclusion <m>i\colon \Z\hookrightarrow \R</m> is a closed embedding, the restriction 
+                   <md>
+                    <mrow>\lambda\vert_\Z\colon \Z \amp \hookrightarrow S^1</mrow>  
+                    <mrow>n \amp \mapsto (\cos(2\arctan n),\sin(2\arctan n))</mrow>
+                   </md>
+                   is an embedding (neither open nor closed) of <m>\Z</m> into <m>S^1</m>. Restricting the codomain to the closed (hence compact) subset <m>Y=\lambda(\Z)\cup\{(-1,0)\}</m> we get a one-point compactification 
+                   <me>
+                    \Z\hookrightarrow \{(-1,0)\}\cup \{(\cos(2\arctan n),\sin(2\arctan n))\colon n\in \Z\}
+                   </me>. 
+                </p>
+            </li>
+        </ol>
+    </p>
+</solution>
+</example>
+
+<project xml:id="top_eg_stereographic_projection">
+    <title>Stereographic projection</title>
+    <p>
+        Let <m>P=(0,0,1)</m>, the <q>north pole</q> of <m>S^2</m>. Given any <m>Q=(a,b,c)\in S^2-\{P\}</m> the line <m>\ell</m> passing through <m>Q</m> and <m>P</m> intersects the <m>xy</m>-plane in the unique point <m>Q'=(a/(1-c), b/(1-c),0)</m>. The corresponding map 
+        <md>
+            <mrow> \phi\colon S^2-\{P\} \amp \rightarrow \R^2</mrow>
+            <mrow>(a,b,c) \amp \mapsto (a/(1-c), b/(1-c))</mrow>
+        </md>
+        can easily be shown to be a homeomorphism, with inverse 
+        <md>
+            <mrow>\psi\colon \R^2 \amp \mapsto S^2-\{P\}</mrow>
+            <mrow>(x,y) \amp \mapsto \left(\frac{2x}{x^2+y^2+1},\frac{2y}{x^2+y^2+1}, \frac{x^2+y^2-1}{x^2+y^2+1}\right)</mrow>
+        </md>.
+    The map <m>\phi</m> is called the <term>stereographic projection</term> onto <m>\R^2</m>. The open embedding <m>\psi\colon \R^2\hookrightarrow S^2</m> realizes <m>S^2</m> as the one-point compactification of <m>\R^2</m>. 
+    </p>
+    <p>
+    Not surprisingly, this result generalizes easily to <m>\R^n</m>. There is a homeomorphism from <m>S^n-\{(0,0,\dots, 1)</m> to <m>\R^n</m> mapping <m>Q=(a_0,a_1,\dots, a_n)</m> to <m>(a_0/(1-a_n), a_1/(a_n-1),\dots, a_{n-1}/(a_n-1)</m>, whose inverse realizes <m>S^n</m> as the one-point compactification of <m>\R^n</m>. 
+    </p>
+    
+</project>
+
+
+<theorem xml:id="th_locallycompact">
+    <title>Local compactness equivalence</title>
+    <statement>
+        <p>
+           Let <m>X</m> be a Hausdorff space. The following are equivalent. 
+           <ol>
+            <li>
+                <p>
+                    <m>X</m> is locally compact. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    For all <m>x\in X</m>, and for all open sets <m>U</m> containing <m>x</m>, there is an open neighborhood <m>V</m> of <m>x</m> such that <m>\overline{V}\subseteq U</m> and <m>\overline{V}</m> is compact. 
+                </p>
+            </li>
+           </ol> 
+        </p>
+    </statement>
+    <proof>
+        <p>
+            It is clear that (2) implies (1): for any <m>x\in X</m>, taking <m>U=X</m>, we get an open neighborhood <m>V\ni x</m> such that <m>\overline{V}</m> is compact. Thus <m>K</m> is a compact neighborhood of <m>x</m>. 
+        </p>
+        <p>
+            We now show (1) implies (2). Munkres' proof elegantly uses the one-point compactification of <m>X</m>. Solely by way of contrast I proceed more directly. Fix <m>x\in X</m> and open neighborhood <m>U\ni x</m>. Since <m>X</m> is locally compact, we have <m>x\in U'\subseteq K</m> for some open set <m>U'</m> and compact set <m>K</m>. Taking <m>U'\cap U</m> we may assume further that <m>U'\subseteq U</m>. The set <m>C=K-U</m> is a closed subset of the compact set <m>K</m>, hence compact. Since <m>X</m> is Hausdorff, we can find disjoint open sets <m>V', W'</m> containing <m>x</m> and <m>C</m>, respectively. (See <xref ref="th_compact_Haus_closed"/>.) Let <m>V=V'\cap U</m>. Since <m>\overline{V}\subseteq K</m> is a closed subset of a compact set, it is compact. Furthermore, since <m>\overline{V}</m> is disjoint from <m>C=K-U</m>, we must have <m>V\subseteq\overline{V}\subseteq U</m>. 
+        </p>
+    </proof>
+</theorem>
+<corollary xml:id="cor_locallycompact_char">
+    <title>Locally compact Hausdorff spaces</title>
+    <statement>
+        <p>
+            Let <m>X</m> be a Hausdorff space. The following statements are equivalent.
+            <ol>
+                <li>
+                    <p>
+                        <m>X</m> is locally compact. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>X</m> is a homeomorphic to an open subspace of a compact Hausdorff space. 
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </statement>
+    <proof>
+        <p>
+            That (1) implies (2) follows from <xref ref="th_onepoint_compactification"/>. For the converse, assume <m>X</m> is homeomorphic to the open set <m>U\subseteq Y</m>, where <m>Y</m> is compact and Hausdorff. We may use the homeomorphism to identify <m>X</m> with <m>U</m>: thus we think of <m>X\subseteq Y</m> as an open subspace of <m>Y</m>. Now, since <m>Y</m> is compact, it is locally compact. Hence by <xref ref="cor_locallycompact_char"/>, given any <m>x\in X</m> we can find an open <m>V\ni x</m> such that <m>\overline{V}\subseteq X</m> and <m>\overline{V}</m> is compact. This shows that every <m>x\in X</m> has a compact neighborhoof <m>K=\overline{V}\subseteq X</m>, as desired.  
+        </p>
+    </proof>
+</corollary>
+
+</section>
