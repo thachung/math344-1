@@ -2134,6 +2134,96 @@ var ptx_lunr_docs = [
   "body": " Compactness in metric spaces   Let be a metric space. The following statements are equivalent.    is compact.     is limit point compact.     is sequentially compact.      "
 },
 {
+  "id": "s_locally",
+  "level": "1",
+  "url": "s_locally.html",
+  "type": "Section",
+  "number": "1.17",
+  "title": "Locally compact spaces and compactification",
+  "body": " Locally compact spaces and compactification   Locally compact space   A topological space is locally compact at if there is a compact neighborhood of : , if there is a compact set and open set containing such that . The space is locally compact if it is locally compact at all points .     One-point compactification   Let be a Hausdorff space. The following statements are equivalent.    is locally compact.    There exists a compact Hausdorff space and continuous injection such that    is a homeomorphism, and     is a single point.      Furthermore, in this case, the compact space is unique up to homeomorphism.     Embedding   An embedding between topological spaces and is an injective continuous function such that is a homeomorphism (with respect to the subspace topology on ).  An embedding is open (resp., closed ) if is an open (resp. closed) subset of : equivalently, if the embedding is an open (resp., a closed) map.      A compactification of a topological space is an embedding , where is compact and .  A compactification is a one-point compactification if is a single point.     One-point compactification  Let be locally compact and Hausdorff. If is not compact, the embedding , where with topology as described in is a one-point compactification of .    One-point compactification of  We consider with the standard topology.   Produce a one-point compactification of where is a familiar space.    Produce a one-point compactification of where is a familiar space.    Use (2) to identify the one-point compactification of as a subspace of a familiar space.         The map defined as is an open embedding of onto . Thus this is a realization of the one-point compactification of .    Since is a homeomorphism, the map defined as the composition is an open embedding of onto , providing a realization of the one-point compactification of . Note that we have by definition .    Since the inclusion is a closed embedding, the restriction is an embedding (neither open nor closed) of into . Restricting the codomain to the closed (hence compact) subset we get a one-point compactification .        Stereographic projection  Let , the north pole of . Given any the line passing through and intersects the -plane in the unique point . The corresponding map can easily be shown to be a homeomorphism, with inverse . The map is called the stereographic projection onto . The open embedding realizes as the one-point compactification of .  Not surprisingly, this result generalizes easily to . There is a homeomorphism from to mapping to , whose inverse realizes as the one-point compactification of .    Local compactness equivalence   Let be a Hausdorff space. The following are equivalent.    is locally compact.    For all , and for all open sets containing , there is an open neighborhood of such that and is compact.       It is clear that (2) implies (1): for any , taking , we get an open neighborhood such that is compact. Thus is a compact neighborhood of .  We now show (1) implies (2). Munkres' proof elegantly uses the one-point compactification of . Solely by way of contrast I proceed more directly. Fix and open neighborhood . Since is locally compact, we have for some open set and compact set . Taking we may assume further that . The set is a closed subset of the compact set , hence compact. Since is Hausdorff, we can find disjoint open sets containing and , respectively. (See .) Let . Since is a closed subset of a compact set, it is compact. Furthermore, since is disjoint from , we must have .     Locally compact Hausdorff spaces   Let be a Hausdorff space. The following statements are equivalent.    is locally compact.     is a homeomorphic to an open subspace of a compact Hausdorff space.       That (1) implies (2) follows from . For the converse, assume is homeomorphic to the open set , where is compact and Hausdorff. We may use the homeomorphism to identify with : thus we think of as an open subspace of . Now, since is compact, it is locally compact. Hence by , given any we can find an open such that and is compact. This shows that every has a compact neighborhoof , as desired.    "
+},
+{
+  "id": "d_locally_compact",
+  "level": "2",
+  "url": "s_locally.html#d_locally_compact",
+  "type": "Definition",
+  "number": "1.17.1",
+  "title": "Locally compact space.",
+  "body": " Locally compact space   A topological space is locally compact at if there is a compact neighborhood of : , if there is a compact set and open set containing such that . The space is locally compact if it is locally compact at all points .   "
+},
+{
+  "id": "th_onepoint_compactification",
+  "level": "2",
+  "url": "s_locally.html#th_onepoint_compactification",
+  "type": "Theorem",
+  "number": "1.17.2",
+  "title": "One-point compactification.",
+  "body": " One-point compactification   Let be a Hausdorff space. The following statements are equivalent.    is locally compact.    There exists a compact Hausdorff space and continuous injection such that    is a homeomorphism, and     is a single point.      Furthermore, in this case, the compact space is unique up to homeomorphism.   "
+},
+{
+  "id": "d_embedding",
+  "level": "2",
+  "url": "s_locally.html#d_embedding",
+  "type": "Definition",
+  "number": "1.17.3",
+  "title": "Embedding.",
+  "body": " Embedding   An embedding between topological spaces and is an injective continuous function such that is a homeomorphism (with respect to the subspace topology on ).  An embedding is open (resp., closed ) if is an open (resp. closed) subset of : equivalently, if the embedding is an open (resp., a closed) map.   "
+},
+{
+  "id": "d_compactification",
+  "level": "2",
+  "url": "s_locally.html#d_compactification",
+  "type": "Definition",
+  "number": "1.17.4",
+  "title": "",
+  "body": "  A compactification of a topological space is an embedding , where is compact and .  A compactification is a one-point compactification if is a single point.   "
+},
+{
+  "id": "project-15",
+  "level": "2",
+  "url": "s_locally.html#project-15",
+  "type": "Topological specimen",
+  "number": "15",
+  "title": "One-point compactification.",
+  "body": " One-point compactification  Let be locally compact and Hausdorff. If is not compact, the embedding , where with topology as described in is a one-point compactification of .  "
+},
+{
+  "id": "eg_onepoint_compact_in_R",
+  "level": "2",
+  "url": "s_locally.html#eg_onepoint_compact_in_R",
+  "type": "Example",
+  "number": "1.17.5",
+  "title": "One-point compactification of <span class=\"process-math\">\\(\\R\\)<\/span>.",
+  "body": " One-point compactification of  We consider with the standard topology.   Produce a one-point compactification of where is a familiar space.    Produce a one-point compactification of where is a familiar space.    Use (2) to identify the one-point compactification of as a subspace of a familiar space.         The map defined as is an open embedding of onto . Thus this is a realization of the one-point compactification of .    Since is a homeomorphism, the map defined as the composition is an open embedding of onto , providing a realization of the one-point compactification of . Note that we have by definition .    Since the inclusion is a closed embedding, the restriction is an embedding (neither open nor closed) of into . Restricting the codomain to the closed (hence compact) subset we get a one-point compactification .      "
+},
+{
+  "id": "top_eg_stereographic_projection",
+  "level": "2",
+  "url": "s_locally.html#top_eg_stereographic_projection",
+  "type": "Topological specimen",
+  "number": "16",
+  "title": "Stereographic projection.",
+  "body": " Stereographic projection  Let , the north pole of . Given any the line passing through and intersects the -plane in the unique point . The corresponding map can easily be shown to be a homeomorphism, with inverse . The map is called the stereographic projection onto . The open embedding realizes as the one-point compactification of .  Not surprisingly, this result generalizes easily to . There is a homeomorphism from to mapping to , whose inverse realizes as the one-point compactification of .  "
+},
+{
+  "id": "th_locallycompact",
+  "level": "2",
+  "url": "s_locally.html#th_locallycompact",
+  "type": "Theorem",
+  "number": "1.17.6",
+  "title": "Local compactness equivalence.",
+  "body": " Local compactness equivalence   Let be a Hausdorff space. The following are equivalent.    is locally compact.    For all , and for all open sets containing , there is an open neighborhood of such that and is compact.       It is clear that (2) implies (1): for any , taking , we get an open neighborhood such that is compact. Thus is a compact neighborhood of .  We now show (1) implies (2). Munkres' proof elegantly uses the one-point compactification of . Solely by way of contrast I proceed more directly. Fix and open neighborhood . Since is locally compact, we have for some open set and compact set . Taking we may assume further that . The set is a closed subset of the compact set , hence compact. Since is Hausdorff, we can find disjoint open sets containing and , respectively. (See .) Let . Since is a closed subset of a compact set, it is compact. Furthermore, since is disjoint from , we must have .   "
+},
+{
+  "id": "cor_locallycompact_char",
+  "level": "2",
+  "url": "s_locally.html#cor_locallycompact_char",
+  "type": "Corollary",
+  "number": "1.17.7",
+  "title": "Locally compact Hausdorff spaces.",
+  "body": " Locally compact Hausdorff spaces   Let be a Hausdorff space. The following statements are equivalent.    is locally compact.     is a homeomorphic to an open subspace of a compact Hausdorff space.       That (1) implies (2) follows from . For the converse, assume is homeomorphic to the open set , where is compact and Hausdorff. We may use the homeomorphism to identify with : thus we think of as an open subspace of . Now, since is compact, it is locally compact. Hence by , given any we can find an open such that and is compact. This shows that every has a compact neighborhoof , as desired.   "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
