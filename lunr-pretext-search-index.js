@@ -2224,6 +2224,150 @@ var ptx_lunr_docs = [
   "body": " Locally compact Hausdorff spaces   Let be a Hausdorff space. The following statements are equivalent.    is locally compact.     is a homeomorphic to an open subspace of a compact Hausdorff space.       That (1) implies (2) follows from . For the converse, assume is homeomorphic to the open set , where is compact and Hausdorff. We may use the homeomorphism to identify with : thus we think of as an open subspace of . Now, since is compact, it is locally compact. Hence by , given any we can find an open such that and is compact. This shows that every has a compact neighborhoof , as desired.   "
 },
 {
+  "id": "s_countability_axioms",
+  "level": "1",
+  "url": "s_countability_axioms.html",
+  "type": "Section",
+  "number": "1.18",
+  "title": "Countability axioms",
+  "body": " Countability axioms   Local basis   Let be a topological space. Given , a local basis at is a collection of open neighborhoods of such that for all open containing there is a such that .     First countable   A topological space is first countable if every has a countable local basis.     Countability properties  Since we will be dealing with countability questions, it will be useful to record some important countability properties. You may use the following facts in your arguments without any justification.   A countable union of countable sets is countable.    A finite product of countable sets is countable.    If is countable, then the set of all finite subsets of is countable.    If is countable and is a surjection, then is countable.       Metric spaces are first countable  Let be a metric space. For any the collection is a countable local basis at . Thus is first countable.    First countable cofinite spaces  Let be a topological space with the cofinite topology. Prove: is first countable if and only if is countable.   Assume is countable. A nonempty open set of is of the form for some . It follows that the nonempty open sets of are in bijection with the set of all finite subsets of . By , this collection is countable. Thus has countably many open sets. Thus for any the set of all open sets containing is countable.  Assume is first countable. Take any and let be a countable local basis at . By definition we have finite for each , in which case is countable, being a countable union of countable sets. I claim , proving is countable. Indeed, take any . The set is an open set containing . Thus we have for some , in which case , or equivalently, , as desired.     Sequentially closed\/continuous   Let and be topological spaces.  Given a set , its sequential closure is the set of all for which there is a a sequence of elements of with . The set is sequentially closed if .  A function is sequentially continuous if it maps convergent sequences to convergent sequences: , if in , then in .     First countable and sequential properties   Let be a first countable space.    For any there is a nested countable local basis : , for all we have .    A set is closed if and only if it is sequentially closed.    A function is continuous if and only if it is sequentially continuous.        Given let be a countable local basis at . For each , define . (Note that since .) We have for all . Furthermore, given any open , we have . Thus forms a nested local basis.    First, it is easy to see that in any space we have . Thus in any topological space, if is closed, then we have , and thus is sequentially closed. Now assume is sequentially closed, and take . Using (1), we pick a a local basis at that is nested: , for all , . Now, for each pick an element . We have : indeed, if is any open set containing , then for some , in which case for all . Since is sequentially compact, we have . Thus , and we conclude that .    The forward direction is true in any topological space, as we have shown before. Let's prove the reverse direction. Assume is sequentially continuous. Fix any and open set containing . Assume by way of contradiction that there is no open set such that . Let be a nested local basis at . Since for all , we can find an such that . The sequence converges to : indeed, given any open containing there is an such that . Since the local basis is nested, we have for all , and hence for all . However, it is clear that does not converge to , since by construction no lies in the open set . This contradicts the fact that is sequentially compact. We conclude that is continuous.       Second countable, Lindelöf, separable   Let be a topological space. A set is dense if .    is second countable if it has a countable basis.     is Lindelöf if every open cover of has a countable subcover.     is separable if it has a countable dense subset.        The four countability axioms  We will call the properties of being first countable, second countable, Lindelöf, and separable the {\\em four countablity axioms}.    Second countable: strongest countability axiom   Let be a topological space.   If is second countable, then is first countable, Lindelöf, and separable.    If is a metric space, then being second countable, Lindelöf, and separable are all equivalent properties.          Assume is second countable and let be a countable basis.  For each , the set is easily seen to be a countable local basis at . This proves is first countable.  Let be an open cover of . For each we have for some . Since the cover , we obtain the countable subcover . This proves is Lindelöf.  For each pick . Since is a basis, it follows that is dense: indeed, given any and open set , we have for some , in which case .    This is a (classic) homework exercise. Enjoy!        is second countable   Prove that is second countable with respect to the Euclidean topology.    First observe that the set of all -tuples is countable. According to (2) of it would suffice to show that is dense in . We take the hard route and show directly that has a countable basis.  For each , let . The set , being a countable union of countable sets, is countable. I claim it is a basis. It suffices to show that given any and , we can find a such that . To this end pick such that and pick such that , so that . It follows that , as desired.     is not metrizable   Let . Show that is first countable, Lindelöf, separable, but not second countable. Conclude that is not metrizable.    For each , the set forms a countable local basis at . Thus is first countable.  It is easy to see further that is dense with respect to the left limit topology.  To see that is not second countable, consider any basis of . For each , we can find a basis element such that . Note that since for such a , the map defines an injection of into : . This proves that is uncountable.  At this point, by (2) of we know that is not metrizable, since it is separable but not second countable. See Munkres for a proof that is also Lindelöf.     First\/second countable: subspaces, images, and products      If is first countable (resp. second countable) and is a subspace, then is first countable (resp. second countable).    If is open, continuous and surjective, then if is first countable (resp. second countable), is first countable (resp. second countable).    Let be a product of topological spaces. The following statements are equivalent.    is first countable (resp. second countable).     is first countable (resp. second countable) for all and the set of all such that does not have the trivial topology is countable.   As a result, a countable product of first countable (resp. second countable) spaces is first countable.          This is an easy consequence of the fact that for any basis (or local basis) of the corresponding set is a basis (or local basis) in .    It is easy to see that such a function maps bases (or local bases) in to bases (or local bases) in .    Homework exercise. Enjoy!        First countable: continuous image   Give an example of a first countable space and continuous function such that is not first countable.     is not metrizable.  Let . Show that is not metrizable.   "
+},
+{
+  "id": "d_neighborhood_basis",
+  "level": "2",
+  "url": "s_countability_axioms.html#d_neighborhood_basis",
+  "type": "Definition",
+  "number": "1.18.1",
+  "title": "Local basis.",
+  "body": " Local basis   Let be a topological space. Given , a local basis at is a collection of open neighborhoods of such that for all open containing there is a such that .   "
+},
+{
+  "id": "d_first_countable",
+  "level": "2",
+  "url": "s_countability_axioms.html#d_first_countable",
+  "type": "Definition",
+  "number": "1.18.2",
+  "title": "First countable.",
+  "body": " First countable   A topological space is first countable if every has a countable local basis.   "
+},
+{
+  "id": "rm_countable",
+  "level": "2",
+  "url": "s_countability_axioms.html#rm_countable",
+  "type": "Remark",
+  "number": "1.18.3",
+  "title": "Countability properties.",
+  "body": " Countability properties  Since we will be dealing with countability questions, it will be useful to record some important countability properties. You may use the following facts in your arguments without any justification.   A countable union of countable sets is countable.    A finite product of countable sets is countable.    If is countable, then the set of all finite subsets of is countable.    If is countable and is a surjection, then is countable.     "
+},
+{
+  "id": "eg_metric_first_countable",
+  "level": "2",
+  "url": "s_countability_axioms.html#eg_metric_first_countable",
+  "type": "Example",
+  "number": "1.18.4",
+  "title": "Metric spaces are first countable.",
+  "body": " Metric spaces are first countable  Let be a metric space. For any the collection is a countable local basis at . Thus is first countable.  "
+},
+{
+  "id": "eg_cofinite_first_countable",
+  "level": "2",
+  "url": "s_countability_axioms.html#eg_cofinite_first_countable",
+  "type": "Example",
+  "number": "1.18.5",
+  "title": "First countable cofinite spaces.",
+  "body": " First countable cofinite spaces  Let be a topological space with the cofinite topology. Prove: is first countable if and only if is countable.   Assume is countable. A nonempty open set of is of the form for some . It follows that the nonempty open sets of are in bijection with the set of all finite subsets of . By , this collection is countable. Thus has countably many open sets. Thus for any the set of all open sets containing is countable.  Assume is first countable. Take any and let be a countable local basis at . By definition we have finite for each , in which case is countable, being a countable union of countable sets. I claim , proving is countable. Indeed, take any . The set is an open set containing . Thus we have for some , in which case , or equivalently, , as desired.   "
+},
+{
+  "id": "d_sequentially_closed_continuous",
+  "level": "2",
+  "url": "s_countability_axioms.html#d_sequentially_closed_continuous",
+  "type": "Definition",
+  "number": "1.18.6",
+  "title": "Sequentially closed\/continuous.",
+  "body": " Sequentially closed\/continuous   Let and be topological spaces.  Given a set , its sequential closure is the set of all for which there is a a sequence of elements of with . The set is sequentially closed if .  A function is sequentially continuous if it maps convergent sequences to convergent sequences: , if in , then in .   "
+},
+{
+  "id": "th_first_countable_sequences",
+  "level": "2",
+  "url": "s_countability_axioms.html#th_first_countable_sequences",
+  "type": "Theorem",
+  "number": "1.18.7",
+  "title": "First countable and sequential properties.",
+  "body": " First countable and sequential properties   Let be a first countable space.    For any there is a nested countable local basis : , for all we have .    A set is closed if and only if it is sequentially closed.    A function is continuous if and only if it is sequentially continuous.        Given let be a countable local basis at . For each , define . (Note that since .) We have for all . Furthermore, given any open , we have . Thus forms a nested local basis.    First, it is easy to see that in any space we have . Thus in any topological space, if is closed, then we have , and thus is sequentially closed. Now assume is sequentially closed, and take . Using (1), we pick a a local basis at that is nested: , for all , . Now, for each pick an element . We have : indeed, if is any open set containing , then for some , in which case for all . Since is sequentially compact, we have . Thus , and we conclude that .    The forward direction is true in any topological space, as we have shown before. Let's prove the reverse direction. Assume is sequentially continuous. Fix any and open set containing . Assume by way of contradiction that there is no open set such that . Let be a nested local basis at . Since for all , we can find an such that . The sequence converges to : indeed, given any open containing there is an such that . Since the local basis is nested, we have for all , and hence for all . However, it is clear that does not converge to , since by construction no lies in the open set . This contradicts the fact that is sequentially compact. We conclude that is continuous.     "
+},
+{
+  "id": "d_second_countable",
+  "level": "2",
+  "url": "s_countability_axioms.html#d_second_countable",
+  "type": "Definition",
+  "number": "1.18.8",
+  "title": "Second countable, Lindelöf, separable.",
+  "body": " Second countable, Lindelöf, separable   Let be a topological space. A set is dense if .    is second countable if it has a countable basis.     is Lindelöf if every open cover of has a countable subcover.     is separable if it has a countable dense subset.      "
+},
+{
+  "id": "rm_4_countable_axioms",
+  "level": "2",
+  "url": "s_countability_axioms.html#rm_4_countable_axioms",
+  "type": "Remark",
+  "number": "1.18.9",
+  "title": "The four countability axioms.",
+  "body": " The four countability axioms  We will call the properties of being first countable, second countable, Lindelöf, and separable the {\\em four countablity axioms}.  "
+},
+{
+  "id": "th_second_countable",
+  "level": "2",
+  "url": "s_countability_axioms.html#th_second_countable",
+  "type": "Theorem",
+  "number": "1.18.10",
+  "title": "Second countable: strongest countability axiom.",
+  "body": " Second countable: strongest countability axiom   Let be a topological space.   If is second countable, then is first countable, Lindelöf, and separable.    If is a metric space, then being second countable, Lindelöf, and separable are all equivalent properties.          Assume is second countable and let be a countable basis.  For each , the set is easily seen to be a countable local basis at . This proves is first countable.  Let be an open cover of . For each we have for some . Since the cover , we obtain the countable subcover . This proves is Lindelöf.  For each pick . Since is a basis, it follows that is dense: indeed, given any and open set , we have for some , in which case .    This is a (classic) homework exercise. Enjoy!      "
+},
+{
+  "id": "eg_Euclidean_second_countable",
+  "level": "2",
+  "url": "s_countability_axioms.html#eg_Euclidean_second_countable",
+  "type": "Example",
+  "number": "1.18.11",
+  "title": "<span class=\"process-math\">\\(\\R^n\\)<\/span> is second countable.",
+  "body": " is second countable   Prove that is second countable with respect to the Euclidean topology.    First observe that the set of all -tuples is countable. According to (2) of it would suffice to show that is dense in . We take the hard route and show directly that has a countable basis.  For each , let . The set , being a countable union of countable sets, is countable. I claim it is a basis. It suffices to show that given any and , we can find a such that . To this end pick such that and pick such that , so that . It follows that , as desired.   "
+},
+{
+  "id": "eg_Leftlimit_nonmetrizable",
+  "level": "2",
+  "url": "s_countability_axioms.html#eg_Leftlimit_nonmetrizable",
+  "type": "Example",
+  "number": "1.18.12",
+  "title": "<span class=\"process-math\">\\(\\R_\\ell\\)<\/span> is not metrizable.",
+  "body": " is not metrizable   Let . Show that is first countable, Lindelöf, separable, but not second countable. Conclude that is not metrizable.    For each , the set forms a countable local basis at . Thus is first countable.  It is easy to see further that is dense with respect to the left limit topology.  To see that is not second countable, consider any basis of . For each , we can find a basis element such that . Note that since for such a , the map defines an injection of into : . This proves that is uncountable.  At this point, by (2) of we know that is not metrizable, since it is separable but not second countable. See Munkres for a proof that is also Lindelöf.   "
+},
+{
+  "id": "th_first_second_countable_subspace_product",
+  "level": "2",
+  "url": "s_countability_axioms.html#th_first_second_countable_subspace_product",
+  "type": "Theorem",
+  "number": "1.18.13",
+  "title": "First\/second countable: subspaces, images, and products.",
+  "body": " First\/second countable: subspaces, images, and products      If is first countable (resp. second countable) and is a subspace, then is first countable (resp. second countable).    If is open, continuous and surjective, then if is first countable (resp. second countable), is first countable (resp. second countable).    Let be a product of topological spaces. The following statements are equivalent.    is first countable (resp. second countable).     is first countable (resp. second countable) for all and the set of all such that does not have the trivial topology is countable.   As a result, a countable product of first countable (resp. second countable) spaces is first countable.          This is an easy consequence of the fact that for any basis (or local basis) of the corresponding set is a basis (or local basis) in .    It is easy to see that such a function maps bases (or local bases) in to bases (or local bases) in .    Homework exercise. Enjoy!      "
+},
+{
+  "id": "eg_first_countable_continuous_image",
+  "level": "2",
+  "url": "s_countability_axioms.html#eg_first_countable_continuous_image",
+  "type": "Example",
+  "number": "1.18.14",
+  "title": "First countable: continuous image.",
+  "body": " First countable: continuous image   Give an example of a first countable space and continuous function such that is not first countable.   "
+},
+{
+  "id": "eg_uncountable_product",
+  "level": "2",
+  "url": "s_countability_axioms.html#eg_uncountable_product",
+  "type": "Example",
+  "number": "1.18.15",
+  "title": "<span class=\"process-math\">\\(\\R^\\R\\)<\/span> is not metrizable..",
+  "body": " is not metrizable.  Let . Show that is not metrizable.  "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
