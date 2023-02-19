@@ -1,0 +1,324 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_countability_axioms">
+  <title>Countability axioms</title>
+<definition xml:id="d_neighborhood_basis">
+    <title>Local basis</title>
+    <statement>
+        <p>
+           Let <m>X</m> be a topological space. Given <m>x\in X</m>, a <term>local basis</term> at <m>x</m> is a collection <m>\mathcal{B}_x</m> of open neighborhoods of <m>x</m> such that for all open <m>U</m> containing <m>x</m> there is a <m>B\in \mathcal{B}_x</m> such that <m>B\subseteq U</m>.  
+        </p>
+    </statement>
+</definition>
+<definition xml:id="d_first_countable">
+    <title>First countable</title>
+    <statement>
+        <p>
+          A topological space <m>X</m> is <term>first countable</term> if every <m>x\in X</m> has a countable local basis.   
+        </p>
+    </statement>
+</definition>
+<remark xml:id="rm_countable">
+    <title>Countability properties</title>
+    <p>
+        Since we will be dealing with countability questions, it will be useful to record some important countability properties. You may use the following facts in your arguments without any justification. 
+        <ol>
+            <li>
+                <p>
+                    A countable union of countable sets is countable.
+                </p>
+            </li>
+            <li>
+                <p>
+                    A finite product of countable sets is countable. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    If <m>X</m> is countable, then the set of all <em>finite</em> subsets of <m>X</m> is countable. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    If <m>X</m> is countable and <m>f\colon X\rightarrow Y</m> is a surjection, then <m>Y</m> is countable. 
+                </p>
+            </li>
+        </ol>
+    </p>
+</remark>
+<example xml:id="eg_metric_first_countable">
+    <title>Metric spaces are first countable</title>
+    <p>
+        Let <m>(X,d)</m> be a metric space. For any <m>x\in X</m> the collection 
+        <me>
+            \mathcal{B}_x=\{B_{1/n}(x)\colon n\in \Z_+\}
+        </me>
+        is a countable local basis at <m>x</m>. Thus <m>X</m> is first countable. 
+    </p>
+</example>
+<example xml:id="eg_cofinite_first_countable">
+    <title>First countable cofinite spaces</title>
+    <p>
+        Let <m>X</m> be a topological space with the cofinite topology. Prove: <m>X</m> is first countable if and only if <m>X</m> is countable. 
+    </p>
+    <solution>
+        <p>
+            Assume <m>X</m> is countable. A nonempty open set of <m>X</m> is of the form <m>U=X-\{x_1,x_2,\dots, x_n\}</m> for some <m>n</m>. It follows that the nonempty open sets of <m>X</m> are in bijection with the set of all finite subsets of <m>X</m>. By <xref ref="rm_countable"/>, this collection is countable. Thus <m>X</m> has countably many open sets. Thus for any <m>x\in X</m> the set of all open sets containing <m>x</m> is countable. 
+        </p>
+        <p>
+            Assume <m>X</m> is first countable. Take any <m>x\in X</m> and let <m>\{V_n\}</m> be a countable local basis at <m>x</m>. By definition we have <m>V_n^c</m> finite for each <m>n</m>, in which case <m>\{x\}\cup \bigcup_{n=1}^\infty V_n^c</m> is countable, being a countable union of countable sets. I claim <m>X=\{x\}\cup \bigcup_{n=1}^\infty V_n^c</m>, proving <m>X</m> is countable. Indeed, take any <m>y\ne x</m>. The set <m>U=X-\{y\}</m> is an open set containing <m>x</m>. Thus we have <m>V_n\subseteq X-\{y\}</m> for some <m>n</m>, in which case <m>\{y\}\subseteq V_n^c</m>, or equivalently, <m>y\in V_n^c</m>, as desired. 
+        </p>
+    </solution>
+</example>
+<definition xml:id="d_sequentially_closed_continuous">
+    <title>Sequentially closed/continuous</title>
+    <statement>
+        <p>
+            Let <m>X</m> and <m>Y</m> be topological spaces.
+        </p>
+        <p>
+         Given a set <m>A\subseteq X</m>, its <term>sequential closure</term> is the set <m>\operatorname{sc} A</m> of all <m>x\in X</m> for which there is a a sequence <m>(x_n)_{n=1}^\infty</m> of elements of <m>A</m> with <m>x_n\rightarrow x</m>. The set <m>A</m> is <term>sequentially closed</term> if <m>\operatorname{sc} A=A</m>. 
+        </p>
+        <p>
+            A function <m>f\colon X\rightarrow Y</m> is <term>sequentially continuous</term> if it maps convergent sequences to convergent sequences: <ie/>, if <m>x_n\rightarrow x</m> in <m>X</m>, then <m>f(x_n)\rightarrow f(y)</m> in <m>Y</m>. 
+        </p>
+    </statement>
+</definition>
+<theorem xml:id="th_first_countable_sequences">
+    <title>First countable and sequential properties</title>
+    
+    <statement>
+        <p>
+           Let <m>X</m> be a first countable space.  
+        </p>
+        <ol>
+            <li>
+                <p>
+                    For any <m>x\in X</m> there is a nested countable local basis <m>B_x=\{V_n\colon n\in \Z_+\}</m>: <ie/>, for all <m>n\geq 1</m> we have <m>N_n\supseteq N_{n+1}</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    A set <m>A\subseteq X</m> is closed if and only if it is sequentially closed. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    A function <m>f\colon X\rightarrow Y</m> is continuous if and only if it is sequentially continuous. 
+                </p>
+            </li>
+        </ol>
+    </statement>
+    <proof>
+        <ol>
+            <li>
+                <p>
+                    Given <m>x\in X</m> let <m>\{U_n\colon n\in \Z_+\}</m> be a countable local basis at <m>x</m>. For each <m>n\geq 1</m>, define <m>V_n=U_1\cap U_2\cap\cdots \cap U_n</m>. (Note that <m>V_n\ne\emptyset</m> since <m>x\in V_n</m>.) We have <m>V_n\supseteq V_{n+1}</m> for all <m>n\geq 1</m>. Furthermore, given any open <m>U\ni x</m>, we have 
+                    <m>V_n\subseteq U_n\subseteq U</m>. Thus <m>\{V_n\}</m> forms a nested local basis. 
+                </p>
+            </li>
+            <li>
+                <p>
+                First, it is easy to see that in any space we have <m>A\subseteq \operatorname{sc} A\subseteq \overline{A}</m>. Thus in any topological space, if <m>A</m> is closed, then we have <m>A=\operatorname{sc} A=\overline{A}</m>, and thus <m>A</m> is sequentially closed. Now assume <m>A</m> is sequentially closed, and take <m>x\in \overline{A}</m>.  Using (1), we pick a a local basis <m>\{V_n\colon n\in \Z_+\}</m> at <m>x</m> that is nested: <ie/>, for all <m>n\geq 1</m>, <m>V_n\supseteq V_{n+1}</m>. Now, for each <m>n\in \Z_+</m> pick an element <m>x_n\in V_n\cap A</m>. We have <m>x_n\rightarrow x</m>: indeed, if <m>U\ni x</m> is any open set containing <m>x</m>, then <m>V_N\subseteq U</m> for some <m>n</m>, in which case  <m>x_k\in V_k\subseteq U</m> for all <m>k\geq N</m>. Since <m>A</m> is sequentially compact, we have <m>x\in A</m>. Thus <m>\overline{A}\subseteq A</m>, and we conclude that <m>A=\overline{A}</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    The forward direction is true in any topological space, as we have shown before. Let's prove the reverse direction. Assume <m>f\colon X\rightarrow Y</m> is sequentially continuous. Fix any <m>x\in X</m> and open set <m>U</m> containing <m>f(x)=y\in Y</m>. Assume by way of contradiction that there is no open set <m>V\ni x</m> such that <m>f(V)\subseteq U</m>. Let <m>\{V_n\}_{n=1}^\infty</m> be a nested local basis at <m>x</m>. Since <m>f(V_n)\not\subseteq U</m> for all <m>n</m>, we can find an <m>x_n\in V_n</m> such that <m>f(x_n)\notin U</m>. The sequence <m>(x_n)</m> converges to <m>x</m>: indeed, given any open <m>V</m> containing <m>x</m> there is an <m>N</m> such that <m>V_N\subseteq V</m>. Since the local basis is nested, we have <m>V_k\subseteq V_N\subseteq V</m> for all <m>k\geq N</m>, and hence <m>x_k\in V</m> for all <m>k\geq N</m>. However, it is clear that <m>(f(x_n))</m> does not converge to <m>f(x)=y</m>, since by construction no <m>f(x_n)</m> lies in the open set <m>U</m>. This contradicts the fact that <m>f</m> is sequentially compact. We conclude that <m>f</m> is continuous. 
+                </p>
+            </li>
+        </ol>
+    </proof>
+</theorem>
+
+<definition xml:id="d_second_countable">
+    <title>Second countable, Lindelöf, separable</title>
+    <statement>
+        <p>
+            Let <m>X</m> be a topological space. A set <m>A\subseteq X</m> is <term>dense</term> if <m>\overline{A}=X</m>. 
+            <ul>
+                <li>
+                    <p>
+                        <m>X</m> is <term>second countable</term> if it has a countable basis. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>X</m> is <term>Lindelöf</term> if every open cover of <m>X</m> has a countable subcover. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>X</m> is <term>separable</term> if it has a countable dense subset. 
+                    </p>
+                </li>
+            </ul>
+        </p>
+    </statement>
+</definition>
+<remark xml:id="rm_4_countable_axioms">
+    <title>The four countability axioms</title>
+    <p>
+        We will call the properties of being first countable, second countable, Lindelöf, and separable the {\em four countablity axioms}. 
+    </p>
+</remark>
+<theorem xml:id="th_second_countable">
+    <title>Second countable: strongest countability axiom</title>
+    <statement>
+        <p>
+            Let <m>X</m> be a topological space.
+            <ol>
+                <li>
+                    <p>
+                        If <m>X</m> is second countable, then <m>X</m> is first countable, Lindelöf, and separable. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If <m>X</m> is a metric space, then being second countable, Lindelöf, and separable are all equivalent properties. 
+                    </p>
+                </li>
+            </ol> 
+        </p>
+    </statement>
+    <proof>
+        <p>
+            <ol>
+                <li>
+                    <p>
+                        Assume <m>X</m> is second countable and let <m>\mathcal{B}=\{B_n\}_{n=1}^\infty</m> be a countable basis. 
+                    </p>
+                    <p>
+                        For each <m>x</m>, the set <m>\mathcal{B}_x=\{B\in \mathcal{B}\colon x\in B\}</m> is easily seen to be a countable local basis at <m>x</m>. This proves <m>X</m> is first countable.  
+                    </p>
+                    <p>
+                        Let <m>X=\bigcup_{i\in I}U_i</m> be an open cover of <m>X</m>. For each <m>B_n\in \mathcal{B}</m> we have <m>B_n\in U_{i_n}</m> for some <m>i_n\in I</m>. Since the <m>B_n</m> cover <m>X</m>, we obtain the countable subcover <m>X=\bigcup_{n=1}^\infty U_{i_n}</m>. This proves <m>X</m> is Lindelöf. 
+                    </p>
+                    <p>
+                        For each <m>B_n\in \mathcal{B}</m> pick <m>x_n\in B_n</m>. Since <m>\mathcal{B}</m> is a basis, it follows that <m>A=\{x_n\}_{n=1}^\infty</m> is dense: indeed, given any <m>x</m> and open set <m>U\ni x</m>, we have <m>x\in B_n\subseteq U</m> for some <m>B_n</m>, in which case <m>x_n\in U</m>. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        This is a (classic) homework exercise. Enjoy!
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </proof>
+</theorem>
+<example xml:id="eg_Euclidean_second_countable">
+    <title><m>\R^n</m> is second countable</title>
+    <statement>
+        <p>
+        Prove that <m>\R^n</m> is second countable with respect to the Euclidean topology. 
+    </p>
+</statement>
+    <solution>
+        <p>
+            First observe that the set <m>\Q^n</m> of all <m>n</m>-tuples is countable. According to (2) of <xref ref="th_second_countable"/> it would suffice to show that <m>\Q^n</m> is dense in <m>\R^n</m>. We take the hard route and show directly that <m>\R^n</m> has a countable basis. </p>
+            
+            <p>For each <m>\boldx\in \Q^n</m>, let <m>\mathcal{B}_\boldx=\{B_{1/n}(\boldx)\colon n\in \Z_+\}</m>. The set 
+            <me>
+            \mathcal{B}=\bigcup_{\boldx\in \Q^n}\mathcal{B}_\boldx
+            </me>,
+            being a countable union of countable sets, is countable. I claim it is a basis. It suffices to show that given any <m>\boldy=(y_1,y_2,\dots, y_n)\in \R^n</m> and <m>\epsilon &gt; 0</m>, we can find a <m>B_{1/m}(\boldx)\in \mathcal{B}</m> such that <m>y\in B_{1/m}(\boldx)\subseteq B_\epsilon(\boldy)</m>. To this end pick <m>m\in \Z_+</m> such that <m>1/m&lt; \epsilon/2</m> and pick <m>\boldx\in \Q^n</m>  such that <m>\abs{x_i-y_i}&lt; 1/mn</m>, so that <m>d(\boldx, \boldy)&lt; 1/m&lt; \epsilon/2</m>. It follows that <m>\boldy\in B_{1/m}(\boldx)\subseteq B_{\epsilon}(\boldy)</m>, as desired.  
+        </p>
+    </solution>
+</example>
+
+<example xml:id="eg_Leftlimit_nonmetrizable">
+    <title><m>\R_\ell</m> is not metrizable</title>
+    <statement>
+        <p>
+        Let <m>X=\R_\ell</m>. Show that <m>X</m> is first countable, Lindelöf, separable, but not second countable. Conclude that <m>\R_\ell</m> is not metrizable. 
+    </p>
+</statement>
+<solution>
+    <p>
+        For each <m>x\in \R</m>, the set <m>\mathcal{B}_x=\{[x,q)\colon q\in \Q\}</m> forms a countable local basis at <m>x</m>. Thus <m>X</m> is first countable. 
+    </p>
+    <p>
+        It is easy to see further that <m>\Q\subseteq \R_\ell</m> is dense with respect to the left limit topology. 
+    </p>
+    <p>
+        To see that <m>X</m> is not second countable, consider any basis <m>\mathcal{B}</m> of <m>X</m>. For each <m>x\in \R</m>, we can find a basis element <m>B_x\in \mathcal{B}</m> such that <m>x\in B_x\subseteq [x,x+1)</m>. Note that since <m>\inf B_x=x</m> for such a <m>B_x</m>, the map <m>x\mapsto B_x</m> defines an injection of <m>\R</m> into <m>\mathcal{B}</m>: <m>B_x=B_y\implies \inf B_x=\inf B_y\implies x=y</m>. This proves that <m>\mathcal{B}</m> is uncountable. 
+    </p>
+    <p>
+        At this point, by (2) of <xref ref="th_second_countable"/> we know that <m>\R_\ell</m> is not metrizable, since it is separable but not second countable. See Munkres for a proof that <m>\R_\ell</m> is also Lindelöf. 
+    </p>
+</solution>
+    
+</example>
+
+<theorem xml:id="th_first_second_countable_subspace_product">
+    <title>First/second countable: subspaces, images, and products</title>
+    <statement>
+        <p>
+        <ol>
+            <li>
+                <p>
+                    If <m>X</m> is first countable (resp. second countable) and <m>Y\subseteq X</m> is a subspace, then <m>Y</m> is first countable (resp. second countable). 
+                </p>
+            </li>
+            <li>
+                <p>
+                    If <m>f\colon X\rightarrow Y</m> is open, continuous and surjective, then if <m>X</m> is first countable (resp. second countable), <m>Y</m> is first countable (resp. second countable). 
+                </p>
+            </li>
+            <li>
+                <p>
+                Let <m>X=\prod_{i\in I}X_i</m> be a product of topological spaces. The following statements are equivalent. 
+                <ol marker="i">
+                    <li>
+                        <p>
+                           <m>X</m> is first countable (resp. second countable).  
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>X_i</m> is first countable  (resp. second countable) for all <m>i\in I</m> and the set <m>J</m> of all <m>j\in I</m> such that <m>X_j</m> does not have the trivial topology is countable.  
+                        </p>
+                    </li>
+                </ol>
+                As a result, a countable product of first countable (resp. second countable) spaces is first countable.  
+            </p>
+            </li>
+        </ol> 
+        </p>
+    </statement>
+    <proof>
+        <p>
+            <ol>
+                <li>
+                    <p>
+                        This is an easy consequence of the fact that for any basis (or local basis) <m>\mathcal{B}</m> of <m>X</m> the corresponding set <m>\mathcal{B}_Y=\{B\cap Y\colon B\in \mathcal{B}\}</m> is a basis (or local basis) in <m>Y</m>. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        It is easy to see that such a function <m>f</m> maps bases (or local bases) in <m>X</m> to bases (or local bases) in <m>Y</m>. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Homework exercise. Enjoy! 
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </proof>
+</theorem>
+<example xml:id="eg_first_countable_continuous_image">
+    <title>First countable: continuous image</title>
+    <statement>
+        <p>
+            Give an example of a first countable space <m>X</m> and continuous function <m>f\colon X\rightarrow Y</m> such that <m>f(X)</m> is not first countable.
+        </p>
+    </statement>
+</example>
+<example xml:id="eg_uncountable_product">
+    <title><m>\R^\R</m> is not metrizable.</title>
+    <p>
+        Let <m>X=\R^\R=\prod_{r\in \R}\R</m>. Show that <m>X</m> is not metrizable. 
+    </p>
+</example>
+</section>

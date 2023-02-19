@@ -17,4 +17,5 @@
   <xi:include  href="s_compact_def.ptx"/>
   <xi:include  href="s_compact_metric.ptx"/>
   <xi:include  href="s_compact_locally.ptx"/>
+  <xi:include  href="s_countability_axioms.ptx"/>
 </chapter>
