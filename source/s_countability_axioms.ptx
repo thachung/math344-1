@@ -56,9 +56,12 @@
 </example>
 <example xml:id="eg_cofinite_first_countable">
     <title>First countable cofinite spaces</title>
-    <p>
-        Let <m>X</m> be a topological space with the cofinite topology. Prove: <m>X</m> is first countable if and only if <m>X</m> is countable. 
-    </p>
+    <statement>
+        <p>
+            Let <m>X</m> be a topological space with the cofinite topology. Prove: <m>X</m> is first countable if and only if <m>X</m> is countable. 
+        </p>
+    </statement>
+        
     <solution>
         <p>
             Assume <m>X</m> is countable. A nonempty open set of <m>X</m> is of the form <m>U=X-\{x_1,x_2,\dots, x_n\}</m> for some <m>n</m>. It follows that the nonempty open sets of <m>X</m> are in bijection with the set of all finite subsets of <m>X</m>. By <xref ref="rm_countable"/>, this collection is countable. Thus <m>X</m> has countably many open sets. Thus for any <m>x\in X</m> the set of all open sets containing <m>x</m> is countable. 
@@ -88,7 +91,6 @@
     <statement>
         <p>
            Let <m>X</m> be a first countable space.  
-        </p>
         <ol>
             <li>
                 <p>
@@ -106,8 +108,11 @@
                 </p>
             </li>
         </ol>
+    </p>
     </statement>
     <proof>
+        <p>
+            
         <ol>
             <li>
                 <p>
@@ -126,6 +131,7 @@
                 </p>
             </li>
         </ol>
+    </p>
     </proof>
 </theorem>
 

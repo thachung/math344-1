@@ -1,0 +1,238 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_regular">
+  <title>Regular spaces</title>
+<definition xml:id="d_separated">
+    <title>Separated by open sets</title>
+    <statement>
+        <p>
+            Let <m>X</m> be a topological space. Subsets <m>A,B\subseteq X</m> are <term>separated by open sets</term> if there exist disjoint open sets <m>U, V</m> such that <m>A\subseteq U</m> and <m>B\subseteq V</m>. 
+        </p>
+    </statement>
+</definition>
+  <definition xml:id="d_regular_normal">
+    <title>Regular and normal spaces</title>
+    <statement>
+        <p>
+        Let <m>X</m> be a topological space. 
+        <ul>
+            <li>
+                <p>
+                    <m>X</m> is <term>regular</term> if <m>X</m> is <m>T_1</m>, and given any closed set <m>C</m> and any <m>x\notin C</m>, the sets <m>\{x\}</m> and <m>C</m> can be separated by open sets. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>X</m> is <term>normal</term> if <m>X</m> is <m>T_1</m>, and any two disjoint closed sets of <m>X</m> can be separated by open sets.  
+                </p>
+            </li>
+        </ul>
+        </p>
+    </statement>
+</definition>
+<remark xml:id="rm_separated">
+<title>Separation axioms</title>
+<p>
+    The properties of being <m>T_1</m>, Hausdorff, regular, or normal are called <em>separation axioms</em> as they articulate how various subsets can be separated by open sets. Below you find the descriptions of these properties using the <foreign>Trennungsaxiom</foreign> schema.
+    <me>
+        \begin{array}{c|c}
+        \text{Name} \amp T_n \\
+        \hline 
+        T_1 \amp T_1 \\
+        \text{Hausdorff} \amp T_2 \\ 
+        \text{Regular} \amp T_3 \\ 
+        \text{Normal} \amp T_4
+        \end{array}
+    </me>
+    A further remark about the use of <q>regular</q> and <q>normal</q> in the literature: some texts do not include the <m>T_1</m> condition in these notions, and describe the properties we define as <q>regular Hausdorff</q> and <q>normal regular</q>. There is considerably less ambiguity in the literature when using the <m>T_n</m> descriptions, but you should still be careful. 
+</p>
+</remark>
+<remark>
+    <title>Trennungsaxiom implications</title>
+    <p>
+        It is easy to see that <m>T_4\implies T_3\implies T_2\implies T_1</m>. Furthermore, your argument for the first two implications will reveal why the <m>T_1</m> condition is needed. 
+    </p> 
+</remark>
+
+<example xml:id="eg_regular">
+    <title>Elementary examples</title>
+    <statement>
+        <p>
+            <ol>
+                <li>
+                    <p>
+                        Discrete spaces are regular and normal. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        An infinite space with the cofinite topology is neither regular nor normal. 
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </statement>
+    <solution>
+        <p>
+            (1) is clear since all sets are both open and closed. (2) follows from the fact that in this space any two nonempty open sets intersect nontrivially. 
+        </p>
+    </solution>
+</example>
+<theorem xml:id="th_metrizable_implies_normal">
+    <title>Metric spaces are normal</title>
+    <statement>
+        <p>
+           If  <m>X</m> is a metric space, then <m>X</m> is normal.  
+        </p>
+    </statement>
+    <proof>
+        <p>
+            Let <m>A,B</m> be disjoint closed subsets of <m>X</m>. For each <m>a\in A</m> we can find an <m>\epsilon_a&gt; 0 </m> such that <m>B_{\epsilon_a}(a)\cap B=\emptyset</m>. Similarly for each <m>b\in B</m> we can find an <m>\epsilon_b&gt; 0</m> such that <m>B_{\epsilon_b}(b)\cap A=\emptyset</m>. I claim the open sets 
+            <md>
+                <mrow>U \amp =\bigcup_{a\in A}B_{\epsilon_a/2}(a)</mrow>
+                <mrow>V \amp =\bigcup_{b\in B}B_{\epsilon_b/2}(b)</mrow>
+            </md>
+            are disjoint, proving <m>A</m> and <m>B</m> are separated by open sets. Indeed if  <m>x\in U\cap V</m>, then <m>x\in B_{\epsilon_a/2}(a)\cap B_{\epsilon_b/2}(b)</m> for some <m>a\in A</m> and <m>b\in B</m>. Without loss of generality we may assume that <m>\epsilon_a\geq \epsilon_b</m>. But then we would have 
+            <md>
+                <mrow>d(x,b) \amp \geq d(a,b)-d(a,x) \amp (\text{triangle ineq.}) </mrow>
+                <mrow> \amp \geq \epsilon_a-d(a,x) \amp (b\notin B_{\epsilon_a}(a))</mrow>
+                <mrow> \amp \geq \epsilon_a/2</mrow>
+                <mrow> \amp \geq \epsilon_b/2</mrow>
+            </md>. 
+            This is a contradiction since we assumed <m>x\in B_{\epsilon_b/2}(b)</m>. 
+        </p>
+    </proof>
+</theorem>
+<example xml:id="eg_RK_not_regular">
+    <title><m>\R_K</m> is not regular</title>
+    <statement>
+        <p>
+            Prove: <m>\R_K</m> is Hausdorff, but not regular. 
+        </p>
+    </statement>
+    <solution>
+        <p>
+            Since the <m>K</m>-topology is finer than the standard topology on <m>\R</m>, <m>\R_K</m> is Hausdorff. To see that it is not regular, recall that <m>K=\{1/n\colon n\in \Z_+\}</m> is closed. I'll show that we cannot separate 0 and <m>K</m> with open sets. Indeed, suppose we have open disjoint sets <m>U, V</m> containing <m>0, K</m> respectively. Since <m>U</m> is open, it must contain an open basis element $B$ containing <m>0</m>; and since <m>U\cap K=\emptyset</m>, this basis element can be chosen of the form <m>(-\epsilon, \epsilon)-K</m>. Now choose <m>n\in \Z_+</m> such that <m>1/n\in (-\epsilon, \epsilon)</m>. Since <m>1/n\in K</m> we can find a basis element of the form <m>(1/n-\delta, 1/n+\delta)</m> that is contained in <m>V</m>. Furthermore, shrinking <m>\delta</m> if necessary, we can assume that <m>(1/n-\delta, 1/n+\delta)\subseteq (-\epsilon, \epsilon)</m>. But then clearly <m>(1/n-\delta, 1/n+\delta)\cap \left((-\epsilon, \epsilon)-K\right)\ne\emptyset</m>, and hence also <m>U\cap V\ne \emptyset</m>. Contradiction!
+        </p>
+    </solution>
+</example>
+<theorem xml:id="th_regular_normal_equivalence">
+    <title>Regular and normal equivalences</title>
+    <statement>
+        <p>
+           Let <m>X</m> be a <m>T_1</m>-space.  
+            <ol>
+                <li>
+                    <p>
+                        <m>X</m> is regular if and only if for all <m>x\in X</m> and open set <m>U\ni x</m>, there is an open set <m>V\ni x</m> such that <m>\overline{V}\subseteq U</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>X</m> is normal if and only if for any closed set <m>A</m> and open set <m>U</m> containing <m>A</m>, there is an open set <m>V</m> containing <m>A</m> satisfying <m>\overline{V}\subseteq U</m>. 
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </statement>
+    <proof>
+        <p>
+            <ol>
+                <li>
+                    <p>
+                        First, assume <m>X</m> is regular. Given <m>x</m> and <m>U</m> as described, we can separate <m>\{x\}</m> and the closed set <m>C=X-U</m> by open sets <m>V</m> and <m>V'</m>. It follows that <m>\overline{V}\subseteq U</m>: indeed, given any <m>y\in X-U=C</m>, the open set <m>V'</m> contains <m>y</m> and does not intersect with <m>V</m>. 
+                    </p>
+                    <p>
+                        Conversely, assume for all <m>x\in X</m> and open sets <m>U\ni x</m> we can find an open set <m>V</m> satisfying <m>x\in V\subseteq\overline{V}\subseteq U</m>. Given any closed set <m>C</m> and element <m>x\notin X</m>, letting <m>U=X-C</m>, we see that there is an open set <m>V</m> satisfying <m>x\in V\subseteq \overline{V}\subseteq U</m>. The open sets <m>V</m> and <m>V'=X-\overline{V}</m> are then easily seen to separate <m>x</m> and <m>C</m>.  
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        This proof is very similar to the last. Essenially you need only replace <m>x</m> with a closed set <m>A</m> throughout.  
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </proof>
+</theorem>
+<theorem xml:id="th_locally_compact_regular">
+    <title>Locally compact implies regular</title>
+    <statement>
+        <p>
+            Let <m>X</m> be locally compact and Hausdorff. Prove: <m>X</m> is regular. 
+        </p>
+    </statement>
+    <proof>
+        <p>
+            This is an easy consequence of <xref ref="th_regular_normal_equivalence"/> and <xref ref="th_locally_compact_equivalence"/>.
+        </p>
+    </proof>
+</theorem>
+<remark>
+    <title>Locally compact and non-normal</title>
+    <p>
+        Yes, there are examples of locally compact <m>T_1</m>-spaces that are not normal. They are not particularly easy to build, however. Look it up! 
+    </p>
+</remark>
+
+<example xml:id="eg_Rl_regular">
+    <title><m>\R_\ell</m> is regular</title>
+    <statement>
+        <p>
+            Prove: <m>\R_\ell</m> is regular. 
+        </p>
+    </statement>
+    <solution>
+        <p>
+            Since <m>\R_\ell</m> has a finer topology than <m>\R</m>, it is <m>T_1</m>. We will use the equivalence (1) from <xref ref="th_regular_normal_equivalence"/>. Given any <m>a\in \R</m> and open set <m>U\ni a</m>, we can find <m>b</m> such that <m>V=[a,b)\subseteq U</m>. But <m>V=\overline{V}</m> is closed! (Prove this.) Thus we have found an open <m>V</m> containing <m>a</m> such that <m>\overline{V}\subseteq U</m>. 
+        </p>
+    </solution>
+</example>
+<remark xml:id="rm_regular_open_closed_basis">
+    <title>Basis of clopen sets</title>
+    <p>
+        The argument from <xref ref="eg_Rl_regular"/> is easily generalized to show that any <m>T_1</m>-space that has a basis consisting of sets that are both open and closed (<ie/>, <q>clopen</q> sets) is regular.  
+    </p>
+    
+</remark>
+<theorem xml:id="th_regular_props">
+    <title>Regularity: subspace and product properties</title>
+    <statement>
+        <p>
+            <ol>
+                <li>
+                    <p>
+                        Subspaces of regular spaces are regular. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Products of regular spaces are regular. 
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </statement>
+    <proof>
+        <p>
+            <ol>
+                <li>
+                    <p>
+                        Assume <m>Y</m> is a subspace of the regular space <m>X</m>. We know already that subspaces of <m>T_1</m>-spaces are <m>T_1</m>, so <m>Y</m> is <m>T_1</m>. Next take any <m>y\in Y</m> and any set <m>C\subseteq Y</m> not containing <m>y</m> that is closed in <m>Y</m>. We have <m>C=C'\cap Y</m> for some closed set <m>C'\subseteq X</m>. Since <m>y\notin C'</m> and <m>X</m> is regular, we can find disjoint open sets <m>U, V</m> that separate <m>y</m> and <m>C'</m> in <m>X</m>. The disjoint open (in <m>Y</m>) sets <m>U'=U\cap Y</m> and <m>V'=V\cap Y</m> are then a separation of <m>y</m> and <m>C</m> in <m>Y</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                       We use (1) from <xref ref="th_regular_normal_equivalence"/>. Given <m>x=(x_i)_{i\in I}</m> and open set <m>U</m> containing <m>x</m>, choose a basis element of the form <m>\prod_{k=1}^nU_{i_k}\times \prod_{i\ne i_k}X_i\subseteq U</m> containing <m>x</m>. Since each <m>X_i</m> is regular, we can find open sets <m>V_{i_k}\subseteq X_{i_k}</m> satisfying <m>x\in \overline{V_{i_k}}\subseteq U_{i_k}</m>. Letting <m>V=\prod_{k=1}^nV_{i_k}\times\prod_{i\ne i_k}X_i</m>, we have <me>
+                        x\in \overline{V}=\prod_{k=1}^n\overline{V_{i_k}}\times\prod_{i\ne i_k}X_i\subseteq \prod_{k=1}^nU_{i_k}\times\prod_{i\ne i_k}X_i\subseteq U 
+                       </me>.  
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </proof>
+</theorem>
+<remark>
+    <p>
+        Interestingly, neither of the statements of <xref ref="th_regular_props"/> are true if <q>regular</q> is replaced with <q>normal</q>. It is worthwhile to examine what goes wrong in our arguments above if the element <m>x</m> is replaced with a closed set <m>A</m> throughout. 
+    </p>
+</remark>
+</section>

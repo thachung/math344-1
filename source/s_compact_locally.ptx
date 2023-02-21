@@ -73,26 +73,28 @@
 </project>
 <example xml:id="eg_onepoint_compact_in_R">
     <title>One-point compactification of <m>\R</m></title>
-    <p>
-        We consider <m>\R</m> with the standard topology. 
-    <ol>
-        <li>
-            <p>
-                Produce a one-point compactification of <m>\iota\colon (-\pi/2,\pi/2)\hookrightarrow Y</m> where <m>Y</m> is a familiar space.  
-            </p>
-        </li>
-        <li>
-            <p>
-                Produce a one-point compactification of <m>\iota\colon \R\hookrightarrow Y</m> where <m>Y</m> is a familiar space.  
-            </p>
-        </li>
-        <li>
-            <p>
-                Use (2) to identify the one-point compactification of <m>\Z</m> as a subspace of a familiar space. 
-            </p>
-        </li>
-    </ol>
-</p>
+    <statement>
+        <p>
+            We consider <m>\R</m> with the standard topology. 
+        <ol>
+            <li>
+                <p>
+                    Produce a one-point compactification of <m>\iota\colon (-\pi/2,\pi/2)\hookrightarrow Y</m> where <m>Y</m> is a familiar space.  
+                </p>
+            </li>
+            <li>
+                <p>
+                    Produce a one-point compactification of <m>\iota\colon \R\hookrightarrow Y</m> where <m>Y</m> is a familiar space.  
+                </p>
+            </li>
+            <li>
+                <p>
+                    Use (2) to identify the one-point compactification of <m>\Z</m> as a subspace of a familiar space. 
+                </p>
+            </li>
+        </ol>
+    </p>
+    </statement>
 <solution>
     <p>
         <ol>
@@ -150,7 +152,7 @@
 </project>
 
 
-<theorem xml:id="th_locallycompact">
+<theorem xml:id="th_locally_compact_equivalence">
     <title>Local compactness equivalence</title>
     <statement>
         <p>

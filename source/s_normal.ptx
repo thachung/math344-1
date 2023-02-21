@@ -1,0 +1,74 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_normal">
+  <title>Normal spaces</title>
+  
+
+<example xml:id="eg_Rl_normal">
+    <title><m>\R_\ell</m> is normal</title>
+    <statement>
+        <p>
+           Prove: <m>\R_\ell</m> is normal.  
+        </p>
+    </statement>
+    <solution>
+        <p>
+            Let <m>A, B</m> be disjoint closed subsets of <m>\R_\ell</m>. We can find open coverings <m>A\subseteq U=\bigcup_{a\in A}[a,x_a), B\subseteq V=\bigcup_{b\in B}[b, y_b)</m> satisfying <m>[a,x_a)\cap B=[b,y_b)\cap A=\emptyset</m> for all <m>a\in A, b\in B</m>. First observe that <m>[a,x_a)\cap [b,x_b)=\emptyset</m> for all <m>a\in A, b\in B</m>. Indeed, otherwise we'd have <m>[a,x_a)\cap [b,x_b)=[\max(a,b),\min(x_a,y_b))</m>, in which case either <m>a\in [a,x_a)\cap [b,x_b) </m> or <m>b\in [a,x_a)\cap [b,x_b)</m>: both are impossible since <m>a\notin [b,x_b)</m> and <m>b\notin [a,x_a)</m>. We conclude that <m>U\cap V=\emptyset</m>, proving that <m>A</m> and <m>B</m> can be separated by open sets. 
+        </p>
+    </solution>
+</example>
+<example>
+    <title><m>R_\ell\times R_\ell</m> is not normal</title>
+    <statement>
+        <p>
+            Prove: <m>\R_\ell\times \R_\ell</m> is not normal. 
+        </p>
+    </statement>
+    <solution>
+        <p>
+            See Munkres for the full proof. I'll content myself with a discussion of some of the key elements. First, let <m>D=\{(x,-x)\colon x\in\R\}\subseteq \R_\ell^2</m>. This set is closed in <m>\R^2</m>, and hence closed in <m>\R_\ell^2</m>, since the left limit product topology is finer than the standard topology. Next, as we saw on a previous homework, <m>D</m> is discrete as a subspace of <m>\R_\ell^2</m>: if follows that every subset of <m>D</m>, being itself closed in <m>D</m>, is closed in <m>\R_\ell^2</m>, using transitivity. In particular the two sets 
+            <md>
+                <mrow>A\amp=D\cap \Q^2=\{(x,-x)\colon x\in \Q\} \amp B\amp=D-A=\{(x,-x)\colon x\notin \Q\} </mrow>
+            </md>.
+            By what we said above, the disjoint sets <m>A</m> and <m>B</m> are closed in <m>\R_\ell^2</m>, but as it turns out you cannot separate them by open sets. The proof is not terribly difficult, but will seem somewhat convoluted without knowing about the Baire category theorem. As such, I omit it. (Munkres doesn't use this approach, choosing instead a proof by contradiction, but he outlines a proof in one of his exercises.)
+        </p>
+    </solution>
+</example>
+
+<theorem xml:id="th_regular_separable_normal">
+    <title>Regular+second countable <m>\implies</m> normal</title>
+    <statement>
+        <p>
+        If  <m>X</m> is regular and second countable, then <m>X</m> is normal. 
+        </p>
+    </statement>
+    <proof>
+        <p>
+            Assume <m>X</m> is regular and second countable. Let <m>\mathcal{B}=\{B_n\colon n\in \Z_+\}</m> be a countable basis for <m>X</m>. Let <m>A</m> and <m>B</m> be disjoint closed sets. By regularity, for each <m>a\in A</m> we can find disjoint open sets <m>U, V</m> containing <m>a</m> and <m>B</m> respectively. Since <m>\mathcal{B}</m> is a basis, we can find a basis element <m>B_{n_a}</m> such that <m>a\in B_{n_a}\subseteq \overline{B_{n_a}}\subseteq X-B</m>. The set of all such is a countable subset of <m>\mathcal{B}</m>, giving rise to a countable cover <m>A\subseteq \bigcup_{n=1}^\infty U_n</m> satisfying <m>\overline{U_n}\subseteq X-B</m> for all <m>n</m>. Similarly, we can construct an open covering <m>B\subseteq \bigcup_{n=1}^\infty V_n</m> satisfying <m>\overline{V_n}\subseteq X-A</m> for all <m>n</m>. The corresponding open sets are not necessarily disjoint. However the sets <m>U=\bigcup_{n=1}^\infty U_n'</m> and <m>V=\bigcup_{n=1}^\infty V_n'</m>, where 
+            <md>
+                <mrow>U_n'\amp =U_n-\bigcup_{k=1}^n\overline{V_k} \amp 
+                    V_n'\amp =V_n-\bigcup_{k=1}^n\overline{U_k} </mrow>
+            </md>,
+            still cover <m>A</m> and <m>B</m> respectively, are still open, and are disjoint. 
+        </p>
+    </proof>
+</theorem>
+
+<theorem xml:id="th_compact_Hausdorff_normal">
+    <title>Compact+Hausdorff <m>\implies</m> normal</title>
+    <statement>
+        <p>
+        If <m>X</m> is a compact Hausdorff space, then <m>X</m> is normal. 
+        </p>
+    </statement>
+    <proof>
+        <p>
+            Since <m>X</m> is compact Hausdorff, it is locally compact Hausdorff, and hence regular by <xref ref="th_locally_compact_regular"/>. We use the equivalent condition of normality from <xref ref="th_regular_normal_equivalence"/>. To this end, let <m>A\subseteq X</m> be closed, and let <m>U</m> be any open set containing <m>U</m>. Since <m>X</m> is regular, for all <m>a\in A</m> we can find an open set <m>V_a</m> containing <m>a</m> such that <m>\overline{V_a}\subseteq U</m>. We have <m>A\subseteq \bigcup_{a\in A}V_a</m>. Since <m>X</m> is compact and <m>A</m> is closed, <m>A</m> is compact. Hence there is a finite subcovering <m>A\subseteq V=\bigcup_{k=1}^nV_{a_k}</m>. We have 
+            <me>\overline{V}=\bigcup_{k=1}^n\overline{V_{a_k}}\subseteq U</me>,
+            as desired.
+        </p>
+    </proof>
+</theorem>
+
+
+
+
+</section>
