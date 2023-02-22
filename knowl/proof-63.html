@@ -12,15 +12,15 @@
 </head>
 <body class="ignore-math">
 <article class="hiddenproof"><h3 class="heading"><span class="type">Proof</span></h3>
-<div class="para logical">
-<div class="para">Assume <span class="process-math">\(X\)</span> is regular and second countable. Let <span class="process-math">\(\mathcal{B}=\{B_n\colon n\in \Z_+\}\)</span> be a countable basis for <span class="process-math">\(X\text{.}\)</span> Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be disjoint closed sets. By regularity, for each <span class="process-math">\(a\in A\)</span> we can find disjoint open sets <span class="process-math">\(U, V\)</span> containing <span class="process-math">\(a\)</span> and <span class="process-math">\(B\)</span> respectively. Since <span class="process-math">\(\mathcal{B}\)</span> is a basis, we can find a basis element <span class="process-math">\(B_{n_a}\)</span> such that <span class="process-math">\(a\in B_{n_a}\subseteq \overline{B_{n_a}}\subseteq X-B\text{.}\)</span> The set of all such is a countable subset of <span class="process-math">\(\mathcal{B}\text{,}\)</span> giving rise to a countable cover <span class="process-math">\(A\subseteq \bigcup_{n=1}^\infty U_n\)</span> satisfying <span class="process-math">\(\overline{U_n}\subseteq X-B\)</span> for all <span class="process-math">\(n\text{.}\)</span> Similarly, we can construct an open covering <span class="process-math">\(B\subseteq \bigcup_{n=1}^\infty V_n\)</span> satisfying <span class="process-math">\(\overline{V_n}\subseteq X-A\)</span> for all <span class="process-math">\(n\text{.}\)</span> The corresponding open sets are not necessarily disjoint. However the sets <span class="process-math">\(U=\bigcup_{n=1}^\infty U_n'\)</span> and <span class="process-math">\(V=\bigcup_{n=1}^\infty V_n'\text{,}\)</span> where</div>
-<div class="displaymath process-math">
-\begin{align*}
-U_n'\amp =U_n-\bigcup_{k=1}^n\overline{V_k} \amp 
-V_n'\amp =V_n-\bigcup_{k=1}^n\overline{U_k} \text{,}
-\end{align*}
+<div class="para logical"><ol class="decimal">
+<li>
+<div class="para">Assume <span class="process-math">\(X\)</span> is second countable and let <span class="process-math">\(\mathcal{B}=\{B_n\}_{n=1}^\infty\)</span> be a countable basis.</div>
+<div class="para">For each <span class="process-math">\(x\text{,}\)</span> the set <span class="process-math">\(\mathcal{B}_x=\{B\in \mathcal{B}\colon x\in B\}\)</span> is easily seen to be a countable local basis at <span class="process-math">\(x\text{.}\)</span> This proves <span class="process-math">\(X\)</span> is first countable.</div>
+<div class="para">Let <span class="process-math">\(X=\bigcup_{i\in I}U_i\)</span> be an open cover of <span class="process-math">\(X\text{.}\)</span> For each <span class="process-math">\(B_n\in \mathcal{B}\)</span> we have <span class="process-math">\(B_n\in U_{i_n}\)</span> for some <span class="process-math">\(i_n\in I\text{.}\)</span> Since the <span class="process-math">\(B_n\)</span> cover <span class="process-math">\(X\text{,}\)</span> we obtain the countable subcover <span class="process-math">\(X=\bigcup_{n=1}^\infty U_{i_n}\text{.}\)</span> This proves <span class="process-math">\(X\)</span> is Lindelöf.</div>
+<div class="para">For each <span class="process-math">\(B_n\in \mathcal{B}\)</span> pick <span class="process-math">\(x_n\in B_n\text{.}\)</span> Since <span class="process-math">\(\mathcal{B}\)</span> is a basis, it follows that <span class="process-math">\(A=\{x_n\}_{n=1}^\infty\)</span> is dense: indeed, given any <span class="process-math">\(x\)</span> and open set <span class="process-math">\(U\ni x\text{,}\)</span> we have <span class="process-math">\(x\in B_n\subseteq U\)</span> for some <span class="process-math">\(B_n\text{,}\)</span> in which case <span class="process-math">\(x_n\in U\text{.}\)</span>
 </div>
-<div class="para">still cover <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> respectively, are still open, and are disjoint.</div>
-</div></article><span class="incontext"><a href="s_normal.html#proof-63" class="internal">in-context</a></span>
+</li>
+<li><div class="para">This is a (classic) homework exercise. Enjoy!</div></li>
+</ol></div></article><span class="incontext"><a href="s_countability_axioms.html#proof-63" class="internal">in-context</a></span>
 </body>
 </html>

@@ -11,8 +11,14 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="case"><h4 class="heading">
-<span class="process-math">\(A\)</span> is closed.</h4> <div class="para">Take <span class="process-math">\(c\in [a,b]-A\text{.}\)</span> Since <span class="process-math">\(\{U_i\}_{i\in I}\)</span> is a cover of <span class="process-math">\([a,b]\text{,}\)</span> we have <span class="process-math">\(c\in U_{i_0}\)</span> for some <span class="process-math">\(i_0\in I\text{.}\)</span>  Since <span class="process-math">\(U_{i_0}\)</span> is open, we can find an <span class="process-math">\(\epsilon &gt; 0\)</span> such that <span class="process-math">\(U=(c-\epsilon, c+\epsilon)\cap (a,b)\subseteq U_{i_0}\text{.}\)</span> But then for all <span class="process-math">\(x\in U\)</span> we have <span class="process-math">\(x\notin A\text{:}\)</span> indeed, if for such an <span class="process-math">\(x\)</span> we had a finite subcovering <span class="process-math">\([a,x]\subseteq\bigcup_{j=1}^nU_{i_j}\text{,}\)</span> then <span class="process-math">\([a,c]\subseteq U_{i_0}\cup \bigcup_{j=1}^nU_{i_j}\)</span> would be a finite subcovering of <span class="process-math">\([a,c]\text{,}\)</span> contradicting the fact that <span class="process-math">\(c\notin A\text{.}\)</span>
-</div></article><span class="incontext"><a href="s_compact_def.html#case-32" class="internal">in-context</a></span>
+<article class="case"><h4 class="heading">Countable product.</h4> <div class="para logical">
+<div class="para">Let <span class="process-math">\(X=\prod_{n=1}^\infty X_n\)</span> where <span class="process-math">\(X_n\)</span> is connected for all <span class="process-math">\(n\text{.}\)</span> Fix any element <span class="process-math">\(x=(x_1,x_2,\dots, )\in X\text{.}\)</span> For each <span class="process-math">\(N\)</span> the set</div>
+<div class="displaymath process-math">
+\begin{equation*}
+X_N=\prod_{n=1}^NX_i\times \prod_{n=N+1}^\infty \{x_n\}\text{,}
+\end{equation*}
+</div>
+<div class="para">being homeomorphic to a finite product of connected spaces, is connected. Since <span class="process-math">\(X_N\cap X_{M}\ne \emptyset\)</span> for all <span class="process-math">\(N, M\text{,}\)</span> we conclude that <span class="process-math">\(Y=\bigcup_{N=1}^\infty X_N\)</span> is connected.</div>
+</div> <div class="para">Next, I claim that <span class="process-math">\(X=\overline{Y}\text{.}\)</span> Indeed, given any <span class="process-math">\(z=(z_1,z_2,\dots, )\)</span> and any open base element <span class="process-math">\(U=\prod_{n=1}^NU_n\times \prod_{n=N+1}^\infty X_n\)</span> containing <span class="process-math">\(z\text{,}\)</span> we have <span class="process-math">\((z_1,z_2,\dots, z_N, x_{N+1},x_{N+2},\dots)\in U\cap X_N\subseteq Y\text{.}\)</span> Since connectedness is preserved under closure, we conclude that <span class="process-math">\(X\)</span> is connected.</div></article><span class="incontext"><a href="s_connected1.html#case-32" class="internal">in-context</a></span>
 </body>
 </html>

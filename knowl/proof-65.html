@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h3 class="heading"><span class="type">Proof</span></h3>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(A,B\)</span> be disjoint closed subsets of <span class="process-math">\(X\text{.}\)</span> For each <span class="process-math">\(a\in A\)</span> we can find an <span class="process-math">\(\epsilon_a&gt; 0 \)</span> such that <span class="process-math">\(B_{\epsilon_a}(a)\cap B=\emptyset\text{.}\)</span> Similarly for each <span class="process-math">\(b\in B\)</span> we can find an <span class="process-math">\(\epsilon_b&gt; 0\)</span> such that <span class="process-math">\(B_{\epsilon_b}(b)\cap A=\emptyset\text{.}\)</span> I claim the open sets</div>
+<div class="displaymath process-math">
+\begin{align*}
+U \amp =\bigcup_{a\in A}B_{\epsilon_a/2}(a)\\
+V \amp =\bigcup_{b\in B}B_{\epsilon_b/2}(b)
+\end{align*}
+</div>
+<div class="para">are disjoint, proving <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are separated by open sets. Indeed if  <span class="process-math">\(x\in U\cap V\text{,}\)</span> then <span class="process-math">\(x\in B_{\epsilon_a/2}(a)\cap B_{\epsilon_b/2}(b)\)</span> for some <span class="process-math">\(a\in A\)</span> and <span class="process-math">\(b\in B\text{.}\)</span> Without loss of generality we may assume that <span class="process-math">\(\epsilon_a\geq \epsilon_b\text{.}\)</span> But then we would have</div>
+<div class="displaymath process-math">
+\begin{align*}
+d(x,b) \amp \geq d(a,b)-d(a,x) \amp (\text{triangle ineq.}) \\
+\amp \geq \epsilon_a-d(a,x) \amp (b\notin B_{\epsilon_a}(a))\\
+\amp \geq \epsilon_a/2\\
+\amp \geq \epsilon_b/2\text{.}
+\end{align*}
+</div>
+<div class="para">This is a contradiction since we assumed <span class="process-math">\(x\in B_{\epsilon_b/2}(b)\text{.}\)</span>
+</div>
+</div></article><span class="incontext"><a href="s_regular.html#proof-65" class="internal">in-context</a></span>
+</body>
+</html>

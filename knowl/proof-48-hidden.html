@@ -10,14 +10,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><article class="hiddenproof"><div class="para logical">
-<div class="para">(1) follows directly from (2). To prove the latter, note that for each <span class="process-math">\(y\in Y\)</span> we can find disjoint open neighborhoods <span class="process-math">\(U_{x,y}, V_y\)</span> of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> respectively. Since <span class="process-math">\(Y\subseteq \bigcup_{y\in Y}V_y\)</span> is an open covering of <span class="process-math">\(Y\text{,}\)</span> there is a finite subcovering <span class="process-math">\(Y\subseteq \bigcup_{i=1}^nV_{y_i}\text{.}\)</span> The open sets</div>
+<body class="ignore-math"><article class="hiddenproof"><div class="para">Although the statement is indeed true for arbitrary products, we prove it only for finite and countably infinite products.</div> <article class="case"><h4 class="heading">Finite products.</h4> <div class="para">Using induction it suffices to show that if <span class="process-math">\(X, Y\)</span> are connected, then <span class="process-math">\(X\times Y\)</span> is connected. First, choose any <span class="process-math">\(x_0\in X\)</span> and note that the subspace <span class="process-math">\(\{x_0\}\times Y\text{,}\)</span> being homeomorphic to <span class="process-math">\(Y\text{,}\)</span> is connected. Similarly, for any <span class="process-math">\(y_0\in Y\text{,}\)</span> the subspace <span class="process-math">\(X\times \{y_0\}\)</span> is connected. It follows from (2) of <a href="" class="xref" data-knowl="./knowl/th_connected_subspace.html" title="Theorem 1.12.5: Connectedness and subspaces">Theorem 1.12.5</a> that the set <span class="process-math">\(T_{x_0,y_0}=\{x_0\}\times Y\cup X\times \{y_0\}\)</span> is connected for any <span class="process-math">\((x_0,y_0)\in X\times Y\text{.}\)</span> Lastly, since <span class="process-math">\(T_{x,y_0}\cap T_{x',y_0\}\supseteq X\times\{y_0\}\ne \emptyset\)</span> for any <span class="process-math">\(x,x'\in X\text{,}\)</span> the union <span class="process-math">\(\bigcup_{x\in X}T_{x,y_0\}\)</span> is connected. But this union is <span class="process-math">\(X\)</span> itself.</div></article> <article class="case"><h4 class="heading">Countable product.</h4> <div class="para logical">
+<div class="para">Let <span class="process-math">\(X=\prod_{n=1}^\infty X_n\)</span> where <span class="process-math">\(X_n\)</span> is connected for all <span class="process-math">\(n\text{.}\)</span> Fix any element <span class="process-math">\(x=(x_1,x_2,\dots, )\in X\text{.}\)</span> For each <span class="process-math">\(N\)</span> the set</div>
 <div class="displaymath process-math">
-\begin{align*}
-U \amp = \bigcap_{i=1}^nU_{x,y_i}\\
-V \amp =\bigcup_{i=1}^nV_{y_i}
-\end{align*}
+\begin{equation*}
+X_N=\prod_{n=1}^NX_i\times \prod_{n=N+1}^\infty \{x_n\}\text{,}
+\end{equation*}
 </div>
-<div class="para">satisfy the desired conditions.</div>
-</div></article></body>
+<div class="para">being homeomorphic to a finite product of connected spaces, is connected. Since <span class="process-math">\(X_N\cap X_{M}\ne \emptyset\)</span> for all <span class="process-math">\(N, M\text{,}\)</span> we conclude that <span class="process-math">\(Y=\bigcup_{N=1}^\infty X_N\)</span> is connected.</div>
+</div> <div class="para">Next, I claim that <span class="process-math">\(X=\overline{Y}\text{.}\)</span> Indeed, given any <span class="process-math">\(z=(z_1,z_2,\dots, )\)</span> and any open base element <span class="process-math">\(U=\prod_{n=1}^NU_n\times \prod_{n=N+1}^\infty X_n\)</span> containing <span class="process-math">\(z\text{,}\)</span> we have <span class="process-math">\((z_1,z_2,\dots, z_N, x_{N+1},x_{N+2},\dots)\in U\cap X_N\subseteq Y\text{.}\)</span> Since connectedness is preserved under closure, we conclude that <span class="process-math">\(X\)</span> is connected.</div></article></article></body>
 </html>

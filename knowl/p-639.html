@@ -12,7 +12,15 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">Take any <span class="process-math">\(\boldx,\boldy\in \R^n-\{\boldzero\}\text{.}\)</span> If the two vectors are not scalar multiples of one another, then the straight line path connecting them is guaranteed to lie in <span class="process-math">\(\R^n-\{\boldzero\}\text{,}\)</span> using a linear independence argument. If <span class="process-math">\(\boldy=c\span x\text{,}\)</span> then since <span class="process-math">\(\dim \R^n\geq 2\text{,}\)</span> we can find a vector <span class="process-math">\(\boldz\in \R^n-\{\boldzero\}\)</span> that is not a scalar multiple of either vector. We can then construct a polygonal path lieing in <span class="process-math">\(\R^n-\{\boldzero\}\)</span> that first connects <span class="process-math">\(\boldx\)</span> to <span class="process-math">\(\boldz\)</span> via a straight line path, and then connects <span class="process-math">\(\boldz\)</span> to <span class="process-math">\(\boldy\)</span> via a straight line path.</div>
-<span class="incontext"><a href="s_connected_path.html#p-639" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(X=\prod_{n=1}^\infty X_n\)</span> where <span class="process-math">\(X_n\)</span> is connected for all <span class="process-math">\(n\text{.}\)</span> Fix any element <span class="process-math">\(x=(x_1,x_2,\dots, )\in X\text{.}\)</span> For each <span class="process-math">\(N\)</span> the set</div>
+<div class="displaymath process-math">
+\begin{equation*}
+X_N=\prod_{n=1}^NX_i\times \prod_{n=N+1}^\infty \{x_n\}\text{,}
+\end{equation*}
+</div>
+<div class="para">being homeomorphic to a finite product of connected spaces, is connected. Since <span class="process-math">\(X_N\cap X_{M}\ne \emptyset\)</span> for all <span class="process-math">\(N, M\text{,}\)</span> we conclude that <span class="process-math">\(Y=\bigcup_{N=1}^\infty X_N\)</span> is connected.</div>
+</div>
+<span class="incontext"><a href="s_connected1.html#p-639" class="internal">in-context</a></span>
 </body>
 </html>

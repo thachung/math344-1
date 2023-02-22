@@ -12,8 +12,19 @@
 </head>
 <body class="ignore-math">
 <article class="li"><h4 class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span>
 </h4>
-<div class="para">Any finite set is compact.</div></article><span class="incontext"><a href="s_compact_def.html#li-233" class="internal">in-context</a></span>
+<div class="para">Suppose <span class="process-math">\(\phi\colon [0,1]\rightarrow X\)</span> is a path connecting <span class="process-math">\((0,0)\)</span> and <span class="process-math">\((1,\sin(1)\text{.}\)</span> We can write <span class="process-math">\(\phi(t)=(\alpha(t), \beta(t))\)</span> where the component functions <span class="process-math">\(x=\alpha(t), y=\beta(t)\)</span> are both continuous. The set <span class="process-math">\(C=\{t\colon \alpha(t)=0\}=\alpha^{-1}(\{0\})\subseteq [0,1]\)</span> is closed, since <span class="process-math">\(\alpha\)</span> is continuous. Set <span class="process-math">\(t_0=\sup C=\max C\)</span> (guaranteed to exist since <span class="process-math">\(C\subseteq[0,1]\)</span> is closed), and let <span class="process-math">\(\phi(t_0)=(0,y_0)\text{.}\)</span> Note that <span class="process-math">\(t_0\ne 1\)</span> since <span class="process-math">\(\phi(1)=(1,\sin 1)\text{,}\)</span> and that for all <span class="process-math">\(t&gt; t_0\)</span> we have <span class="process-math">\(\phi(t)\in \Gamma_t\)</span> and hence <span class="process-math">\(y=\beta(t)=f(\alpha(t))\text{.}\)</span> Take <span class="process-math">\(\epsilon=1\text{.}\)</span> We will show that there is no <span class="process-math">\(\delta\)</span>-ball around <span class="process-math">\(t_0\)</span> such that <span class="process-math">\(\beta(B_\delta(t_0))\subseteq B_{1}(y_0)\text{,}\)</span> contradicting the continuity of <span class="process-math">\(\beta\text{.}\)</span>
+</div>
+<div class="para logical">
+<div class="para">For any any <span class="process-math">\(\delta&gt; 0\text{,}\)</span> <span class="process-math">\(\alpha([t_0, t_0+\delta))\)</span> is an interval since <span class="process-math">\(\alpha(t)\)</span> is continuous and <span class="process-math">\([t_0,t_0+\delta)\)</span> is connected. This means that <span class="process-math">\(\alpha([t_0,t_0+\delta))\)</span> contains an interval of the form <span class="process-math">\([0,c)\)</span> for some <span class="process-math">\(c&gt;0\text{.}\)</span> Due to the highly oscillatory nature of <span class="process-math">\(f\text{,}\)</span> we can find points <span class="process-math">\(x_1,x_2\in [0,c)\)</span> satisfying <span class="process-math">\(f(x_1)=1, f(x_2)=-1\text{.}\)</span> Since these points are in the image of <span class="process-math">\(\alpha\text{,}\)</span> we have <span class="process-math">\(x_1=\alpha(t_1)\)</span> and <span class="process-math">\(x_2=\alpha(t_2)\)</span> for some <span class="process-math">\(t_1,t_2\in (t_0,t_0+\delta)\text{.}\)</span> But then</div>
+<div class="displaymath process-math">
+\begin{align*}
+\beta(t_1) \amp =f(\alpha(t_1))=1\\
+\beta(t_2) \amp =f(\alpha(t_2))=-1\text{.}
+\end{align*}
+</div>
+<div class="para">Since <span class="process-math">\(d(\beta(t_1),\beta(t_2))=2\text{,}\)</span> we cannot have <span class="process-math">\(\beta(t_1),\beta(t_2)\in B_{1}(y_0)\text{,}\)</span> and thus <span class="process-math">\(\beta(B_\delta(t_0))\not\subseteq B_1(y_0)\text{,}\)</span> as claimed.</div>
+</div></article><span class="incontext"><a href="s_connected_path.html#li-233" class="internal">in-context</a></span>
 </body>
 </html>
