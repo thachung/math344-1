@@ -95,7 +95,7 @@
   </statement>
   <solution>
     <p>
-
+      Assume by contradiction that <m>\phi\colon \R\rightarrow \R^n</m> is a homeomorphism for some <m>n\geq 2</m>. It follows that the restriction <m>\phi\colon \R-\{0\}\rightarrow \R^n-\{\phi(0)\}</m> is a homeomorphism. This a contradiction since <m>\R-\{0\}</m> is not connected (<m>(0,\infty)</m> is open and closed in <m>\R-\{0\}</m>), but <m>\R^n-\{\phi(0)\}</m> is connected.  
     </p>
   </solution>
 </example>
@@ -112,28 +112,56 @@
   </statement>
   <solution>
     <p>
-
+      Fix <m>n\geq 1</m> and consider the map <m>\phi\colon \R^{n+1}-\{\boldzero\}\rightarrow S^n</m> defined as <m>\phi(\boldx)=\frac{\boldx}{\norm{\boldx}}</m>, where as usual 
+      <me>
+        \norm{(x_1,x_2,\dots, x_{n+1})}=\sqrt{x_1^2+x_2^2+\cdots +x_{n+1}^2}
+      </me>.
+      This map is continuous (homework exercise!) and surjective. Since <m>\R^{n+1}-\{\boldzero\}</m> is connected, we see that <m>S^n</m> is the image of a connected set under a continuous function, hence connected. 
     </p>
   </solution>
 </example>
 <project xml:id="top_eg_topologist_sine_curve">
   <title>Topologist's sine curve</title>
-  <p>
-    Define <m>f\colon (0,1]\rightarrow \R</m> as <m>f(t)=\sin(1/t)</m> for all <m>t\in (0,1)</m>. Let <m>\Gamma_f=\{(t,f(t)\in \R^2\colon t\in (0,1)\}</m>, the graph of <m>f</m>.
+    <p>
+      Define <m>f\colon (0,1]\rightarrow \R</m> as <m>f(t)=\sin(1/t)</m> for all <m>t\in (0,1)</m>. Let <m>\Gamma_f=\{(t,f(t))\in \R^2\colon t\in (0,1)\}</m>, the graph of <m>f</m>.
+    </p>
+    <p><ol>
+      <li>
+        <p>
+          The set <m>X=\overline{\Gamma_f}=\Gamma_f\cup \{0\}\times [0,1]</m> is connected.
+        </p>
+      </li>
+      <li>
+        <p>
+          The set <m>X</m> is not path connected. More specifically, we can show that <m>(0,0)</m> and <m>(1,\sin(1))</m> are not connected by a path in <m>X</m>.
+        </p>
+      </li>
+    </ol>
   </p>
-  <p><ol>
-    <li>
-      <p>
-        Prove: <m>X=\overline{\Gamma_f}=\Gamma_f\cup \{0\}\times [0,1]</m> is connected.
-      </p>
-    </li>
-    <li>
-      <p>
-        Prove: <m>X</m> is not path connected. Specifically, show that <m>(0,0)</m> and <m>(1,\sin(1))</m> are not connected by a path in <m>X</m>.
-      </p>
-    </li>
-  </ol></p>
-
+  <proof>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Since <m>(0,1]</m> is connected and <m>f\colon (0,1]\rightarrow \R</m> is continuous, its graph <m>\Gamma_f</m> is connected by <xref ref="cor_graph_connected"/>. Since closure preserves connectedness, we conclude that <m>X=\overline{\Gamma_f}</m> is connected. 
+          </p>
+        </li>
+        <li>
+          <p>
+            Suppose <m>\phi\colon [0,1]\rightarrow X</m> is a path connecting <m>(0,0)</m> and <m>(1,\sin(1)</m>. We can write <m>\phi(t)=(\alpha(t), \beta(t))</m> where the component functions <m>x=\alpha(t), y=\beta(t)</m> are both continuous. The set <m>C=\{t\colon \alpha(t)=0\}=\alpha^{-1}(\{0\})\subseteq [0,1]</m> is closed, since <m>\alpha</m> is continuous. Set <m>t_0=\sup C=\max C</m> (guaranteed to exist since <m>C\subseteq[0,1]</m> is closed), and let <m>\phi(t_0)=(0,y_0)</m>. Note that <m>t_0\ne 1</m> since <m>\phi(1)=(1,\sin 1)</m>, and that for all <m>t&gt; t_0</m> we have <m>\phi(t)\in \Gamma_t</m> and hence <m>y=\beta(t)=f(\alpha(t))</m>. Take <m>\epsilon=1</m>. We will show that there is no <m>\delta</m>-ball around <m>t_0</m> such that <m>\beta(B_\delta(t_0))\subseteq B_{1}(y_0)</m>, contradicting the continuity of <m>\beta</m>. 
+          </p>
+          <p>
+            For any any <m>\delta&gt; 0</m>, <m>\alpha([t_0, t_0+\delta))</m> is an interval since <m>\alpha(t)</m> is continuous and <m>[t_0,t_0+\delta)</m> is connected. This means that <m>\alpha([t_0,t_0+\delta))</m> contains an interval of the form <m>[0,c)</m> for some <m>c>0</m>. Due to the highly oscillatory nature of <m>f</m>, we can find points <m>x_1,x_2\in [0,c)</m> satisfying <m>f(x_1)=1, f(x_2)=-1</m>. Since these points are in the image of <m>\alpha</m>, we have <m>x_1=\alpha(t_1)</m> and <m>x_2=\alpha(t_2)</m> for some <m>t_1,t_2\in (t_0,t_0+\delta)</m>. But then 
+            <md>
+              <mrow>\beta(t_1) \amp =f(\alpha(t_1))=1</mrow>
+              <mrow>\beta(t_2) \amp =f(\alpha(t_2))=-1</mrow>
+            </md>.
+            Since <m>d(\beta(t_1),\beta(t_2))=2</m>, we cannot have <m>\beta(t_1),\beta(t_2)\in B_{1}(y_0)</m>, and thus <m>\beta(B_\delta(t_0))\not\subseteq B_1(y_0)</m>, as claimed. 
+          </p>
+        </li>
+      </ol>
+    </p>
+  </proof>
 
 </project>
 

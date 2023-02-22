@@ -52,6 +52,11 @@
       </me>.
     </p>
   </statement>
+  <proof>
+    <p>
+      See Munkres. 
+    </p>
+  </proof>
 </theorem>
 
 <theorem xml:id="th_connected_equiv">
@@ -68,21 +73,31 @@
       </li>
       <li>
         <p>
-          If <m>U\subseteq X</m> is open and closed, then <m>U\in \{\emptyset, X\}</m>.
-        </p>
-      </li>
-      <li>
-        <p>
-          There is no pair of nonempty disjoint sets <m>A,B</m>, neither of which contains limit points of the other, satisfying <m>X=A\cup B</m>.
-        </p>
-      </li>
-      <li>
-        <p>
           There is no pair of disjoint nonempty closed sets <m>C_1, C_2</m> satisfying <m>X=C_1\cup C_2</m>.
         </p>
       </li>
+      <li>
+        <p>
+          If <m>U\subseteq X</m> is open and closed, then <m>U\in \{\emptyset, X\}</m>.
+        </p>
+      </li>
+      
+      <li>
+        <p>
+          There is no pair of nonempty disjoint sets <m>A_1, A_2</m>, neither of which contains limit points of the other, satisfying <m>X=A\cup B</m>.
+        </p>
+      </li>
+      
     </ol></p>
   </statement>
+  <proof>
+    <p>
+  <m>(1)\iff (2) \iff (3)</m>. It is clear that a separation <m>X=U\cup V</m> by open sets is the same thing as a separation as described in (2), since <m>U=V^c</m> and <m>V=U^c</m> are both open and closed. Similarly, we see that there is a separation <m>X=U\cup V</m> if and only if and only if there is a nonempty open set <m>U</m> whose complement <m>U^c</m> is open and nonempty, if and only if there is a nontrival <m>U</m> that is open and closed. 
+    </p>
+    <p>
+      <m>(2)\iff (4)</m>. This equivalence follows from the observation that we have <m>X=A\cup B</m> with <m>A, B</m> as described in (4) if and only if <m>A=\overline{A}</m> and <m>B=\overline{B}</m>, if and only if <m>A</m> and <m>B</m> are disjoint and closed. 
+    </p>
+  </proof>
 </theorem>
 <theorem xml:id="th_connected_subspace">
   <title>Connectedness and subspaces</title>
@@ -112,6 +127,27 @@
     </p>
   </statement>
 </theorem>
+<proof>
+  <p>
+    <ol>
+      <li>
+        <p>
+          Given a separation <m>X=U_1\cup U_2</m>, we have <m>Y=U_1'\cup U_2'</m>, where  <m>U_i'=U_i\cap Y</m>. Since <m>U_1', U_2'</m> are disjoint open subsets of the subspace <m>Y</m>, we have <m>Y\subseteq U_1'</m> or <m>Y\subseteq U_2'</m>. It follows that <m>Y\subseteq U_1</m> or <m>Y\subseteq U_2</m>. 
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>U_1, U_2</m> be disjoint open sets satisfying <m>Y=U_1\cup U_2</m>. Take any <m>y\in \bigcap_{i\in I}Y_i</m>. We may assume without loss of generality that <m>y\in U_1</m>. Now since <m>Y_i</m> is connected for all <m>i</m> we must have <m>Y_i\subseteq U_1</m> or <m>Y\subseteq U_2</m> by (1). Since <m>y\in Y_i</m> and <m>y\in U_1</m>, it follows that <m>Y_i\subseteq U_1</m> for all <m>i\in I</m>. Thus <m>Y=\bigcup_{i\in I}Y_i\subseteq U_1</m>. We conclude that <m>U_1=Y</m>. Thus <m>Y</m> is connected. 
+        </p>
+      </li>
+      <li>
+        <p>
+          Assume <m>Y\subseteq Y'\subseteq \overline{Y}</m>, where <m>Y</m> is connected. Let <m>Y'=C\cup D</m>, where <m>C</m> and <m>D</m> are disjoint closed sets in <m>Y'</m>. By (1) we have <m>Y\subseteq C</m> or <m>Y\subseteq D</m>. Assume without loss of generality that <m>Y\subseteq C</m>. Since <m>C</m> is closed, the closure of <m>Y</m> in <m>Y'</m> is contained in <m>C</m>. But as we have seen in an earlier homework, the closure of <m>Y</m> in <m>Y'</m> is <m>Y'\cap \overline{Y}=Y'</m>. Thus <m>Y'\subseteq C</m>, or equivalently, <m>C=Y'</m>. We conclude that <m>Y'</m> is connected.  
+        </p>
+      </li>
+    </ol>
+  </p>
+</proof>
 <theorem xml:id="th_connected_continuous">
   <title>Connectedness and continuity</title>
   <statement>
@@ -148,6 +184,32 @@
       A product space <m>X=\prod_{i\in I}X_i</m> (with product topology) is connected if and only if <m>X_i</m> is connected for all <m>i\in I</m>.
     </p>
   </statement>
+  <proof>
+    <p>
+      Although the statement is indeed true for arbitrary products, we prove it only for finite and countably infinite products. 
+    </p>
+    <case>
+      <title>Finite products</title>
+    <p>
+      Using induction it suffices to show that if <m>X, Y</m> are connected, then <m>X\times Y</m> is connected. First, choose any <m>x_0\in X</m> and note that the subspace <m>\{x_0\}\times Y</m>, being homeomorphic to <m>Y</m>, is connected. Similarly, for any <m>y_0\in Y</m>, the subspace <m>X\times \{y_0\}</m> is connected. It follows from (2) of <xref ref="th_connected_subspace"/> that the set <m>T_{x_0,y_0}=\{x_0\}\times Y\cup X\times \{y_0\}</m> is connected for any <m>(x_0,y_0)\in X\times Y</m>. Lastly, since <m>T_{x,y_0}\cap T_{x',y_0\}\supseteq X\times\{y_0\}\ne \emptyset</m> for any <m>x,x'\in X</m>, the union <m>\bigcup_{x\in X}T_{x,y_0\}</m> is connected. But this union is <m>X</m> itself.  
+    </p>
+    </case>
+    <case>
+      <title>Countable product</title>
+      <p>
+        Let <m>X=\prod_{n=1}^\infty X_n</m> where <m>X_n</m> is connected for all <m>n</m>. Fix any element <m>x=(x_1,x_2,\dots, )\in X</m>. For each <m>N</m> the set 
+      <me>
+        X_N=\prod_{n=1}^NX_i\times \prod_{n=N+1}^\infty \{x_n\}
+      </me>,
+      being homeomorphic to a finite product of connected spaces, is connected. Since <m>X_N\cap X_{M}\ne \emptyset</m> for all <m>N, M</m>, we conclude that <m>Y=\bigcup_{N=1}^\infty X_N</m> is connected.  
+      </p>
+      <p>
+        Next, I claim that <m>X=\overline{Y}</m>. Indeed, given any <m>z=(z_1,z_2,\dots, )</m> and any open base element <m>U=\prod_{n=1}^NU_n\times \prod_{n=N+1}^\infty X_n</m> containing <m>z</m>, we have <m>(z_1,z_2,\dots, z_N, x_{N+1},x_{N+2},\dots)\in U\cap X_N\subseteq Y</m>. Since connectedness is preserved under closure, we conclude that <m>X</m> is connected. 
+      </p>
+
+      
+    </case>
+  </proof>
 </theorem>
 
 

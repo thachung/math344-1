@@ -32,12 +32,44 @@
             </li>
            <li>
             <p>
-                Each connected component of <m>X</m> is a disjoint union of path-connected components. 
+                Each connected component of <m>X</m> is a partition of path-connected components. 
             </p>
            </li>
         </ol>
         </p>
     </statement>
+    <proof>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Let <m>C</m> be a connected component. Since <m>C\subseteq\overline{C}</m> and <m>\overline{C}</m> is connected, we have <m>C=\overline{C}</m>. Thus <m>C</m> is closed. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Suppose <m>A</m> is connected. If <m>A\cap C\ne\emptyset</m>, then <m>A\cup C</m> is connected by (2) of <xref ref="th_connected_subspace"/>. Since <m>C</m> is maximally connected, we have <m>A\cup C=C</m>. Thus <m>A\subseteq C</m>. A similar argument applies to path connected components. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <m>C_1, C_2</m> be connected components. By the previous result, since <m>C_2</m> is maximally connected, if <m>C_1\cap C_2\ne \emptyset</m>, then <m>C_1\subseteq C_2</m>. Since <m>C_1</m> is maximally connected, <m>C_1=C_2</m>. This proves that any two distinct connected components are disjoint. 
+            </p>
+            <p>
+              Next given any <m>x\in X</m>, let <m>\mathcal{C}</m> be the set of all connected sets containing <m>x</m>. Note that <m>\\mathcal{C}</m> is nonempty since <m>\{x\}\in \mathcal{C}</m>. The set <m>C_x=\bigcup_{C\in \mathcal{C}}C</m> is easily seen to be a connected component containing <m>x</m>. Thus every element of <m>x</m> is contained in a connected component. 
+            </p>
+            <p>
+              Again, the argument for path connected components is very similar. 
+            </p>
+          </li>
+          <li>
+            <p>
+              For each <m>x\in X</m> let <m>C_x</m> denote the (unique) connected component containing <m>x</m>, and let <m>P_x</m> denote the (unique) path connected component containing <m>x</m>. Let <m>C</m> be a connected component of <m>X</m>.  For any <m>x\in X</m> we have <m>P_x\cap C\ne\emptyset</m>; since <m>P_x</m> is path connected, it is connected, and hence <m>P_x\subseteq C</m> by (1) above. It follows that <m>C=\bigcup_{x\in C}P_x</m> is a partition of <m>C</m> by path connected components.  
+            </p>
+          </li>
+        </ol>
+      </p>
+    </proof>
 </theorem>
 
 <definition xml:id="d_locally_connected">
