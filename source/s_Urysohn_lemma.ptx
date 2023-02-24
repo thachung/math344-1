@@ -1,0 +1,134 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_Urysohn_lemma">
+    <title>Urysohn lemma</title>
+    
+    <theorem xml:id="th_Urysohn_lemma">
+        <title>Urysohn lemma</title>
+        <statement>
+            <p>
+            Let <m>X</m> be a normal space. Given two nonempty disjoint closed sets <m>A</m> and <m>B</m> there is a continuous function <m>f\colon [0,1]\rightarrow \R</m> such that <m>f(A)=\{0\}</m> and <m>f(B)=\{1\}</m>.
+            </p>
+            <p>
+                It follows easily that the result is still true if we replace the interval <m>[0,1]</m> with any closed interval <m>[a,b]</m>. 
+            </p>
+        </statement>
+        <proof>
+            <p>
+                It would be difficult to improve upon Munkres' exposition of this. I give essentially a full proof below nonetheless.
+            </p>
+        </proof>
+        <proof>
+            <title>Step 1: construction of open sets <m>U_p</m></title>
+                <p>
+                  The first crucial step in the proof is to build a collection of open sets <m>\{U_p\}_{p\in \Q}</m> satisfying <m>\overline{U_p}\subseteq U_{q}</m> if <m>p&lt; q</m>. This is done by first 
+                  picking an enumeration of <m>\Q\cap [0,1]=\{p_1,p_2,\dots,\}</m> where for convenience <m>p_1=1</m> and <m>p_2=0</m>. We use the enumeration to define open sets <m>U_p</m> for each <m>p\in \Q</m> recursively as follows. Set <m>U_1=X-B</m>. Since <m>A\subseteq U_1</m>, by <xref ref="th_regular_normal_equivalence"/> we can find an open <m>U_0</m> containing <m>A</m> such that <m>\overline{U}_0\subseteq U_1</m>. Now take any <m>n\geq 2</m> and assume by induction that we constructed open sets <m>U_{p_1}, U_{p_2},\dots, U_{p_n}</m> satisfying the desired inclusion condition. Write <m>p&lt; p_{n+1} &lt; q</m> where  <m>p</m> and <m>q</m> are the immediate predecessor and successor, respectively, of <m>p_{n+1}</m> among the set <m>\{p_1,p_2,\dots, p_n\}</m>. By induction we have <m>\overline{U_p}\subseteq U_q</m>. Pick <m>U_{p_{n+1}}</m> to be any open set satisfying 
+                  <me>
+                    \overline{U_p}\subseteq U_{p_{n+1}}\subseteq \overline{U_{p_{n+1}}}\subseteq U_q
+                  </me>.
+                  Lastly define <m>U_p=\emptyset</m> for all <m>p&lt; 0</m> and <m>U_p=X</m> for all <m>p&gt; 0</m>. It is easy to see that thus defined, our collection <m>\{U_p\}_{p\in \Q}</m> satisfies the desired inclusion condition. 
+                </p>
+            </proof>
+            <proof>
+                <title>Step 2: definition of <m>f</m> and continuity</title>
+                <p>
+                Define <m>f\colon X\rightarrow \R</m> as 
+                <me>
+                    f(x)=\inf\{p\in \Q\colon x\in U_p\}
+                </me>.
+                Some easy properties of <m>f</m>:
+                <ul>
+                    <li>
+                        <p>
+                            <m>0\leq f(x)\leq 1</m> for all <m>x\in X</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>f(x)\leq p</m> for all <m>x\in \overline{U_p}</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>f(x)\geq p</m> for all <m>x\notin U_p</m>. 
+                        </p>
+                    </li>
+                </ul>
+                We prove continuity by showing that <m>f</m> is continuous at each <m>x</m>. Given <m>x\in X</m> and open set <m>(a,b)</m> containing <m>y=f(x)</m>, choose rational numbers <m>p, q</m> satisfying 
+                <me>
+                    a&lt; p&lt; y &lt; q &lt; b
+                </me>.
+                I claim <m>U_q-\overline{U_p}</m> is an open set containing <m>x</m> satisfying 
+                <me>
+                    f(U_q-\overline{U_p})\subseteq [p,q]\subseteq (a,b)
+                </me>. 
+                First, it is clear that <m>U_q-\overline{U_p}</m> is open, and it follows easily from the elementary properties of <m>f</m> quoted above that <m>x\in U_q-\overline{U_p}</m>. Next, given any <m>x'\in U_q-\overline{U_p}</m>, since <m>x'\in \overline{U_q}</m>, we have <m>f(x')\leq q</m>, and since <m>x'\notin U_p</m>, we have <m>f(x')\geq p</m>. This concludes the proof. 
+                
+                </p>
+            </proof>
+    </theorem>
+    <definition xml:id="d_separated_continuous_function">
+        <title>Separated by a continuous function</title>
+        <statement>
+            <p>
+                Let <m>X</m> be a topological space. Subsets <m>A, B\subseteq X</m> are <term>separated by a continuous function</term> if there is a continuous function <m>f\colon X\rightarrow [0,1]</m> such that <m>f(A)=\{0\}</m> and <m>f(B)=\{1\}</m>. 
+            </p>
+        </statement>
+    </definition>
+    <remark xml:id="rm_Urysohn_lemma">
+        <title>Separation in normal spaces</title>
+        <p>
+            If the closed sets <m>A, B</m> are separated by the continuous function <m>f\colon X\rightarrow [0,1]</m>, they are separated by the open sets <m>U=f^{-1}[0,1/2)</m> and <m>V=f^{-1}(1/2, 1]</m>. The Urysohn lemma tells us that in normal spaces the two notions are equivalent!
+        </p>
+    </remark>
+    <p>
+        We can explore this idea of <q>separated by a continuous function</q> in relation to some of the other <foreign>Trennnungsaxiome</foreign>. For example, taking the regularity axiom (<m>T_3</m>) and replacing the separated by open sets condition with a separated by a continuous function condition, we obtain the notion of <em>complete regularity</em>.
+    </p>
+    <definition xml:id="d_completely_regular_normal">
+        <title>Completely regular</title>
+        <statement>
+            <p>
+                A <m>T_1</m>-space <m>X</m> is <term>completely regular</term> (or <m>T_{3\frac{1}{2}}</m>) if for any closed set <m>A</m> and element <m>x\notin A</m>, there is a continuous function <m>f\colon X\rightarrow [0,1]</m>, <m>a,b\in \R</m> such that <m>f(x)=1</m> and <m>f(A)=\{0\}</m>.
+            </p>
+        </statement>
+    </definition>
+    <remark xml:id="rm_complete_regularity">
+        <title>Complete regularity</title>
+        <p>
+         With respect to regularity, separation by a continuous function is truly a stronger notion: <ie/>, there are spaces that are regular but not completely regular. This is in contrast to the situation with normality: by Urysohn's lemma a space is normal if and only if disjoint closed sets are separated by a continuous function. Note also that by Urysohn's lemma, any normal space is completely regular. Thus adding <m>T_{3\frac{1}{2}</m> to our list of <foreign>Trennungsaxiome</foreign> we still have a list of properties that satisfies <m>T_n\implies T_m</m> if <m>n\geq m</m>.
+         <me>
+            \begin{array}{c|c}
+            \text{Name} \amp T_n \\
+            \hline 
+            T_1 \amp T_1 \\
+            \text{Hausdorff} \amp T_2 \\ 
+            \text{Regular} \amp T_3 \\ 
+            \text{Completely regular} \amp T_{3\frac{1}{2}} \\ 
+            \text{Normal} \amp T_4
+            \end{array}
+        </me> 
+        </p>
+    </remark>
+    <p>
+        The notion of complete regularity strikes a nice balance between regularity and normality. In particular, it is stronger than regularity, but still behaves well with respect to subspaces and products. 
+    </p>
+    <theorem xml:id="th_complete_regularity">
+        <title>Complete regularity: subspace and product properties</title>
+        <statement>
+            <p>
+            <ol>
+                <li>
+                    <p>
+                        Subspaces of completely regular spaces are completely regular. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Products of completely regular spaces are completely regular. 
+                    </p>
+                </li>
+            </ol>
+            </p>
+        </statement>
+    </theorem>
+    
+    
+ </section>
