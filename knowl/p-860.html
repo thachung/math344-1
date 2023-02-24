@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical">
+<div class="para">The first crucial step in the proof is to build a collection of open sets <span class="process-math">\(\{U_p\}_{p\in \Q}\)</span> satisfying <span class="process-math">\(\overline{U_p}\subseteq U_{q}\)</span> if <span class="process-math">\(p&lt; q\text{.}\)</span> This is done by first picking an enumeration of <span class="process-math">\(\Q\cap [0,1]=\{p_1,p_2,\dots,\}\)</span> where for convenience <span class="process-math">\(p_1=1\)</span> and <span class="process-math">\(p_2=0\text{.}\)</span> We use the enumeration to define open sets <span class="process-math">\(U_p\)</span> for each <span class="process-math">\(p\in \Q\)</span> recursively as follows. Set <span class="process-math">\(U_1=X-B\text{.}\)</span> Since <span class="process-math">\(A\subseteq U_1\text{,}\)</span> by <a href="" class="xref" data-knowl="./knowl/th_regular_normal_equivalence.html" title="Theorem 1.19.8: Regular and normal equivalences">Theorem 1.19.8</a> we can find an open <span class="process-math">\(U_0\)</span> containing <span class="process-math">\(A\)</span> such that <span class="process-math">\(\overline{U}_0\subseteq U_1\text{.}\)</span> Now take any <span class="process-math">\(n\geq 2\)</span> and assume by induction that we constructed open sets <span class="process-math">\(U_{p_1}, U_{p_2},\dots, U_{p_n}\)</span> satisfying the desired inclusion condition. Write <span class="process-math">\(p&lt; p_{n+1} &lt; q\)</span> where  <span class="process-math">\(p\)</span> and <span class="process-math">\(q\)</span> are the immediate predecessor and successor, respectively, of <span class="process-math">\(p_{n+1}\)</span> among the set <span class="process-math">\(\{p_1,p_2,\dots, p_n\}\text{.}\)</span> By induction we have <span class="process-math">\(\overline{U_p}\subseteq U_q\text{.}\)</span> Pick <span class="process-math">\(U_{p_{n+1}}\)</span> to be any open set satisfying</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_regular_normal_equivalence.html">
+\begin{equation*}
+\overline{U_p}\subseteq U_{p_{n+1}}\subseteq \overline{U_{p_{n+1}}}\subseteq U_q\text{.}
+\end{equation*}
+</div>
+<div class="para">Lastly define <span class="process-math">\(U_p=\emptyset\)</span> for all <span class="process-math">\(p&lt; 0\)</span> and <span class="process-math">\(U_p=X\)</span> for all <span class="process-math">\(p&gt; 0\text{.}\)</span> It is easy to see that thus defined, our collection <span class="process-math">\(\{U_p\}_{p\in \Q}\)</span> satisfies the desired inclusion condition.</div>
+</div>
+<span class="incontext"><a href="s_Urysohn_lemma.html#p-860" class="internal">in-context</a></span>
+</body>
+</html>

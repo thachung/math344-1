@@ -2557,6 +2557,69 @@ var ptx_lunr_docs = [
   "body": " Compact+Hausdorff normal   If is a compact Hausdorff space, then is normal.    Since is compact Hausdorff, it is locally compact Hausdorff, and hence regular by . We use the equivalent condition of normality from . To this end, let be closed, and let be any open set containing . Since is regular, for all we can find an open set containing such that . We have . Since is compact and is closed, is compact. Hence there is a finite subcovering . We have , as desired.   "
 },
 {
+  "id": "s_Urysohn_lemma",
+  "level": "1",
+  "url": "s_Urysohn_lemma.html",
+  "type": "Section",
+  "number": "1.21",
+  "title": "Urysohn lemma",
+  "body": " Urysohn lemma   Urysohn lemma   Let be a normal space. Given two nonempty disjoint closed sets and there is a continuous function such that and .  It follows easily that the result is still true if we replace the interval with any closed interval .    It would be difficult to improve upon Munkres' exposition of this. I give essentially a full proof below nonetheless.    Step 1: construction of open sets  The first crucial step in the proof is to build a collection of open sets satisfying if . This is done by first picking an enumeration of where for convenience and . We use the enumeration to define open sets for each recursively as follows. Set . Since , by we can find an open containing such that . Now take any and assume by induction that we constructed open sets satisfying the desired inclusion condition. Write where and are the immediate predecessor and successor, respectively, of among the set . By induction we have . Pick to be any open set satisfying . Lastly define for all and for all . It is easy to see that thus defined, our collection satisfies the desired inclusion condition.    Step 2: definition of and continuity  Define as . Some easy properties of :    for all .     for all .     for all .   We prove continuity by showing that is continuous at each . Given and open set containing , choose rational numbers satisfying . I claim is an open set containing satisfying . First, it is clear that is open, and it follows easily from the elementary properties of quoted above that . Next, given any , since , we have , and since , we have . This concludes the proof.     Separated by a continuous function   Let be a topological space. Subsets are separated by a continuous function if there is a continuous function such that and .     Separation in normal spaces  If the closed sets are separated by the continuous function , they are separated by the open sets and . The Urysohn lemma tells us that in normal spaces the two notions are equivalent!   We can explore this idea of separated by a continuous function in relation to some of the other Trennnungsaxiome . For example, taking the regularity axiom ( ) and replacing the separated by open sets condition with a separated by a continuous function condition, we obtain the notion of complete regularity .   Completely regular   A -space is completely regular (or ) if for any closed set and element , there is a continuous function , such that and .     Complete regularity  With respect to regularity, separation by a continuous function is truly a stronger notion: , there are spaces that are regular but not completely regular. This is in contrast to the situation with normality: by Urysohn's lemma a space is normal if and only if disjoint closed sets are separated by a continuous function. Note also that by Urysohn's lemma, any normal space is completely regular. Thus adding to our list of Trennungsaxiome we still have a list of properties that satisfies if .    The notion of complete regularity strikes a nice balance between regularity and normality. In particular, it is stronger than regularity, but still behaves well with respect to subspaces and products.   Complete regularity: subspace and product properties      Subspaces of completely regular spaces are completely regular.    Products of completely regular spaces are completely regular.       "
+},
+{
+  "id": "th_Urysohn_lemma",
+  "level": "2",
+  "url": "s_Urysohn_lemma.html#th_Urysohn_lemma",
+  "type": "Theorem",
+  "number": "1.21.1",
+  "title": "Urysohn lemma.",
+  "body": " Urysohn lemma   Let be a normal space. Given two nonempty disjoint closed sets and there is a continuous function such that and .  It follows easily that the result is still true if we replace the interval with any closed interval .    It would be difficult to improve upon Munkres' exposition of this. I give essentially a full proof below nonetheless.    Step 1: construction of open sets  The first crucial step in the proof is to build a collection of open sets satisfying if . This is done by first picking an enumeration of where for convenience and . We use the enumeration to define open sets for each recursively as follows. Set . Since , by we can find an open containing such that . Now take any and assume by induction that we constructed open sets satisfying the desired inclusion condition. Write where and are the immediate predecessor and successor, respectively, of among the set . By induction we have . Pick to be any open set satisfying . Lastly define for all and for all . It is easy to see that thus defined, our collection satisfies the desired inclusion condition.    Step 2: definition of and continuity  Define as . Some easy properties of :    for all .     for all .     for all .   We prove continuity by showing that is continuous at each . Given and open set containing , choose rational numbers satisfying . I claim is an open set containing satisfying . First, it is clear that is open, and it follows easily from the elementary properties of quoted above that . Next, given any , since , we have , and since , we have . This concludes the proof.   "
+},
+{
+  "id": "d_separated_continuous_function",
+  "level": "2",
+  "url": "s_Urysohn_lemma.html#d_separated_continuous_function",
+  "type": "Definition",
+  "number": "1.21.2",
+  "title": "Separated by a continuous function.",
+  "body": " Separated by a continuous function   Let be a topological space. Subsets are separated by a continuous function if there is a continuous function such that and .   "
+},
+{
+  "id": "rm_Urysohn_lemma",
+  "level": "2",
+  "url": "s_Urysohn_lemma.html#rm_Urysohn_lemma",
+  "type": "Remark",
+  "number": "1.21.3",
+  "title": "Separation in normal spaces.",
+  "body": " Separation in normal spaces  If the closed sets are separated by the continuous function , they are separated by the open sets and . The Urysohn lemma tells us that in normal spaces the two notions are equivalent!  "
+},
+{
+  "id": "d_completely_regular_normal",
+  "level": "2",
+  "url": "s_Urysohn_lemma.html#d_completely_regular_normal",
+  "type": "Definition",
+  "number": "1.21.4",
+  "title": "Completely regular.",
+  "body": " Completely regular   A -space is completely regular (or ) if for any closed set and element , there is a continuous function , such that and .   "
+},
+{
+  "id": "rm_complete_regularity",
+  "level": "2",
+  "url": "s_Urysohn_lemma.html#rm_complete_regularity",
+  "type": "Remark",
+  "number": "1.21.5",
+  "title": "Complete regularity.",
+  "body": " Complete regularity  With respect to regularity, separation by a continuous function is truly a stronger notion: , there are spaces that are regular but not completely regular. This is in contrast to the situation with normality: by Urysohn's lemma a space is normal if and only if disjoint closed sets are separated by a continuous function. Note also that by Urysohn's lemma, any normal space is completely regular. Thus adding to our list of Trennungsaxiome we still have a list of properties that satisfies if .   "
+},
+{
+  "id": "th_complete_regularity",
+  "level": "2",
+  "url": "s_Urysohn_lemma.html#th_complete_regularity",
+  "type": "Theorem",
+  "number": "1.21.6",
+  "title": "Complete regularity: subspace and product properties.",
+  "body": " Complete regularity: subspace and product properties      Subspaces of completely regular spaces are completely regular.    Products of completely regular spaces are completely regular.      "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
