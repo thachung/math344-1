@@ -442,15 +442,15 @@ f(U_q-\overline{U_p})\subseteq [p,q]\subseteq (a,b)\text{.}
 </h3> <div class="para" id="p-866">If the closed sets <span class="process-math">\(A, B\)</span> are separated by the continuous function <span class="process-math">\(f\colon X\rightarrow [0,1]\text{,}\)</span> they are separated by the open sets <span class="process-math">\(U=f^{-1}[0,1/2)\)</span> and <span class="process-math">\(V=f^{-1}(1/2, 1]\text{.}\)</span> The Urysohn lemma tells us that in normal spaces the two notions are equivalent!</div></article><div class="para" id="p-867">We can explore this idea of “separated by a continuous function” in relation to some of the other <i class="foreign">Trennnungsaxiome</i>. For example, taking the regularity axiom (<span class="process-math">\(T_3\)</span>) and replacing the separated by open sets condition with a separated by a continuous function condition, we obtain the notion of <em class="emphasis">complete regularity</em>.</div>
 <article class="definition definition-like" id="d_completely_regular_normal"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.21.4</span><span class="period">.</span><span class="space"> </span><span class="title">Completely regular.</span>
-</h3> <div class="para" id="p-868">A <span class="process-math">\(T_1\)</span>-space <span class="process-math">\(X\)</span> is <dfn class="terminology">completely regular</dfn> (or <span class="process-math">\(T_{3\frac{1}{2}}\)</span>) if for any closed set <span class="process-math">\(A\)</span> and element <span class="process-math">\(x\notin A\text{,}\)</span> there is a continuous function <span class="process-math">\(f\colon X\rightarrow [0,1]\text{,}\)</span> <span class="process-math">\(a,b\in \R\)</span> such that <span class="process-math">\(f(x)=1\)</span> and <span class="process-math">\(f(A)=\{0\}\text{.}\)</span>
+</h3> <div class="para" id="p-868">A <span class="process-math">\(T_1\)</span>-space <span class="process-math">\(X\)</span> is <dfn class="terminology">completely regular</dfn> (or <span class="process-math">\(T_{3\frac{1}{2}}\)</span>) if for any closed set <span class="process-math">\(A\)</span> and element <span class="process-math">\(x_0\notin A\text{,}\)</span> there is a continuous function <span class="process-math">\(f\colon X\rightarrow [0,1]\text{,}\)</span> <span class="process-math">\(a,b\in \R\)</span> such that <span class="process-math">\(f(x_0)=1\)</span> and <span class="process-math">\(f(A)=\{0\}\text{.}\)</span>
 </div></article><article class="remark remark-like" id="rm_complete_regularity"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.21.5</span><span class="period">.</span><span class="space"> </span><span class="title">Complete regularity.</span>
 </h3> <div class="para logical" id="p-869">
-<div class="para">With respect to regularity, separation by a continuous function is truly a stronger notion: i.e., there are spaces that are regular but not completely regular. This is in contrast to the situation with normality: by Urysohn's lemma a space is normal if and only if disjoint closed sets are separated by a continuous function. Note also that by Urysohn's lemma, any normal space is completely regular. Thus adding <span class="process-math">\(T_{3\frac{1}{2}\)</span> to our list of <i class="foreign">Trennungsaxiome</i> we still have a list of properties that satisfies <span class="process-math">\(T_n\implies T_m\)</span> if <span class="process-math">\(n\geq m\text{.}\)</span>
+<div class="para">With respect to regularity, separation by a continuous function is truly a stronger notion: i.e., there are spaces that are regular but not completely regular. This is in contrast to the situation with normality: by Urysohn's lemma a space is normal if and only if disjoint closed sets are separated by a continuous function. Note also that by Urysohn's lemma, any normal space is completely regular. Thus adding <span class="process-math">\(T_{3\frac{1}{2}}\)</span> to our list of <i class="foreign">Trennungsaxiome</i> we still have a list of properties that satisfies <span class="process-math">\(T_n\implies T_m\)</span> if <span class="process-math">\(n\geq m\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\begin{array}{c|c}
+\begin{array}{r|l}
 \text{Name} \amp T_n \\
 \hline 
 T_1 \amp T_1 \\
@@ -468,7 +468,17 @@ T_1 \amp T_1 \\
 <div class="para logical" id="p-871"><ol class="decimal">
 <li id="li-309"><div class="para" id="p-872">Subspaces of completely regular spaces are completely regular.</div></li>
 <li id="li-310"><div class="para" id="p-873">Products of completely regular spaces are completely regular.</div></li>
-</ol></div></article></section></div>
+</ol></div></article><article class="hiddenproof" id="proof-74"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-74"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-74"><article class="hiddenproof"><div class="para logical" id="p-874">
+<div class="para">The proof of (1) is elementary. (See text.) The proof of (2) is more interesting. Assume <span class="process-math">\(\{X_i\}_{i\in I}\)</span> is a collection of completely regular spaces, and let <span class="process-math">\(X=\prod_{i\in I}X_i\text{.}\)</span> Let <span class="process-math">\(A\subseteq X\)</span> be a closed set, and let <span class="process-math">\(b=(b_i)_{i\in I}\)</span> be any element not contained in <span class="process-math">\(A\text{.}\)</span> Since <span class="process-math">\(X-A\)</span> is open, we can find a base open neighborhood of <span class="process-math">\(b\)</span> of the form <span class="process-math">\(U=\prod_{k=1}^n U_{i_k}\times \prod_{i\ne i_k}X_i\text{.}\)</span> For each <span class="process-math">\(1\leq k\leq n\)</span> let <span class="process-math">\(f_k\colon X_{i_k}\rightarrow [0,1]\)</span> be a continuous function satisfying <span class="process-math">\(f_k(b_{i_k})=1, f_k(U_{i_k}^c)=\{0\}\text{.}\)</span>  The function</div>
+<div class="displaymath process-math" id="md-58">
+\begin{align*}
+f\colon X \amp \rightarrow [0,1]\\
+x=(x_i)_{i\in I} \amp \mapsto \prod_{k=1}^nf_{i_k}(x_{i_k})
+\end{align*}
+</div>
+<div class="para">is continuous (product of continuous functions) and satisfies <span class="process-math">\(f(b)=1\)</span> and <span class="process-math">\(f(A)=\{0\}\text{.}\)</span>
+</div>
+</div></article></div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_normal.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="backmatter-1.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
