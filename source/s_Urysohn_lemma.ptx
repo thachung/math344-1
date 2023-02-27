@@ -86,16 +86,16 @@
         <title>Completely regular</title>
         <statement>
             <p>
-                A <m>T_1</m>-space <m>X</m> is <term>completely regular</term> (or <m>T_{3\frac{1}{2}}</m>) if for any closed set <m>A</m> and element <m>x\notin A</m>, there is a continuous function <m>f\colon X\rightarrow [0,1]</m>, <m>a,b\in \R</m> such that <m>f(x)=1</m> and <m>f(A)=\{0\}</m>.
+                A <m>T_1</m>-space <m>X</m> is <term>completely regular</term> (or <m>T_{3\frac{1}{2}}</m>) if for any closed set <m>A</m> and element <m>x_0\notin A</m>, there is a continuous function <m>f\colon X\rightarrow [0,1]</m>, <m>a,b\in \R</m> such that <m>f(x_0)=1</m> and <m>f(A)=\{0\}</m>.
             </p>
         </statement>
     </definition>
     <remark xml:id="rm_complete_regularity">
         <title>Complete regularity</title>
         <p>
-         With respect to regularity, separation by a continuous function is truly a stronger notion: <ie/>, there are spaces that are regular but not completely regular. This is in contrast to the situation with normality: by Urysohn's lemma a space is normal if and only if disjoint closed sets are separated by a continuous function. Note also that by Urysohn's lemma, any normal space is completely regular. Thus adding <m>T_{3\frac{1}{2}</m> to our list of <foreign>Trennungsaxiome</foreign> we still have a list of properties that satisfies <m>T_n\implies T_m</m> if <m>n\geq m</m>.
+         With respect to regularity, separation by a continuous function is truly a stronger notion: <ie/>, there are spaces that are regular but not completely regular. This is in contrast to the situation with normality: by Urysohn's lemma a space is normal if and only if disjoint closed sets are separated by a continuous function. Note also that by Urysohn's lemma, any normal space is completely regular. Thus adding <m>T_{3\frac{1}{2}}</m> to our list of <foreign>Trennungsaxiome</foreign> we still have a list of properties that satisfies <m>T_n\implies T_m</m> if <m>n\geq m</m>.
          <me>
-            \begin{array}{c|c}
+            \begin{array}{r|l}
             \text{Name} \amp T_n \\
             \hline 
             T_1 \amp T_1 \\
@@ -128,6 +128,16 @@
             </ol>
             </p>
         </statement>
+        <proof>
+            <p>
+                The proof of (1) is elementary. (See text.) The proof of (2) is more interesting. Assume <m>\{X_i\}_{i\in I}</m> is a collection of completely regular spaces, and let <m>X=\prod_{i\in I}X_i</m>. Let <m>A\subseteq X</m> be a closed set, and let <m>b=(b_i)_{i\in I}</m> be any element not contained in <m>A</m>. Since <m>X-A</m> is open, we can find a base open neighborhood of <m>b</m> of the form <m>U=\prod_{k=1}^n U_{i_k}\times \prod_{i\ne i_k}X_i</m>. For each <m>1\leq k\leq n</m> let <m>f_k\colon X_{i_k}\rightarrow [0,1]</m> be a continuous function satisfying <m>f_k(b_{i_k})=1, f_k(U_{i_k}^c)=\{0\}</m>.  The function 
+                <md>
+                    <mrow>f\colon X \amp \rightarrow [0,1]</mrow>
+                    <mrow>x=(x_i)_{i\in I} \amp \mapsto \prod_{k=1}^nf_{i_k}(x_{i_k})</mrow>
+                </md>
+                is continuous (product of continuous functions) and satisfies <m>f(b)=1</m> and <m>f(A)=\{0\}</m>. 
+            </p>
+        </proof>
     </theorem>
     
     
