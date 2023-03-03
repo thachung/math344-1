@@ -23,4 +23,5 @@
   <xi:include  href="s_Urysohn_lemma.ptx"/>
   <xi:include href="s_Urysohn_metrization.ptx" />
   <xi:include href="s_Tietze_extension.ptx" />
+  <xi:include href="s_nets.ptx" />
 </chapter>
