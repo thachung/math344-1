@@ -2620,6 +2620,105 @@ var ptx_lunr_docs = [
   "body": " Complete regularity: subspace and product properties      Subspaces of completely regular spaces are completely regular.    Products of completely regular spaces are completely regular.       The proof of (1) is elementary. (See text.) The proof of (2) is more interesting. Assume is a collection of completely regular spaces, and let . Let be a closed set, and let be any element not contained in . Since is open, we can find a base open neighborhood of of the form . For each let be a continuous function satisfying . The function is continuous (product of continuous functions) and satisfies and .   "
 },
 {
+  "id": "s_Urysohn_metrization",
+  "level": "1",
+  "url": "s_Urysohn_metrization.html",
+  "type": "Section",
+  "number": "1.22",
+  "title": "Urysohn metrization theorem",
+  "body": " Urysohn metrization theorem   Urysohn metrization theorem   If is a regular second countable space, then is metrizable.    The main step in the proof, one that uses , is the construction of a countable family of continuous functions satisfying the following property: for all and for all open sets containing , there is an such that and . It then follows from that the map defined as is an embedding into the metric space . Since subspaces of metric spaces are metric spaces, we conclude that is metrizable.  We now proceed with the construction. Let be a countable basis of . For all satisfying , let be a continuous function satisfying and : this guaranteed to exist by since , being regular and second countable, is normal. Since the collection is countable we can enumerate it as . Now, for any and any open set , we have for some . Since is regular, we can find a basis element such that . We have for some , , and , as desired.     Embedding theorem   Let be a -space. Given any collection of continuous functions satisfying the property that for all and for all open sets containing there is an such that and , the map defined as is an embedding into .     is injective  Since is , given any we can find an open set such that and . By assumption, there is some such that and . It follows that and hence that .    is continuous  This follows immediately from since each is continuous.    is embedding  Lastly, we prove that is an embedding mapping homeomorphically onto . Let be an open set containing an element , and let . Pick any such that and . Let be the projection map onto the -th coordinate, and define . Since is continuous and is open, the set is open in the subspace topology of . We claim that , proving that is an embedding. Since , we have . Similarly, if , then , from whence it follows that : otherwise we'd have .      Urysohn metrization theorem  Munkres gives an alternative proof that shows any regular second countable space can be embedded into with respect to the uniform metric. This argument is then generalized later to prove the Nagata-Smirnov metrization theorem, which states that is metrizable if and only if it is regular and has countable locally finite basis.     A space is completely regular if and only if it is homeomorphic to a subspace of for some set .    "
+},
+{
+  "id": "th_Urysohn_metrization",
+  "level": "2",
+  "url": "s_Urysohn_metrization.html#th_Urysohn_metrization",
+  "type": "Theorem",
+  "number": "1.22.1",
+  "title": "Urysohn metrization theorem.",
+  "body": " Urysohn metrization theorem   If is a regular second countable space, then is metrizable.    The main step in the proof, one that uses , is the construction of a countable family of continuous functions satisfying the following property: for all and for all open sets containing , there is an such that and . It then follows from that the map defined as is an embedding into the metric space . Since subspaces of metric spaces are metric spaces, we conclude that is metrizable.  We now proceed with the construction. Let be a countable basis of . For all satisfying , let be a continuous function satisfying and : this guaranteed to exist by since , being regular and second countable, is normal. Since the collection is countable we can enumerate it as . Now, for any and any open set , we have for some . Since is regular, we can find a basis element such that . We have for some , , and , as desired.   "
+},
+{
+  "id": "th_embedding_theorem",
+  "level": "2",
+  "url": "s_Urysohn_metrization.html#th_embedding_theorem",
+  "type": "Theorem",
+  "number": "1.22.2",
+  "title": "Embedding theorem.",
+  "body": " Embedding theorem   Let be a -space. Given any collection of continuous functions satisfying the property that for all and for all open sets containing there is an such that and , the map defined as is an embedding into .     is injective  Since is , given any we can find an open set such that and . By assumption, there is some such that and . It follows that and hence that .    is continuous  This follows immediately from since each is continuous.    is embedding  Lastly, we prove that is an embedding mapping homeomorphically onto . Let be an open set containing an element , and let . Pick any such that and . Let be the projection map onto the -th coordinate, and define . Since is continuous and is open, the set is open in the subspace topology of . We claim that , proving that is an embedding. Since , we have . Similarly, if , then , from whence it follows that : otherwise we'd have .    "
+},
+{
+  "id": "remark-36",
+  "level": "2",
+  "url": "s_Urysohn_metrization.html#remark-36",
+  "type": "Remark",
+  "number": "1.22.3",
+  "title": "Urysohn metrization theorem.",
+  "body": " Urysohn metrization theorem  Munkres gives an alternative proof that shows any regular second countable space can be embedded into with respect to the uniform metric. This argument is then generalized later to prove the Nagata-Smirnov metrization theorem, which states that is metrizable if and only if it is regular and has countable locally finite basis.  "
+},
+{
+  "id": "cor_completely_regular_embedding",
+  "level": "2",
+  "url": "s_Urysohn_metrization.html#cor_completely_regular_embedding",
+  "type": "Corollary",
+  "number": "1.22.4",
+  "title": "",
+  "body": "  A space is completely regular if and only if it is homeomorphic to a subspace of for some set .   "
+},
+{
+  "id": "s_Tietze_extension",
+  "level": "1",
+  "url": "s_Tietze_extension.html",
+  "type": "Section",
+  "number": "1.23",
+  "title": "Further applications of Urysohn",
+  "body": " Further applications of Urysohn   Tietze extension theorem   Let be a closed subset of the normal space .   Any continuous function can be extended to a continuous function .    Any continuous function can be extended to a continuous function .       Proof of (1)  First we show that for any continuous function , we can find a continuous function such that (i) and (ii) for all . To do so, subdivide as define and , and, using Urysohn's lemma, choose a continuous function such that and . It is easily verified that this does the trick.  Now assume we have a continuous function . Letting , we see that extends continuously to if and only if extends continuously to . Thus, we may assume . We can build a sequence of continuous functions satisfying the following properties:    for all .     for all .   It follows from some convergence of infinite sums arguments that is a well-defined continuous function from to satisfying for all . (See Munkres for these details. Basically just the Weierstrass M-test, if that is familiar to you.)  How dow we build this sequence? From our first paragraph, we can pick to be any function satisfying and . Next assume we have constructed as specified for all . Apply the same reasoning to the function , which by assumption maps to to find . By the recursion principle we get a sequence satisfying (i) and (ii) for all .    Proof of (2)  Let be a homeomorphism. A continuous function extends continuously to a function if and only if extends continuously to a function . Thus we may assume . Since , by (1) there is a function . Let . If is nonempty, then , as desired. Otherwise, since is closed and , there is a continuous function such that and . The function is an extension of on that maps into , as desired.     Space-filling curve  We will show that there is a continuous surjective function . This is thus a path or curve, whose image is all of . This called a space-filling curve , or Peano curve .  Let be the Cantor set, and choose a homeomorphism .    Partition of unity   Let . The {\\bf support} of a continuous function is defined as .  A partition of unity dominated by the open cover  is a collection of continuous functions satisfying (i) for all , and (ii) for all .     Partition of unity (finite)   Let be a normal space. Given any finite open covering of , there is a partition of unity dominated by .     Compact manifold embedding   Let be a compact -manifold. There is an embedding for some .    "
+},
+{
+  "id": "th_Tietze_extension",
+  "level": "2",
+  "url": "s_Tietze_extension.html#th_Tietze_extension",
+  "type": "Theorem",
+  "number": "1.23.1",
+  "title": "Tietze extension theorem.",
+  "body": " Tietze extension theorem   Let be a closed subset of the normal space .   Any continuous function can be extended to a continuous function .    Any continuous function can be extended to a continuous function .       Proof of (1)  First we show that for any continuous function , we can find a continuous function such that (i) and (ii) for all . To do so, subdivide as define and , and, using Urysohn's lemma, choose a continuous function such that and . It is easily verified that this does the trick.  Now assume we have a continuous function . Letting , we see that extends continuously to if and only if extends continuously to . Thus, we may assume . We can build a sequence of continuous functions satisfying the following properties:    for all .     for all .   It follows from some convergence of infinite sums arguments that is a well-defined continuous function from to satisfying for all . (See Munkres for these details. Basically just the Weierstrass M-test, if that is familiar to you.)  How dow we build this sequence? From our first paragraph, we can pick to be any function satisfying and . Next assume we have constructed as specified for all . Apply the same reasoning to the function , which by assumption maps to to find . By the recursion principle we get a sequence satisfying (i) and (ii) for all .    Proof of (2)  Let be a homeomorphism. A continuous function extends continuously to a function if and only if extends continuously to a function . Thus we may assume . Since , by (1) there is a function . Let . If is nonempty, then , as desired. Otherwise, since is closed and , there is a continuous function such that and . The function is an extension of on that maps into , as desired.   "
+},
+{
+  "id": "top_eg_space_filling",
+  "level": "2",
+  "url": "s_Tietze_extension.html#top_eg_space_filling",
+  "type": "Topological specimen",
+  "number": "17",
+  "title": "Space-filling curve.",
+  "body": " Space-filling curve  We will show that there is a continuous surjective function . This is thus a path or curve, whose image is all of . This called a space-filling curve , or Peano curve .  Let be the Cantor set, and choose a homeomorphism .  "
+},
+{
+  "id": "d_partition_of_unity",
+  "level": "2",
+  "url": "s_Tietze_extension.html#d_partition_of_unity",
+  "type": "Definition",
+  "number": "1.23.2",
+  "title": "Partition of unity.",
+  "body": " Partition of unity   Let . The {\\bf support} of a continuous function is defined as .  A partition of unity dominated by the open cover  is a collection of continuous functions satisfying (i) for all , and (ii) for all .   "
+},
+{
+  "id": "th_partition_of_unity",
+  "level": "2",
+  "url": "s_Tietze_extension.html#th_partition_of_unity",
+  "type": "Theorem",
+  "number": "1.23.3",
+  "title": "Partition of unity (finite).",
+  "body": " Partition of unity (finite)   Let be a normal space. Given any finite open covering of , there is a partition of unity dominated by .   "
+},
+{
+  "id": "cor_manifold_embedding",
+  "level": "2",
+  "url": "s_Tietze_extension.html#cor_manifold_embedding",
+  "type": "Corollary",
+  "number": "1.23.4",
+  "title": "Compact manifold embedding.",
+  "body": " Compact manifold embedding   Let be a compact -manifold. There is an embedding for some .   "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",

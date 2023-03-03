@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof"> <div class="para logical">
+<div class="para">First we show that for any continuous function <span class="process-math">\(f\colon A\rightarrow [-r,r]\text{,}\)</span> we can find a continuous function <span class="process-math">\(g\colon X\rightarrow [-r/3, r/3]\)</span> such that (i) <span class="process-math">\(\abs{g(x)}\leq \frac{1}{3}r\)</span> and (ii) <span class="process-math">\(\abs{g(a)-f(a)}\leq \frac{2}{3}r\)</span> for all <span class="process-math">\(a\in A\text{.}\)</span> To do so, subdivide <span class="process-math">\([-r,r]\)</span> as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[-r,r]=[-r,-r/3]\cup [-r/3,r/3]\cup [r/3,r]
+\end{equation*}
+</div>
+<div class="para">define <span class="process-math">\(B=f^{-1}([-r,-r/3])\)</span> and <span class="process-math">\(C=f^{-1}([r/3,r])\text{,}\)</span> and, using Urysohn's lemma, choose a continuous function <span class="process-math">\(g\colon X\rightarrow [-r/3,r/3]\)</span> such that <span class="process-math">\(g(B)=\{-r/3\}\)</span> and <span class="process-math">\(g(C)=\{r/3}\text{.}\)</span> It is easily verified that this <span class="process-math">\(g\)</span> does the trick.</div>
+</div> <div class="para logical">
+<div class="para">Now assume we have a continuous function <span class="process-math">\(f\colon A\rightarrow [a,b]\text{.}\)</span> Letting <span class="process-math">\(\phi\colon [a,b]\rightarrow [-1,1]\text{,}\)</span> we see that <span class="process-math">\(f\)</span> extends continuously to <span class="process-math">\(X\)</span> if and only if <span class="process-math">\(\phi\circ f\)</span> extends continuously to <span class="process-math">\(X\text{.}\)</span> Thus, we may assume <span class="process-math">\(f\colon X\rightarrow [-1,1]\text{.}\)</span> We can build a sequence of continuous functions <span class="process-math">\((g_n)_{n\in \Z_+}\)</span> satisfying the following properties:</div>
+<ol class="decimal">
+<li><div class="para">
+<span class="process-math">\(\abs{g_n(x)}\leq \frac{1}{3}\left(\frac{2}{3}\right)^{n-1}\)</span> for all <span class="process-math">\(x\in X\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(\abs{f(a)-\sum_{k=1}^ng_k(a)}\leq (\frac{2}{3}\right)^n\)</span> for all <span class="process-math">\(a\in A\text{.}\)</span>
+</div></li>
+</ol>
+<div class="para">It follows from some convergence of infinite sums arguments that <span class="process-math">\(\widetilde{f}(x)=\sum_{k=1}^\infty g_k(x)\)</span> is a well-defined continuous function from <span class="process-math">\(X\)</span> to <span class="process-math">\([-1,1]\)</span> satisfying <span class="process-math">\(\widetilde{f}(a)=f(a)\)</span> for all <span class="process-math">\(a\in A\text{.}\)</span> (See Munkres for these details. Basically just the Weierstrass M-test, if that is familiar to you.)</div>
+</div> <div class="para">How dow we build this sequence? From our first paragraph, we can pick <span class="process-math">\(g_1\)</span> to be any function satisfying <span class="process-math">\(\abs{g(x)}\leq \frac{1}{3}\)</span> and <span class="process-math">\(\abs{f(a)-g_1(a)}\leq \frac{2}{3}\text{.}\)</span> Next assume we have constructed <span class="process-math">\(g_k\)</span> as specified for all <span class="process-math">\(1\leq k\leq n\text{.}\)</span> Apply the same reasoning to the function <span class="process-math">\(h=f-g_1-g_2-\cdots -g_n\text{,}\)</span> which by assumption maps to <span class="process-math">\([-(2/3)^n, (2/3)^n]\)</span> to find <span class="process-math">\(g_{n+1}\text{.}\)</span> By the recursion principle we get a sequence <span class="process-math">\((g_n)\)</span> satisfying (i) and (ii) for all <span class="process-math">\(n\text{.}\)</span>
+</div></article></body>
+</html>
