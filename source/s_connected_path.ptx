@@ -82,7 +82,7 @@
   </statement>
   <solution>
     <p>
-      Take any <m>\boldx,\boldy\in \R^n-\{\boldzero\}</m>. If the two vectors are not scalar multiples of one another, then the straight line path connecting them is guaranteed to lie in <m>\R^n-\{\boldzero\}</m>, using a linear independence argument. If <m>\boldy=c\span x</m>, then since <m>\dim \R^n\geq 2</m>, we can find a vector <m>\boldz\in \R^n-\{\boldzero\}</m> that is not a scalar multiple of either vector. We can then construct a polygonal path lieing in <m>\R^n-\{\boldzero\}</m> that first connects <m>\boldx</m> to <m>\boldz</m> via a straight line path, and then connects <m>\boldz</m> to <m>\boldy</m> via a straight line path. 
+      Take any <m>\boldx,\boldy\in \R^n-\{\boldzero\}</m>. If the two vectors are not scalar multiples of one another, then the straight line path connecting them is guaranteed to lie in <m>\R^n-\{\boldzero\}</m>, using a linear independence argument. If <m>\boldy=c\boldx</m>, then since <m>\dim \R^n\geq 2</m>, we can find a vector <m>\boldz\in \R^n-\{\boldzero\}</m> that is not a scalar multiple of either vector. We can then construct a polygonal path lieing in <m>\R^n-\{\boldzero\}</m> that first connects <m>\boldx</m> to <m>\boldz</m> via a straight line path, and then connects <m>\boldz</m> to <m>\boldy</m> via a straight line path. 
     </p>
   </solution>
 </example>

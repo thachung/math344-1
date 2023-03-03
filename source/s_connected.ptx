@@ -191,7 +191,7 @@
     <case>
       <title>Finite products</title>
     <p>
-      Using induction it suffices to show that if <m>X, Y</m> are connected, then <m>X\times Y</m> is connected. First, choose any <m>x_0\in X</m> and note that the subspace <m>\{x_0\}\times Y</m>, being homeomorphic to <m>Y</m>, is connected. Similarly, for any <m>y_0\in Y</m>, the subspace <m>X\times \{y_0\}</m> is connected. It follows from (2) of <xref ref="th_connected_subspace"/> that the set <m>T_{x_0,y_0}=\{x_0\}\times Y\cup X\times \{y_0\}</m> is connected for any <m>(x_0,y_0)\in X\times Y</m>. Lastly, since <m>T_{x,y_0}\cap T_{x',y_0\}\supseteq X\times\{y_0\}\ne \emptyset</m> for any <m>x,x'\in X</m>, the union <m>\bigcup_{x\in X}T_{x,y_0\}</m> is connected. But this union is <m>X</m> itself.  
+      Using induction it suffices to show that if <m>X, Y</m> are connected, then <m>X\times Y</m> is connected. First, choose any <m>x_0\in X</m> and note that the subspace <m>\{x_0\}\times Y</m>, being homeomorphic to <m>Y</m>, is connected. Similarly, for any <m>y_0\in Y</m>, the subspace <m>X\times \{y_0\}</m> is connected. It follows from (2) of <xref ref="th_connected_subspace"/> that the set <m>T_{x_0,y_0}=\{x_0\}\times Y\cup X\times \{y_0\}</m> is connected for any <m>(x_0,y_0)\in X\times Y</m>. Lastly, since <m>T_{x,y_0}\cap T_{x',y_0}\supseteq X\times\{y_0\}\ne \emptyset</m> for any <m>x,x'\in X</m>, the union <m>\bigcup_{x\in X}T_{x,y_0}</m> is connected. But this union is <m>X</m> itself.  
     </p>
     </case>
     <case>

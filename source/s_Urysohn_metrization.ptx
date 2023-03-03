@@ -1,0 +1,65 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_Urysohn_metrization">
+    <title>Urysohn metrization theorem</title>
+    
+    <theorem xml:id="th_Urysohn_metrization">
+        <title>Urysohn metrization theorem</title>
+        <statement>
+            <p>
+            If <m>X</m> is a regular second countable space, then <m>X</m> is metrizable. 
+            </p>
+        </statement>
+        <proof>
+            <p>
+                The main step in the proof, one that uses <xref ref="th_Urysohn_lemma"/>, is the construction of a countable family of continuous functions <m>\{f_n\colon X\rightarrow [0,1]\}_{n\in \Z_+}</m> satisfying the following property: for all <m>x\in X</m> and for all open sets <m>U</m> containing <m>x</m>, there is an <m>n\in \Z_+</m> such that <m>f_n(x)>0</m> and <m>f_n(X-U)=\{0\}</m>. It then follows from <xref ref="th_embedding_theorem"/> that the map <m>f\colon X\rightarrow \R^\omega</m> defined as <m>f(x)=(f_n(x))_{n\in \Z_+}</m> is an embedding into the metric space <m>\R^\omega</m>. Since subspaces of metric spaces are metric spaces, we conclude that <m>X</m> is metrizable. 
+            </p>
+            <p>
+                We now proceed with the construction. Let <m>\mathcal{B}=\{B_1, B_2,\dots, \}</m> be a countable basis of <m>X</m>. For all <m>m,n\in \Z_+</m> satisfying <m>\overline{B_m}\subseteq B_n</m>, let <m>g_{m,n}\colon X\rightarrow [0,1]</m> be a continuous function satisfying <m>g_{m,n}(\overline{B_m})=\{1\}</m> and <m>g_{m,n}(X-B_n)=\{0\}</m>: this guaranteed to exist by <xref ref="th_Urysohn_lemma"/> since <m>X</m>, being regular and second countable, is normal. Since the collection <m>\{g_{m,n}\}</m> is countable we can enumerate it as <m>\{g_{m,n}\}=\{f_1, f_2,\dots\}</m>. Now, for any <m>x</m> and any open set <m>U\ni x</m>, we have <m>x\in B_n\subseteq U</m> for some <m>n\in \Z_+</m>. Since <m>X</m> is regular, we can find a basis element <m>B_m</m> such that <m>x\in \overline{B_m}\subseteq B_n</m>. We have <m>g_{m,n}=f_k</m> for some <m>k\in \Z_+</m>, <m>f_k(x)=1</m>, and <m>f_k(X-U)\subseteq f_k(X-B_m)=\{0\}</m>, as desired.
+            </p>
+        </proof>
+    </theorem>
+    
+    <theorem xml:id="th_embedding_theorem">
+        <title>Embedding theorem</title>
+        <statement>
+            <p>
+                Let <m>X</m> be a <m>T_1</m>-space. Given any collection of continuous functions <m>\{f_i\colon X\rightarrow \R\}_{i\in I}</m> satisfying the property that for all <m>x\in X</m> and for all open sets <m>U</m> containing <m>x</m> there is an <m>i\in I</m> such that <m>f_i(x)&gt; 0</m> and <m>f_i(X-U)=\{0\}</m>, the map <m>f\colon X\rightarrow \R^I</m> defined as <m>f(x)=(f_i(x))_{i\in I}</m> is an embedding into <m>\R^I</m>. 
+            </p>
+        </statement>
+        <proof>
+            <case>
+                <title><m>f</m> is injective</title>
+                <p>
+                    Since <m>X</m> is <m>T_1</m>, given any <m>x\ne y\in X</m> we can find an open set <m>U</m> such that <m>x\in U</m> and <m>y\notin U</m>. By assumption, there is some <m>i_0\in I</m> such that <m>f_{i_{0}}(x)&gt; 0</m> and <m>f_{i_0}(X-U)=\{0\}</m>. It follows that <m>f_{i_{0}}(x)\ne f_{i_0}(y)</m> and hence that <m>f(x)\ne f(y)</m>. 
+                </p>
+                
+            </case>
+            <case>
+                <title><m>f</m> is continuous</title>
+                <p>
+                This follows immediately from <xref ref="th_product_universal_prop"/> since each <m>f_i</m> is continuous.                   
+                </p>
+            </case>
+            <case>
+                <title><m>f</m> is embedding</title>
+                <p>
+                    Lastly, we prove that <m>f</m> is an embedding mapping <m>X</m> homeomorphically onto <m>f(X)\subseteq \R^I</m>. Let <m>U</m> be an open set containing an element <m>x\in X</m>, and let <m>y=f(x)\in f(U)</m>. Pick any <m>i_0\in I</m> such that <m>f_{i_0}(x)&gt; 0</m> and <m>f_{i_0}(X-U)=\{0\}</m>. Let <m>\pi_{i_0}\colon \R^I\rightarrow \R</m> be the projection map onto the <m>i_{0}</m>-th coordinate, and define <m>V=f(X)\cap \pi_{i_0}^{-1}((0,\infty))</m>. Since <m>\pi_{i_0}</m> is continuous and <m>(0,\infty)</m> is open, the set <m>V</m> is open in the subspace topology of <m>f(X)</m>. We claim that <m>y\in V\subseteq f(U)</m>, proving that <m>f</m> is an embedding. Since <m>\pi_{i_0}(y)=f_{i_0}(x)&gt; 0</m>, we have <m>y\in </m>. Similarly, if <m>y'=f(x')\in V</m>, then <m>\pi_{i_0}(y')=\pi_{i_0}(x')&gt; 0</m>, from whence it follows that <m>x'\in U</m>: otherwise we'd have <m>f_{i_0}(x')=0</m>. 
+                </p>
+            </case>
+        </proof>
+    </theorem>
+    <remark>
+        <title>Urysohn metrization theorem</title>
+        <p>
+            Munkres gives an alternative proof that shows any regular second countable space can be embedded into <m>\R^\omega</m> with respect to the uniform metric. This argument is then generalized later to prove the Nagata-Smirnov metrization theorem, which states that <m>X</m> is metrizable if and only if it is regular and has countable locally finite basis. 
+        </p>
+        
+    </remark>
+    <corollary xml:id="cor_completely_regular_embedding">
+        <statement>
+            <p>
+                A space <m>X</m> is completely regular if and only if it is homeomorphic to a subspace of <m>[0,1]^I</m> for some set <m>I</m>. 
+            </p>
+        </statement>
+    </corollary>
+    
+ </section>
