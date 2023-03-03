@@ -2719,6 +2719,105 @@ var ptx_lunr_docs = [
   "body": " Compact manifold embedding   Let be a compact -manifold. There is an embedding for some .   "
 },
 {
+  "id": "s_nets",
+  "level": "1",
+  "url": "s_nets.html",
+  "type": "Section",
+  "number": "1.24",
+  "title": "Nets",
+  "body": " Nets   Partial ordering axioms   Let denote a binary relation on the set . We write to assert that the relation holds between elements . The relation is a partial ordering if it satisfies the following three axioms.   Reflexive (PO1)  For all , we have .    Transitive (PO2)  For all , if and , then .    Antisymmetric (PO3)  For all , if and , then .   The relation is a quasiordering (or preordering ) if it satisfies axioms PO1 and PO2. When is a partial ordering or a quasiordering, we will often write for .  A partially ordered set (POSET, for short) is a pair , where is a partial ordering on . Similarly,a quasiordered set is a pair , where is a a quasiordering on .     Common examples     The usual less than or equal to relation is a partial ordering on .    Let be a set, and let be the power set of of . The relation defines a partial ordering on .    Let be a set, and let be the power set of of . The relation also defines a partial ordering on .    For an element in a topological space the set of all open neighborhoods of is a partially ordered set under reverse inclusion: , .    Recall that an integer divides an integer , written , if there is an integer such that . The relation defines a quasiordering on , but not a partial ordering: and , but . The same relation does define a partial ordering on .       Directed set   A directed set is a pair , where is a quasiordering on that satisfies the following axiom.   Directed (D)  For all , there is a such that and .   A subset of a directed set is cofinal if for all there is a such that .     Common examples  Each quasiordered (and\/or partially ordered) set in is easily seen to satisfy the further axiom (D), and is thus a directed set.    Nets and convergent nets   Let be a set. A net in is a function where is a directed set. In particular, a net is a tuple, and accordingly we may use the coordinate notation , where .  A net is eventually in a subset if there is an element such that for all .  Assume is a topological space. A net  converges to an element , denoted , if for all open sets containing the net is eventually in .  A net is cofinally in a subset if the set is cofinal: equivalently, if for all there is a such that .  An element is a limit point of the net if is cofinally in every open neighborhood of .     Riemann integral  A careful examination of the Riemann integral of a function over an interval reveals that it is a statement about a convergent net. Indeed, let be the set of all pointed partitions of into subintervals: , an element of is a pair , where is a subinterval partition and is a choice of sample points in each subinterval of . The relation is a quasiordering on satisfying (D). To any function we can associate the net , where for each we define to be the corresponding Riemann sum of . The Riemann integral exists and is equal to if and only the net converges to .    Nets and topology   Let be a topological space.   The closure of any set is the set of all for which there is a net such that .  It follows that a subset is closed if and only if it contains all limits of all convergent nets in .    A function is continuous if and only if for all convergent nets the net is convergent.    The space is Hausdorff if and only if every net in converges to at most one element in .          Assume . For all open sets containing , choose . Let be the set of all open neighborhoods of , considered as a directed set with reverse inclusion. Define as . The net converges to . Indeed, for any open set containing , we set : if , then (by definition of our ordering), and hence .  Assume for some net in . Given any open set containing , there is an such that for all . In particular, we have . Since is a net in , we conclude that .  Note: the argument for the forward direction uses the axiom of choice potentially. If that bugs you, consider the following alternative: let with quasiordering . (This is no longer a partial ordering necessarily.) Define as . This net also converges to .    Assume is continuous and is a net satisfying . Given any open set containing , the net is eventually in , since this is an open set containing . But then clearly is eventually in .  Inversely, if is not continuous, then there is an and open set containing such that for all open sets containing , there is an element . Let be the set of all open neighborhoods of with partial ordering given by reverse inclusion, and consider the net , where is the element described above. We have , using a similar argument as in (1), and yet . Indeed, by construction the net never lies in the open neighoborhood of .         Subnets   Let and be quasiordered sets. An order-preserving map is a function satisfying the following property: if , then .  Let be a net. A subnet of is a net of the form , where is a directed set, and is an order-preserving map, and the image is cofinal in .     Limit points of nets   Let be a topological space, and let be a net in . An element is a limit point of if and only if there is a subnet of converging to .     Kelley's lemma   Let be a net. If is a collection of subsets of satisfying the conditions   for all the set is cofinal,    for all there is an such that ,   then there is a subnet of which is eventually in for all .    "
+},
+{
+  "id": "d_partial_order",
+  "level": "2",
+  "url": "s_nets.html#d_partial_order",
+  "type": "Definition",
+  "number": "1.24.1",
+  "title": "Partial ordering axioms.",
+  "body": " Partial ordering axioms   Let denote a binary relation on the set . We write to assert that the relation holds between elements . The relation is a partial ordering if it satisfies the following three axioms.   Reflexive (PO1)  For all , we have .    Transitive (PO2)  For all , if and , then .    Antisymmetric (PO3)  For all , if and , then .   The relation is a quasiordering (or preordering ) if it satisfies axioms PO1 and PO2. When is a partial ordering or a quasiordering, we will often write for .  A partially ordered set (POSET, for short) is a pair , where is a partial ordering on . Similarly,a quasiordered set is a pair , where is a a quasiordering on .   "
+},
+{
+  "id": "eg_poset",
+  "level": "2",
+  "url": "s_nets.html#eg_poset",
+  "type": "Example",
+  "number": "1.24.2",
+  "title": "Common examples.",
+  "body": " Common examples     The usual less than or equal to relation is a partial ordering on .    Let be a set, and let be the power set of of . The relation defines a partial ordering on .    Let be a set, and let be the power set of of . The relation also defines a partial ordering on .    For an element in a topological space the set of all open neighborhoods of is a partially ordered set under reverse inclusion: , .    Recall that an integer divides an integer , written , if there is an integer such that . The relation defines a quasiordering on , but not a partial ordering: and , but . The same relation does define a partial ordering on .     "
+},
+{
+  "id": "d_directed_set",
+  "level": "2",
+  "url": "s_nets.html#d_directed_set",
+  "type": "Definition",
+  "number": "1.24.3",
+  "title": "Directed set.",
+  "body": " Directed set   A directed set is a pair , where is a quasiordering on that satisfies the following axiom.   Directed (D)  For all , there is a such that and .   A subset of a directed set is cofinal if for all there is a such that .   "
+},
+{
+  "id": "example-66",
+  "level": "2",
+  "url": "s_nets.html#example-66",
+  "type": "Example",
+  "number": "1.24.4",
+  "title": "Common examples.",
+  "body": " Common examples  Each quasiordered (and\/or partially ordered) set in is easily seen to satisfy the further axiom (D), and is thus a directed set.  "
+},
+{
+  "id": "d_nets",
+  "level": "2",
+  "url": "s_nets.html#d_nets",
+  "type": "Definition",
+  "number": "1.24.5",
+  "title": "Nets and convergent nets.",
+  "body": " Nets and convergent nets   Let be a set. A net in is a function where is a directed set. In particular, a net is a tuple, and accordingly we may use the coordinate notation , where .  A net is eventually in a subset if there is an element such that for all .  Assume is a topological space. A net  converges to an element , denoted , if for all open sets containing the net is eventually in .  A net is cofinally in a subset if the set is cofinal: equivalently, if for all there is a such that .  An element is a limit point of the net if is cofinally in every open neighborhood of .   "
+},
+{
+  "id": "eg_Riemann_integral",
+  "level": "2",
+  "url": "s_nets.html#eg_Riemann_integral",
+  "type": "Example",
+  "number": "1.24.6",
+  "title": "Riemann integral.",
+  "body": " Riemann integral  A careful examination of the Riemann integral of a function over an interval reveals that it is a statement about a convergent net. Indeed, let be the set of all pointed partitions of into subintervals: , an element of is a pair , where is a subinterval partition and is a choice of sample points in each subinterval of . The relation is a quasiordering on satisfying (D). To any function we can associate the net , where for each we define to be the corresponding Riemann sum of . The Riemann integral exists and is equal to if and only the net converges to .  "
+},
+{
+  "id": "th_nets_topology",
+  "level": "2",
+  "url": "s_nets.html#th_nets_topology",
+  "type": "Theorem",
+  "number": "1.24.7",
+  "title": "Nets and topology.",
+  "body": " Nets and topology   Let be a topological space.   The closure of any set is the set of all for which there is a net such that .  It follows that a subset is closed if and only if it contains all limits of all convergent nets in .    A function is continuous if and only if for all convergent nets the net is convergent.    The space is Hausdorff if and only if every net in converges to at most one element in .          Assume . For all open sets containing , choose . Let be the set of all open neighborhoods of , considered as a directed set with reverse inclusion. Define as . The net converges to . Indeed, for any open set containing , we set : if , then (by definition of our ordering), and hence .  Assume for some net in . Given any open set containing , there is an such that for all . In particular, we have . Since is a net in , we conclude that .  Note: the argument for the forward direction uses the axiom of choice potentially. If that bugs you, consider the following alternative: let with quasiordering . (This is no longer a partial ordering necessarily.) Define as . This net also converges to .    Assume is continuous and is a net satisfying . Given any open set containing , the net is eventually in , since this is an open set containing . But then clearly is eventually in .  Inversely, if is not continuous, then there is an and open set containing such that for all open sets containing , there is an element . Let be the set of all open neighborhoods of with partial ordering given by reverse inclusion, and consider the net , where is the element described above. We have , using a similar argument as in (1), and yet . Indeed, by construction the net never lies in the open neighoborhood of .       "
+},
+{
+  "id": "d_order_preserving_subnets",
+  "level": "2",
+  "url": "s_nets.html#d_order_preserving_subnets",
+  "type": "Definition",
+  "number": "1.24.8",
+  "title": "Subnets.",
+  "body": " Subnets   Let and be quasiordered sets. An order-preserving map is a function satisfying the following property: if , then .  Let be a net. A subnet of is a net of the form , where is a directed set, and is an order-preserving map, and the image is cofinal in .   "
+},
+{
+  "id": "th_limit_points",
+  "level": "2",
+  "url": "s_nets.html#th_limit_points",
+  "type": "Theorem",
+  "number": "1.24.9",
+  "title": "Limit points of nets.",
+  "body": " Limit points of nets   Let be a topological space, and let be a net in . An element is a limit point of if and only if there is a subnet of converging to .   "
+},
+{
+  "id": "lem_Kellys_lemma",
+  "level": "2",
+  "url": "s_nets.html#lem_Kellys_lemma",
+  "type": "Lemma",
+  "number": "1.24.10",
+  "title": "Kelley's lemma.",
+  "body": " Kelley's lemma   Let be a net. If is a collection of subsets of satisfying the conditions   for all the set is cofinal,    for all there is an such that ,   then there is a subnet of which is eventually in for all .   "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
