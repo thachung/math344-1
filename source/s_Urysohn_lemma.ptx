@@ -5,7 +5,7 @@
         <title>Urysohn lemma</title>
         <statement>
             <p>
-            Let <m>X</m> be a normal space. Given two nonempty disjoint closed sets <m>A</m> and <m>B</m> there is a continuous function <m>f\colon [0,1]\rightarrow \R</m> such that <m>f(A)=\{0\}</m> and <m>f(B)=\{1\}</m>.
+            Let <m>X</m> be a normal space. Given two nonempty disjoint closed sets <m>A</m> and <m>B</m> there is a continuous function <m>f\colon X\rightarrow [0,1]</m> such that <m>f(A)=\{0\}</m> and <m>f(B)=\{1\}</m>.
             </p>
             <p>
                 It follows easily that the result is still true if we replace the interval <m>[0,1]</m> with any closed interval <m>[a,b]</m>. 
