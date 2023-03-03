@@ -1,100 +1,225 @@
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_Tietze_extension">
-    <title>Further applications of Urysohn</title>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_nets">
+    <title>Nets</title>
+<definition xml:id="d_partial_order">
+    <title>Partial ordering axioms</title>  
+    <statement>
+        <p>
+        Let <m>R</m> denote a binary relation on the set <m>I</m>. We write <m>iRj</m> to assert that the relation <m>R</m> holds between elements <m>i,j\in I</m>. The relation <m>R</m> is a <term>partial ordering</term> if it satisfies the following three axioms.  
+        <ul>
+            <li>
+                <title>Reflexive (PO1)</title>
+                <p>
+                   For all <m>i\in I</m>, we have <m>iRi</m>. 
+                </p>
+            </li>
+            <li>
+                <title>Transitive (PO2)</title>
+                <p>
+                    For all <m>i,j,k\in I</m>, if <m>iRj</m> and <m>jRk</m>, then <m>iRk</m>. 
+                </p>
+            </li>
+            <li>
+                <title>Antisymmetric (PO3)</title>
+                <p>
+                   For all <m>i,j\in I</m>, if <m>iRj</m> and <m>jRi</m>, then <m>i=j</m>.
+                </p>
+            </li>
+        </ul>
+        The relation <m>R</m> is a <term>quasiordering</term> (or <term>preordering</term>) if it satisfies axioms PO1 and PO2. When <m>R</m> is a partial ordering or a quasiordering, we will often write <m>i\leq j</m> for <m>iRj</m>. 
+        </p>
+        <p>
+            A <term>partially ordered set</term> (POSET, for short) is a pair <m>(I,\leq)</m>, where <m>\leq</m> is a partial ordering on <m>I</m>. Similarly,a <term>quasiordered set</term> is a pair <m>(I,\leq)</m>, where <m>\leq</m> is a  a quasiordering on <m>I</m>.  
+        </p>
+    </statement>
+</definition>
+<example xml:id="eg_poset">
+    <title>Common examples</title>
+    <p>
+        <ol>
+            <li>
+                <p>
+                    The usual <q>less than or equal to</q> relation <m>x\leq y</m> is a partial ordering on <m>\R</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Let <m>X</m> be a set, and let <m>I=\mathcal{P}(X)</m> be the power set of of <m>X</m>. The relation <m>A\leq B \iff A\subseteq B</m> defines a partial ordering on <m>I</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Let <m>X</m> be a set, and let <m>I=\mathcal{P}(X)</m> be the power set of of <m>X</m>. The relation <m>A\leq B \iff A\supseteq B</m> also defines a partial ordering on <m>I</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    For an element <m>x</m> in a topological space <m>X</m> the set <m>I</m> of all open neighborhoods of <m>x</m> is a partially ordered set under reverse inclusion: <ie/>, <m>U\leq V\iff U\supseteq V</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Recall that an integer <m>m</m> divides an integer <m>n</m>, written <m>m\mid n</m>, if there is an integer <m>q</m> such that <m>n=mq</m>. The relation <m>m\leq n\iff m\mid n</m> defines a quasiordering on <m>\Z</m>, but not a partial ordering: <m>2\mid -2</m> and <m>-2\mid 2</m>, but <m>2\ne -2</m>. The same relation does define a partial ordering on <m>\Z_+</m>.  
+                </p>
+            </li>
+        </ol>
+    </p>
+</example>
+
+<definition xml:id="d_directed_set">
+    <title>Directed set</title>
+    <statement>
+        <p>
+            A directed set is a pair <m>(I,\leq)</m>, where <m>\leq</m> is a quasiordering on <m>I</m> that satisfies the following axiom. 
+            <ul>
+                <li>
+                    <title>Directed (D)</title>
+                    <p>
+                        For all <m>i,j\in I</m>, there is a <m>k\in I</m> such that <m>i\leq k</m> and <m>j\leq k</m>. 
+                    </p>
+                </li>
+            </ul>
+        A subset <m>J</m> of a directed set <m>I</m> is <term>cofinal</term> if for all <m>i\in I</m> there is a <m>j\geq i</m> such that <m>j\in J</m>.
+        </p>
+    </statement>
+</definition>
+<example>
+    <title>Common examples</title>
+    <p>
+        Each quasiordered (and/or partially ordered) set in <xref ref="eg_poset"/> is easily seen to satisfy the further axiom (D), and is thus a directed set. 
+    </p>
+</example>
+<definition xml:id="d_nets">
+    <title>Nets and convergent nets</title>
+    <statement>
+        <p>
+            Let <m>X</m> be a set. A <term>net in <m>X</m></term> is a function <m>f\colon I\rightarrow X</m> where <m>I</m> is a directed set. In particular, a net is a tuple, and accordingly we may use the coordinate notation <m>f=(x_i)_{i\in I}</m>, where <m>x_i=f(i)</m>. 
+        </p>
+        <p>
+            A net <m>f\colon I\rightarrow X</m> is <term>eventually in</term> a subset <m>A\subseteq X</m> if there is an element <m>i_0\in I</m> such that <m>x_j\in A</m> for all <m>j\geq i_0</m>. 
+        </p>
+        <p>
+            Assume <m>X</m> is a topological space. A net <m>f\colon I\rightarrow X</m> <term>converges</term> to an element <m>x\in X</m>, denoted <m>x_i\rightarrow x</m>, if for all open sets <m>U</m> containing <m>x</m> the net <m>f=(x_i)_{i\in I}</m> is eventually in <m>U</m>. 
+        </p>
+        <p>
+            A net <m>f\colon I\rightarrow X</m> is <term>cofinally in</term> a subset <m>A\subseteq X</m> if the set <m>J=f^{-1}(A)</m> is cofinal: equivalently, if for all <m>i\in I</m> there is a <m>j\geq i</m> such that <m>x_j=f(j)\in A</m>. 
+        </p>
+        <p>
+            An element <m>x\in X</m> is a <term>limit point</term> of the net <m>f\colon I\rightarrow X</m> if <m>f=(x_i)</m> is cofinally in every open neighborhood of <m>x</m>. 
+        </p>
+    </statement>
+</definition>
+<example xml:id="eg_Riemann_integral">
+    <title>Riemann integral</title>
+    <p>
+        A careful examination of the Riemann integral of a function over an interval <m>[a,b]</m> reveals that it is a statement about a convergent net. Indeed, let <m>I</m> be the set of all <q>pointed partitions</q> of <m>[a,b]</m> into subintervals: <ie/>, an element of <m>I</m> is a pair <m>(\mathcal{P}, \boldx)</m>, where <m>\mathcal{P}</m> is a subinterval partition 
+        <me>
+            \mathcal{P}\colon a=x_0 &lt; x_1&lt; \dots &lt; x_n=b
+        </me>
+        and <m>\boldx=(x_1^*, x_2^*,\dots, x_n^*)</m> is a choice of <q>sample points</q> in each subinterval of  <m>\mathcal{P}</m>. The relation <m>(\mathcal{P},\boldx)\leq (\mathcal{P}', \boldx')\iff \mathcal{P}\subseteq \mathcal{P}'</m> is a quasiordering on <m>I</m> satisfying (D). To any function <m>f\colon [a,b]\rightarrow \R</m>  we can associate the net <m>(R_i)_{i\in I}</m>, where for each <m>i=(\mathcal{P}, \boldx)\in I</m> we define <m>R_i</m> to be the corresponding Riemann sum of <m>f</m>. The Riemann integral <m>\int_a^b f\, dx</m> exists and is equal to <m>R</m> if and only the net <m>(R_i)_{i\in I}</m> converges to <m>R</m>.  
+    </p>
     
-    <theorem xml:id="th_Tietze_extension">
-        <title>Tietze extension theorem</title>
-        <statement>
-            <p>
-            Let <m>A</m> be a closed subset of the normal space <m>X</m>. 
-            
+</example>
+<theorem xml:id="th_nets_topology">
+    <title>Nets and topology</title>
+    <statement>
+        <p>
+            Let <m>X</m> be a topological space. 
+        
+        <ol>
+            <li>
+                <p>
+                    The closure <m>\overline{A}</m> of any set <m>A</m> is the set of all <m>x\in X</m> for which there is a net <m>f\colon I\rightarrow A</m> such that <m>x_i\rightarrow x</m>.  
+                </p>
+                <p>
+                    It follows that a subset <m>A</m> is closed if and only if it contains all limits of all convergent nets in <m>A</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    A function <m>f\colon X\rightarrow Y</m> is continuous if and only if for all convergent nets <m>h\colon I\rightarrow X</m> the net <m>f\circ h\colon I\rightarrow Y</m> is convergent. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    The space <m>X</m> is Hausdorff if and only if every net in <m>X</m> converges to at most one element in <m>X</m>. 
+                </p>
+            </li>
+        </ol>
+    </p>
+    </statement>
+    <proof>
+        <p>
             <ol>
                 <li>
                     <p>
-                        Any continuous function <m>f\colon A\rightarrow [a,b]</m> can be extended to a continuous function <m>\widetilde{f}\colon X\rightarrow [a,b]</m>. 
+                        Assume <m>x\in \overline{A}</m>. For all open sets <m>U</m> containing <m>x</m>, choose <m>x_U\in U\cap A</m>. Let <m>I</m> be the set of all open neighborhoods of <m>x</m>, considered as a directed set with reverse inclusion. Define <m>f\colon I\rightarrow A</m> as <m>f(U)=x_U</m>. The net <m>(x_U)_{U\in I}</m> converges to <m>x</m>. Indeed, for any open set <m>V</m> containing <m>x</m>, we set <m>i_0=V\in I</m>: if <m>U\geq V</m>, then <m>U\subseteq V</m> (by definition of our ordering), and hence <m>x_U\in U\subseteq V</m>. 
+                    </p>
+                    <p>
+                        Assume <m>x_i\rightarrow x</m> for some net <m>(x_i)_{i\in I}</m> in <m>A</m>. Given any open set <m>U</m> containing <m>x</m>, there is an <m>i_0\in I</m> such that <m>x_j\in U</m> for all <m>j\geq i_0</m>. In particular, we have <m>x_{i_0}\in U</m>. Since <m>(x_i)_{i\in I}</m> is a net in <m>A</m>, we conclude that <m>x_{i_0}\in\cap A\cap U</m>.
+                    </p>
+                    <p>
+                        Note: the argument for the forward direction uses the axiom of choice potentially. If that bugs you, consider the following alternative: let <m>I=\{(U,y)\colon U\text{ open neighborhood of } x, y\in U\cap A\}</m> with quasiordering <m>(U,y)\leq (U', y')\iff U\supseteq U'</m>.  (This is no longer a partial ordering necessarily.) Define <m>f\colon I\rightarrow X</m> as <m>f((U,y))=y</m>. This net also converges to <m>x</m>. 
                     </p>
                 </li>
                 <li>
                     <p>
-                        Any continuous function  <m>f\colon A\rightarrow \R</m> can be extended to a continuous function <m>\widetilde{f}\colon X\rightarrow \R</m>. 
+                        Assume <m>f</m> is continuous and <m>(x_i)_{i\in I}</m> is a net satisfying <m>x_i\rightarrow x</m>. Given any open set <m>U</m> containing <m>y</m>, the net <m>(x_i)_{i\in I}</m> is eventually in <m>f^{-1}(U)</m>, since this is an open set containing <m>x</m>. But then clearly <m>(f(x_i))_{i\in I}</m> is eventually in <m>f(f^{-1}(U))\subseteq U</m>. 
+                    </p>
+                    <p>
+                        Inversely, if <m>f</m> is not continuous, then there is an <m>x\in X</m> and open set <m>U</m> containing <m>y=f(x)</m> such that for all open sets <m>V</m> containing <m>x</m>, there is an element <m>y_V=f(x_V)\in f(V)\cap (Y-U)</m>. Let <m>I</m> be the set of all open neighborhoods of <m>x</m> with partial ordering given by reverse inclusion, and consider the net <m>(x_V)_{V\in I}</m>, where <m>x_V</m> is the element described above. We have <m>x_V\rightarrow x</m>, using a similar argument as in (1), and yet <m>(f(x_V))_{V\in I}=(y_V)_{V\in I}\not\rightarrow y</m>. Indeed, by construction the net <m>(y_V)_{V\in I}</m> never lies in the open neighoborhood <m>U</m> of <m>y</m>. 
                     </p>
                 </li>
+                <!-- <li>
+                    <p>
+                        Assume <m>X</m> is Hausdorff and that the next <m>(x_i)_{i\in I}</m> converges to <m>X</m>. Given any <m>y\ne x</m>, 
+                    </p>
+                </li> -->
+
             </ol>
-            </p>
-        </statement>
-        <proof>
-            <title>Proof of (1)</title>
-            <p>
-                First we show that for any continuous function <m>f\colon A\rightarrow [-r,r]</m>, we can find a continuous function <m>g\colon X\rightarrow [-r/3, r/3]</m> such that (i) <m>\abs{g(x)}\leq \frac{1}{3}r</m> and (ii) <m>\abs{g(a)-f(a)}\leq \frac{2}{3}r</m> for all <m>a\in A</m>. To do so, subdivide <m>[-r,r]</m> as 
-                <me>
-                    [-r,r]=[-r,-r/3]\cup [-r/3,r/3]\cup [r/3,r]
-                </me>
-                 define <m>B=f^{-1}([-r,-r/3])</m> and <m>C=f^{-1}([r/3,r])</m>, and, using Urysohn's lemma, choose a continuous function <m>g\colon X\rightarrow [-r/3,r/3]</m> such that <m>g(B)=\{-r/3\}</m> and <m>g(C)=\{r/3}</m>. It is easily verified that this <m>g</m> does the trick. 
-            </p>
-            <p>
-                Now assume we have a continuous function <m>f\colon A\rightarrow [a,b]</m>. Letting <m>\phi\colon [a,b]\rightarrow [-1,1]</m>, we see that <m>f</m> extends continuously to <m>X</m> if and only if <m>\phi\circ f</m> extends continuously to <m>X</m>. Thus, we may assume <m>f\colon X\rightarrow [-1,1]</m>. We can build a sequence of continuous functions <m>(g_n)_{n\in \Z_+}</m> satisfying the following properties:
-                <ol mark="(i)">
-                    <li>
-                        <p>
-                            <m>\abs{g_n(x)}\leq \frac{1}{3}\left(\frac{2}{3}\right)^{n-1}</m> for all <m>x\in X</m>.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <m>\abs{f(a)-\sum_{k=1}^ng_k(a)}\leq (\frac{2}{3}\right)^n</m> for all <m>a\in A</m>.
-                        </p>
-                    </li>
-                </ol>
-                It follows from some convergence of infinite sums arguments that <m>\widetilde{f}(x)=\sum_{k=1}^\infty g_k(x)</m> is a well-defined continuous function from <m>X</m> to <m>[-1,1]</m> satisfying <m>\widetilde{f}(a)=f(a)</m> for all <m>a\in A</m>. (See Munkres for these details. Basically just the Weierstrass M-test, if that is familiar to you.)
-            </p>
-            <p>
-                How dow we build this sequence? From our first paragraph, we can pick <m>g_1</m> to be any function satisfying <m>\abs{g(x)}\leq \frac{1}{3}</m> and <m>\abs{f(a)-g_1(a)}\leq \frac{2}{3}</m>. Next assume we have constructed <m>g_k</m> as specified for all <m>1\leq k\leq n</m>. Apply the same reasoning to the function <m>h=f-g_1-g_2-\cdots -g_n</m>, which by assumption maps to <m>[-(2/3)^n, (2/3)^n]</m> to find <m>g_{n+1}</m>. By the recursion principle we get a sequence <m>(g_n)</m> satisfying (i) and (ii) for all <m>n</m>. 
-            </p>
-        </proof>
-        <proof>
-            <title>Proof of (2)</title>
-            <p>
-              Let <m>\phi\colon \R\rightarrow (-1,1)</m> be a homeomorphism. A continuous function <m>f\colon A\rightarrow \R</m>  extends continuously to a function <m>\widetilde{f}\colon X\rightarrow \R</m> if and only if <m>h=\phi\circ f\colon A\rightarrow (-1,1)</m> extends continuously to a function <m>\widetilde{h}\colon X\rightarrow (-1,1)</m>. Thus we may assume <m>f\colon A\rightarrow (-1,1)</m>. Since <m>(-1,1)\subseteq [-1,1]</m>, by (1) there is a function <m>\widetilde{f}\colon X\rightarrow [-1,1]</m>. Let <m>B=\widetilde{f}^{-1}(\{-1,1\}</m>. If <m>B</m> is nonempty, then <m>\widetilde{f}\colon X\rightarrow (-1,1)</m>, as desired. Otherwise, since <m>B</m> is closed and <m>A\cap B=\emptyset</m>, there is a continuous function <m>g\colon X\rightarrow [0,1]</m> such that <m>g(A)=\{1\}</m> and <m>g(B)=\{0\}</m>. The function <m>h=g\widetilde{f}</m> is an extension of <m>f</m> on <m>A</m> that maps into <m>(-1,1)</m>, as desired.
-            </p>
-        </proof>
-       
-    </theorem>
-    <project xml:id="top_eg_space_filling">
-      <title>Space-filling curve</title>
-      <p>
-        We will show that there is a continuous surjective function <m>\phi\colon [0,1]\rightarrow [0,1]\times[0,1]</m>. This <m>\phi</m> is thus a path or curve, whose image is all of <m>[0,1]\times [0,1]</m>. This called a <em>space-filling curve</em>, or <em>Peano curve</em>. 
-      </p>
-      <p>
-        Let <m>\mathcal{C}\subseteq [0,1]</m> be the Cantor set, and choose a homeomorphism <m>h\colon \mathcal{C}\rightarrow \{0,1\}^\omega</m>. 
-      </p>
-        
-    </project>
-    <definition xml:id="d_partition_of_unity">
-        <title>Partition of unity</title>
-        <statement>
-            <p>
-             Let <m>Y\subseteq \R</m>. The {\bf support} <m>\operatorname{supp} f</m> of a continuous function <m>f\colon X\rightarrow Y</m> is defined as <m>\operatorname{supp} f=\overline{f^{-1}(\{0\})}</m>.    
-            </p>
-            <p>
-            A <term>partition of unity dominated by the open cover</term> <m>X=\bigcup_{k=1}^nU_k</m> is a collection of continuous functions <m>\{\phi_k\colon X\rightarrow [0,1]\}_{k=1}^n</m> satisfying (i) <m>\operatorname{supp} \phi_k\subseteq U_k</m> for all <m>1\leq k\leq n</m>, and (ii) <m>\sum_{k=1}^n\phi_k(x)=1</m> for all <m>x\in X</m>. 
-            </p>
-        </statement>
-    </definition>
-    <theorem xml:id="th_partition_of_unity">
-        <title>Partition of unity (finite)</title>
-        
-        <statement>
-            <p>
-                Let <m>X</m> be a normal space. Given any finite open covering <m>\mathcal{U}=\{U_k}_{k=1}^n</m> of <m>X</m>, there is a partition of unity dominated by <m>\mathcal{U}</m>. 
-            </p>
-        </statement>
-    </theorem>
-    <corollary xml:id="cor_manifold_embedding">
-        <title>Compact manifold embedding</title>
-        <statement>
-            <p>
-                Let <m>M</m> be a compact <m>m</m>-manifold. There is an embedding <m>f\colon M\rightarrow \R^N</m> for some <m>N\geq 1</m>. 
-            </p>
-        </statement>
-    </corollary>
-    
-     </section>
+        </p>
+    </proof>
+</theorem>
+<definition xml:id="d_order_preserving_subnets">
+    <title>Subnets</title>
+    <statement>
+        <p>
+            Let <m>(J,\leq_J)</m> and <m>(I,\leq_I)</m> be quasiordered sets. An <term>order-preserving map</term> is a function <m>g\colon J\rightarrow I</m> satisfying the following property: if <m>j\leq_J j'</m>, then <m>g(j)\leq_I g(j')</m>. 
+        </p>
+        <p>
+            Let <m>f\colon I\rightarrow X</m> be a net. A <term>subnet</term> of <m>I</m> is a net of the form <m>f\circ g\colon J\rightarrow X</m>, where <m>J</m> is a directed set, and <m>g\colon J\rightarrow I</m> is an order-preserving map, and the image <m>g(J)</m> is cofinal in <m>I</m>.
+        </p>
+    </statement>
+</definition>
+<theorem xml:id="th_limit_points">
+    <title>Limit points of nets</title>
+    <statement>
+        <p>
+        Let <m>X</m> be a topological space, and let <m>f=(x_i)_{i\in I}</m> be a net in <m>X</m>. An element <m>x\in X</m> is a limit point of <m>(x_i)_{i\in I}</m> if and only if there is a subnet of <m>(x_i)_{i\in I}</m> converging to <m>x</m>. 
+        </p>
+    </statement>
+</theorem>
+<lemma xml:id="lem_Kellys_lemma">
+    <title>Kelley's lemma</title>
+    <statement>
+        <p>
+        Let <m>f\colon I\rightarrow X</m> be a net. If <m>\mathcal{A}</m> is a collection of subsets of <m>X</m> satisfying the conditions 
+        <ol marker="(i.)">
+            <li>
+                <p>
+                   for all <m>A\in \mathcal{A}</m> the set <m>I_A=f^{-1}(A)</m> is cofinal,
+                </p>
+            </li>
+            <li>
+                <p>
+                    for all <m>A_1, A_2\in \mathcal{A}</m> there is an <m>A_3\in \mathcal{A}</m> such that <m>A'\subseteq A_1\cap A_2</m>, 
+                </p>
+            </li>
+        </ol>       
+        then there is a subnet of <m>f=(x_i)_{i\in I}</m> which is eventually in <m>A</m> for all <m>A\in\mathcal{A}</m>.   
+        </p>
+    </statement>
+</lemma>
+
+
+
+</section>
