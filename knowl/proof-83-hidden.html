@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof"><div class="para logical">
+<div class="para">Assume Tychonoff's theorem is true. We will prove the following equivalent formulation of the axiom of choice:</div>
+<div class="displaymath process-math">
+\begin{equation}
+X_i\ne\emptyset \text{ for all } i\in I \implies X=\prod_{i\in I}X_i\ne \emptyset\text{.}\tag{1.25.1}
+\end{equation}
+</div>
+<div class="para">Given a collection <span class="process-math">\(\{X_i\}_{i\in I}\)</span> of nonempty sets, let <span class="process-math">\(Y_i=X_i\sqcup \{P_i\}\)</span> the the result of adding one additional point, <span class="process-math">\(P_i\text{,}\)</span> to each <span class="process-math">\(X_i\text{.}\)</span> Why do we do this? We can with assurance that the product <span class="process-math">\(Y=\prod_{i\in I}Y_i\)</span> is nonempty since the <span class="process-math">\((P_i)_{i\in I}\)</span> is an element of <span class="process-math">\(Y\text{.}\)</span> We will use Tychonoff's theorem to show that <span class="process-math">\(X\)</span> is a nonempty subset of <span class="process-math">\(Y\text{.}\)</span> To do so, we need to give the sets <span class="process-math">\(Y_i\)</span> a <em class="emphasis">compact</em> topological structure: this is accomplished by equipping each <span class="process-math">\(Y_i\)</span> with the <em class="emphasis">cofinite</em> topology.</div>
+</div> <div class="para logical">
+<div class="para">Since each <span class="process-math">\(Y_i\)</span> is compact with the cofinite topology, by Tychonoff's theorem so is <span class="process-math">\(Y=\prod_{i\in I}Y_i\text{.}\)</span> For each <span class="process-math">\(i\in I\text{,}\)</span> let <span class="process-math">\(\pi_i\colon Y\rightarrow Y_i\)</span> be the <span class="process-math">\(i\)</span>th projection map and define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C_i=\pi_i^{-1}(X_i)=\{(y_j)_{j\in I}\colon y_i\in X_i\}\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(X_i=Y_i-\{P_i\}\)</span> is closed in the cofinite topology, and since <span class="process-math">\(\pi_i\)</span> is continuous, the set <span class="process-math">\(C_i\)</span> is closed for each <span class="process-math">\(i\in I\text{.}\)</span> Furthermore given any finite set <span class="process-math">\(\{i_1,i_2,\dots,i_n\}\subseteq I\text{,}\)</span> the set <span class="process-math">\(\bigcap_{k=1}^nC_{i_k}\)</span> is nonempty: indeed, by the <em class="emphasis">finite axiom of choice</em> principle (which is implied by ZF set theory) there exists a tuple <span class="process-math">\((x_{i_1}, x_{i_2}, \dots, x_{i_n})\in \prod_{k=1}^nX_{i_k}\text{,}\)</span> and thus the element <span class="process-math">\(y=(y_i)_{i\in I}\)</span> defined as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y_i=\begin{cases}
+x_{i_k}\amp \text{if } i=i_k \text{ for some } 1\leq k\leq n\\
+P_i\amp \text{if } i\notin \{i_1,i_2,\dots, i_n\}
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">is an element of <span class="process-math">\(\bigcap_{k=1}^n C_{i_k}\text{.}\)</span> Now since <span class="process-math">\(Y\)</span> is compact, we have <span class="process-math">\(\bigcap_{i\in I}C_i\ne\emptyset\text{,}\)</span> using the finite intersection characterization of compactness. But clearly <span class="process-math">\(X=\prod_{i\in I}X_i=\bigcap_{i\in I}C_i\text{.}\)</span> Thus <span class="process-math">\(X\ne \emptyset\text{.}\)</span>
+</div>
+</div></article></body>
+</html>
