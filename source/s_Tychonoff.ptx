@@ -189,21 +189,22 @@
                     Having shown that <m>\mathcal{F}</m> satisfies the chain condition for Zorn's lemma, we conclude that it contains a maximal element <m>(S^*, g^*)</m>. 
                 </p>
             </proof>
+            <proof>
+                <title>Step 2: <m>S^*=T</m></title>
+                <p>
+                    Let <m>(S^*, g^*)</m> be a maximal element of <m>\mathcal{F}</m>, so that <m>g^*</m> is a limit point of the net <m>(f_i\vert_{S^*})_{i\in I}</m>. We show that <m>S^*</m> and hence that <m>g^*=f\in X</m> is a limit point of <m>(f_i)_{i\in I}</m>. 
+                </p>
+                <p>
+                    Assume by contradiction that <m>S^*\ne T</m>, and let <m>t_0\in T-S^*</m>. Since <m>X_{t_0}</m> is compact, by <xref ref="lemma_product_nets"/> the net <m>(f_i\vert_{S^*\cup \{t_0}})_{i\in I}</m> in <m>X_{S^*\cup {t_0}}=X_{S^*}\times X_{t_0}</m> has a limit point of the form <m>(g^*, x_{t_0})</m>. But then the element <m>(S,g)\in \mathcal{F}</m> defined as <m>S=S^*\cup \{t_0\}</m> and 
+                    <me>
+                    g(s)=\begin{cases} g^*(s)\amp \text{if } s\in S^*\\
+                        x_{t_0}\amp \text{if } s=t_0
+                    </me>
+                    satisfies <m>(S,g)\geq (S^*, g^*)</m> and <m>(S,g)\ne (S^*, g^*)</m>, contradicting the fact that <m>(S^*, g^*)</m> is a maximal element. 
+                </p>
+            </proof>
         </proof>
-        <proof>
-            <title>Step 2: <m>S^*=T</m></title>
-            <p>
-                Let <m>(S^*, g^*)</m> be a maximal element of <m>\mathcal{F}</m>, so that <m>g^*</m> is a limit point of the net <m>(f_i\vert_{S^*})_{i\in I}</m>. We show that <m>S^*</m> and hence that <m>g^*=f\in X</m> is a limit point of <m>(f_i)_{i\in I}</m>. 
-            </p>
-            <p>
-                Assume by contradiction that <m>S^*\ne T</m>, and let <m>t_0\in T-S^*</m>. Since <m>X_{t_0}</m> is compact, by <xref ref="lemma_product_nets"/> the net <m>(f_i\vert_{S^*\cup \{t_0}})_{i\in I}</m> in <m>X_{S^*\cup {t_0}}=X_{S^*}\times X_{t_0}</m> has a limit point of the form <m>(g^*, x_{t_0})</m>. But then the element <m>(S,g)\in \mathcal{F}</m> defined as <m>S=S^*\cup \{t_0\}</m> and 
-                <me>
-                g(s)=\begin{cases} g^*(s)\amp \text{if } s\in S^*\\
-                    x_{t_0}\amp \text{if } s=t_0
-                </me>
-                satisfies <m>(S,g)\geq (S^*, g^*)</m> and <m>(S,g)\ne (S^*, g^*)</m>, contradicting the fact that <m>(S^*, g^*)</m> is a maximal element. 
-            </p>
-        </proof>
+        
     </theorem>
     
     </subsection>
