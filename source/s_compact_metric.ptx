@@ -9,7 +9,7 @@
     </statement>
     <proof>
         <p>
-            For now we only prove the Tychonoff theorem for finite products. It suffices, by induction, to show that the product of two compact spaces is compact. 
+            We will often use the Tychonoff in its full strength, though for now we only prove the result for finite products. (See <xref ref="th_Tychonoff_general"/> for the general case.) It suffices, by induction, to show that the product of two compact spaces is compact...
         </p>
     </proof>
   </theorem>

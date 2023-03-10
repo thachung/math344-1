@@ -115,7 +115,7 @@
         <me>
             \mathcal{P}\colon a=x_0 &lt; x_1&lt; \dots &lt; x_n=b
         </me>
-        and <m>\boldx=(x_1^*, x_2^*,\dots, x_n^*)</m> is a choice of <q>sample points</q> in each subinterval of  <m>\mathcal{P}</m>. The relation <m>(\mathcal{P},\boldx)\leq (\mathcal{P}', \boldx')\iff \mathcal{P}\subseteq \mathcal{P}'</m> is a quasiordering on <m>I</m> satisfying (D). To any function <m>f\colon [a,b]\rightarrow \R</m>  we can associate the net <m>(R_i)_{i\in I}</m>, where for each <m>i=(\mathcal{P}, \boldx)\in I</m> we define <m>R_i</m> to be the corresponding Riemann sum of <m>f</m>. The Riemann integral <m>\int_a^b f\, dx</m> exists and is equal to <m>R</m> if and only the net <m>(R_i)_{i\in I}</m> converges to <m>R</m>.  
+        and <m>\boldx=(x_1^*, x_2^*,\dots, x_n^*)</m> is a choice of <q>sample points</q> in each subinterval of  <m>\mathcal{P}</m>. The relation <m>(\mathcal{P},\boldx)\leq (\mathcal{P}', \boldx')\iff \mathcal{P}' \text{ is a refinement of } \mathcal{P}</m> is a quasiordering on <m>I</m> satisfying (D). To any function <m>f\colon [a,b]\rightarrow \R</m>  we can associate the net <m>(R_i)_{i\in I}</m>, where for each <m>i=(\mathcal{P}, \boldx)\in I</m> we define <m>R_i</m> to be the corresponding Riemann sum of <m>f</m>. The Riemann integral <m>\int_a^b f\, dx</m> exists and is equal to <m>R</m> if and only the net <m>(R_i)_{i\in I}</m> converges to <m>R</m>.  
     </p>
     
 </example>
@@ -169,12 +169,14 @@
                         Inversely, if <m>f</m> is not continuous, then there is an <m>x\in X</m> and open set <m>U</m> containing <m>y=f(x)</m> such that for all open sets <m>V</m> containing <m>x</m>, there is an element <m>y_V=f(x_V)\in f(V)\cap (Y-U)</m>. Let <m>I</m> be the set of all open neighborhoods of <m>x</m> with partial ordering given by reverse inclusion, and consider the net <m>(x_V)_{V\in I}</m>, where <m>x_V</m> is the element described above. We have <m>x_V\rightarrow x</m>, using a similar argument as in (1), and yet <m>(f(x_V))_{V\in I}=(y_V)_{V\in I}\not\rightarrow y</m>. Indeed, by construction the net <m>(y_V)_{V\in I}</m> never lies in the open neighoborhood <m>U</m> of <m>y</m>. 
                     </p>
                 </li>
-                <!-- <li>
+                <li>
                     <p>
-                        Assume <m>X</m> is Hausdorff and that the next <m>(x_i)_{i\in I}</m> converges to <m>X</m>. Given any <m>y\ne x</m>, 
+                        Assume <m>X</m> is Hausdorff and that the net <m>(x_i)_{i\in I}</m> converges to <m>x\in X</m>. Given any <m>y\ne x</m>, pick disjoint open sets <m>U, V</m> containing <m>x</m> and <m>y</m>, respectively. I claim that <m>(x_i)_{i\in I}</m> is not eventually in <m>V</m>.  Indeed, since <m>x_i\rightarrow x</m>, there is an <m>i_0\in I</m> such that <m>x_i\in U</m> for all <m>i\geq i_0</m>. If, similarly, there were a <m>j_0\in I</m> such that <m>x_j\in V</m> for all <m>j\geq j_0</m>, then we could find an index <m>k</m> satisfying <m>k\geq i_0</m> and <m>k\geq j_0</m>, in which case <m>x_k\in U\cap V=\emptyset</m>. Contradiction! We conclude that <m>(x_i)_{i\in I}</m> is not eventually in <m>V</m>, and hence that <m>(x_i)_{i\in I}</m> does not converge to <m>y</m>.    
                     </p>
-                </li> -->
-
+                    <p>
+                        Now assume that <m>X</m> is not Hausdorff, as witnessed by elements <m>x\ne y\in X</m>: this means for all open sets <m>U, V</m> containing <m>x</m> and <m>y</m>, respectively, we have have <m>U\cap V\ne \emptyset</m>. Let <m>I</m> be the set of all triples <m>(U,V, z)</m>, where <m>U, V</m> are open neighborhoods of <m>x</m> and <m>y</m>, respectively, and <m>z\in U\cap V</m>. Declare <m>(U,V,z)\leq (U',V', z')</m> if and only if <m>U\supseteq U'</m> and <m>V\supseteq V'</m>. The set <m>I</m> is directed: given <m>i=(U, V, z_i), j=(U',V',z_j)\in I</m>, we can take <m>k=(U\cap U, V\cap V', z_k)</m>, for some <m>z_k\in U\cap U'\cap V\cap V'</m>. Now, let <m>f=(z_i)_{i\in I}</m> be the net in <m>X</m> defined as follows: given <m>i=(U, V,z_i)</m>, define <m>f(i)=z_i</m>. I claim that <m>z_i\rightarrow x</m> and <m>z_i\rightarrow y</m>. Indeed given any open set <m>U</m> containing <m>x</m> and open set <m>V</m> containing <m>y</m>, let <m>i_0=(U,V,z)</m> for some choice of <m>z\in U\cap V</m>. For any <m>i=(U',V', z_i)\geq i_0</m> we have <m>z_i\in U'\cap V'\subseteq U\cap V</m>. Thus <m>(z_i)_{i\in I}</m> is eventually in <m>U</m> and eventually in <m>V</m>, as desired.   
+                    </p>
+                </li>
             </ol>
         </p>
     </proof>
@@ -186,23 +188,31 @@
             Let <m>(J,\leq_J)</m> and <m>(I,\leq_I)</m> be quasiordered sets. An <term>order-preserving map</term> is a function <m>g\colon J\rightarrow I</m> satisfying the following property: if <m>j\leq_J j'</m>, then <m>g(j)\leq_I g(j')</m>. 
         </p>
         <p>
-            Let <m>f\colon I\rightarrow X</m> be a net. A <term>subnet</term> of <m>I</m> is a net of the form <m>f\circ g\colon J\rightarrow X</m>, where <m>J</m> is a directed set, and <m>g\colon J\rightarrow I</m> is an order-preserving map, and the image <m>g(J)</m> is cofinal in <m>I</m>.
+            Let <m>f=(x_i)_{i\in I}</m> be a net in <m>X</m>. A <term>subnet</term> of <m>I</m> is a net of the form <m>h=f\circ g\colon J\rightarrow X</m>, where <m>J</m> is a directed set, and <m>g\colon J\rightarrow I</m> is an order-preserving map, and the image <m>g(J)</m> is cofinal in <m>I</m>. Using tuple notation, we will write <m>h=(x_{g(j)})_{j\in J}</m> for the subnet <m>h=f\circ g</m>. 
         </p>
     </statement>
 </definition>
-<theorem xml:id="th_limit_points">
+<theorem xml:id="th_nets_limit_points">
     <title>Limit points of nets</title>
     <statement>
         <p>
         Let <m>X</m> be a topological space, and let <m>f=(x_i)_{i\in I}</m> be a net in <m>X</m>. An element <m>x\in X</m> is a limit point of <m>(x_i)_{i\in I}</m> if and only if there is a subnet of <m>(x_i)_{i\in I}</m> converging to <m>x</m>. 
         </p>
     </statement>
+    <proof>
+        <p>
+            Let <m>x</m> be a limit point of the net <m>(x_i)_{i\in I}</m>. By definition of limit point, the collection <m>\mathcal{A}</m> of all open neighborhoods of <m>x</m> satisfies condition (i) of <xref ref="lem_Kelleys_lemma" text="custom">Kelley's lemma</xref>; condition (ii) follows from properties of open sets. We conclude that there is a subnet which is eventually in <m>U</m> for all open sets containing <m>x</m>, and thus that this subnet converges to <m>x</m>.   
+        </p>
+        <p>
+            Assume <m>x</m> is not a limit point of <m>f=(x_i)_{i\in I}</m>. Let <m>U</m> be an open neighborhood of <m>x</m> such that <m>I_U=\{i\in I\colon x_i\in U\}</m> is not cofinal; then there exists an <m>i_0\in I</m> such that <m>x_i\notin U</m>for all <m>i\in I_U</m> with <m>i\geq i_0</m>. Let <m>h=f\circ g\colon J\rightarrow X</m> be a subnet of <m>f</m>. We can write <m>h=(x_{g(j)})_{j\in J}</m>. I claim that <m>x_{g(j)}\not\to x</m>. Indeed, since <m>g(J)</m> is cofinal in <m>I</m> we can find a <m>j_0</m> such that <m>g(j_0)\geq i_0</m>, in which case for all all <m>j\geq j_0</m> we have <m>g(j)\geq g(j_0)\geq i_0</m>, and thus <m>x_{g(j)\notin U</m>. This shows that in fact <m>(x_{g(j)})_{j\in J}</m> is eventually in <m>X-U</m>; in particular it is definitely not eventually in <m>U</m>.    
+        </p>
+    </proof>
 </theorem>
-<lemma xml:id="lem_Kellys_lemma">
+<lemma xml:id="lem_Kelleys_lemma">
     <title>Kelley's lemma</title>
     <statement>
         <p>
-        Let <m>f\colon I\rightarrow X</m> be a net. If <m>\mathcal{A}</m> is a collection of subsets of <m>X</m> satisfying the conditions 
+        Let <m>f\colon I\rightarrow X</m> be a net. If <m>\mathcal{A}</m> is a nonempty collection of subsets of <m>X</m> satisfying the conditions 
         <ol marker="(i.)">
             <li>
                 <p>
@@ -218,7 +228,21 @@
         then there is a subnet of <m>f=(x_i)_{i\in I}</m> which is eventually in <m>A</m> for all <m>A\in\mathcal{A}</m>.   
         </p>
     </statement>
+    <proof>
+        <p>
+        Assume <m>\mathcal{A}</m> is a collection of subsets of <m>X</m> satisfying conditions (i)-(ii). Define <m>J</m> to be the set of pairs <m>(i, A)</m> where <m>A\in \mathcal{A}</m> and <m>x_i\in A</m>. Given <m>j=(i, A)</m>, <m>j'=(i', A')</m>, we declare <m>j\leq j'</m> if and only if <m>i\leq i'</m> and <m>A\supseteq A'</m>. It is clear that this is a quasiordering. We now show <m>J</m> is directed. Given <m>j=(i,A)</m> and <m>j'=(i', A')</m>, by property (ii) there is an <m>A''\in \mathcal{A}</m> such that <m>A''\subseteq A\cap A'</m>. Since <m>f^{-1}(A'')</m> is cofinal, there is an <m>i''\in I</m> such that <m>i''\in A''</m>, <m>i''\geq i</m> and <m>i''\geq i'</m>. Setting <m>j''=(i'', A'')</m>, we see that <m>j\leq j''</m> and <m>j'\leq j''</m>. 
+        </p>
+        <p>
+            Define <m>g\colon J\rightarrow I</m> as <m>g((i,A))=i</m>. It is clear that <m>g</m> is order preserving. We show that <m>g(J)</m> is cofinal in <m>I</m>. Given any <m>i\in I</m>, pick any <m>A\in \mathcal{A}</m>. Since <m>f^{-1}(A)</m> is cofinal, there is an <m>i'\geq i</m> such that <m>i'\in f^{-1}(A)</m>. We have <m>i'=g((i', A))</m>. 
+        </p>
+        <p>
+            Lastly, we show that the subnet <m>(x_{g(j)})_{j\in J}</m> is eventually in <m>A</m> for all <m>A\in \mathcal{A}</m>. Indeed, given <m>A\in \mathcal{A}</m>, let <m>j_0=(i, A)</m> for any <m>i\in f^{-1}(A)</m>. If <m>j\geq j_0</m> for <m>j=(i', A')</m>, then we have <m>i\leq i'</m> and <m>A'\subseteq A</m>. It follows that <m>x_{g(j)}=i'\in A'\subseteq A</m>. This proves <m>x_{g(j)}\in A</m> for all <m>j\geq j_0</m>, and thus that <m>(x_{g(j)})_{j\in J}</m> is eventually in <m>A</m>. 
+        </p>
+    </proof>
 </lemma>
+
+
+
 
 
 

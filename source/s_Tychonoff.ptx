@@ -1,0 +1,250 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_Tychonoff">
+    <title>Tychonoff theorem via nets</title> 
+    <introduction>
+        <p>
+            Our main application of the theory of nets is (a) to give a characterization of comapctness in terms of convergence and limit points of nets (<xref ref="th_nets_compactness" text="global"/>), and (b) to use this characterization to prove the <xref ref="th_Tychonoff_general" text="custom">Tychonoff theorem </xref>
+        </p>
+    </introduction>
+    <subsection xml:id="ss_nets_compactness">
+        <title>Nets and compactness</title>
+        
+    
+    <theorem xml:id="th_nets_compactness">
+        <title>Nets and compactness</title>
+        <statement>
+            <p>
+               Let <m>X</m> be a topological space. The following statements are equivalent.  
+            <ol>
+                <li>
+                    <p>
+                        <m>X</m> is compact. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Every net in <m>X</m> has a limit point. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Every net in <m>X</m> has a convergent subnet. 
+                    </p>
+                </li>
+                
+            </ol>
+        </p>
+        </statement>
+        <proof>
+            <p>
+                Statements (ii) and (iii) are immediately seen to be equivalent thanks to <xref ref="th_nets_limit_points"/>. We will show that (i) and (ii) are equivalent. 
+            </p>
+            <case>
+                <title>Implication: (i) <m>\implies</m> (ii)</title>
+                <p>
+                    Let <m>f=(x_i)_{i\in I}</m> be a net in <m>X</m>. For each <m>i\in I</m> define <m>C_i=\overline{\{x_j\colon j\geq i\}}</m>. Clearly each <m>C_i</m> is closed and nonempty. Furthermore, for any finite collection <m>i_1,i_2,\dots, i_n</m> we have <m>\bigcap_{k=1}^n C_{i_k}\ne \emptyset</m>, since we can find a <m>j</m> such that <m>j\geq i_k</m> for all <m>1\leq k\leq n</m>, and hence <m>x_j\in \bigcap_{k=1}^n C_{i_k}</m>. Since <m>X</m> is assumed to be compact, there is an element <m>x\in \bigcap_{i\in I}C_i</m>. We show that <m>x</m> is a limit point of <m>(x_i)_{i\in I}</m>. 
+                </p>
+                
+            </case>
+            <case>
+                <title>Implication: (ii) <m>\implies</m> (i)</title>
+                <p>
+                    We prove the contrapositive. Suppose <m>X</m> is not compact, and let <m>\mathcal{U}=\{U_i\}_{i\in I}</m> be a cover with no finite cover. Define <m>J</m> to the be the set of all pairs <m>(K, x_K)</m>, where <m>K</m> is a finite subset of <m>I</m> and <m>x_K\in X-\bigcup_{k\in K}U_k</m>. (Note that <m>X-\bigcup_{k\in K}U_k\ne\emptyset</m> since <m>\mathcal{U}</m> has no finite subcover.) It is easy to see that <m>J</m> is a directed set under the quasiordering defined as <m>(K, x_K)\leq (K', x_{K'})</m> if and only if <m>K\subseteq K'</m>. Define the net <m>f\colon J\rightarrow X</m> as <m>f((K, x_K))=x_K</m>. 
+                </p>
+            </case>
+        </proof>
+    </theorem>
+</subsection>
+    <subsection xml:id="ss_Tychonoff">
+        <title>Tychonoff's theorem</title>
+        <introduction>
+            <p>
+                We now give a proof of Tychonoff's theorem using nets. The first such proof was given by UC Berkeley mathematician John L. Kelley in his 1950 paper <em>Convergence in topology</em>. Our proof draws from a couple of slight improvements to Kelley's original argument, both proffered by additional UC Berkeley mathematicians. (Go Bears!) Paul Chernoff's <url href="https://www.jstor.org/stable/2324485">A simple proof of Tychonoff's theorem via nets</url> removed the need for universal nets in Kelley's argument; Charles Pugh is credited for <xref ref="lemma_product_nets"/>, which removes the argument's reliance on subnets. All of these various proofs invoke <xref ref="th_Zorns_lemma" text="custom">Zorn's lemma</xref>, which as it turns out is equivalent to the axiom of choice. You may be asking: Is there a proof of the Tychonoff theorem that does not rely on the axiom of choice? Amazingly, the answer is no! In fact, Kelley himself proved that Tychonoff's theorem is equivalent to the axiom of choice in another paper from 1950: <em>The Tychonoff product theorem implies the axiom of choice</em>. His argument is simply too elegant not to include here. 
+            </p>
+        </introduction>
+        <theorem xml:id="th_Tychonoff_choice">
+            <title>Tychonoff implies AC (Kelley)</title>
+            <statement>
+                <p>
+                   If Tychonoff's theorem is true, then the axiom of choice is true. 
+                </p>
+            </statement>
+            <proof>
+                <p>
+                    Assume Tychonoff's theorem is true. We will prove the following equivalent formulation of the axiom of choice:
+                    <men xml:id="eq_axiom_choice">
+                        X_i\ne\emptyset \text{ for all } i\in I \implies X=\prod_{i\in I}X_i\ne \emptyset
+                    </men>.
+                Given a collection <m>\{X_i\}_{i\in I}</m> of nonempty sets, let <m>Y_i=X_i\sqcup \{P_i\}</m> the the result of adding one additional point, <m>P_i</m>, to each <m>X_i</m>. Why do we do this? We can with assurance that the product <m>Y=\prod_{i\in I}Y_i</m> is nonempty since the <m>(P_i)_{i\in I}</m> is an element of <m>Y</m>. We will use Tychonoff's theorem to show that <m>X</m> is a nonempty subset of <m>Y</m>. To do so, we need to give the sets <m>Y_i</m> a <em>compact</em> topological structure: this is accomplished by equipping each <m>Y_i</m> with the <em>cofinite</em> topology. 
+                </p>
+                <p>
+                    Since each <m>Y_i</m> is compact with the cofinite topology, by Tychonoff's theorem so is <m>Y=\prod_{i\in I}Y_i</m>. For each <m>i\in I</m>, let <m>\pi_i\colon Y\rightarrow Y_i</m> be the <m>i</m>th projection map and define
+                    <me>
+                        C_i=\pi_i^{-1}(X_i)=\{(y_j)_{j\in I}\colon y_i\in X_i\}
+                    </me>.
+                    Since <m>X_i=Y_i-\{P_i\}</m> is closed in the cofinite topology, and since <m>\pi_i</m> is continuous, the set <m>C_i</m> is closed for each <m>i\in I</m>. Furthermore given any finite set <m>\{i_1,i_2,\dots,i_n\}\subseteq I</m>, the set <m>\bigcap_{k=1}^nC_{i_k}</m> is nonempty: indeed, by the <em>finite axiom of choice</em> principle (which is implied by ZF set theory) there exists a tuple <m>(x_{i_1}, x_{i_2}, \dots, x_{i_n})\in \prod_{k=1}^nX_{i_k}</m>, and thus the element <m>y=(y_i)_{i\in I}</m> defined as 
+                    <me>
+                        y_i=\begin{cases}
+                        x_{i_k}\amp \text{if } i=i_k \text{ for some } 1\leq k\leq n\\
+                        P_i\amp \text{if } i\notin \{i_1,i_2,\dots, i_n\}
+                        \end{cases}
+                    </me>
+                is an element of <m>\bigcap_{k=1}^n C_{i_k}</m>. Now since <m>Y</m> is compact, we have <m>\bigcap_{i\in I}C_i\ne\emptyset</m>, using the finite intersection characterization of compactness. But clearly <m>X=\prod_{i\in I}X_i=\bigcap_{i\in I}C_i</m>. Thus <m>X\ne \emptyset</m>.                    
+                    
+                </p>
+            </proof>
+        </theorem>
+        <p>
+            Now on to a net-based proof of Tychonoff's theorem. As mentioned we use Zorn's lemma, the statement of which involves some extra jargon. 
+        </p>
+    <definition xml:id="d_chain">
+        <title>Upper bounds, maximal elements, chains</title>
+        <statement>
+            <p>
+                Let <m>(I, \leq)</m> be a partially ordered set. 
+            </p>
+            <p>
+                An <term>upper bound</term> on a subset <m>J\subseteq I</m> is an element <m>i\in I</m> such that <m>i\geq j</m> for all <m>j\in J</m>. 
+            </p>
+            <p>
+                An element <m>i\in I</m> is <term>maximal</term> if given any <m>i'\in I</m>, if <m>i\leq i'</m>, then <m>i=i'</m>. 
+            </p>
+            <p>
+                A subset <m>J\subseteq I</m> is a <term>chain</term> (or <term>totally ordered</term>) if for all <m>j, j'\in J</m> we have <m>j\leq j'</m> or <m>j'\leq j</m>. 
+            </p>
+        </statement>
+    </definition>
+    <theorem xml:id="th_Zorns_lemma">
+        <title>Zorn's lemma</title>
+        <statement>
+            <p>
+                Let <m>(I,\leq)</m> be a partially ordered set. If every chain <m>J\subseteq I</m> has an upper bound, then <m>I</m> has a maximal element: <ie/>, there is an <m>i\in I</m> such that for all <m>i'\in I</m>, if  <m>i\leq i'</m>, then <m>i=i'</m>. 
+            </p>
+        </statement>
+        <proof>
+            <p>
+               As stated above, Zorn's lemma is equivalent to the axiom of choice. You can find a proof of this fact in most introductory set theory texts. 
+            </p>
+        </proof>
+    </theorem>
+    <p>
+        Lastly, before moving to the main attraction, we record a useful lemma that will simplify our main argument. The proof idea, due to Charles Pugh, avoids all mention of subnets, proving a path to proving Tychonoff's theorem that does not require subnets. There is a fairly direct alternative proof of the lemma using convergent subnets. See if you can figure it out!
+    </p>
+    <lemma xml:id="lemma_product_nets">
+        <title>Nets in products</title>
+        <statement>
+            <p>
+                Let <m>X, Y</m> be topological spaces, and assume <m>Y</m> is compact. Let <m>f=((x_i, y_i))_{i\in I}</m> is a net in <m>X\times Y</m>. Let <m>\pi_X\colon X\times Y\rightarrow X</m> be the projection onto <m>X</m> map. If <m>x\in X</m> is a limit point of the net <m>\pi_X\circ f=(x_i)_{i\in I}</m>, then there is a <m>y\in Y</m> such that <m>(x,y)</m> is a limit point of <m>f</m>. 
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Let <m>x\in X</m> be a limit point of <m>\pi_X\circ f=(x_i)_{i\in I}</m>. Define <m>J</m> to be the set of all pairs <m>(U,i)</m>, where <m>U</m> is an open neighborhood of <m>x</m>, and <m>x_i\in U</m>. For elements <m>(U,i), (U',i')\in J</m> we declare <m>(U,i)\leq (U',i')</m> if and only if <m>U\supseteq U'</m> and <m>i\leq i'</m>. It is easy to see that <m>J</m> is a partially ordered set with respect to this ordering. To see that it is directed, given indices <m>j=(U, i)</m> and <m>j'=(U', i')</m> in <m>J</m>,  since <m>x</m> is a limit point of <m>(x_{i})_{i\in I}</m>, we can find a <m>j''=(U\cap U', i'')</m> where <m>i,i'\leq i''</m> and <m>x_{i''}\in U\cap V</m>. This <m>j''</m> satisfies <m>j''\in J</m> and <m>j,j'\leq j''</m>, as desired. 
+            </p>
+            <p>
+                Now define the net <m>g\colon J\rightarrow Y</m> as <m>g((U,i))=y_i</m>. (Recall, our original net is <m>f=((x_i,y_i))_{i\in I}</m>.) 
+                Since <m>Y</m> is compact, the net <m>g</m> has a limit point <m>y\in Y</m>. We claim that <m>(x,y)</m> is a limit point of our original net <m>f=((x_i,y_i))_{i\in I}</m>.  To prove this, it is enough to show that given any basic opens set <m>U\times V</m> containing <m>(x,y)</m>, and any <m>i\in I</m>, we can find an index <m>i'\geq i</m> such that <m>(x_{i'},y_{i'})\in U\times V</m>. Given <m>U\times V</m> containing <m>(x,y)</m> and index <m>i\in I</m>, first pick an index <m>i''\geq i</m> such that <m>x_{i''}\in U</m>. This is possible since <m>x</m> is a limit point of <m>(x_i)_{i\in I}</m>. By definition the pair <m>j=(U,i'')</m> is an element of <m>J</m>. Since <m>y</m> is a limit point of the net <m>g</m>, and since <m>V</m> is an open neighborhood of <m>y</m>, we can find an element <m>j'=(U',i')</m> such that <m>j'\geq j</m> and <m>y_{i'}\in V</m>. By definition of <m>J</m> and its partial ordering, we have <m>i'\geq i</m>, <m>U'\subseteq U</m>, and <m>x_{i'}\in U'</m>. We conclude that <m>(x_{i'},y_{i'})\in U'\times V\subseteq U\times V</m>, as desired. 
+            </p>
+        </proof>
+    </lemma>
+    <theorem xml:id="th_Tychonoff_general">
+        <title>Tychonoff theorem</title>
+        <statement>
+            <p>
+               Given any collection <m>\{X_t\}_{t\in T}</m>  of compact spaces the product space <m>X=\prod_{t\in T}X_t</m> is compact. 
+            </p>
+        </statement>
+        <proof>
+            <title>Proof (following P. Chernoff)</title>
+            <p>
+                We show that any net <m>(f_i)_{i\in I}</m> in <m>X</m> has a limit point <m>f\in X</m>. In an effort to distinguish between the different types of tuple objects at play here, I will exclusively use tuple notation for nets and exclusively use function notation for elements of <m>X=\prod_{t\in T}X_t</m>. This is already in force above: the net <m>(f_i)_{i\in I}</m> specifies an element <m>f_i\in X</m> for each index <m>i\in I</m>; but each <m>f_i</m> is itself a function <m>f_i\colon T\rightarrow \bigcup_{t\in T}X_t</m> satisfying <m>f(t)\in X_t</m>.   
+            </p>
+            <p>
+                Now define <m>\mathcal{F}</m> to be the set of all pairs <m>(S,g)</m>, where <m>S\subseteq T</m> and <m>g\in X_S=\prod_{t\in S}X_t</m> is a limit point of the net <m>(f_i\vert_S)_{i\in I}</m>. Note how we are exploiting the function notation here: since elements of <m>X_S</m> are just functions with domain <m>S\subseteq T</m>, restricting the domain yields a map from <m>X</m> to <m>X_S</m> defined as <m>f\mapsto f\vert_S</m>. This map is in fact just the projection map <m>\pi_S\colon X\rightarrow \prod_{t\in S}X_t</m> defined as <m>\pi_S(f)=(\pi_t(f))_{t\in S}</m>. It follows from this that this map is continuous.   
+            </p>
+            <p>
+                Next, we define the relation <m>\leq</m> on <m>\mathcal{F}</m> as follows: <m>(S,g)\leq (S', g')</m> if and only if <m>S\subseteq S'</m> and <m>g'\vert_{S}=g</m>. It is easy to see that <m>\leq</m> is a partial ordering. We now proceed in two steps: (1) we will show that <m>\mathcal{F}</m> satisfies the conditions of Zorn's lemma, and hence that it has a maximal element <m>(S^*, g^*)</m>; (2) we will show that <m>S^*=T</m> and hence that <m>g^*=f\in X</m> is a limit point of <m>(f_i)_{i\in I}</m>. It then follows that <m>X</m> is compact, as desired.  
+            </p>
+            <proof>
+                <title>Step 1: <m>\mathcal{F}</m> has a maximal element</title>
+                <p>
+                   First observe that <m>\mathcal{F}</m> is nonempty. Indeed, given any <m>t_0\in T</m>, the net <m>(f_i\vert_{\{t_0\}})_{i\in I}</m> is just a net in the compact space <m>X_{t_0}</m>, and hence has a limit point <m>g</m>. It follows that <m>(\{t_0\}, g)\in \mathcal{F}</m>. (There is a slight subtlety here, which is that the space <m>X_{t_0}</m> is homeomorphic to the (somewhat funny looking) product space <m>\prod_{t\in \{t_0\}}X_t</m> via the map <m>f\mapsto f(t_0)</m>.)
+                </p>
+                <p>
+                    Next we show that any chain in <m>\mathcal{F}</m> has an upper bound in <m>\mathcal{F}</m>. To this end, given any chain <m>\mathcal{C}</m> in <m>\mathcal{F}</m>, we define <m>(\widetilde{S},\widetilde{g})</m> as follows: 
+                    <ul>
+                        <li>
+                            <p>
+                                <m>\widetilde{S}=\bigcup\limits_{(S,g)\in \mathcal{C}}S</m>;
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                the function <m>\widetilde{g}\colon \widetilde{S}\rightarrow \bigcup_{t\in \widetilde{S}}X_t</m> is defined as <m>\widetilde{g}(s)=g(s)</m>, where <m>(S,g)</m> is any element of <m>\mathcal{F}</m> for which <m>s\in S</m>.
+                            </p>
+                        </li>
+                    </ul> 
+                    First observe that <m>\widetilde{g}</m> is a well-defined function: if <m>s\in S\cap S'</m>, where <m>(S,g),(S',g')\in \mathcal{F}</m>, then since <m>\mathcal{C}</m> is a chain either <m>(S,g)\leq (S',g')</m> or <m>(S',g')\leq (S,g)</m>; assuming without loss of generality that <m>(S,g)\leq (S',g')</m> we have <m>g'\vert_S=g</m> by definition, and hence that <m>g(s)=g'(s)</m>. Next we must show that <m>\widetilde{g}</m>, understood as an element of <m>\prod_{t\in \widetilde{S}}X_t</m>, is a limit point of the net <m>(f_i\vert_{\widetilde{S}})_{i\in I}</m>. Using the usual product topology basis, it suffices to show that given any finite set <m>F\subseteq \widetilde{S}</m> and open set of the form <m>U=\prod_{t\in F}U_t\times \prod_{t\in \widetilde{S}-F}X_t</m>, and given any <m>i\in I</m>, there is an <m>i'\geq i</m> such that <m>f_i\vert_{\widetilde{S}}\in U</m>. Since <m>F</m> is finite, we have <m>F\subseteq \bigcup_{k=1}^nS_k</m> for some sets <m>S_k</m> satisfying <m>(S_k, g_k)\in \mathcal{C}</m>. Since <m>\mathcal{C}</m> is a chain, there is an index <m>k_0\in \{k_1,k_2,\dots, k_n\}</m> such that <m>S_{k_0}\supseteq S_k</m> for all  <m>1\leq k\leq n</m>. Thus we may assume there is an element <m>(S, g)\in \mathcal{F}</m> such that <m>F\subseteq S</m>. By definition <m>g</m> is a limit point of the net <m>(f_i\vert_S)_{i\in I}</m>. Since <m>\widetilde{g}\vert_S=g</m>, it follows that <m>g\in \prod_{t\in F}X_t\times \prod_{t\in S-F}X_t</m>. Thus there is an <m>i'\geq i</m> such that <m>f_{i'}\vert_S\in \prod_{t\in F}X_t\times \prod_{t\in S-F}X_t</m>. It follows easily that <m>f_{i'}\vert_{\widetilde{S}}\in \prod_{t\in F}X_t\times \prod_{t\in \widetilde{S}-F}X_t</m>. This proves <m>\widetilde{g}</m> is a limit point of <m>(f_i\vert_\widetilde{S})_{i\in I}</m>, and hence that <m>(\widetilde{S}, \widetilde{g})\in \mathcal{F}</m>. It is clear from the definition of <m>(\widetilde{S},\widetilde{g})</m>, that it is an upper bound of <m>\mathcal{C}</m>. 
+                </p>
+                <p>
+                    Having shown that <m>\mathcal{F}</m> satisfies the chain condition for Zorn's lemma, we conclude that it contains a maximal element <m>(S^*, g^*)</m>. 
+                </p>
+            </proof>
+        </proof>
+        <proof>
+            <title>Step 2: <m>S^*=T</m></title>
+            <p>
+                Let <m>(S^*, g^*)</m> be a maximal element of <m>\mathcal{F}</m>, so that <m>g^*</m> is a limit point of the net <m>(f_i\vert_{S^*})_{i\in I}</m>. We show that <m>S^*</m> and hence that <m>g^*=f\in X</m> is a limit point of <m>(f_i)_{i\in I}</m>. 
+            </p>
+            <p>
+                Assume by contradiction that <m>S^*\ne T</m>, and let <m>t_0\in T-S^*</m>. Since <m>X_{t_0}</m> is compact, by <xref ref="lemma_product_nets"/> the net <m>(f_i\vert_{S^*\cup \{t_0}})_{i\in I}</m> in <m>X_{S^*\cup {t_0}}=X_{S^*}\times X_{t_0}</m> has a limit point of the form <m>(g^*, x_{t_0})</m>. But then the element <m>(S,g)\in \mathcal{F}</m> defined as <m>S=S^*\cup \{t_0\}</m> and 
+                <me>
+                g(s)=\begin{cases} g^*(s)\amp \text{if } s\in S^*\\
+                    x_{t_0}\amp \text{if } s=t_0
+                </me>
+                satisfies <m>(S,g)\geq (S^*, g^*)</m> and <m>(S,g)\ne (S^*, g^*)</m>, contradicting the fact that <m>(S^*, g^*)</m> is a maximal element. 
+            </p>
+        </proof>
+    </theorem>
+    
+    </subsection>
+    <!-- <definition xml:id="d_universal_net">
+        <title>Universal net</title>
+        <statement>
+            <p>
+                Let <m>X</m> be a set. A net <m>f=(x_i)_{i\in I}</m> in <m>X</m> is <term>universal</term> if for all <m>A\subseteq X</m> we have <m>f</m> eventually in <m>A</m> or <m>f</m> eventually in <m>X-A</m>. 
+            </p>
+        </statement>
+    </definition> 
+    <theorem xml:id="th_universal_subnet">
+        <title>Universal subnet</title>
+        <statement>
+            <p>
+                Let <m>f=(x_i)_{i\in I}</m> be a net in the set <m>X</m>. There is a universal subnet of <m>f</m>. 
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Let <m>f=(x_i)_{i\in I}</m> be a net in <m>X</m>. Consider all collections <m>\mathcal{A}</m> of subsets of <m>X</m> satisfying the following properties:
+                <ol marker="(i)">
+                    <li>
+                        <p>
+                            <m>A_1, A_2\in \mathcal{A}\implies A_1\cap A_2\in \mathcal{A}</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>A\in \mathcal{A}\implies f \text{ is cofinally in } A</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>A_1\in \mathcal{A}, A_2\supseteq A_1\implies A_2\in \mathcal{A}</m>
+                        </p>
+                    </li>
+                    
+                </ol>
+            The set <m>S</m> of all such collections <m>\mathcal{A}</m> is nonempty (<m>\A=\{X\}</m> is one such collection) and partially ordered under the relation <m>\mathcal{A}\leq \mathcal{A}'</m> if and only if <m>\mathcal{A}\subseteq \mathcal{A}'</m>. Let <m>T</m> be any subset of <m>S</m> that is totally ordered with respect to our partial ordering. Define <m>\mathcal{B}=\bigcup_{\mathcal{A}\in \mathcal{T}}\mathcal{A}</m>. A straightforward check shows that <m>\mathcal{B}\in S</m> is an upper bound on <m>T</m>. We conclude by Zorn's lemma that <m>S</m> has a maximal collection <m>\mathcal{A}</m> satisfying (i)-(iii). I claim that for all <m>A\subseteq X</m> we have <m>A\in \mathcal{A}</m> or <m>X-A\in mathcal{A}</m>. Take any <m>A\subseteq X</m> and assume <m>A\notin \mathcal{A}</m>. 
+            </p> 
+        </proof>
+    </theorem> -->
+</section>
