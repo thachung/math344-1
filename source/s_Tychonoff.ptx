@@ -74,22 +74,21 @@
                     <men xml:id="eq_axiom_choice">
                         X_i\ne\emptyset \text{ for all } i\in I \implies X=\prod_{i\in I}X_i\ne \emptyset
                     </men>.
-                Given a collection <m>\{X_i\}_{i\in I}</m> of nonempty sets, let <m>Y_i=X_i\sqcup \{P_i\}</m> the the result of adding one additional point, <m>P_i</m>, to each <m>X_i</m>. Why do we do this? We can with assurance that the product <m>Y=\prod_{i\in I}Y_i</m> is nonempty since the <m>(P_i)_{i\in I}</m> is an element of <m>Y</m>. We will use Tychonoff's theorem to show that <m>X</m> is a nonempty subset of <m>Y</m>. To do so, we need to give the sets <m>Y_i</m> a <em>compact</em> topological structure: this is accomplished by equipping each <m>Y_i</m> with the <em>cofinite</em> topology. 
+                Given a collection <m>\{X_i\}_{i\in I}</m> of nonempty sets, let <m>Y_i=X_i\sqcup \{P_i\}</m> the the result of adding one additional point, <m>P_i</m>, to each <m>X_i</m>. Why do we do this? We can with assurance that the product <m>Y=\prod_{i\in I}Y_i</m> is nonempty since the <m>(P_i)_{i\in I}</m> is an element of <m>Y</m>. We will use Tychonoff's theorem to show that <m>X</m> is a nonempty subset of <m>Y</m>. To do so, we need to give the sets <m>Y_i</m> a <em>compact</em> topological structure: this is accomplished by declaring the topology on <m>Y_i</m> to be <m>\mathcal{T}_i=\{\emptyset, X_i, \{P_i\}, Y_i\}</m>. (Check that this is a topology.) This clearly makes <m>Y_i</m> compact, since <m>\mathcal{T}_i</m> only contains four open sets. Note also that <m>X_i=Y_i-\{P_i\}</m> is closed with respect to this topology.  
                 </p>
                 <p>
-                    Since each <m>Y_i</m> is compact with the cofinite topology, by Tychonoff's theorem so is <m>Y=\prod_{i\in I}Y_i</m>. For each <m>i\in I</m>, let <m>\pi_i\colon Y\rightarrow Y_i</m> be the <m>i</m>th projection map and define
+                    Since each <m>Y_i</m> is compact, by Tychonoff's theorem so is <m>Y=\prod_{i\in I}Y_i</m>. For each <m>i\in I</m>, let <m>\pi_i\colon Y\rightarrow Y_i</m> be the <m>i</m>th projection map and define
                     <me>
                         C_i=\pi_i^{-1}(X_i)=\{(y_j)_{j\in I}\colon y_i\in X_i\}
                     </me>.
-                    Since <m>X_i=Y_i-\{P_i\}</m> is closed in the cofinite topology, and since <m>\pi_i</m> is continuous, the set <m>C_i</m> is closed for each <m>i\in I</m>. Furthermore given any finite set <m>\{i_1,i_2,\dots,i_n\}\subseteq I</m>, the set <m>\bigcap_{k=1}^nC_{i_k}</m> is nonempty: indeed, by the <em>finite axiom of choice</em> principle (which is implied by ZF set theory) there exists a tuple <m>(x_{i_1}, x_{i_2}, \dots, x_{i_n})\in \prod_{k=1}^nX_{i_k}</m>, and thus the element <m>y=(y_i)_{i\in I}</m> defined as 
+                    Since <m>X_i=Y_i-\{P_i\}</m> is closed in <m>Y_i</m>, and since <m>\pi_i</m> is continuous, the set <m>C_i</m> is closed for each <m>i\in I</m>. Furthermore given any finite set <m>\{i_1,i_2,\dots,i_n\}\subseteq I</m>, the set <m>\bigcap_{k=1}^nC_{i_k}</m> is nonempty: indeed, by the <em>finite axiom of choice</em> principle (which is implied by ZF set theory) there exists a tuple <m>(x_{i_1}, x_{i_2}, \dots, x_{i_n})\in \prod_{k=1}^nX_{i_k}</m>, and thus the element <m>y=(y_i)_{i\in I}</m> defined as 
                     <me>
                         y_i=\begin{cases}
                         x_{i_k}\amp \text{if } i=i_k \text{ for some } 1\leq k\leq n\\
                         P_i\amp \text{if } i\notin \{i_1,i_2,\dots, i_n\}
                         \end{cases}
                     </me>
-                is an element of <m>\bigcap_{k=1}^n C_{i_k}</m>. Now since <m>Y</m> is compact, we have <m>\bigcap_{i\in I}C_i\ne\emptyset</m>, using the finite intersection characterization of compactness. But clearly <m>X=\prod_{i\in I}X_i=\bigcap_{i\in I}C_i</m>. Thus <m>X\ne \emptyset</m>.                    
-                    
+                is an element of <m>\bigcap_{k=1}^n C_{i_k}</m>. Now since <m>Y</m> is compact, we have <m>\bigcap_{i\in I}C_i\ne\emptyset</m>, using the finite intersection characterization of compactness. But clearly <m>X=\prod_{i\in I}X_i=\bigcap_{i\in I}C_i</m>. Thus <m>X\ne \emptyset</m>.
                 </p>
             </proof>
         </theorem>
@@ -127,7 +126,7 @@
         </proof>
     </theorem>
     <p>
-        Lastly, before moving to the main attraction, we record a useful lemma that will simplify our main argument. The proof idea, due to Charles Pugh, avoids all mention of subnets, proving a path to proving Tychonoff's theorem that does not require subnets. There is a fairly direct alternative proof of the lemma using convergent subnets. See if you can figure it out!
+        Lastly, before moving to the main attraction, we record a useful lemma that will simplify our main argument. The proof idea, due to Charles Pugh, avoids all mention of subnets, providing a path to proving Tychonoff's theorem that does not require subnets. There is a fairly direct alternative proof of the lemma using convergent subnets. See if you can figure it out!
     </p>
     <lemma xml:id="lemma_product_nets">
         <title>Nets in products</title>
