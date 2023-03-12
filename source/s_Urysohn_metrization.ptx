@@ -60,6 +60,14 @@
                 A space <m>X</m> is completely regular if and only if it is homeomorphic to a subspace of <m>[0,1]^I</m> for some set <m>I</m>. 
             </p>
         </statement>
+        <proof>
+            <p>
+                Implication: <m>(\Rightarrow)</m>. Assume <m>X</m> is completely regular. Recall that in particular this means <m>X</m> is <m>T_1</m>. Define <m>I</m> to be the set of all pairs <m>(x, U)</m> where <m>x\in X</m> and <m>U</m> is an open neighborhood of <m>x</m>. For each <m>i=(x,U)</m>, let <m>f_i\colon X\rightarrow [0,1]</m> be a function satisfying <m>f(x)=1</m> and <m>f(X-U)=\{0\}</m>. (Such a function exists since <m>X</m> is completely regular.) Now, for all <m>x\in X</m> and for all open sets <m>U</m> containing <m>x</m>, corresponding to the index <m>i=(x,U)</m> we have the function <m>f_i</m> which satisfies <m>f_i(x)=1&gt; 0</m> and <m>f_i(X-U)=\{0\}</m>. We conclude by <xref ref="th_embedding_theorem"/> that the map <m>f(x)=(f_i(x))_{i\in I}</m> is an embedding of <m>X</m> into <m>\R^I</m>, and thus that <m>X</m> is homeomorphic to a subspace of <m>\R^I</m>.
+            </p>
+            <p>
+                Implication: <m>(\impliedby)</m>. Since <m>\R</m> is completely regular, and since complete regularity is preserved under arbitrary products, the space <m>\R^I</m> is completely regular for any set <m>I</m>. Furthermore, since complete regularity is inherited by subspaces, any subspace of <m>\R^I</m> is completely regular. Thus, if <m>X</m> embeds into <m>\R^I</m>, then it is homeomorphic to a subspace of <m>\R^I</m>, and hence is completely regular. 
+            </p>
+        </proof>
     </corollary>
     
  </section>

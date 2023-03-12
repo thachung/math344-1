@@ -15,55 +15,56 @@
             <p>
                 It would be difficult to improve upon Munkres' exposition of this. I give essentially a full proof below nonetheless.
             </p>
-        </proof>
-        <proof>
-            <title>Step 1: construction of open sets <m>U_p</m></title>
-                <p>
-                  The first crucial step in the proof is to build a collection of open sets <m>\{U_p\}_{p\in \Q}</m> satisfying <m>\overline{U_p}\subseteq U_{q}</m> if <m>p&lt; q</m>. This is done by first 
-                  picking an enumeration of <m>\Q\cap [0,1]=\{p_1,p_2,\dots,\}</m> where for convenience <m>p_1=1</m> and <m>p_2=0</m>. We use the enumeration to define open sets <m>U_p</m> for each <m>p\in \Q</m> recursively as follows. Set <m>U_1=X-B</m>. Since <m>A\subseteq U_1</m>, by <xref ref="th_regular_normal_equivalence"/> we can find an open <m>U_0</m> containing <m>A</m> such that <m>\overline{U}_0\subseteq U_1</m>. Now take any <m>n\geq 2</m> and assume by induction that we constructed open sets <m>U_{p_1}, U_{p_2},\dots, U_{p_n}</m> satisfying the desired inclusion condition. Write <m>p&lt; p_{n+1} &lt; q</m> where  <m>p</m> and <m>q</m> are the immediate predecessor and successor, respectively, of <m>p_{n+1}</m> among the set <m>\{p_1,p_2,\dots, p_n\}</m>. By induction we have <m>\overline{U_p}\subseteq U_q</m>. Pick <m>U_{p_{n+1}}</m> to be any open set satisfying 
-                  <me>
-                    \overline{U_p}\subseteq U_{p_{n+1}}\subseteq \overline{U_{p_{n+1}}}\subseteq U_q
-                  </me>.
-                  Lastly define <m>U_p=\emptyset</m> for all <m>p&lt; 0</m> and <m>U_p=X</m> for all <m>p&gt; 0</m>. It is easy to see that thus defined, our collection <m>\{U_p\}_{p\in \Q}</m> satisfies the desired inclusion condition. 
-                </p>
-            </proof>
             <proof>
-                <title>Step 2: definition of <m>f</m> and continuity</title>
-                <p>
-                Define <m>f\colon X\rightarrow \R</m> as 
-                <me>
-                    f(x)=\inf\{p\in \Q\colon x\in U_p\}
-                </me>.
-                Some easy properties of <m>f</m>:
-                <ul>
-                    <li>
-                        <p>
-                            <m>0\leq f(x)\leq 1</m> for all <m>x\in X</m>. 
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <m>f(x)\leq p</m> for all <m>x\in \overline{U_p}</m>.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <m>f(x)\geq p</m> for all <m>x\notin U_p</m>. 
-                        </p>
-                    </li>
-                </ul>
-                We prove continuity by showing that <m>f</m> is continuous at each <m>x</m>. Given <m>x\in X</m> and open set <m>(a,b)</m> containing <m>y=f(x)</m>, choose rational numbers <m>p, q</m> satisfying 
-                <me>
-                    a&lt; p&lt; y &lt; q &lt; b
-                </me>.
-                I claim <m>U_q-\overline{U_p}</m> is an open set containing <m>x</m> satisfying 
-                <me>
-                    f(U_q-\overline{U_p})\subseteq [p,q]\subseteq (a,b)
-                </me>. 
-                First, it is clear that <m>U_q-\overline{U_p}</m> is open, and it follows easily from the elementary properties of <m>f</m> quoted above that <m>x\in U_q-\overline{U_p}</m>. Next, given any <m>x'\in U_q-\overline{U_p}</m>, since <m>x'\in \overline{U_q}</m>, we have <m>f(x')\leq q</m>, and since <m>x'\notin U_p</m>, we have <m>f(x')\geq p</m>. This concludes the proof. 
-                
-                </p>
-            </proof>
+                <title>Step 1: construction of open sets <m>U_p</m></title>
+                    <p>
+                      The first crucial step in the proof is to build a collection of open sets <m>\{U_p\}_{p\in \Q}</m> satisfying <m>\overline{U_p}\subseteq U_{q}</m> if <m>p&lt; q</m>. This is done by first 
+                      picking an enumeration of <m>\Q\cap [0,1]=\{p_1,p_2,\dots,\}</m> where for convenience <m>p_1=1</m> and <m>p_2=0</m>. We use the enumeration to define open sets <m>U_p</m> for each <m>p\in \Q</m> recursively as follows. Set <m>U_1=X-B</m>. Since <m>A\subseteq U_1</m>, by <xref ref="th_regular_normal_equivalence"/> we can find an open <m>U_0</m> containing <m>A</m> such that <m>\overline{U}_0\subseteq U_1</m>. Now take any <m>n\geq 2</m> and assume by induction that we constructed open sets <m>U_{p_1}, U_{p_2},\dots, U_{p_n}</m> satisfying the desired inclusion condition. Write <m>p&lt; p_{n+1} &lt; q</m> where  <m>p</m> and <m>q</m> are the immediate predecessor and successor, respectively, of <m>p_{n+1}</m> among the set <m>\{p_1,p_2,\dots, p_n\}</m>. By induction we have <m>\overline{U_p}\subseteq U_q</m>. Pick <m>U_{p_{n+1}}</m> to be any open set satisfying 
+                      <me>
+                        \overline{U_p}\subseteq U_{p_{n+1}}\subseteq \overline{U_{p_{n+1}}}\subseteq U_q
+                      </me>.
+                      Lastly define <m>U_p=\emptyset</m> for all <m>p&lt; 0</m> and <m>U_p=X</m> for all <m>p&gt; 0</m>. It is easy to see that thus defined, our collection <m>\{U_p\}_{p\in \Q}</m> satisfies the desired inclusion condition. 
+                    </p>
+                </proof>
+                <proof>
+                    <title>Step 2: definition of <m>f</m> and continuity</title>
+                    <p>
+                    Define <m>f\colon X\rightarrow \R</m> as 
+                    <me>
+                        f(x)=\inf\{p\in \Q\colon x\in U_p\}
+                    </me>.
+                    Some easy properties of <m>f</m>:
+                    <ul>
+                        <li>
+                            <p>
+                                <m>0\leq f(x)\leq 1</m> for all <m>x\in X</m>. 
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>f(x)\leq p</m> for all <m>x\in \overline{U_p}</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>f(x)\geq p</m> for all <m>x\notin U_p</m>. 
+                            </p>
+                        </li>
+                    </ul>
+                    We prove continuity by showing that <m>f</m> is continuous at each <m>x</m>. Given <m>x\in X</m> and open set <m>(a,b)</m> containing <m>y=f(x)</m>, choose rational numbers <m>p, q</m> satisfying 
+                    <me>
+                        a&lt; p&lt; y &lt; q &lt; b
+                    </me>.
+                    I claim <m>U_q-\overline{U_p}</m> is an open set containing <m>x</m> satisfying 
+                    <me>
+                        f(U_q-\overline{U_p})\subseteq [p,q]\subseteq (a,b)
+                    </me>. 
+                    First, it is clear that <m>U_q-\overline{U_p}</m> is open, and it follows easily from the elementary properties of <m>f</m> quoted above that <m>x\in U_q-\overline{U_p}</m>. Next, given any <m>x'\in U_q-\overline{U_p}</m>, since <m>x'\in \overline{U_q}</m>, we have <m>f(x')\leq q</m>, and since <m>x'\notin U_p</m>, we have <m>f(x')\geq p</m>. This concludes the proof. 
+                    
+                    </p>
+                </proof>
+        </proof>
+        
     </theorem>
     <definition xml:id="d_separated_continuous_function">
         <title>Separated by a continuous function</title>
