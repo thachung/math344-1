@@ -164,7 +164,7 @@
     <title>Compactness and closed maps</title>
     <statement>
         <p>
-           Let <m>f\colon X\rightarrow Y</m> be continuous. If <m>X</m> is continuous and <m>Y</m> is Hausdorff, then <m>f</m> is a closed map.  
+           Let <m>f\colon X\rightarrow Y</m> be continuous. If <m>X</m> is compact and <m>Y</m> is Hausdorff, then <m>f</m> is a closed map.  
         </p>
     </statement>
     <proof>
