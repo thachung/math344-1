@@ -41,14 +41,14 @@
             <case>
                 <title>Implication: (i) <m>\implies</m> (ii)</title>
                 <p>
-                    Let <m>f=(x_i)_{i\in I}</m> be a net in <m>X</m>. For each <m>i\in I</m> define <m>C_i=\overline{\{x_j\colon j\geq i\}}</m>. Clearly each <m>C_i</m> is closed and nonempty. Furthermore, for any finite collection <m>i_1,i_2,\dots, i_n</m> we have <m>\bigcap_{k=1}^n C_{i_k}\ne \emptyset</m>, since we can find a <m>j</m> such that <m>j\geq i_k</m> for all <m>1\leq k\leq n</m>, and hence <m>x_j\in \bigcap_{k=1}^n C_{i_k}</m>. Since <m>X</m> is assumed to be compact, there is an element <m>x\in \bigcap_{i\in I}C_i</m>. We show that <m>x</m> is a limit point of <m>(x_i)_{i\in I}</m>. 
+                    Let <m>f=(x_i)_{i\in I}</m> be a net in <m>X</m>. For each <m>i\in I</m> define <m>C_i=\overline{\{x_j\colon j\geq i\}}</m>. Clearly each <m>C_i</m> is closed and nonempty. Furthermore, for any finite collection <m>i_1,i_2,\dots, i_n</m> we have <m>\bigcap_{k=1}^n C_{i_k}\ne \emptyset</m>, since we can find a <m>j</m> such that <m>j\geq i_k</m> for all <m>1\leq k\leq n</m>, and hence <m>x_j\in \bigcap_{k=1}^n C_{i_k}</m>. Since <m>X</m> is assumed to be compact, there is an element <m>x\in \bigcap_{i\in I}C_i</m>. We show that <m>x</m> is a limit point of <m>(x_i)_{i\in I}</m>. Indeed, given any open set <m>U</m> containing <m>x</m> and any <m>i\in I</m>, since <m>x\in C_i=\overline{\{x_j\colon j\geq i\}</m>, there is an element <m>x_j</m> with <m>j\geq i</m> such that <m>x_j\in U</m>. This proves that <m>(x_i)_{i\in I}</m> is cofinally in <m>U</m>, as desired. 
                 </p>
                 
             </case>
             <case>
                 <title>Implication: (ii) <m>\implies</m> (i)</title>
                 <p>
-                    We prove the contrapositive. Suppose <m>X</m> is not compact, and let <m>\mathcal{U}=\{U_i\}_{i\in I}</m> be a cover with no finite cover. Define <m>J</m> to the be the set of all pairs <m>(K, x_K)</m>, where <m>K</m> is a finite subset of <m>I</m> and <m>x_K\in X-\bigcup_{k\in K}U_k</m>. (Note that <m>X-\bigcup_{k\in K}U_k\ne\emptyset</m> since <m>\mathcal{U}</m> has no finite subcover.) It is easy to see that <m>J</m> is a directed set under the quasiordering defined as <m>(K, x_K)\leq (K', x_{K'})</m> if and only if <m>K\subseteq K'</m>. Define the net <m>f\colon J\rightarrow X</m> as <m>f((K, x_K))=x_K</m>. 
+                    We prove the contrapositive. Suppose <m>X</m> is not compact, and let <m>\mathcal{U}=\{U_i\}_{i\in I}</m> be a cover with no finite cover. Define <m>J</m> to the be the set of all pairs <m>(K, x)</m>, where <m>K</m> is a finite subset of <m>I</m> and <m>x\in X-\bigcup_{k\in K}U_k</m>. (Note that <m>X-\bigcup_{k\in K}U_k\ne\emptyset</m> since <m>\mathcal{U}</m> has no finite subcover.) It is easy to see that <m>J</m> is a directed set under the quasiordering defined as <m>(K, x)\leq (K', x')</m> if and only if <m>K\subseteq K'</m>. Define the net <m>f\colon J\rightarrow X</m> as <m>f((K, x))=x</m>.  We show that <m>f</m> has no limit point. To this end, given any <m>y\in Y</m>, we have <m>y\in U_{i_0}</m> for some <m>i_0\in I </m>. We will show that the net <m>f</m> is not cofinally in <m>U_{i_0}</m>. To this end consider the index <m>j=({i_0}, x)\in J</m>, where <m>x\in X-U_{i_0}</m>. For all <m>j'=(K, x)</m> with <m>j'\geq j</m>, we have <m>K\supseteq \{i_0\}</m>, in which case <m>f(j')=x\in X-\bigcup_{k\in K}U_k\subseteq X-U_{i_0}</m>. Thus there is no <m>j'\geq j</m> satisfying <m>f(j)\in U_{i_0}</m>.    
                 </p>
             </case>
         </proof>
@@ -132,7 +132,7 @@
         <title>Nets in products</title>
         <statement>
             <p>
-                Let <m>X, Y</m> be topological spaces, and assume <m>Y</m> is compact. Let <m>f=((x_i, y_i))_{i\in I}</m> is a net in <m>X\times Y</m>. Let <m>\pi_X\colon X\times Y\rightarrow X</m> be the projection onto <m>X</m> map. If <m>x\in X</m> is a limit point of the net <m>\pi_X\circ f=(x_i)_{i\in I}</m>, then there is a <m>y\in Y</m> such that <m>(x,y)</m> is a limit point of <m>f</m>. 
+                Let <m>X, Y</m> be topological spaces, and assume <m>Y</m> is compact. Let <m>f=((x_i, y_i))_{i\in I}</m> be a net in <m>X\times Y</m>, and let <m>\pi_X\colon X\times Y\rightarrow X</m> be the projection onto <m>X</m> map. If <m>x\in X</m> is a limit point of the net <m>\pi_X\circ f=(x_i)_{i\in I}</m>, then there is a <m>y\in Y</m> such that <m>(x,y)</m> is a limit point of <m>f</m>. 
             </p>
         </statement>
         <proof>
@@ -194,10 +194,11 @@
                     Let <m>(S^*, g^*)</m> be a maximal element of <m>\mathcal{F}</m>, so that <m>g^*</m> is a limit point of the net <m>(f_i\vert_{S^*})_{i\in I}</m>. We show that <m>S^*</m> and hence that <m>g^*=f\in X</m> is a limit point of <m>(f_i)_{i\in I}</m>. 
                 </p>
                 <p>
-                    Assume by contradiction that <m>S^*\ne T</m>, and let <m>t_0\in T-S^*</m>. Since <m>X_{t_0}</m> is compact, by <xref ref="lemma_product_nets"/> the net <m>(f_i\vert_{S^*\cup \{t_0}})_{i\in I}</m> in <m>X_{S^*\cup {t_0}}=X_{S^*}\times X_{t_0}</m> has a limit point of the form <m>(g^*, x_{t_0})</m>. But then the element <m>(S,g)\in \mathcal{F}</m> defined as <m>S=S^*\cup \{t_0\}</m> and 
+                    Assume by contradiction that <m>S^*\ne T</m>, and let <m>t_0\in T-S^*</m>. Since <m>X_{t_0}</m> is compact, by <xref ref="lemma_product_nets"/> the net <m>(f_i\vert_{S^*\cup \{t_0\}})_{i\in I}</m> in <m>X_{S^*\cup {t_0}}=X_{S^*}\times X_{t_0}</m> has a limit point of the form <m>(g^*, x_{t_0})</m>. But then the element <m>(S,g)\in \mathcal{F}</m> defined as <m>S=S^*\cup \{t_0\}</m> and 
                     <me>
-                    g(s)=\begin{cases} g^*(s)\amp \text{if } s\in S^*\\
+                    g(s)=\begin{cases} g^*(s)\amp \text{if } s\in S^* \\
                         x_{t_0}\amp \text{if } s=t_0
+                        \end{cases}
                     </me>
                     satisfies <m>(S,g)\geq (S^*, g^*)</m> and <m>(S,g)\ne (S^*, g^*)</m>, contradicting the fact that <m>(S^*, g^*)</m> is a maximal element. 
                 </p>

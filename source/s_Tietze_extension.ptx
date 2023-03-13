@@ -28,7 +28,7 @@
                 <me>
                     [-r,r]=[-r,-r/3]\cup [-r/3,r/3]\cup [r/3,r]
                 </me>
-                 define <m>B=f^{-1}([-r,-r/3])</m> and <m>C=f^{-1}([r/3,r])</m>, and, using Urysohn's lemma, choose a continuous function <m>g\colon X\rightarrow [-r/3,r/3]</m> such that <m>g(B)=\{-r/3\}</m> and <m>g(C)=\{r/3}</m>. It is easily verified that this <m>g</m> does the trick. 
+                 define <m>B=f^{-1}([-r,-r/3])</m> and <m>C=f^{-1}([r/3,r])</m>, and, using Urysohn's lemma, choose a continuous function <m>g\colon X\rightarrow [-r/3,r/3]</m> such that <m>g(B)=\{-r/3\}</m> and <m>g(C)=\{r/3\}</m>. It is easily verified that this <m>g</m> does the trick. 
             </p>
             <p>
                 Now assume we have a continuous function <m>f\colon A\rightarrow [a,b]</m>. Letting <m>\phi\colon [a,b]\rightarrow [-1,1]</m>, we see that <m>f</m> extends continuously to <m>X</m> if and only if <m>\phi\circ f</m> extends continuously to <m>X</m>. Thus, we may assume <m>f\colon X\rightarrow [-1,1]</m>. We can build a sequence of continuous functions <m>(g_n)_{n\in \Z_+}</m> satisfying the following properties:
@@ -40,7 +40,7 @@
                     </li>
                     <li>
                         <p>
-                            <m>\abs{f(a)-\sum_{k=1}^ng_k(a)}\leq (\frac{2}{3}\right)^n</m> for all <m>a\in A</m>.
+                            <m>\abs{f(a)-\sum_{k=1}^ng_k(a)}\leq \left(\frac{2}{3}\right)^n</m> for all <m>a\in A</m>.
                         </p>
                     </li>
                 </ol>
@@ -63,9 +63,38 @@
       <p>
         We will show that there is a continuous surjective function <m>\phi\colon [0,1]\rightarrow [0,1]\times[0,1]</m>. This <m>\phi</m> is thus a path or curve, whose image is all of <m>[0,1]\times [0,1]</m>. This called a <em>space-filling curve</em>, or <em>Peano curve</em>. 
       </p>
-      <p>
-        Let <m>\mathcal{C}\subseteq [0,1]</m> be the Cantor set, and choose a homeomorphism <m>h\colon \mathcal{C}\rightarrow \{0,1\}^\omega</m>. 
-      </p>
+      
+      <proof>
+        <p>
+            Let <m>\mathcal{C}\subseteq [0,1]</m> be the Cantor set, and choose a homeomorphism <m>h\colon \mathcal{C}\rightarrow \{0,1\}^\omega</m>, where <m>\{0,1\}</m> is given the discrete topology and <m>\{0,1\}^\omega</m> is given the product topology. (We proved <m>\mathcal{C}</m> is homeomorphic to <m>\{0,1\}^\omega</m> in discussion.) Now define functions <m>g_1,g_2\colon \{0,1\}\rightarrow [0,1]</m> as 
+            <md>
+                <mrow>g_1((a_1,a_2,a_3,\dots))\amp= \frac{a_1}{2}+\frac{a_3}{2^2}+\frac{a_5}{2^3}+\cdots =\sum_{k=1}^\infty \frac{a_{2k-1}}{2^k} </mrow>
+                <mrow>g_2((a_1,a_2,a_3,\dots))\amp= \frac{a_2}{2}+\frac{a_4}{2^2}+\frac{a_6}{2^3}+\cdots =\sum_{k=1}^\infty \frac{a_{2k}}{2^k} </mrow>
+            </md>
+            Both functions <m>g_i</m> are easily seen to be continuous; we prove this for <m>g_1</m>. Let <m>x=(a_1,a_2,\dots, )</m> and let <m>y=\sum_{k=1}a_{2k-1}/2^k</m>. For any <m>\epsilon &gt; 0</m>, pick <m>N</m> such that <m>1/2^N&lt; \epsilon</m>. Let 
+            <me>
+                U=\{a_1\}\times \{a_2\}\times \cdots\times \{a_N\}\times \prod_{k=N+1}^\infty\{0,1\}
+            </me>.
+            For any <m>x'\in U</m>, we have 
+            <me>
+                \abs{y-f(x')}=\abs{\sum_{k=N+1}^\infty \frac{a_{2k-1}}{2^k}}\leq \sum_{k=N+1}^\infty \frac{1}{2^k}=\frac{1}{2^N}&lt; \epsilon
+            </me>,
+            as desired. 
+        </p>
+        <p>Now using our homeomorphism <m>h\colon \mathcal{C}\rightarrow \{0,1\}^\omega</m>, we see that the functions <m>f_1=g_1\circ h</m> and <m>f_2=g_2\circ h</m> are continuous functions from <m>\mathcal{C}</m> to <m>[0,1]</m>. By the <xref ref="th_Tietze_extension" text="custom">Tietze extension theorem</xref>, we obtain continuous extensions <m>\widetilde{f}_1\colon [0,1]\rightarrow [0,1]</m> and <m>\widetilde{f}_2\colon [0,1]\rightarrow [0,1]</m>. The function <m>\phi\colon [0,1]\rightarrow [0,1]\times [0,1]</m> defined as <m>f(x)=(\widetilde{f}_1(x), \widetilde{f}_2(x))</m> is then a continuous function to <m>[0,1]\times[0,1]</m>. 
+        </p>
+        <p>
+            It remains only to show that <m>\phi</m> is surjective. Given any <m>(y_1,y_2)\in [0,1]</m>, let <m>y_1=\sum_{k=1}^\infty \frac{a_k}{2^k}</m> and <m>y_2=\sum_{k=1}\frac{b_k}{2^k}</m> be binary expansions of <m>y_1</m> and <m>y_2</m>. Let <m>s=(a_1,b_1,a_2,b_2,a_3,b_3,\dots)</m>, and let <m>x\in \mathcal{C}=h^{-1}(s)</m>. We have 
+            <md>
+                <mrow>\phi(x) \amp =(\widetilde{f}_1(x),\widetilde{f}_2(x))</mrow>
+                <mrow> \amp =(f_1(x),f_2(x)) \amp (x\in \mathcal{C})</mrow>
+                <mrow> \amp =(g_1(h(x)), g_2(h(x))) \amp (\text{def. of } f_i)</mrow>
+                <mrow> \amp =(g_1(s), g_2(s)) \amp (h(x)=s)</mrow>
+                <mrow> \amp =(y_1,y_2) \amp \text{(by construction)}</mrow>
+            </md>.
+            This proves in fact that <m>\phi\vert_\mathcal{C}</m> is surjective. 
+          </p>
+      </proof>
         
     </project>
     <definition xml:id="d_partition_of_unity">
@@ -84,9 +113,14 @@
         
         <statement>
             <p>
-                Let <m>X</m> be a normal space. Given any finite open covering <m>\mathcal{U}=\{U_k}_{k=1}^n</m> of <m>X</m>, there is a partition of unity dominated by <m>\mathcal{U}</m>. 
+                Let <m>X</m> be a normal space. Given any finite open covering <m>\mathcal{U}=\{U_k\}_{k=1}^n</m> of <m>X</m>, there is a partition of unity dominated by <m>\mathcal{U}</m>. 
             </p>
         </statement>
+        <proof>
+            <p>
+                Not covered in WQ23 course. See Munkres if interested. 
+            </p>
+        </proof>
     </theorem>
     <corollary xml:id="cor_manifold_embedding">
         <title>Compact manifold embedding</title>
@@ -95,6 +129,11 @@
                 Let <m>M</m> be a compact <m>m</m>-manifold. There is an embedding <m>f\colon M\rightarrow \R^N</m> for some <m>N\geq 1</m>. 
             </p>
         </statement>
+        <proof>
+            <p>
+                Not covered in WQ23 course. See Munkres if interested. 
+            </p>
+        </proof>
     </corollary>
     
      </section>
