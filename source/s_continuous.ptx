@@ -240,7 +240,7 @@
       <li>
         <title>Closed pasting</title>
         <p>
-          Let <m>X, Y</m> be topological spaces, and suppose <m>X=C\cup D</m>, where <m>C, D</m> are closed sets. Given continuous functions <m>f\colon C\rightarrow Y</m> and <m>g\colon D\rightarrow Y</m> that satisfy <m>f(x)=g(x)</m> for all <m>x\in C\cup D</m>, the function
+          Let <m>X, Y</m> be topological spaces, and suppose <m>X=C\cup D</m>, where <m>C, D</m> are closed sets. Given continuous functions <m>f\colon C\rightarrow Y</m> and <m>g\colon D\rightarrow Y</m> that satisfy <m>f(x)=g(x)</m> for all <m>x\in C\cap D</m>, the function
           <m>h\colon X\rightarrow Y</m> defined as
           <me>
             h(x)=\begin{cases}
