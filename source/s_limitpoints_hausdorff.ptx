@@ -65,7 +65,7 @@
             <p>
               Let <m>A</m> be a subset of the topological space <m>X</m>, and let <m>A'</m> be the set of all limit points of <m>A</m>. We have
               <me>
-                \overline{A}=A\cup \{A'\}
+                \overline{A}=A\cup A'
               </me>.
             </p>
           </statement>
